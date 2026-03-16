@@ -45,12 +45,14 @@ playwright-report/
 test-results/
 blob-report/
 
-# Pipeline data (generated)
+# Pipeline intermediate data (not deployed)
 data/raw/
-data/threads/
 data/batch/
-data/members.json
-data/status.json
+
+# Pipeline output (committed for SSG deployment)
+# data/threads/   — thread JSON files
+# data/members.json — member data
+# data/status.json — processing status
 
 # Handoff / prototype (not part of source)
 HANDOFF.md
