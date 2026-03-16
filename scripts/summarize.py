@@ -73,6 +73,47 @@ def build_speech_lookup(speeches: List[dict]) -> Dict[int, dict]:
     return {s.get("speechOrder", 0): s for s in speeches}
 
 
+def build_thread_context(thread_info: dict, meeting: dict) -> Optional[dict]:
+    """Build context (background description + links) for a thread."""
+    description = thread_info.get("contextDescription", "")
+    legislation = thread_info.get("legislationName")
+
+    if not description:
+        return None
+
+    links = []
+
+    # Add NDL meeting URL if available
+    meeting_url = meeting.get("meetingURL")
+    if meeting_url:
+        links.append({"label": "会議録全文（NDL）", "url": meeting_url})
+
+    # Generate e-Gov search link if a law name is mentioned
+    if legislation:
+        import urllib.parse
+        egov_url = "https://laws.e-gov.go.jp/keyword/" + urllib.parse.quote(legislation)
+        links.append({"label": f"{legislation}（e-Gov法令検索）", "url": egov_url})
+
+    # Generate bill search link for Shugiin/Sangiin
+    house = meeting.get("house", "")
+    if legislation and "法案" in legislation:
+        if house == "衆議院":
+            links.append({
+                "label": "議案情報（衆議院）",
+                "url": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm",
+            })
+        elif house == "参議院":
+            links.append({
+                "label": "議案情報（参議院）",
+                "url": "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/gian.htm",
+            })
+
+    return {
+        "description": description,
+        "links": links if links else None,
+    }
+
+
 def assemble_thread(
     meeting: dict,
     thread_info: dict,
@@ -117,6 +158,11 @@ def assemble_thread(
     date_str = meeting.get("date", "")
     display_date = date_str.replace("-", ".")
 
+    # Build context from grouper output
+    context = build_thread_context(
+        thread_info, meeting,
+    )
+
     return {
         "id": thread_id,
         "date": display_date,
@@ -126,6 +172,7 @@ def assemble_thread(
         "topicTag": thread_info.get("topicTag", ""),
         "topicColor": thread_info.get("topicColor", "#6b7280"),
         "summary": thread_info.get("summary", ""),
+        "context": context,
         "speeches": assembled_speeches,
     }
 

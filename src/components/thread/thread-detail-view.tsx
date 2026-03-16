@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
@@ -17,6 +18,7 @@ export function ThreadDetailView({
   members,
 }: ThreadDetailViewProps) {
   const { level, follows } = useAppContext();
+  const [contextOpen, setContextOpen] = useState(false);
 
   const depths = thread.speeches.map((s, i) => {
     if (i === 0) return 0;
@@ -71,6 +73,41 @@ export function ThreadDetailView({
         <p className="mt-3 text-[15px] leading-[24px] text-x-secondary">
           {thread.summary}
         </p>
+
+        {/* Context: background info */}
+        {thread.context && (
+          <div className="mt-3">
+            <button
+              onClick={() => setContextOpen(!contextOpen)}
+              className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-0 py-1 text-[13px] text-x-accent transition-colors hover:underline"
+            >
+              <span>{contextOpen ? "▾" : "▸"}</span>
+              この議題について
+            </button>
+            {contextOpen && (
+              <div className="mt-2 rounded-xl border border-x-border bg-x-surface px-4 py-3">
+                <p className="text-[14px] leading-[22px] text-x-secondary">
+                  {thread.context.description}
+                </p>
+                {thread.context.links && thread.context.links.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-3">
+                    {thread.context.links.map((link, i) => (
+                      <a
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[13px] text-x-accent hover:underline"
+                      >
+                        {link.label} &nearr;
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Speeches */}

@@ -44,6 +44,11 @@ export type ThreadLink = {
   date: string;
 };
 
+export type ThreadContext = {
+  description: string;
+  links?: { label: string; url: string }[];
+};
+
 export type Thread = {
   id: string;
   date: string;
@@ -56,6 +61,7 @@ export type Thread = {
   speeches: Speech[];
   outcome?: ThreadOutcome;
   relatedThreads?: ThreadLink[];
+  context?: ThreadContext;
 };
 
 // UI config types
