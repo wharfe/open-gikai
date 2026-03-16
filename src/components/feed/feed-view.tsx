@@ -32,7 +32,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
   return (
     <>
       {/* Sticky tab bar — X style */}
-      <div className="sticky top-0 z-40 flex border-b border-x-border bg-x-bg/65 backdrop-blur-xl md:top-0">
+      <div className="sticky top-[53px] z-40 flex border-b border-x-border bg-x-bg/65 backdrop-blur-xl md:top-0">
         {tabs.map(([id, label]) => (
           <button
             key={id}
