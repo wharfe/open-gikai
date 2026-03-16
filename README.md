@@ -1,6 +1,6 @@
 # OpenGIKAI — Opening Up the Diet
 
-[🇯🇵 日本語版はこちら / Japanese](./README.ja.md)
+**[open-gikai.net](https://open-gikai.net)** | [🇯🇵 日本語版はこちら / Japanese](./README.ja.md)
 
 **OpenGIKAI** (議会) is an open-source public media project that transforms Japanese parliamentary proceedings into a modern, accessible thread format — like social media, but with official sources.
 
@@ -64,6 +64,21 @@ NDL API → Fetch transcripts → Group by topic (Claude API)
 2. **AI processing**: Groups speeches by topic, classifies tension type (questioning, response, follow-up, etc.), generates summaries at three reading levels
 3. **Static generation**: Outputs JSON files consumed by Next.js SSG
 4. **Deployment**: Auto-deploys to Vercel
+
+## Data Pipeline
+
+```bash
+# 1. Fetch speeches from NDL API
+python scripts/fetch_ndl.py --date-from 2025-03-14
+
+# 2. Summarize with Claude API (requires ANTHROPIC_API_KEY in .env)
+python scripts/summarize.py --date 2025-03-14
+
+# 3. Build and preview
+npm run build && npx serve out
+```
+
+See `.env.example` for configuration.
 
 ## Design Principles
 

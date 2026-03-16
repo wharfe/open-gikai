@@ -1,6 +1,6 @@
 # OpenGIKAI — 国会をひらく
 
-[🇬🇧 English](./README.md)
+**[open-gikai.net](https://open-gikai.net)** | [🇬🇧 English](./README.md)
 
 **OpenGIKAI（議会）** は、国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディアプロジェクトです。SNSのような読みやすさで、公式の一次情報に基づいた国会情報を届けます。
 
@@ -64,6 +64,21 @@ NDL API → 議事録取得 → テーマ別グルーピング（Claude API）
 2. **AI処理**: テーマ別にグルーピング、テンション分類（追及・答弁・再追及など）、3レベルの要約を生成
 3. **静的生成**: Next.js SSG用のJSONファイルを出力
 4. **デプロイ**: Vercelに自動デプロイ
+
+## データパイプライン
+
+```bash
+# 1. NDL APIから議事録を取得
+python scripts/fetch_ndl.py --date-from 2025-03-14
+
+# 2. Claude APIで要約（.envにANTHROPIC_API_KEYが必要）
+python scripts/summarize.py --date 2025-03-14
+
+# 3. ビルド・プレビュー
+npm run build && npx serve out
+```
+
+設定は `.env.example` を参照してください。
 
 ## 設計原則
 
