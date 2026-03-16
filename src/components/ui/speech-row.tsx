@@ -33,7 +33,7 @@ export function SpeechRow({
 
   return (
     <article
-      className="relative flex gap-3 border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover"
+      className={`relative flex gap-3 px-4 py-4 transition-colors hover:bg-x-hover ${isLast ? "border-b border-x-border" : ""}`}
       style={{ paddingLeft: 16 + depth * 12 }}
     >
       {/* Thread line */}
