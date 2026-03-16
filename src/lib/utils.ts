@@ -41,7 +41,7 @@ export function buildSpeechShare(
     "",
     speech.summaries[level],
     "",
-    `📄 全スレッド → https://gikai.jp/t/${thread.id}`,
+    `📄 全スレッド → https://open-gikai.net/t/${thread.id}`,
     `#OpenGIKAI #国会 #${thread.topicTag}`,
   ].join("\n");
 }
@@ -57,7 +57,7 @@ export function buildThreadShare(thread: Thread, members: Record<string, Member>
     thread.summary,
     "",
     `登場：${actors.join("、")}`,
-    `全${thread.speeches.length}発言 → https://gikai.jp/t/${thread.id}`,
+    `全${thread.speeches.length}発言 → https://open-gikai.net/t/${thread.id}`,
     `#OpenGIKAI #国会 #${thread.topicTag}`,
   ].join("\n");
 }

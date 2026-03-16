@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Member, Thread } from "@/types";
 import { TrendPanel } from "@/components/sidebar/trend-panel";
 import { FollowPanel } from "@/components/sidebar/follow-panel";
@@ -26,10 +27,9 @@ export function RightSidebar({ threads, members }: RightSidebarProps) {
 
         {/* Footer links — X style */}
         <div className="px-4 text-[13px] leading-6 text-x-secondary">
-          <span className="mr-3 cursor-pointer hover:underline">利用規約</span>
-          <span className="mr-3 cursor-pointer hover:underline">プライバシー</span>
-          <span className="mr-3 cursor-pointer hover:underline">GitHub</span>
-          <span className="mr-3">© 2025 OpenGIKAI</span>
+          <Link href="/about" className="mr-3 hover:underline">について</Link>
+          <a href="https://github.com/wharfe/open-gikai" target="_blank" rel="noopener noreferrer" className="mr-3 hover:underline">GitHub</a>
+          <span className="mr-3">© 2025 OpenGIK<span className="text-emerald-400">AI</span></span>
         </div>
       </div>
     </aside>

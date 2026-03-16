@@ -24,7 +24,7 @@ export function Sidebar() {
           <div className="flex items-center gap-3">
             <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.5)]" />
             <span className="hidden text-xl font-extrabold tracking-wide xl:inline">
-              GIKAI
+              OpenGIK<span className="text-emerald-400">AI</span>
             </span>
           </div>
         </Link>
@@ -67,7 +67,7 @@ export function Sidebar() {
             G
           </div>
           <div className="hidden min-w-0 xl:block">
-            <div className="truncate text-[14px] font-bold text-x-text">OpenGIKAI</div>
+            <div className="truncate text-[14px] font-bold text-x-text">OpenGIK<span className="text-emerald-400">AI</span></div>
             <div className="truncate text-[12px] text-x-secondary">国会をひらく</div>
           </div>
         </div>
