@@ -22,7 +22,7 @@ export default function RootLayout({
             {/* Left navigation */}
             <Sidebar />
             {/* Main content */}
-            <div className="flex min-h-screen flex-1 justify-center">
+            <div className="flex min-h-screen flex-1">
               {children}
             </div>
           </div>
