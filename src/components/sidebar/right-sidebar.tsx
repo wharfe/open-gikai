@@ -11,12 +11,12 @@ type RightSidebarProps = {
 export function RightSidebar({ threads, members }: RightSidebarProps) {
   return (
     <aside className="sticky top-0 hidden h-screen w-[350px] shrink-0 overflow-y-auto pl-7 pr-5 lg:block">
-      {/* Search bar — X style */}
+      {/* Search bar placeholder */}
       <div className="sticky top-0 z-10 bg-x-bg pb-3 pt-2">
-        <div className="flex h-[42px] items-center gap-3 rounded-full bg-x-search px-4">
+        <div className="flex h-[42px] items-center gap-3 rounded-full bg-x-search px-4 opacity-50">
           <span className="text-x-secondary">🔍</span>
           <span className="text-[15px] text-x-secondary">
-            キーワードを検索
+            検索（準備中）
           </span>
         </div>
       </div>
@@ -27,9 +27,9 @@ export function RightSidebar({ threads, members }: RightSidebarProps) {
 
         {/* Footer links — X style */}
         <div className="px-4 text-[13px] leading-6 text-x-secondary">
-          <Link href="/about" className="mr-3 hover:underline">について</Link>
+          <Link href="/about" className="mr-3 hover:underline">About</Link>
           <a href="https://github.com/wharfe/open-gikai" target="_blank" rel="noopener noreferrer" className="mr-3 hover:underline">GitHub</a>
-          <span className="mr-3">© 2025 OpenGIK<span className="text-emerald-400">AI</span></span>
+          <span className="mr-3">© 2026 OpenGIK<span className="text-emerald-400">AI</span></span>
         </div>
       </div>
     </aside>
