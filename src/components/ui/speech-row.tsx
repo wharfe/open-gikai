@@ -117,20 +117,16 @@ export function SpeechRow({
         </div>
 
         {/* Action row */}
-        <div className="-ml-2 mt-3 flex items-center justify-between text-x-secondary">
+        <div className="-ml-2 mt-3 flex items-center gap-4 text-x-secondary">
           <button
             onClick={() => setExpanded(!expanded)}
             className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-2 py-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
           >
             📄 {expanded ? "閉じる" : "原文"}
           </button>
-          <span className="text-[13px]">
-            💬 {speech.keywords.length}
-          </span>
           <ShareButton
             text={buildSpeechShare(speech, member, thread, level)}
           />
-          <span className="w-8" />
         </div>
 
         {/* Raw transcript */}
