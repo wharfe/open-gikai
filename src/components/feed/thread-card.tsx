@@ -45,6 +45,30 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
         <p className="mt-3 text-[15px] leading-[24px] text-x-text">
           {thread.summary}
         </p>
+
+        {/* Outcome badges */}
+        {thread.outcome && (thread.outcome.result || (thread.outcome.commitments && thread.outcome.commitments.length > 0)) && (
+          <div className="mt-2 flex items-center gap-2">
+            {thread.outcome.result && (
+              <span
+                className={`inline-block rounded-full px-2 py-0.5 text-[12px] font-bold ${
+                  thread.outcome.result === "可決"
+                    ? "bg-green-500/10 text-green-500"
+                    : thread.outcome.result === "否決"
+                      ? "bg-red-500/10 text-red-500"
+                      : "bg-yellow-500/10 text-yellow-500"
+                }`}
+              >
+                {thread.outcome.result}
+              </span>
+            )}
+            {thread.outcome.commitments && thread.outcome.commitments.length > 0 && (
+              <span className="text-[12px] text-blue-400">
+                &rarr; 約束{thread.outcome.commitments.length}件
+              </span>
+            )}
+          </div>
+        )}
       </Link>
 
       {/* Footer */}

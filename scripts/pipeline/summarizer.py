@@ -55,7 +55,7 @@ def summarize_thread(
     thread_info: dict,
     speeches: List[dict],
     model: str = "claude-sonnet-4-20250514",
-) -> List[dict]:
+) -> dict:
     """Summarize all speeches in a thread.
 
     Args:
@@ -65,10 +65,10 @@ def summarize_thread(
         speeches: list of raw speech dicts belonging to this thread
 
     Returns:
-        List of processed speech dicts with tension, keywords, quote, summaries
+        Dict with "speeches" list and "commitments" list
     """
     if not speeches:
-        return []
+        return {"speeches": [], "commitments": []}
 
     formatted = "\n\n---\n\n".join(_format_speech_for_summary(s) for s in speeches)
 
@@ -92,4 +92,7 @@ def summarize_thread(
     )
 
     result = _parse_json_response(response.content[0].text)
-    return result.get("speeches", [])
+    return {
+        "speeches": result.get("speeches", []),
+        "commitments": result.get("commitments", []),
+    }

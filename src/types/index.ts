@@ -29,6 +29,13 @@ export type Speech = {
   summaries: Record<Level, string>;
 };
 
+export type ThreadOutcome = {
+  result?: "可決" | "否決" | "継続審議" | "審議中";
+  resolution?: string;
+  commitments: string[];
+  status: "resolved" | "pending" | "ongoing";
+};
+
 export type Thread = {
   id: string;
   date: string;
@@ -39,6 +46,7 @@ export type Thread = {
   topicColor: string;
   summary: string;
   speeches: Speech[];
+  outcome?: ThreadOutcome;
 };
 
 // UI config types

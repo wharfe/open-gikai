@@ -87,6 +87,68 @@ export function ThreadDetailView({
         />
       ))}
 
+      {/* Outcome section */}
+      {thread.outcome &&
+        (thread.outcome.result ||
+          (thread.outcome.commitments &&
+            thread.outcome.commitments.length > 0)) && (
+          <div className="border-t border-x-border px-4 py-4">
+            <div className="text-[13px] font-bold uppercase tracking-wider text-x-secondary">
+              結論
+            </div>
+
+            {thread.outcome.result && (
+              <div className="mt-2 flex items-center gap-2">
+                <span
+                  className={`inline-block rounded-full px-2.5 py-0.5 text-[13px] font-bold ${
+                    thread.outcome.result === "可決"
+                      ? "bg-green-500/10 text-green-500"
+                      : thread.outcome.result === "否決"
+                        ? "bg-red-500/10 text-red-500"
+                        : "bg-yellow-500/10 text-yellow-500"
+                  }`}
+                >
+                  {thread.outcome.result}
+                </span>
+                {thread.outcome.resolution && (
+                  <span className="text-[13px] text-x-secondary">
+                    {thread.outcome.resolution}
+                  </span>
+                )}
+              </div>
+            )}
+
+            {thread.outcome.commitments &&
+              thread.outcome.commitments.length > 0 && (
+                <div className="mt-3 space-y-1.5">
+                  <div className="text-[13px] font-bold text-x-secondary">
+                    答弁での約束
+                  </div>
+                  {thread.outcome.commitments.map((c, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-2 text-[14px] leading-[22px] text-x-text"
+                    >
+                      <span className="mt-0.5 shrink-0 text-[12px] text-blue-400">
+                        &rarr;
+                      </span>
+                      <span>{c}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            {!thread.outcome.result &&
+              thread.outcome.status === "ongoing" &&
+              thread.outcome.commitments &&
+              thread.outcome.commitments.length === 0 && (
+                <div className="mt-2 text-[13px] text-x-secondary">
+                  この質疑では採決は行われていません
+                </div>
+              )}
+          </div>
+        )}
+
       {/* Source attribution */}
       <div className="border-t border-x-border px-4 py-4 text-[13px] text-x-secondary">
         📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）

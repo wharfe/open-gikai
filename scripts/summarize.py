@@ -29,7 +29,7 @@ load_dotenv()
 # Add scripts/ to path for pipeline imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from pipeline.grouper import group_meeting
+from pipeline.grouper import group_meeting, extract_meeting_outcome
 from pipeline.summarizer import summarize_thread
 from pipeline.members import extract_member, load_members, save_members
 
@@ -141,7 +141,7 @@ def process_meeting(
     date_str: str,
     thread_counter: int,
 ) -> tuple:
-    """Process a single meeting through grouping + summarization.
+    """Process a single meeting through grouping + summarization + outcome.
 
     Returns (threads_list, updated_thread_counter).
     """
@@ -151,6 +151,10 @@ def process_meeting(
 
     # Phase B: Topic grouping
     thread_infos = group_meeting(client, meeting, model=model)
+    time.sleep(1)
+
+    # Phase D: Meeting-level outcome (votes, resolutions)
+    meeting_outcome = extract_meeting_outcome(client, meeting, model=model)
     time.sleep(1)
 
     threads = []
@@ -168,9 +172,11 @@ def process_meeting(
 
         # Phase C: Summarize speeches in this thread
         try:
-            ai_speeches = summarize_thread(
+            summary_result = summarize_thread(
                 client, meeting, thread_info, thread_speeches, model=model,
             )
+            ai_speeches = summary_result["speeches"]
+            commitments = summary_result["commitments"]
             time.sleep(1)
         except Exception as e:
             log.error("Failed to summarize thread '%s': %s", thread_info.get("topic"), e)
@@ -180,6 +186,16 @@ def process_meeting(
             meeting, thread_info, ai_speeches, raw_lookup, members, thread_id,
         )
         if thread:
+            # Build thread-level outcome
+            # Only attach vote result/resolution to the last thread (closest to the vote)
+            # All threads get their own commitments and the overall status
+            is_last = (thread_info is thread_infos[-1])
+            thread["outcome"] = {
+                "result": meeting_outcome.get("result") if is_last else None,
+                "resolution": meeting_outcome.get("resolution") if is_last else None,
+                "commitments": commitments or [],
+                "status": meeting_outcome.get("status", "ongoing"),
+            }
             threads.append(thread)
 
     return threads, thread_counter
