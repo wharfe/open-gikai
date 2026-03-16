@@ -99,7 +99,7 @@ export function ThreadDetailView({
                         rel="noopener noreferrer"
                         className="text-[13px] text-x-accent hover:underline"
                       >
-                        {link.label} &nearr;
+                        {link.label} ↗
                       </a>
                     ))}
                   </div>
