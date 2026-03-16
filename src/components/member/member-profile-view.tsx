@@ -36,7 +36,7 @@ export function MemberProfileView({
 
   return (
     <>
-      {/* Sticky header — X profile style */}
+      {/* Sticky header */}
       <div className="sticky top-0 z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl">
         <Link
           href="/"
@@ -54,7 +54,7 @@ export function MemberProfileView({
         </div>
       </div>
 
-      {/* Banner — X style colored banner */}
+      {/* Banner */}
       <div
         className="h-[200px]"
         style={{
@@ -62,28 +62,32 @@ export function MemberProfileView({
         }}
       />
 
-      {/* Avatar + Follow button row */}
-      <div className="relative border-b border-x-border px-4 pb-4">
-        {/* Avatar — overlapping the banner, X uses ~134px */}
-        <div className="-mt-[67px] mb-3 flex items-end justify-between">
+      {/* Avatar + Follow */}
+      <div className="relative px-4">
+        <div className="-mt-[67px] flex items-end justify-between">
           <div className="rounded-full border-4 border-x-bg">
             <Avatar member={member} size={134} followed={isFollowed} />
           </div>
-          <button
-            onClick={() => toggleFollow(member.id)}
-            className="mb-1 cursor-pointer rounded-full px-5 py-2 text-[15px] font-bold transition-colors"
-            style={{
-              background: isFollowed ? "transparent" : "#e7e9ea",
-              border: isFollowed ? "1px solid #536471" : "none",
-              color: isFollowed ? "#e7e9ea" : "#0f1419",
-            }}
-          >
-            {isFollowed ? "フォロー中 ✓" : "+ フォロー"}
-          </button>
+          <div className="pb-3">
+            <button
+              onClick={() => toggleFollow(member.id)}
+              className="cursor-pointer rounded-full px-5 py-2 text-[15px] font-bold transition-colors"
+              style={{
+                background: isFollowed ? "transparent" : "#e7e9ea",
+                border: isFollowed ? "1px solid #536471" : "none",
+                color: isFollowed ? "#e7e9ea" : "#0f1419",
+              }}
+            >
+              {isFollowed ? "フォロー中 ✓" : "+ フォロー"}
+            </button>
+          </div>
         </div>
+      </div>
 
-        {/* Name + badges */}
-        <div className="mb-0.5 flex flex-wrap items-center gap-2">
+      {/* Profile info */}
+      <div className="border-b border-x-border px-4 pb-4">
+        {/* Name */}
+        <div className="mt-1 flex flex-wrap items-center gap-2">
           <h2 className="text-[20px] font-extrabold text-x-text">
             {member.name}
           </h2>
@@ -102,20 +106,20 @@ export function MemberProfileView({
           )}
         </div>
 
-        {/* Handle-like info */}
-        <div className="text-[15px] text-x-secondary">
+        {/* Role info */}
+        <div className="mt-1 text-[15px] text-x-secondary">
           {member.role}
           {member.district ? ` · ${member.district}` : ""}
           {member.since ? ` · ${member.since}年〜` : ""}
         </div>
         {badge && (
-          <div className="mt-0.5 text-[13px]" style={{ color: badge.color }}>
+          <div className="mt-1 text-[13px]" style={{ color: badge.color }}>
             {badge.icon} {badge.label}
           </div>
         )}
 
         {/* Bio */}
-        <p className="mt-3 text-[15px] leading-[20px] text-x-text">
+        <p className="mt-3 text-[15px] leading-relaxed text-x-text">
           {member.bio}
         </p>
 
@@ -132,8 +136,8 @@ export function MemberProfileView({
           ))}
         </div>
 
-        {/* Tension stats — X style follower count */}
-        <div className="mt-3 flex flex-wrap gap-3">
+        {/* Tension stats */}
+        <div className="mt-3 flex flex-wrap gap-4">
           {Object.entries(tensionCount).map(([t, n]) => {
             const ts = TENSION_STYLE[t];
             return (
@@ -146,7 +150,7 @@ export function MemberProfileView({
         </div>
       </div>
 
-      {/* Tab bar — X style "Posts" tab */}
+      {/* Tab bar */}
       <div className="flex border-b border-x-border">
         <div className="relative flex-1 py-4 text-center text-[15px] font-bold text-x-text">
           発言
@@ -163,14 +167,14 @@ export function MemberProfileView({
             href={`/t/${sp.thread.id}`}
             className="block border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
           >
-            <div className="mb-1 flex flex-wrap items-center gap-1 text-[15px]">
+            <div className="flex flex-wrap items-center gap-1 text-[15px]">
               <span className="font-bold text-x-text">
                 {sp.thread.committee}
               </span>
               <span className="text-x-secondary">·</span>
               <span className="text-x-secondary">{sp.thread.date}</span>
             </div>
-            <div className="mb-2 flex items-center gap-2">
+            <div className="mt-1.5 flex items-center gap-2">
               <span
                 className="rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
                 style={{ color: ts.color, background: ts.bg }}
@@ -187,7 +191,7 @@ export function MemberProfileView({
                 {sp.thread.topic}
               </span>
             </div>
-            <p className="text-[15px] leading-[20px] text-x-text">
+            <p className="mt-2 text-[15px] leading-relaxed text-x-text">
               {sp.summaries.adult}
             </p>
           </Link>

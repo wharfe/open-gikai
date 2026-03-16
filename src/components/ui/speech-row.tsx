@@ -33,7 +33,7 @@ export function SpeechRow({
 
   return (
     <article
-      className="relative flex gap-3 border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
+      className="relative flex gap-3 border-b border-x-border px-4 pb-3 pt-3 transition-colors hover:bg-x-hover"
       style={{ paddingLeft: 16 + depth * 12 }}
     >
       {/* Thread line */}
@@ -49,17 +49,19 @@ export function SpeechRow({
       )}
 
       {/* Avatar */}
-      <Avatar
-        member={member}
-        size={40}
-        linkToProfile
-        followed={followed}
-      />
+      <div className="shrink-0 pt-0.5">
+        <Avatar
+          member={member}
+          size={40}
+          linkToProfile
+          followed={followed}
+        />
+      </div>
 
       {/* Content */}
       <div className="min-w-0 flex-1">
-        {/* Name row — X style */}
-        <div className="mb-0.5 flex flex-wrap items-center gap-1">
+        {/* Name row */}
+        <div className="flex flex-wrap items-center gap-1">
           <span className="text-[15px] font-bold text-x-text">
             {member.name}
           </span>
@@ -84,7 +86,7 @@ export function SpeechRow({
         </div>
 
         {/* Tension badge */}
-        <div className="mb-2">
+        <div className="mt-1.5">
           <span
             className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
             style={{ color: tension.color, background: tension.bg }}
@@ -93,20 +95,20 @@ export function SpeechRow({
           </span>
         </div>
 
-        {/* Summary text — like tweet body */}
-        <div className="mb-3 text-[15px] leading-[20px] text-x-text">
+        {/* Summary text */}
+        <div className="mt-2 text-[15px] leading-relaxed text-x-text">
           {speech.summaries[level]}
         </div>
 
-        {/* Quote — X style quoted tweet */}
+        {/* Quote */}
         {speech.quote && level === "adult" && (
-          <div className="mb-3 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-[20px] text-x-secondary">
+          <div className="mt-3 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-relaxed text-x-secondary">
             「{speech.quote}」
           </div>
         )}
 
-        {/* Keywords — like hashtags */}
-        <div className="mb-3">
+        {/* Keywords */}
+        <div className="mt-2">
           {speech.keywords.map((k) => (
             <span key={k} className="mr-2 text-[15px] text-x-accent">
               #{k}
@@ -114,8 +116,8 @@ export function SpeechRow({
           ))}
         </div>
 
-        {/* Action row — X style icons with spacing */}
-        <div className="-ml-2 flex items-center justify-between text-x-secondary">
+        {/* Action row */}
+        <div className="-ml-2 mt-2 flex items-center justify-between text-x-secondary">
           <button
             onClick={() => setExpanded(!expanded)}
             className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-2 py-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
@@ -131,9 +133,9 @@ export function SpeechRow({
           <span className="w-8" />
         </div>
 
-        {/* Raw transcript — expandable */}
+        {/* Raw transcript */}
         {expanded && (
-          <div className="mt-2 rounded-2xl border border-x-border bg-x-bg p-4 text-[15px] leading-[20px] text-x-secondary">
+          <div className="mt-3 rounded-2xl border border-x-border bg-x-bg p-4 text-[15px] leading-relaxed text-x-secondary">
             <div className="mb-2 text-[13px] text-x-secondary/60">
               📄 原文（国会会議録 NDL APIより）
             </div>

@@ -19,8 +19,8 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
   return (
     <article className="border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover">
       <Link href={`/t/${thread.id}`} className="block">
-        {/* Committee & date — like X username row */}
-        <div className="mb-1 flex items-center gap-1 text-[15px]">
+        {/* Committee & date */}
+        <div className="flex items-center gap-1 text-[15px]">
           <span className="font-bold text-x-text">
             {thread.committee}
           </span>
@@ -31,7 +31,7 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
         </div>
 
         {/* Topic tag */}
-        <div className="mb-2">
+        <div className="mt-2">
           <span
             className="inline-block rounded-full px-3 py-1 text-[13px] font-bold"
             style={{
@@ -43,14 +43,14 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
           </span>
         </div>
 
-        {/* Summary — like tweet text */}
-        <p className="mb-3 text-[15px] leading-[20px] text-x-text">
+        {/* Summary */}
+        <p className="mt-2 text-[15px] leading-relaxed text-x-text">
           {thread.summary}
         </p>
       </Link>
 
-      {/* Footer — like X action row */}
-      <div className="flex items-center justify-between">
+      {/* Footer */}
+      <div className="mt-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex -space-x-1.5">
             {actors.map((id) => (
@@ -68,7 +68,7 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
             {actors.map((id) => members[id].name.split(" ")[0]).join("、")}
           </span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex shrink-0 items-center gap-4">
           <span className="text-[13px] text-x-secondary">
             💬 {thread.speeches.length}
           </span>

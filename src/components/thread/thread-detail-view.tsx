@@ -27,7 +27,7 @@ export function ThreadDetailView({
 
   return (
     <>
-      {/* Sticky header — X style with back arrow */}
+      {/* Sticky header */}
       <div className="sticky top-0 z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl">
         <Link
           href="/"
@@ -47,14 +47,14 @@ export function ThreadDetailView({
 
       {/* Thread header info */}
       <div className="border-b border-x-border px-4 py-3">
-        <div className="mb-2 flex items-center gap-2 text-[15px] text-x-secondary">
+        <div className="flex items-center gap-2 text-[15px] text-x-secondary">
           <span>{thread.house}</span>
           <span>·</span>
           <span>{thread.committee}</span>
           <span>·</span>
           <span>{thread.date}</span>
         </div>
-        <div className="mb-2 flex items-center justify-between">
+        <div className="mt-2 flex items-center justify-between">
           <span
             className="rounded-full px-3 py-1 text-[13px] font-bold"
             style={{
@@ -66,12 +66,12 @@ export function ThreadDetailView({
           </span>
           <ShareButton text={buildThreadShare(thread, members)} />
         </div>
-        <p className="text-[15px] leading-[20px] text-x-secondary">
+        <p className="mt-2 text-[15px] leading-relaxed text-x-secondary">
           {thread.summary}
         </p>
       </div>
 
-      {/* Speeches — each separated by border like X posts */}
+      {/* Speeches */}
       {thread.speeches.map((speech, i) => (
         <SpeechRow
           key={i}
