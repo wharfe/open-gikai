@@ -22,7 +22,7 @@ export default function RootLayout({
             {/* Left navigation */}
             <Sidebar />
             {/* Main content */}
-            <div className="flex min-h-screen min-w-0 flex-1 overflow-x-hidden">
+            <div className="flex min-h-screen min-w-0 flex-1">
               {children}
             </div>
           </div>
