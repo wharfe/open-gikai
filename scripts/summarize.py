@@ -91,8 +91,14 @@ def build_thread_context(thread_info: dict, meeting: dict) -> Optional[dict]:
     # Generate e-Gov search link if a law name is mentioned
     if legislation:
         import urllib.parse
-        egov_url = "https://laws.e-gov.go.jp/keyword/" + urllib.parse.quote(legislation)
-        links.append({"label": f"{legislation}（e-Gov法令検索）", "url": egov_url})
+        # e-Gov uses hash-based SPA routing for search
+        # Simplify to base law name for search (remove 改正/一部 boilerplate)
+        law_name = legislation
+        for suffix in ["の一部を改正する法律案", "等の一部を改正する法律案", "法律案", "法案", "改正案"]:
+            law_name = law_name.replace(suffix, "")
+        law_name = law_name.rstrip("等の") or legislation  # fallback to original
+        egov_url = "https://laws.e-gov.go.jp/search#keyword=" + urllib.parse.quote(law_name)
+        links.append({"label": f"{law_name}（e-Gov法令検索）" if law_name != legislation else f"{legislation}（e-Gov法令検索）", "url": egov_url})
 
     # Generate bill search link for Shugiin/Sangiin
     house = meeting.get("house", "")
