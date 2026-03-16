@@ -37,15 +37,15 @@ export function MemberProfileView({
   return (
     <>
       {/* Sticky header — X profile style */}
-      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-6 border-b border-x-border bg-x-bg/65 px-4 backdrop-blur-xl">
+      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl">
         <Link
           href="/"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-xl transition-colors hover:bg-x-hover"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-x-hover"
         >
-          ← 戻る
+          <span className="text-xl">←</span>
         </Link>
-        <div>
-          <div className="text-[17px] font-bold leading-tight">
+        <div className="min-w-0">
+          <div className="truncate text-[17px] font-bold leading-tight">
             {member.name}
           </div>
           <div className="text-[13px] text-x-secondary">
@@ -54,23 +54,24 @@ export function MemberProfileView({
         </div>
       </div>
 
-      {/* Banner — X style gradient banner */}
+      {/* Banner — X style colored banner */}
       <div
-        className="h-[133px] sm:h-[200px]"
+        className="h-[200px]"
         style={{
-          background: `linear-gradient(135deg, ${ms.color}30, ${ms.color}10, #000)`,
+          background: `linear-gradient(135deg, ${ms.color}40, ${ms.color}15 40%, #16181c)`,
         }}
       />
 
-      {/* Avatar + Follow — X style overlapping avatar */}
-      <div className="flex items-start justify-between px-4">
-        <div className="-mt-[10%] rounded-full border-4 border-x-bg">
-          <Avatar member={member} size={80} followed={isFollowed} />
-        </div>
-        <div className="mt-3">
+      {/* Avatar + Follow button row */}
+      <div className="relative border-b border-x-border px-4 pb-4">
+        {/* Avatar — overlapping the banner, X uses ~134px */}
+        <div className="-mt-[67px] mb-3 flex items-end justify-between">
+          <div className="rounded-full border-4 border-x-bg">
+            <Avatar member={member} size={134} followed={isFollowed} />
+          </div>
           <button
             onClick={() => toggleFollow(member.id)}
-            className="cursor-pointer rounded-full px-5 py-2 text-[15px] font-bold transition-colors"
+            className="mb-1 cursor-pointer rounded-full px-5 py-2 text-[15px] font-bold transition-colors"
             style={{
               background: isFollowed ? "transparent" : "#e7e9ea",
               border: isFollowed ? "1px solid #536471" : "none",
@@ -80,12 +81,9 @@ export function MemberProfileView({
             {isFollowed ? "フォロー中 ✓" : "+ フォロー"}
           </button>
         </div>
-      </div>
 
-      {/* Profile info */}
-      <div className="border-b border-x-border px-4 pb-4">
-        {/* Name */}
-        <div className="mt-2 flex flex-wrap items-center gap-2">
+        {/* Name + badges */}
+        <div className="mb-0.5 flex flex-wrap items-center gap-2">
           <h2 className="text-[20px] font-extrabold text-x-text">
             {member.name}
           </h2>
@@ -97,10 +95,7 @@ export function MemberProfileView({
           {member.party && PARTY_STYLE[member.party] && (
             <span
               className="rounded px-2 py-0.5 text-[13px] font-bold"
-              style={{
-                color: ms.color,
-                background: ms.bg,
-              }}
+              style={{ color: ms.color, background: ms.bg }}
             >
               {PARTY_STYLE[member.party].short}
             </span>
@@ -108,13 +103,13 @@ export function MemberProfileView({
         </div>
 
         {/* Handle-like info */}
-        <div className="mt-0.5 text-[15px] text-x-secondary">
+        <div className="text-[15px] text-x-secondary">
           {member.role}
           {member.district ? ` · ${member.district}` : ""}
           {member.since ? ` · ${member.since}年〜` : ""}
         </div>
         {badge && (
-          <div className="mt-1 text-[13px]" style={{ color: badge.color }}>
+          <div className="mt-0.5 text-[13px]" style={{ color: badge.color }}>
             {badge.icon} {badge.label}
           </div>
         )}
@@ -124,39 +119,42 @@ export function MemberProfileView({
           {member.bio}
         </p>
 
-        {/* Stance tags — like X profile labels */}
+        {/* Stance tags */}
         <div className="mt-3 flex flex-wrap gap-2">
           {member.stance.map((st) => (
             <span
               key={st}
               className="rounded-full px-3 py-1 text-[13px]"
-              style={{
-                color: ms.color,
-                background: ms.bg,
-              }}
+              style={{ color: ms.color, background: ms.bg }}
             >
               {st}
             </span>
           ))}
         </div>
 
-        {/* Tension stats */}
-        <div className="mt-3 flex flex-wrap gap-2">
+        {/* Tension stats — X style follower count */}
+        <div className="mt-3 flex flex-wrap gap-3">
           {Object.entries(tensionCount).map(([t, n]) => {
             const ts = TENSION_STYLE[t];
             return (
               <span key={t} className="text-[14px]">
                 <span className="font-bold text-x-text">{n}</span>{" "}
-                <span className="text-x-secondary">
-                  {ts.icon} {t}
-                </span>
+                <span className="text-x-secondary">{ts.icon} {t}</span>
               </span>
             );
           })}
         </div>
       </div>
 
-      {/* Speech list — X style tweets */}
+      {/* Tab bar — X style "Posts" tab */}
+      <div className="flex border-b border-x-border">
+        <div className="relative flex-1 py-4 text-center text-[15px] font-bold text-x-text">
+          発言
+          <div className="absolute bottom-0 left-1/2 h-1 w-16 -translate-x-1/2 rounded-full bg-x-accent" />
+        </div>
+      </div>
+
+      {/* Speech list */}
       {speeches.map((sp, i) => {
         const ts = TENSION_STYLE[sp.tension];
         return (

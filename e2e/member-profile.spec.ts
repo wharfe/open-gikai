@@ -54,7 +54,7 @@ test.describe("Member profile page", () => {
 
   test("has back link", async ({ page }) => {
     await page.goto("/m/yamamoto");
-    await page.getByText("← 戻る").click();
+    await page.locator('a[href="/"]').first().click();
     await expect(page).toHaveURL("/");
   });
 });

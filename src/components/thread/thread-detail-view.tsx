@@ -28,15 +28,15 @@ export function ThreadDetailView({
   return (
     <>
       {/* Sticky header — X style with back arrow */}
-      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-6 border-b border-x-border bg-x-bg/65 px-4 backdrop-blur-xl">
+      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl">
         <Link
           href="/"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-xl transition-colors hover:bg-x-hover"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-x-hover"
         >
-          ←
+          <span className="text-xl">←</span>
         </Link>
-        <div>
-          <div className="text-[17px] font-bold leading-tight">
+        <div className="min-w-0">
+          <div className="truncate text-[17px] font-bold leading-tight">
             {thread.topic}
           </div>
           <div className="text-[13px] text-x-secondary">
@@ -71,25 +71,23 @@ export function ThreadDetailView({
         </p>
       </div>
 
-      {/* Speeches */}
-      <div>
-        {thread.speeches.map((speech, i) => (
-          <SpeechRow
-            key={i}
-            speech={speech}
-            member={members[speech.memberId]}
-            level={level}
-            thread={thread}
-            depth={depths[i]}
-            isLast={i === thread.speeches.length - 1}
-            followed={follows.has(speech.memberId)}
-          />
-        ))}
+      {/* Speeches — each separated by border like X posts */}
+      {thread.speeches.map((speech, i) => (
+        <SpeechRow
+          key={i}
+          speech={speech}
+          member={members[speech.memberId]}
+          level={level}
+          thread={thread}
+          depth={depths[i]}
+          isLast={i === thread.speeches.length - 1}
+          followed={follows.has(speech.memberId)}
+        />
+      ))}
 
-        {/* Source attribution */}
-        <div className="border-t border-x-border px-4 py-3 text-[13px] text-x-secondary">
-          📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）
-        </div>
+      {/* Source attribution */}
+      <div className="border-t border-x-border px-4 py-3 text-[13px] text-x-secondary">
+        📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）
       </div>
     </>
   );

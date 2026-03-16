@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
-import { getThread, getMembers, getAllThreadIds } from "@/lib/data";
+import { getThread, getThreads, getMembers, getAllThreadIds } from "@/lib/data";
 import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
+import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
 export function generateStaticParams() {
   return getAllThreadIds().map((threadId) => ({ threadId }));
@@ -16,12 +17,16 @@ export default async function ThreadPage({ params }: Props) {
   const thread = getThread(threadId);
   if (!thread) notFound();
 
+  const threads = getThreads();
   const members = getMembers();
 
   return (
-    <main className="w-full max-w-[600px] border-r border-x-border">
-      <MobileHeader />
-      <ThreadDetailView thread={thread} members={members} />
-    </main>
+    <>
+      <main className="w-full max-w-[600px] border-r border-x-border">
+        <MobileHeader />
+        <ThreadDetailView thread={thread} members={members} />
+      </main>
+      <RightSidebar threads={threads} members={members} />
+    </>
   );
 }

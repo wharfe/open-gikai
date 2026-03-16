@@ -1,7 +1,6 @@
 import { getThreads, getMembers } from "@/lib/data";
 import { FeedView } from "@/components/feed/feed-view";
-import { TrendPanel } from "@/components/sidebar/trend-panel";
-import { FollowPanel } from "@/components/sidebar/follow-panel";
+import { RightSidebar } from "@/components/sidebar/right-sidebar";
 import { MobileHeader } from "@/components/layout/header";
 
 export default function Home() {
@@ -17,12 +16,7 @@ export default function Home() {
       </main>
 
       {/* Right sidebar */}
-      <aside className="sticky top-0 hidden h-screen w-[350px] shrink-0 overflow-y-auto px-6 py-3 lg:block">
-        <div className="space-y-4">
-          <TrendPanel threads={threads} />
-          <FollowPanel members={members} />
-        </div>
-      </aside>
+      <RightSidebar threads={threads} members={members} />
     </>
   );
 }

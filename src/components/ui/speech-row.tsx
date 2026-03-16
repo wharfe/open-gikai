@@ -71,10 +71,7 @@ export function SpeechRow({
           {member.party && PARTY_STYLE[member.party] && (
             <span
               className="rounded px-1.5 py-px text-[12px] font-bold"
-              style={{
-                color: ms.color,
-                background: ms.bg,
-              }}
+              style={{ color: ms.color, background: ms.bg }}
             >
               {PARTY_STYLE[member.party].short}
             </span>
@@ -90,31 +87,26 @@ export function SpeechRow({
         <div className="mb-2">
           <span
             className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
-            style={{
-              color: tension.color,
-              background: tension.bg,
-            }}
+            style={{ color: tension.color, background: tension.bg }}
           >
             {tension.icon} {speech.tension}
           </span>
         </div>
 
         {/* Summary text — like tweet body */}
-        <div className="mb-2 text-[15px] leading-[20px] text-x-text">
+        <div className="mb-3 text-[15px] leading-[20px] text-x-text">
           {speech.summaries[level]}
         </div>
 
-        {/* Quote — X style quoted tweet feel */}
+        {/* Quote — X style quoted tweet */}
         {speech.quote && level === "adult" && (
-          <div
-            className="mb-2 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-[20px] text-x-secondary"
-          >
+          <div className="mb-3 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-[20px] text-x-secondary">
             「{speech.quote}」
           </div>
         )}
 
         {/* Keywords — like hashtags */}
-        <div className="mb-2">
+        <div className="mb-3">
           {speech.keywords.map((k) => (
             <span key={k} className="mr-2 text-[15px] text-x-accent">
               #{k}
@@ -122,17 +114,21 @@ export function SpeechRow({
           ))}
         </div>
 
-        {/* Action row — X style */}
-        <div className="flex items-center gap-4 text-x-secondary">
+        {/* Action row — X style icons with spacing */}
+        <div className="-ml-2 flex items-center justify-between text-x-secondary">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex cursor-pointer items-center gap-1 rounded-full border-none bg-transparent p-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
+            className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-2 py-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
           >
-            {expanded ? "▲ 閉じる" : "📄 原文"}
+            📄 {expanded ? "閉じる" : "原文"}
           </button>
+          <span className="text-[13px]">
+            💬 {speech.keywords.length}
+          </span>
           <ShareButton
             text={buildSpeechShare(speech, member, thread, level)}
           />
+          <span className="w-8" />
         </div>
 
         {/* Raw transcript — expandable */}
