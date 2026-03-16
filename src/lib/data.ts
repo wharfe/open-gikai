@@ -6,13 +6,7 @@ import path from "path";
 const THREADS_DIR = path.join(process.cwd(), "data", "threads");
 const MEMBERS_PATH = path.join(process.cwd(), "data", "members.json");
 
-// Fallback to legacy mock data if pipeline output doesn't exist yet
-let _threadsCache: Thread[] | null = null;
-let _membersCache: Record<string, Member> | null = null;
-
 function loadThreads(): Thread[] {
-  if (_threadsCache) return _threadsCache;
-
   if (fs.existsSync(THREADS_DIR)) {
     const files = fs
       .readdirSync(THREADS_DIR)
@@ -30,7 +24,6 @@ function loadThreads(): Thread[] {
     }
 
     if (threads.length > 0) {
-      _threadsCache = threads;
       return threads;
     }
   }
@@ -38,22 +31,17 @@ function loadThreads(): Thread[] {
   // Fallback: legacy mock data
   try {
     const { THREADS } = require("@/data/threads");
-    _threadsCache = THREADS;
     return THREADS;
   } catch {
-    _threadsCache = [];
     return [];
   }
 }
 
 function loadMembers(): Record<string, Member> {
-  if (_membersCache) return _membersCache;
-
   if (fs.existsSync(MEMBERS_PATH)) {
     const raw = fs.readFileSync(MEMBERS_PATH, "utf-8");
     const data = JSON.parse(raw);
     if (data && typeof data === "object" && !Array.isArray(data)) {
-      _membersCache = data;
       return data;
     }
   }
@@ -61,10 +49,8 @@ function loadMembers(): Record<string, Member> {
   // Fallback: legacy mock data
   try {
     const { MEMBERS } = require("@/data/members");
-    _membersCache = MEMBERS;
     return MEMBERS;
   } catch {
-    _membersCache = {};
     return {};
   }
 }

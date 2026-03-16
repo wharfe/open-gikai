@@ -4,6 +4,8 @@ import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllMemberIds().map((memberId) => ({ memberId }));
 }

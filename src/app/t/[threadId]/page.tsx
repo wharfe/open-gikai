@@ -4,6 +4,8 @@ import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllThreadIds().map((threadId) => ({ threadId }));
 }
