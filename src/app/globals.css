@@ -15,6 +15,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Prevent text overflow on mobile */
+main {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 body {
