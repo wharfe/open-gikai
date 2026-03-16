@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       {/* Center column: feed */}
-      <main className="w-full max-w-[600px] overflow-x-hidden border-r border-x-border">
+      <main className="w-full min-w-0 max-w-[600px] border-r border-x-border">
         <MobileHeader />
         <FeedView threads={threads} members={members} />
       </main>

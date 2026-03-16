@@ -32,6 +32,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pipeline.grouper import group_meeting, extract_meeting_outcome
 from pipeline.summarizer import summarize_thread
 from pipeline.members import extract_member, load_members, save_members
+from pipeline.linker import link_threads
 
 log = logging.getLogger("summarize")
 
@@ -273,6 +274,29 @@ def run_pipeline(
             progress["failed"].append(meeting_id)
             save_progress(progress, progress_path)
             continue
+
+    # Cross-thread linking
+    if all_threads:
+        # Also load existing threads from other dates for cross-date linking
+        existing_threads = []
+        if os.path.exists(output_dir):
+            for fname in os.listdir(output_dir):
+                if fname.endswith(".json") and not fname.endswith(".progress.json") and fname != f"{date_str}.json":
+                    with open(os.path.join(output_dir, fname), "r", encoding="utf-8") as f:
+                        existing_threads.extend(json.load(f))
+
+        link_threads(all_threads + existing_threads)
+
+        # Only keep links for new threads (existing threads' links are not persisted back)
+        # Filter out any links pointing to non-existent threads
+        all_ids = {t["id"] for t in all_threads + existing_threads}
+        for t in all_threads:
+            if "relatedThreads" in t:
+                t["relatedThreads"] = [
+                    l for l in t["relatedThreads"] if l["threadId"] in all_ids
+                ]
+                if not t["relatedThreads"]:
+                    del t["relatedThreads"]
 
     # Write output
     if all_threads:

@@ -36,6 +36,14 @@ export type ThreadOutcome = {
   status: "resolved" | "pending" | "ongoing";
 };
 
+export type ThreadLink = {
+  threadId: string;
+  relationship: "同一法案" | "関連議論" | "続き";
+  topic: string;
+  committee: string;
+  date: string;
+};
+
 export type Thread = {
   id: string;
   date: string;
@@ -47,6 +55,7 @@ export type Thread = {
   summary: string;
   speeches: Speech[];
   outcome?: ThreadOutcome;
+  relatedThreads?: ThreadLink[];
 };
 
 // UI config types

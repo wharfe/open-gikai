@@ -149,6 +149,44 @@ export function ThreadDetailView({
           </div>
         )}
 
+      {/* Related threads */}
+      {thread.relatedThreads && thread.relatedThreads.length > 0 && (
+        <div className="border-t border-x-border px-4 py-4">
+          <div className="text-[13px] font-bold uppercase tracking-wider text-x-secondary">
+            関連スレッド
+          </div>
+          <div className="mt-2 space-y-2">
+            {thread.relatedThreads.map((link) => (
+              <Link
+                key={link.threadId}
+                href={`/t/${link.threadId}`}
+                className="block rounded-xl border border-x-border px-3 py-2.5 transition-colors hover:bg-x-hover"
+              >
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                      link.relationship === "同一法案"
+                        ? "bg-blue-500/10 text-blue-400"
+                        : link.relationship === "続き"
+                          ? "bg-green-500/10 text-green-400"
+                          : "bg-x-hover text-x-secondary"
+                    }`}
+                  >
+                    {link.relationship}
+                  </span>
+                  <span className="text-[13px] text-x-secondary">
+                    {link.committee} · {link.date}
+                  </span>
+                </div>
+                <div className="mt-1 text-[14px] leading-tight text-x-text">
+                  {link.topic}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Source attribution */}
       <div className="border-t border-x-border px-4 py-4 text-[13px] text-x-secondary">
         📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）
