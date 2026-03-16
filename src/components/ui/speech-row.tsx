@@ -32,125 +32,119 @@ export function SpeechRow({
   const badge = RANK_BADGE[member.rank];
 
   return (
-    <div
-      className="relative flex gap-2.5"
-      style={{ paddingLeft: depth * 20, marginBottom: 2 }}
+    <article
+      className="relative flex gap-3 border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
+      style={{ paddingLeft: 16 + depth * 12 }}
     >
       {/* Thread line */}
       {!isLast && (
         <div
-          className="pointer-events-none absolute w-0.5"
+          className="pointer-events-none absolute w-0.5 bg-x-border"
           style={{
-            left: depth * 20 + 17,
-            top: 42,
-            bottom: -2,
-            background:
-              "linear-gradient(to bottom, #1e293b88, transparent)",
+            left: 16 + depth * 12 + 18,
+            top: 56,
+            bottom: 0,
           }}
         />
       )}
 
+      {/* Avatar */}
       <Avatar
         member={member}
-        size={34}
+        size={40}
         linkToProfile
         followed={followed}
       />
 
-      <div className="flex-1 pb-5">
-        {/* Header */}
-        <div className="mb-1.5">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="flex items-center gap-1 text-sm font-bold text-slate-100">
-              {member.name}
-              {badge && (
-                <span className="text-[13px]" title={badge.label}>
-                  {badge.icon}
-                </span>
-              )}
-              {followed && (
-                <span className="text-[9px]" style={{ color: ms.color }}>
-                  フォロー中
-                </span>
-              )}
+      {/* Content */}
+      <div className="min-w-0 flex-1">
+        {/* Name row — X style */}
+        <div className="mb-0.5 flex flex-wrap items-center gap-1">
+          <span className="text-[15px] font-bold text-x-text">
+            {member.name}
+          </span>
+          {badge && (
+            <span className="text-[14px]" title={badge.label}>
+              {badge.icon}
             </span>
-            {member.party && PARTY_STYLE[member.party] && (
-              <span
-                className="rounded px-1.5 py-0.5 text-[10px] font-bold"
-                style={{
-                  color: ms.color,
-                  background: ms.bg,
-                  border: `1px solid ${ms.border}`,
-                }}
-              >
-                {PARTY_STYLE[member.party].short}
-              </span>
-            )}
-            <span className="text-[11px] text-slate-700">{member.role}</span>
-          </div>
-          <div className="mt-1">
+          )}
+          {member.party && PARTY_STYLE[member.party] && (
             <span
-              className="rounded px-1.5 py-0.5 text-[11px] font-semibold"
+              className="rounded px-1.5 py-px text-[12px] font-bold"
               style={{
-                color: tension.color,
-                background: tension.bg,
+                color: ms.color,
+                background: ms.bg,
               }}
             >
-              {tension.icon} {speech.tension}
+              {PARTY_STYLE[member.party].short}
             </span>
-          </div>
+          )}
+          <span className="text-[15px] text-x-secondary">·</span>
+          <span className="text-[15px] text-x-secondary">{member.role}</span>
+          {followed && (
+            <span className="text-[11px] text-x-accent">フォロー中</span>
+          )}
         </div>
 
-        {/* Summary */}
-        <div className="mb-2.5 text-[15px] leading-[1.75] text-slate-200">
+        {/* Tension badge */}
+        <div className="mb-2">
+          <span
+            className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
+            style={{
+              color: tension.color,
+              background: tension.bg,
+            }}
+          >
+            {tension.icon} {speech.tension}
+          </span>
+        </div>
+
+        {/* Summary text — like tweet body */}
+        <div className="mb-2 text-[15px] leading-[20px] text-x-text">
           {speech.summaries[level]}
         </div>
 
-        {/* Quote (adult level only) */}
+        {/* Quote — X style quoted tweet feel */}
         {speech.quote && level === "adult" && (
           <div
-            className="mb-2.5 pl-2.5 text-[13px] italic text-slate-500"
-            style={{ borderLeft: `3px solid ${ms.color}50` }}
+            className="mb-2 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-[20px] text-x-secondary"
           >
             「{speech.quote}」
           </div>
         )}
 
-        {/* Keywords */}
-        <div className="mb-2 flex flex-wrap gap-1.5">
+        {/* Keywords — like hashtags */}
+        <div className="mb-2">
           {speech.keywords.map((k) => (
-            <span
-              key={k}
-              className="rounded-xl border border-sky-300/20 bg-sky-300/[0.07] px-2 py-0.5 text-[11px] text-sky-300"
-            >
+            <span key={k} className="mr-2 text-[15px] text-x-accent">
               #{k}
             </span>
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-2.5">
+        {/* Action row — X style */}
+        <div className="flex items-center gap-4 text-x-secondary">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="cursor-pointer border-none bg-transparent p-0 text-[11px] text-slate-700"
+            className="flex cursor-pointer items-center gap-1 rounded-full border-none bg-transparent p-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
           >
-            {expanded ? "▲ 閉じる" : "▼ 議事録の原文"}
+            {expanded ? "▲ 閉じる" : "📄 原文"}
           </button>
           <ShareButton
             text={buildSpeechShare(speech, member, thread, level)}
           />
         </div>
 
-        {/* Raw transcript */}
+        {/* Raw transcript — expandable */}
         {expanded && (
-          <div className="mt-2 rounded-lg border border-slate-800 bg-slate-900/70 p-3 text-[13px] leading-[1.8] text-slate-600">
-            <div className="mb-1.5 text-[10px] text-slate-800">
+          <div className="mt-2 rounded-2xl border border-x-border bg-x-bg p-4 text-[15px] leading-[20px] text-x-secondary">
+            <div className="mb-2 text-[13px] text-x-secondary/60">
               📄 原文（国会会議録 NDL APIより）
             </div>
             {speech.raw}
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }

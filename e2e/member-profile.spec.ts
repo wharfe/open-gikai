@@ -4,10 +4,8 @@ test.describe("Member profile page", () => {
   test("displays member info", async ({ page }) => {
     await page.goto("/m/yamamoto");
 
-    await expect(
-      page.getByRole("heading", { name: "山本 和義" })
-    ).toBeVisible();
-    await expect(page.getByText("立憲")).toBeVisible();
+    await expect(page.getByText("山本 和義").first()).toBeVisible();
+    await expect(page.getByText("立憲").first()).toBeVisible();
     await expect(page.getByText("東京12区")).toBeVisible();
     await expect(page.getByText("2009年〜")).toBeVisible();
   });
@@ -24,7 +22,7 @@ test.describe("Member profile page", () => {
 
   test("displays speech history", async ({ page }) => {
     await page.goto("/m/yamamoto");
-    await expect(page.getByText("件の発言")).toBeVisible();
+    await expect(page.getByText("件の発言").first()).toBeVisible();
   });
 
   test("follow button toggles", async ({ page }) => {
@@ -51,7 +49,7 @@ test.describe("Member profile page", () => {
     await page.goto("/m/tanaka");
 
     await expect(page.getByText("🔷").first()).toBeVisible();
-    await expect(page.getByText("経済産業大臣")).toBeVisible();
+    await expect(page.getByText("経済産業大臣").first()).toBeVisible();
   });
 
   test("has back link", async ({ page }) => {

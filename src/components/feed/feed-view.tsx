@@ -31,32 +31,35 @@ export function FeedView({ threads, members }: FeedViewProps) {
 
   return (
     <>
-      <div className="mb-4 flex border-b border-slate-800">
+      {/* Sticky tab bar — X style */}
+      <div className="sticky top-0 z-40 flex border-b border-x-border bg-x-bg/65 backdrop-blur-xl md:top-0">
         {tabs.map(([id, label]) => (
           <button
             key={id}
             onClick={() => setFeedFilter(id as "all" | "following")}
-            className="-mb-px cursor-pointer border-none bg-transparent px-4 py-2.5 text-[13px]"
+            className="relative flex-1 cursor-pointer border-none bg-transparent py-4 text-center text-[15px] transition-colors hover:bg-x-hover"
             style={{
               fontWeight: feedFilter === id ? 700 : 400,
-              color: feedFilter === id ? "#f8fafc" : "#475569",
-              borderBottom:
-                feedFilter === id
-                  ? "2px solid #3b82f6"
-                  : "2px solid transparent",
+              color: feedFilter === id ? "#e7e9ea" : "#71767b",
             }}
           >
             {label}
+            {/* Active underline — X uses 4px rounded blue bar */}
+            {feedFilter === id && (
+              <div className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2 rounded-full bg-x-accent" />
+            )}
           </button>
         ))}
       </div>
 
       {feedFilter === "following" && follows.size === 0 ? (
-        <div className="py-12 text-center text-sm text-slate-700">
-          <div className="mb-3 text-[32px]">⭐</div>
-          議員をフォローすると
-          <br />
-          その議員が出演するスレッドだけ表示されます
+        <div className="px-8 py-20 text-center">
+          <div className="mb-4 text-4xl">⭐</div>
+          <p className="text-[15px] text-x-secondary">
+            議員をフォローすると
+            <br />
+            その議員が出演するスレッドだけ表示されます
+          </p>
         </div>
       ) : (
         visibleThreads.map((t) => (

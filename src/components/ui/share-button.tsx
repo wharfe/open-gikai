@@ -35,12 +35,7 @@ export function ShareButton({ text }: ShareButtonProps) {
           e.stopPropagation();
           setOpen((o) => !o);
         }}
-        className="cursor-pointer rounded-md border px-2 py-0.5 text-[11px] transition-all"
-        style={{
-          background: open ? "rgba(125,211,252,0.1)" : "none",
-          borderColor: open ? "rgba(125,211,252,0.3)" : "#1e293b",
-          color: open ? "#7dd3fc" : "#475569",
-        }}
+        className="flex cursor-pointer items-center gap-1 rounded-full border-none bg-transparent p-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
       >
         ↗ シェア
       </button>
@@ -52,21 +47,20 @@ export function ShareButton({ text }: ShareButtonProps) {
           />
           <div
             onClick={(e) => e.stopPropagation()}
-            className="absolute bottom-[calc(100%+6px)] right-0 z-[200] min-w-[160px] overflow-hidden rounded-[10px] border border-slate-800 bg-gikai-card shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
+            className="absolute bottom-[calc(100%+4px)] right-0 z-[200] min-w-[200px] overflow-hidden rounded-xl bg-x-bg shadow-[0_0_15px_rgba(255,255,255,0.2),0_1px_3px_rgba(0,0,0,0.3)]"
           >
             <button
               onClick={handleX}
-              className="flex w-full cursor-pointer items-center gap-2 border-none bg-transparent px-3.5 py-2.5 text-left text-[13px] text-slate-200 hover:bg-slate-800"
+              className="flex w-full cursor-pointer items-center gap-3 border-none bg-transparent px-4 py-3 text-left text-[15px] font-bold text-x-text hover:bg-x-hover"
             >
-              <span className="text-[15px]">𝕏</span> Xに投稿する
+              <span className="text-lg">𝕏</span> Xに投稿する
             </button>
-            <div className="h-px bg-slate-800" />
             <button
               onClick={handleCopy}
-              className="flex w-full cursor-pointer items-center gap-2 border-none bg-transparent px-3.5 py-2.5 text-left text-[13px] hover:bg-slate-800"
-              style={{ color: copied ? "#34d399" : "#e2e8f0" }}
+              className="flex w-full cursor-pointer items-center gap-3 border-none bg-transparent px-4 py-3 text-left text-[15px] font-bold hover:bg-x-hover"
+              style={{ color: copied ? "#00ba7c" : "#e7e9ea" }}
             >
-              <span>{copied ? "✓" : "⎘"}</span>{" "}
+              <span>{copied ? "✓" : "⎘"}</span>
               {copied ? "コピーしました" : "テキストをコピー"}
             </button>
           </div>

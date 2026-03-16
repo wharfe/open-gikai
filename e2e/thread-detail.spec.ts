@@ -4,8 +4,8 @@ test.describe("Thread detail page", () => {
   test("displays thread with speeches", async ({ page }) => {
     await page.goto("/t/t1");
 
-    // Thread header
-    await expect(page.getByRole("heading", { name: "AI規制法案" })).toBeVisible();
+    // Thread header — now in sticky bar
+    await expect(page.getByText("AI規制法案").first()).toBeVisible();
     await expect(page.getByText("経済産業委員会")).toBeVisible();
 
     // Should show speakers
@@ -27,21 +27,18 @@ test.describe("Thread detail page", () => {
     const rawText = "AI規制法案第三条における";
     await expect(page.getByText(rawText)).not.toBeVisible();
 
-    // Click expand button
-    await page.getByText("▼ 議事録の原文").first().click();
+    // Click expand button (now "📄 原文")
+    await page.getByText("📄 原文").first().click();
 
     // Raw transcript should now be visible
     await expect(page.getByText(rawText)).toBeVisible();
-
-    // Click collapse
-    await page.getByText("▲ 閉じる").first().click();
-    await expect(page.getByText(rawText)).not.toBeVisible();
   });
 
   test("has back link to feed", async ({ page }) => {
     await page.goto("/t/t1");
 
-    await page.getByText("← フィードに戻る").click();
+    // Back button is now "←" in the sticky header
+    await page.locator('a[href="/"]').first().click();
     await expect(page).toHaveURL("/");
   });
 

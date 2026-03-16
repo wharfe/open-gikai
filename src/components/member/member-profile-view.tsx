@@ -35,146 +35,152 @@ export function MemberProfileView({
   const badge = RANK_BADGE[member.rank];
 
   return (
-    <div>
-      <Link
-        href="/"
-        className="mb-4 flex items-center gap-1.5 text-[13px] text-slate-600 no-underline hover:text-slate-400"
-      >
-        ← 戻る
-      </Link>
-
-      {/* Profile card */}
-      <div className="mb-4 overflow-hidden rounded-2xl border border-slate-800 bg-gikai-card">
-        <div
-          className="h-14 border-b"
-          style={{
-            background: `linear-gradient(135deg, ${ms.color}18, ${ms.color}05)`,
-            borderColor: ms.border,
-          }}
-        />
-        <div className="-mt-5 px-5 pb-5">
-          <div className="flex items-end justify-between">
-            <Avatar member={member} size={52} followed={isFollowed} />
-            <button
-              onClick={() => toggleFollow(member.id)}
-              className="cursor-pointer rounded-[20px] px-4 py-1.5 text-[13px] font-bold transition-all"
-              style={{
-                background: isFollowed
-                  ? "none"
-                  : `linear-gradient(135deg, ${ms.color}30, ${ms.color}10)`,
-                border: `1px solid ${isFollowed ? "#334155" : ms.border}`,
-                color: isFollowed ? "#475569" : ms.color,
-              }}
-            >
-              {isFollowed ? "フォロー中 ✓" : "+ フォロー"}
-            </button>
+    <>
+      {/* Sticky header — X profile style */}
+      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-6 border-b border-x-border bg-x-bg/65 px-4 backdrop-blur-xl">
+        <Link
+          href="/"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-xl transition-colors hover:bg-x-hover"
+        >
+          ← 戻る
+        </Link>
+        <div>
+          <div className="text-[17px] font-bold leading-tight">
+            {member.name}
           </div>
-
-          <div className="mt-3">
-            <div className="mb-1 flex flex-wrap items-center gap-2">
-              <h2 className="text-xl font-bold text-slate-50">
-                {member.name}
-              </h2>
-              {badge && (
-                <span className="text-lg" title={badge.label}>
-                  {badge.icon}
-                </span>
-              )}
-              {member.party && PARTY_STYLE[member.party] && (
-                <span
-                  className="rounded px-1.5 py-0.5 text-[10px] font-bold"
-                  style={{
-                    color: ms.color,
-                    background: ms.bg,
-                    border: `1px solid ${ms.border}`,
-                  }}
-                >
-                  {PARTY_STYLE[member.party].short}
-                </span>
-              )}
-            </div>
-            {badge && (
-              <div className="mb-1.5 text-[11px]" style={{ color: badge.color }}>
-                {badge.icon} {badge.label}
-              </div>
-            )}
-            <div className="mb-2.5 text-xs text-slate-600">
-              {member.role}
-              {member.district ? ` · ${member.district}` : ""}
-              {member.since ? ` · ${member.since}年〜` : ""}
-            </div>
-            <p className="mb-3.5 text-[13px] leading-relaxed text-slate-400">
-              {member.bio}
-            </p>
-
-            {/* Stance tags */}
-            <div className="mb-4 flex flex-wrap gap-1.5">
-              {member.stance.map((st) => (
-                <span
-                  key={st}
-                  className="rounded-[20px] px-2.5 py-0.5 text-[11px]"
-                  style={{
-                    color: ms.color,
-                    background: ms.bg,
-                    border: `1px solid ${ms.border}`,
-                  }}
-                >
-                  {st}
-                </span>
-              ))}
-            </div>
-
-            {/* Tension stats */}
-            <div className="flex flex-wrap gap-2">
-              {Object.entries(tensionCount).map(([t, n]) => {
-                const ts = TENSION_STYLE[t];
-                return (
-                  <div
-                    key={t}
-                    className="flex items-center gap-1.5 rounded-lg px-2.5 py-1"
-                    style={{
-                      background: ts.bg,
-                      border: `1px solid ${ts.color}30`,
-                    }}
-                  >
-                    <span>{ts.icon}</span>
-                    <span className="text-xs" style={{ color: ts.color }}>
-                      {t} {n}回
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="text-[13px] text-x-secondary">
+            {speeches.length}件の発言
           </div>
         </div>
       </div>
 
-      {/* Speech list */}
-      <div className="mb-2.5 text-xs text-slate-600">
-        {speeches.length}件の発言
+      {/* Banner — X style gradient banner */}
+      <div
+        className="h-[133px] sm:h-[200px]"
+        style={{
+          background: `linear-gradient(135deg, ${ms.color}30, ${ms.color}10, #000)`,
+        }}
+      />
+
+      {/* Avatar + Follow — X style overlapping avatar */}
+      <div className="flex items-start justify-between px-4">
+        <div className="-mt-[10%] rounded-full border-4 border-x-bg">
+          <Avatar member={member} size={80} followed={isFollowed} />
+        </div>
+        <div className="mt-3">
+          <button
+            onClick={() => toggleFollow(member.id)}
+            className="cursor-pointer rounded-full px-5 py-2 text-[15px] font-bold transition-colors"
+            style={{
+              background: isFollowed ? "transparent" : "#e7e9ea",
+              border: isFollowed ? "1px solid #536471" : "none",
+              color: isFollowed ? "#e7e9ea" : "#0f1419",
+            }}
+          >
+            {isFollowed ? "フォロー中 ✓" : "+ フォロー"}
+          </button>
+        </div>
       </div>
+
+      {/* Profile info */}
+      <div className="border-b border-x-border px-4 pb-4">
+        {/* Name */}
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <h2 className="text-[20px] font-extrabold text-x-text">
+            {member.name}
+          </h2>
+          {badge && (
+            <span className="text-[18px]" title={badge.label}>
+              {badge.icon}
+            </span>
+          )}
+          {member.party && PARTY_STYLE[member.party] && (
+            <span
+              className="rounded px-2 py-0.5 text-[13px] font-bold"
+              style={{
+                color: ms.color,
+                background: ms.bg,
+              }}
+            >
+              {PARTY_STYLE[member.party].short}
+            </span>
+          )}
+        </div>
+
+        {/* Handle-like info */}
+        <div className="mt-0.5 text-[15px] text-x-secondary">
+          {member.role}
+          {member.district ? ` · ${member.district}` : ""}
+          {member.since ? ` · ${member.since}年〜` : ""}
+        </div>
+        {badge && (
+          <div className="mt-1 text-[13px]" style={{ color: badge.color }}>
+            {badge.icon} {badge.label}
+          </div>
+        )}
+
+        {/* Bio */}
+        <p className="mt-3 text-[15px] leading-[20px] text-x-text">
+          {member.bio}
+        </p>
+
+        {/* Stance tags — like X profile labels */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          {member.stance.map((st) => (
+            <span
+              key={st}
+              className="rounded-full px-3 py-1 text-[13px]"
+              style={{
+                color: ms.color,
+                background: ms.bg,
+              }}
+            >
+              {st}
+            </span>
+          ))}
+        </div>
+
+        {/* Tension stats */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          {Object.entries(tensionCount).map(([t, n]) => {
+            const ts = TENSION_STYLE[t];
+            return (
+              <span key={t} className="text-[14px]">
+                <span className="font-bold text-x-text">{n}</span>{" "}
+                <span className="text-x-secondary">
+                  {ts.icon} {t}
+                </span>
+              </span>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Speech list — X style tweets */}
       {speeches.map((sp, i) => {
         const ts = TENSION_STYLE[sp.tension];
         return (
           <Link
             key={i}
             href={`/t/${sp.thread.id}`}
-            className="mb-2 block cursor-pointer rounded-xl border border-slate-800 bg-gikai-card p-3.5 no-underline transition-colors hover:border-slate-700"
+            className="block border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
           >
-            <div className="mb-1.5 flex flex-wrap justify-between gap-1.5">
-              <div className="flex items-center gap-2">
-                <span
-                  className="rounded px-1.5 py-0.5 text-[11px] font-semibold"
-                  style={{ color: ts.color, background: ts.bg }}
-                >
-                  {ts.icon} {sp.tension}
-                </span>
-                <span className="text-[11px] text-slate-700">
-                  {sp.thread.committee} · {sp.thread.date}
-                </span>
-              </div>
+            <div className="mb-1 flex flex-wrap items-center gap-1 text-[15px]">
+              <span className="font-bold text-x-text">
+                {sp.thread.committee}
+              </span>
+              <span className="text-x-secondary">·</span>
+              <span className="text-x-secondary">{sp.thread.date}</span>
+            </div>
+            <div className="mb-2 flex items-center gap-2">
               <span
-                className="rounded px-2 py-0.5 text-[11px]"
+                className="rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
+                style={{ color: ts.color, background: ts.bg }}
+              >
+                {ts.icon} {sp.tension}
+              </span>
+              <span
+                className="rounded-full px-2.5 py-0.5 text-[13px]"
                 style={{
                   color: sp.thread.topicColor,
                   background: `${sp.thread.topicColor}15`,
@@ -183,12 +189,12 @@ export function MemberProfileView({
                 {sp.thread.topic}
               </span>
             </div>
-            <p className="text-sm leading-relaxed text-slate-300">
+            <p className="text-[15px] leading-[20px] text-x-text">
               {sp.summaries.adult}
             </p>
           </Link>
         );
       })}
-    </div>
+    </>
   );
 }

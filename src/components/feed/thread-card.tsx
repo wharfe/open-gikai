@@ -17,58 +17,64 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))];
 
   return (
-    <div className="mb-2.5 rounded-[14px] border border-slate-800 bg-gikai-card p-4 transition-all hover:translate-y-[-1px] hover:border-slate-700">
-      <Link href={`/t/${thread.id}`} className="block cursor-pointer no-underline">
-        <div className="mb-2.5 flex flex-wrap justify-between gap-1.5">
-          <div>
-            <div className="mb-1.5 text-[11px] text-slate-600">
-              {thread.house} {thread.committee} · {thread.date}
-            </div>
-            <span
-              className="rounded px-2.5 py-0.5 text-[11px] font-bold"
-              style={{
-                color: thread.topicColor,
-                background: `${thread.topicColor}18`,
-                border: `1px solid ${thread.topicColor}40`,
-              }}
-            >
-              {thread.topic}
-            </span>
-          </div>
-          <span className="text-[11px] text-slate-700">
-            {thread.speeches.length}発言 →
+    <article className="border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover">
+      <Link href={`/t/${thread.id}`} className="block">
+        {/* Committee & date — like X username row */}
+        <div className="mb-1 flex items-center gap-1 text-[15px]">
+          <span className="font-bold text-x-text">
+            {thread.committee}
+          </span>
+          <span className="text-x-secondary">·</span>
+          <span className="text-x-secondary">{thread.date}</span>
+          <span className="text-x-secondary">·</span>
+          <span className="text-x-secondary">{thread.house}</span>
+        </div>
+
+        {/* Topic tag */}
+        <div className="mb-2">
+          <span
+            className="inline-block rounded-full px-3 py-1 text-[13px] font-bold"
+            style={{
+              color: thread.topicColor,
+              background: `${thread.topicColor}18`,
+            }}
+          >
+            {thread.topic}
           </span>
         </div>
-        <p className="mb-3 text-sm leading-relaxed text-slate-300">
+
+        {/* Summary — like tweet text */}
+        <p className="mb-3 text-[15px] leading-[20px] text-x-text">
           {thread.summary}
         </p>
       </Link>
+
+      {/* Footer — like X action row */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="flex">
-            {actors.map((id, i) => (
-              <div
-                key={id}
-                style={{
-                  marginLeft: i > 0 ? -8 : 0,
-                  zIndex: actors.length - i,
-                }}
-              >
+        <div className="flex items-center gap-3">
+          <div className="flex -space-x-1.5">
+            {actors.map((id) => (
+              <div key={id} className="relative">
                 <Avatar
                   member={members[id]}
-                  size={26}
+                  size={24}
                   linkToProfile
                   followed={follows.has(id)}
                 />
               </div>
             ))}
           </div>
-          <span className="text-[11px] text-slate-600">
+          <span className="text-[13px] text-x-secondary">
             {actors.map((id) => members[id].name.split(" ")[0]).join("、")}
           </span>
         </div>
-        <ShareButton text={buildThreadShare(thread, members)} />
+        <div className="flex items-center gap-4">
+          <span className="text-[13px] text-x-secondary">
+            💬 {thread.speeches.length}
+          </span>
+          <ShareButton text={buildThreadShare(thread, members)} />
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

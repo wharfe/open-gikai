@@ -26,44 +26,53 @@ export function ThreadDetailView({
   });
 
   return (
-    <div>
-      <Link
-        href="/"
-        className="mb-4 flex items-center gap-1.5 text-[13px] text-slate-600 no-underline hover:text-slate-400"
-      >
-        ← フィードに戻る
-      </Link>
-
-      <div className="mb-4">
-        <div className="mb-1.5 text-[11px] text-slate-600">
-          {thread.house} {thread.committee} · {thread.date}
-        </div>
-        <div className="flex flex-wrap items-start justify-between gap-2">
-          <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <h2 className="text-lg font-bold text-slate-50">
-                {thread.topic}
-              </h2>
-              <span
-                className="rounded px-2.5 py-0.5 text-[11px]"
-                style={{
-                  color: thread.topicColor,
-                  background: `${thread.topicColor}18`,
-                  border: `1px solid ${thread.topicColor}40`,
-                }}
-              >
-                {thread.topicTag}
-              </span>
-            </div>
-            <p className="mt-1.5 text-[13px] text-slate-500">
-              {thread.summary}
-            </p>
+    <>
+      {/* Sticky header — X style with back arrow */}
+      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-6 border-b border-x-border bg-x-bg/65 px-4 backdrop-blur-xl">
+        <Link
+          href="/"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-xl transition-colors hover:bg-x-hover"
+        >
+          ←
+        </Link>
+        <div>
+          <div className="text-[17px] font-bold leading-tight">
+            {thread.topic}
           </div>
-          <ShareButton text={buildThreadShare(thread, members)} />
+          <div className="text-[13px] text-x-secondary">
+            {thread.speeches.length}件の発言
+          </div>
         </div>
       </div>
 
-      <div className="rounded-[14px] border border-slate-800 bg-gikai-card-inner p-3.5 sm:p-4">
+      {/* Thread header info */}
+      <div className="border-b border-x-border px-4 py-3">
+        <div className="mb-2 flex items-center gap-2 text-[15px] text-x-secondary">
+          <span>{thread.house}</span>
+          <span>·</span>
+          <span>{thread.committee}</span>
+          <span>·</span>
+          <span>{thread.date}</span>
+        </div>
+        <div className="mb-2 flex items-center justify-between">
+          <span
+            className="rounded-full px-3 py-1 text-[13px] font-bold"
+            style={{
+              color: thread.topicColor,
+              background: `${thread.topicColor}18`,
+            }}
+          >
+            {thread.topicTag}
+          </span>
+          <ShareButton text={buildThreadShare(thread, members)} />
+        </div>
+        <p className="text-[15px] leading-[20px] text-x-secondary">
+          {thread.summary}
+        </p>
+      </div>
+
+      {/* Speeches */}
+      <div>
         {thread.speeches.map((speech, i) => (
           <SpeechRow
             key={i}
@@ -76,10 +85,12 @@ export function ThreadDetailView({
             followed={follows.has(speech.memberId)}
           />
         ))}
-        <div className="border-t border-slate-800 pt-2.5 text-[11px] text-slate-700">
+
+        {/* Source attribution */}
+        <div className="border-t border-x-border px-4 py-3 text-[13px] text-x-secondary">
           📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getMember, getMembers, getThreads, getAllMemberIds } from "@/lib/data";
 import { MemberProfileView } from "@/components/member/member-profile-view";
+import { MobileHeader } from "@/components/layout/header";
 
 export function generateStaticParams() {
   return getAllMemberIds().map((memberId) => ({ memberId }));
@@ -19,6 +20,9 @@ export default async function MemberPage({ params }: Props) {
   const members = getMembers();
 
   return (
-    <MemberProfileView member={member} threads={threads} members={members} />
+    <main className="w-full max-w-[600px] border-r border-x-border">
+      <MobileHeader />
+      <MemberProfileView member={member} threads={threads} members={members} />
+    </main>
   );
 }

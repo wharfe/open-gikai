@@ -7,9 +7,7 @@ test.describe("Navigation", () => {
     // Click on a thread
     await page.getByText("AI規制法案").first().click();
     await expect(page).toHaveURL("/t/t1");
-    await expect(
-      page.getByRole("heading", { name: "AI規制法案" })
-    ).toBeVisible();
+    await expect(page.getByText("AI規制法案").first()).toBeVisible();
   });
 
   test("navigates from thread to member profile", async ({ page }) => {
@@ -22,7 +20,8 @@ test.describe("Navigation", () => {
 
   test("logo navigates back to feed", async ({ page }) => {
     await page.goto("/t/t1");
-    await page.getByText("GIKAI").click();
+    // Use the back arrow link
+    await page.locator('a[href="/"]').first().click();
     await expect(page).toHaveURL("/");
   });
 

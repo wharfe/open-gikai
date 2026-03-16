@@ -14,7 +14,7 @@ type AvatarProps = {
 
 export function Avatar({
   member,
-  size = 36,
+  size = 40,
   linkToProfile = false,
   followed = false,
 }: AvatarProps) {
@@ -25,20 +25,17 @@ export function Avatar({
   const avatarEl = (
     <div className="relative shrink-0" style={{ width: size, height: size }}>
       <div
-        className="flex items-center justify-center rounded-full font-bold transition-transform hover:scale-[1.08]"
+        className="flex items-center justify-center rounded-full font-bold transition-opacity hover:opacity-90"
         style={{
           width: size,
           height: size,
           background: ms.bg,
-          border: `2px solid ${followed ? ms.color : ms.border}`,
-          fontSize: size * 0.28,
+          border: followed
+            ? `2px solid ${ms.color}`
+            : `1px solid ${ms.border}`,
+          fontSize: size * 0.3,
           color: ms.color,
           cursor: linkToProfile ? "pointer" : "default",
-          boxShadow: followed
-            ? `0 0 8px ${ms.color}40`
-            : badge
-              ? `0 0 10px ${badge.color}30`
-              : "none",
         }}
       >
         {initials}
@@ -47,8 +44,8 @@ export function Avatar({
         <div
           className="absolute -bottom-0.5 -right-0.5 leading-none"
           style={{
-            fontSize: size * 0.38,
-            filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.5))",
+            fontSize: size * 0.35,
+            filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.8))",
           }}
         >
           {badge.icon}

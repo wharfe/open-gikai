@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AppProvider } from "@/components/providers/app-provider";
-import { Header } from "@/components/layout/header";
+import { Sidebar } from "@/components/layout/sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,11 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="min-h-screen bg-gikai-bg text-slate-50 antialiased">
+      <body className="bg-x-bg text-x-text antialiased">
         <AppProvider>
-          <Header />
-          <div className="mx-auto max-w-[920px] px-4 py-5">
-            {children}
+          <div className="mx-auto flex max-w-[1280px]">
+            {/* Left navigation */}
+            <Sidebar />
+            {/* Main content */}
+            <div className="flex min-h-screen flex-1 justify-center">
+              {children}
+            </div>
           </div>
         </AppProvider>
       </body>
