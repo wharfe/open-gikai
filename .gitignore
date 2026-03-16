@@ -41,6 +41,9 @@ next-env.d.ts
 
 # Test
 coverage/
+playwright-report/
+test-results/
+blob-report/
 
 # Handoff / prototype (not part of source)
 HANDOFF.md

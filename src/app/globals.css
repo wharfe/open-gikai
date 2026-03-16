@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-gikai-bg: #070d18;
+  --color-gikai-card: #0c1524;
+  --color-gikai-card-inner: #0a1628;
+}
+
+body {
+  background: var(--color-gikai-bg);
+  color: #f8fafc;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
