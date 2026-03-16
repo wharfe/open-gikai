@@ -45,6 +45,9 @@ playwright-report/
 test-results/
 blob-report/
 
+# Raw NDL API data
+data/raw/
+
 # Handoff / prototype (not part of source)
 HANDOFF.md
 kokkai-v5.jsx
