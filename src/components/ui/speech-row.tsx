@@ -42,8 +42,8 @@ export function SpeechRow({
           className="pointer-events-none absolute w-0.5 bg-x-border"
           style={{
             left: 16 + depth * 12 + 18,
-            top: 60,
-            bottom: 0,
+            top: 58,
+            bottom: -16,
           }}
         />
       )}
