@@ -33,7 +33,7 @@ export function SpeechRow({
 
   return (
     <article
-      className="relative flex gap-3 border-b border-x-border px-4 pb-3 pt-3 transition-colors hover:bg-x-hover"
+      className="relative flex gap-3 border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover"
       style={{ paddingLeft: 16 + depth * 12 }}
     >
       {/* Thread line */}
@@ -42,7 +42,7 @@ export function SpeechRow({
           className="pointer-events-none absolute w-0.5 bg-x-border"
           style={{
             left: 16 + depth * 12 + 18,
-            top: 56,
+            top: 60,
             bottom: 0,
           }}
         />
@@ -86,7 +86,7 @@ export function SpeechRow({
         </div>
 
         {/* Tension badge */}
-        <div className="mt-1.5">
+        <div className="mt-2">
           <span
             className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
             style={{ color: tension.color, background: tension.bg }}
@@ -96,28 +96,28 @@ export function SpeechRow({
         </div>
 
         {/* Summary text */}
-        <div className="mt-2 text-[15px] leading-relaxed text-x-text">
+        <div className="mt-3 text-[15px] leading-[24px] text-x-text">
           {speech.summaries[level]}
         </div>
 
         {/* Quote */}
         {speech.quote && level === "adult" && (
-          <div className="mt-3 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-relaxed text-x-secondary">
+          <div className="mt-4 rounded-2xl border border-x-border px-4 py-3 text-[15px] leading-[24px] text-x-secondary">
             「{speech.quote}」
           </div>
         )}
 
         {/* Keywords */}
-        <div className="mt-2">
+        <div className="mt-3">
           {speech.keywords.map((k) => (
-            <span key={k} className="mr-2 text-[15px] text-x-accent">
+            <span key={k} className="mr-3 text-[15px] text-x-accent">
               #{k}
             </span>
           ))}
         </div>
 
         {/* Action row */}
-        <div className="-ml-2 mt-2 flex items-center justify-between text-x-secondary">
+        <div className="-ml-2 mt-3 flex items-center justify-between text-x-secondary">
           <button
             onClick={() => setExpanded(!expanded)}
             className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-2 py-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
@@ -135,8 +135,8 @@ export function SpeechRow({
 
         {/* Raw transcript */}
         {expanded && (
-          <div className="mt-3 rounded-2xl border border-x-border bg-x-bg p-4 text-[15px] leading-relaxed text-x-secondary">
-            <div className="mb-2 text-[13px] text-x-secondary/60">
+          <div className="mt-4 rounded-2xl border border-x-border bg-x-bg p-4 text-[15px] leading-[24px] text-x-secondary">
+            <div className="mb-3 text-[13px] text-x-secondary/60">
               📄 原文（国会会議録 NDL APIより）
             </div>
             {speech.raw}

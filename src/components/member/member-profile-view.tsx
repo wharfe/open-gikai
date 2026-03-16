@@ -85,9 +85,9 @@ export function MemberProfileView({
       </div>
 
       {/* Profile info */}
-      <div className="border-b border-x-border px-4 pb-4">
+      <div className="border-b border-x-border px-4 pb-5 pt-3">
         {/* Name */}
-        <div className="mt-1 flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <h2 className="text-[20px] font-extrabold text-x-text">
             {member.name}
           </h2>
@@ -107,7 +107,7 @@ export function MemberProfileView({
         </div>
 
         {/* Role info */}
-        <div className="mt-1 text-[15px] text-x-secondary">
+        <div className="mt-1.5 text-[15px] text-x-secondary">
           {member.role}
           {member.district ? ` · ${member.district}` : ""}
           {member.since ? ` · ${member.since}年〜` : ""}
@@ -119,12 +119,12 @@ export function MemberProfileView({
         )}
 
         {/* Bio */}
-        <p className="mt-3 text-[15px] leading-relaxed text-x-text">
+        <p className="mt-4 text-[15px] leading-[24px] text-x-text">
           {member.bio}
         </p>
 
         {/* Stance tags */}
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {member.stance.map((st) => (
             <span
               key={st}
@@ -137,7 +137,7 @@ export function MemberProfileView({
         </div>
 
         {/* Tension stats */}
-        <div className="mt-3 flex flex-wrap gap-4">
+        <div className="mt-4 flex flex-wrap gap-4">
           {Object.entries(tensionCount).map(([t, n]) => {
             const ts = TENSION_STYLE[t];
             return (
@@ -165,16 +165,17 @@ export function MemberProfileView({
           <Link
             key={i}
             href={`/t/${sp.thread.id}`}
-            className="block border-b border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
+            className="block border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover"
           >
-            <div className="flex flex-wrap items-center gap-1 text-[15px]">
+            <div className="flex flex-wrap items-center gap-1.5 text-[15px]">
               <span className="font-bold text-x-text">
                 {sp.thread.committee}
               </span>
               <span className="text-x-secondary">·</span>
               <span className="text-x-secondary">{sp.thread.date}</span>
             </div>
-            <div className="mt-1.5 flex items-center gap-2">
+
+            <div className="mt-2 flex items-center gap-2">
               <span
                 className="rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
                 style={{ color: ts.color, background: ts.bg }}
@@ -191,7 +192,8 @@ export function MemberProfileView({
                 {sp.thread.topic}
               </span>
             </div>
-            <p className="mt-2 text-[15px] leading-relaxed text-x-text">
+
+            <p className="mt-3 text-[15px] leading-[24px] text-x-text">
               {sp.summaries.adult}
             </p>
           </Link>

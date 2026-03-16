@@ -46,7 +46,7 @@ export function ThreadDetailView({
       </div>
 
       {/* Thread header info */}
-      <div className="border-b border-x-border px-4 py-3">
+      <div className="border-b border-x-border px-4 py-4">
         <div className="flex items-center gap-2 text-[15px] text-x-secondary">
           <span>{thread.house}</span>
           <span>·</span>
@@ -54,7 +54,8 @@ export function ThreadDetailView({
           <span>·</span>
           <span>{thread.date}</span>
         </div>
-        <div className="mt-2 flex items-center justify-between">
+
+        <div className="mt-3 flex items-center justify-between">
           <span
             className="rounded-full px-3 py-1 text-[13px] font-bold"
             style={{
@@ -66,7 +67,8 @@ export function ThreadDetailView({
           </span>
           <ShareButton text={buildThreadShare(thread, members)} />
         </div>
-        <p className="mt-2 text-[15px] leading-relaxed text-x-secondary">
+
+        <p className="mt-3 text-[15px] leading-[24px] text-x-secondary">
           {thread.summary}
         </p>
       </div>
@@ -86,7 +88,7 @@ export function ThreadDetailView({
       ))}
 
       {/* Source attribution */}
-      <div className="border-t border-x-border px-4 py-3 text-[13px] text-x-secondary">
+      <div className="border-t border-x-border px-4 py-4 text-[13px] text-x-secondary">
         📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）
       </div>
     </>
