@@ -24,7 +24,7 @@ export default async function ThreadPage({ params }: Props) {
 
   return (
     <>
-      <main className="w-full min-w-0 max-w-[600px] border-r border-x-border">
+      <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
         <MobileHeader />
         <ThreadDetailView thread={thread} members={members} />
       </main>
