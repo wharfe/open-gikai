@@ -24,7 +24,7 @@ export default async function MemberPage({ params }: Props) {
 
   return (
     <>
-      <main className="w-full max-w-[600px] overflow-hidden border-r border-x-border">
+      <main className="w-full max-w-[600px] overflow-x-hidden border-r border-x-border">
         <MobileHeader />
         <MemberProfileView member={member} threads={threads} members={members} />
       </main>
