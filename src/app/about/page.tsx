@@ -1,6 +1,22 @@
 import { MobileHeader } from "@/components/layout/header";
+import { getProcessingStatus } from "@/lib/data";
+
+type CommitteeStatus = {
+  name: string;
+  house: string;
+  status: string;
+  threads: number;
+  error?: string;
+};
+
+type DateStatus = {
+  updatedAt: string;
+  phase: string;
+  committees: CommitteeStatus[];
+};
 
 export default function AboutPage() {
+  const status = getProcessingStatus() as Record<string, DateStatus> | null;
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
@@ -176,6 +192,69 @@ export default function AboutPage() {
               </p>
             </div>
           </section>
+
+          {/* Processing Status */}
+          {status && Object.keys(status).length > 0 && (
+            <section>
+              <h2 className="text-[20px] font-bold text-x-text">
+                処理ステータス
+              </h2>
+              <p className="mt-2 text-[13px] text-x-secondary">
+                各委員会の議事録処理状況をリアルタイムで公開しています。
+              </p>
+              <div className="mt-3 space-y-4">
+                {Object.entries(status)
+                  .sort(([a], [b]) => b.localeCompare(a))
+                  .map(([dateKey, dayStatus]) => (
+                    <div key={dateKey}>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[15px] font-bold text-x-text">
+                          {dateKey}
+                        </span>
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                            dayStatus.phase === "completed"
+                              ? "bg-green-500/10 text-green-500"
+                              : dayStatus.phase === "failed"
+                                ? "bg-red-500/10 text-red-500"
+                                : "bg-yellow-500/10 text-yellow-500"
+                          }`}
+                        >
+                          {dayStatus.phase}
+                        </span>
+                      </div>
+                      <div className="mt-2 space-y-1">
+                        {dayStatus.committees.map((c) => (
+                          <div
+                            key={`${c.house}${c.name}`}
+                            className="flex items-center gap-2 text-[13px]"
+                          >
+                            <span>
+                              {c.status === "completed"
+                                ? "✅"
+                                : c.status === "pending"
+                                  ? "⏳"
+                                  : "❌"}
+                            </span>
+                            <span className="text-x-secondary">
+                              {c.house}{c.name}
+                            </span>
+                            {c.threads > 0 && (
+                              <span className="text-x-secondary">
+                                — {c.threads}スレッド
+                              </span>
+                            )}
+                            {c.error && (
+                              <span className="text-red-400">({c.error})</span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </section>
+          )}
 
           {/* License */}
           <section className="pb-10">

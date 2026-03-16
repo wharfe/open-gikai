@@ -78,3 +78,12 @@ export function getAllThreadIds(): string[] {
 export function getAllMemberIds(): string[] {
   return Object.keys(loadMembers());
 }
+
+export function getProcessingStatus(): Record<string, unknown> | null {
+  const statusPath = path.join(process.cwd(), "data", "status.json");
+  if (fs.existsSync(statusPath)) {
+    const raw = fs.readFileSync(statusPath, "utf-8");
+    return JSON.parse(raw);
+  }
+  return null;
+}

@@ -111,10 +111,21 @@ def group_meeting(
 
     response = client.messages.create(
         model=model,
-        max_tokens=4096,
+        max_tokens=8192,
         system=GROUPING_SYSTEM,
         messages=[{"role": "user", "content": prompt}],
     )
+
+    # Check if response was truncated
+    if response.stop_reason == "max_tokens":
+        log.warning("Grouping response truncated for %s, retrying with higher limit",
+                     meeting.get("meetingId", "?"))
+        response = client.messages.create(
+            model=model,
+            max_tokens=16384,
+            system=GROUPING_SYSTEM,
+            messages=[{"role": "user", "content": prompt}],
+        )
 
     result = _parse_json_response(response.content[0].text)
     threads = result.get("threads", [])

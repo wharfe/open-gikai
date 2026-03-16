@@ -48,7 +48,9 @@ blob-report/
 # Pipeline data (generated)
 data/raw/
 data/threads/
+data/batch/
 data/members.json
+data/status.json
 
 # Handoff / prototype (not part of source)
 HANDOFF.md

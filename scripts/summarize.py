@@ -294,7 +294,12 @@ def run_pipeline(
 
     # Progress tracking
     progress_path = os.path.join(output_dir, f"{date_str}.progress.json")
-    progress = load_progress(progress_path) if resume else {"completed": [], "failed": []}
+    if resume:
+        progress = load_progress(progress_path)
+        # Clear failed list so they get retried
+        progress["failed"] = []
+    else:
+        progress = {"completed": [], "failed": []}
 
     # Load existing members (accumulative)
     members = load_members(members_path)
@@ -304,6 +309,14 @@ def run_pipeline(
 
     all_threads = []
     thread_counter = 0
+
+    # On resume, load previously generated threads
+    output_path = os.path.join(output_dir, f"{date_str}.json")
+    if resume and os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            all_threads = json.load(f)
+        thread_counter = len(all_threads)
+        log.info("Resumed with %d existing threads", len(all_threads))
 
     for meeting in meetings:
         meeting_id = meeting.get("meetingId", "unknown")
