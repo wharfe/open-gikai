@@ -7,14 +7,14 @@ import { LevelBar } from "@/components/ui/level-bar";
 const NAV_ITEMS = [
   { href: "/", label: "ホーム", icon: "🏠" },
   { href: "/#trends", label: "トレンド", icon: "🔍" },
-  { href: "/about", label: "このサイトについて", icon: "ℹ️" },
+  { href: "/about", label: "について", icon: "ℹ️" },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 hidden h-screen w-[68px] flex-col justify-between border-r border-x-border px-2 py-3 md:flex xl:w-[275px] xl:px-3">
+    <header className="sticky top-0 hidden h-screen w-[68px] flex-col justify-between overflow-hidden border-r border-x-border px-2 py-3 md:flex xl:w-[260px] xl:px-2">
       <div className="flex flex-col items-center xl:items-start">
         {/* Logo */}
         <Link
@@ -37,11 +37,11 @@ export function Sidebar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex h-[50px] items-center justify-center rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:gap-5 xl:px-5"
+                className="flex h-[50px] items-center justify-center rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:gap-4 xl:px-4"
               >
-                <span className="text-[26px]">{item.icon}</span>
+                <span className="text-[24px]">{item.icon}</span>
                 <span
-                  className="hidden text-xl xl:inline"
+                  className="hidden truncate text-lg xl:inline"
                   style={{ fontWeight: isActive ? 700 : 400 }}
                 >
                   {item.label}
@@ -52,8 +52,8 @@ export function Sidebar() {
         </nav>
 
         {/* Level selector */}
-        <div className="mt-8 flex flex-col items-center gap-2 xl:items-start xl:px-2">
-          <span className="hidden text-[13px] text-x-secondary xl:inline">
+        <div className="mt-6 w-full overflow-hidden px-1 xl:px-2">
+          <span className="mb-2 hidden text-[13px] text-x-secondary xl:block">
             読みやすさ
           </span>
           <LevelBar />
@@ -61,14 +61,14 @@ export function Sidebar() {
       </div>
 
       {/* Bottom branding */}
-      <div className="flex justify-center xl:justify-start xl:px-3">
-        <div className="flex h-[64px] w-full items-center justify-center gap-3 rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:px-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-sm font-bold text-emerald-400">
+      <div className="w-full px-1 xl:px-2">
+        <div className="flex h-[60px] w-full items-center justify-center gap-3 rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:px-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-sm font-bold text-emerald-400">
             G
           </div>
           <div className="hidden min-w-0 xl:block">
-            <div className="truncate text-[15px] font-bold text-x-text">OpenGIKAI</div>
-            <div className="truncate text-[13px] text-x-secondary">国会をひらく</div>
+            <div className="truncate text-[14px] font-bold text-x-text">OpenGIKAI</div>
+            <div className="truncate text-[12px] text-x-secondary">国会をひらく</div>
           </div>
         </div>
       </div>

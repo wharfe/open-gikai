@@ -9,9 +9,9 @@ type RightSidebarProps = {
 
 export function RightSidebar({ threads, members }: RightSidebarProps) {
   return (
-    <aside className="sticky top-0 hidden h-screen w-[350px] shrink-0 overflow-y-auto lg:block">
+    <aside className="sticky top-0 hidden h-screen w-[350px] shrink-0 overflow-y-auto pl-7 pr-5 lg:block">
       {/* Search bar — X style */}
-      <div className="sticky top-0 z-10 bg-x-bg pb-3 pt-1.5">
+      <div className="sticky top-0 z-10 bg-x-bg pb-3 pt-2">
         <div className="flex h-[42px] items-center gap-3 rounded-full bg-x-search px-4">
           <span className="text-x-secondary">🔍</span>
           <span className="text-[15px] text-x-secondary">
@@ -20,7 +20,7 @@ export function RightSidebar({ threads, members }: RightSidebarProps) {
         </div>
       </div>
 
-      <div className="space-y-4 pb-20 pr-6">
+      <div className="space-y-4 pb-20">
         <TrendPanel threads={threads} />
         <FollowPanel members={members} />
 

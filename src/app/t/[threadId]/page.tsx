@@ -22,7 +22,7 @@ export default async function ThreadPage({ params }: Props) {
 
   return (
     <>
-      <main className="w-full max-w-[600px] border-r border-x-border">
+      <main className="w-full max-w-[600px] overflow-hidden border-r border-x-border">
         <MobileHeader />
         <ThreadDetailView thread={thread} members={members} />
       </main>
