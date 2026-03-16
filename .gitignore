@@ -45,8 +45,10 @@ playwright-report/
 test-results/
 blob-report/
 
-# Raw NDL API data
+# Pipeline data (generated)
 data/raw/
+data/threads/
+data/members.json
 
 # Handoff / prototype (not part of source)
 HANDOFF.md

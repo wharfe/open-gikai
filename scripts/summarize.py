@@ -1,0 +1,336 @@
+#!/usr/bin/env python3
+"""AI summarization pipeline for GIKAI.
+
+Reads raw NDL speech data, uses Claude API to group speeches by topic
+and generate structured summaries, then outputs frontend-ready JSON.
+
+Usage:
+    python scripts/summarize.py --date 2025-03-14
+    python scripts/summarize.py --date 2025-03-14 --meeting 環境委員会 --verbose
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import logging
+import os
+import sys
+import time
+from datetime import date, timedelta
+from typing import Dict, List, Optional
+
+import anthropic
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Add scripts/ to path for pipeline imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from pipeline.grouper import group_meeting
+from pipeline.summarizer import summarize_thread
+from pipeline.members import extract_member, load_members, save_members
+
+log = logging.getLogger("summarize")
+
+DEFAULT_MODEL = "claude-sonnet-4-20250514"
+
+
+# ---------------------------------------------------------------------------
+# Progress tracking
+# ---------------------------------------------------------------------------
+
+def load_progress(progress_path: str) -> dict:
+    """Load progress file for resumability."""
+    if os.path.exists(progress_path):
+        with open(progress_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"completed": [], "failed": []}
+
+
+def save_progress(progress: dict, progress_path: str) -> None:
+    """Save progress file."""
+    os.makedirs(os.path.dirname(progress_path), exist_ok=True)
+    with open(progress_path, "w", encoding="utf-8") as f:
+        json.dump(progress, f, ensure_ascii=False, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# Thread assembly
+# ---------------------------------------------------------------------------
+
+def make_thread_id(date_str: str, meeting_id: str, index: int) -> str:
+    """Generate a stable thread ID."""
+    h = hashlib.sha256(meeting_id.encode("utf-8")).hexdigest()[:6]
+    return f"t_{date_str.replace('-', '')}_{h}_{index:02d}"
+
+
+def build_speech_lookup(speeches: List[dict]) -> Dict[int, dict]:
+    """Build a lookup from speechOrder to speech record."""
+    return {s.get("speechOrder", 0): s for s in speeches}
+
+
+def assemble_thread(
+    meeting: dict,
+    thread_info: dict,
+    ai_speeches: List[dict],
+    raw_lookup: Dict[int, dict],
+    members: Dict[str, dict],
+    thread_id: str,
+) -> Optional[dict]:
+    """Assemble a complete Thread dict from grouping + summarization results."""
+    assembled_speeches = []
+
+    for ai_speech in ai_speeches:
+        order = ai_speech.get("speechOrder")
+        raw = raw_lookup.get(order)
+        if not raw:
+            log.warning("speechOrder %s not found in raw data", order)
+            continue
+
+        # Extract/register member
+        member = extract_member(raw)
+        member_id = member["id"]
+        if member_id not in members:
+            members[member_id] = member
+
+        assembled_speeches.append({
+            "memberId": member_id,
+            "tension": ai_speech.get("tension", "確認"),
+            "keywords": ai_speech.get("keywords", [])[:3],
+            "quote": ai_speech.get("quote", ""),
+            "raw": raw.get("speech", ""),
+            "sourceUrl": raw.get("speechURL", ""),
+            "summaries": ai_speech.get("summaries", {
+                "easy": "",
+                "teen": "",
+                "adult": "",
+            }),
+        })
+
+    if not assembled_speeches:
+        return None
+
+    date_str = meeting.get("date", "")
+    display_date = date_str.replace("-", ".")
+
+    return {
+        "id": thread_id,
+        "date": display_date,
+        "committee": meeting.get("meeting", ""),
+        "house": meeting.get("house", ""),
+        "topic": thread_info.get("topic", ""),
+        "topicTag": thread_info.get("topicTag", ""),
+        "topicColor": thread_info.get("topicColor", "#6b7280"),
+        "summary": thread_info.get("summary", ""),
+        "speeches": assembled_speeches,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Main pipeline
+# ---------------------------------------------------------------------------
+
+def process_meeting(
+    client: anthropic.Anthropic,
+    meeting: dict,
+    members: Dict[str, dict],
+    model: str,
+    date_str: str,
+    thread_counter: int,
+) -> tuple:
+    """Process a single meeting through grouping + summarization.
+
+    Returns (threads_list, updated_thread_counter).
+    """
+    meeting_id = meeting.get("meetingId", "unknown")
+    speeches = meeting.get("speeches", [])
+    raw_lookup = build_speech_lookup(speeches)
+
+    # Phase B: Topic grouping
+    thread_infos = group_meeting(client, meeting, model=model)
+    time.sleep(1)
+
+    threads = []
+    for thread_info in thread_infos:
+        thread_counter += 1
+        thread_id = make_thread_id(date_str, meeting_id, thread_counter)
+
+        # Gather raw speeches for this thread
+        orders = thread_info.get("speechOrders", [])
+        thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+
+        if not thread_speeches:
+            log.warning("No speeches found for thread '%s'", thread_info.get("topic"))
+            continue
+
+        # Phase C: Summarize speeches in this thread
+        try:
+            ai_speeches = summarize_thread(
+                client, meeting, thread_info, thread_speeches, model=model,
+            )
+            time.sleep(1)
+        except Exception as e:
+            log.error("Failed to summarize thread '%s': %s", thread_info.get("topic"), e)
+            continue
+
+        thread = assemble_thread(
+            meeting, thread_info, ai_speeches, raw_lookup, members, thread_id,
+        )
+        if thread:
+            threads.append(thread)
+
+    return threads, thread_counter
+
+
+def run_pipeline(
+    date_str: str,
+    meeting_filter: Optional[str] = None,
+    model: str = DEFAULT_MODEL,
+    raw_dir: str = "data/raw",
+    output_dir: str = "data/threads",
+    members_path: str = "data/members.json",
+    resume: bool = False,
+    dry_run: bool = False,
+    verbose: bool = False,
+) -> None:
+    """Run the full summarization pipeline for a given date."""
+    # Load raw data
+    raw_path = os.path.join(raw_dir, f"{date_str}.json")
+    if not os.path.exists(raw_path):
+        log.error("Raw data not found: %s", raw_path)
+        log.error("Run fetch_ndl.py first: python scripts/fetch_ndl.py --date-from %s", date_str)
+        sys.exit(1)
+
+    with open(raw_path, "r", encoding="utf-8") as f:
+        raw_data = json.load(f)
+
+    meetings = raw_data.get("meetings", [])
+    if meeting_filter:
+        meetings = [m for m in meetings if meeting_filter in m.get("meeting", "")]
+
+    log.info("Processing %d meetings from %s", len(meetings), raw_path)
+
+    if dry_run:
+        for m in meetings:
+            speech_count = len(m.get("speeches", []))
+            log.info("  %s — %d speeches", m.get("meetingId", "?"), speech_count)
+        log.info("Dry run complete. No API calls made.")
+        return
+
+    # Progress tracking
+    progress_path = os.path.join(output_dir, f"{date_str}.progress.json")
+    progress = load_progress(progress_path) if resume else {"completed": [], "failed": []}
+
+    # Load existing members (accumulative)
+    members = load_members(members_path)
+
+    # Initialize API client
+    client = anthropic.Anthropic()
+
+    all_threads = []
+    thread_counter = 0
+
+    for meeting in meetings:
+        meeting_id = meeting.get("meetingId", "unknown")
+
+        if meeting_id in progress["completed"]:
+            log.info("Skipping already completed: %s", meeting_id)
+            continue
+
+        log.info("Processing: %s", meeting_id)
+
+        try:
+            threads, thread_counter = process_meeting(
+                client, meeting, members, model, date_str, thread_counter,
+            )
+            all_threads.extend(threads)
+            progress["completed"].append(meeting_id)
+            save_progress(progress, progress_path)
+            log.info(
+                "Completed %s — %d threads", meeting_id, len(threads),
+            )
+        except Exception as e:
+            log.error("Failed to process %s: %s", meeting_id, e)
+            progress["failed"].append(meeting_id)
+            save_progress(progress, progress_path)
+            continue
+
+    # Write output
+    if all_threads:
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = os.path.join(output_dir, f"{date_str}.json")
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(all_threads, f, ensure_ascii=False, indent=2)
+        log.info("Wrote %d threads → %s", len(all_threads), output_path)
+
+    # Save members
+    save_members(members, members_path)
+    log.info("Saved %d members → %s", len(members), members_path)
+
+    # Clean up progress file on full completion
+    if not progress["failed"]:
+        if os.path.exists(progress_path):
+            os.remove(progress_path)
+        log.info("Pipeline complete!")
+    else:
+        log.warning(
+            "Pipeline finished with %d failed meetings. "
+            "Re-run with --resume to retry.",
+            len(progress["failed"]),
+        )
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+
+    parser = argparse.ArgumentParser(
+        description="Summarize NDL speech records using Claude API"
+    )
+    parser.add_argument(
+        "--date", default=yesterday,
+        help="Date to process YYYY-MM-DD (default: yesterday)",
+    )
+    parser.add_argument("--meeting", default=None, help="Filter by committee name")
+    parser.add_argument(
+        "--model", default=DEFAULT_MODEL, help="Claude model to use",
+    )
+    parser.add_argument("--raw-dir", default="data/raw", help="Raw data directory")
+    parser.add_argument("--output-dir", default="data/threads", help="Output directory")
+    parser.add_argument("--members-path", default="data/members.json", help="Members file")
+    parser.add_argument("--resume", action="store_true", help="Resume from last checkpoint")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would be processed")
+    parser.add_argument("--verbose", "-v", action="store_true", help="Verbose logging")
+
+    return parser.parse_args(argv)
+
+
+def main(argv: Optional[List[str]] = None) -> None:
+    args = parse_args(argv)
+
+    logging.basicConfig(
+        level=logging.DEBUG if args.verbose else logging.INFO,
+        format="%(levelname)s %(message)s",
+    )
+
+    run_pipeline(
+        date_str=args.date,
+        meeting_filter=args.meeting,
+        model=args.model,
+        raw_dir=args.raw_dir,
+        output_dir=args.output_dir,
+        members_path=args.members_path,
+        resume=args.resume,
+        dry_run=args.dry_run,
+        verbose=args.verbose,
+    )
+
+
+if __name__ == "__main__":
+    main()
