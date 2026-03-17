@@ -1343,5 +1343,27 @@
         "url": "https://www.google.com/search?q=%E7%80%AC%E6%88%B8%E9%9A%86%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
       }
     ]
+  },
+  "m_5474c5dc": {
+    "id": "m_5474c5dc",
+    "name": "記者",
+    "party": "記者",
+    "role": "記者",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_6258d2aa": {
+    "id": "m_6258d2aa",
+    "name": "内閣総理大臣",
+    "party": null,
+    "role": "内閣総理大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "pm"
   }
 }

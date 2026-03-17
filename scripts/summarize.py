@@ -307,7 +307,7 @@ def run_pipeline(
     if meeting_filter:
         meetings = [m for m in meetings if meeting_filter in m.get("meeting", "")]
 
-    log.info("Processing %d meetings from %s", len(meetings), raw_path)
+    log.info("Processing %d meetings for %s", len(meetings), date_str)
 
     if dry_run:
         for m in meetings:

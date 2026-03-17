@@ -1,6 +1,6 @@
 {
   "2026-02-24": {
-    "updatedAt": "2026-03-17T07:11:59.464733Z",
+    "updatedAt": "2026-03-17T11:02:57.763322Z",
     "phase": "completed",
     "committees": [
       {
@@ -17,7 +17,7 @@
     }
   },
   "2026-02-25": {
-    "updatedAt": "2026-03-17T07:11:59.464862Z",
+    "updatedAt": "2026-03-17T11:02:57.763415Z",
     "phase": "completed",
     "committees": [
       {
@@ -40,7 +40,7 @@
     }
   },
   "2026-02-26": {
-    "updatedAt": "2026-03-17T07:11:59.464962Z",
+    "updatedAt": "2026-03-17T11:02:57.763540Z",
     "phase": "completed",
     "committees": [
       {
@@ -62,8 +62,25 @@
       "committees": 2
     }
   },
+  "2026-02-28": {
+    "updatedAt": "2026-03-17T11:02:57.763586Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "イラン情勢についての会見",
+        "house": "内閣",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 1,
+      "speeches": 2,
+      "committees": 1
+    }
+  },
   "2026-03-03": {
-    "updatedAt": "2026-03-17T07:11:59.465557Z",
+    "updatedAt": "2026-03-17T11:02:57.764570Z",
     "phase": "completed",
     "committees": [
       {
@@ -92,7 +109,7 @@
     }
   },
   "2026-03-04": {
-    "updatedAt": "2026-03-17T07:11:59.467149Z",
+    "updatedAt": "2026-03-17T11:02:57.766905Z",
     "phase": "completed",
     "committees": [
       {
@@ -121,7 +138,7 @@
     }
   },
   "2026-03-10": {
-    "updatedAt": "2026-03-17T07:11:59.467375Z",
+    "updatedAt": "2026-03-17T11:02:57.767084Z",
     "phase": "completed",
     "committees": [
       {
@@ -137,12 +154,29 @@
       "committees": 1
     }
   },
+  "2026-03-11": {
+    "updatedAt": "2026-03-17T11:02:57.767149Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "イラン情勢に関する政府の対応についての会見",
+        "house": "内閣",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 1,
+      "speeches": 2,
+      "committees": 1
+    }
+  },
   "_summary": {
-    "totalDates": 6,
-    "totalThreads": 40,
-    "totalSpeeches": 227,
-    "totalCommittees": 12,
-    "totalMembers": 57,
-    "generatedAt": "2026-03-17T10:26:12.264Z"
+    "totalDates": 8,
+    "totalThreads": 42,
+    "totalSpeeches": 231,
+    "totalCommittees": 10,
+    "totalMembers": 59,
+    "generatedAt": "2026-03-17T11:02:57.767366Z"
   }
 }

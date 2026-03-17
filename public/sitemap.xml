@@ -61,6 +61,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://open-gikai.net/t/t_20260228_729b9b_01</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://open-gikai.net/t/t_20260303_1b69d5_01</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -227,6 +232,11 @@
   </url>
   <url>
     <loc>https://open-gikai.net/t/t_20260310_b0cd80_01</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260311_2e73fd_01</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -512,6 +522,16 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/setotakakazu</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/m/m_5474c5dc</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/m/m_6258d2aa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
