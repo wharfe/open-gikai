@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import type { Thread } from "@/types";
 import { TREND_PERIODS } from "@/lib/config";
@@ -10,8 +10,16 @@ type TrendPanelProps = {
   threads: Thread[];
 };
 
+function findDefaultPeriod(threads: Thread[]): (typeof TREND_PERIODS)[number] {
+  for (const p of TREND_PERIODS) {
+    if (extractTrends(threads, p).length > 0) return p;
+  }
+  return TREND_PERIODS[0];
+}
+
 export function TrendPanel({ threads }: TrendPanelProps) {
-  const [period, setPeriod] = useState<(typeof TREND_PERIODS)[number]>(TREND_PERIODS[0]);
+  const defaultPeriod = useMemo(() => findDefaultPeriod(threads), [threads]);
+  const [period, setPeriod] = useState<(typeof TREND_PERIODS)[number]>(defaultPeriod);
   const trends = extractTrends(threads, period);
 
   return (

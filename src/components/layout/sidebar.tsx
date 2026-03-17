@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LevelBar } from "@/components/ui/level-bar";
+import { useAppContext } from "@/components/providers/app-provider";
 
 const NAV_ITEMS = [
   { href: "/", label: "ホーム", icon: "🏠" },
@@ -14,6 +15,7 @@ const NAV_ITEMS = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useAppContext();
 
   return (
     <header className="sticky top-0 hidden h-screen w-[68px] shrink-0 flex-col justify-between border-r border-x-border px-1 py-3 md:flex xl:w-[260px] xl:px-2">
@@ -60,6 +62,17 @@ export function Sidebar() {
           </span>
           <LevelBar />
         </div>
+
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          className="mt-4 flex h-[50px] w-full cursor-pointer items-center justify-center rounded-full border-none bg-transparent transition-colors hover:bg-x-hover xl:justify-start xl:gap-4 xl:px-4"
+        >
+          <span className="text-[24px]">{theme === "dark" ? "☀️" : "🌙"}</span>
+          <span className="hidden text-lg text-x-text xl:inline">
+            {theme === "dark" ? "ライトモード" : "ダークモード"}
+          </span>
+        </button>
       </div>
 
       {/* Bottom branding */}

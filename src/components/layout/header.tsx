@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { LevelBar } from "@/components/ui/level-bar";
+import { useAppContext } from "@/components/providers/app-provider";
 
 export function MobileHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useAppContext();
 
   return (
     <div className="sticky top-0 z-50 md:hidden">
@@ -75,6 +77,13 @@ export function MobileHeader() {
             >
               <span>📦</span> GitHub
             </a>
+            <button
+              onClick={toggleTheme}
+              className="flex w-full cursor-pointer items-center gap-3 rounded-lg border-none bg-transparent px-3 py-2.5 text-[15px] text-x-text transition-colors hover:bg-x-hover"
+            >
+              <span>{theme === "dark" ? "☀️" : "🌙"}</span>
+              {theme === "dark" ? "ライトモード" : "ダークモード"}
+            </button>
           </nav>
         </div>
       )}
