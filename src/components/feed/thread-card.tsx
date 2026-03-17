@@ -73,8 +73,8 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
 
       {/* Footer */}
       <div className="mt-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex -space-x-1.5">
+        <div className="flex min-w-0 flex-1 items-center gap-3">
+          <div className="flex shrink-0 -space-x-1.5">
             {actors.map((id) => (
               <div key={id} className="relative">
                 <Avatar
@@ -86,11 +86,11 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
               </div>
             ))}
           </div>
-          <span className="text-[13px] text-x-secondary">
+          <span className="min-w-0 truncate text-[13px] text-x-secondary">
             {actors.map((id) => members[id].name.split(" ")[0]).join("、")}
           </span>
         </div>
-        <div className="flex shrink-0 items-center gap-4">
+        <div className="flex shrink-0 items-center gap-3 pl-3">
           <span className="text-[13px] text-x-secondary">
             <span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>chat_bubble</span> {thread.speeches.length}
           </span>

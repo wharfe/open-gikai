@@ -54,8 +54,8 @@ body {
   overflow-x: hidden;
   background: var(--color-x-bg);
   color: var(--color-x-text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, "Hiragino Sans", sans-serif;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -71,6 +71,14 @@ a {
 
 button {
   font-family: inherit;
+}
+
+/* Force select dropdown to match theme */
+select {
+  color-scheme: dark;
+}
+html[data-theme="light"] select {
+  color-scheme: light;
 }
 
 /* Material Symbols defaults */
