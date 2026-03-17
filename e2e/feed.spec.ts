@@ -35,6 +35,6 @@ test.describe("Feed page", () => {
   test("shows trend panel on desktop", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 768 });
     await page.goto("/");
-    await expect(page.getByText("トレンド")).toBeVisible();
+    await expect(page.getByText("トレンド").first()).toBeVisible();
   });
 });
