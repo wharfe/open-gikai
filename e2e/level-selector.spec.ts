@@ -10,7 +10,7 @@ test.describe("Level selector", () => {
   });
 
   test("switching levels does not break the page", async ({ page }) => {
-    await page.goto("/t/t_20250314_e1491c_02");
+    await page.goto("/t/t_20260303_d537a4_07");
 
     // Get initial article count
     const articles = page.locator("article");

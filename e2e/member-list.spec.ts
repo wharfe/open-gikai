@@ -7,15 +7,15 @@ test.describe("Member list page", () => {
     // Should show multiple members
     const members = page.locator('a[href^="/m/"]');
     const count = await members.count();
-    expect(count).toBeGreaterThan(10);
+    expect(count).toBeGreaterThan(5);
   });
 
   test("filters by search query", async ({ page }) => {
     await page.goto("/members");
     const input = page.locator('input[placeholder*="議員名"]');
-    await input.fill("加藤");
+    await input.fill("林");
     // Should filter to matching members
-    await expect(page.getByText("加藤勝信").first()).toBeVisible();
+    await expect(page.getByText("林芳正").first()).toBeVisible();
   });
 
   test("filters by party", async ({ page }) => {

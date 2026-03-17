@@ -10,7 +10,7 @@ test.describe("Search page", () => {
   test("returns results for valid query", async ({ page }) => {
     await page.goto("/search");
     const input = page.locator('input[placeholder*="検索"]');
-    await input.fill("関税");
+    await input.fill("人材確保");
 
     // Should find results
     await expect(page.getByText("件のスレッドが見つかりました")).toBeVisible();
@@ -30,7 +30,7 @@ test.describe("Search page", () => {
   test("clear button works", async ({ page }) => {
     await page.goto("/search");
     const input = page.locator('input[placeholder*="検索"]');
-    await input.fill("関税");
+    await input.fill("人材確保");
     await expect(page.getByText("件のスレッドが見つかりました")).toBeVisible();
 
     await page.getByText("✕").click();

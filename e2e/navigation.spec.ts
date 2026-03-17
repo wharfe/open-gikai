@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const THREAD_URL = "/t/t_20250314_e1491c_02";
+const THREAD_URL = "/t/t_20260303_d537a4_07";
 
 test.describe("Navigation", () => {
   test("navigates from feed to thread detail", async ({ page }) => {

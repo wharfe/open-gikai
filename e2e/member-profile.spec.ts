@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
 
 // Navigate to a known member from the real data
-const MEMBER_URL = "/m/yamashitayuuhei";
+const MEMBER_URL = "/m/nakasoneyasutaka";
 
 test.describe("Member profile page", () => {
   test("displays member info", async ({ page }) => {
     await page.goto(MEMBER_URL);
-    await expect(page.getByText("山下雄平").first()).toBeVisible();
+    await expect(page.getByText("中曽根康隆").first()).toBeVisible();
   });
 
   test("follow button toggles", async ({ page }) => {

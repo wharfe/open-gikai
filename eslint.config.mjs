@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     "kokkai-v5.jsx",
+    // Non-TypeScript scripts
+    "scripts/**",
   ]),
 ]);
 

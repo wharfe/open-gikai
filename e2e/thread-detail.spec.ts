@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
 
 // Use a known thread ID from the real data
-const THREAD_URL = "/t/t_20250314_e1491c_02";
+const THREAD_URL = "/t/t_20260303_d537a4_07";
 
 test.describe("Thread detail page", () => {
   test("displays thread with speeches", async ({ page }) => {
     await page.goto(THREAD_URL);
 
-    await expect(page.getByText("2025.03.14").first()).toBeVisible();
+    await expect(page.getByText("2026.03.03").first()).toBeVisible();
     await expect(page.locator("article").first()).toBeVisible();
   });
 
