@@ -1,14 +1,17 @@
 import Link from "next/link";
 import type { Member, Thread } from "@/types";
+import type { SessionInfo } from "@/lib/data";
 import { TrendPanel } from "@/components/sidebar/trend-panel";
 import { FollowPanel } from "@/components/sidebar/follow-panel";
+import { SessionCard } from "@/components/feed/session-card";
 
 type RightSidebarProps = {
   threads: Thread[];
   members: Record<string, Member>;
+  session?: SessionInfo;
 };
 
-export function RightSidebar({ threads, members }: RightSidebarProps) {
+export function RightSidebar({ threads, members, session }: RightSidebarProps) {
   return (
     <aside className="sticky top-0 hidden h-screen w-[350px] shrink-0 overflow-y-auto pl-7 pr-5 lg:block">
       {/* Search bar — links to search page */}
@@ -25,6 +28,7 @@ export function RightSidebar({ threads, members }: RightSidebarProps) {
       </div>
 
       <div className="space-y-4 pb-20">
+        {session && <SessionCard threads={threads} session={session} />}
         <TrendPanel threads={threads} />
         <FollowPanel members={members} />
 

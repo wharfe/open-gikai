@@ -15,14 +15,17 @@ export default function Home() {
       {/* Center column: feed */}
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
         <MobileHeader />
-        <SessionCard threads={threads} session={session} />
+        {/* Session card — mobile only (desktop shows in right sidebar) */}
+        <div className="border-b border-x-border px-4 py-4 lg:hidden">
+          <SessionCard threads={threads} session={session} />
+        </div>
         <Suspense>
           <FeedView threads={threads} members={members} />
         </Suspense>
       </main>
 
       {/* Right sidebar */}
-      <RightSidebar threads={threads} members={members} />
+      <RightSidebar threads={threads} members={members} session={session} />
     </>
   );
 }

@@ -242,6 +242,30 @@ export default function AboutPage() {
             </section>
           )}
 
+          {/* Support */}
+          <section>
+            <h2 className="text-[20px] font-bold text-x-text">
+              このプロジェクトを支援する
+            </h2>
+            <div className="mt-3 space-y-3 text-[15px] leading-[26px] text-x-secondary">
+              <p>
+                OpenGIKAIは広告なし・無料で運営していますが、
+                AI要約の生成やサーバー維持にコストがかかっています。
+                このプロジェクトの継続にご協力いただける方は、
+                GitHub Sponsorsからご支援をお願いいたします。
+              </p>
+              <a
+                href="https://github.com/sponsors/wharfe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-x-accent px-5 py-2.5 text-[15px] font-bold text-white transition-colors hover:bg-x-accent-hover"
+              >
+                <span className="material-symbols-rounded" style={{ fontSize: 18 }}>favorite</span>
+                GitHub Sponsors で支援する
+              </a>
+            </div>
+          </section>
+
           {/* License */}
           <section className="pb-10">
             <h2 className="text-[20px] font-bold text-x-text">ライセンス</h2>
