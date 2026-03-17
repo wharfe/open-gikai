@@ -1,0 +1,95 @@
+name: Daily Batch
+
+on:
+  schedule:
+    # Run at 6:00 AM JST (21:00 UTC previous day)
+    # NDL transcripts are typically published a few days after proceedings
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date to process (YYYY-MM-DD), defaults to yesterday"
+        required: false
+
+jobs:
+  fetch-and-summarize:
+    name: Fetch & Summarize
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Python dependencies
+        run: pip install requests anthropic python-dotenv
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Determine date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "target=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "target=$(date -u -d 'yesterday' +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch from NDL API
+        run: python scripts/fetch_ndl.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
+
+      - name: Check if speeches exist
+        id: check
+        run: |
+          FILE="data/raw/${{ steps.date.outputs.target }}.json"
+          if [ -f "$FILE" ]; then
+            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
+            echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
+            echo "Found $COUNT speeches for ${{ steps.date.outputs.target }}"
+          else
+            echo "speeches=0" >> "$GITHUB_OUTPUT"
+            echo "No data file found"
+          fi
+
+      - name: Summarize with Claude API
+        if: steps.check.outputs.speeches != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
+
+      - name: Generate sitemap
+        if: steps.check.outputs.speeches != '0'
+        run: python scripts/gen_sitemap.py
+
+      - name: Commit and push data
+        if: steps.check.outputs.speeches != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/threads/ data/members.json data/status.json public/sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "data: update ${{ steps.date.outputs.target }} (${{ steps.check.outputs.speeches }} speeches)"
+            git push
+          fi
+
+      - name: Summary
+        run: |
+          echo "## Daily Batch Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Date**: ${{ steps.date.outputs.target }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Speeches**: ${{ steps.check.outputs.speeches }}" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "data/threads/${{ steps.date.outputs.target }}.json" ]; then
+            THREADS=$(python3 -c "import json; print(len(json.load(open('data/threads/${{ steps.date.outputs.target }}.json'))))")
+            echo "- **Threads generated**: $THREADS" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- **Threads generated**: 0 (no data or weekend)" >> "$GITHUB_STEP_SUMMARY"
+          fi
