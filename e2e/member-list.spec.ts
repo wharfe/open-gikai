@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Member list page", () => {
   test("displays member list", async ({ page }) => {
     await page.goto("/members");
-    await expect(page.getByText("議員一覧")).toBeVisible();
+    await expect(page.getByText("発言者一覧")).toBeVisible();
     // Should show multiple members
     const members = page.locator('a[href^="/m/"]');
     const count = await members.count();

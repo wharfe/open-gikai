@@ -7,8 +7,8 @@ test.describe("Feed page", () => {
     const cards = page.locator('a[href^="/t/"]');
     await expect(cards.first()).toBeVisible();
 
-    // Real data: check for committee names from 2025-03-14
-    await expect(page.getByText("予算委員会").first()).toBeVisible();
+    // Check for a committee name in thread cards
+    await expect(page.getByText("委員会", { exact: false }).first()).toBeVisible();
   });
 
   test("displays header with OpenGIKAI branding", async ({ page }) => {
@@ -19,15 +19,15 @@ test.describe("Feed page", () => {
   test("switches between all and following tabs", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.getByText("📋 すべて")).toBeVisible();
+    await expect(page.getByText("すべて")).toBeVisible();
 
-    await page.getByText(/⭐ フォロー中/).click();
+    await page.getByText(/フォロー中/).click();
 
     await expect(
-      page.getByText("議員をフォローすると")
+      page.getByText("発言者をフォローすると")
     ).toBeVisible();
 
-    await page.getByText("📋 すべて").click();
+    await page.getByText("すべて").click();
     const cards = page.locator('a[href^="/t/"]');
     await expect(cards.first()).toBeVisible();
   });
@@ -35,6 +35,6 @@ test.describe("Feed page", () => {
   test("shows trend panel on desktop", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 768 });
     await page.goto("/");
-    await expect(page.getByText("🔥 トレンド")).toBeVisible();
+    await expect(page.getByText("トレンド")).toBeVisible();
   });
 });

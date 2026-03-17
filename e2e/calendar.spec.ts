@@ -6,15 +6,13 @@ test.describe("Calendar page", () => {
     await expect(page.getByText("カレンダー").first()).toBeVisible();
     // Month/year header
     await expect(page.locator("text=/\\d{4}年\\d{1,2}月/")).toBeVisible();
-    // Navigation arrows
-    await expect(page.locator("button:has-text('←')").first()).toBeVisible();
-    await expect(page.locator("button:has-text('→')").first()).toBeVisible();
+    // Navigation arrows (Material Symbols: chevron_left / chevron_right)
+    await expect(page.getByText("chevron_left").first()).toBeVisible();
+    await expect(page.getByText("chevron_right").first()).toBeVisible();
   });
 
   test("shows thread count on dates with data", async ({ page }) => {
     await page.goto("/calendar");
-    // Navigate to March 2025 which has data
-    // Click prev until we reach it, or just check current view has some "件" labels
     await expect(page.getByText("件").first()).toBeVisible();
   });
 
@@ -25,7 +23,7 @@ test.describe("Calendar page", () => {
     await dayWithData.click();
     // Should show committee details
     await expect(page.getByText("の委員会").first()).toBeVisible();
-    await expect(page.getByText("スレッド →").first()).toBeVisible();
+    await expect(page.getByText("スレッド").first()).toBeVisible();
   });
 
   test("month navigation works", async ({ page }) => {
@@ -33,12 +31,12 @@ test.describe("Calendar page", () => {
     const monthLabel = page.locator("text=/\\d{4}年\\d{1,2}月/");
     const initialMonth = await monthLabel.textContent();
     // Click prev
-    await page.locator("button:has-text('←')").first().click();
+    await page.getByText("chevron_left").first().click();
     const prevMonth = await monthLabel.textContent();
     expect(prevMonth).not.toBe(initialMonth);
     // Click next twice to go forward
-    await page.locator("button:has-text('→')").first().click();
-    await page.locator("button:has-text('→')").first().click();
+    await page.getByText("chevron_right").first().click();
+    await page.getByText("chevron_right").first().click();
     const nextMonth = await monthLabel.textContent();
     expect(nextMonth).not.toBe(initialMonth);
   });
