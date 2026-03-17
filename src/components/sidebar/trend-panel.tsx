@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Thread } from "@/types";
 import { TREND_PERIODS } from "@/lib/config";
 import { extractTrends } from "@/lib/utils";
@@ -11,11 +12,11 @@ type TrendPanelProps = {
 
 export function TrendPanel({ threads }: TrendPanelProps) {
   const [period, setPeriod] = useState<(typeof TREND_PERIODS)[number]>(TREND_PERIODS[0]);
-  const trends = extractTrends(threads);
+  const trends = extractTrends(threads, period);
 
   return (
     <div className="overflow-hidden rounded-2xl bg-x-surface">
-      {/* Header — X "What's happening" style */}
+      {/* Header */}
       <div className="flex items-center justify-between px-4 py-3">
         <h2 className="text-[20px] font-extrabold text-x-text">
           🔥 トレンド
@@ -38,27 +39,37 @@ export function TrendPanel({ threads }: TrendPanelProps) {
         </div>
       </div>
 
-      {/* Trend items — X "Trending" card style */}
-      {trends.map(([keyword, count], i) => (
-        <div
-          key={keyword}
-          className="cursor-pointer px-4 py-3 transition-colors hover:bg-x-hover"
-        >
-          <div className="text-[13px] text-x-secondary">
-            {i + 1} · トレンド
-          </div>
-          <div className="text-[15px] font-bold text-x-text">
-            #{keyword}
-          </div>
-          <div className="text-[13px] text-x-secondary">
-            {count}件の発言
-          </div>
+      {/* Trend items — click to search */}
+      {trends.length === 0 ? (
+        <div className="px-4 py-6 text-center text-[13px] text-x-secondary">
+          この期間のトレンドはありません
         </div>
-      ))}
+      ) : (
+        trends.map(([keyword, count], i) => (
+          <Link
+            key={keyword}
+            href={`/search?q=${encodeURIComponent(keyword)}`}
+            className="block cursor-pointer px-4 py-3 transition-colors hover:bg-x-hover"
+          >
+            <div className="text-[13px] text-x-secondary">
+              {i + 1} · トレンド
+            </div>
+            <div className="text-[15px] font-bold text-x-text">
+              #{keyword}
+            </div>
+            <div className="text-[13px] text-x-secondary">
+              {count}件の発言
+            </div>
+          </Link>
+        ))
+      )}
 
-      <div className="cursor-pointer px-4 py-4 text-[15px] text-x-accent hover:bg-x-hover">
-        さらに表示
-      </div>
+      <Link
+        href="/search"
+        className="block cursor-pointer px-4 py-4 text-[15px] text-x-accent hover:bg-x-hover"
+      >
+        さらに検索
+      </Link>
     </div>
   );
 }

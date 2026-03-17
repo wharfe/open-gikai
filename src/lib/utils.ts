@@ -13,10 +13,37 @@ export function getStyle(member: Member): PartyStyle {
 }
 
 export function extractTrends(
-  threads: Thread[]
+  threads: Thread[],
+  period?: "今週" | "今国会" | "今年",
 ): [string, number][] {
+  // Filter threads by period based on date field (YYYY.MM.DD format)
+  const now = new Date();
+  const filtered = period
+    ? threads.filter((t) => {
+        const parts = t.date.split(".");
+        if (parts.length !== 3) return true;
+        const threadDate = new Date(
+          parseInt(parts[0]),
+          parseInt(parts[1]) - 1,
+          parseInt(parts[2]),
+        );
+        if (period === "今週") {
+          const weekAgo = new Date(now);
+          weekAgo.setDate(weekAgo.getDate() - 7);
+          return threadDate >= weekAgo;
+        }
+        if (period === "今年") {
+          return threadDate.getFullYear() === now.getFullYear();
+        }
+        // "今国会" — current Diet session, approximate as last 6 months
+        const sessionStart = new Date(now);
+        sessionStart.setMonth(sessionStart.getMonth() - 6);
+        return threadDate >= sessionStart;
+      })
+    : threads;
+
   const counts: Record<string, number> = {};
-  threads.forEach((t) =>
+  filtered.forEach((t) =>
     t.speeches.forEach((s) =>
       s.keywords.forEach((k) => {
         counts[k] = (counts[k] || 0) + 1;

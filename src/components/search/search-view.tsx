@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { SearchEntry } from "@/lib/data";
 
@@ -35,7 +36,14 @@ function searchEntries(entries: SearchEntry[], query: string): SearchEntry[] {
 }
 
 export function SearchView({ entries }: SearchViewProps) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
+
+  // Initialize from URL query param
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) setQuery(q);
+  }, [searchParams]);
 
   const results = searchEntries(entries, query);
 

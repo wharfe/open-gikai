@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { MobileHeader } from "@/components/layout/header";
 import { SearchView } from "@/components/search/search-view";
 import { getSearchIndex } from "@/lib/data";
@@ -14,7 +15,9 @@ export default function SearchPage() {
           <div className="text-[17px] font-bold">検索</div>
         </div>
 
-        <SearchView entries={entries} />
+        <Suspense>
+          <SearchView entries={entries} />
+        </Suspense>
       </main>
     </>
   );
