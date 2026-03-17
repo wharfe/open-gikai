@@ -59,6 +59,41 @@ export function getAllMemberIds(): string[] {
   return Object.keys(loadMembers());
 }
 
+export type SearchEntry = {
+  threadId: string;
+  topic: string;
+  committee: string;
+  house: string;
+  date: string;
+  summary: string;
+  topicTag: string;
+  keywords: string[];
+  speakers: string[];
+};
+
+export function getSearchIndex(): SearchEntry[] {
+  const threads = loadThreads();
+  const members = loadMembers();
+
+  return threads.map((t) => {
+    const speakerIds = [...new Set(t.speeches.map((s) => s.memberId))];
+    const speakers = speakerIds.map((id) => members[id]?.name || "").filter(Boolean);
+    const keywords = [...new Set(t.speeches.flatMap((s) => s.keywords))];
+
+    return {
+      threadId: t.id,
+      topic: t.topic,
+      committee: t.committee,
+      house: t.house,
+      date: t.date,
+      summary: t.summary,
+      topicTag: t.topicTag,
+      keywords,
+      speakers,
+    };
+  });
+}
+
 export function getProcessingStatus(): Record<string, unknown> | null {
   const statusPath = path.join(process.cwd(), "data", "status.json");
   if (fs.existsSync(statusPath)) {

@@ -1,60 +1,29 @@
 import { test, expect } from "@playwright/test";
 
+// Navigate to a known member from the real data
+const MEMBER_URL = "/m/yamashitayuuhei";
+
 test.describe("Member profile page", () => {
   test("displays member info", async ({ page }) => {
-    await page.goto("/m/yamamoto");
-
-    await expect(page.getByText("山本 和義").first()).toBeVisible();
-    await expect(page.getByText("立憲").first()).toBeVisible();
-    await expect(page.getByText("東京12区")).toBeVisible();
-    await expect(page.getByText("2009年〜")).toBeVisible();
-  });
-
-  test("shows member bio and stance tags", async ({ page }) => {
-    await page.goto("/m/yamamoto");
-
-    await expect(
-      page.getByText("元ITエンジニア出身")
-    ).toBeVisible();
-    await expect(page.getByText("デジタル規制")).toBeVisible();
-    await expect(page.getByText("プライバシー保護")).toBeVisible();
-  });
-
-  test("displays speech history", async ({ page }) => {
-    await page.goto("/m/yamamoto");
-    await expect(page.getByText("件の発言").first()).toBeVisible();
+    await page.goto(MEMBER_URL);
+    await expect(page.getByText("山下雄平").first()).toBeVisible();
   });
 
   test("follow button toggles", async ({ page }) => {
-    await page.goto("/m/yamamoto");
+    await page.goto(MEMBER_URL);
 
-    // Should show follow button
-    const followBtn = page.getByRole("button", { name: "+ フォロー" });
-    await expect(followBtn).toBeVisible();
-
-    // Click to follow
+    const followBtn = page.getByRole("button", { name: /フォロー/ }).first();
     await followBtn.click();
-    await expect(
-      page.getByRole("button", { name: "フォロー中 ✓" })
-    ).toBeVisible();
+    await expect(page.getByText("フォロー中 ✓").first()).toBeVisible();
 
-    // Click to unfollow
-    await page.getByRole("button", { name: "フォロー中 ✓" }).click();
-    await expect(
-      page.getByRole("button", { name: "+ フォロー" })
-    ).toBeVisible();
-  });
-
-  test("shows minister badge for cabinet members", async ({ page }) => {
-    await page.goto("/m/tanaka");
-
-    await expect(page.getByText("🔷").first()).toBeVisible();
-    await expect(page.getByText("経済産業大臣").first()).toBeVisible();
+    await page.getByRole("button", { name: "フォロー中 ✓" }).first().click();
+    await expect(page.getByRole("button", { name: /\+ フォロー/ }).first()).toBeVisible();
   });
 
   test("has back link", async ({ page }) => {
-    await page.goto("/m/yamamoto");
+    await page.goto(MEMBER_URL);
     await page.locator('a[href="/"]').first().click();
-    await expect(page).toHaveURL("/");
+    await page.waitForURL("/");
+    await expect(page.locator('a[href^="/t/"]').first()).toBeVisible();
   });
 });

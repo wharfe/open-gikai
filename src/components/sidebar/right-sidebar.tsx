@@ -11,14 +11,17 @@ type RightSidebarProps = {
 export function RightSidebar({ threads, members }: RightSidebarProps) {
   return (
     <aside className="sticky top-0 hidden h-screen w-[350px] shrink-0 overflow-y-auto pl-7 pr-5 lg:block">
-      {/* Search bar placeholder */}
+      {/* Search bar — links to search page */}
       <div className="sticky top-0 z-10 bg-x-bg pb-3 pt-2">
-        <div className="flex h-[42px] items-center gap-3 rounded-full bg-x-search px-4 opacity-50">
+        <Link
+          href="/search"
+          className="flex h-[42px] items-center gap-3 rounded-full bg-x-search px-4 transition-colors hover:bg-x-search/80"
+        >
           <span className="text-x-secondary">🔍</span>
           <span className="text-[15px] text-x-secondary">
-            検索（準備中）
+            キーワードを検索
           </span>
-        </div>
+        </Link>
       </div>
 
       <div className="space-y-4 pb-20">

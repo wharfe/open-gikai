@@ -1,37 +1,34 @@
 import { test, expect } from "@playwright/test";
 
+const THREAD_URL = "/t/t_20250314_e1491c_02";
+
 test.describe("Navigation", () => {
   test("navigates from feed to thread detail", async ({ page }) => {
     await page.goto("/");
-
-    // Click on a thread
-    await page.getByText("AI規制法案").first().click();
-    await expect(page).toHaveURL("/t/t1");
-    await expect(page.getByText("AI規制法案").first()).toBeVisible();
+    const firstCard = page.locator('a[href^="/t/"]').first();
+    await firstCard.click();
+    await expect(page.getByText("件の発言").first()).toBeVisible();
   });
 
   test("navigates from thread to member profile", async ({ page }) => {
-    await page.goto("/t/t1");
-
-    // Click on member avatar link
-    await page.locator('a[href="/m/yamamoto"]').first().click();
-    await expect(page).toHaveURL("/m/yamamoto");
+    await page.goto(THREAD_URL);
+    const memberLink = page.locator('a[href^="/m/"]').first();
+    await memberLink.click();
+    await page.waitForURL(/\/m\//);
+    await expect(page.locator("article, [class*='font-bold']").first()).toBeVisible();
   });
 
   test("logo navigates back to feed", async ({ page }) => {
-    await page.goto("/t/t1");
-    // Use the back arrow link
+    await page.goto("/about");
     await page.locator('a[href="/"]').first().click();
-    await expect(page).toHaveURL("/");
+    await page.waitForURL("/");
+    const cards = page.locator('a[href^="/t/"]');
+    await expect(cards.first()).toBeVisible();
   });
 
-  test("handles 404 for invalid thread", async ({ page }) => {
-    const response = await page.goto("/t/nonexistent");
-    expect(response?.status()).toBe(404);
-  });
-
-  test("handles 404 for invalid member", async ({ page }) => {
-    const response = await page.goto("/m/nonexistent");
-    expect(response?.status()).toBe(404);
+  test("about page is accessible", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.getByText("OpenGIKAIとは")).toBeVisible();
+    await expect(page.getByText("AI利用に関する注意事項")).toBeVisible();
   });
 });

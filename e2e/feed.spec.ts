@@ -7,14 +7,13 @@ test.describe("Feed page", () => {
     const cards = page.locator('a[href^="/t/"]');
     await expect(cards.first()).toBeVisible();
 
-    await expect(page.getByText("AI規制法案").first()).toBeVisible();
-    await expect(page.getByText("少子化対策財源")).toBeVisible();
-    await expect(page.getByText("緊急事態条項").first()).toBeVisible();
+    // Real data: check for committee names from 2025-03-14
+    await expect(page.getByText("予算委員会").first()).toBeVisible();
   });
 
-  test("displays header with GIKAI branding", async ({ page }) => {
+  test("displays header with OpenGIKAI branding", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByText("GIKAI").first()).toBeVisible();
+    await expect(page.getByText("OpenGIK").first()).toBeVisible();
   });
 
   test("switches between all and following tabs", async ({ page }) => {
@@ -29,7 +28,8 @@ test.describe("Feed page", () => {
     ).toBeVisible();
 
     await page.getByText("📋 すべて").click();
-    await expect(page.getByText("AI規制法案").first()).toBeVisible();
+    const cards = page.locator('a[href^="/t/"]');
+    await expect(cards.first()).toBeVisible();
   });
 
   test("shows trend panel on desktop", async ({ page }) => {

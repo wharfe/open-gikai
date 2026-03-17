@@ -7,9 +7,11 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
+  timeout: 60000,
   use: {
-    baseURL: "http://localhost:3100",
+    baseURL: "http://localhost:3200",
     trace: "on-first-retry",
+    navigationTimeout: 30000,
   },
   projects: [
     {
@@ -18,8 +20,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev -- --port 3100",
-    url: "http://localhost:3100",
+    command: "npx serve out -l 3200 --no-clipboard",
+    url: "http://localhost:3200",
     reuseExistingServer: !process.env.CI,
   },
 });

@@ -40,6 +40,13 @@ export function MobileHeader() {
               <span>🏠</span> ホーム
             </Link>
             <Link
+              href="/search"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] transition-colors hover:bg-x-hover"
+            >
+              <span>🔍</span> 検索
+            </Link>
+            <Link
               href="/about"
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] transition-colors hover:bg-x-hover"
