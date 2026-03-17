@@ -8,7 +8,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%8B%E9%9B%84%E5%B9%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E4%B8%8B%E9%9B%84%E5%B9%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E4%B8%8B%E9%9B%84%E5%B9%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "ishibashigeru": {
     "id": "ishibashigeru",
@@ -19,7 +33,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "pm"
+    "rank": "pm",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E7%A0%B4%E8%8C%82"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E7%A0%B4%E8%8C%82+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E7%A0%B4%E8%8C%82+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "fukuokatakamaro": {
     "id": "fukuokatakamaro",
@@ -30,7 +58,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B2%A1%E8%B3%87%E9%BA%BF"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E8%B3%87%E9%BA%BF+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E5%B2%A1%E8%B3%87%E9%BA%BF+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "furukawayasushi": {
     "id": "furukawayasushi",
@@ -41,7 +83,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E5%B7%9D%E5%BA%B7"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8F%A4%E5%B7%9D%E5%BA%B7+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8F%A4%E5%B7%9D%E5%BA%B7+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "etoutaku": {
     "id": "etoutaku",
@@ -52,7 +108,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E8%97%A4%E6%8B%93"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B1%9F%E8%97%A4%E6%8B%93+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B1%9F%E8%97%A4%E6%8B%93+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "murakamiseiichirou": {
     "id": "murakamiseiichirou",
@@ -63,7 +133,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E8%AA%A0%E4%B8%80%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%91%E4%B8%8A%E8%AA%A0%E4%B8%80%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%91%E4%B8%8A%E8%AA%A0%E4%B8%80%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "miyajitakuma": {
     "id": "miyajitakuma",
@@ -74,7 +158,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E8%B7%AF%E6%8B%93%E9%A6%AC"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%AE%AE%E8%B7%AF%E6%8B%93%E9%A6%AC+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%AE%AE%E8%B7%AF%E6%8B%93%E9%A6%AC+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "morimotoshinji": {
     "id": "morimotoshinji",
@@ -85,7 +183,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E6%9C%AC%E7%9C%9F%E6%B2%BB"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%A3%AE%E6%9C%AC%E7%9C%9F%E6%B2%BB+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%A3%AE%E6%9C%AC%E7%9C%9F%E6%B2%BB+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "mutouyouji": {
     "id": "mutouyouji",
@@ -96,7 +208,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E8%97%A4%E5%AE%B9%E6%B2%BB"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E8%97%A4%E5%AE%B9%E6%B2%BB+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E8%97%A4%E5%AE%B9%E6%B2%BB+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "isozakitetsuji": {
     "id": "isozakitetsuji",
@@ -107,7 +233,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A4%92%E5%B4%8E%E5%93%B2%E5%8F%B2"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A4%92%E5%B4%8E%E5%93%B2%E5%8F%B2+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A4%92%E5%B4%8E%E5%93%B2%E5%8F%B2+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "akazawaryousei": {
     "id": "akazawaryousei",
@@ -118,7 +258,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E6%BE%A4%E4%BA%AE%E6%AD%A3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%B5%A4%E6%BE%A4%E4%BA%AE%E6%AD%A3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%B5%A4%E6%BE%A4%E4%BA%AE%E6%AD%A3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kishimakiko": {
     "id": "kishimakiko",
@@ -129,7 +283,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%B8%E7%9C%9F%E7%B4%80%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B2%B8%E7%9C%9F%E7%B4%80%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B2%B8%E7%9C%9F%E7%B4%80%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yanagasehirofumi": {
     "id": "yanagasehirofumi",
@@ -140,7 +308,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E3%83%B6%E7%80%AC%E8%A3%95%E6%96%87"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9F%B3%E3%83%B6%E7%80%AC%E8%A3%95%E6%96%87+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9F%B3%E3%83%B6%E7%80%AC%E8%A3%95%E6%96%87+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_d057d039": {
     "id": "m_d057d039",
@@ -151,7 +333,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E7%94%B0%E7%A7%80%E9%83%8E"
+      }
+    ]
   },
   "shiotahiroaki": {
     "id": "shiotahiroaki",
@@ -162,7 +350,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E7%94%B0%E5%8D%9A%E6%98%AD"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E7%94%B0%E5%8D%9A%E6%98%AD+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E7%94%B0%E5%8D%9A%E6%98%AD+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nakanohiromasa": {
     "id": "nakanohiromasa",
@@ -173,7 +375,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%87%8E%E6%B4%8B%E6%98%8C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E9%87%8E%E6%B4%8B%E6%98%8C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E9%87%8E%E6%B4%8B%E6%98%8C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "katoukatsunobu": {
     "id": "katoukatsunobu",
@@ -184,7 +400,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E5%8B%9D%E4%BF%A1"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8A%A0%E8%97%A4%E5%8B%9D%E4%BF%A1+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8A%A0%E8%97%A4%E5%8B%9D%E4%BF%A1+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "suzukikeisuke": {
     "id": "suzukikeisuke",
@@ -195,7 +425,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E9%A6%A8%E7%A5%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E9%A6%A8%E7%A5%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E9%A6%A8%E7%A5%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kirayoshiko": {
     "id": "kirayoshiko",
@@ -206,7 +450,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E3%82%88%E3%81%97%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E8%89%AF%E3%82%88%E3%81%97%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E8%89%AF%E3%82%88%E3%81%97%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "abetoshiko": {
     "id": "abetoshiko",
@@ -217,7 +475,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%B9%E4%BF%8A%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E3%81%82%E3%81%B9%E4%BF%8A%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E3%81%82%E3%81%B9%E4%BF%8A%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yamamototarou": {
     "id": "yamamototarou",
@@ -228,7 +500,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%9C%AC%E5%A4%AA%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E6%9C%AC%E5%A4%AA%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E6%9C%AC%E5%A4%AA%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "itouyoshitaka": {
     "id": "itouyoshitaka",
@@ -239,7 +525,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E6%9D%B1%E8%89%AF%E5%AD%9D"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E6%9D%B1%E8%89%AF%E5%AD%9D+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E6%9D%B1%E8%89%AF%E5%AD%9D+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "tairamasaaki": {
     "id": "tairamasaaki",
@@ -250,7 +550,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%B0%86%E6%98%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B9%B3%E5%B0%86%E6%98%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B9%B3%E5%B0%86%E6%98%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "sekiguchimasakazu": {
     "id": "sekiguchimasakazu",
@@ -261,7 +575,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E5%8F%A3%E6%98%8C%E4%B8%80"
+      }
+    ]
   },
   "iwamototsuyohito": {
     "id": "iwamototsuyohito",
@@ -272,7 +592,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%9C%AC%E5%89%9B%E4%BA%BA"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A9%E6%9C%AC%E5%89%9B%E4%BA%BA+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A9%E6%9C%AC%E5%89%9B%E4%BA%BA+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kogachikage": {
     "id": "kogachikage",
@@ -283,7 +617,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E8%B3%80%E5%8D%83%E6%99%AF"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8F%A4%E8%B3%80%E5%8D%83%E6%99%AF+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8F%A4%E8%B3%80%E5%8D%83%E6%99%AF+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "hayashiyoshimasa": {
     "id": "hayashiyoshimasa",
@@ -294,7 +642,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9E%97%E8%8A%B3%E6%AD%A3"
+      }
+    ]
   },
   "ishiimitsuko": {
     "id": "ishiimitsuko",
@@ -305,7 +659,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E4%BA%95%E8%8B%97%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E4%BA%95%E8%8B%97%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E4%BA%95%E8%8B%97%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "hagamichiya": {
     "id": "hagamichiya",
@@ -316,7 +684,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%8A%B3%E8%B3%80%E9%81%93%E4%B9%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%8A%B3%E8%B3%80%E9%81%93%E4%B9%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%8A%B3%E8%B3%80%E9%81%93%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "itougaku": {
     "id": "itougaku",
@@ -327,7 +709,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E5%B2%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E8%97%A4%E5%B2%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E8%97%A4%E5%B2%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "babaseishi": {
     "id": "babaseishi",
@@ -338,7 +734,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E5%A0%B4%E6%88%90%E5%BF%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%A6%AC%E5%A0%B4%E6%88%90%E5%BF%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%A6%AC%E5%A0%B4%E6%88%90%E5%BF%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "sakaimanabu": {
     "id": "sakaimanabu",
@@ -349,7 +759,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E4%BA%95%E5%AD%A6"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%9D%82%E4%BA%95%E5%AD%A6+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%9D%82%E4%BA%95%E5%AD%A6+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "hatoyamajirou": {
     "id": "hatoyamajirou",
@@ -360,7 +784,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B3%A9%E5%B1%B1%E4%BA%8C%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%B3%A9%E5%B1%B1%E4%BA%8C%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%B3%A9%E5%B1%B1%E4%BA%8C%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_06618ddd": {
     "id": "m_06618ddd",
@@ -371,7 +809,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%8F%B2%E6%AD%A6"
+      }
+    ]
   },
   "makinotakao": {
     "id": "makinotakao",
@@ -382,7 +826,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%89%A7%E9%87%8E%E3%81%9F%E3%81%8B%E3%81%8A"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%89%A7%E9%87%8E%E3%81%9F%E3%81%8B%E3%81%8A+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%89%A7%E9%87%8E%E3%81%9F%E3%81%8B%E3%81%8A+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "iwabuchitomo": {
     "id": "iwabuchitomo",
@@ -393,7 +851,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%B8%95%E5%8F%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A9%E6%B8%95%E5%8F%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A9%E6%B8%95%E5%8F%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "ishibashimichihiro": {
     "id": "ishibashimichihiro",
@@ -404,7 +876,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E6%A9%8B%E9%80%9A%E5%AE%8F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E6%A9%8B%E9%80%9A%E5%AE%8F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E6%A9%8B%E9%80%9A%E5%AE%8F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "takagikaori": {
     "id": "takagikaori",
@@ -415,7 +901,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%9C%A8%E3%81%8B%E3%81%8A%E3%82%8A"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%9C%A8%E3%81%8B%E3%81%8A%E3%82%8A+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%9C%A8%E3%81%8B%E3%81%8A%E3%82%8A+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yahataai": {
     "id": "yahataai",
@@ -426,7 +926,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%B9%A1%E6%84%9B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%85%AB%E5%B9%A1%E6%84%9B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%85%AB%E5%B9%A1%E6%84%9B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "moriyousuke": {
     "id": "moriyousuke",
@@ -437,7 +951,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E3%82%88%E3%81%86%E3%81%99%E3%81%91"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%A3%AE%E3%82%88%E3%81%86%E3%81%99%E3%81%91+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%A3%AE%E3%82%88%E3%81%86%E3%81%99%E3%81%91+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "tamuratakaaki": {
     "id": "tamuratakaaki",
@@ -448,7 +976,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%9D%91%E8%B2%B4%E6%98%AD"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%94%B0%E6%9D%91%E8%B2%B4%E6%98%AD+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%94%B0%E6%9D%91%E8%B2%B4%E6%98%AD+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_b95b8ea7": {
     "id": "m_b95b8ea7",
@@ -459,7 +1001,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%B8%E6%9C%AC%E6%AD%A6%E5%8F%B2"
+      }
+    ]
   },
   "fukutatooru": {
     "id": "fukutatooru",
@@ -470,7 +1018,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%94%B0%E5%BE%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E7%94%B0%E5%BE%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E7%94%B0%E5%BE%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_57d6da2f": {
     "id": "m_57d6da2f",
@@ -481,7 +1043,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%9D%E5%B7%9D%E7%9F%A5%E6%98%AD"
+      }
+    ]
   },
   "m_84005ae2": {
     "id": "m_84005ae2",
@@ -492,7 +1060,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B9%BF%E6%B2%BC%E5%9D%87"
+      }
+    ]
   },
   "m_675da961": {
     "id": "m_675da961",
@@ -503,7 +1077,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E4%BD%90%E6%99%BA%E5%AD%90"
+      }
+    ]
   },
   "komiyamayasuko": {
     "id": "komiyamayasuko",
@@ -514,7 +1094,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%AE%AE%E5%B1%B1%E6%B3%B0%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%AE%AE%E5%B1%B1%E6%B3%B0%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%AE%AE%E5%B1%B1%E6%B3%B0%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_2e87f165": {
     "id": "m_2e87f165",
@@ -525,7 +1119,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%8E%9F%E8%AA%A0"
+      }
+    ]
   },
   "m_170a6769": {
     "id": "m_170a6769",
@@ -536,7 +1136,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%B6%8B%E9%9A%86%E5%8F%B8"
+      }
+    ]
   },
   "m_746e968e": {
     "id": "m_746e968e",
@@ -547,7 +1153,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E4%B8%87%E9%87%8C%E5%AD%90"
+      }
+    ]
   },
   "kiitakashi": {
     "id": "kiitakashi",
@@ -558,7 +1170,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9F%8E%E4%BA%95%E5%B4%87"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%9F%8E%E4%BA%95%E5%B4%87+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%9F%8E%E4%BA%95%E5%B4%87+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_75eed849": {
     "id": "m_75eed849",
@@ -569,7 +1195,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B6%B4%E7%94%B0%E6%B5%A9%E4%B9%85"
+      }
+    ]
   },
   "moriyamahiroyuki": {
     "id": "moriyamahiroyuki",
@@ -580,7 +1212,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%B1%B1%E6%B5%A9%E8%A1%8C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%A3%AE%E5%B1%B1%E6%B5%A9%E8%A1%8C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%A3%AE%E5%B1%B1%E6%B5%A9%E8%A1%8C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_a64403fa": {
     "id": "m_a64403fa",
@@ -591,7 +1237,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%9C%AC%E5%B7%A7"
+      }
+    ]
   },
   "m_271b94e4": {
     "id": "m_271b94e4",
@@ -602,7 +1254,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E9%83%A8%E7%AB%9C%E7%9F%A2"
+      }
+    ]
   },
   "m_e3a5df35": {
     "id": "m_e3a5df35",
@@ -613,7 +1271,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%BD%8B%E8%97%A4%E5%8D%9A%E4%B9%8B"
+      }
+    ]
   },
   "fukushimanobuyuki": {
     "id": "fukushimanobuyuki",
@@ -624,7 +1288,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B3%B6%E4%BC%B8%E4%BA%AB"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E5%B3%B6%E4%BC%B8%E4%BA%AB+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E5%B3%B6%E4%BC%B8%E4%BA%AB+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "komoritakuo": {
     "id": "komoritakuo",
@@ -635,7 +1313,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%A3%AE%E5%8D%93%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%A3%AE%E5%8D%93%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%A3%AE%E5%8D%93%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_8f8c090e": {
     "id": "m_8f8c090e",
@@ -646,7 +1338,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%8D%81%E5%B5%90%E5%BE%B9%E4%BA%BA"
+      }
+    ]
   },
   "nishidashouji": {
     "id": "nishidashouji",
@@ -657,7 +1355,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E7%94%B0%E6%98%AD%E4%BA%8C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%A5%BF%E7%94%B0%E6%98%AD%E4%BA%8C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%A5%BF%E7%94%B0%E6%98%AD%E4%BA%8C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_a7c51d64": {
     "id": "m_a7c51d64",
@@ -668,7 +1380,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A5%A0%E7%94%B0%E5%B9%B9%E4%BA%BA"
+      }
+    ]
   },
   "m_8eaa1b99": {
     "id": "m_8eaa1b99",
@@ -679,7 +1397,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E7%94%B0%E9%9B%85%E8%A3%95"
+      }
+    ]
   },
   "abehiroki": {
     "id": "abehiroki",
@@ -690,7 +1414,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E9%83%A8%E5%BC%98%E6%A8%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%98%BF%E9%83%A8%E5%BC%98%E6%A8%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%98%BF%E9%83%A8%E5%BC%98%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_8fdbe1d0": {
     "id": "m_8fdbe1d0",
@@ -701,7 +1439,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%B2%A1%E6%88%90%E5%93%B2"
+      }
+    ]
   },
   "m_8f723633": {
     "id": "m_8f723633",
@@ -712,7 +1456,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%8C%82%E7%B1%A0%E5%8B%87%E4%BA%BA"
+      }
+    ]
   },
   "m_5cf43c92": {
     "id": "m_5cf43c92",
@@ -723,7 +1473,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E4%B8%BB%E5%8B%87"
+      }
+    ]
   },
   "m_140c29f2": {
     "id": "m_140c29f2",
@@ -734,7 +1490,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%96%80%E5%89%8D%E6%B5%A9%E5%8F%B8"
+      }
+    ]
   },
   "m_c755c229": {
     "id": "m_c755c229",
@@ -745,7 +1507,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E6%AD%A6%E5%AE%9C%E5%8F%B2"
+      }
+    ]
   },
   "okushitatakemitsu": {
     "id": "okushitatakemitsu",
@@ -756,7 +1524,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E4%B8%8B%E5%89%9B%E5%85%89"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A5%A5%E4%B8%8B%E5%89%9B%E5%85%89+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A5%A5%E4%B8%8B%E5%89%9B%E5%85%89+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "azumakuniyoshi": {
     "id": "azumakuniyoshi",
@@ -767,7 +1549,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%9B%BD%E5%B9%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%B1%E5%9B%BD%E5%B9%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%B1%E5%9B%BD%E5%B9%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_d9afd074": {
     "id": "m_d9afd074",
@@ -778,7 +1574,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E7%80%AC%E8%AD%B7"
+      }
+    ]
   },
   "hatoyamakiichirou": {
     "id": "hatoyamakiichirou",
@@ -789,7 +1591,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B3%A9%E5%B1%B1%E7%B4%80%E4%B8%80%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%B3%A9%E5%B1%B1%E7%B4%80%E4%B8%80%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%B3%A9%E5%B1%B1%E7%B4%80%E4%B8%80%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nishiokahideko": {
     "id": "nishiokahideko",
@@ -800,7 +1616,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E5%B2%A1%E7%A7%80%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%A5%BF%E5%B2%A1%E7%A7%80%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%A5%BF%E5%B2%A1%E7%A7%80%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "akabakazuyoshi": {
     "id": "akabakazuyoshi",
@@ -811,7 +1641,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E7%BE%BD%E4%B8%80%E5%98%89"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%B5%A4%E7%BE%BD%E4%B8%80%E5%98%89+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%B5%A4%E7%BE%BD%E4%B8%80%E5%98%89+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_7357d237": {
     "id": "m_7357d237",
@@ -822,7 +1666,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E7%94%B0%E7%A0%94"
+      }
+    ]
   },
   "m_6de10158": {
     "id": "m_6de10158",
@@ -833,7 +1683,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E7%94%B0%E9%80%B2"
+      }
+    ]
   },
   "tagayaryou": {
     "id": "tagayaryou",
@@ -844,7 +1700,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%9F%E3%81%8C%E3%82%84%E4%BA%AE"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E3%81%9F%E3%81%8C%E3%82%84%E4%BA%AE+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E3%81%9F%E3%81%8C%E3%82%84%E4%BA%AE+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_5e6c0f66": {
     "id": "m_5e6c0f66",
@@ -855,7 +1725,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%91%E7%94%B0%E8%8C%82%E6%A8%B9"
+      }
+    ]
   },
   "m_5ea68e8e": {
     "id": "m_5ea68e8e",
@@ -866,7 +1742,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E8%A6%8B%E8%8B%B1%E4%B9%8B"
+      }
+    ]
   },
   "horikawaakiko": {
     "id": "horikawaakiko",
@@ -877,7 +1759,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E5%B7%9D%E3%81%82%E3%81%8D%E3%81%93"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A0%80%E5%B7%9D%E3%81%82%E3%81%8D%E3%81%93+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A0%80%E5%B7%9D%E3%81%82%E3%81%8D%E3%81%93+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "inouetakahiro": {
     "id": "inouetakahiro",
@@ -888,7 +1784,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E8%B2%B4%E5%8D%9A"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E4%B8%8A%E8%B2%B4%E5%8D%9A+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E4%B8%8A%E8%B2%B4%E5%8D%9A+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "tsushimajun": {
     "id": "tsushimajun",
@@ -899,7 +1809,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E5%B3%B6%E6%B7%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B4%A5%E5%B3%B6%E6%B7%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B4%A5%E5%B3%B6%E6%B7%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yunokimichiyoshi": {
     "id": "yunokimichiyoshi",
@@ -910,7 +1834,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%9A%E6%9C%A8%E9%81%93%E7%BE%A9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9F%9A%E6%9C%A8%E9%81%93%E7%BE%A9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9F%9A%E6%9C%A8%E9%81%93%E7%BE%A9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "miharajunko": {
     "id": "miharajunko",
@@ -921,7 +1859,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%8E%9F%E3%81%98%E3%82%85%E3%82%93%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%89%E5%8E%9F%E3%81%98%E3%82%85%E3%82%93%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%89%E5%8E%9F%E3%81%98%E3%82%85%E3%82%93%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "wanibuchiyouko": {
     "id": "wanibuchiyouko",
@@ -932,7 +1884,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B0%90%E6%B7%B5%E6%B4%8B%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%B0%90%E6%B7%B5%E6%B4%8B%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%B0%90%E6%B7%B5%E6%B4%8B%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nikihirobumi": {
     "id": "nikihirobumi",
@@ -943,7 +1909,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BB%81%E6%9C%A8%E5%8D%9A%E6%96%87"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BB%81%E6%9C%A8%E5%8D%9A%E6%96%87+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BB%81%E6%9C%A8%E5%8D%9A%E6%96%87+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kurodamasaki": {
     "id": "kurodamasaki",
@@ -954,7 +1934,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E7%94%B0%E5%BE%81%E6%A8%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%BB%92%E7%94%B0%E5%BE%81%E6%A8%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%BB%92%E7%94%B0%E5%BE%81%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_f3022b8f": {
     "id": "m_f3022b8f",
@@ -965,7 +1959,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E5%AD%A6"
+      }
+    ]
   },
   "m_159c45cc": {
     "id": "m_159c45cc",
@@ -976,7 +1976,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%A3%AE%E4%B8%80%E9%A1%95"
+      }
+    ]
   },
   "oomorieriko": {
     "id": "oomorieriko",
@@ -987,7 +1993,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%A3%AE%E6%B1%9F%E9%87%8C%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E6%A3%AE%E6%B1%9F%E9%87%8C%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E6%A3%AE%E6%B1%9F%E9%87%8C%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_a0d3b713": {
     "id": "m_a0d3b713",
@@ -998,7 +2018,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E6%9C%8B%E5%AD%90"
+      }
+    ]
   },
   "m_75945854": {
     "id": "m_75945854",
@@ -1009,7 +2035,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E7%94%B0%E4%BF%AE"
+      }
+    ]
   },
   "m_66510f5d": {
     "id": "m_66510f5d",
@@ -1020,7 +2052,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%AB%B9%E5%AE%8F%E6%98%8E"
+      }
+    ]
   },
   "motomuranobuko": {
     "id": "motomuranobuko",
@@ -1031,7 +2069,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E6%9D%91%E4%BC%B8%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9C%AC%E6%9D%91%E4%BC%B8%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9C%AC%E6%9D%91%E4%BC%B8%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_3c62a81f": {
     "id": "m_3c62a81f",
@@ -1042,7 +2094,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E4%BD%8F%E5%95%93%E4%BD%9C"
+      }
+    ]
   },
   "azumakatsuya": {
     "id": "azumakatsuya",
@@ -1053,7 +2111,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%85%8B%E5%93%89"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%B1%E5%85%8B%E5%93%89+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%B1%E5%85%8B%E5%93%89+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "tsujikiyoto": {
     "id": "tsujikiyoto",
@@ -1064,7 +2136,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%BE%BB%E6%B8%85%E4%BA%BA"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%BE%BB%E6%B8%85%E4%BA%BA+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%BE%BB%E6%B8%85%E4%BA%BA+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "sakaguchinaoto": {
     "id": "sakaguchinaoto",
@@ -1075,7 +2161,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%98%AA%E5%8F%A3%E7%9B%B4%E4%BA%BA"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%98%AA%E5%8F%A3%E7%9B%B4%E4%BA%BA+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%98%AA%E5%8F%A3%E7%9B%B4%E4%BA%BA+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "fukumoriwakako": {
     "id": "fukumoriwakako",
@@ -1086,7 +2186,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E6%A3%AE%E5%92%8C%E6%AD%8C%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E6%A3%AE%E5%92%8C%E6%AD%8C%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E6%A3%AE%E5%92%8C%E6%AD%8C%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_08a2b7fd": {
     "id": "m_08a2b7fd",
@@ -1097,7 +2211,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E9%96%93%E6%B5%A9"
+      }
+    ]
   },
   "m_5e910890": {
     "id": "m_5e910890",
@@ -1108,7 +2228,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E6%9C%AC%E5%B2%A9%E7%94%B7"
+      }
+    ]
   },
   "m_7e8f64bb": {
     "id": "m_7e8f64bb",
@@ -1119,7 +2245,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%B8%E7%94%B0%E9%87%8C%E4%BD%B3%E5%AD%90"
+      }
+    ]
   },
   "m_13500169": {
     "id": "m_13500169",
@@ -1130,7 +2262,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%9D%91%E8%8B%B1%E6%AD%A3"
+      }
+    ]
   },
   "m_b67d1c6a": {
     "id": "m_b67d1c6a",
@@ -1141,7 +2279,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%9A%88%E4%BF%8A%E5%BC%A5"
+      }
+    ]
   },
   "sendaakihiro": {
     "id": "sendaakihiro",
@@ -1152,7 +2296,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E7%94%B0%E6%99%83%E5%AE%8F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BB%99%E7%94%B0%E6%99%83%E5%AE%8F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BB%99%E7%94%B0%E6%99%83%E5%AE%8F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_337e66cc": {
     "id": "m_337e66cc",
@@ -1163,7 +2321,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%8E%E9%A0%88%E6%9C%8B%E4%B9%8B"
+      }
+    ]
   },
   "kusamatsuyoshi": {
     "id": "kusamatsuyoshi",
@@ -1174,7 +2338,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E9%96%93%E5%89%9B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%8D%89%E9%96%93%E5%89%9B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%8D%89%E9%96%93%E5%89%9B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "furukawanaoki": {
     "id": "furukawanaoki",
@@ -1185,7 +2363,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E5%B7%9D%E7%9B%B4%E5%AD%A3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8F%A4%E5%B7%9D%E7%9B%B4%E5%AD%A3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8F%A4%E5%B7%9D%E7%9B%B4%E5%AD%A3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kirashuuji": {
     "id": "kirashuuji",
@@ -1196,7 +2388,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E5%B7%9E%E5%8F%B8"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E8%89%AF%E5%B7%9E%E5%8F%B8+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E8%89%AF%E5%B7%9E%E5%8F%B8+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "genmakentarou": {
     "id": "genmakentarou",
@@ -1207,7 +2413,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%BA%90%E9%A6%AC%E8%AC%99%E5%A4%AA%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%BA%90%E9%A6%AC%E8%AC%99%E5%A4%AA%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%BA%90%E9%A6%AC%E8%AC%99%E5%A4%AA%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "koizumishinjirou": {
     "id": "koizumishinjirou",
@@ -1218,7 +2438,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B3%89%E9%80%B2%E6%AC%A1%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%B3%89%E9%80%B2%E6%AC%A1%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%B3%89%E9%80%B2%E6%AC%A1%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "hasegawajunji": {
     "id": "hasegawajunji",
@@ -1229,7 +2463,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E8%B0%B7%E5%B7%9D%E6%B7%B3%E4%BA%8C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%95%B7%E8%B0%B7%E5%B7%9D%E6%B7%B3%E4%BA%8C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%95%B7%E8%B0%B7%E5%B7%9D%E6%B7%B3%E4%BA%8C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "honjousatoshi": {
     "id": "honjousatoshi",
@@ -1240,7 +2488,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E5%BA%84%E7%9F%A5%E5%8F%B2"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9C%AC%E5%BA%84%E7%9F%A5%E5%8F%B2+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9C%AC%E5%BA%84%E7%9F%A5%E5%8F%B2+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "okunosouichirou": {
     "id": "okunosouichirou",
@@ -1251,7 +2513,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E9%87%8E%E7%B7%8F%E4%B8%80%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A5%A5%E9%87%8E%E7%B7%8F%E4%B8%80%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A5%A5%E9%87%8E%E7%B7%8F%E4%B8%80%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_7a57062f": {
     "id": "m_7a57062f",
@@ -1262,7 +2538,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B4%8E%E4%B8%80%E9%83%8E"
+      }
+    ]
   },
   "saitouarekkusu": {
     "id": "saitouarekkusu",
@@ -1273,7 +2555,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%8E%E8%97%A4%E3%82%A2%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%96%8E%E8%97%A4%E3%82%A2%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%96%8E%E8%97%A4%E3%82%A2%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "oogushihiroshi": {
     "id": "oogushihiroshi",
@@ -1284,7 +2580,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%B8%B2%E5%8D%9A%E5%BF%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E4%B8%B2%E5%8D%9A%E5%BF%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E4%B8%B2%E5%8D%9A%E5%BF%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "aoyagihitoshi": {
     "id": "aoyagihitoshi",
@@ -1295,7 +2605,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%9F%B3%E4%BB%81%E5%A3%AB"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%9D%92%E6%9F%B3%E4%BB%81%E5%A3%AB+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%9D%92%E6%9F%B3%E4%BB%81%E5%A3%AB+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yamaguchiryouji": {
     "id": "yamaguchiryouji",
@@ -1306,7 +2630,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%8F%A3%E8%89%AF%E6%B2%BB"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E8%89%AF%E6%B2%BB+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E8%89%AF%E6%B2%BB+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "isakanobuhiko": {
     "id": "isakanobuhiko",
@@ -1317,7 +2655,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E5%9D%82%E4%BF%A1%E5%BD%A6"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E5%9D%82%E4%BF%A1%E5%BD%A6+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E5%9D%82%E4%BF%A1%E5%BD%A6+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "takaitakashi": {
     "id": "takaitakashi",
@@ -1328,7 +2680,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E4%BA%95%E5%B4%87%E5%BF%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E4%BA%95%E5%B4%87%E5%BF%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E4%BA%95%E5%B4%87%E5%BF%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "ogatarintarou": {
     "id": "ogatarintarou",
@@ -1339,7 +2705,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%B7%92%E6%96%B9%E6%9E%97%E5%A4%AA%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%B7%92%E6%96%B9%E6%9E%97%E5%A4%AA%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%B7%92%E6%96%B9%E6%9E%97%E5%A4%AA%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_db81b600": {
     "id": "m_db81b600",
@@ -1350,7 +2730,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E5%B0%BE%E4%BF%A1%E8%A1%8C"
+      }
+    ]
   },
   "shiokawatetsuya": {
     "id": "shiokawatetsuya",
@@ -1361,7 +2747,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E5%B7%9D%E9%89%84%E4%B9%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E5%B7%9D%E9%89%84%E4%B9%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E5%B7%9D%E9%89%84%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_18ed0c2c": {
     "id": "m_18ed0c2c",
@@ -1372,7 +2772,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E7%94%B0%E4%B8%80%E9%83%8E"
+      }
+    ]
   },
   "shiozakiakihisa": {
     "id": "shiozakiakihisa",
@@ -1383,7 +2789,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E5%B4%8E%E5%BD%B0%E4%B9%85"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E5%B4%8E%E5%BD%B0%E4%B9%85+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E5%B4%8E%E5%BD%B0%E4%B9%85+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "suzukitakako": {
     "id": "suzukitakako",
@@ -1394,7 +2814,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E8%B2%B4%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E8%B2%B4%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E8%B2%B4%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_e15b3751": {
     "id": "m_e15b3751",
@@ -1405,7 +2839,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E5%AD%A6%E5%8F%B8"
+      }
+    ]
   },
   "m_d24cbe62": {
     "id": "m_d24cbe62",
@@ -1416,7 +2856,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E9%87%8E%E6%95%A6%E8%A1%8C"
+      }
+    ]
   },
   "m_59348d39": {
     "id": "m_59348d39",
@@ -1427,7 +2873,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%9B%E6%9C%88%E7%A6%8E"
+      }
+    ]
   },
   "ukishimatomoko": {
     "id": "ukishimatomoko",
@@ -1438,7 +2890,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B5%AE%E5%B3%B6%E6%99%BA%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B5%AE%E5%B3%B6%E6%99%BA%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B5%AE%E5%B3%B6%E6%99%BA%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "ogumashinji": {
     "id": "ogumashinji",
@@ -1449,7 +2915,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%86%8A%E6%85%8E%E5%8F%B8"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E7%86%8A%E6%85%8E%E5%8F%B8+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E7%86%8A%E6%85%8E%E5%8F%B8+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_7d8959ef": {
     "id": "m_7d8959ef",
@@ -1460,7 +2940,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E9%9B%84%E4%B8%80"
+      }
+    ]
   },
   "itoutadahiko": {
     "id": "itoutadahiko",
@@ -1471,7 +2957,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E5%BF%A0%E5%BD%A6"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E8%97%A4%E5%BF%A0%E5%BD%A6+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E8%97%A4%E5%BF%A0%E5%BD%A6+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kondoukazuya": {
     "id": "kondoukazuya",
@@ -1482,7 +2982,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E8%97%A4%E5%92%8C%E4%B9%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%BF%91%E8%97%A4%E5%92%8C%E4%B9%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%BF%91%E8%97%A4%E5%92%8C%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "umetanimamoru": {
     "id": "umetanimamoru",
@@ -1493,7 +3007,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A2%85%E8%B0%B7%E5%AE%88"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%A2%85%E8%B0%B7%E5%AE%88+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%A2%85%E8%B0%B7%E5%AE%88+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_b8b340d7": {
     "id": "m_b8b340d7",
@@ -1504,7 +3032,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E5%B1%B1%E5%BE%81%E6%88%90"
+      }
+    ]
   },
   "shoujikenichi": {
     "id": "shoujikenichi",
@@ -1515,7 +3049,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BA%84%E5%AD%90%E8%B3%A2%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%BA%84%E5%AD%90%E8%B3%A2%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%BA%84%E5%AD%90%E8%B3%A2%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kushibuchimari": {
     "id": "kushibuchimari",
@@ -1526,7 +3074,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AB%9B%E6%B8%95%E4%B8%87%E9%87%8C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%AB%9B%E6%B8%95%E4%B8%87%E9%87%8C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%AB%9B%E6%B8%95%E4%B8%87%E9%87%8C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kanekoyouzou": {
     "id": "kanekoyouzou",
@@ -1537,7 +3099,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%AD%90%E5%AE%B9%E4%B8%89"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%87%91%E5%AD%90%E5%AE%B9%E4%B8%89+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%87%91%E5%AD%90%E5%AE%B9%E4%B8%89+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "ozakimasanao": {
     "id": "ozakimasanao",
@@ -1548,7 +3124,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E5%B4%8E%E6%AD%A3%E7%9B%B4"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%BE%E5%B4%8E%E6%AD%A3%E7%9B%B4+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%BE%E5%B4%8E%E6%AD%A3%E7%9B%B4+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_71206a97": {
     "id": "m_71206a97",
@@ -1559,7 +3149,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%B0%B7%E6%95%A6"
+      }
+    ]
   },
   "m_0bf4cf69": {
     "id": "m_0bf4cf69",
@@ -1570,7 +3166,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A9%8B%E8%AC%99%E5%8F%B8"
+      }
+    ]
   },
   "m_c2df4688": {
     "id": "m_c2df4688",
@@ -1581,7 +3183,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E9%83%A8%E8%B3%A2"
+      }
+    ]
   },
   "m_b0aa89a7": {
     "id": "m_b0aa89a7",
@@ -1592,7 +3200,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E4%B9%85%E7%94%B0%E8%82%87"
+      }
+    ]
   },
   "yoshidashinji": {
     "id": "yoshidashinji",
@@ -1603,7 +3217,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E7%94%B0%E7%9C%9F%E6%AC%A1"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E7%94%B0%E7%9C%9F%E6%AC%A1+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E7%94%B0%E7%9C%9F%E6%AC%A1+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "shinodanaoko": {
     "id": "shinodanaoko",
@@ -1614,7 +3242,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AF%A0%E7%94%B0%E5%A5%88%E4%BF%9D%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%AF%A0%E7%94%B0%E5%A5%88%E4%BF%9D%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%AF%A0%E7%94%B0%E5%A5%88%E4%BF%9D%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_68312d12": {
     "id": "m_68312d12",
@@ -1625,7 +3267,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E9%87%8E%E5%AF%BA%E7%9C%9F%E4%B9%9F"
+      }
+    ]
   },
   "m_c8275101": {
     "id": "m_c8275101",
@@ -1636,7 +3284,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B2%A1%E6%B2%BB"
+      }
+    ]
   },
   "m_309dca75": {
     "id": "m_309dca75",
@@ -1647,7 +3301,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E6%B8%A1%E7%9B%B4%E5%8F%B2"
+      }
+    ]
   },
   "m_6b991c86": {
     "id": "m_6b991c86",
@@ -1658,7 +3318,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AB%B9%E5%86%85%E5%8A%AA"
+      }
+    ]
   },
   "matsushitareiko": {
     "id": "matsushitareiko",
@@ -1669,7 +3335,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%B8%8B%E7%8E%B2%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%BE%E4%B8%8B%E7%8E%B2%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%BE%E4%B8%8B%E7%8E%B2%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_8b829bad": {
     "id": "m_8b829bad",
@@ -1680,7 +3360,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%8E%9F%E9%BE%8D"
+      }
+    ]
   },
   "shinatakeshi": {
     "id": "shinatakeshi",
@@ -1691,7 +3377,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%9A%8E%E7%8C%9B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%9A%8E%E7%8C%9B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%9A%8E%E7%8C%9B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_5489ded5": {
     "id": "m_5489ded5",
@@ -1702,7 +3402,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E9%87%8E%E7%9C%9F"
+      }
+    ]
   },
   "takebearata": {
     "id": "takebearata",
@@ -1713,7 +3419,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E9%83%A8%E6%96%B0"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E9%83%A8%E6%96%B0+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E9%83%A8%E6%96%B0+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kanemuraryuuna": {
     "id": "kanemuraryuuna",
@@ -1724,7 +3444,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E6%9D%91%E9%BE%8D%E9%82%A3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%87%91%E6%9D%91%E9%BE%8D%E9%82%A3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%87%91%E6%9D%91%E9%BE%8D%E9%82%A3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_b979a458": {
     "id": "m_b979a458",
@@ -1735,7 +3469,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E5%8F%A3%E6%9C%89%E9%9A%A3"
+      }
+    ]
   },
   "m_ba0842bf": {
     "id": "m_ba0842bf",
@@ -1746,7 +3486,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%BF%B1%E5%81%A5%E5%BF%97"
+      }
+    ]
   },
   "m_7b97ff0c": {
     "id": "m_7b97ff0c",
@@ -1757,7 +3503,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%B1%B1%E5%AE%9A%E6%98%8E"
+      }
+    ]
   },
   "madokayoriko": {
     "id": "madokayoriko",
@@ -1768,7 +3520,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%86%86%E3%82%88%E3%82%8A%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%86%86%E3%82%88%E3%82%8A%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%86%86%E3%82%88%E3%82%8A%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_07b78419": {
     "id": "m_07b78419",
@@ -1779,7 +3545,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%BA%95%E4%BF%A1%E6%86%B2"
+      }
+    ]
   },
   "yoshikawarina": {
     "id": "yoshikawarina",
@@ -1790,7 +3562,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%B7%9D%E9%87%8C%E5%A5%88"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E5%B7%9D%E9%87%8C%E5%A5%88+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E5%B7%9D%E9%87%8C%E5%A5%88+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "shimadayouichi": {
     "id": "shimadayouichi",
@@ -1801,7 +3587,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E7%94%B0%E6%B4%8B%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B3%B6%E7%94%B0%E6%B4%8B%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B3%B6%E7%94%B0%E6%B4%8B%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_c1c67484": {
     "id": "m_c1c67484",
@@ -1812,7 +3612,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E5%B1%B1%E5%BE%B3%E6%98%8E"
+      }
+    ]
   },
   "sasakihajime": {
     "id": "sasakihajime",
@@ -1823,7 +3629,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E7%B4%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BD%90%E3%80%85%E6%9C%A8%E7%B4%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BD%90%E3%80%85%E6%9C%A8%E7%B4%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_fc2ae3db": {
     "id": "m_fc2ae3db",
@@ -1834,7 +3654,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%A7%92%E5%80%89%E4%B8%80%E9%83%8E"
+      }
+    ]
   },
   "m_0f0620eb": {
     "id": "m_0f0620eb",
@@ -1845,7 +3671,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E8%97%A4%E6%98%8E%E8%A3%95"
+      }
+    ]
   },
   "shinoharatakashi": {
     "id": "shinoharatakashi",
@@ -1856,7 +3688,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AF%A0%E5%8E%9F%E5%AD%9D"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%AF%A0%E5%8E%9F%E5%AD%9D+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%AF%A0%E5%8E%9F%E5%AD%9D+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "asaokeiichirou": {
     "id": "asaokeiichirou",
@@ -1867,7 +3713,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E5%B0%BE%E6%85%B6%E4%B8%80%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B5%85%E5%B0%BE%E6%85%B6%E4%B8%80%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B5%85%E5%B0%BE%E6%85%B6%E4%B8%80%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kobayashifumiaki": {
     "id": "kobayashifumiaki",
@@ -1878,7 +3738,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%8F%B2%E6%98%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E5%8F%B2%E6%98%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E5%8F%B2%E6%98%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "sasagawahiroyoshi": {
     "id": "sasagawahiroyoshi",
@@ -1889,7 +3763,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%B9%E5%B7%9D%E5%8D%9A%E7%BE%A9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%AC%B9%E5%B7%9D%E5%8D%9A%E7%BE%A9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%AC%B9%E5%B7%9D%E5%8D%9A%E7%BE%A9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "babayuuki": {
     "id": "babayuuki",
@@ -1900,7 +3788,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E5%A0%B4%E9%9B%84%E5%9F%BA"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%A6%AC%E5%A0%B4%E9%9B%84%E5%9F%BA+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%A6%AC%E5%A0%B4%E9%9B%84%E5%9F%BA+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_05ec916d": {
     "id": "m_05ec916d",
@@ -1911,7 +3813,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%9F%B3%E9%9A%86%E5%A4%AB"
+      }
+    ]
   },
   "kawaharadaeisei": {
     "id": "kawaharadaeisei",
@@ -1922,7 +3830,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%8E%9F%E7%94%B0%E8%8B%B1%E4%B8%96"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B7%9D%E5%8E%9F%E7%94%B0%E8%8B%B1%E4%B8%96+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B7%9D%E5%8E%9F%E7%94%B0%E8%8B%B1%E4%B8%96+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_0966bd1b": {
     "id": "m_0966bd1b",
@@ -1933,7 +3855,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%8D%BB%E5%8E%9F%E7%9B%B4%E5%BD%A6"
+      }
+    ]
   },
   "inokuchisachiko": {
     "id": "inokuchisachiko",
@@ -1944,7 +3872,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%8C%AA%E5%8F%A3%E5%B9%B8%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%8C%AA%E5%8F%A3%E5%B9%B8%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%8C%AA%E5%8F%A3%E5%B9%B8%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "soramotoseiki": {
     "id": "soramotoseiki",
@@ -1955,7 +3897,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A9%BA%E6%9C%AC%E8%AA%A0%E5%96%9C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A9%BA%E6%9C%AC%E8%AA%A0%E5%96%9C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A9%BA%E6%9C%AC%E8%AA%A0%E5%96%9C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "igarashikiyoshi": {
     "id": "igarashikiyoshi",
@@ -1966,7 +3922,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%8D%81%E5%B5%90%E6%B8%85"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BA%94%E5%8D%81%E5%B5%90%E6%B8%85+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BA%94%E5%8D%81%E5%B5%90%E6%B8%85+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_2fe32135": {
     "id": "m_2fe32135",
@@ -1977,7 +3947,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A4%8D%E6%9D%BE%E5%88%A9%E5%A4%AB"
+      }
+    ]
   },
   "m_27e275ca": {
     "id": "m_27e275ca",
@@ -1988,7 +3964,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E5%B0%BB%E8%B2%B4%E8%A3%95"
+      }
+    ]
   },
   "m_01cbca10": {
     "id": "m_01cbca10",
@@ -1999,7 +3981,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%B4%8E%E6%9A%81"
+      }
+    ]
   },
   "oogushimasaki": {
     "id": "oogushimasaki",
@@ -2010,7 +3998,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%B8%B2%E6%AD%A3%E6%A8%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E4%B8%B2%E6%AD%A3%E6%A8%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E4%B8%B2%E6%AD%A3%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_ed6eff20": {
     "id": "m_ed6eff20",
@@ -2021,7 +4023,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%A3%AE%E6%81%B5%E5%AD%90"
+      }
+    ]
   },
   "fukushigetakahiro": {
     "id": "fukushigetakahiro",
@@ -2032,7 +4040,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E9%87%8D%E9%9A%86%E6%B5%A9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E9%87%8D%E9%9A%86%E6%B5%A9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E9%87%8D%E9%9A%86%E6%B5%A9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_763dd170": {
     "id": "m_763dd170",
@@ -2043,7 +4065,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E5%B1%85%E5%81%A5%E5%A4%AA%E9%83%8E"
+      }
+    ]
   },
   "kitanoyuuko": {
     "id": "kitanoyuuko",
@@ -2054,7 +4082,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E9%87%8E%E8%A3%95%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8C%97%E9%87%8E%E8%A3%95%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8C%97%E9%87%8E%E8%A3%95%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_18bc273c": {
     "id": "m_18bc273c",
@@ -2065,7 +4107,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E5%8E%9F%E6%99%8B%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9C%A8%E5%8E%9F%E6%99%8B%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9C%A8%E5%8E%9F%E6%99%8B%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "takegamiyuuko": {
     "id": "takegamiyuuko",
@@ -2076,7 +4132,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AB%B9%E4%B8%8A%E8%A3%95%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%AB%B9%E4%B8%8A%E8%A3%95%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%AB%B9%E4%B8%8A%E8%A3%95%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_1fb231fb": {
     "id": "m_1fb231fb",
@@ -2087,7 +4157,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%89%87%E6%A1%90%E8%81%A1"
+      }
+    ]
   },
   "m_98abdd68": {
     "id": "m_98abdd68",
@@ -2098,7 +4174,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%B8%E5%B7%9D%E4%BB%81%E5%92%8C"
+      }
+    ]
   },
   "nakamurahayato": {
     "id": "nakamurahayato",
@@ -2109,7 +4191,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%9D%91%E3%81%AF%E3%82%84%E3%81%A8"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9D%91%E3%81%AF%E3%82%84%E3%81%A8+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9D%91%E3%81%AF%E3%82%84%E3%81%A8+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_e7d06df4": {
     "id": "m_e7d06df4",
@@ -2120,7 +4216,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E4%B8%80%E6%88%90"
+      }
+    ]
   },
   "m_9a8beb2f": {
     "id": "m_9a8beb2f",
@@ -2131,7 +4233,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%9C%AC%E5%95%93%E6%9C%97"
+      }
+    ]
   },
   "m_cc2f2adb": {
     "id": "m_cc2f2adb",
@@ -2142,7 +4250,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A4%8D%E7%94%B0%E6%98%8E%E6%B5%A9"
+      }
+    ]
   },
   "okadakatsuya": {
     "id": "okadakatsuya",
@@ -2153,7 +4267,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E7%94%B0%E5%85%8B%E4%B9%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A1%E7%94%B0%E5%85%8B%E4%B9%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A1%E7%94%B0%E5%85%8B%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_6da900ca": {
     "id": "m_6da900ca",
@@ -2164,7 +4292,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%8B%E9%9A%86%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E4%B8%8B%E9%9A%86%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E4%B8%8B%E9%9A%86%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yokoyamashinichi": {
     "id": "yokoyamashinichi",
@@ -2175,7 +4317,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E5%B1%B1%E4%BF%A1%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%A8%AA%E5%B1%B1%E4%BF%A1%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%A8%AA%E5%B1%B1%E4%BF%A1%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "suzukieikei": {
     "id": "suzukieikei",
@@ -2186,7 +4342,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E8%8B%B1%E6%95%AC"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E8%8B%B1%E6%95%AC+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E8%8B%B1%E6%95%AC+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_eaad4857": {
     "id": "m_eaad4857",
@@ -2197,7 +4367,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%B1%B3%E5%AD%9D"
+      }
+    ]
   },
   "m_5ccb69d6": {
     "id": "m_5ccb69d6",
@@ -2208,7 +4384,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%9F%8E%E6%85%8E%E5%8F%B8"
+      }
+    ]
   },
   "m_3b63fcd4": {
     "id": "m_3b63fcd4",
@@ -2219,7 +4401,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E4%B8%8B%E6%B3%B0"
+      }
+    ]
   },
   "kishinobuchiyo": {
     "id": "kishinobuchiyo",
@@ -2230,7 +4418,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%B8%E4%BF%A1%E5%8D%83%E4%B8%96"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B2%B8%E4%BF%A1%E5%8D%83%E4%B8%96+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B2%B8%E4%BF%A1%E5%8D%83%E4%B8%96+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_de3c74dc": {
     "id": "m_de3c74dc",
@@ -2241,7 +4443,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E5%AE%B6%E6%95%8F%E5%92%8C"
+      }
+    ]
   },
   "koyamanobuhiro": {
     "id": "koyamanobuhiro",
@@ -2252,7 +4460,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%B1%B1%E5%B1%95%E5%BC%98"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B1%B1%E5%B1%95%E5%BC%98+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B1%B1%E5%B1%95%E5%BC%98+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_6277f297": {
     "id": "m_6277f297",
@@ -2263,7 +4485,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%95%A0%E5%B1%B1%E9%99%BD%E4%BA%8C%E9%83%8E"
+      }
+    ]
   },
   "ooshimaatsushi": {
     "id": "ooshimaatsushi",
@@ -2274,7 +4502,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%B6%E6%95%A6"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E5%B3%B6%E6%95%A6+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E5%B3%B6%E6%95%A6+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_1c8997dc": {
     "id": "m_1c8997dc",
@@ -2285,7 +4527,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E8%B0%B7%E4%B8%80%E4%B9%8B"
+      }
+    ]
   },
   "yamaokatatsumaru": {
     "id": "yamaokatatsumaru",
@@ -2296,7 +4544,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%B2%A1%E9%81%94%E4%B8%B8"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%B2%A1%E9%81%94%E4%B8%B8+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%B2%A1%E9%81%94%E4%B8%B8+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_31e01428": {
     "id": "m_31e01428",
@@ -2307,7 +4569,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E6%9C%AA%E6%A8%B9"
+      }
+    ]
   },
   "m_8d51bfb7": {
     "id": "m_8d51bfb7",
@@ -2318,7 +4586,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%91%E4%BA%95%E5%BA%B7%E4%BA%8C"
+      }
+    ]
   },
   "tamuratomoko": {
     "id": "tamuratomoko",
@@ -2329,7 +4603,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%9D%91%E6%99%BA%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%94%B0%E6%9D%91%E6%99%BA%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%94%B0%E6%9D%91%E6%99%BA%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_432945b8": {
     "id": "m_432945b8",
@@ -2340,7 +4628,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%8F%A3%E6%BD%A4%E4%B8%80%E9%83%8E"
+      }
+    ]
   },
   "m_ba1ebc6c": {
     "id": "m_ba1ebc6c",
@@ -2351,7 +4645,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%87%BA"
+      }
+    ]
   },
   "yazakikentarou": {
     "id": "yazakikentarou",
@@ -2362,7 +4662,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%A2%E5%B4%8E%E5%A0%85%E5%A4%AA%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%A2%E5%B4%8E%E5%A0%85%E5%A4%AA%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%A2%E5%B4%8E%E5%A0%85%E5%A4%AA%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_c755a59b": {
     "id": "m_c755a59b",
@@ -2373,7 +4687,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AF%89%E5%B1%B1%E4%BF%A1%E5%BD%A6"
+      }
+    ]
   },
   "m_e596e3eb": {
     "id": "m_e596e3eb",
@@ -2384,7 +4704,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E6%96%87%E9%9D%96"
+      }
+    ]
   },
   "katayamasatsuki": {
     "id": "katayamasatsuki",
@@ -2395,7 +4721,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%89%87%E5%B1%B1%E3%81%95%E3%81%A4%E3%81%8D"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%89%87%E5%B1%B1%E3%81%95%E3%81%A4%E3%81%8D+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%89%87%E5%B1%B1%E3%81%95%E3%81%A4%E3%81%8D+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "matsumotoyouhei": {
     "id": "matsumotoyouhei",
@@ -2406,7 +4746,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%9C%AC%E6%B4%8B%E5%B9%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%BE%E6%9C%AC%E6%B4%8B%E5%B9%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%BE%E6%9C%AC%E6%B4%8B%E5%B9%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nakamurahiroyuki": {
     "id": "nakamurahiroyuki",
@@ -2417,7 +4771,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%9D%91%E8%A3%95%E4%B9%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9D%91%E8%A3%95%E4%B9%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9D%91%E8%A3%95%E4%B9%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kobayashishigeki": {
     "id": "kobayashishigeki",
@@ -2428,7 +4796,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E8%8C%82%E6%A8%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E8%8C%82%E6%A8%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E8%8C%82%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "shimizumasato": {
     "id": "shimizumasato",
@@ -2439,7 +4821,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E6%B0%B4%E7%9C%9F%E4%BA%BA"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B8%85%E6%B0%B4%E7%9C%9F%E4%BA%BA+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B8%85%E6%B0%B4%E7%9C%9F%E4%BA%BA+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "fukudakaoru": {
     "id": "fukudakaoru",
@@ -2450,7 +4846,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%94%B0%E3%81%8B%E3%81%8A%E3%82%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E7%94%B0%E3%81%8B%E3%81%8A%E3%82%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%A6%8F%E7%94%B0%E3%81%8B%E3%81%8A%E3%82%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "horiuchinoriko": {
     "id": "horiuchinoriko",
@@ -2461,7 +4871,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E5%86%85%E8%A9%94%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A0%80%E5%86%85%E8%A9%94%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A0%80%E5%86%85%E8%A9%94%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "takahashikatsunori": {
     "id": "takahashikatsunori",
@@ -2472,7 +4896,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A9%8B%E5%85%8B%E6%B3%95"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%A9%8B%E5%85%8B%E6%B3%95+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%A9%8B%E5%85%8B%E6%B3%95+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nakanohideyuki": {
     "id": "nakanohideyuki",
@@ -2483,7 +4921,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%87%8E%E8%8B%B1%E5%B9%B8"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E9%87%8E%E8%8B%B1%E5%B9%B8+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E9%87%8E%E8%8B%B1%E5%B9%B8+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kajiharadaisuke": {
     "id": "kajiharadaisuke",
@@ -2494,7 +4946,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%A2%B6%E5%8E%9F%E5%A4%A7%E4%BB%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%A2%B6%E5%8E%9F%E5%A4%A7%E4%BB%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%A2%B6%E5%8E%9F%E5%A4%A7%E4%BB%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "mukouyamajun": {
     "id": "mukouyamajun",
@@ -2505,7 +4971,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%91%E5%B1%B1%E6%B7%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%90%91%E5%B1%B1%E6%B7%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%90%91%E5%B1%B1%E6%B7%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yamaguchishunichi": {
     "id": "yamaguchishunichi",
@@ -2516,7 +4996,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%8F%A3%E4%BF%8A%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E4%BF%8A%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E4%BF%8A%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_158186af": {
     "id": "m_158186af",
@@ -2527,7 +5021,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%8F%85%E5%8E%9F%E6%99%B6%E5%AD%90"
+      }
+    ]
   },
   "nakasoneyasutaka": {
     "id": "nakasoneyasutaka",
@@ -2538,7 +5038,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%9B%BD%E6%A0%B9%E5%BA%B7%E9%9A%86"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9B%BD%E6%A0%B9%E5%BA%B7%E9%9A%86+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9B%BD%E6%A0%B9%E5%BA%B7%E9%9A%86+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nakagawahiromasa": {
     "id": "nakagawahiromasa",
@@ -2549,7 +5063,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B7%9D%E5%AE%8F%E6%98%8C"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E5%AE%8F%E6%98%8C+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E5%AE%8F%E6%98%8C+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "ishikawamasaru": {
     "id": "ishikawamasaru",
@@ -2560,7 +5088,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B7%9D%E5%8B%9D"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E5%B7%9D%E5%8B%9D+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E5%B7%9D%E5%8B%9D+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "mineshimayuuya": {
     "id": "mineshimayuuya",
@@ -2571,7 +5113,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B3%B0%E5%B3%B6%E4%BE%91%E4%B9%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B3%B0%E5%B3%B6%E4%BE%91%E4%B9%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B3%B0%E5%B3%B6%E4%BE%91%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "muraihideki": {
     "id": "muraihideki",
@@ -2582,7 +5138,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%BA%95%E8%8B%B1%E6%A8%B9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%91%E4%BA%95%E8%8B%B1%E6%A8%B9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%91%E4%BA%95%E8%8B%B1%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nakagawayasuhiro": {
     "id": "nakagawayasuhiro",
@@ -2593,7 +5163,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B7%9D%E5%BA%B7%E6%B4%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E5%BA%B7%E6%B4%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E5%BA%B7%E6%B4%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "nogamikoutarou": {
     "id": "nogamikoutarou",
@@ -2604,7 +5188,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E4%B8%8A%E6%B5%A9%E5%A4%AA%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%87%8E%E4%B8%8A%E6%B5%A9%E5%A4%AA%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%87%8E%E4%B8%8A%E6%B5%A9%E5%A4%AA%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_aad738ce": {
     "id": "m_aad738ce",
@@ -2615,7 +5213,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E4%BA%95%E5%A4%9A%E5%B8%8C%E5%AD%90"
+      }
+    ]
   },
   "m_235835e9": {
     "id": "m_235835e9",
@@ -2626,7 +5230,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E9%87%8E%E9%A6%A8%E5%8D%97%E5%AD%90"
+      }
+    ]
   },
   "m_2079857e": {
     "id": "m_2079857e",
@@ -2637,7 +5247,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E7%94%B0%E6%98%8C%E5%BC%98"
+      }
+    ]
   },
   "hoshihokuto": {
     "id": "hoshihokuto",
@@ -2648,7 +5264,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%9F%E5%8C%97%E6%96%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%98%9F%E5%8C%97%E6%96%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%98%9F%E5%8C%97%E6%96%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kojimatomoko": {
     "id": "kojimatomoko",
@@ -2659,7 +5289,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%B3%B6%E3%81%A8%E3%82%82%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B3%B6%E3%81%A8%E3%82%82%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B3%B6%E3%81%A8%E3%82%82%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "mizunokouichi": {
     "id": "mizunokouichi",
@@ -2670,7 +5314,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E9%87%8E%E5%AD%9D%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B0%B4%E9%87%8E%E5%AD%9D%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B0%B4%E9%87%8E%E5%AD%9D%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kawamurayuudai": {
     "id": "kawamurayuudai",
@@ -2681,7 +5339,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E6%9D%91%E9%9B%84%E5%A4%A7"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B7%9D%E6%9D%91%E9%9B%84%E5%A4%A7+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B7%9D%E6%9D%91%E9%9B%84%E5%A4%A7+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "uenohotaru": {
     "id": "uenohotaru",
@@ -2692,7 +5364,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E9%87%8E%E3%81%BB%E3%81%9F%E3%82%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%8A%E9%87%8E%E3%81%BB%E3%81%9F%E3%82%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%8A%E9%87%8E%E3%81%BB%E3%81%9F%E3%82%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "miyadechisato": {
     "id": "miyadechisato",
@@ -2703,7 +5389,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%87%BA%E5%8D%83%E6%85%A7"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%AE%AE%E5%87%BA%E5%8D%83%E6%85%A7+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%AE%AE%E5%87%BA%E5%8D%83%E6%85%A7+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "shirakawayouko": {
     "id": "shirakawayouko",
@@ -2714,7 +5414,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D%E5%AE%B9%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%99%BD%E5%B7%9D%E5%AE%B9%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%99%BD%E5%B7%9D%E5%AE%B9%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "otsujitomomi": {
     "id": "otsujitomomi",
@@ -2725,7 +5439,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E8%BE%BB%E6%9C%8B%E5%AE%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%BE%E8%BE%BB%E6%9C%8B%E5%AE%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%BE%E8%BE%BB%E6%9C%8B%E5%AE%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "yamamotosachiko": {
     "id": "yamamotosachiko",
@@ -2736,7 +5464,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%9C%AC%E4%BD%90%E7%9F%A5%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E6%9C%AC%E4%BD%90%E7%9F%A5%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E6%9C%AC%E4%BD%90%E7%9F%A5%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kagoshimaakihiro": {
     "id": "kagoshimaakihiro",
@@ -2747,7 +5489,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%94%E3%81%97%E3%81%BE%E5%BD%B0%E5%AE%8F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E3%81%8B%E3%81%94%E3%81%97%E3%81%BE%E5%BD%B0%E5%AE%8F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E3%81%8B%E3%81%94%E3%81%97%E3%81%BE%E5%BD%B0%E5%AE%8F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "suzukimuneo": {
     "id": "suzukimuneo",
@@ -2758,7 +5514,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E5%AE%97%E7%94%B7"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E5%AE%97%E7%94%B7+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E5%AE%97%E7%94%B7+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "m_8135583f": {
     "id": "m_8135583f",
@@ -2769,7 +5539,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E4%BF%9D%E8%AC%99"
+      }
+    ]
   },
   "m_cc1e341d": {
     "id": "m_cc1e341d",
@@ -2780,7 +5556,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E9%96%93%E9%99%BD%E5%AD%90"
+      }
+    ]
   },
   "m_774693d1": {
     "id": "m_774693d1",
@@ -2791,7 +5573,13 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E5%9D%87"
+      }
+    ]
   },
   "shiomuraayaka": {
     "id": "shiomuraayaka",
@@ -2802,7 +5590,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E6%9D%91%E3%81%82%E3%82%84%E3%81%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E6%9D%91%E3%81%82%E3%82%84%E3%81%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%A1%A9%E6%9D%91%E3%81%82%E3%82%84%E3%81%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "haradahidekazu": {
     "id": "haradahidekazu",
@@ -2813,7 +5615,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E7%94%B0%E7%A7%80%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8E%9F%E7%94%B0%E7%A7%80%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8E%9F%E7%94%B0%E7%A7%80%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "kubotatetsuya": {
     "id": "kubotatetsuya",
@@ -2824,7 +5640,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AA%AA%E7%94%B0%E5%93%B2%E4%B9%9F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%AA%AA%E7%94%B0%E5%93%B2%E4%B9%9F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%AA%AA%E7%94%B0%E5%93%B2%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "sekihei": {
     "id": "sekihei",
@@ -2835,7 +5665,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B9%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E5%B9%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E5%B9%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "sugimotojunko": {
     "id": "sugimotojunko",
@@ -2846,7 +5690,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E6%9C%AC%E7%B4%94%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%89%E6%9C%AC%E7%B4%94%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%89%E6%9C%AC%E7%B4%94%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "isezakikenji": {
     "id": "isezakikenji",
@@ -2857,7 +5715,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E5%B4%8E%E8%B3%A2%E6%B2%BB"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E5%8B%A2%E5%B4%8E%E8%B3%A2%E6%B2%BB+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BC%8A%E5%8B%A2%E5%B4%8E%E8%B3%A2%E6%B2%BB+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "takarasachika": {
     "id": "takarasachika",
@@ -2868,7 +5740,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E8%89%AF%E6%B2%99%E5%93%89"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E8%89%AF%E6%B2%99%E5%93%89+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E8%89%AF%E6%B2%99%E5%93%89+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "niwatayukie": {
     "id": "niwatayukie",
@@ -2879,7 +5765,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BA%AD%E7%94%B0%E5%B9%B8%E6%81%B5"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%BA%AD%E7%94%B0%E5%B9%B8%E6%81%B5+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%BA%AD%E7%94%B0%E5%B9%B8%E6%81%B5+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "akamajirou": {
     "id": "akamajirou",
@@ -2890,7 +5790,21 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%8B%E3%81%BE%E4%BA%8C%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E3%81%82%E3%81%8B%E3%81%BE%E4%BA%8C%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E3%81%82%E3%81%8B%E3%81%BE%E4%BA%8C%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   },
   "setotakakazu": {
     "id": "setotakakazu",
@@ -2901,6 +5815,20 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%80%AC%E6%88%B8%E9%9A%86%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%80%AC%E6%88%B8%E9%9A%86%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%80%AC%E6%88%B8%E9%9A%86%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   }
 }

@@ -6,6 +6,11 @@ export type House = "衆議院" | "参議院";
 
 export type Rank = "pm" | "minister" | "viceminister" | "member";
 
+export type MemberLink = {
+  label: string;
+  url: string;
+};
+
 export type Member = {
   id: string;
   name: string;
@@ -17,6 +22,7 @@ export type Member = {
   stance: string[];
   rank: Rank;
   ndlId?: string;
+  links?: MemberLink[];
 };
 
 export type Speech = {

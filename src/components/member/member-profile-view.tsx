@@ -122,22 +122,43 @@ export function MemberProfileView({
         )}
 
         {/* Bio */}
-        <p className="mt-4 text-[15px] leading-[24px] text-x-text">
-          {member.bio}
-        </p>
+        {member.bio && (
+          <p className="mt-4 text-[15px] leading-[24px] text-x-text">
+            {member.bio}
+          </p>
+        )}
 
         {/* Stance tags */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {member.stance.map((st) => (
-            <span
-              key={st}
-              className="rounded-full px-3 py-1 text-[13px]"
-              style={{ color: ms.color, background: ms.bg }}
-            >
-              {st}
-            </span>
-          ))}
-        </div>
+        {member.stance.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {member.stance.map((st) => (
+              <span
+                key={st}
+                className="rounded-full px-3 py-1 text-[13px]"
+                style={{ color: ms.color, background: ms.bg }}
+              >
+                {st}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* External links */}
+        {member.links && member.links.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-3">
+            {member.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-x-border px-3 py-1 text-[13px] text-x-accent transition-colors hover:bg-x-accent/10"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* Tension stats */}
         <div className="mt-4 flex flex-wrap gap-4">
