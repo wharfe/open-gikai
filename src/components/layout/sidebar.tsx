@@ -7,6 +7,7 @@ import { LevelBar } from "@/components/ui/level-bar";
 const NAV_ITEMS = [
   { href: "/", label: "ホーム", icon: "🏠" },
   { href: "/search", label: "検索", icon: "🔍" },
+  { href: "/members", label: "議員", icon: "👤" },
   { href: "/about", label: "About", icon: "ℹ️" },
 ];
 
