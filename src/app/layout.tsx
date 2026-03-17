@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { AppProvider } from "@/components/providers/app-provider";
 import { Sidebar } from "@/components/layout/sidebar";
 import "./globals.css";
+
+const GA_ID = "G-XFC3R0M1MM";
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +31,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
+      </head>
       <body className="bg-x-bg text-x-text antialiased">
         <AppProvider>
           <div className="mx-auto flex max-w-[1280px]">
