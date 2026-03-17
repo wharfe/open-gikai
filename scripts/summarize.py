@@ -83,10 +83,15 @@ def build_thread_context(thread_info: dict, meeting: dict) -> Optional[dict]:
 
     links = []
 
-    # Add NDL meeting URL if available
+    # Add source URL if available
     meeting_url = meeting.get("meetingURL")
     if meeting_url:
-        links.append({"label": "会議録全文（NDL）", "url": meeting_url})
+        source = meeting.get("source", "ndl")
+        url_labels = {
+            "ndl": "会議録全文（NDL）",
+            "kantei": "記者会見全文（首相官邸）",
+        }
+        links.append({"label": url_labels.get(source, "原文"), "url": meeting_url})
 
     # Generate e-Gov search link if a law name is mentioned
     if legislation:
@@ -171,6 +176,14 @@ def assemble_thread(
         thread_info, meeting,
     )
 
+    # Determine source from meeting metadata
+    source = meeting.get("source", "ndl")
+    source_labels = {
+        "ndl": "国会会議録",
+        "kantei": "首相記者会見",
+        "council": "審議会",
+    }
+
     return {
         "id": thread_id,
         "date": display_date,
@@ -180,6 +193,8 @@ def assemble_thread(
         "topicTag": thread_info.get("topicTag", ""),
         "topicColor": thread_info.get("topicColor", "#6b7280"),
         "summary": thread_info.get("summary", ""),
+        "source": source,
+        "sourceLabel": source_labels.get(source, source),
         "context": context,
         "speeches": assembled_speeches,
     }

@@ -43,34 +43,59 @@ jobs:
             echo "target=$(date -u -d 'yesterday' +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
           fi
 
+      # ----- Source: NDL Diet Records -----
       - name: Fetch from NDL API
         run: python scripts/fetch_ndl.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
 
-      - name: Check if speeches exist
-        id: check
+      - name: Check NDL speeches
+        id: check_ndl
         run: |
-          FILE="data/raw/${{ steps.date.outputs.target }}.json"
+          FILE="data/raw/ndl-${{ steps.date.outputs.target }}.json"
+          # Fallback to legacy filename
+          [ ! -f "$FILE" ] && FILE="data/raw/${{ steps.date.outputs.target }}.json"
           if [ -f "$FILE" ]; then
             COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
             echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
-            echo "Found $COUNT speeches for ${{ steps.date.outputs.target }}"
+            echo "NDL: Found $COUNT speeches"
           else
             echo "speeches=0" >> "$GITHUB_OUTPUT"
-            echo "No data file found"
+            echo "NDL: No data file found"
           fi
 
-      - name: Summarize with Claude API
-        if: steps.check.outputs.speeches != '0'
+      - name: Summarize NDL data with Claude API
+        if: steps.check_ndl.outputs.speeches != '0'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
 
+      # ----- Source: Kantei Press Conferences -----
+      - name: Fetch from Kantei
+        id: check_kantei
+        continue-on-error: true
+        run: |
+          python scripts/fetch_kantei.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
+          FILE="data/raw/kantei-${{ steps.date.outputs.target }}.json"
+          if [ -f "$FILE" ]; then
+            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
+            echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
+            echo "Kantei: Found $COUNT speeches"
+          else
+            echo "speeches=0" >> "$GITHUB_OUTPUT"
+            echo "Kantei: No press conferences found"
+          fi
+
+      # TODO: Summarize kantei data once adapter is tested
+      # - name: Summarize Kantei data
+      #   if: steps.check_kantei.outputs.speeches != '0'
+      #   env:
+      #     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      #   run: python scripts/summarize.py --date ${{ steps.date.outputs.target }} --raw-dir data/raw --raw-prefix kantei-
+
+      # ----- Post-processing -----
       - name: Generate sitemap
-        if: steps.check.outputs.speeches != '0'
-        run: python scripts/gen_sitemap.py
+        run: node scripts/generate-sitemap.js
 
       - name: Commit and push data
-        if: steps.check.outputs.speeches != '0'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -78,7 +103,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "data: update ${{ steps.date.outputs.target }} (${{ steps.check.outputs.speeches }} speeches)"
+            git commit -m "data: update ${{ steps.date.outputs.target }}"
             git push
           fi
 
@@ -86,7 +111,8 @@ jobs:
         run: |
           echo "## Daily Batch Summary" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Date**: ${{ steps.date.outputs.target }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Speeches**: ${{ steps.check.outputs.speeches }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **NDL speeches**: ${{ steps.check_ndl.outputs.speeches }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Kantei speeches**: ${{ steps.check_kantei.outputs.speeches || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           if [ -f "data/threads/${{ steps.date.outputs.target }}.json" ]; then
             THREADS=$(python3 -c "import json; print(len(json.load(open('data/threads/${{ steps.date.outputs.target }}.json'))))")
             echo "- **Threads generated**: $THREADS" >> "$GITHUB_STEP_SUMMARY"

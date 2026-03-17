@@ -262,7 +262,12 @@ def build_thread_context(thread_info, meeting):
     links = []
     meeting_url = meeting.get("meetingURL")
     if meeting_url:
-        links.append({"label": "会議録全文（NDL）", "url": meeting_url})
+        source = meeting.get("source", "ndl")
+        url_labels = {
+            "ndl": "会議録全文（NDL）",
+            "kantei": "記者会見全文（首相官邸）",
+        }
+        links.append({"label": url_labels.get(source, "原文"), "url": meeting_url})
     if legislation:
         import urllib.parse
         law_name = legislation
@@ -351,6 +356,14 @@ def assemble_all(
             is_last = (thread_info is thread_infos[-1])
             context = build_thread_context(thread_info, meeting)
 
+            # Determine source from meeting metadata
+            source = meeting.get("source", "ndl")
+            source_labels = {
+                "ndl": "国会会議録",
+                "kantei": "首相記者会見",
+                "council": "審議会",
+            }
+
             thread = {
                 "id": thread_id,
                 "date": date_str.replace("-", "."),
@@ -360,6 +373,8 @@ def assemble_all(
                 "topicTag": thread_info.get("topicTag", ""),
                 "topicColor": thread_info.get("topicColor", "#6b7280"),
                 "summary": thread_info.get("summary", ""),
+                "source": source,
+                "sourceLabel": source_labels.get(source, source),
                 "context": context,
                 "speeches": assembled,
                 "outcome": {
