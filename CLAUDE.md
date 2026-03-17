@@ -55,6 +55,19 @@ npm run lint
 └── public/           Static assets
 ```
 
+## Git Conventions
+
+- **Conventional Commits**: All commit messages must follow the format:
+  - `feat:` new feature
+  - `fix:` bug fix
+  - `ci:` CI/CD changes
+  - `docs:` documentation
+  - `refactor:` code restructuring
+  - `test:` test additions/changes
+  - `chore:` maintenance/deps
+- **Issue titles**: English (body can be Japanese)
+- **Branch strategy**: Direct to main for now; PRs for larger changes
+
 ## Coding Conventions
 
 - Use TypeScript strict mode
