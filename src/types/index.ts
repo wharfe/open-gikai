@@ -70,6 +70,7 @@ export type Thread = {
   context?: ThreadContext;
   source?: string;       // "ndl" | "kantei" | "council" etc.
   sourceLabel?: string;  // "国会会議録" | "首相記者会見" etc.
+  procedural?: boolean;  // true for organizational/procedural threads
 };
 
 // UI config types

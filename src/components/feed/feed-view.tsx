@@ -16,6 +16,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [feedFilter, setFeedFilter] = useState<"all" | "following">("all");
+  const [showProcedural, setShowProcedural] = useState(false);
 
   const dateParam = searchParams.get("date");
   const committeeParam = searchParams.get("committee");
@@ -25,8 +26,14 @@ export function FeedView({ threads, members }: FeedViewProps) {
     let result = threads;
     if (dateParam) result = result.filter((t) => t.date === dateParam);
     if (committeeParam) result = result.filter((t) => t.committee === committeeParam);
+    if (!showProcedural) result = result.filter((t) => !t.procedural);
     return result;
-  }, [threads, dateParam, committeeParam]);
+  }, [threads, dateParam, committeeParam, showProcedural]);
+
+  const proceduralCount = useMemo(
+    () => threads.filter((t) => t.procedural).length,
+    [threads],
+  );
 
   const visibleThreads =
     feedFilter === "following" && follows.size > 0
@@ -93,9 +100,20 @@ export function FeedView({ threads, members }: FeedViewProps) {
           </p>
         </div>
       ) : (
-        visibleThreads.map((t) => (
-          <ThreadCard key={t.id} thread={t} members={members} />
-        ))
+        <>
+          {visibleThreads.map((t) => (
+            <ThreadCard key={t.id} thread={t} members={members} />
+          ))}
+          {!showProcedural && proceduralCount > 0 && !hasFilter && (
+            <button
+              onClick={() => setShowProcedural(true)}
+              className="flex w-full cursor-pointer items-center justify-center gap-2 border-none bg-transparent py-6 text-[14px] text-x-secondary transition-colors hover:bg-x-hover hover:text-x-text"
+            >
+              <span className="material-symbols-rounded" style={{ fontSize: 16 }}>expand_more</span>
+              手続き・組織編成スレッドを表示（{proceduralCount}件）
+            </button>
+          )}
+        </>
       )}
     </>
   );

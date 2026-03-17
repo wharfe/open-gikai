@@ -10,7 +10,7 @@ export const LEVELS: LevelConfig[] = [
   {
     id: "easy",
     label: "やさしく",
-    icon: "🌱",
+    icon: "eco",
     color: "#fbbf24",
     bg: "rgba(251,191,36,0.1)",
     border: "rgba(251,191,36,0.3)",
@@ -18,7 +18,7 @@ export const LEVELS: LevelConfig[] = [
   {
     id: "teen",
     label: "標準",
-    icon: "📖",
+    icon: "menu_book",
     color: "#34d399",
     bg: "rgba(52,211,153,0.1)",
     border: "rgba(52,211,153,0.3)",
@@ -26,7 +26,7 @@ export const LEVELS: LevelConfig[] = [
   {
     id: "adult",
     label: "詳しく",
-    icon: "📰",
+    icon: "newspaper",
     color: "#7dd3fc",
     bg: "rgba(125,211,252,0.08)",
     border: "rgba(125,211,252,0.2)",
@@ -74,12 +74,12 @@ export const MINISTER_STYLE: PartyStyle = {
 };
 
 export const TENSION_STYLE: Record<string, TensionStyle> = {
-  追及: { icon: "⚡", color: "#ef4444", bg: "rgba(239,68,68,0.1)" },
-  再追及: { icon: "🔥", color: "#f97316", bg: "rgba(249,115,22,0.1)" },
-  答弁: { icon: "💬", color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
-  確認: { icon: "❓", color: "#8b5cf6", bg: "rgba(139,92,246,0.1)" },
-  割込み: { icon: "✋", color: "#eab308", bg: "rgba(234,179,8,0.1)" },
-  議事: { icon: "📋", color: "#94a3b8", bg: "rgba(148,163,184,0.1)" },
+  追及: { icon: "bolt", color: "#ef4444", bg: "rgba(239,68,68,0.1)" },
+  再追及: { icon: "local_fire_department", color: "#f97316", bg: "rgba(249,115,22,0.1)" },
+  答弁: { icon: "chat_bubble", color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
+  確認: { icon: "help", color: "#8b5cf6", bg: "rgba(139,92,246,0.1)" },
+  割込み: { icon: "front_hand", color: "#eab308", bg: "rgba(234,179,8,0.1)" },
+  議事: { icon: "assignment", color: "#94a3b8", bg: "rgba(148,163,184,0.1)" },
 };
 
 export const TREND_PERIODS = ["今週", "今国会", "今年"] as const;

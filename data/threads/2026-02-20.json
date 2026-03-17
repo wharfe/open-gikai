@@ -43,7 +43,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260220_6d3203_02",
@@ -202,7 +203,8 @@
         "committee": "本会議",
         "date": "2026.02.18"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260220_eb1f64_04",
@@ -267,7 +269,8 @@
         "公正かつ円満なる審査会運営に努める"
       ],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260220_fc718f_05",
@@ -365,7 +368,8 @@
         "committee": "本会議",
         "date": "2026.02.18"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260220_fc718f_06",
@@ -428,7 +432,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260220_a2c5de_07",
@@ -655,7 +660,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260220_82ad76_11",
@@ -718,7 +724,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260220_82ad76_12",
@@ -764,7 +771,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260220_82ad76_13",

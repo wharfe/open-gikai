@@ -1,16 +1,12 @@
 import type { Thread } from "@/types";
+import type { SessionInfo } from "@/lib/data";
 
 type SessionCardProps = {
   threads: Thread[];
+  session: SessionInfo;
 };
 
-// Current Diet session info — update when session changes
-const SESSION = {
-  name: "第221回国会（特別国会）",
-  period: "2026.02.18 — 2026.07.17",
-};
-
-export function SessionCard({ threads }: SessionCardProps) {
+export function SessionCard({ threads, session }: SessionCardProps) {
   const totalSpeeches = threads.reduce((s, t) => s + t.speeches.length, 0);
   const uniqueMembers = new Set(
     threads.flatMap((t) => t.speeches.map((s) => s.memberId))
@@ -34,10 +30,10 @@ export function SessionCard({ threads }: SessionCardProps) {
         <div className="flex items-start justify-between">
           <div>
             <div className="text-[15px] font-bold text-x-text">
-              {SESSION.name}
+              {session.name}
             </div>
             <div className="mt-0.5 text-[13px] text-x-secondary">
-              {SESSION.period}
+              {session.period}
             </div>
           </div>
           <span

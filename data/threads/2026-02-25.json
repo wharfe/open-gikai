@@ -41,7 +41,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260225_73abfd_02",

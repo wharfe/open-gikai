@@ -22,7 +22,7 @@ export function LevelBar() {
               fontWeight: isActive ? 700 : 400,
             }}
           >
-            {l.icon}
+            <span className="material-symbols-rounded" style={{ fontSize: 16 }}>{l.icon}</span>
           </button>
         );
       })}

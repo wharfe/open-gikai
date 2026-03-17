@@ -134,3 +134,16 @@ export function getProcessingStatus(): Record<string, unknown> | null {
   }
   return null;
 }
+
+export type SessionInfo = {
+  name: string;
+  period: string;
+  startDate: string;
+  endDate: string;
+};
+
+export function getSessionInfo(): SessionInfo {
+  const sessionPath = path.join(process.cwd(), "data", "session.json");
+  const raw = fs.readFileSync(sessionPath, "utf-8");
+  return JSON.parse(raw);
+}

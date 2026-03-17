@@ -295,7 +295,8 @@
         "committee": "議院運営委員会",
         "date": "2026.02.18"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260219_48a04d_05",
@@ -341,7 +342,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260219_48a04d_06",
@@ -387,7 +389,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260219_48a04d_07",
@@ -450,7 +453,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260219_795d8c_08",
@@ -496,7 +500,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260219_ae63eb_09",
@@ -542,6 +547,7 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   }
 ]

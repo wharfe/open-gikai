@@ -160,7 +160,8 @@
         "committee": "文部科学委員会",
         "date": "2026.03.03"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260303_17fcbc_03",
@@ -1489,6 +1490,7 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   }
 ]

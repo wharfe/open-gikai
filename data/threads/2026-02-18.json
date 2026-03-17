@@ -94,7 +94,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260218_913057_02",
@@ -372,7 +373,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260218_201dd7_05",
@@ -435,7 +437,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260218_201dd7_06",
@@ -494,7 +497,8 @@
         "committee": "議院運営委員会",
         "date": "2026.02.19"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260218_201dd7_07",
@@ -957,7 +961,8 @@
         "committee": "議院運営委員会",
         "date": "2026.02.18"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260218_2bd6ea_13",
@@ -1083,7 +1088,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260218_2bd6ea_15",
@@ -1206,7 +1212,8 @@
         "committee": "北朝鮮による拉致問題等に関する特別委員会",
         "date": "2026.02.20"
       }
-    ]
+    ],
+    "procedural": true
   },
   {
     "id": "t_20260218_2bd6ea_16",
@@ -1580,7 +1587,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260218_ed8c16_21",
@@ -1660,7 +1668,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "procedural": true
   },
   {
     "id": "t_20260218_564428_22",

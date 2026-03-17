@@ -167,7 +167,7 @@ export function MemberProfileView({
             return (
               <span key={t} className="text-[14px]">
                 <span className="font-bold text-x-text">{n}</span>{" "}
-                <span className="text-x-secondary">{ts.icon} {t}</span>
+                <span className="text-x-secondary"><span className="material-symbols-rounded" style={{ fontSize: 14 }}>{ts.icon}</span> {t}</span>
               </span>
             );
           })}
@@ -204,7 +204,7 @@ export function MemberProfileView({
                 className="rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
                 style={{ color: ts.color, background: ts.bg }}
               >
-                {ts.icon} {sp.tension}
+                <span className="material-symbols-rounded" style={{ fontSize: 14 }}>{ts.icon}</span> {sp.tension}
               </span>
               <span
                 className="rounded-full px-2.5 py-0.5 text-[13px]"

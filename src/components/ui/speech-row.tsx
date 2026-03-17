@@ -97,7 +97,7 @@ export function SpeechRow({
             className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
             style={{ color: tension.color, background: tension.bg }}
           >
-            {tension.icon} {speech.tension}
+            <span className="material-symbols-rounded" style={{ fontSize: 14 }}>{tension.icon}</span> {speech.tension}
           </span>
         </div>
 
