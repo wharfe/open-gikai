@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Level, Member, Speech, Thread } from "@/types";
+import { useAppContext } from "@/components/providers/app-provider";
 import { RANK_BADGE, TENSION_STYLE, PARTY_STYLE } from "@/lib/config";
 import { getStyle, buildSpeechShare } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
@@ -27,6 +28,7 @@ export function SpeechRow({
   followed = false,
 }: SpeechRowProps) {
   const [expanded, setExpanded] = useState(false);
+  const { toggleFollow } = useAppContext();
   const tension = TENSION_STYLE[speech.tension];
   const ms = getStyle(member);
   const badge = RANK_BADGE[member.rank];
@@ -80,9 +82,13 @@ export function SpeechRow({
           )}
           <span className="text-[15px] text-x-secondary">·</span>
           <span className="text-[15px] text-x-secondary">{member.role}</span>
-          {followed && (
-            <span className="text-[11px] text-x-accent">フォロー中</span>
-          )}
+          <button
+            onClick={(e) => { e.preventDefault(); toggleFollow(speech.memberId); }}
+            className="cursor-pointer rounded-full border-none bg-transparent px-1.5 py-0.5 text-[11px] font-bold transition-colors hover:bg-x-accent/10"
+            style={{ color: followed ? "#1d9bf0" : "#71767b" }}
+          >
+            {followed ? "フォロー中 ✓" : "+ フォロー"}
+          </button>
         </div>
 
         {/* Tension badge */}

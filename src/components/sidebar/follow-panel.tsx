@@ -12,7 +12,7 @@ type FollowPanelProps = {
 };
 
 export function FollowPanel({ members }: FollowPanelProps) {
-  const { follows } = useAppContext();
+  const { follows, toggleFollow } = useAppContext();
 
   if (follows.size === 0) return null;
 
@@ -42,15 +42,17 @@ export function FollowPanel({ members }: FollowPanelProps) {
                   : m.role}
               </div>
             </div>
-            <div
-              className="rounded-full border px-4 py-1.5 text-[13px] font-bold"
+            <button
+              onClick={(e) => { e.preventDefault(); toggleFollow(id); }}
+              className="cursor-pointer rounded-full border px-4 py-1.5 text-[13px] font-bold transition-colors hover:border-red-500/50 hover:text-red-400"
               style={{
                 borderColor: ms.color,
                 color: ms.color,
+                background: "transparent",
               }}
             >
               フォロー中
-            </div>
+            </button>
           </Link>
         );
       })}
