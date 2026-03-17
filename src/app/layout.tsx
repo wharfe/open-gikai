@@ -64,7 +64,7 @@ export default function RootLayout({
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,300,0,0&icon_names=account_balance,add,arrow_back,arrow_forward,assignment,bolt,calendar_month,chat_bubble,check,chevron_left,chevron_right,close,code,content_copy,dark_mode,description,eco,expand_more,front_hand,group,help,home,info,light_mode,local_fire_department,menu,menu_book,newspaper,open_in_new,search,share,smart_toy,star,trending_up,update&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,300,0,0&icon_names=account_balance,add,arrow_back,arrow_forward,assignment,bolt,calendar_month,chat_bubble,check,chevron_left,chevron_right,close,code,content_copy,dark_mode,description,eco,expand_more,favorite,front_hand,group,help,home,info,light_mode,local_fire_department,menu,menu_book,newspaper,open_in_new,search,share,smart_toy,star,trending_up,update&display=swap"
         />
         <script
           type="application/ld+json"
