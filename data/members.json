@@ -32,17 +32,6 @@
     "stance": [],
     "rank": "minister"
   },
-  "etoutaku": {
-    "id": "etoutaku",
-    "name": "江藤拓",
-    "party": "自由民主党",
-    "role": "農林水産大臣",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "minister"
-  },
   "furukawayasushi": {
     "id": "furukawayasushi",
     "name": "古川康",
@@ -53,6 +42,17 @@
     "bio": "",
     "stance": [],
     "rank": "viceminister"
+  },
+  "etoutaku": {
+    "id": "etoutaku",
+    "name": "江藤拓",
+    "party": "自由民主党",
+    "role": "農林水産大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
   },
   "murakamiseiichirou": {
     "id": "murakamiseiichirou",
@@ -428,10 +428,10 @@
     "stance": [],
     "rank": "member"
   },
-  "tamuratakaaki": {
-    "id": "tamuratakaaki",
-    "name": "田村貴昭",
-    "party": "日本共産党",
+  "moriyousuke": {
+    "id": "moriyousuke",
+    "name": "森ようすけ",
+    "party": "国民民主党",
     "role": "議員",
     "district": null,
     "since": null,
@@ -439,10 +439,10 @@
     "stance": [],
     "rank": "member"
   },
-  "moriyousuke": {
-    "id": "moriyousuke",
-    "name": "森ようすけ",
-    "party": "国民民主党",
+  "tamuratakaaki": {
+    "id": "tamuratakaaki",
+    "name": "田村貴昭",
+    "party": "日本共産党",
     "role": "議員",
     "district": null,
     "since": null,
@@ -1044,6 +1044,28 @@
     "stance": [],
     "rank": "member"
   },
+  "azumakatsuya": {
+    "id": "azumakatsuya",
+    "name": "東克哉",
+    "party": "立憲民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "tsujikiyoto": {
+    "id": "tsujikiyoto",
+    "name": "辻清人",
+    "party": "自由民主党",
+    "role": "内閣府副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
   "sakaguchinaoto": {
     "id": "sakaguchinaoto",
     "name": "阪口直人",
@@ -1176,61 +1198,6 @@
     "stance": [],
     "rank": "member"
   },
-  "hiroseken": {
-    "id": "hiroseken",
-    "name": "広瀬建",
-    "party": "自由民主党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "oogushihiroshi": {
-    "id": "oogushihiroshi",
-    "name": "大串博志",
-    "party": "立憲民主党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "aoyagihitoshi": {
-    "id": "aoyagihitoshi",
-    "name": "青柳仁士",
-    "party": "日本維新の会",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "sakamotoryuutarou": {
-    "id": "sakamotoryuutarou",
-    "name": "坂本竜太郎",
-    "party": "自由民主党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "honjousatoshi": {
-    "id": "honjousatoshi",
-    "name": "本庄知史",
-    "party": "立憲民主党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
   "genmakentarou": {
     "id": "genmakentarou",
     "name": "源馬謙太郎",
@@ -1264,6 +1231,17 @@
     "stance": [],
     "rank": "member"
   },
+  "honjousatoshi": {
+    "id": "honjousatoshi",
+    "name": "本庄知史",
+    "party": "立憲民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
   "okunosouichirou": {
     "id": "okunosouichirou",
     "name": "奥野総一郎",
@@ -1289,6 +1267,28 @@
   "saitouarekkusu": {
     "id": "saitouarekkusu",
     "name": "斎藤アレックス",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "oogushihiroshi": {
+    "id": "oogushihiroshi",
+    "name": "大串博志",
+    "party": "立憲民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "aoyagihitoshi": {
+    "id": "aoyagihitoshi",
+    "name": "青柳仁士",
     "party": "日本維新の会",
     "role": "議員",
     "district": null,
@@ -1340,6 +1340,17 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_db81b600": {
+    "id": "m_db81b600",
+    "name": "岩尾信行",
+    "party": null,
+    "role": "内閣法制局長官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
   },
   "shiokawatetsuya": {
     "id": "shiokawatetsuya",
@@ -1484,49 +1495,27 @@
     "stance": [],
     "rank": "member"
   },
-  "ichimurakouichirou": {
-    "id": "ichimurakouichirou",
-    "name": "市村浩一郎",
-    "party": "日本維新の会",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "nakagawahiromasa": {
-    "id": "nakagawahiromasa",
-    "name": "中川宏昌",
-    "party": "公明党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "m_0bf4cf69": {
-    "id": "m_0bf4cf69",
-    "name": "高橋謙司",
+  "m_b8b340d7": {
+    "id": "m_b8b340d7",
+    "name": "横山征成",
     "party": null,
-    "role": "内閣官房防災庁設置準備室次長／内閣府政策統括官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "m_617c80bb": {
-    "id": "m_617c80bb",
-    "name": "服部卓也",
-    "party": null,
-    "role": "国土交通省大臣官房技術審議官",
+    "role": "国土交通省大臣官房審議官",
     "district": null,
     "since": null,
     "bio": "",
     "stance": [],
     "rank": "minister"
+  },
+  "shoujikenichi": {
+    "id": "shoujikenichi",
+    "name": "庄子賢一",
+    "party": "公明党",
+    "role": "農林水産大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
   },
   "kushibuchimari": {
     "id": "kushibuchimari",
@@ -1550,39 +1539,6 @@
     "stance": [],
     "rank": "viceminister"
   },
-  "m_b8b340d7": {
-    "id": "m_b8b340d7",
-    "name": "横山征成",
-    "party": null,
-    "role": "国土交通省大臣官房審議官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "minister"
-  },
-  "shoujikenichi": {
-    "id": "shoujikenichi",
-    "name": "庄子賢一",
-    "party": "公明党",
-    "role": "農林水産大臣政務官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "viceminister"
-  },
-  "kitagamikeirou": {
-    "id": "kitagamikeirou",
-    "name": "北神圭朗",
-    "party": "有志の会",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
   "ozakimasanao": {
     "id": "ozakimasanao",
     "name": "尾崎正直",
@@ -1599,6 +1555,17 @@
     "name": "小谷敦",
     "party": null,
     "role": "消防庁国民保護・防災部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_0bf4cf69": {
+    "id": "m_0bf4cf69",
+    "name": "高橋謙司",
+    "party": null,
+    "role": "内閣官房防災庁設置準備室次長／内閣府政策統括官",
     "district": null,
     "since": null,
     "bio": "",
@@ -1637,17 +1604,6 @@
     "bio": "",
     "stance": [],
     "rank": "viceminister"
-  },
-  "kanekoyasushi": {
-    "id": "kanekoyasushi",
-    "name": "金子恭之",
-    "party": "自由民主党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
   },
   "shinodanaoko": {
     "id": "shinodanaoko",
@@ -1935,6 +1891,28 @@
     "stance": [],
     "rank": "viceminister"
   },
+  "babayuuki": {
+    "id": "babayuuki",
+    "name": "馬場雄基",
+    "party": "立憲民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_05ec916d": {
+    "id": "m_05ec916d",
+    "name": "白石隆夫",
+    "party": null,
+    "role": "環境省環境再生・資源循環局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
   "kawaharadaeisei": {
     "id": "kawaharadaeisei",
     "name": "川原田英世",
@@ -1962,17 +1940,6 @@
     "name": "猪口幸子",
     "party": "日本維新の会",
     "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
-  "m_05ec916d": {
-    "id": "m_05ec916d",
-    "name": "白石隆夫",
-    "party": null,
-    "role": "環境省環境再生・資源循環局長",
     "district": null,
     "since": null,
     "bio": "",
@@ -2055,28 +2022,6 @@
     "bio": "",
     "stance": [],
     "rank": "minister"
-  },
-  "kunisadaisato": {
-    "id": "kunisadaisato",
-    "name": "国定勇人",
-    "party": "自由民主党",
-    "role": "国土交通大臣政務官・内閣府大臣政務官・復興大臣政務官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "viceminister"
-  },
-  "m_f25e00f9": {
-    "id": "m_f25e00f9",
-    "name": "秦康之",
-    "party": null,
-    "role": "環境省総合環境政策統括官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
   },
   "fukushigetakahiro": {
     "id": "fukushigetakahiro",
@@ -2199,17 +2144,6 @@
     "stance": [],
     "rank": "member"
   },
-  "suzukieikei": {
-    "id": "suzukieikei",
-    "name": "鈴木英敬",
-    "party": "自由民主党",
-    "role": "議員",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
   "okadakatsuya": {
     "id": "okadakatsuya",
     "name": "岡田克也",
@@ -2242,6 +2176,17 @@
     "bio": "",
     "stance": [],
     "rank": "viceminister"
+  },
+  "suzukieikei": {
+    "id": "suzukieikei",
+    "name": "鈴木英敬",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   },
   "m_eaad4857": {
     "id": "m_eaad4857",
@@ -2364,50 +2309,6 @@
     "stance": [],
     "rank": "member"
   },
-  "m_54eec620": {
-    "id": "m_54eec620",
-    "name": "小林太郎",
-    "party": null,
-    "role": "国土交通省大臣官房審議官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "minister"
-  },
-  "m_fc666884": {
-    "id": "m_fc666884",
-    "name": "高橋宏治",
-    "party": null,
-    "role": "こども家庭庁長官官房審議官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "minister"
-  },
-  "m_453fde64": {
-    "id": "m_453fde64",
-    "name": "森真弘",
-    "party": null,
-    "role": "厚生労働省大臣官房審議官",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "minister"
-  },
-  "m_2c038568": {
-    "id": "m_2c038568",
-    "name": "奥野聡雄",
-    "party": null,
-    "role": "日本銀行企画局長",
-    "district": null,
-    "since": null,
-    "bio": "",
-    "stance": [],
-    "rank": "member"
-  },
   "m_8d51bfb7": {
     "id": "m_8d51bfb7",
     "name": "向井康二",
@@ -2462,5 +2363,544 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_c755a59b": {
+    "id": "m_c755a59b",
+    "name": "築山信彦",
+    "party": null,
+    "role": "衆議院事務総長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_e596e3eb": {
+    "id": "m_e596e3eb",
+    "name": "伊藤文靖",
+    "party": null,
+    "role": "参議院事務総長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "katayamasatsuki": {
+    "id": "katayamasatsuki",
+    "name": "片山さつき",
+    "party": "自由民主党",
+    "role": "財務大臣・内閣府特命担当大臣（金融）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "matsumotoyouhei": {
+    "id": "matsumotoyouhei",
+    "name": "松本洋平",
+    "party": "自由民主党",
+    "role": "文部科学大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "nakamurahiroyuki": {
+    "id": "nakamurahiroyuki",
+    "name": "中村裕之",
+    "party": "自由民主党",
+    "role": "文部科学副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "kobayashishigeki": {
+    "id": "kobayashishigeki",
+    "name": "小林茂樹",
+    "party": "自由民主党",
+    "role": "文部科学副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "shimizumasato": {
+    "id": "shimizumasato",
+    "name": "清水真人",
+    "party": "自由民主党",
+    "role": "文部科学大臣政務官・復興大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "fukudakaoru": {
+    "id": "fukudakaoru",
+    "name": "福田かおる",
+    "party": "自由民主党",
+    "role": "文部科学大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "horiuchinoriko": {
+    "id": "horiuchinoriko",
+    "name": "堀内詔子",
+    "party": "自由民主党",
+    "role": "総務副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "takahashikatsunori": {
+    "id": "takahashikatsunori",
+    "name": "高橋克法",
+    "party": "自由民主党",
+    "role": "総務副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "nakanohideyuki": {
+    "id": "nakanohideyuki",
+    "name": "中野英幸",
+    "party": "自由民主党",
+    "role": "総務大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "kajiharadaisuke": {
+    "id": "kajiharadaisuke",
+    "name": "梶原大介",
+    "party": "自由民主党",
+    "role": "総務大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "mukouyamajun": {
+    "id": "mukouyamajun",
+    "name": "向山淳",
+    "party": "自由民主党",
+    "role": "総務大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
+  },
+  "yamaguchishunichi": {
+    "id": "yamaguchishunichi",
+    "name": "山口俊一",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_158186af": {
+    "id": "m_158186af",
+    "name": "菅原晶子",
+    "party": null,
+    "role": "人事官候補者（公益社団法人経済同友会常務理事）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nakasoneyasutaka": {
+    "id": "nakasoneyasutaka",
+    "name": "中曽根康隆",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nakagawahiromasa": {
+    "id": "nakagawahiromasa",
+    "name": "中川宏昌",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "ishikawamasaru": {
+    "id": "ishikawamasaru",
+    "name": "石川勝",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "mineshimayuuya": {
+    "id": "mineshimayuuya",
+    "name": "峰島侑也",
+    "party": "チームみらい",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "muraihideki": {
+    "id": "muraihideki",
+    "name": "村井英樹",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nakagawayasuhiro": {
+    "id": "nakagawayasuhiro",
+    "name": "中川康洋",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nogamikoutarou": {
+    "id": "nogamikoutarou",
+    "name": "野上浩太郎",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_aad738ce": {
+    "id": "m_aad738ce",
+    "name": "藤井多希子",
+    "party": null,
+    "role": "国立社会保障・人口問題研究所社会保障基礎理論研究部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_235835e9": {
+    "id": "m_235835e9",
+    "name": "天野馨南子",
+    "party": null,
+    "role": "株式会社ニッセイ基礎研究所生活研究部人口動態シニアリサーチャー",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_2079857e": {
+    "id": "m_2079857e",
+    "name": "山田昌弘",
+    "party": null,
+    "role": "中央大学文学部教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "hoshihokuto": {
+    "id": "hoshihokuto",
+    "name": "星北斗",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "kojimatomoko": {
+    "id": "kojimatomoko",
+    "name": "小島とも子",
+    "party": "立憲民主・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "mizunokouichi": {
+    "id": "mizunokouichi",
+    "name": "水野孝一",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "kawamurayuudai": {
+    "id": "kawamurayuudai",
+    "name": "川村雄大",
+    "party": "公明党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "uenohotaru": {
+    "id": "uenohotaru",
+    "name": "上野ほたる",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "miyadechisato": {
+    "id": "miyadechisato",
+    "name": "宮出千慧",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "shirakawayouko": {
+    "id": "shirakawayouko",
+    "name": "白川容子",
+    "party": "日本共産党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "otsujitomomi": {
+    "id": "otsujitomomi",
+    "name": "尾辻朋実",
+    "party": "チームみらい・無所属の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "yamamotosachiko": {
+    "id": "yamamotosachiko",
+    "name": "山本佐知子",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "kagoshimaakihiro": {
+    "id": "kagoshimaakihiro",
+    "name": "かごしま彰宏",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "suzukimuneo": {
+    "id": "suzukimuneo",
+    "name": "鈴木宗男",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_8135583f": {
+    "id": "m_8135583f",
+    "name": "神保謙",
+    "party": null,
+    "role": "公益財団法人国際文化会館常務理事・慶應義塾大学総合政策学部教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_cc1e341d": {
+    "id": "m_cc1e341d",
+    "name": "岩間陽子",
+    "party": null,
+    "role": "政策研究大学院大学教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_774693d1": {
+    "id": "m_774693d1",
+    "name": "田中均",
+    "party": null,
+    "role": "株式会社日本総合研究所国際戦略研究所特別顧問",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "shiomuraayaka": {
+    "id": "shiomuraayaka",
+    "name": "塩村あやか",
+    "party": "立憲民主・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "haradahidekazu": {
+    "id": "haradahidekazu",
+    "name": "原田秀一",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "kubotatetsuya": {
+    "id": "kubotatetsuya",
+    "name": "窪田哲也",
+    "party": "公明党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "sekihei": {
+    "id": "sekihei",
+    "name": "石平",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "sugimotojunko": {
+    "id": "sugimotojunko",
+    "name": "杉本純子",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "isezakikenji": {
+    "id": "isezakikenji",
+    "name": "伊勢崎賢治",
+    "party": "れいわ新選組",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "takarasachika": {
+    "id": "takarasachika",
+    "name": "高良沙哉",
+    "party": "沖縄の風",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "niwatayukie": {
+    "id": "niwatayukie",
+    "name": "庭田幸恵",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "akamajirou": {
+    "id": "akamajirou",
+    "name": "あかま二郎",
+    "party": "自由民主党",
+    "role": "国家公安委員会委員長・内閣府特命担当大臣（防災・海洋政策）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "setotakakazu": {
+    "id": "setotakakazu",
+    "name": "瀬戸隆一",
+    "party": "自由民主党",
+    "role": "復興副大臣・内閣府副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister"
   }
 }
