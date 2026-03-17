@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import type { SearchEntry } from "@/lib/data";
 
@@ -8,36 +8,36 @@ type SearchViewProps = {
   entries: SearchEntry[];
 };
 
-type FuseType = import("fuse.js").default<SearchEntry>;
+function searchEntries(entries: SearchEntry[], query: string): SearchEntry[] {
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return [];
+
+  return entries
+    .map((entry) => {
+      const searchable = [
+        entry.topic,
+        entry.summary,
+        entry.committee,
+        entry.topicTag,
+        ...entry.keywords,
+        ...entry.speakers,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      const score = terms.filter((t) => searchable.includes(t)).length;
+      return { entry, score };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 20)
+    .map(({ entry }) => entry);
+}
 
 export function SearchView({ entries }: SearchViewProps) {
   const [query, setQuery] = useState("");
-  const fuseRef = useRef<FuseType | null>(null);
-  const [ready, setReady] = useState(false);
 
-  // Load Fuse.js on client only
-  useEffect(() => {
-    import("fuse.js").then((mod) => {
-      const Fuse = mod.default;
-      fuseRef.current = new Fuse(entries, {
-        keys: [
-          { name: "topic", weight: 3 },
-          { name: "summary", weight: 2 },
-          { name: "keywords", weight: 2 },
-          { name: "speakers", weight: 1.5 },
-          { name: "committee", weight: 1 },
-          { name: "topicTag", weight: 1 },
-        ],
-        threshold: 0.4,
-        includeScore: true,
-      });
-      setReady(true);
-    });
-  }, [entries]);
-
-  const results = query.trim() && fuseRef.current
-    ? fuseRef.current.search(query, { limit: 20 }).map((r) => r.item)
-    : [];
+  const results = searchEntries(entries, query);
 
   return (
     <div>
