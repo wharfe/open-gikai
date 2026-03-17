@@ -31,6 +31,8 @@ PARTY_NORMALIZE = {
 MINISTER_KEYWORDS = ["内閣総理大臣", "総理大臣"]
 CABINET_KEYWORDS = ["大臣", "長官"]
 VICE_MINISTER_KEYWORDS = ["副大臣", "大臣政務官"]
+# Keywords that indicate bureaucrats, NOT cabinet members
+BUREAUCRAT_KEYWORDS = ["審議官", "局長", "部長", "課長", "参事官", "官房長", "事務次官", "施設監"]
 
 
 def normalize_party(speaker_group: Optional[str], speaker_position: Optional[str]) -> Optional[str]:
@@ -53,6 +55,9 @@ def detect_rank(speaker_position: Optional[str], speaker_role: Optional[str]) ->
     role = speaker_role or ""
     combined = pos + role
 
+    # Bureaucrats are not cabinet members even if "大臣" appears in their title
+    if any(kw in combined for kw in BUREAUCRAT_KEYWORDS):
+        return "member"
     if any(kw in combined for kw in MINISTER_KEYWORDS):
         return "pm"
     if any(kw in combined for kw in VICE_MINISTER_KEYWORDS):

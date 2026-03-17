@@ -112,6 +112,9 @@ export function MemberProfileView({
           {member.district ? ` · ${member.district}` : ""}
           {member.since ? ` · ${member.since}年〜` : ""}
         </div>
+        <div className="mt-1 text-[12px] text-x-secondary/60">
+          ※ 役職は国会会議録の記載に基づく（最新の状況と異なる場合があります）
+        </div>
         {badge && (
           <div className="mt-1 text-[13px]" style={{ color: badge.color }}>
             {badge.icon} {badge.label}
@@ -199,6 +202,19 @@ export function MemberProfileView({
           </Link>
         );
       })}
+
+      {/* Disclaimer */}
+      <div className="border-t border-x-border px-4 py-4 text-[13px] leading-[20px] text-x-secondary/60">
+        <p>
+          このプロフィール情報は国会会議録のメタデータから自動抽出しています。
+          役職・所属は会議録記載時点のものであり、最新の状況と異なる場合があります。
+          正確な情報は
+          <a href="https://www.shugiin.go.jp/" target="_blank" rel="noopener noreferrer" className="text-x-accent hover:underline">衆議院</a>
+          ・
+          <a href="https://www.sangiin.go.jp/" target="_blank" rel="noopener noreferrer" className="text-x-accent hover:underline">参議院</a>
+          の公式サイトをご確認ください。
+        </p>
+      </div>
     </>
   );
 }
