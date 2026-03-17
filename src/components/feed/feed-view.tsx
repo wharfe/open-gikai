@@ -22,25 +22,32 @@ export function FeedView({ threads, members }: FeedViewProps) {
   const committeeParam = searchParams.get("committee");
   const hasFilter = dateParam || committeeParam;
 
-  const filteredThreads = useMemo(() => {
+  // Base threads after URL param filters (but before procedural filter)
+  const baseThreads = useMemo(() => {
     let result = threads;
     if (dateParam) result = result.filter((t) => t.date === dateParam);
     if (committeeParam) result = result.filter((t) => t.committee === committeeParam);
-    if (!showProcedural) result = result.filter((t) => !t.procedural);
     return result;
-  }, [threads, dateParam, committeeParam, showProcedural]);
+  }, [threads, dateParam, committeeParam]);
 
-  const proceduralCount = useMemo(
-    () => threads.filter((t) => t.procedural).length,
-    [threads],
-  );
-
-  const visibleThreads =
+  // Apply following filter
+  const followFiltered =
     feedFilter === "following" && follows.size > 0
-      ? filteredThreads.filter((t) =>
+      ? baseThreads.filter((t) =>
           t.speeches.some((s) => follows.has(s.memberId))
         )
-      : filteredThreads;
+      : baseThreads;
+
+  // Count procedural threads in the current view
+  const proceduralCount = useMemo(
+    () => followFiltered.filter((t) => t.procedural).length,
+    [followFiltered],
+  );
+
+  // Apply procedural filter last
+  const visibleThreads = showProcedural
+    ? followFiltered
+    : followFiltered.filter((t) => !t.procedural);
 
   const tabs: [string, string][] = [
     ["all", "すべて"],
@@ -58,7 +65,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
           <span className="text-[14px] text-x-text">
             {dateParam && <span className="mr-2 rounded bg-x-accent/20 px-2 py-0.5 text-x-accent">{dateParam}</span>}
             {committeeParam && <span className="rounded bg-x-accent/20 px-2 py-0.5 text-x-accent">{committeeParam}</span>}
-            <span className="ml-2 text-x-secondary">{filteredThreads.length}件</span>
+            <span className="ml-2 text-x-secondary">{visibleThreads.length}件</span>
           </span>
           <button
             onClick={() => router.push("/")}
