@@ -284,17 +284,26 @@ def run_pipeline(
     verbose: bool = False,
 ) -> None:
     """Run the full summarization pipeline for a given date."""
-    # Load raw data
-    raw_path = os.path.join(raw_dir, f"{date_str}.json")
-    if not os.path.exists(raw_path):
-        log.error("Raw data not found: %s", raw_path)
-        log.error("Run fetch_ndl.py first: python scripts/fetch_ndl.py --date-from %s", date_str)
+    # Load raw data — collect meetings from all source files for this date
+    candidates = [
+        os.path.join(raw_dir, f"ndl-{date_str}.json"),
+        os.path.join(raw_dir, f"kantei-{date_str}.json"),
+        os.path.join(raw_dir, f"{date_str}.json"),  # legacy
+    ]
+    meetings: list = []
+    found_any = False
+    for candidate in candidates:
+        if os.path.exists(candidate):
+            found_any = True
+            with open(candidate, "r", encoding="utf-8") as f:
+                raw_data = json.load(f)
+            meetings.extend(raw_data.get("meetings", []))
+            log.info("Loaded %d meetings from %s", len(raw_data.get("meetings", [])), candidate)
+
+    if not found_any:
+        log.error("Raw data not found for %s in %s", date_str, raw_dir)
+        log.error("Run fetch_ndl.py or fetch_kantei.py first")
         sys.exit(1)
-
-    with open(raw_path, "r", encoding="utf-8") as f:
-        raw_data = json.load(f)
-
-    meetings = raw_data.get("meetings", [])
     if meeting_filter:
         meetings = [m for m in meetings if meeting_filter in m.get("meeting", "")]
 

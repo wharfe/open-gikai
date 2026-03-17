@@ -62,8 +62,8 @@ jobs:
             echo "NDL: No data file found"
           fi
 
-      - name: Summarize NDL data with Claude API
-        if: steps.check_ndl.outputs.speeches != '0'
+      - name: Summarize with Claude API
+        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
@@ -83,13 +83,6 @@ jobs:
             echo "speeches=0" >> "$GITHUB_OUTPUT"
             echo "Kantei: No press conferences found"
           fi
-
-      # TODO: Summarize kantei data once adapter is tested
-      # - name: Summarize Kantei data
-      #   if: steps.check_kantei.outputs.speeches != '0'
-      #   env:
-      #     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      #   run: python scripts/summarize.py --date ${{ steps.date.outputs.target }} --raw-dir data/raw --raw-prefix kantei-
 
       # ----- Post-processing -----
       - name: Generate sitemap
