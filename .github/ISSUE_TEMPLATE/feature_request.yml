@@ -1,0 +1,28 @@
+name: Feature Request
+description: Suggest a technical improvement or new feature
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your suggestion. Please describe the feature you'd like to see.
+        **Scope:** We accept requests related to UI/UX improvements, data pipeline enhancements, accessibility, and technical features. Requests to alter how specific politicians, parties, or political positions are presented are outside the project's scope and will be closed.
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature description
+      description: What would you like to see?
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this useful?
+      description: Who benefits and how?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you considered other approaches?

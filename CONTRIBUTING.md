@@ -6,9 +6,20 @@ Thank you for your interest in contributing to OpenGIKAI! This project aims to m
 
 ## Code of Conduct
 
-- Be respectful and constructive
-- Maintain political neutrality — OpenGIKAI is a transparency tool, not an advocacy platform
-- Focus on accuracy and accessibility
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing.
+
+## What We Accept
+
+- Bug fixes and UI/UX improvements
+- Data pipeline enhancements and new source adapters
+- Accessibility, performance, and infrastructure improvements
+- Documentation improvements
+
+## What We Do Not Accept
+
+- Changes to how specific politicians, parties, or political positions are presented
+- Selective inclusion or exclusion of parliamentary content
+- Political advocacy or editorial changes to AI prompts that introduce bias
 
 ## How to Contribute
 
