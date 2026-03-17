@@ -2,14 +2,14 @@
 
 ## Project Overview
 
-OpenGIKAI (議会) is a public media project that restructures Japanese parliamentary proceedings (Diet records) into a modern, social-media-like thread format. It fetches official transcripts from the NDL (National Diet Library) API, uses AI to summarize and structure them, and presents them on a static site.
+OpenGIKAI (議会) is a public media project that restructures Japanese parliamentary proceedings into a modern, social-media-like thread format. It supports multiple official sources — NDL (National Diet Library) Diet records and kantei.go.jp Prime Minister press conferences — uses AI to summarize and structure them, and presents them on a static site.
 
 ## Tech Stack
 
 - **Frontend**: Next.js 15 (App Router), TypeScript, Tailwind CSS
 - **Deployment**: Vercel (SSG - Static Site Generation)
-- **Data Pipeline**: Python scripts + Claude API (batch processing)
-- **Data Source**: NDL Diet Records API (`https://kokkai.ndl.go.jp/api/speech`)
+- **Data Pipeline**: Python scripts + Claude API (batch processing), with a SourceAdapter abstraction for multi-source ingestion (`scripts/sources/`)
+- **Data Sources**: NDL Diet Records API (`https://kokkai.ndl.go.jp/api/speech`), kantei.go.jp PM press conferences (`https://www.kantei.go.jp/`)
 
 ## Key Design Principles
 
@@ -51,6 +51,7 @@ npm run lint
 │   ├── lib/          Utilities and data fetching
 │   └── types/        TypeScript type definitions
 ├── scripts/          Python batch processing scripts
+│   └── sources/      Source adapters (NDL, kantei, etc.)
 ├── data/             Generated JSON data (SSG source)
 └── public/           Static assets
 ```
@@ -81,4 +82,5 @@ npm run lint
 
 - NDL API responses are in Japanese; field names are in camelCase English
 - Diet records are public domain (Copyright Act Article 13)
-- Rate limiting: be respectful of NDL API usage
+- kantei.go.jp press conferences are scraped from the PM's official website
+- Rate limiting: be respectful of NDL API and kantei.go.jp usage

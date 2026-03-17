@@ -69,7 +69,7 @@ export function MemberListView({ members, threads }: MemberListViewProps) {
       <div className="border-b border-x-border px-4 py-3">
         {/* Search */}
         <div className="flex items-center gap-3 rounded-full bg-x-search px-4">
-          <span className="text-x-secondary">🔍</span>
+          <span className="material-symbols-rounded text-x-secondary" style={{ fontSize: 20 }}>search</span>
           <input
             type="text"
             value={filter.query}

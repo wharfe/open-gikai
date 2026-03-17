@@ -17,7 +17,7 @@ export function RightSidebar({ threads, members }: RightSidebarProps) {
           href="/search"
           className="flex h-[42px] items-center gap-3 rounded-full bg-x-search px-4 transition-colors hover:bg-x-search/80"
         >
-          <span className="text-x-secondary">🔍</span>
+          <span className="material-symbols-rounded text-x-secondary" style={{ fontSize: 20 }}>search</span>
           <span className="text-[15px] text-x-secondary">
             キーワードを検索
           </span>

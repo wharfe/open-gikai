@@ -57,7 +57,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
             onClick={() => router.push("/")}
             className="cursor-pointer rounded-full border-none bg-transparent px-3 py-1 text-[13px] text-x-secondary transition-colors hover:bg-x-hover hover:text-x-text"
           >
-            ✕ 解除
+            <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>close</span> 解除
           </button>
         </div>
       )}

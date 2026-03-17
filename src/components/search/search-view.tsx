@@ -46,7 +46,7 @@ export function SearchView({ entries }: SearchViewProps) {
       {/* Search input */}
       <div className="border-b border-x-border px-4 py-3">
         <div className="flex items-center gap-3 rounded-full bg-x-search px-4">
-          <span className="text-x-secondary">🔍</span>
+          <span className="material-symbols-rounded text-x-secondary" style={{ fontSize: 20 }}>search</span>
           <input
             type="text"
             value={query}
@@ -60,7 +60,7 @@ export function SearchView({ entries }: SearchViewProps) {
               onClick={() => setQuery("")}
               className="cursor-pointer border-none bg-transparent text-x-secondary hover:text-x-text"
             >
-              ✕
+              <span className="material-symbols-rounded" style={{ fontSize: 18 }}>close</span>
             </button>
           )}
         </div>
@@ -69,7 +69,7 @@ export function SearchView({ entries }: SearchViewProps) {
       {/* Results */}
       {query.trim() === "" ? (
         <div className="px-8 py-16 text-center">
-          <div className="mb-3 text-3xl">🔍</div>
+          <div className="mb-3"><span className="material-symbols-rounded text-x-secondary" style={{ fontSize: 32 }}>search</span></div>
           <p className="text-[15px] text-x-secondary">
             キーワードを入力してスレッドを検索
           </p>

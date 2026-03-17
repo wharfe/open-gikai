@@ -2,11 +2,12 @@
 
 **[open-gikai.net](https://open-gikai.net)** | [🇬🇧 English](./README.md)
 
-**OpenGIKAI（議会）** は、議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディアプロジェクトです。SNSのような読みやすさで、公式の一次情報に基づいた議会情報を届けます。
+**OpenGIKAI（議会）** は、議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディアプロジェクトです。SNSのような読みやすさで、公式の一次情報に基づいた議会情報を届けます。国会会議録（NDL）と首相官邸の記者会見（kantei.go.jp）を含む複数の公式ソースに対応しています。
 
 ## 概要
 
 - [国立国会図書館（NDL）の会議録API](https://kokkai.ndl.go.jp/api.html)から公式議事録を取得
+- [首相官邸](https://www.kantei.go.jp/)の記者会見を取得
 - AI（Claude）で発言をテーマ別に要約・構造化
 - 3つの読みやすさレベルでスレッド形式のUIに表示：
   - 🌱 **やさしく** — 誰でもわかるシンプルな言葉
@@ -24,7 +25,7 @@
 | フロントエンド | Next.js 15 (App Router)、TypeScript、Tailwind CSS |
 | デプロイ | Vercel（静的サイト生成） |
 | データパイプライン | Python + Claude API |
-| データソース | [NDL 国会会議録検索システムAPI](https://kokkai.ndl.go.jp/api.html) |
+| データソース | [NDL 国会会議録検索システムAPI](https://kokkai.ndl.go.jp/api.html)、[首相官邸](https://www.kantei.go.jp/) |
 
 ## はじめかた
 
@@ -48,7 +49,8 @@ npm run dev
 │   ├── components/   # Reactコンポーネント
 │   ├── lib/          # ユーティリティ・データ取得
 │   └── types/        # TypeScript型定義
-├── scripts/          # Pythonバッチ処理（NDL API → Claude API → JSON）
+├── scripts/          # Pythonバッチ処理（ソースアダプター → Claude API → JSON）
+│   └── sources/      # ソースアダプター（NDL、官邸など）
 ├── data/             # SSG用の生成済みJSONデータ
 └── public/           # 静的アセット
 ```
@@ -56,11 +58,11 @@ npm run dev
 ## 仕組み
 
 ```
-NDL API → 議事録取得 → テーマ別グルーピング（Claude API）
-       → 3レベル要約生成 → 静的JSON出力 → サイトデプロイ
+ソース（NDL、官邸等） → データ取得 → テーマ別グルーピング（Claude API）
+                      → 3レベル要約生成 → 静的JSON出力 → サイトデプロイ
 ```
 
-1. **デイリーバッチ**: 前日の全委員会議事録をNDLから取得
+1. **デイリーバッチ**: SourceAdapterを通じて各ソース（NDL、官邸等）から前日のデータを取得
 2. **AI処理**: テーマ別にグルーピング、テンション分類（追及・答弁・再追及など）、3レベルの要約を生成
 3. **静的生成**: Next.js SSG用のJSONファイルを出力
 4. **デプロイ**: Vercelに自動デプロイ
@@ -89,7 +91,7 @@ npm run build && npx serve out
 
 ## データソース
 
-議事録データは[国立国会図書館 国会会議録検索システム](https://kokkai.ndl.go.jp/)から取得しています。国会会議録は著作権法第13条により著作権の対象外です。
+議事録データは[国立国会図書館 国会会議録検索システム](https://kokkai.ndl.go.jp/)から取得しています。国会会議録は著作権法第13条により著作権の対象外です。記者会見データは[首相官邸](https://www.kantei.go.jp/)から取得しています。
 
 AI生成の要約にはその旨を明記しています。
 

@@ -163,7 +163,7 @@ export function MemberProfileView({
         {/* Tension stats */}
         <div className="mt-4 flex flex-wrap gap-4">
           {Object.entries(tensionCount).map(([t, n]) => {
-            const ts = TENSION_STYLE[t];
+            const ts = TENSION_STYLE[t] || { icon: "•", color: "#6b7280", bg: "transparent" };
             return (
               <span key={t} className="text-[14px]">
                 <span className="font-bold text-x-text">{n}</span>{" "}

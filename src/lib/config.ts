@@ -79,6 +79,7 @@ export const TENSION_STYLE: Record<string, TensionStyle> = {
   答弁: { icon: "💬", color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
   確認: { icon: "❓", color: "#8b5cf6", bg: "rgba(139,92,246,0.1)" },
   割込み: { icon: "✋", color: "#eab308", bg: "rgba(234,179,8,0.1)" },
+  議事: { icon: "📋", color: "#94a3b8", bg: "rgba(148,163,184,0.1)" },
 };
 
 export const TREND_PERIODS = ["今週", "今国会", "今年"] as const;

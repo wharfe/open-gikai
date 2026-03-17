@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LevelBar } from "@/components/ui/level-bar";
+import { Icon } from "@/components/ui/icon";
 import { useAppContext } from "@/components/providers/app-provider";
 
 const NAV_ITEMS = [
-  { href: "/", label: "ホーム", icon: "🏠" },
-  { href: "/search", label: "検索", icon: "🔍" },
-  { href: "/calendar", label: "カレンダー", icon: "📅" },
-  { href: "/members", label: "議員", icon: "👤" },
-  { href: "/about", label: "About", icon: "ℹ️" },
+  { href: "/", label: "ホーム", icon: "home" },
+  { href: "/search", label: "検索", icon: "search" },
+  { href: "/calendar", label: "カレンダー", icon: "calendar_month" },
+  { href: "/members", label: "議員", icon: "person" },
+  { href: "/about", label: "About", icon: "info" },
 ];
 
 export function Sidebar() {
@@ -27,8 +28,8 @@ export function Sidebar() {
         >
           <div className="flex items-center gap-2">
             <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.5)]" />
-            <span className="hidden text-xl font-extrabold tracking-wide xl:inline">
-              OpenGIK<span className="text-emerald-400">AI</span>
+            <span className="hidden text-xl tracking-wide xl:inline">
+              <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-emerald-400">AI</span>
             </span>
           </div>
         </Link>
@@ -43,7 +44,7 @@ export function Sidebar() {
                 href={item.href}
                 className="flex h-[50px] items-center justify-center rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:gap-4 xl:px-4"
               >
-                <span className="text-[24px]">{item.icon}</span>
+                <Icon name={item.icon} size={24} className="text-x-text" />
                 <span
                   className="hidden truncate text-lg xl:inline"
                   style={{ fontWeight: isActive ? 700 : 400 }}
@@ -68,7 +69,7 @@ export function Sidebar() {
           onClick={toggleTheme}
           className="mt-4 flex h-[50px] w-full cursor-pointer items-center justify-center rounded-full border-none bg-transparent transition-colors hover:bg-x-hover xl:justify-start xl:gap-4 xl:px-4"
         >
-          <span className="text-[24px]">{theme === "dark" ? "☀️" : "🌙"}</span>
+          <Icon name={theme === "dark" ? "light_mode" : "dark_mode"} size={24} className="text-x-text" />
           <span className="hidden text-lg text-x-text xl:inline">
             {theme === "dark" ? "ライトモード" : "ダークモード"}
           </span>
@@ -82,8 +83,8 @@ export function Sidebar() {
             G
           </div>
           <div className="hidden min-w-0 xl:block">
-            <div className="truncate text-[14px] font-bold text-x-text">
-              OpenGIK<span className="text-emerald-400">AI</span>
+            <div className="truncate text-[14px] text-x-text">
+              <span className="font-light">Open</span><span className="font-bold">GIK</span><span className="font-bold text-emerald-400">AI</span>
             </div>
             <div className="truncate text-[12px] text-x-secondary">議会をひらく</div>
           </div>
