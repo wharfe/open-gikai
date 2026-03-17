@@ -35,9 +35,10 @@ export function ShareButton({ text }: ShareButtonProps) {
           e.stopPropagation();
           setOpen((o) => !o);
         }}
-        className="flex cursor-pointer items-center gap-1 rounded-full border-none bg-transparent p-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
+        className="flex cursor-pointer items-center rounded-full border-none bg-transparent p-1.5 text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
+        aria-label="シェア"
       >
-        ↗ シェア
+        <span className="material-symbols-rounded" style={{ fontSize: 18 }}>share</span>
       </button>
       {open && (
         <>
@@ -60,7 +61,7 @@ export function ShareButton({ text }: ShareButtonProps) {
               className="flex w-full cursor-pointer items-center gap-3 border-none bg-transparent px-4 py-3 text-left text-[15px] font-bold hover:bg-x-hover"
               style={{ color: copied ? "#00ba7c" : "#e7e9ea" }}
             >
-              <span>{copied ? "✓" : "⎘"}</span>
+              <span className="material-symbols-rounded" style={{ fontSize: 18 }}>{copied ? "check" : "content_copy"}</span>
               {copied ? "コピーしました" : "テキストをコピー"}
             </button>
           </div>

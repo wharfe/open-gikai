@@ -87,7 +87,7 @@ export function SpeechRow({
             className="cursor-pointer rounded-full border-none bg-transparent px-1.5 py-0.5 text-[11px] font-bold transition-colors hover:bg-x-accent/10"
             style={{ color: followed ? "#1d9bf0" : "#71767b" }}
           >
-            {followed ? "フォロー中 ✓" : "+ フォロー"}
+            {followed ? <><span className="material-symbols-rounded align-middle" style={{ fontSize: 12 }}>check</span> フォロー中</> : <><span className="material-symbols-rounded align-middle" style={{ fontSize: 12 }}>add</span> フォロー</>}
           </button>
         </div>
 

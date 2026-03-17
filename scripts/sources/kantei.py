@@ -42,6 +42,15 @@ REQUEST_TIMEOUT = 30
 # Current cabinet number — update when cabinet changes
 DEFAULT_CABINET = "105"
 
+# PM name by cabinet number — used to replace "内閣総理大臣" with actual name
+PM_NAMES: dict[str, tuple[str, str]] = {
+    # cabinet: (name, yomi)
+    "102": ("石破茂", "いしばしげる"),
+    "103": ("石破茂", "いしばしげる"),
+    "104": ("高市早苗", "たかいちさなえ"),
+    "105": ("高市早苗", "たかいちさなえ"),
+}
+
 log = logging.getLogger("source.kantei")
 
 # Speaker tag pattern: （高市総理）【高市総理冒頭発言】（記者）（内閣広報官）etc.
@@ -241,23 +250,28 @@ class KanteiAdapter(SourceAdapter):
                 continue
 
             # Classify speaker
+            pm = PM_NAMES.get(self.cabinet)
             if "総理" in speaker_label:
-                speaker = "内閣総理大臣"
+                speaker = pm[0] if pm else "内閣総理大臣"
+                speaker_yomi = pm[1] if pm else None
                 group = None
                 position = "内閣総理大臣"
             elif "広報官" in speaker_label or "官房長官" in speaker_label:
                 speaker = speaker_label
+                speaker_yomi = None
                 group = None
                 position = speaker_label
             else:
                 # Reporter or moderator
                 speaker = speaker_label
+                speaker_yomi = None
                 group = "記者"
                 position = "記者"
 
             speeches.append(
                 RawSpeech(
                     speaker=speaker,
+                    speaker_yomi=speaker_yomi,
                     speaker_group=group,
                     speaker_position=position,
                     text=body,

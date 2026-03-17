@@ -31,7 +31,7 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_0b877e_01</loc>
+    <loc>https://open-gikai.net/t/t_20260218_913057_01</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,12 +41,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_913057_03</loc>
+    <loc>https://open-gikai.net/t/t_20260218_201dd7_03</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_b15e9c_04</loc>
+    <loc>https://open-gikai.net/t/t_20260218_201dd7_04</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -76,12 +76,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_201dd7_10</loc>
+    <loc>https://open-gikai.net/t/t_20260218_2bd6ea_10</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_201dd7_11</loc>
+    <loc>https://open-gikai.net/t/t_20260218_2bd6ea_11</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -111,7 +111,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_2bd6ea_17</loc>
+    <loc>https://open-gikai.net/t/t_20260218_ed8c16_17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -136,7 +136,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260218_ed8c16_22</loc>
+    <loc>https://open-gikai.net/t/t_20260218_564428_22</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -907,6 +907,11 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/sekiyoshihiro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/m/takaichisanae</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

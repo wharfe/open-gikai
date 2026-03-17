@@ -1,25 +1,13 @@
 {
   "2026-02-18": {
-    "updatedAt": "2026-03-17T11:35:44.738812Z",
+    "updatedAt": "2026-03-17T12:24:29.972675Z",
     "phase": "completed",
     "committees": [
-      {
-        "name": "北朝鮮による拉致問題等に関する特別委員会",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 1
-      },
       {
         "name": "本会議",
         "house": "参議院",
         "status": "completed",
         "threads": 2
-      },
-      {
-        "name": "消費者問題に関する特別委員会",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 1
       },
       {
         "name": "議院運営委員会",
@@ -31,7 +19,7 @@
         "name": "本会議",
         "house": "衆議院",
         "status": "completed",
-        "threads": 6
+        "threads": 7
       },
       {
         "name": "議院運営委員会",
@@ -43,17 +31,17 @@
         "name": "高市内閣総理大臣記者会見",
         "house": "内閣",
         "status": "completed",
-        "threads": 7
+        "threads": 8
       }
     ],
     "stats": {
       "threads": 29,
-      "speeches": 79,
-      "committees": 7
+      "speeches": 71,
+      "committees": 5
     }
   },
   "2026-02-19": {
-    "updatedAt": "2026-03-17T11:35:44.739278Z",
+    "updatedAt": "2026-03-17T12:24:29.972953Z",
     "phase": "completed",
     "committees": [
       {
@@ -88,7 +76,7 @@
     }
   },
   "2026-02-20": {
-    "updatedAt": "2026-03-17T11:35:44.739706Z",
+    "updatedAt": "2026-03-17T12:24:29.973220Z",
     "phase": "completed",
     "committees": [
       {
@@ -147,7 +135,7 @@
     }
   },
   "2026-02-24": {
-    "updatedAt": "2026-03-17T11:35:44.739785Z",
+    "updatedAt": "2026-03-17T12:24:29.973271Z",
     "phase": "completed",
     "committees": [
       {
@@ -164,7 +152,7 @@
     }
   },
   "2026-02-25": {
-    "updatedAt": "2026-03-17T11:35:44.739861Z",
+    "updatedAt": "2026-03-17T12:24:29.973317Z",
     "phase": "completed",
     "committees": [
       {
@@ -187,7 +175,7 @@
     }
   },
   "2026-02-26": {
-    "updatedAt": "2026-03-17T11:35:44.739988Z",
+    "updatedAt": "2026-03-17T12:24:29.973395Z",
     "phase": "completed",
     "committees": [
       {
@@ -210,7 +198,7 @@
     }
   },
   "2026-02-28": {
-    "updatedAt": "2026-03-17T11:35:44.740053Z",
+    "updatedAt": "2026-03-17T12:24:29.973435Z",
     "phase": "completed",
     "committees": [
       {
@@ -227,7 +215,7 @@
     }
   },
   "2026-03-03": {
-    "updatedAt": "2026-03-17T11:35:44.741118Z",
+    "updatedAt": "2026-03-17T12:24:29.974150Z",
     "phase": "completed",
     "committees": [
       {
@@ -256,7 +244,7 @@
     }
   },
   "2026-03-04": {
-    "updatedAt": "2026-03-17T11:35:44.744536Z",
+    "updatedAt": "2026-03-17T12:24:29.976261Z",
     "phase": "completed",
     "committees": [
       {
@@ -285,7 +273,7 @@
     }
   },
   "2026-03-10": {
-    "updatedAt": "2026-03-17T11:35:44.744765Z",
+    "updatedAt": "2026-03-17T12:24:29.976392Z",
     "phase": "completed",
     "committees": [
       {
@@ -302,7 +290,7 @@
     }
   },
   "2026-03-11": {
-    "updatedAt": "2026-03-17T11:35:44.744849Z",
+    "updatedAt": "2026-03-17T12:24:29.976553Z",
     "phase": "completed",
     "committees": [
       {
@@ -321,9 +309,9 @@
   "_summary": {
     "totalDates": 11,
     "totalThreads": 94,
-    "totalSpeeches": 350,
-    "totalCommittees": 22,
-    "totalMembers": 82,
-    "generatedAt": "2026-03-17T11:35:44.745294Z"
+    "totalSpeeches": 342,
+    "totalCommittees": 20,
+    "totalMembers": 83,
+    "generatedAt": "2026-03-17T12:24:29.976825Z"
   }
 }

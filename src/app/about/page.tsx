@@ -99,7 +99,7 @@ export default function AboutPage() {
             <h2 className="text-[20px] font-bold text-x-text">データソース</h2>
             <div className="mt-3 space-y-2 text-[15px] text-x-secondary">
               <div className="flex items-start gap-2">
-                <span className="shrink-0 text-emerald-400">→</span>
+                <span className="material-symbols-rounded shrink-0 text-emerald-400" style={{ fontSize: 18 }}>arrow_forward</span>
                 <div>
                   <a
                     href="https://kokkai.ndl.go.jp/"
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <span className="shrink-0 text-emerald-400">→</span>
+                <span className="material-symbols-rounded shrink-0 text-emerald-400" style={{ fontSize: 18 }}>arrow_forward</span>
                 <div>
                   <a
                     href="https://laws.e-gov.go.jp/"
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 className="mt-4 flex items-center justify-between rounded-xl border border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
               >
                 <span className="text-[15px] text-x-text">日別の詳細ステータスを見る</span>
-                <span className="text-x-secondary">→</span>
+                <span className="material-symbols-rounded text-x-secondary" style={{ fontSize: 18 }}>chevron_right</span>
               </Link>
             </section>
           )}

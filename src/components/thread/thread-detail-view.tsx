@@ -35,7 +35,7 @@ export function ThreadDetailView({
           href="/"
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-x-hover"
         >
-          <span className="text-xl">←</span>
+          <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
         </Link>
         <div className="min-w-0">
           <div className="truncate text-[17px] font-bold leading-tight">
@@ -99,7 +99,7 @@ export function ThreadDetailView({
                         rel="noopener noreferrer"
                         className="text-[13px] text-x-accent hover:underline"
                       >
-                        {link.label} ↗
+                        {link.label} <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>open_in_new</span>
                       </a>
                     ))}
                   </div>

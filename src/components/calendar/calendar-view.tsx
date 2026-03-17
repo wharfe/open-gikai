@@ -82,7 +82,7 @@ export function CalendarView({ days }: CalendarViewProps) {
           onClick={prevMonth}
           className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-none bg-transparent text-x-text transition-colors hover:bg-x-hover"
         >
-          ←
+          <span className="material-symbols-rounded" style={{ fontSize: 20 }}>chevron_left</span>
         </button>
         <span className="text-[17px] font-bold">
           {formatMonth(viewYear, viewMonth)}
@@ -91,7 +91,7 @@ export function CalendarView({ days }: CalendarViewProps) {
           onClick={nextMonth}
           className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-none bg-transparent text-x-text transition-colors hover:bg-x-hover"
         >
-          →
+          <span className="material-symbols-rounded" style={{ fontSize: 20 }}>chevron_right</span>
         </button>
       </div>
 
@@ -183,7 +183,7 @@ export function CalendarView({ days }: CalendarViewProps) {
                   </div>
                 </div>
                 <span className="text-[13px] text-x-secondary">
-                  {c.threads}スレッド →
+                  {c.threads}スレッド <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>arrow_forward</span>
                 </span>
               </Link>
             ))}

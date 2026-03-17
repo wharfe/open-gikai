@@ -59,7 +59,7 @@ export default function StatsPage() {
             href="/about"
             className="flex h-9 w-9 items-center justify-center rounded-full text-x-text transition-colors hover:bg-x-hover"
           >
-            ←
+            <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
           </Link>
           <div className="text-[17px] font-bold">処理ステータス</div>
         </div>

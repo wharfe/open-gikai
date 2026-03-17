@@ -1618,5 +1618,16 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "takaichisanae": {
+    "id": "takaichisanae",
+    "name": "高市早苗",
+    "party": null,
+    "role": "内閣総理大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "pm"
   }
 }

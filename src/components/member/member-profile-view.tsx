@@ -42,7 +42,7 @@ export function MemberProfileView({
           href="/"
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-x-hover"
         >
-          <span className="text-xl">←</span>
+          <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
         </Link>
         <div className="min-w-0">
           <div className="truncate text-[17px] font-bold leading-tight">
@@ -78,7 +78,7 @@ export function MemberProfileView({
                 color: isFollowed ? "#e7e9ea" : "#0f1419",
               }}
             >
-              {isFollowed ? "フォロー中 ✓" : "+ フォロー"}
+              {isFollowed ? <><span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>check</span> フォロー中</> : <><span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>add</span> フォロー</>}
             </button>
           </div>
         </div>
@@ -154,7 +154,7 @@ export function MemberProfileView({
                 rel="noopener noreferrer"
                 className="rounded-full border border-x-border px-3 py-1 text-[13px] text-x-accent transition-colors hover:bg-x-accent/10"
               >
-                {link.label} ↗
+                {link.label} <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>open_in_new</span>
               </a>
             ))}
           </div>
