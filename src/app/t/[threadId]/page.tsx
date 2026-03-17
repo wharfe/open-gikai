@@ -54,10 +54,34 @@ export default async function ThreadPage({ params }: Props) {
   const threads = getThreads();
   const members = getMembers();
 
+  const isoDate = thread.date.replace(/\./g, "-");
+  const actors = [...new Set(thread.speeches.map((s) => s.memberId))]
+    .map((id) => members[id]?.name)
+    .filter(Boolean);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: thread.topic,
+    description: thread.summary,
+    datePublished: isoDate,
+    author: actors.map((name) => ({ "@type": "Person", name })),
+    publisher: {
+      "@type": "Organization",
+      name: "OpenGIKAI",
+      url: "https://open-gikai.net",
+    },
+    mainEntityOfPage: `https://open-gikai.net/t/${threadId}`,
+  };
+
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
         <MobileHeader />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThreadDetailView thread={thread} members={members} />
       </main>
       <RightSidebar threads={threads} members={members} />

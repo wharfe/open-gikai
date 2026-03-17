@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenGIKAI — 議会をひらく</title>
+    <link>https://open-gikai.net</link>
+    <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
+    <language>ja</language>
+    <lastBuildDate>Tue, 17 Mar 2026 13:23:08 GMT</lastBuildDate>
+    <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>イラン情勢悪化に伴うガソリン価格高騰対策 — イラン情勢に関する政府の対応についての会見</title>
+      <link>https://open-gikai.net/t/t_20260311_2e73fd_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260311_2e73fd_01</guid>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+      <description>中東情勢悪化による原油高騰を受け、ガソリン価格対策の検討状況を確認（首相記者会見・2026.03.11・2発言）</description>
+      <category>イラン情勢に関する政府の対応についての会見</category>
+    </item>
+    <item>
+      <title>防災担当大臣・副大臣・政務官の所信表明 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260310_b0cd80_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260310_b0cd80_01</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description>防災担当の閣僚らが災害対策への決意と能登半島地震等への対応方針を表明（国会会議録・2026.03.10・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>人口動態と少子化・高齢化問題の現状 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_01</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>日本の人口動態の現状と課題について3名の専門家が出生率低下、高齢化、地域格差等を分析（国会会議録・2026.03.04・7発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>人口減少・少子化対策と結婚支援 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_02</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>結婚率低下の要因分析と少子化対策の効果、経済支援から働き方改革まで幅広い議論（国会会議録・2026.03.04・15発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>地域格差と課題先進地域の対応策 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_03</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>人口減少の地域格差と課題先進地域での対応策、重層的支援体制整備の課題を議論（国会会議録・2026.03.04・10発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>高齢単身世帯と地域包括ケア — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_04</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>高齢単身世帯急増への対応として医療・介護・福祉連携と地域支援体制構築を議論（国会会議録・2026.03.04・8発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>東京一極集中と女性の地方定着 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_05</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>東京一極集中の実態と地方での女性雇用確保策、リモートワークやDX推進の重要性（国会会議録・2026.03.04・8発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>社会構造変化と個人の価値観 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_06</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>バーチャル関係重視やAI依存など個人の価値観変化が結婚・家族形成に与える影響（国会会議録・2026.03.04・10発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>経済格差と結婚・出産への影響 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_07</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>所得格差が結婚・出産行動に与える影響と教育費負担、格差の世代間継承問題（国会会議録・2026.03.04・13発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>地方の製造業と若年女性雇用 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_08</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>地方製造業での女性雇用確保と子育て支援体制、インターンシップ活用による意識変化（国会会議録・2026.03.04・8発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>高齢男性の社会参加と働き方改革 — 国民生活・経済に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_919e15_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_09</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>高齢男性単身世帯の社会参加促進と労働時間規制緩和が少子化対策に与える影響（国会会議録・2026.03.04・16発言）</description>
+      <category>国民生活・経済に関する調査会</category>
+    </item>
+    <item>
+      <title>トランプ第二期政権の外交・安全保障政策とその影響 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_10</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>トランプ2.0外交政策がインド太平洋戦略環境と日米同盟に与える影響を分析（国会会議録・2026.03.04・6発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>国際法と武力行使の合法性 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_11</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>戦争違法化の歴史と現在の国際法における武力行使の合法性について議論（国会会議録・2026.03.04・4発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>日朝首脳会談と拉致問題 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_12</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>2002年日朝首脳会談での拉致被害者帰国に関する約束と経緯の検証（国会会議録・2026.03.04・2発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>防衛装備移転と平和国家としての日本 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_13</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>防衛装備移転五類型見直しと日本の平和国家ブランドへの影響を検討（国会会議録・2026.03.04・4発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>法の支配と国際協調の維持 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_14</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>自国第一主義の時代における法の支配と国際制度維持の重要性を議論（国会会議録・2026.03.04・4発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>中国外交政策の変化と対応 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_15</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>2016-17年頃から始まった中国の戦狼外交への転換と日本の対応策（国会会議録・2026.03.04・9発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>台湾海峡危機のシナリオ分析 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_16</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>中国による台湾武力統一の可能性と現状では困難とする理由を分析（国会会議録・2026.03.04・2発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>日本の情報・インテリジェンス機能強化 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_17</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>内閣情報調査室の国家情報局格上げと情報収集・分析能力の向上（国会会議録・2026.03.04・4発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>中東情勢とアメリカのイラン攻撃 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_18</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>アメリカのイラン武力攻撃の背景と中東情勢への影響、日本の役割（国会会議録・2026.03.04・6発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>在日米軍基地の使用制限と核兵器問題 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_19</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>在日米軍基地からの中東作戦出撃制限と日本の核兵器政策の矛盾（国会会議録・2026.03.04・4発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>国際法の存在意義と実効性 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_20</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_20</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>国際法の存在目的と執行力の限界、リベラル国際秩序の将来（国会会議録・2026.03.04・5発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>アメリカ主導の国際秩序の変化 — 国際問題に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20260304_cf2e13_21</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_21</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>アメリカが作ったアジェンダからの撤退とリベラル秩序の今後（国会会議録・2026.03.04・2発言）</description>
+      <category>国際問題に関する調査会</category>
+    </item>
+    <item>
+      <title>予算委員会地方公聴会の委員派遣承認 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260304_7c0a75_22</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_7c0a75_22</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>令和8年度予算審査のための地方公聴会開催について各党が賛否表明、職権決定への反対意見相次ぐ（国会会議録・2026.03.04・4発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>令和8年度文部科学省関係予算案の概要 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_1b69d5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_1b69d5_01</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>松本文科大臣の所信表明と中村副大臣による令和8年度文部科学省関係予算案の概要説明（国会会議録・2026.03.03・2発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>文部科学省幹部の就任挨拶 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_1b69d5_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_1b69d5_02</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>小林副大臣、清水政務官、福田政務官による就任挨拶と担当分野への取組表明（国会会議録・2026.03.03・3発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>総務大臣所信表明 — 総務委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_17fcbc_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_17fcbc_03</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>林総務大臣が地方重視の施策方針と災害対応への決意を表明（国会会議録・2026.03.03・1発言）</description>
+      <category>総務委員会</category>
+    </item>
+    <item>
+      <title>総務省令和8年度予算案説明 — 総務委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_17fcbc_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_17fcbc_04</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>堀内副大臣が総務省所管の令和8年度予算案の概要を説明（国会会議録・2026.03.03・1発言）</description>
+      <category>総務委員会</category>
+    </item>
+    <item>
+      <title>総務省副大臣・政務官挨拶 — 総務委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_17fcbc_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_17fcbc_05</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>高橋副大臣と3名の政務官が委員会での協力を求める挨拶（国会会議録・2026.03.03・4発言）</description>
+      <category>総務委員会</category>
+    </item>
+    <item>
+      <title>人事官任命手続きと参考人所信表明 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_d537a4_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_d537a4_06</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>菅原晶子氏の人事官任命に関する所信聴取と参考人出頭決定（国会会議録・2026.03.03・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国家公務員の人材確保と人事制度改革 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_d537a4_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_d537a4_07</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>公務員志望者減少と若手離職に対する人事制度改革と処遇改善の必要性（国会会議録・2026.03.03・21発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>公務員の働き方改革とデジタル化推進 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_d537a4_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_d537a4_08</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>長時間労働是正とデジタル技術活用による公務員の業務効率化（国会会議録・2026.03.03・5発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>官民人材交流と人事システム改革 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_d537a4_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_d537a4_09</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>官民の人材流動性向上と実力主義に基づく年功序列からの脱却（国会会議録・2026.03.03・15発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>人事院の独立性と官民格差への対応 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_d537a4_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_d537a4_10</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>人事院の中立第三者機関としての独立性確保と官民比較に基づく処遇改善（国会会議録・2026.03.03・7発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>予算委員会公聴会開会承認要求への対応 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260303_d537a4_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260303_d537a4_11</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <description>野党が審議時間不足を理由に予算委員会公聴会開会承認に反対表明（国会会議録・2026.03.03・3発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>米・イスラエルによるイラン攻撃と日本政府の対応 — イラン情勢についての会見</title>
+      <link>https://open-gikai.net/t/t_20260228_729b9b_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260228_729b9b_01</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <description>米・イスラエルがイランへの攻撃を開始し、日本政府は邦人安全確保と情報収集を指示（首相記者会見・2026.02.28・2発言）</description>
+      <category>イラン情勢についての会見</category>
+    </item>
+    <item>
+      <title>令和8年度予算案の概要説明 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260226_b97ec9_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260226_b97ec9_01</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <description>財務大臣が強い経済実現を目指す令和8年度予算案の基本方針と重要施策を説明（国会会議録・2026.02.26・2発言）</description>
+      <category>予算委員会</category>
+    </item>
+    <item>
+      <title>青森県への委員派遣調査報告 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260226_b97ec9_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260226_b97ec9_02</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <description>豪雪対策や地震被害など青森県の地域課題について現地調査結果を報告（国会会議録・2026.02.26・1発言）</description>
+      <category>予算委員会</category>
+    </item>
+    <item>
+      <title>議院運営委員会における議事進行説明 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260226_31ca07_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260226_31ca07_03</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <description>参議院本会議での国務大臣演説に関する質疑日程の説明（国会会議録・2026.02.26・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本会議議事説明（国務大臣演説質疑） — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260225_6dcdf9_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260225_6dcdf9_01</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+      <description>本日の本会議議事について事務総長が説明、国務大臣演説への質疑予定を報告（国会会議録・2026.02.25・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国務大臣演説に対する質疑の運営 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260225_73abfd_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260225_73abfd_02</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+      <description>国民民主党、参政党、チームみらいの3党による国務大臣演説への質疑実施（国会会議録・2026.02.25・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国務大臣演説に対する質疑の実施順序 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260224_877426_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260224_877426_01</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
+      <description>本会議での質疑者3名の順序と所要時間を確認（国会会議録・2026.02.24・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>参議院改革協議会設置要綱の定員改正 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260220_6d3203_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_6d3203_01</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>参議院改革協議会の定員を「十五人以内」から「十六人以内」に改正することが決定（国会会議録・2026.02.20・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>内閣総理大臣等の四大臣演説実施決定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260220_6d3203_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_6d3203_02</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>高市総理の施政方針演説等四大臣演説を本会議で聴取し、質疑は次会に譲ることが決定（国会会議録・2026.02.20・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>北朝鮮拉致問題特別委員会の組織編成 — 北朝鮮による拉致問題等に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260220_359af9_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_359af9_03</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>委員長選任と理事指名により、拉致問題解決に向けた委員会体制を整備（国会会議録・2026.02.20・3発言）</description>
+      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+    </item>
+    <item>
+      <title>情報監視審査会の会長選出 — 情報監視審査会</title>
+      <link>https://open-gikai.net/t/t_20260220_eb1f64_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_eb1f64_04</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>船田元議員を会長に選出し、特定秘密保護制度と重要経済安保情報制度の監視責任を確認（国会会議録・2026.02.20・2発言）</description>
+      <category>情報監視審査会</category>
+    </item>
+    <item>
+      <title>憲法審査会会長選出 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260220_fc718f_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_fc718f_05</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>古屋圭司議員を憲法審査会会長に選出し、就任挨拶を行った（国会会議録・2026.02.20・3発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>憲法審査会幹事選出 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260220_fc718f_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_fc718f_06</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>幹事9名を会長指名により選出し、審査会運営体制を整備した（国会会議録・2026.02.20・2発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>衆議院東日本大震災復興及び原子力問題調査特別委員会の設立 — 東日本大震災復興及び原子力問題調査特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260220_a2c5de_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_a2c5de_07</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>東日本大震災復興・原子力問題調査特別委員会の委員長選出と理事指名を実施（国会会議録・2026.02.20・2発言）</description>
+      <category>東日本大震災復興及び原子力問題調査特別委員会</category>
+    </item>
+    <item>
+      <title>沖縄及び北方問題特別委員会の設立と今後の課題 — 沖縄及び北方問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260220_c59ed2_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_c59ed2_08</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+      <description>委員長就任挨拶で沖縄振興の成果と課題、北方領土問題への取組方針を表明（国会会議録・2026.02.20・1発言）</description>
+      <category>沖縄及び北方問題に関する特別委員会</category>
+    </item>
+  </channel>
+</rss>

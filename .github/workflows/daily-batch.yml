@@ -86,7 +86,7 @@ jobs:
 
       # ----- Post-processing -----
       - name: Generate sitemap
-        run: node scripts/generate-sitemap.js
+        run: node scripts/generate-feeds.js
 
       - name: Commit and push data
         run: |

@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   manifest: "/site.webmanifest",
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   other: {
     "theme-color": "#34d399",
   },
