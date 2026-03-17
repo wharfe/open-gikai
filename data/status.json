@@ -1,0 +1,249 @@
+{
+  "2025-03-14": {
+    "updatedAt": "2026-03-17T07:11:59.463780Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "予算委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 18
+      },
+      {
+        "name": "地方創生及びデジタル社会の形成等に関する特別委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 2
+      },
+      {
+        "name": "本会議",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 8
+      },
+      {
+        "name": "災害対策特別委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 1
+      },
+      {
+        "name": "議院運営委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 5
+      },
+      {
+        "name": "厚生労働委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 7
+      },
+      {
+        "name": "国土交通委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 38
+      },
+      {
+        "name": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 32
+      },
+      {
+        "name": "政治改革に関する特別委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 13
+      },
+      {
+        "name": "文部科学委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 11
+      },
+      {
+        "name": "東日本大震災復興・防災・災害対策に関する特別委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 12
+      },
+      {
+        "name": "法務委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 11
+      },
+      {
+        "name": "環境委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 14
+      },
+      {
+        "name": "経済産業委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 11
+      },
+      {
+        "name": "財務金融委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 5
+      }
+    ],
+    "stats": {
+      "threads": 188,
+      "speeches": 1315,
+      "committees": 15
+    }
+  },
+  "2026-02-24": {
+    "updatedAt": "2026-03-17T07:11:59.464733Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "議院運営委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 1,
+      "speeches": 1,
+      "committees": 1
+    }
+  },
+  "2026-02-25": {
+    "updatedAt": "2026-03-17T07:11:59.464862Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "議院運営委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 1
+      },
+      {
+        "name": "議院運営委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 2,
+      "speeches": 2,
+      "committees": 2
+    }
+  },
+  "2026-02-26": {
+    "updatedAt": "2026-03-17T07:11:59.464962Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "予算委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 2
+      },
+      {
+        "name": "議院運営委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 3,
+      "speeches": 4,
+      "committees": 2
+    }
+  },
+  "2026-03-03": {
+    "updatedAt": "2026-03-17T07:11:59.465557Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "文部科学委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 2
+      },
+      {
+        "name": "総務委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 3
+      },
+      {
+        "name": "議院運営委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 6
+      }
+    ],
+    "stats": {
+      "threads": 11,
+      "speeches": 64,
+      "committees": 3
+    }
+  },
+  "2026-03-04": {
+    "updatedAt": "2026-03-17T07:11:59.467149Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "国民生活・経済に関する調査会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 9
+      },
+      {
+        "name": "国際問題に関する調査会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 12
+      },
+      {
+        "name": "議院運営委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 22,
+      "speeches": 151,
+      "committees": 3
+    }
+  },
+  "2026-03-10": {
+    "updatedAt": "2026-03-17T07:11:59.467375Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "災害対策特別委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 1
+      }
+    ],
+    "stats": {
+      "threads": 1,
+      "speeches": 5,
+      "committees": 1
+    }
+  },
+  "_summary": {
+    "totalDates": 7,
+    "totalThreads": 228,
+    "totalSpeeches": 1542,
+    "totalCommittees": 20,
+    "totalMembers": 264,
+    "generatedAt": "2026-03-17T07:11:59.468413Z"
+  }
+}
