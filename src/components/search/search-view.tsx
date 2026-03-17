@@ -1,20 +1,25 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
-import Fuse from "fuse.js";
 import type { SearchEntry } from "@/lib/data";
 
 type SearchViewProps = {
   entries: SearchEntry[];
 };
 
+type FuseType = import("fuse.js").default<SearchEntry>;
+
 export function SearchView({ entries }: SearchViewProps) {
   const [query, setQuery] = useState("");
+  const fuseRef = useRef<FuseType | null>(null);
+  const [ready, setReady] = useState(false);
 
-  const fuse = useMemo(
-    () =>
-      new Fuse(entries, {
+  // Load Fuse.js on client only
+  useEffect(() => {
+    import("fuse.js").then((mod) => {
+      const Fuse = mod.default;
+      fuseRef.current = new Fuse(entries, {
         keys: [
           { name: "topic", weight: 3 },
           { name: "summary", weight: 2 },
@@ -25,12 +30,13 @@ export function SearchView({ entries }: SearchViewProps) {
         ],
         threshold: 0.4,
         includeScore: true,
-      }),
-    [entries],
-  );
+      });
+      setReady(true);
+    });
+  }, [entries]);
 
-  const results = query.trim()
-    ? fuse.search(query, { limit: 20 }).map((r) => r.item)
+  const results = query.trim() && fuseRef.current
+    ? fuseRef.current.search(query, { limit: 20 }).map((r) => r.item)
     : [];
 
   return (
