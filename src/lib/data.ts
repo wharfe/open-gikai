@@ -94,6 +94,38 @@ export function getSearchIndex(): SearchEntry[] {
   });
 }
 
+export type CalendarDay = {
+  date: string; // YYYY.MM.DD
+  committees: { house: string; name: string; threads: number }[];
+  totalThreads: number;
+};
+
+export function getCalendarData(): CalendarDay[] {
+  const threads = loadThreads();
+  const byDate: Record<string, Record<string, { house: string; count: number }>> = {};
+
+  for (const t of threads) {
+    if (!byDate[t.date]) byDate[t.date] = {};
+    const key = `${t.house}${t.committee}`;
+    if (!byDate[t.date][key]) {
+      byDate[t.date][key] = { house: t.house, count: 0 };
+    }
+    byDate[t.date][key].count++;
+  }
+
+  return Object.entries(byDate)
+    .map(([date, comms]) => ({
+      date,
+      committees: Object.entries(comms).map(([key, v]) => ({
+        house: v.house,
+        name: key.replace(v.house, ""),
+        threads: v.count,
+      })),
+      totalThreads: Object.values(comms).reduce((s, c) => s + c.count, 0),
+    }))
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
 export function getProcessingStatus(): Record<string, unknown> | null {
   const statusPath = path.join(process.cwd(), "data", "status.json");
   if (fs.existsSync(statusPath)) {
