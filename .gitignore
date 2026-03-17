@@ -45,6 +45,9 @@ playwright-report/
 test-results/
 blob-report/
 
+# Python
+__pycache__/
+
 # Pipeline intermediate data (not deployed)
 data/raw/
 data/batch/
