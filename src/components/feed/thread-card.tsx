@@ -6,6 +6,7 @@ import { useAppContext } from "@/components/providers/app-provider";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButton } from "@/components/ui/share-button";
 import { buildThreadShare } from "@/lib/utils";
+import { getLifeTheme, getLifeThemeConfig } from "@/lib/config";
 
 type ThreadCardProps = {
   thread: Thread;
@@ -15,6 +16,8 @@ type ThreadCardProps = {
 export function ThreadCard({ thread, members }: ThreadCardProps) {
   const { follows } = useAppContext();
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))];
+  const themeId = getLifeTheme(thread.topicTag);
+  const themeConfig = themeId ? getLifeThemeConfig(themeId) : null;
 
   return (
     <article className="border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover">
@@ -26,6 +29,18 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
           <span className="text-x-secondary">{thread.date}</span>
           <span className="text-x-secondary">·</span>
           <span className="text-x-secondary">{thread.house}</span>
+          {themeConfig && (
+            <>
+              <span className="text-x-secondary">·</span>
+              <span
+                className="inline-flex items-center gap-0.5 text-[13px]"
+                style={{ color: themeConfig.color }}
+              >
+                <span className="material-symbols-rounded" style={{ fontSize: 14 }}>{themeConfig.icon}</span>
+                {themeConfig.label}
+              </span>
+            </>
+          )}
         </div>
 
         {/* Topic tag */}
@@ -41,10 +56,28 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
           </span>
         </div>
 
+        {/* Life impact */}
+        {thread.impact && (
+          <div className="mt-2 flex items-center gap-1.5 text-[13px] text-amber-400">
+            <span className="material-symbols-rounded" style={{ fontSize: 15 }}>person</span>
+            {thread.impact}
+          </div>
+        )}
+
         {/* Summary */}
         <p className="mt-3 text-[15px] leading-[24px] text-x-text">
           {thread.summary}
         </p>
+
+        {/* Debate highlight */}
+        {thread.debate && (
+          <div className="mt-2 flex items-center gap-2 rounded-lg bg-x-surface px-3 py-2 text-[13px]">
+            <span className="material-symbols-rounded shrink-0 text-orange-400" style={{ fontSize: 16 }}>swap_horiz</span>
+            <span className="text-x-text">{thread.debate.position}</span>
+            <span className="shrink-0 text-x-secondary">↔</span>
+            <span className="text-x-text">{thread.debate.counterPosition}</span>
+          </div>
+        )}
 
         {/* Outcome badges */}
         {thread.outcome && (thread.outcome.result || (thread.outcome.commitments && thread.outcome.commitments.length > 0)) && (

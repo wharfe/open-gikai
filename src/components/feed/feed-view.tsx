@@ -5,6 +5,8 @@ import { useSearchParams, useRouter } from "next/navigation";
 import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { ThreadCard } from "@/components/feed/thread-card";
+import { ThemeBar } from "@/components/feed/theme-bar";
+import { getLifeTheme, type LifeThemeId } from "@/lib/config";
 
 type FeedViewProps = {
   threads: Thread[];
@@ -17,6 +19,17 @@ export function FeedView({ threads, members }: FeedViewProps) {
   const router = useRouter();
   const [feedFilter, setFeedFilter] = useState<"all" | "following">("all");
   const [showProcedural, setShowProcedural] = useState(false);
+  const themeParam = searchParams.get("theme") as LifeThemeId | null;
+  const [localTheme, setLocalTheme] = useState<LifeThemeId | null>(null);
+  const selectedTheme = themeParam || localTheme;
+
+  const setSelectedTheme = (theme: LifeThemeId | null) => {
+    // If there's a URL theme param, clear it by navigating
+    if (themeParam) {
+      router.push("/");
+    }
+    setLocalTheme(theme);
+  };
 
   const dateParam = searchParams.get("date");
   const committeeParam = searchParams.get("committee");
@@ -44,10 +57,25 @@ export function FeedView({ threads, members }: FeedViewProps) {
     [followFiltered],
   );
 
-  // Apply procedural filter last
-  const visibleThreads = showProcedural
+  // Apply procedural filter
+  const nonProceduralThreads = showProcedural
     ? followFiltered
     : followFiltered.filter((t) => !t.procedural);
+
+  // Compute theme counts (from non-procedural threads for relevance)
+  const themeCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const t of nonProceduralThreads) {
+      const theme = getLifeTheme(t.topicTag);
+      if (theme) counts[theme] = (counts[theme] ?? 0) + 1;
+    }
+    return counts;
+  }, [nonProceduralThreads]);
+
+  // Apply theme filter last
+  const visibleThreads = selectedTheme
+    ? nonProceduralThreads.filter((t) => getLifeTheme(t.topicTag) === selectedTheme)
+    : nonProceduralThreads;
 
   const tabs: [string, string][] = [
     ["all", "すべて"],
@@ -96,6 +124,26 @@ export function FeedView({ threads, members }: FeedViewProps) {
           </button>
         ))}
       </div>
+
+      {/* Life-theme filter chips */}
+      {feedFilter === "all" && !hasFilter && Object.keys(themeCounts).length > 0 && (
+        <ThemeBar selected={selectedTheme} onSelect={setSelectedTheme} themeCounts={themeCounts} />
+      )}
+
+      {/* Active theme filter banner */}
+      {selectedTheme && (
+        <div className="flex items-center justify-between border-b border-x-border bg-x-surface px-4 py-2">
+          <span className="text-[13px] text-x-secondary">
+            テーマで絞り込み中 · {visibleThreads.length}件
+          </span>
+          <button
+            onClick={() => setSelectedTheme(null)}
+            className="cursor-pointer rounded-full border-none bg-transparent px-2 py-1 text-[13px] text-x-secondary transition-colors hover:bg-x-hover hover:text-x-text"
+          >
+            <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>close</span> 解除
+          </button>
+        </div>
+      )}
 
       {feedFilter === "following" && follows.size === 0 ? (
         <div className="px-8 py-20 text-center">

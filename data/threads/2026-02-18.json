@@ -1856,7 +1856,12 @@
         "制度を閣議決定して税制改正法案の早期提出を目指す"
       ],
       "status": "ongoing"
-    }
+    },
+    "debate": {
+      "position": "消費税は5%に減税すべき",
+      "counterPosition": "国民会議で議論し合意形成を"
+    },
+    "impact": "消費税率の変更で、日常の買い物の負担が変わる可能性"
   },
   {
     "id": "t_20260218_564428_25",
@@ -1919,7 +1924,8 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "impact": "日米経済安保協力の進展で、貿易・投資環境が変化"
   },
   {
     "id": "t_20260218_564428_26",
@@ -1982,7 +1988,12 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "debate": {
+      "position": "外国人との共生に総合的な法整備を",
+      "counterPosition": "既存の制度運用の改善で対応可能"
+    },
+    "impact": "外国人労働者の受け入れ拡大で、職場環境や地域社会に影響"
   },
   {
     "id": "t_20260218_564428_27",
@@ -2049,6 +2060,10 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
+    },
+    "debate": {
+      "position": "国民投票法を整備し速やかに改憲を",
+      "counterPosition": "慎重な議論と国民的合意が不可欠"
     }
   },
   {
@@ -2112,7 +2127,12 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "debate": {
+      "position": "日銀との協調で緩和継続を",
+      "counterPosition": "日銀の独立性を尊重し市場に委ねるべき"
+    },
+    "impact": "金融政策の方向性で、住宅ローン金利や預金利率に影響"
   },
   {
     "id": "t_20260218_564428_29",

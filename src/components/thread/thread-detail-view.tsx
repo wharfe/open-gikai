@@ -70,9 +70,32 @@ export function ThreadDetailView({
           <ShareButton text={buildThreadShare(thread, members)} />
         </div>
 
+        {/* Life impact */}
+        {thread.impact && (
+          <div className="mt-3 flex items-center gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-[14px] text-amber-400">
+            <span className="material-symbols-rounded" style={{ fontSize: 18 }}>person</span>
+            {thread.impact}
+          </div>
+        )}
+
         <p className="mt-3 text-[15px] leading-[24px] text-x-secondary">
           {thread.summary}
         </p>
+
+        {/* Debate highlight */}
+        {thread.debate && (
+          <div className="mt-3 rounded-xl border border-x-border bg-x-surface px-4 py-3">
+            <div className="mb-2 flex items-center gap-1.5 text-[13px] font-bold text-orange-400">
+              <span className="material-symbols-rounded" style={{ fontSize: 16 }}>swap_horiz</span>
+              争点
+            </div>
+            <div className="flex items-start gap-3 text-[14px] leading-[22px]">
+              <div className="flex-1 text-x-text">{thread.debate.position}</div>
+              <span className="mt-1 shrink-0 text-x-secondary">↔</span>
+              <div className="flex-1 text-x-text">{thread.debate.counterPosition}</div>
+            </div>
+          </div>
+        )}
 
         {/* Context: background info */}
         {thread.context && (
