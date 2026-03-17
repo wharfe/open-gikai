@@ -2,57 +2,37 @@ import type { Member, Thread } from "@/types";
 import fs from "fs";
 import path from "path";
 
-// Resolve data directories relative to project root
 const THREADS_DIR = path.join(process.cwd(), "data", "threads");
 const MEMBERS_PATH = path.join(process.cwd(), "data", "members.json");
 
 function loadThreads(): Thread[] {
-  if (fs.existsSync(THREADS_DIR)) {
-    const files = fs
-      .readdirSync(THREADS_DIR)
-      .filter((f) => f.endsWith(".json") && !f.endsWith(".progress.json"))
-      .sort();
+  if (!fs.existsSync(THREADS_DIR)) return [];
 
-    const threads: Thread[] = [];
-    for (const file of files) {
-      const raw = fs.readFileSync(path.join(THREADS_DIR, file), "utf-8");
-      const data = JSON.parse(raw);
-      // Pipeline outputs a Thread[] array per date file
-      if (Array.isArray(data)) {
-        threads.push(...data);
-      }
-    }
+  const files = fs
+    .readdirSync(THREADS_DIR)
+    .filter((f) => f.endsWith(".json") && !f.endsWith(".progress.json"))
+    .sort();
 
-    if (threads.length > 0) {
-      return threads;
+  const threads: Thread[] = [];
+  for (const file of files) {
+    const raw = fs.readFileSync(path.join(THREADS_DIR, file), "utf-8");
+    const data = JSON.parse(raw);
+    if (Array.isArray(data)) {
+      threads.push(...data);
     }
   }
-
-  // Fallback: legacy mock data
-  try {
-    const { THREADS } = require("@/data/threads");
-    return THREADS;
-  } catch {
-    return [];
-  }
+  return threads;
 }
 
 function loadMembers(): Record<string, Member> {
-  if (fs.existsSync(MEMBERS_PATH)) {
-    const raw = fs.readFileSync(MEMBERS_PATH, "utf-8");
-    const data = JSON.parse(raw);
-    if (data && typeof data === "object" && !Array.isArray(data)) {
-      return data;
-    }
-  }
+  if (!fs.existsSync(MEMBERS_PATH)) return {};
 
-  // Fallback: legacy mock data
-  try {
-    const { MEMBERS } = require("@/data/members");
-    return MEMBERS;
-  } catch {
-    return {};
+  const raw = fs.readFileSync(MEMBERS_PATH, "utf-8");
+  const data = JSON.parse(raw);
+  if (data && typeof data === "object" && !Array.isArray(data)) {
+    return data;
   }
+  return {};
 }
 
 export function getThreads(): Thread[] {
