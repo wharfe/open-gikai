@@ -164,7 +164,7 @@ export function MemberListView({ members, threads }: MemberListViewProps) {
               </div>
               {count > 0 && (
                 <div className="text-[13px] text-x-secondary">
-                  💬 {count}件の発言
+                  <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>chat_bubble</span> {count}件の発言
                 </div>
               )}
             </Link>

@@ -226,7 +226,7 @@ export function ThreadDetailView({
 
       {/* Source attribution */}
       <div className="border-t border-x-border px-4 py-4 text-[13px] text-x-secondary">
-        📄 出典：国会会議録検索システム（NDL）　🤖 AI要約：Claude（事前生成）
+        <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>description</span> 出典：{thread.sourceLabel || "国会会議録検索システム（NDL）"}　<span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>smart_toy</span> AI要約：Claude（事前生成）
       </div>
     </>
   );

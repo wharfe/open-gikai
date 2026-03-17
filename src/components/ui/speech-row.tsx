@@ -128,7 +128,7 @@ export function SpeechRow({
             onClick={() => setExpanded(!expanded)}
             className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-2 py-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
           >
-            📄 {expanded ? "閉じる" : "原文"}
+            <span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>description</span> {expanded ? "閉じる" : "原文"}
           </button>
           <ShareButton
             text={buildSpeechShare(speech, member, thread, level)}
@@ -139,7 +139,7 @@ export function SpeechRow({
         {expanded && (
           <div className="mt-4 rounded-2xl border border-x-border bg-x-bg p-4 text-[15px] leading-[24px] text-x-secondary">
             <div className="mb-3 text-[13px] text-x-secondary/60">
-              📄 原文（国会会議録 NDL APIより）
+              <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>description</span> 原文（議事録より）
             </div>
             {speech.raw}
           </div>

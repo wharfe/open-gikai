@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { href: "/", label: "ホーム", icon: "home" },
   { href: "/search", label: "検索", icon: "search" },
   { href: "/calendar", label: "カレンダー", icon: "calendar_month" },
-  { href: "/members", label: "議員", icon: "person" },
+  { href: "/members", label: "発言者", icon: "group" },
   { href: "/about", label: "About", icon: "info" },
 ];
 
@@ -27,7 +27,7 @@ export function Sidebar() {
           className="mb-4 flex h-[52px] items-center justify-center rounded-full px-3 transition-colors hover:bg-x-hover"
         >
           <div className="flex items-center gap-2">
-            <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.5)]" />
+            <span className="shrink-0 text-[18px] font-bold text-emerald-400">議</span>
             <span className="hidden text-xl tracking-wide xl:inline">
               <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-emerald-400">AI</span>
             </span>
@@ -79,8 +79,8 @@ export function Sidebar() {
       {/* Bottom branding */}
       <div className="w-full px-1 xl:px-2">
         <div className="flex h-[60px] w-full items-center justify-center gap-3 rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:px-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-sm font-bold text-emerald-400">
-            G
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-[18px] font-bold text-emerald-400">
+            議
           </div>
           <div className="hidden min-w-0 xl:block">
             <div className="truncate text-[14px] text-x-text">

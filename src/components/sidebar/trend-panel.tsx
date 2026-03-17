@@ -27,7 +27,7 @@ export function TrendPanel({ threads }: TrendPanelProps) {
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3">
         <h2 className="text-[20px] font-extrabold text-x-text">
-          🔥 トレンド
+          <span className="material-symbols-rounded align-middle text-orange-400" style={{ fontSize: 22 }}>trending_up</span> トレンド
         </h2>
         <div className="flex gap-0.5">
           {TREND_PERIODS.map((p) => (

@@ -14,7 +14,7 @@ export function MobileHeader() {
     <div className="sticky top-0 z-50 md:hidden">
       <div className="flex h-[53px] items-center justify-between border-b border-x-border bg-x-bg/80 px-4 backdrop-blur-xl">
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
+          <span className="text-[16px] font-bold text-emerald-400">議</span>
           <span className="text-lg">
             <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-emerald-400">AI</span>
           </span>
@@ -61,7 +61,7 @@ export function MobileHeader() {
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] transition-colors hover:bg-x-hover"
             >
-              <Icon name="person" size={20} /> 議員
+              <Icon name="group" size={20} /> 発言者
             </Link>
             <Link
               href="/about"

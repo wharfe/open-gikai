@@ -19,7 +19,7 @@ export function FollowPanel({ members }: FollowPanelProps) {
   return (
     <div className="overflow-hidden rounded-2xl bg-x-surface">
       <h2 className="px-4 py-3 text-[20px] font-extrabold text-x-text">
-        ⭐ フォロー中
+        <span className="material-symbols-rounded align-middle text-amber-400" style={{ fontSize: 22 }}>star</span> フォロー中
       </h2>
       {[...follows].map((id) => {
         const m = members[id];

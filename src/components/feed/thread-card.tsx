@@ -92,7 +92,7 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
         </div>
         <div className="flex shrink-0 items-center gap-4">
           <span className="text-[13px] text-x-secondary">
-            💬 {thread.speeches.length}
+            <span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>chat_bubble</span> {thread.speeches.length}
           </span>
           <ShareButton text={buildThreadShare(thread, members)} />
         </div>

@@ -36,10 +36,10 @@ export function FeedView({ threads, members }: FeedViewProps) {
       : filteredThreads;
 
   const tabs: [string, string][] = [
-    ["all", "📋 すべて"],
+    ["all", "すべて"],
     [
       "following",
-      `⭐ フォロー中${follows.size > 0 ? ` (${follows.size})` : ""}`,
+      `フォロー中${follows.size > 0 ? ` (${follows.size})` : ""}`,
     ],
   ];
 
@@ -85,11 +85,11 @@ export function FeedView({ threads, members }: FeedViewProps) {
 
       {feedFilter === "following" && follows.size === 0 ? (
         <div className="px-8 py-20 text-center">
-          <div className="mb-4 text-4xl">⭐</div>
+          <div className="mb-4"><span className="material-symbols-rounded text-amber-400" style={{ fontSize: 36 }}>star</span></div>
           <p className="text-[15px] text-x-secondary">
-            議員をフォローすると
+            発言者をフォローすると
             <br />
-            その議員が出演するスレッドだけ表示されます
+            その発言者が出演するスレッドだけ表示されます
           </p>
         </div>
       ) : (
