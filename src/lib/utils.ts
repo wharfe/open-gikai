@@ -12,6 +12,26 @@ export function getStyle(member: Member): PartyStyle {
     : MINISTER_STYLE;
 }
 
+// Procedural keywords that don't represent meaningful topics
+const TREND_STOPWORDS = new Set([
+  "議事進行",
+  "質疑終了",
+  "質疑開始",
+  "委員長",
+  "感謝",
+  "参考人紹介",
+  "参考人意見",
+  "調査会進行",
+  "議事運営",
+  "開会宣言",
+  "散会宣言",
+  "審議進行",
+  "採決",
+  "動議",
+  "異議なし",
+  "賛成多数",
+]);
+
 export function extractTrends(
   threads: Thread[],
   period?: "今週" | "今国会" | "今年",
@@ -46,7 +66,7 @@ export function extractTrends(
   filtered.forEach((t) =>
     t.speeches.forEach((s) =>
       s.keywords.forEach((k) => {
-        counts[k] = (counts[k] || 0) + 1;
+        if (!TREND_STOPWORDS.has(k)) counts[k] = (counts[k] || 0) + 1;
       })
     )
   );
