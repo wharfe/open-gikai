@@ -33,7 +33,7 @@ test.describe("Search page", () => {
     await input.fill("人材確保");
     await expect(page.getByText("件のスレッドが見つかりました")).toBeVisible();
 
-    await page.getByText("✕").click();
+    await page.getByText("close").click();
     await expect(page.getByText("キーワードを入力してスレッドを検索")).toBeVisible();
   });
 
