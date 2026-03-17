@@ -36,7 +36,7 @@ function loadMembers(): Record<string, Member> {
 }
 
 export function getThreads(): Thread[] {
-  return loadThreads();
+  return loadThreads().sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getThread(id: string): Thread | undefined {

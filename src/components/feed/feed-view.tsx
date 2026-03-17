@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { ThreadCard } from "@/components/feed/thread-card";
@@ -12,14 +13,27 @@ type FeedViewProps = {
 
 export function FeedView({ threads, members }: FeedViewProps) {
   const { follows } = useAppContext();
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const [feedFilter, setFeedFilter] = useState<"all" | "following">("all");
+
+  const dateParam = searchParams.get("date");
+  const committeeParam = searchParams.get("committee");
+  const hasFilter = dateParam || committeeParam;
+
+  const filteredThreads = useMemo(() => {
+    let result = threads;
+    if (dateParam) result = result.filter((t) => t.date === dateParam);
+    if (committeeParam) result = result.filter((t) => t.committee === committeeParam);
+    return result;
+  }, [threads, dateParam, committeeParam]);
 
   const visibleThreads =
     feedFilter === "following" && follows.size > 0
-      ? threads.filter((t) =>
+      ? filteredThreads.filter((t) =>
           t.speeches.some((s) => follows.has(s.memberId))
         )
-      : threads;
+      : filteredThreads;
 
   const tabs: [string, string][] = [
     ["all", "📋 すべて"],
@@ -31,6 +45,23 @@ export function FeedView({ threads, members }: FeedViewProps) {
 
   return (
     <>
+      {/* Active filter banner */}
+      {hasFilter && (
+        <div className="flex items-center justify-between border-b border-x-border bg-x-surface px-4 py-2.5">
+          <span className="text-[14px] text-x-text">
+            {dateParam && <span className="mr-2 rounded bg-x-accent/20 px-2 py-0.5 text-x-accent">{dateParam}</span>}
+            {committeeParam && <span className="rounded bg-x-accent/20 px-2 py-0.5 text-x-accent">{committeeParam}</span>}
+            <span className="ml-2 text-x-secondary">{filteredThreads.length}件</span>
+          </span>
+          <button
+            onClick={() => router.push("/")}
+            className="cursor-pointer rounded-full border-none bg-transparent px-3 py-1 text-[13px] text-x-secondary transition-colors hover:bg-x-hover hover:text-x-text"
+          >
+            ✕ 解除
+          </button>
+        </div>
+      )}
+
       {/* Sticky tab bar — X style */}
       <div className="sticky top-[53px] z-40 flex border-b border-x-border bg-x-bg/65 backdrop-blur-xl md:top-0">
         {tabs.map(([id, label]) => (
