@@ -148,7 +148,7 @@ export default async function OgImage({
               }}
             />
             <span style={{ display: "flex", fontSize: "28px", fontWeight: 700 }}>
-              OpenGIKAI
+              OpenGIK<span style={{ color: "#34d399" }}>AI</span>
             </span>
           </div>
         </div>
