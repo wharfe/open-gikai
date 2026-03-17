@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   description:
     "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
   metadataBase: new URL("https://open-gikai.net"),
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
+  manifest: "/site.webmanifest",
+  other: {
+    "theme-color": "#34d399",
+  },
   openGraph: {
     siteName: "OpenGIKAI",
     type: "website",
@@ -26,6 +33,16 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "OpenGIKAI",
+  alternateName: "OpenGIKAI — 国会をひらく",
+  url: "https://open-gikai.net",
+  description:
+    "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +51,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getMember, getMembers, getThreads, getAllMemberIds } from "@/lib/data";
 import { MemberProfileView } from "@/components/member/member-profile-view";
@@ -13,6 +14,17 @@ export function generateStaticParams() {
 type Props = {
   params: Promise<{ memberId: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { memberId } = await params;
+  const member = getMember(memberId);
+  if (!member) return {};
+  const desc = [member.party, member.role].filter(Boolean).join("・");
+  return {
+    title: member.name,
+    description: `${member.name}（${desc}）の国会発言一覧。審議スレッドをまとめて閲覧できます。`,
+  };
+}
 
 export default async function MemberPage({ params }: Props) {
   const { memberId } = await params;

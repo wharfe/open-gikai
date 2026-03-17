@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { MobileHeader } from "@/components/layout/header";
 import { MemberListView } from "@/components/member/member-list-view";
 import { getMembers, getThreads } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "議員一覧",
+  description: "国会議員のプロフィールと発言履歴。所属政党・役職・出演スレッド数で検索・ソートできます。",
+};
 
 export default function MembersPage() {
   const members = getMembers();

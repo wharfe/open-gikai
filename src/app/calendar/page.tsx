@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { MobileHeader } from "@/components/layout/header";
 import { CalendarView } from "@/components/calendar/calendar-view";
 import { getCalendarData } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "カレンダー",
+  description: "国会審議の日別カレンダー。日付から各委員会のスレッドを閲覧できます。",
+};
 
 export default function CalendarPage() {
   const days = getCalendarData();

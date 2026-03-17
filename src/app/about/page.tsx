@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MobileHeader } from "@/components/layout/header";
 import { getProcessingStatus } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "OpenGIKAIについて",
+  description: "OpenGIKAIの仕組み、データソース、AI利用方針について。国会議事録をAIで要約・構造化するオープンソースプロジェクト。",
+};
 
 type Summary = {
   totalDates: number;

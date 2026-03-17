@@ -1,0 +1,16 @@
+{
+  "name": "OpenGIKAI — 国会をひらく",
+  "short_name": "OpenGIKAI",
+  "description": "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#34d399",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

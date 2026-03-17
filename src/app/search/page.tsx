@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { MobileHeader } from "@/components/layout/header";
 import { SearchView } from "@/components/search/search-view";
 import { getSearchIndex } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "検索",
+  description: "国会審議スレッドをキーワード・委員会・議員名で検索。",
+};
 
 export default function SearchPage() {
   const entries = getSearchIndex();

@@ -6,14 +6,29 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://open-gikai.net/search</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/calendar</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/members</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://open-gikai.net/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/search</loc>
+    <loc>https://open-gikai.net/about/stats</loc>
     <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/t/t_20250314_e1491c_02</loc>

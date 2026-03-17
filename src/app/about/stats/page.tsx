@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MobileHeader } from "@/components/layout/header";
 import { getProcessingStatus } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "処理ステータス",
+  description: "国会議事録の日別処理状況。各委員会の議事録取得・AI要約の進捗を公開しています。",
+};
 
 type CommitteeStatus = {
   name: string;
