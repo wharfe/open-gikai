@@ -1,7 +1,7 @@
 {
-  "name": "OpenGIKAI — 国会をひらく",
+  "name": "OpenGIKAI — 議会をひらく",
   "short_name": "OpenGIKAI",
-  "description": "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
+  "description": "議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",

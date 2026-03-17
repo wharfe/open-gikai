@@ -2,7 +2,7 @@ export type Level = "easy" | "teen" | "adult";
 
 export type TensionType = "追及" | "答弁" | "再追及" | "確認" | "割込み";
 
-export type House = "衆議院" | "参議院";
+export type House = "衆議院" | "参議院" | "内閣" | string;
 
 export type Rank = "pm" | "minister" | "viceminister" | "member";
 
@@ -68,6 +68,8 @@ export type Thread = {
   outcome?: ThreadOutcome;
   relatedThreads?: ThreadLink[];
   context?: ThreadContext;
+  source?: string;       // "ndl" | "kantei" | "council" etc.
+  sourceLabel?: string;  // "国会会議録" | "首相記者会見" etc.
 };
 
 // UI config types

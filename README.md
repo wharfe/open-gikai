@@ -1,4 +1,4 @@
-# OpenGIKAI — Opening Up the Diet
+# OpenGIKAI — Opening Up Parliament
 
 **[open-gikai.net](https://open-gikai.net)** | [🇯🇵 日本語版はこちら / Japanese](./README.ja.md)
 

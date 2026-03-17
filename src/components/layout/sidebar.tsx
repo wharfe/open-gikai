@@ -85,7 +85,7 @@ export function Sidebar() {
             <div className="truncate text-[14px] font-bold text-x-text">
               OpenGIK<span className="text-emerald-400">AI</span>
             </div>
-            <div className="truncate text-[12px] text-x-secondary">国会をひらく</div>
+            <div className="truncate text-[12px] text-x-secondary">議会をひらく</div>
           </div>
         </div>
       </div>

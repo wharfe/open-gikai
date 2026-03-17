@@ -5,7 +5,7 @@ import { getProcessingStatus } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "OpenGIKAIについて",
-  description: "OpenGIKAIの仕組み、データソース、AI利用方針について。国会議事録をAIで要約・構造化するオープンソースプロジェクト。",
+  description: "OpenGIKAIの仕組み、データソース、AI利用方針について。議会議事録をAIで要約・構造化するオープンソースプロジェクト。",
 };
 
 type Summary = {
@@ -37,8 +37,8 @@ export default function AboutPage() {
               OpenGIK<span className="text-emerald-400">AI</span>とは
             </h2>
             <p className="mt-3 text-[15px] leading-[26px] text-x-secondary">
-              OpenGIKAIは、国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディアプロジェクトです。
-              国立国会図書館（NDL）が公開する公式議事録を一次情報として使用し、AIによる要約・構造化を加えて提供しています。
+              OpenGIKAIは、議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディアプロジェクトです。
+              国立国会図書館（NDL）が公開する国会議事録をはじめ、公的機関の議事録を一次情報として使用し、AIによる要約・構造化を加えて提供しています。
             </p>
           </section>
 

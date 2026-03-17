@@ -8,11 +8,11 @@ const GA_ID = "G-XFC3R0M1MM";
 
 export const metadata: Metadata = {
   title: {
-    default: "OpenGIKAI — 国会をひらく",
+    default: "OpenGIKAI — 議会をひらく",
     template: "%s | OpenGIKAI",
   },
   description:
-    "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
+    "議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
   metadataBase: new URL("https://open-gikai.net"),
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -37,10 +37,10 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "OpenGIKAI",
-  alternateName: "OpenGIKAI — 国会をひらく",
+  alternateName: "OpenGIKAI — 議会をひらく",
   url: "https://open-gikai.net",
   description:
-    "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
+    "議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
 };
 
 export default function RootLayout({
