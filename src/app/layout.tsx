@@ -4,9 +4,21 @@ import { Sidebar } from "@/components/layout/sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OpenGIKAI — 国会をひらく",
+  title: {
+    default: "OpenGIKAI — 国会をひらく",
+    template: "%s | OpenGIKAI",
+  },
   description:
     "国会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディア",
+  metadataBase: new URL("https://open-gikai.net"),
+  openGraph: {
+    siteName: "OpenGIKAI",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
