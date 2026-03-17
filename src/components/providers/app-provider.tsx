@@ -35,36 +35,12 @@ function loadFollows(): Set<string> {
   return new Set();
 }
 
-const THEME_VARS: Record<Theme, Record<string, string>> = {
-  dark: {
-    "--color-x-bg": "#000000",
-    "--color-x-surface": "#16181c",
-    "--color-x-border": "#2f3336",
-    "--color-x-hover": "rgba(255, 255, 255, 0.03)",
-    "--color-x-text": "#e7e9ea",
-    "--color-x-secondary": "#71767b",
-    "--color-x-accent": "#1d9bf0",
-    "--color-x-accent-hover": "#1a8cd8",
-    "--color-x-search": "#202327",
-  },
-  light: {
-    "--color-x-bg": "#ffffff",
-    "--color-x-surface": "#f7f9f9",
-    "--color-x-border": "#eff3f4",
-    "--color-x-hover": "rgba(0, 0, 0, 0.03)",
-    "--color-x-text": "#0f1419",
-    "--color-x-secondary": "#536471",
-    "--color-x-accent": "#1d9bf0",
-    "--color-x-accent-hover": "#1a8cd8",
-    "--color-x-search": "#eff3f4",
-  },
-};
-
-function applyThemeVars(theme: Theme) {
-  const vars = THEME_VARS[theme];
+function applyTheme(theme: Theme) {
   const root = document.documentElement;
-  for (const [key, value] of Object.entries(vars)) {
-    root.style.setProperty(key, value);
+  if (theme === "light") {
+    root.setAttribute("data-theme", "light");
+  } else {
+    root.removeAttribute("data-theme");
   }
 }
 
@@ -91,7 +67,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- Intentional one-time hydration from localStorage
     setFollows(restored);
     setTheme(savedTheme);
-    applyThemeVars(savedTheme);
+    applyTheme(savedTheme);
     setHydrated(true);
   }, []);
 
@@ -116,7 +92,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     } catch {
       // Ignore localStorage errors
     }
-    applyThemeVars(theme);
+    applyTheme(theme);
   }, [theme, hydrated]);
 
   const toggleTheme = useCallback(() => {
