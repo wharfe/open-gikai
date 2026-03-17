@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Check open-gikai.net
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://open-gikai.net/)
+          STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://open-gikai.net/)
           echo "Status: $STATUS"
           if [ "$STATUS" != "200" ]; then
             echo "::error::Site returned HTTP $STATUS"
@@ -22,7 +22,7 @@ jobs:
 
       - name: Check sitemap
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://open-gikai.net/sitemap.xml)
+          STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://open-gikai.net/sitemap.xml)
           echo "Sitemap status: $STATUS"
           if [ "$STATUS" != "200" ]; then
             echo "::warning::Sitemap returned HTTP $STATUS"
