@@ -113,6 +113,15 @@ export function MemberListView({ members, threads }: MemberListViewProps) {
             {filtered.length}名
           </span>
         </div>
+
+        {/* Badge legend */}
+        <div className="mt-3 flex flex-wrap items-center gap-3 text-[12px] text-x-secondary">
+          {Object.values(RANK_BADGE).map((b) => (
+            <span key={b.label} className="flex items-center gap-1">
+              <span>{b.icon}</span>{b.label}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Member list */}

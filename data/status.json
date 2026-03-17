@@ -1,105 +1,4 @@
 {
-  "2025-03-14": {
-    "updatedAt": "2026-03-17T07:11:59.463780Z",
-    "phase": "completed",
-    "committees": [
-      {
-        "name": "予算委員会",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 18
-      },
-      {
-        "name": "地方創生及びデジタル社会の形成等に関する特別委員会",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 2
-      },
-      {
-        "name": "本会議",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 8
-      },
-      {
-        "name": "災害対策特別委員会",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 1
-      },
-      {
-        "name": "議院運営委員会",
-        "house": "参議院",
-        "status": "completed",
-        "threads": 5
-      },
-      {
-        "name": "厚生労働委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 7
-      },
-      {
-        "name": "国土交通委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 38
-      },
-      {
-        "name": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 32
-      },
-      {
-        "name": "政治改革に関する特別委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 13
-      },
-      {
-        "name": "文部科学委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 11
-      },
-      {
-        "name": "東日本大震災復興・防災・災害対策に関する特別委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 12
-      },
-      {
-        "name": "法務委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 11
-      },
-      {
-        "name": "環境委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 14
-      },
-      {
-        "name": "経済産業委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 11
-      },
-      {
-        "name": "財務金融委員会",
-        "house": "衆議院",
-        "status": "completed",
-        "threads": 5
-      }
-    ],
-    "stats": {
-      "threads": 188,
-      "speeches": 1315,
-      "committees": 15
-    }
-  },
   "2026-02-24": {
     "updatedAt": "2026-03-17T07:11:59.464733Z",
     "phase": "completed",
@@ -239,11 +138,11 @@
     }
   },
   "_summary": {
-    "totalDates": 7,
-    "totalThreads": 228,
-    "totalSpeeches": 1542,
-    "totalCommittees": 20,
-    "totalMembers": 264,
-    "generatedAt": "2026-03-17T07:11:59.468413Z"
+    "totalDates": 6,
+    "totalThreads": 40,
+    "totalSpeeches": 227,
+    "totalCommittees": 12,
+    "totalMembers": 57,
+    "generatedAt": "2026-03-17T10:26:12.264Z"
   }
 }

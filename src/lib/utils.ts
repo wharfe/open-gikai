@@ -21,6 +21,10 @@ const TREND_STOPWORDS = new Set([
   "感謝",
   "参考人紹介",
   "参考人意見",
+  "参考人",
+  "参考人招致",
+  "参考人出頭",
+  "参考人交代",
   "調査会進行",
   "議事運営",
   "開会宣言",
@@ -30,7 +34,12 @@ const TREND_STOPWORDS = new Set([
   "動議",
   "異議なし",
   "賛成多数",
+  "議長",
+  "登壇",
 ]);
+
+// Committee names should not appear as trending topics
+const COMMITTEE_SUFFIX_RE = /委員会$/;
 
 export function extractTrends(
   threads: Thread[],
@@ -66,7 +75,7 @@ export function extractTrends(
   filtered.forEach((t) =>
     t.speeches.forEach((s) =>
       s.keywords.forEach((k) => {
-        if (!TREND_STOPWORDS.has(k)) counts[k] = (counts[k] || 0) + 1;
+        if (!TREND_STOPWORDS.has(k) && !COMMITTEE_SUFFIX_RE.test(k)) counts[k] = (counts[k] || 0) + 1;
       })
     )
   );
