@@ -15,7 +15,7 @@ export function MobileHeader() {
       <div className="flex h-[53px] items-center justify-between border-b border-x-border bg-x-bg/80 px-4 backdrop-blur-xl">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-lg">
-            <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-emerald-400">AI</span>
+            <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-x-brand">AI</span>
           </span>
         </Link>
         <div className="flex items-center gap-3">

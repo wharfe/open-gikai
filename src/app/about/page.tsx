@@ -34,7 +34,7 @@ export default function AboutPage() {
           {/* About */}
           <section>
             <h2 className="text-[20px] font-bold text-x-text">
-              OpenGIK<span className="text-emerald-400">AI</span>とは
+              OpenGIK<span className="text-x-brand">AI</span>とは
             </h2>
             <p className="mt-3 text-[15px] leading-[26px] text-x-secondary">
               OpenGIKAIは、議会の審議内容を現代的なスレッド形式で再構築するオープンソースの公共メディアプロジェクトです。
@@ -104,7 +104,7 @@ export default function AboutPage() {
             <h2 className="text-[20px] font-bold text-x-text">データソース</h2>
             <div className="mt-3 space-y-2 text-[15px] text-x-secondary">
               <div className="flex items-start gap-2">
-                <span className="material-symbols-rounded shrink-0 text-emerald-400" style={{ fontSize: 18 }}>arrow_forward</span>
+                <span className="material-symbols-rounded shrink-0 text-x-brand" style={{ fontSize: 18 }}>arrow_forward</span>
                 <div>
                   <a
                     href="https://kokkai.ndl.go.jp/"
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <span className="material-symbols-rounded shrink-0 text-emerald-400" style={{ fontSize: 18 }}>arrow_forward</span>
+                <span className="material-symbols-rounded shrink-0 text-x-brand" style={{ fontSize: 18 }}>arrow_forward</span>
                 <div>
                   <a
                     href="https://laws.e-gov.go.jp/"
@@ -222,7 +222,7 @@ export default function AboutPage() {
                     key={label}
                     className="rounded-xl border border-x-border px-3 py-3 text-center"
                   >
-                    <div className="text-[20px] font-bold text-emerald-400">
+                    <div className="text-[20px] font-bold text-x-brand">
                       {value}
                     </div>
                     <div className="text-[12px] text-x-secondary">

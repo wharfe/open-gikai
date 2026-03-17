@@ -12,6 +12,7 @@
   --color-x-accent: var(--x-accent);
   --color-x-accent-hover: var(--x-accent-hover);
   --color-x-search: var(--x-search);
+  --color-x-brand: var(--x-brand);
 }
 
 /* Dark theme (default) */
@@ -25,9 +26,10 @@
   --x-accent: #1d9bf0;
   --x-accent-hover: #1a8cd8;
   --x-search: #202327;
+  --x-brand: #34d399;
 }
 
-/* Light theme */
+/* Light theme — accent/brand colors darkened for WCAG AA (4.5:1) */
 html[data-theme="light"] {
   --x-bg: #ffffff;
   --x-surface: #f7f9f9;
@@ -35,9 +37,10 @@ html[data-theme="light"] {
   --x-hover: rgba(0, 0, 0, 0.03);
   --x-text: #0f1419;
   --x-secondary: #536471;
-  --x-accent: #1d9bf0;
-  --x-accent-hover: #1a8cd8;
+  --x-accent: #0369a1;
+  --x-accent-hover: #0c6ec2;
   --x-search: #eff3f4;
+  --x-brand: #047857;
 }
 
 html {

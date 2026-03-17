@@ -1,35 +1,42 @@
 import { test, expect } from "@playwright/test";
 
-// Use a known thread ID from the real data
-const THREAD_URL = "/t/t_20260303_d537a4_07";
+// Navigate to a thread dynamically by clicking the first thread link on the feed
+async function goToFirstThread(page: import("@playwright/test").Page) {
+  await page.goto("/");
+  const firstCard = page.locator('a[href^="/t/"]').first();
+  await expect(firstCard).toBeVisible();
+  await firstCard.click();
+  await page.waitForURL(/\/t\//);
+}
 
 test.describe("Thread detail page", () => {
   test("displays thread with speeches", async ({ page }) => {
-    await page.goto(THREAD_URL);
+    await goToFirstThread(page);
 
-    await expect(page.getByText("2026.03.03").first()).toBeVisible();
+    // Should show a date in YYYY.MM.DD format
+    await expect(page.locator("text=/\\d{4}\\.\\d{2}\\.\\d{2}/").first()).toBeVisible();
     await expect(page.locator("article").first()).toBeVisible();
   });
 
   test("shows tension badges", async ({ page }) => {
-    await page.goto(THREAD_URL);
+    await goToFirstThread(page);
 
     const anyTension = page.locator("text=/追及|答弁|再追及|確認|割込み/").first();
     await expect(anyTension).toBeVisible();
   });
 
   test("expands raw transcript on click", async ({ page }) => {
-    await page.goto(THREAD_URL);
+    await goToFirstThread(page);
 
-    await page.getByText("📄 原文").first().click();
+    await page.getByText("原文", { exact: false }).first().click();
 
     await expect(
-      page.getByText("原文（国会会議録 NDL APIより）").first()
+      page.getByText("原文（議事録より）").first()
     ).toBeVisible();
   });
 
   test("has back link to feed", async ({ page }) => {
-    await page.goto(THREAD_URL);
+    await goToFirstThread(page);
 
     await page.locator('a[href="/"]').first().click();
     await page.waitForURL("/");
@@ -38,10 +45,10 @@ test.describe("Thread detail page", () => {
   });
 
   test("shows source attribution", async ({ page }) => {
-    await page.goto(THREAD_URL);
+    await goToFirstThread(page);
 
     await expect(
-      page.getByText("出典：国会会議録検索システム（NDL）")
+      page.getByText("出典：", { exact: false }).first()
     ).toBeVisible();
   });
 });

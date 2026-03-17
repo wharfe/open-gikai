@@ -1,7 +1,5 @@
 import { test, expect } from "@playwright/test";
 
-const THREAD_URL = "/t/t_20260303_d537a4_07";
-
 test.describe("Navigation", () => {
   test("navigates from feed to thread detail", async ({ page }) => {
     await page.goto("/");
@@ -11,7 +9,13 @@ test.describe("Navigation", () => {
   });
 
   test("navigates from thread to member profile", async ({ page }) => {
-    await page.goto(THREAD_URL);
+    // Navigate to a thread dynamically
+    await page.goto("/");
+    const firstCard = page.locator('a[href^="/t/"]').first();
+    await expect(firstCard).toBeVisible();
+    await firstCard.click();
+    await page.waitForURL(/\/t\//);
+
     const memberLink = page.locator('a[href^="/m/"]').first();
     await memberLink.click();
     await page.waitForURL(/\/m\//);

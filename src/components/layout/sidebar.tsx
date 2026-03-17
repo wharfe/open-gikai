@@ -27,7 +27,7 @@ export function Sidebar() {
           className="mb-4 flex h-[52px] items-center justify-center rounded-full px-3 transition-colors hover:bg-x-hover"
         >
           <span className="text-xl tracking-wide">
-            <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-emerald-400">AI</span>
+            <span className="font-light">Open</span><span className="font-extrabold">GIK</span><span className="font-extrabold text-x-brand">AI</span>
           </span>
         </Link>
 
@@ -76,12 +76,12 @@ export function Sidebar() {
       {/* Bottom branding — links to About */}
       <Link href="/about" className="block w-full px-1 xl:px-2">
         <div className="flex h-[60px] w-full items-center justify-center gap-3 rounded-full transition-colors hover:bg-x-hover xl:justify-start xl:px-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-[18px] font-bold text-emerald-400">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-x-brand/20 text-[18px] font-bold text-x-brand">
             議
           </div>
           <div className="hidden min-w-0 xl:block">
             <div className="truncate text-[14px] text-x-text">
-              <span className="font-light">Open</span><span className="font-bold">GIK</span><span className="font-bold text-emerald-400">AI</span>
+              <span className="font-light">Open</span><span className="font-bold">GIK</span><span className="font-bold text-x-brand">AI</span>
             </div>
             <div className="truncate text-[12px] text-x-secondary">議会をひらく</div>
           </div>

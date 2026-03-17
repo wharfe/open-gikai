@@ -37,7 +37,7 @@ export function SessionCard({ threads, session }: SessionCardProps) {
             </div>
           </div>
           <span
-            className="material-symbols-rounded text-emerald-400"
+            className="material-symbols-rounded text-x-brand"
             style={{ fontSize: 28 }}
           >
             account_balance

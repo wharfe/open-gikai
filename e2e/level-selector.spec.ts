@@ -10,7 +10,12 @@ test.describe("Level selector", () => {
   });
 
   test("switching levels does not break the page", async ({ page }) => {
-    await page.goto("/t/t_20260303_d537a4_07");
+    // Navigate to a thread dynamically
+    await page.goto("/");
+    const firstCard = page.locator('a[href^="/t/"]').first();
+    await expect(firstCard).toBeVisible();
+    await firstCard.click();
+    await page.waitForURL(/\/t\//);
 
     // Get initial article count
     const articles = page.locator("article");

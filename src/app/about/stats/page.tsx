@@ -78,7 +78,7 @@ export default function StatsPage() {
                   key={label}
                   className="rounded-xl border border-x-border px-3 py-3 text-center"
                 >
-                  <div className="text-[20px] font-bold text-emerald-400">
+                  <div className="text-[20px] font-bold text-x-brand">
                     {value}
                   </div>
                   <div className="text-[12px] text-x-secondary">

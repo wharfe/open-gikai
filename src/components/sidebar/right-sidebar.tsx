@@ -32,7 +32,7 @@ export function RightSidebar({ threads, members }: RightSidebarProps) {
         <div className="px-4 text-[13px] leading-6 text-x-secondary">
           <Link href="/about" className="mr-3 hover:underline">About</Link>
           <a href="https://github.com/wharfe/open-gikai" target="_blank" rel="noopener noreferrer" className="mr-3 hover:underline">GitHub</a>
-          <span className="mr-3">© 2026 OpenGIK<span className="text-emerald-400">AI</span></span>
+          <span className="mr-3">© 2026 OpenGIK<span className="text-x-brand">AI</span></span>
         </div>
       </div>
     </aside>

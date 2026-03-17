@@ -150,7 +150,7 @@ export function CalendarView({ days }: CalendarViewProps) {
                     {day}
                   </span>
                   {data && (
-                    <span className="mt-0.5 text-[10px] text-emerald-400">
+                    <span className="mt-0.5 text-[10px] text-x-brand">
                       {data.totalThreads}件
                     </span>
                   )}
