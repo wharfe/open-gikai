@@ -1,26 +1,6 @@
+import Link from "next/link";
 import { MobileHeader } from "@/components/layout/header";
 import { getProcessingStatus } from "@/lib/data";
-
-type CommitteeStatus = {
-  name: string;
-  house: string;
-  status: string;
-  threads: number;
-  error?: string;
-};
-
-type DateStats = {
-  threads: number;
-  speeches: number;
-  committees: number;
-};
-
-type DateStatus = {
-  updatedAt: string;
-  phase: string;
-  committees: CommitteeStatus[];
-  stats?: DateStats;
-};
 
 type Summary = {
   totalDates: number;
@@ -34,13 +14,6 @@ type Summary = {
 export default function AboutPage() {
   const raw = getProcessingStatus() as Record<string, unknown> | null;
   const summary = raw?._summary as Summary | undefined;
-
-  // Extract date entries (exclude _summary)
-  const dateEntries: [string, DateStatus][] = raw
-    ? Object.entries(raw)
-        .filter(([key]) => key !== "_summary")
-        .map(([key, val]) => [key, val as DateStatus])
-    : [];
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
@@ -217,8 +190,8 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Processing Status */}
-          {dateEntries.length > 0 && (
+          {/* Processing Status — summary + link */}
+          {summary && (
             <section>
               <h2 className="text-[20px] font-bold text-x-text">
                 処理ステータス
@@ -227,86 +200,34 @@ export default function AboutPage() {
                 各委員会の議事録処理状況をリアルタイムで公開しています。
               </p>
 
-              {/* Summary stats */}
-              {summary && (
-                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  {[
-                    { label: "処理日数", value: summary.totalDates },
-                    { label: "スレッド", value: summary.totalThreads },
-                    { label: "発言数", value: summary.totalSpeeches.toLocaleString() },
-                    { label: "議員数", value: summary.totalMembers },
-                  ].map(({ label, value }) => (
-                    <div
-                      key={label}
-                      className="rounded-xl border border-x-border px-3 py-3 text-center"
-                    >
-                      <div className="text-[20px] font-bold text-emerald-400">
-                        {value}
-                      </div>
-                      <div className="text-[12px] text-x-secondary">
-                        {label}
-                      </div>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {[
+                  { label: "処理日数", value: summary.totalDates },
+                  { label: "スレッド", value: summary.totalThreads },
+                  { label: "発言数", value: summary.totalSpeeches.toLocaleString() },
+                  { label: "議員数", value: summary.totalMembers },
+                ].map(({ label, value }) => (
+                  <div
+                    key={label}
+                    className="rounded-xl border border-x-border px-3 py-3 text-center"
+                  >
+                    <div className="text-[20px] font-bold text-emerald-400">
+                      {value}
                     </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="mt-4 space-y-4">
-                {dateEntries
-                  .sort(([a], [b]) => b.localeCompare(a))
-                  .map(([dateKey, dayStatus]) => (
-                    <div key={dateKey}>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-[15px] font-bold text-x-text">
-                          {dateKey}
-                        </span>
-                        {dayStatus.stats && (
-                          <span className="text-[12px] text-x-secondary">
-                            {dayStatus.stats.threads}スレッド · {dayStatus.stats.speeches}発言 · {dayStatus.stats.committees}委員会
-                          </span>
-                        )}
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                            dayStatus.phase === "completed"
-                              ? "bg-green-500/10 text-green-500"
-                              : dayStatus.phase === "failed"
-                                ? "bg-red-500/10 text-red-500"
-                                : "bg-yellow-500/10 text-yellow-500"
-                          }`}
-                        >
-                          {dayStatus.phase}
-                        </span>
-                      </div>
-                      <div className="mt-2 space-y-1">
-                        {dayStatus.committees.map((c) => (
-                          <div
-                            key={`${c.house}${c.name}`}
-                            className="flex items-center gap-2 text-[13px]"
-                          >
-                            <span>
-                              {c.status === "completed"
-                                ? "✅"
-                                : c.status === "pending"
-                                  ? "⏳"
-                                  : "❌"}
-                            </span>
-                            <span className="text-x-secondary">
-                              {c.house}{c.name}
-                            </span>
-                            {c.threads > 0 && (
-                              <span className="text-x-secondary">
-                                — {c.threads}スレッド
-                              </span>
-                            )}
-                            {c.error && (
-                              <span className="text-red-400">({c.error})</span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                    <div className="text-[12px] text-x-secondary">
+                      {label}
                     </div>
-                  ))}
+                  </div>
+                ))}
               </div>
+
+              <Link
+                href="/about/stats"
+                className="mt-4 flex items-center justify-between rounded-xl border border-x-border px-4 py-3 transition-colors hover:bg-x-hover"
+              >
+                <span className="text-[15px] text-x-text">日別の詳細ステータスを見る</span>
+                <span className="text-x-secondary">→</span>
+              </Link>
             </section>
           )}
 
