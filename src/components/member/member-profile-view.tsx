@@ -17,7 +17,7 @@ export function MemberProfileView({
   member,
   threads,
 }: MemberProfileViewProps) {
-  const { follows, toggleFollow } = useAppContext();
+  const { follows, toggleFollow, level } = useAppContext();
 
   const speeches = threads.flatMap((t) =>
     t.speeches
@@ -218,7 +218,7 @@ export function MemberProfileView({
             </div>
 
             <p className="mt-3 text-[15px] leading-[24px] text-x-text">
-              {sp.summaries.adult}
+              {sp.summaries[level]}
             </p>
           </Link>
         );
