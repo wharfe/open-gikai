@@ -64,8 +64,8 @@ def save_progress(progress: dict, progress_path: str) -> None:
 
 _LEXDIFF_MAP: Optional[Dict[str, dict]] = None
 
-def _get_lexdiff_link(law_name: str) -> Optional[dict]:
-    """Look up a lex-diff link for a law name."""
+def _get_lexdiff_map() -> Dict[str, dict]:
+    """Return the lex-diff mapping, loading lazily."""
     global _LEXDIFF_MAP
     if _LEXDIFF_MAP is None:
         mapping_path = os.path.join(os.path.dirname(__file__), "..", "data", "lexdiff-mapping.json")
@@ -75,9 +75,14 @@ def _get_lexdiff_link(law_name: str) -> Optional[dict]:
                 _LEXDIFF_MAP.pop("_comment", None)
         else:
             _LEXDIFF_MAP = {}
+    return _LEXDIFF_MAP
 
-    if law_name in _LEXDIFF_MAP:
-        entry = _LEXDIFF_MAP[law_name]
+
+def _get_lexdiff_link(law_name: str) -> Optional[dict]:
+    """Look up a lex-diff link for a law name."""
+    mapping = _get_lexdiff_map()
+    if law_name in mapping:
+        entry = mapping[law_name]
         return {"label": f"{law_name}（改正差分）", "url": entry["url"]}
     return None
 
@@ -132,10 +137,19 @@ def build_thread_context(thread_info: dict, meeting: dict) -> Optional[dict]:
         })
         links.append({"label": f"{law_name}（法令検索）", "url": egov_url})
 
-    # Generate lex-diff link if law has a matching entry
-    lexdiff_link = _get_lexdiff_link(law_name)
-    if lexdiff_link:
-        links.append(lexdiff_link)
+        # lex-diff cross-link (from legislationName)
+        lexdiff_link = _get_lexdiff_link(law_name)
+        if lexdiff_link:
+            links.append(lexdiff_link)
+
+    # lex-diff cross-link fallback: scan description for known law names
+    if not legislation and description:
+        for lexdiff_name in _get_lexdiff_map():
+            if lexdiff_name in description:
+                lexdiff_link = _get_lexdiff_link(lexdiff_name)
+                if lexdiff_link:
+                    links.append(lexdiff_link)
+                break
 
     # Generate bill search link for Shugiin/Sangiin
     house = meeting.get("house", "")
