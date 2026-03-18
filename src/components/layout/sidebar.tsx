@@ -56,7 +56,7 @@ export function Sidebar() {
         {/* Level selector */}
         <div className="mt-6 w-full px-1 xl:px-2">
           <span className="mb-2 hidden text-[13px] text-x-secondary xl:block">
-            読みやすさ
+            読みやすさ<span className="ml-1 text-[11px] opacity-60">（発言の要約に反映）</span>
           </span>
           <LevelBar />
         </div>
