@@ -140,8 +140,10 @@ def build_phase1_requests(
             procedural = []
             for s in speeches:
                 role = s.get("speakerRole", "") or ""
+                position = s.get("speakerPosition", "") or ""
                 text = s.get("speech", "").strip()
-                is_chair = "委員長" in role or "委員長" in text[:30]
+                combined = role + position
+                is_chair = any(kw in combined for kw in ("委員長", "会長", "議長", "主査")) or any(kw in text[:30] for kw in ("委員長", "会長", "議長", "主査"))
                 if (is_chair or "附帯決議" in text) and len(text) > 50:
                     procedural.append(f"[{s.get('speaker', '')}] {text}")
 

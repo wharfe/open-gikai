@@ -17,12 +17,15 @@ def _is_procedural(speech: dict) -> bool:
     speaker = speech.get("speaker", "")
     text = speech.get("speech", "").strip()
     role = speech.get("speakerRole", "") or ""
+    position = speech.get("speakerPosition", "") or ""
+    combined = role + position
 
     # Meeting metadata record
     if speaker == "会議録情報":
         return True
-    # Chairperson: check role field or text prefix
-    is_chair = "委員長" in role or "委員長" in text[:30]
+    # Chairperson: 委員長, 会長, 議長, and their deputies
+    chair_keywords = ("委員長", "会長", "議長", "主査")
+    is_chair = any(kw in combined for kw in chair_keywords) or any(kw in text[:30] for kw in chair_keywords)
     if is_chair and len(text) < 150:
         return True
     return False
@@ -146,14 +149,16 @@ def _extract_outcome_by_pattern(speeches: List[dict]) -> Optional[dict]:
     import re
 
     procedural_text = ""
+    _chair_kw = ("委員長", "会長", "議長", "主査")
     for s in speeches:
         role = s.get("speakerRole", "") or ""
+        position = s.get("speakerPosition", "") or ""
         text = s.get("speech", "")
         speaker = s.get("speaker", "")
-        # Chairperson: check role, text prefix, or metadata
+        combined = role + position
         is_chair = (
-            "委員長" in role
-            or "委員長" in text[:30]
+            any(kw in combined for kw in _chair_kw)
+            or any(kw in text[:30] for kw in _chair_kw)
             or speaker == "会議録情報"
         )
         if is_chair:
@@ -205,8 +210,10 @@ def extract_meeting_outcome(
         procedural = []
         for s in speeches:
             role = s.get("speakerRole", "") or ""
+            position = s.get("speakerPosition", "") or ""
             text = s.get("speech", "").strip()
-            is_chair = "委員長" in role or "委員長" in text[:30]
+            combined = role + position
+            is_chair = any(kw in combined for kw in ("委員長", "会長", "議長", "主査")) or any(kw in text[:30] for kw in ("委員長", "会長", "議長", "主査"))
             if (is_chair or "附帯決議" in text) and len(text) > 50:
                 procedural.append(f"[{s.get('speaker', '')}] {text}")
 
