@@ -78,9 +78,11 @@ export default function AboutPage() {
                 原文の意図を正確に反映することを目指していますが、誤りや省略が含まれる可能性があります。
               </p>
               <p>
-                <span className="font-bold text-yellow-500">議員プロフィールは自動抽出です。</span>
+                <span className="font-bold text-yellow-500">発言者情報は自動抽出です。</span>
                 議員の所属政党・役職等は国会会議録のメタデータから自動的に抽出しています。
-                最新の情報や正確性については、各議院の公式サイトをご参照ください。
+                審議会の委員名は議事録PDFから抽出しており、姓のみの表記や同姓の別人が
+                同一人物として扱われる場合があります。
+                正確な情報は各機関の公式サイトをご参照ください。
               </p>
               <p>
                 <span className="font-bold text-yellow-500">テンション分類はAIの判断です。</span>
