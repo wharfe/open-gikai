@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { SpeechRow } from "@/components/ui/speech-row";
@@ -18,6 +19,7 @@ export function ThreadDetailView({
   thread,
   members,
 }: ThreadDetailViewProps) {
+  const router = useRouter();
   const { level, follows } = useAppContext();
   const [contextOpen, setContextOpen] = useState(false);
 
@@ -32,12 +34,12 @@ export function ThreadDetailView({
     <>
       {/* Sticky header — offset by mobile header height on small screens */}
       <div className="sticky top-[53px] z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl md:top-0">
-        <Link
-          href="/"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-x-hover"
+        <button
+          onClick={() => router.back()}
+          className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-none bg-transparent text-x-text transition-colors hover:bg-x-hover"
         >
           <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
-        </Link>
+        </button>
         <div className="min-w-0">
           <div className="truncate text-[17px] font-bold leading-tight">
             {thread.topic}
