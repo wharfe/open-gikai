@@ -50,6 +50,11 @@ export type ThreadLink = {
   date: string;
 };
 
+export type ThreadDebate = {
+  position: string;
+  counterPosition: string;
+};
+
 export type ThreadContext = {
   description: string;
   links?: { label: string; url: string }[];
@@ -65,7 +70,9 @@ export type Thread = {
   topicColor: string;
   summary: string;
   speeches: Speech[];
+  impact?: string;
   outcome?: ThreadOutcome;
+  debate?: ThreadDebate;
   relatedThreads?: ThreadLink[];
   context?: ThreadContext;
   source?: string;       // "ndl" | "kantei" | "council" etc.

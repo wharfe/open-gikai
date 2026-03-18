@@ -83,3 +83,71 @@ export const TENSION_STYLE: Record<string, TensionStyle> = {
 };
 
 export const TREND_PERIODS = ["今週", "今国会", "今年"] as const;
+
+// Life themes for content discovery
+export type LifeThemeId =
+  | "economy"
+  | "diplomacy"
+  | "demographics"
+  | "work"
+  | "education"
+  | "constitution"
+  | "energy"
+  | "society";
+
+export type LifeTheme = {
+  id: LifeThemeId;
+  label: string;
+  icon: string;
+  color: string;
+  description: string;
+};
+
+export const LIFE_THEMES: LifeTheme[] = [
+  { id: "economy", label: "税金・家計", icon: "account_balance_wallet", color: "#fbbf24", description: "予算・消費税・金融政策など" },
+  { id: "diplomacy", label: "外交・安全保障", icon: "public", color: "#60a5fa", description: "日米関係・防衛・国際情勢" },
+  { id: "demographics", label: "少子高齢化", icon: "family_restroom", color: "#f472b6", description: "人口減少・子育て・高齢者支援" },
+  { id: "work", label: "雇用・働き方", icon: "work", color: "#34d399", description: "労働改革・人材確保・公務員制度" },
+  { id: "education", label: "教育・科学", icon: "school", color: "#a78bfa", description: "文部科学・図書館・研究" },
+  { id: "constitution", label: "憲法・法制度", icon: "gavel", color: "#fb923c", description: "憲法改正・国際法・法の支配" },
+  { id: "energy", label: "防災・エネルギー", icon: "bolt", color: "#f87171", description: "災害対策・燃料価格・環境" },
+  { id: "society", label: "社会・多文化", icon: "diversity_3", color: "#38bdf8", description: "外国人政策・バリアフリー・地域格差" },
+];
+
+// Mapping from topicTag to life theme
+// Tags not listed here are either procedural (議事, 委員会, etc.) or unmapped
+export const TOPIC_TAG_TO_THEME: Record<string, LifeThemeId> = {
+  // Economy
+  消費税: "economy", 金融政策: "economy", 積極財政: "economy", 予算概要: "economy",
+  予算案: "economy", 予算審議: "economy", R8予算: "economy", 予算: "economy",
+  経済格差: "economy", 燃料対策: "economy",
+  // Diplomacy & Security
+  トランプ外交: "diplomacy", 日米協力: "diplomacy", 中国外交: "diplomacy",
+  台湾海峡: "diplomacy", 防衛装備: "diplomacy", 米軍基地: "diplomacy",
+  中東情勢: "diplomacy", イラン: "diplomacy", 米国秩序: "diplomacy",
+  日朝関係: "diplomacy", 情報機能: "diplomacy",
+  // Demographics
+  人口動態: "demographics", 少子化: "demographics", 高齢化: "demographics",
+  東京集中: "demographics", 地域格差: "demographics", 地方雇用: "demographics",
+  // Work
+  働き方: "work", 働方改革: "work", 人材確保: "work",
+  官民交流: "work", 院独立性: "work",
+  // Education
+  図書: "education", 図書館: "education", 図書館予算: "education",
+  // Constitution & Legal
+  憲法改正: "constitution", 国際法: "constitution", 法の支配: "constitution",
+  国際法意義: "constitution",
+  // Energy & Disaster
+  防災所信: "energy", 大雪追悼: "energy",
+  // Society
+  外国人: "society", バリア: "society", 価値観: "society",
+  政権基盤: "society",
+};
+
+export function getLifeTheme(topicTag: string): LifeThemeId | null {
+  return TOPIC_TAG_TO_THEME[topicTag] ?? null;
+}
+
+export function getLifeThemeConfig(id: LifeThemeId): LifeTheme | undefined {
+  return LIFE_THEMES.find((t) => t.id === id);
+}
