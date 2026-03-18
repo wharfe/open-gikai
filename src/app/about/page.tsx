@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MobileHeader } from "@/components/layout/header";
-import { getProcessingStatus } from "@/lib/data";
+import { getProcessingStatus, getThreads } from "@/lib/data";
+import { SOURCE_STYLE } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "OpenGIKAIについて",
@@ -20,6 +21,22 @@ type Summary = {
 export default function AboutPage() {
   const raw = getProcessingStatus() as Record<string, unknown> | null;
   const summary = raw?._summary as Summary | undefined;
+
+  // Build committee/council list from thread data
+  const threads = getThreads();
+  const committeeMap = new Map<string, { source: string; house: string; count: number }>();
+  for (const t of threads) {
+    const key = `${t.source || "ndl"}::${t.committee}`;
+    const existing = committeeMap.get(key);
+    if (existing) {
+      existing.count += 1;
+    } else {
+      committeeMap.set(key, { source: t.source || "ndl", house: t.house, count: 1 });
+    }
+  }
+  const committeeList = [...committeeMap.entries()]
+    .map(([key, val]) => ({ name: key.split("::")[1], ...val }))
+    .sort((a, b) => b.count - a.count);
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
@@ -171,6 +188,40 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
+
+          {/* Committee & Council list */}
+          {committeeList.length > 0 && (
+            <section>
+              <h2 className="text-[20px] font-bold text-x-text">対応委員会・審議会</h2>
+              <p className="mt-2 text-[13px] text-x-secondary">
+                現在データに含まれている委員会・審議会の一覧です。データの蓄積に応じて自動的に更新されます。
+              </p>
+              <div className="mt-3 space-y-1.5">
+                {committeeList.map(({ name, source, house, count }) => {
+                  const style = SOURCE_STYLE[source];
+                  return (
+                    <div key={`${source}-${name}`} className="flex items-center gap-2 text-[14px]">
+                      {style ? (
+                        <span
+                          className="material-symbols-rounded shrink-0"
+                          style={{ fontSize: 16, color: style.color }}
+                          title={style.label}
+                        >
+                          {style.icon}
+                        </span>
+                      ) : (
+                        <span className="w-4 shrink-0" />
+                      )}
+                      <span className="text-x-text">{name}</span>
+                      <span className="text-[12px] text-x-secondary">
+                        {count}スレッド
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
 
           {/* FAQ */}
           <section>

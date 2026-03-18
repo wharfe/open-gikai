@@ -149,6 +149,19 @@ export const TOPIC_TAG_TO_THEME: Record<string, LifeThemeId> = {
   // Society
   外国人: "society", バリア: "society", 価値観: "society",
   政権基盤: "society",
+  // Council: regulatory reform (規制改革推進会議)
+  規制改革: "economy", 基本方針: "economy", 分野別提案: "economy",
+  総理決意: "economy", 総理総括: "economy", WG報告: "economy",
+  年休算出: "work", シフト年休: "work",
+  // Council: drone/startup WG
+  VTOL免許: "economy", "レベル3.5": "economy", 国産強化: "economy",
+  VTOL: "economy", 国産化: "economy",
+  ホット処理: "economy", ホット: "economy",
+  // Council: 二地域居住
+  移住促進: "demographics", 二拠点事例: "demographics",
+  交通実践: "demographics", 高知実践: "demographics",
+  MaaS実践: "demographics", 各省施策: "demographics",
+  施策方向: "demographics", 中間取: "demographics",
 };
 
 export function getLifeTheme(topicTag: string): LifeThemeId | null {
