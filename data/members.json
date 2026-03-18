@@ -1761,5 +1761,192 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_2527ecf9": {
+    "id": "m_2527ecf9",
+    "name": "平",
+    "party": "政府",
+    "role": "大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "m_777be3bd": {
+    "id": "m_777be3bd",
+    "name": "堀 天子",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_63134bb0": {
+    "id": "m_63134bb0",
+    "name": "冨田 哲郎",
+    "party": null,
+    "role": "議長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_b0533ae2": {
+    "id": "m_b0533ae2",
+    "name": "石破 茂",
+    "party": "政府",
+    "role": "内閣総理大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "pm"
+  },
+  "m_3be05053": {
+    "id": "m_3be05053",
+    "name": "幕内 浩",
+    "party": null,
+    "role": "参事官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_6e74f40a": {
+    "id": "m_6e74f40a",
+    "name": "曽谷",
+    "party": "一般社団法人日本産業用無人航空機工業会",
+    "role": "理事",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_6394494e": {
+    "id": "m_6394494e",
+    "name": "嶋田",
+    "party": "一般社団法人日本産業用無人航空機工業会",
+    "role": "理事",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_04bc3297": {
+    "id": "m_04bc3297",
+    "name": "瀧 俊雄",
+    "party": null,
+    "role": "専門委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_52c1a8d5": {
+    "id": "m_52c1a8d5",
+    "name": "江口",
+    "party": "国土交通省",
+    "role": "課長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_259596a8": {
+    "id": "m_259596a8",
+    "name": "石井",
+    "party": "国土交通省",
+    "role": "部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_3041bd67": {
+    "id": "m_3041bd67",
+    "name": "藤本 あゆみ",
+    "party": null,
+    "role": "専門委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_0cec62f6": {
+    "id": "m_0cec62f6",
+    "name": "山本氏",
+    "party": "一般社団法人日本フランチャイズチェーン協会",
+    "role": "関係者",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_b95a085c": {
+    "id": "m_b95a085c",
+    "name": "大津氏",
+    "party": "全国社会保険労務士会連合会",
+    "role": "関係者",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f161184d": {
+    "id": "m_f161184d",
+    "name": "家永氏",
+    "party": "弁護士法人ALG&Associates",
+    "role": "関係者",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_c1cc44c0": {
+    "id": "m_c1cc44c0",
+    "name": "尾田",
+    "party": "厚生労働省",
+    "role": "審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_262e437e": {
+    "id": "m_262e437e",
+    "name": "鈴木 俊晴",
+    "party": null,
+    "role": "専門委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_b7e9fedd": {
+    "id": "m_b7e9fedd",
+    "name": "水町 勇一郎",
+    "party": null,
+    "role": "専門委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
