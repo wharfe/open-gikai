@@ -30,11 +30,11 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
           <span className="text-x-secondary">·</span>
           {SOURCE_STYLE[thread.source ?? ""] ? (
             <span
-              className="inline-flex items-center gap-0.5 text-[13px] font-medium"
-              style={{ color: SOURCE_STYLE[thread.source!].color }}
+              className="material-symbols-rounded"
+              style={{ fontSize: 15, color: SOURCE_STYLE[thread.source!].color }}
+              title={SOURCE_STYLE[thread.source!].label}
             >
-              <span className="material-symbols-rounded" style={{ fontSize: 14 }}>{SOURCE_STYLE[thread.source!].icon}</span>
-              {SOURCE_STYLE[thread.source!].label}
+              {SOURCE_STYLE[thread.source!].icon}
             </span>
           ) : (
             <span className="text-x-secondary">{thread.house}</span>
