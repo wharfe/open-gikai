@@ -2,11 +2,11 @@
 
 **[open-gikai.net](https://open-gikai.net)** | [🇯🇵 日本語版はこちら / Japanese](./README.ja.md)
 
-**OpenGIKAI** (議会) is an open-source public media project that transforms Japanese parliamentary proceedings into a modern, accessible thread format — like social media, but with official sources. It ingests multiple sources including Diet records (NDL) and Prime Minister press conferences (kantei.go.jp).
+**OpenGIKAI** (議会) is an open-source public media project that transforms Japanese parliamentary proceedings into a modern, accessible thread format — like social media, but with official sources. It ingests multiple sources including Diet records (NDL), Prime Minister press conferences (kantei.go.jp), and government council meeting minutes (審議会).
 
 ## What It Does
 
-- Fetches official transcripts from multiple sources: [NDL Diet Records API](https://kokkai.ndl.go.jp/api.html) and [kantei.go.jp](https://www.kantei.go.jp/) press conferences
+- Fetches official transcripts from multiple sources: [NDL Diet Records API](https://kokkai.ndl.go.jp/api.html), [kantei.go.jp](https://www.kantei.go.jp/) press conferences, and [government council](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) meeting minutes
 - Uses AI (Claude) to summarize and structure speeches by topic
 - Presents them in a thread-based UI with three reading levels:
   - 🌱 **Easy** — Simple language for everyone
@@ -24,7 +24,7 @@ Parliamentary records are public but hard to read. OpenGIKAI makes them accessib
 | Frontend | Next.js 15 (App Router), TypeScript, Tailwind CSS |
 | Deployment | Vercel (Static Site Generation) |
 | Data Pipeline | Python + Claude API |
-| Data Sources | [NDL Diet Records API](https://kokkai.ndl.go.jp/api.html), [kantei.go.jp](https://www.kantei.go.jp/) |
+| Data Sources | [NDL Diet Records API](https://kokkai.ndl.go.jp/api.html), [kantei.go.jp](https://www.kantei.go.jp/), [cao.go.jp councils](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) |
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ npm run dev
 │   ├── lib/          # Utilities and data fetching
 │   └── types/        # TypeScript type definitions
 ├── scripts/          # Python batch processing (source adapters → Claude API → JSON)
-│   └── sources/      # Source adapters (NDL, kantei, etc.)
+│   └── sources/      # Source adapters (NDL, kantei, council, etc.)
 ├── data/             # Generated JSON data for SSG
 └── public/           # Static assets
 ```
@@ -57,11 +57,11 @@ npm run dev
 ## How It Works
 
 ```
-Sources (NDL, kantei, ...) → Fetch transcripts → Group by topic (Claude API)
+Sources (NDL, kantei, council, ...) → Fetch transcripts → Group by topic (Claude API)
                            → Summarize at 3 levels → Generate static JSON → Deploy site
 ```
 
-1. **Daily batch**: Fetches previous day's content from configured sources (NDL, kantei, etc.) via the SourceAdapter abstraction
+1. **Daily batch**: Fetches previous day's content from configured sources (NDL, kantei, council, etc.) via the SourceAdapter abstraction
 2. **AI processing**: Groups speeches by topic, classifies tension type (questioning, response, follow-up, etc.), generates summaries at three reading levels
 3. **Static generation**: Outputs JSON files consumed by Next.js SSG
 4. **Deployment**: Auto-deploys to Vercel
@@ -69,8 +69,10 @@ Sources (NDL, kantei, ...) → Fetch transcripts → Group by topic (Claude API)
 ## Data Pipeline
 
 ```bash
-# 1. Fetch speeches from NDL API
+# 1. Fetch speeches from various sources
 python scripts/fetch_ndl.py --date-from 2025-03-14
+python scripts/fetch_kantei.py --date-from 2025-03-14
+python scripts/fetch_council.py --date-from 2025-12-24  # council meeting minutes (PDF)
 
 # 2. Summarize with Claude API (requires ANTHROPIC_API_KEY in .env)
 python scripts/summarize.py --date 2025-03-14
@@ -90,7 +92,7 @@ See `.env.example` for configuration.
 
 ## Data Source
 
-Diet records are sourced from the [National Diet Library's Diet Records Search System](https://kokkai.ndl.go.jp/). These records are **not subject to copyright** under Japan's Copyright Act, Article 13. Press conference transcripts are sourced from [kantei.go.jp](https://www.kantei.go.jp/).
+Diet records are sourced from the [National Diet Library's Diet Records Search System](https://kokkai.ndl.go.jp/). These records are **not subject to copyright** under Japan's Copyright Act, Article 13. Press conference transcripts are sourced from [kantei.go.jp](https://www.kantei.go.jp/). Government council meeting minutes (審議会) are sourced from [cao.go.jp](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) and other ministry websites.
 
 AI-generated summaries are clearly attributed as such.
 
