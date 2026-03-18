@@ -24,10 +24,10 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
       <Link href={`/t/${thread.id}`} className="block">
         {/* Committee & date */}
         <div className="flex items-center gap-1.5 text-[15px]">
-          <span className="font-bold text-x-text">{thread.committee}</span>
-          <span className="text-x-secondary">·</span>
-          <span className="text-x-secondary">{thread.date}</span>
-          <span className="text-x-secondary">·</span>
+          <span className="min-w-0 shrink truncate font-bold text-x-text">{thread.committee}</span>
+          <span className="shrink-0 text-x-secondary">·</span>
+          <span className="shrink-0 text-x-secondary">{thread.date}</span>
+          <span className="shrink-0 text-x-secondary">·</span>
           {SOURCE_STYLE[thread.source ?? ""] ? (
             <span
               className="material-symbols-rounded"
