@@ -90,6 +90,7 @@ def build_thread_context(thread_info: dict, meeting: dict) -> Optional[dict]:
         url_labels = {
             "ndl": "会議録全文（NDL）",
             "kantei": "記者会見全文（首相官邸）",
+            "council": "議事録（内閣府）",
         }
         links.append({"label": url_labels.get(source, "原文"), "url": meeting_url})
 
@@ -288,6 +289,7 @@ def run_pipeline(
     candidates = [
         os.path.join(raw_dir, f"ndl-{date_str}.json"),
         os.path.join(raw_dir, f"kantei-{date_str}.json"),
+        os.path.join(raw_dir, f"council-{date_str}.json"),
         os.path.join(raw_dir, f"{date_str}.json"),  # legacy
     ]
     meetings: list = []

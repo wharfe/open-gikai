@@ -102,21 +102,57 @@ export default function AboutPage() {
           {/* Data Sources */}
           <section>
             <h2 className="text-[20px] font-bold text-x-text">データソース</h2>
-            <div className="mt-3 space-y-2 text-[15px] text-x-secondary">
-              <div className="flex items-start gap-2">
-                <span className="material-symbols-rounded shrink-0 text-x-brand" style={{ fontSize: 18 }}>arrow_forward</span>
-                <div>
-                  <a
-                    href="https://kokkai.ndl.go.jp/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-x-accent hover:underline"
-                  >
-                    国会会議録検索システム（NDL）
-                  </a>
-                  <span className="text-x-secondary"> — 国会議事録の一次情報源。著作権法第13条により保護対象外。</span>
+
+            {/* Primary sources — actively ingested */}
+            <h3 className="mt-4 text-[16px] font-bold text-x-text">対応済みソース</h3>
+            <div className="mt-2 space-y-3">
+              {[
+                {
+                  name: "国会会議録",
+                  href: "https://kokkai.ndl.go.jp/",
+                  org: "国立国会図書館（NDL）",
+                  desc: "衆議院・参議院の全委員会議事録。著作権法第13条により保護対象外。",
+                  status: "稼働中" as const,
+                },
+                {
+                  name: "首相記者会見",
+                  href: "https://www.kantei.go.jp/",
+                  org: "首相官邸",
+                  desc: "内閣総理大臣の定例・臨時記者会見。",
+                  status: "稼働中" as const,
+                },
+                {
+                  name: "規制改革推進会議",
+                  href: "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
+                  org: "内閣府",
+                  desc: "本会議および各ワーキング・グループ（デジタル・AI、健康・医療・介護、地域活性化等）の議事録。",
+                  status: "稼働中" as const,
+                },
+              ].map(({ name, href, org, desc, status }) => (
+                <div key={name} className="rounded-xl border border-x-border p-3">
+                  <div className="flex items-center justify-between">
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[15px] font-bold text-x-accent hover:underline"
+                    >
+                      {name} ↗
+                    </a>
+                    <span className="rounded-full bg-green-500/10 px-2 py-0.5 text-[12px] font-medium text-green-600 dark:text-green-400">
+                      {status}
+                    </span>
+                  </div>
+                  <div className="mt-1 text-[13px] text-x-secondary">
+                    {org} — {desc}
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
+
+            {/* Reference sources */}
+            <h3 className="mt-5 text-[16px] font-bold text-x-text">参照データ</h3>
+            <div className="mt-2 space-y-2 text-[15px] text-x-secondary">
               <div className="flex items-start gap-2">
                 <span className="material-symbols-rounded shrink-0 text-x-brand" style={{ fontSize: 18 }}>arrow_forward</span>
                 <div>

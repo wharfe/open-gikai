@@ -29,7 +29,7 @@ jobs:
           cache: npm
 
       - name: Install Python dependencies
-        run: pip install requests anthropic python-dotenv
+        run: pip install requests anthropic python-dotenv pymupdf beautifulsoup4
 
       - name: Install Node dependencies
         run: npm ci
@@ -62,8 +62,24 @@ jobs:
             echo "NDL: No data file found"
           fi
 
+      # ----- Source: Council (審議会) Meeting Minutes -----
+      - name: Fetch from Council
+        id: check_council
+        continue-on-error: true
+        run: |
+          python scripts/fetch_council.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
+          FILE="data/raw/council-${{ steps.date.outputs.target }}.json"
+          if [ -f "$FILE" ]; then
+            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
+            echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
+            echo "Council: Found $COUNT speeches"
+          else
+            echo "speeches=0" >> "$GITHUB_OUTPUT"
+            echo "Council: No meetings found"
+          fi
+
       - name: Summarize with Claude API
-        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0'
+        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0' || steps.check_council.outputs.speeches != '0'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
@@ -106,6 +122,7 @@ jobs:
           echo "- **Date**: ${{ steps.date.outputs.target }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- **NDL speeches**: ${{ steps.check_ndl.outputs.speeches }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Kantei speeches**: ${{ steps.check_kantei.outputs.speeches || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Council speeches**: ${{ steps.check_council.outputs.speeches || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           if [ -f "data/threads/${{ steps.date.outputs.target }}.json" ]; then
             THREADS=$(python3 -c "import json; print(len(json.load(open('data/threads/${{ steps.date.outputs.target }}.json'))))")
             echo "- **Threads generated**: $THREADS" >> "$GITHUB_STEP_SUMMARY"
