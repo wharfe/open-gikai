@@ -1959,5 +1959,115 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_c7608ee3": {
+    "id": "m_c7608ee3",
+    "name": "出水",
+    "party": "事務局",
+    "role": "企画専門官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_be9231f9": {
+    "id": "m_be9231f9",
+    "name": "石山",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f55a2a35": {
+    "id": "m_f55a2a35",
+    "name": "井上",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_1f472f02": {
+    "id": "m_1f472f02",
+    "name": "谷邉",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_1e8efd7c": {
+    "id": "m_1e8efd7c",
+    "name": "原田",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_75c4bd28": {
+    "id": "m_75c4bd28",
+    "name": "黒田",
+    "party": "事務局",
+    "role": "局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_b214606e": {
+    "id": "m_b214606e",
+    "name": "小田切",
+    "party": null,
+    "role": "委員長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_87fbfe41": {
+    "id": "m_87fbfe41",
+    "name": "倉石",
+    "party": "事務局",
+    "role": "総合計画課長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_5c7f03b1": {
+    "id": "m_5c7f03b1",
+    "name": "高瀬",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_6c332a36": {
+    "id": "m_6c332a36",
+    "name": "森田",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }

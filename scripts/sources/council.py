@@ -56,6 +56,12 @@ class CouncilConfig:
     council_name: str  # e.g. "規制改革推進会議"
     index_url: str
     source_label: str
+    # Index page format: "table" (cao.go.jp style) or "ul" (mlit.go.jp style)
+    index_format: str = "table"
+    # Speaker marker: "maru" (○speaker) or "brackets" (【speaker】)
+    speaker_format: str = "maru"
+    # Link text filter for minutes PDFs (used in ul-format discovery)
+    minutes_link_text: str = "議事録"
 
 
 # Supported councils — add new entries here to extend
@@ -66,9 +72,34 @@ COUNCILS: dict[str, CouncilConfig] = {
         index_url="https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html",
         source_label="規制改革推進会議",
     ),
+    "nichiiki": CouncilConfig(
+        council_id="nichiiki",
+        council_name="移住・二地域居住等促進専門委員会",
+        index_url="https://www.mlit.go.jp/policy/shingikai/s104_ijuunichiikikyojuu01.html",
+        source_label="移住・二地域居住等促進専門委員会",
+        index_format="ul",
+        speaker_format="brackets",
+    ),
+    "kankeijinkou": CouncilConfig(
+        council_id="kankeijinkou",
+        council_name="ライフスタイルの多様化と関係人口に関する懇談会",
+        index_url="https://www.mlit.go.jp/kokudoseisaku/kokudoseisaku_tk3_000110.html",
+        source_label="関係人口懇談会",
+        index_format="ul",
+        speaker_format="brackets",
+    ),
 }
 
-# Speaker turn pattern: ○ at line start followed by speaker identifier.
+# Speaker turn patterns — two formats used by different ministries:
+#   cao.go.jp (規制改革推進会議 etc.): ○speaker at line start
+#   mlit.go.jp (国交省 councils): 【speaker】 anywhere in text
+
+# 【speaker】 pattern for MLIT councils
+_SPEAKER_BRACKET_RE = re.compile(
+    r"【\s*(.+?)\s*】",
+)
+
+# ○speaker pattern for CAO councils
 # Handles two layout variants:
 #   1. "○林議長代理\n" — name on its own line, body starts next line
 #   2. "○幕内参事官 定刻となりました..." — name + body on same line
@@ -172,6 +203,9 @@ class CouncilAdapter(SourceAdapter):
         html = self._get_html(index_url)
         soup = BeautifulSoup(html, "html.parser")
 
+        if self.config.index_format == "ul":
+            return self._discover_from_ul(soup, index_url, date_from, date_until, verbose)
+
         results: list[dict] = []
 
         # The page uses tables with columns:
@@ -249,6 +283,86 @@ class CouncilAdapter(SourceAdapter):
 
         return results
 
+    def _discover_from_ul(
+        self,
+        soup: BeautifulSoup,
+        index_url: str,
+        date_from: str,
+        date_until: str,
+        verbose: bool = False,
+    ) -> list[dict]:
+        """Discover meetings from <ul> list-based index pages (MLIT style).
+
+        Structure:
+          <li>
+            <p>第1回 移住・二地域居住等促進専門委員会（2023年10月19日）</p>
+            <ul>
+              <li><a href="...">議事録（PDF形式：480KB）</a></li>
+              ...
+            </ul>
+          </li>
+        """
+        results: list[dict] = []
+        minutes_text = self.config.minutes_link_text
+
+        for li in soup.find_all("li"):
+            # Look for a <p> with a date in parentheses
+            p = li.find("p", recursive=False)
+            if not p:
+                continue
+
+            p_text = p.get_text(strip=True)
+
+            # Parse date from formats like （2023年10月19日） or (2023年10月19日)
+            date_match = re.search(
+                r"[（(](\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日[）)]",
+                p_text,
+            )
+            if not date_match:
+                # Try 和暦
+                iso_date = self._parse_wareki_date(p_text)
+            else:
+                year = int(date_match.group(1))
+                month = int(date_match.group(2))
+                day = int(date_match.group(3))
+                iso_date = f"{year}-{month:02d}-{day:02d}"
+
+            if not iso_date:
+                continue
+            if iso_date < date_from or iso_date > date_until:
+                continue
+
+            # Find minutes PDF link in child <ul>
+            pdf_url = None
+            for link in li.find_all("a", href=True):
+                if minutes_text in link.get_text(strip=True):
+                    href = link["href"]
+                    if href.endswith(".pdf"):
+                        pdf_url = urljoin(index_url, href)
+                        break
+
+            if not pdf_url:
+                if verbose:
+                    log.debug("No minutes PDF for %s (%s)", p_text[:40], iso_date)
+                continue
+
+            # Clean up title
+            title = re.sub(r"[（(]\d{4}年.*?[）)]", "", p_text).strip()
+            if not title:
+                title = self.config.council_name
+
+            results.append({
+                "title": title,
+                "date": iso_date,
+                "pdf_url": pdf_url,
+                "page_url": index_url,
+            })
+
+            if verbose:
+                log.info("  Found: %s (%s) → %s", title, iso_date, pdf_url)
+
+        return results
+
     # ----- Fetching & Parsing -----
 
     def _fetch_meeting(
@@ -268,14 +382,16 @@ class CouncilAdapter(SourceAdapter):
             log.warning("Empty text extracted from %s", pdf_url)
             return None
 
-        # Parse attendees for role mapping and full-name resolution
-        role_map = self._parse_attendees(text)
-        fullname_map = self._build_fullname_map(text)
-
-        # Parse speaker turns
-        speeches = self._parse_speeches(
-            text, role_map, fullname_map=fullname_map, source_url=pdf_url,
-        )
+        # Parse speaker turns — format depends on ministry convention
+        if self.config.speaker_format == "brackets":
+            speeches = self._parse_speeches_brackets(text, source_url=pdf_url)
+        else:
+            # Parse attendees for role mapping and full-name resolution
+            role_map = self._parse_attendees(text)
+            fullname_map = self._build_fullname_map(text)
+            speeches = self._parse_speeches(
+                text, role_map, fullname_map=fullname_map, source_url=pdf_url,
+            )
 
         if not speeches:
             log.warning("No speeches parsed from %s", pdf_url)
@@ -474,6 +590,58 @@ class CouncilAdapter(SourceAdapter):
 
         return speeches
 
+    @staticmethod
+    def _parse_speeches_brackets(
+        text: str,
+        source_url: str = "",
+    ) -> list[RawSpeech]:
+        """Parse speaker turns using 【speaker】 markers (MLIT style).
+
+        Handles patterns like:
+          【小田切委員長】 本日の議事...
+          【石山委員】 石山と申します。
+          【出水企画専門官】 事務局の...
+        """
+        speeches: list[RawSpeech] = []
+        order = 1
+
+        markers = list(_SPEAKER_BRACKET_RE.finditer(text))
+        if not markers:
+            return []
+
+        for i, marker in enumerate(markers):
+            raw_speaker = marker.group(1).strip()
+
+            start = marker.end()
+            end = markers[i + 1].start() if i + 1 < len(markers) else len(text)
+            body = text[start:end].strip()
+
+            if len(body) < 20:
+                continue
+
+            body = re.sub(r"\n{3,}", "\n\n", body)
+
+            # Classify speaker from 【name + role】 pattern
+            speaker, position, group = _classify_bracket_speaker(raw_speaker)
+
+            # Filter procedural speeches
+            if _is_procedural(body, position):
+                continue
+
+            speeches.append(
+                RawSpeech(
+                    speaker=speaker,
+                    speaker_group=group,
+                    speaker_position=position,
+                    text=body,
+                    order=order,
+                    source_url=source_url,
+                )
+            )
+            order += 1
+
+        return speeches
+
     # ----- Date parsing -----
 
     @staticmethod
@@ -550,6 +718,33 @@ def _is_procedural(body: str, position: Optional[str]) -> bool:
         return False
 
     return bool(_PROCEDURAL_RE.search(body))
+
+
+def _classify_bracket_speaker(
+    raw_speaker: str,
+) -> tuple[str, Optional[str], Optional[str]]:
+    """Classify a 【speaker】 string into (name, position, group).
+
+    MLIT-style markers include the role suffix:
+      小田切委員長  →  (小田切, 委員長, None)
+      出水企画専門官  →  (出水, 企画専門官, 事務局)
+      黒田局長  →  (黒田, 局長, 事務局)
+      石山委員  →  (石山, 委員, None)
+    """
+    # Try to split name + role suffix (longer suffixes first)
+    role_match = re.match(
+        r"(.+?)(企画専門官|総合計画課長|委員長|座長|専門官|企画官|委員|局長|課長補佐|課長|部長|室長|参事官|審議官)$",
+        raw_speaker,
+    )
+    if role_match:
+        name = role_match.group(1).strip()
+        role = role_match.group(2)
+        bureaucrat_roles = ("企画専門官", "総合計画課長", "専門官", "企画官", "局長",
+                            "課長補佐", "課長", "部長", "室長", "参事官", "審議官")
+        group = "事務局" if role in bureaucrat_roles else None
+        return (name, role, group)
+
+    return (raw_speaker, None, None)
 
 
 def _extract_family_name(fullname: str) -> Optional[str]:
