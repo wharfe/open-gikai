@@ -338,7 +338,7 @@ def assemble_all(
                 raw = speech_lookup.get(order)
                 if not raw:
                     continue
-                member = extract_member(raw)
+                member = extract_member(raw, existing_members=members)
                 if member["id"] not in members:
                     members[member["id"]] = member
                 assembled.append({

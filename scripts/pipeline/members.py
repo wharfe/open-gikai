@@ -67,10 +67,16 @@ def detect_rank(speaker_position: Optional[str], speaker_role: Optional[str]) ->
     return "member"
 
 
-def generate_member_id(speaker: str, speaker_yomi: Optional[str]) -> str:
+def generate_member_id(
+    speaker: str,
+    speaker_yomi: Optional[str],
+    existing_members: Optional[Dict[str, dict]] = None,
+) -> str:
     """Generate a stable member ID from speaker name/yomi.
 
-    Uses romanized yomi if available, otherwise a hash of the name.
+    Uses romanized yomi if available. Falls back to matching against
+    existing members by name (for cross-source deduplication), then
+    to a hash of the name.
     """
     if speaker_yomi:
         # Simple kana-to-romaji for ID purposes
@@ -78,9 +84,33 @@ def generate_member_id(speaker: str, speaker_yomi: Optional[str]) -> str:
         if romaji:
             return romaji
 
+    # Try to match against existing members by normalized name
+    if existing_members:
+        matched_id = _match_existing_member(speaker, existing_members)
+        if matched_id:
+            return matched_id
+
     # Fallback: hash of the name
     h = hashlib.sha256(speaker.encode("utf-8")).hexdigest()[:8]
     return f"m_{h}"
+
+
+def _match_existing_member(speaker: str, members: Dict[str, dict]) -> Optional[str]:
+    """Try to match a speaker name against existing members.
+
+    Handles cases like:
+      "高市 早苗" matching existing "高市早苗" (takaichisanae)
+      "城内 実" matching existing "城内実" (m_xxx)
+    """
+    # Normalize: remove spaces for comparison
+    normalized = speaker.replace(" ", "").replace("　", "")
+
+    for mid, m in members.items():
+        existing_name = m.get("name", "").replace(" ", "").replace("　", "")
+        if normalized == existing_name:
+            return mid
+
+    return None
 
 
 def _kana_to_romaji(yomi: str) -> Optional[str]:
@@ -160,7 +190,10 @@ def _kana_to_romaji(yomi: str) -> Optional[str]:
     return romaji
 
 
-def extract_member(speech_rec: dict) -> dict:
+def extract_member(
+    speech_rec: dict,
+    existing_members: Optional[Dict[str, dict]] = None,
+) -> dict:
     """Extract a Member dict from a raw NDL speech record.
 
     Fields that require external data (bio, stance, district, since)
@@ -172,7 +205,7 @@ def extract_member(speech_rec: dict) -> dict:
     speaker_position = speech_rec.get("speakerPosition")
     speaker_role = speech_rec.get("speakerRole")
 
-    member_id = generate_member_id(speaker, speaker_yomi)
+    member_id = generate_member_id(speaker, speaker_yomi, existing_members)
     party = normalize_party(speaker_group, speaker_position)
     rank = detect_rank(speaker_position, speaker_role)
 

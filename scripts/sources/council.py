@@ -83,8 +83,8 @@ _SPEAKER_RE = re.compile(
     # Pattern 1: Org/ministry（person role）
     r"[^（）\n]+?[（(][^）)\n]+[）)]"
     r"|"
-    # Pattern 2: name + known role suffix
-    r"[^\s○\n]+?(?:議長代理|議長|座長代理|座長|専門委員|委員|大臣|副大臣|政務官|室長|参事官|審議官)"
+    # Pattern 2: name + known role suffix (longer suffixes first)
+    r"[^\s○\n]+?(?:内閣総理大臣|議長代理|議長|座長代理|座長|専門委員|委員|担当大臣|副大臣|大臣|政務官|室長|参事官|審議官)"
     r"|"
     # Pattern 3: bare name/label (事務局 etc.) — up to first space or EOL
     r"[^\s○\n]+"
@@ -268,11 +268,14 @@ class CouncilAdapter(SourceAdapter):
             log.warning("Empty text extracted from %s", pdf_url)
             return None
 
-        # Parse attendees for role mapping
+        # Parse attendees for role mapping and full-name resolution
         role_map = self._parse_attendees(text)
+        fullname_map = self._build_fullname_map(text)
 
         # Parse speaker turns
-        speeches = self._parse_speeches(text, role_map, source_url=pdf_url)
+        speeches = self._parse_speeches(
+            text, role_map, fullname_map=fullname_map, source_url=pdf_url,
+        )
 
         if not speeches:
             log.warning("No speeches parsed from %s", pdf_url)
@@ -343,9 +346,82 @@ class CouncilAdapter(SourceAdapter):
         return role_map
 
     @staticmethod
+    def _build_fullname_map(text: str) -> dict[str, str]:
+        """Build a family-name → full-name mapping from the attendance section.
+
+        Parses entries like:
+          林いづみ議長代理 → {"林": "林 いづみ"}
+          高市早苗内閣総理大臣 → {"高市": "高市 早苗"}
+          阿久澤孝室長 → {"阿久澤": "阿久澤 孝"}
+          落合孝文座長 → {"落合": "落合 孝文"}
+
+        The attendee list provides full names that are not available in the
+        speaker markers (○林議長代理), enabling proper member identification.
+        """
+        fullname_map: dict[str, str] = {}
+
+        att_match = re.search(
+            r"出席者[：:\s]*\n(.*?)(?:\n\d[．.）]|\n○)",
+            text,
+            re.DOTALL,
+        )
+        if not att_match:
+            return fullname_map
+
+        att_block = att_match.group(1)
+
+        # Known role suffixes — ordered long-to-short for greedy matching
+        role_suffixes = (
+            "内閣総理大臣", "内閣官房長官", "内閣官房副長官", "内閣官房副長官補",
+            "内閣府事務次官", "内閣府審議官", "内閣府副大臣", "内閣府政務官",
+            "規制改革担当大臣",
+            "議長代理", "議長", "座長代理", "座長",
+            "専門委員", "委員",
+            "大臣", "副大臣", "政務官",
+            "室長", "次長", "参事官", "審議官",
+            "部長", "課長",
+        )
+
+        # Flatten the block into a single string for easier parsing
+        flat = re.sub(r"\s+", "", att_block)
+        # Remove category markers like （委　員）（政　府）（事務局）
+        flat = re.sub(r"[（(][^）)]*[）)]", ",", flat)
+        # Remove org prefixes like "内閣府規制改革推進室" before personal names
+        # These appear in 事務局 lines and would otherwise pollute the map
+        flat = re.sub(
+            r"内閣府[^\s、，,]*?(?=[一-龥ぁ-んァ-ヶ]{1,3}[一-龥ぁ-んァ-ヶ]+(?:室長|次長|参事官))",
+            ",",
+            flat,
+        )
+
+        # Split by common delimiters
+        for entry in re.split(r"[、，,\n]", flat):
+            entry = entry.strip()
+            if not entry or len(entry) < 2:
+                continue
+
+            # Try to strip a role suffix to get the full name
+            for suffix in role_suffixes:
+                if entry.endswith(suffix):
+                    fullname = entry[: -len(suffix)]
+                    if len(fullname) >= 2:
+                        family = _extract_family_name(fullname)
+                        if family and family not in fullname_map:
+                            # Keep the first match (委員 listed before 政府/事務局)
+                            given = fullname[len(family):]
+                            if given:
+                                fullname_map[family] = f"{family} {given}"
+                            else:
+                                fullname_map[family] = family
+                    break
+
+        return fullname_map
+
+    @staticmethod
     def _parse_speeches(
         text: str,
         role_map: dict[str, str],
+        fullname_map: Optional[dict[str, str]] = None,
         source_url: str = "",
     ) -> list[RawSpeech]:
         """Parse speaker turns from PDF text.
@@ -375,8 +451,10 @@ class CouncilAdapter(SourceAdapter):
             # Clean up body text
             body = re.sub(r"\n{3,}", "\n\n", body)
 
-            # Determine speaker name and role
-            speaker, position, group = _classify_speaker(raw_speaker, role_map)
+            # Determine speaker name and role (with full-name resolution)
+            speaker, position, group = _classify_speaker(
+                raw_speaker, role_map, fullname_map,
+            )
 
             speeches.append(
                 RawSpeech(
@@ -432,47 +510,101 @@ class CouncilAdapter(SourceAdapter):
         return resp.content
 
 
+def _extract_family_name(fullname: str) -> Optional[str]:
+    """Extract the family name from a Japanese full name string.
+
+    Uses common family name length heuristics (1-3 kanji).
+    For names like 阿久澤孝 → 阿久澤, 林いづみ → 林, 高市早苗 → 高市.
+    """
+    if not fullname or len(fullname) < 2:
+        return None
+
+    # Common 3-char family names (add as needed)
+    three_char = {"阿久澤", "小野寺", "長谷川", "宇都宮", "御手洗", "佐々木", "長谷部"}
+    if len(fullname) >= 4 and fullname[:3] in three_char:
+        return fullname[:3]
+
+    # If the name has hiragana after char 1, family name is likely 1 char
+    # (e.g. 林いづみ — 林 is family, いづみ is given)
+    if len(fullname) >= 2 and _is_hiragana(fullname[1]):
+        return fullname[0]
+
+    # Common 1-char family names
+    one_char = {"林", "森", "原", "堀", "関", "瀧", "嶋"}
+    if fullname[0] in one_char and len(fullname) >= 2 and not _is_hiragana(fullname[1]):
+        return fullname[0]
+
+    # Default: 2-char family name if the name is >= 3 chars
+    # 1-char family name if the name is exactly 2 chars
+    if len(fullname) == 2:
+        return fullname[0]
+    return fullname[:2]
+
+
+def _is_hiragana(c: str) -> bool:
+    """Check if a character is hiragana."""
+    return "\u3040" <= c <= "\u309f"
+
+
 def _classify_speaker(
     raw_speaker: str,
     role_map: dict[str, str],
+    fullname_map: Optional[dict[str, str]] = None,
 ) -> tuple[str, Optional[str], Optional[str]]:
     """Classify a speaker string into (name, position, group).
 
+    Uses fullname_map (from attendance section) to resolve family-name-only
+    speakers to their full names for proper member identification.
+
     Handles patterns like:
-      林議長代理  →  (林, 議長代理, None)
-      城内大臣    →  (城内, 大臣, 政府)
+      林議長代理  →  (林 いづみ, 議長代理, None)
+      城内大臣    →  (城内 実, 大臣, 政府)
       事務局      →  (事務局, 事務局, 事務局)
-      オリックス自動車株式会社（桧部長）  →  (桧, 部長, オリックス自動車株式会社)
+      総務省（翁長部長）  →  (翁長 久, 部長, 総務省)
     """
+    fmap = fullname_map or {}
+
     # Handle external org pattern: 組織名（氏名役職）
     ext_match = re.match(r"(.+?)[（(](.+?)[）)]", raw_speaker)
     if ext_match:
         org = ext_match.group(1).strip()
         person = ext_match.group(2).strip()
+        # Try to extract name from person+role like "翁長部長"
+        for suffix in ("部長", "課長", "室長", "審議官", "参事官",
+                        "次長", "会長", "理事", "社長", "局長"):
+            if person.endswith(suffix):
+                family = person[: -len(suffix)]
+                if family:
+                    fullname = fmap.get(family, family)
+                    return (fullname, suffix, org)
         return (person, "関係者", org)
 
     # Handle 事務局 as a group
     if raw_speaker == "事務局":
         return ("事務局", "事務局", "事務局")
 
-    # Try to split name + role suffix
+    # Try to split name + role suffix (longer suffixes first)
     role_match = re.match(
-        r"(.+?)(議長代理|議長|座長代理|座長|委員|大臣|副大臣|政務官|室長|参事官|審議官)$",
+        r"(.+?)(内閣総理大臣|議長代理|議長|座長代理|座長|専門委員|委員|"
+        r"担当大臣|副大臣|大臣|政務官|室長|参事官|審議官)$",
         raw_speaker,
     )
     if role_match:
-        name = role_match.group(1).strip()
+        family = role_match.group(1).strip()
         role = role_match.group(2)
-        group = "政府" if role in ("大臣", "副大臣", "政務官") else None
+        group = "政府" if role in ("内閣総理大臣", "大臣", "担当大臣", "副大臣", "政務官") else None
+        # Resolve to full name via attendance list
+        name = fmap.get(family, family)
         return (name, role, group)
 
     # Look up in role map
-    # Strip whitespace for matching
     clean = re.sub(r"\s+", "", raw_speaker)
     if clean in role_map:
         role = role_map[clean]
         group = "政府" if role in ("大臣", "副大臣", "政務官") else None
-        return (clean, role, group)
+        name = fmap.get(clean, clean)
+        return (name, role, group)
 
-    # Fallback: use raw name as-is
-    return (raw_speaker, None, None)
+    # Fallback: try fullname_map, then use raw name as-is
+    name = fmap.get(raw_speaker, raw_speaker)
+    return (name, None, None)

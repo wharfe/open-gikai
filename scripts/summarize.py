@@ -146,8 +146,8 @@ def assemble_thread(
             log.warning("speechOrder %s not found in raw data", order)
             continue
 
-        # Extract/register member
-        member = extract_member(raw)
+        # Extract/register member (pass existing for cross-source dedup)
+        member = extract_member(raw, existing_members=members)
         member_id = member["id"]
         if member_id not in members:
             members[member_id] = member
