@@ -25,7 +25,7 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
         {/* Committee name */}
         <div className="text-[15px] font-bold text-x-text">{thread.committee}</div>
 
-        {/* Meta: source · date · theme */}
+        {/* Meta: source · date */}
         <div className="mt-0.5 flex items-center gap-1.5 text-[13px] text-x-secondary">
           {SOURCE_STYLE[thread.source ?? ""] ? (
             <span
@@ -39,24 +39,22 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
             <span>{thread.house}</span>
           )}
           <span>{thread.date}</span>
-          {themeConfig && (
-            <>
-              <span>·</span>
-              <span
-                className="inline-flex items-center gap-0.5"
-                style={{ color: themeConfig.color }}
-              >
-                <span className="material-symbols-rounded" style={{ fontSize: 13 }}>{themeConfig.icon}</span>
-                {themeConfig.label}
-              </span>
-            </>
-          )}
         </div>
 
-        {/* Topic tag */}
-        <div className="mt-3">
+        {/* Theme + Topic */}
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          {themeConfig && (
+            <span
+              className="inline-flex items-center gap-0.5 text-[12px]"
+              style={{ color: themeConfig.color }}
+            >
+              <span className="material-symbols-rounded" style={{ fontSize: 13 }}>{themeConfig.icon}</span>
+              {themeConfig.label}
+              <span className="ml-0.5 text-x-secondary">›</span>
+            </span>
+          )}
           <span
-            className="inline-block rounded-full px-3 py-1 text-[13px] font-bold"
+            className="inline-block rounded-full px-2.5 py-0.5 text-[13px] font-bold"
             style={{
               color: thread.topicColor,
               background: `${thread.topicColor}18`,
