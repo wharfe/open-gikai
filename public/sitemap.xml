@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://open-gikai.net</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://open-gikai.net/</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/members</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -29,397 +29,133 @@
   </url>
   <url>
     <loc>https://open-gikai.net/about/stats</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260311_2e73fd_01</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_01</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260310_b0cd80_01</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_02</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_01</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_03</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_02</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_04</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_03</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_05</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_04</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_06</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_05</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231019_b22e09_07</loc>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_06</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231122_74d9e4_01</loc>
+    <lastmod>2023-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_07</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20231212_385a77_01</loc>
+    <lastmod>2023-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_08</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251003_441b9a_01</loc>
+    <lastmod>2025-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_919e15_09</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251003_441b9a_02</loc>
+    <lastmod>2025-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_10</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251003_441b9a_03</loc>
+    <lastmod>2025-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_11</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251106_83fe41_01</loc>
+    <lastmod>2025-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_12</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251106_83fe41_02</loc>
+    <lastmod>2025-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_13</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251106_83fe41_03</loc>
+    <lastmod>2025-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_14</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251106_83fe41_05</loc>
+    <lastmod>2025-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_15</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251106_83fe41_06</loc>
+    <lastmod>2025-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_16</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251224_c24a76_01</loc>
+    <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_17</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251224_c24a76_02</loc>
+    <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_18</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://open-gikai.net/t/t_20251224_c24a76_03</loc>
+    <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_19</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_20</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260304_cf2e13_21</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260304_7c0a75_22</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_1b69d5_01</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_1b69d5_02</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_17fcbc_03</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_17fcbc_04</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_17fcbc_05</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_d537a4_06</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_d537a4_07</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_d537a4_08</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_d537a4_09</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_d537a4_10</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260303_d537a4_11</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260228_729b9b_01</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260226_b97ec9_01</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260226_b97ec9_02</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260226_31ca07_03</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260225_6dcdf9_01</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260225_73abfd_02</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260224_877426_01</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_6d3203_01</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_6d3203_02</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_359af9_03</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_eb1f64_04</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_fc718f_05</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_fc718f_06</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_a2c5de_07</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_c59ed2_08</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_eee557_09</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_82ad76_10</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_82ad76_11</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_82ad76_12</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_82ad76_13</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260220_82ad76_14</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_7c0705_01</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_7c0705_02</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_7c0705_03</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_48a04d_04</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_48a04d_05</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_48a04d_06</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_48a04d_07</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_795d8c_08</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20260219_ae63eb_09</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260109_f0fd63_01</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -598,128 +334,392 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20260109_f0fd63_01</loc>
-    <lastmod>2026-01-09</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_7c0705_01</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251224_c24a76_01</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_7c0705_02</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251224_c24a76_02</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_7c0705_03</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251224_c24a76_03</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_48a04d_04</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251106_83fe41_01</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_48a04d_05</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251106_83fe41_02</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_48a04d_06</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251106_83fe41_03</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_48a04d_07</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251106_83fe41_05</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_795d8c_08</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251106_83fe41_06</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://open-gikai.net/t/t_20260219_ae63eb_09</loc>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251003_441b9a_01</loc>
-    <lastmod>2025-10-03</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_6d3203_01</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251003_441b9a_02</loc>
-    <lastmod>2025-10-03</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_6d3203_02</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20251003_441b9a_03</loc>
-    <lastmod>2025-10-03</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_359af9_03</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231212_385a77_01</loc>
-    <lastmod>2023-12-12</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_eb1f64_04</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231122_74d9e4_01</loc>
-    <lastmod>2023-11-22</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_fc718f_05</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_01</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_fc718f_06</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_02</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_a2c5de_07</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_03</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_c59ed2_08</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_04</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_eee557_09</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_05</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_82ad76_10</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_06</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_82ad76_11</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_07</loc>
-    <lastmod>2023-10-19</lastmod>
+    <loc>https://open-gikai.net/t/t_20260220_82ad76_12</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260220_82ad76_13</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260220_82ad76_14</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260224_877426_01</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260225_6dcdf9_01</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260225_73abfd_02</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260226_b97ec9_01</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260226_b97ec9_02</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260226_31ca07_03</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260228_729b9b_01</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_1b69d5_01</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_1b69d5_02</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_17fcbc_03</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_17fcbc_04</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_17fcbc_05</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_d537a4_06</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_d537a4_07</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_d537a4_08</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_d537a4_09</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_d537a4_10</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260303_d537a4_11</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_01</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_02</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_03</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_04</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_05</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_06</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_07</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_08</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_919e15_09</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_10</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_11</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_12</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_13</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_14</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_15</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_16</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_17</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_18</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_19</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_20</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_cf2e13_21</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260304_7c0a75_22</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260310_b0cd80_01</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260311_2e73fd_01</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
