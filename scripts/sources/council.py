@@ -456,6 +456,10 @@ class CouncilAdapter(SourceAdapter):
                 raw_speaker, role_map, fullname_map,
             )
 
+            # Filter procedural speeches from chairs/moderators
+            if _is_procedural(body, position):
+                continue
+
             speeches.append(
                 RawSpeech(
                     speaker=speaker,
@@ -508,6 +512,44 @@ class CouncilAdapter(SourceAdapter):
         resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
         return resp.content
+
+
+# Procedural speech patterns from chairs/moderators
+_PROCEDURAL_RE = re.compile(
+    r"(?:"
+    r"次に.{1,10}(?:委員|専門委員).*(?:お願い|どうぞ)"
+    r"|ありがとうございまし?た。?\s*(?:次に|続[いき]|それでは)?.*(?:お願い|どうぞ)"
+    r"|本日の議事は以上"
+    r"|以\s*上"
+    r"|プレスの方は退室"
+    r"|報道関係者退室"
+    r"|それでは.{0,20}(?:お願い|よろしく)"
+    r"|開催いたします"
+    r"|開会いたします"
+    r"|閉会いたします"
+    r"|開議"
+    r")",
+    re.DOTALL,
+)
+
+# Chair roles that commonly make procedural statements
+_CHAIR_ROLES = {"議長", "議長代理", "座長", "座長代理", "参事官"}
+
+
+def _is_procedural(body: str, position: Optional[str]) -> bool:
+    """Detect procedural/moderator statements that lack substantive content.
+
+    Only filters statements from chair roles (議長, 座長, 参事官 etc.)
+    that are short and match known procedural patterns.
+    """
+    if not position or position not in _CHAIR_ROLES:
+        return False
+
+    # Only filter short statements — longer chair speeches may be substantive
+    if len(body) > 200:
+        return False
+
+    return bool(_PROCEDURAL_RE.search(body))
 
 
 def _extract_family_name(fullname: str) -> Optional[str]:
