@@ -7,6 +7,7 @@ import { useAppContext } from "@/components/providers/app-provider";
 import { SpeechRow } from "@/components/ui/speech-row";
 import { ShareButton } from "@/components/ui/share-button";
 import { buildThreadShare } from "@/lib/utils";
+import { SOURCE_STYLE } from "@/lib/config";
 
 type ThreadDetailViewProps = {
   thread: Thread;
@@ -50,7 +51,17 @@ export function ThreadDetailView({
       {/* Thread header info */}
       <div className="border-b border-x-border px-4 py-4">
         <div className="flex items-center gap-2 text-[15px] text-x-secondary">
-          <span>{thread.house}</span>
+          {SOURCE_STYLE[thread.source ?? ""] ? (
+            <span
+              className="inline-flex items-center gap-0.5 font-medium"
+              style={{ color: SOURCE_STYLE[thread.source!].color }}
+            >
+              <span className="material-symbols-rounded" style={{ fontSize: 16 }}>{SOURCE_STYLE[thread.source!].icon}</span>
+              {SOURCE_STYLE[thread.source!].label}
+            </span>
+          ) : (
+            <span>{thread.house}</span>
+          )}
           <span>·</span>
           <span>{thread.committee}</span>
           <span>·</span>

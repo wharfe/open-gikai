@@ -1629,5 +1629,148 @@
     "bio": "",
     "stance": [],
     "rank": "pm"
+  },
+  "m_1730be3a": {
+    "id": "m_1730be3a",
+    "name": "城内",
+    "party": "政府",
+    "role": "大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "m_0cff3c9b": {
+    "id": "m_0cff3c9b",
+    "name": "林",
+    "party": null,
+    "role": "議長代理",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_96b705cb": {
+    "id": "m_96b705cb",
+    "name": "事務局",
+    "party": "事務局",
+    "role": "事務局",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_ab15a338": {
+    "id": "m_ab15a338",
+    "name": "冨山",
+    "party": null,
+    "role": "議長代理",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f7274f8f": {
+    "id": "m_f7274f8f",
+    "name": "芦澤",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_36ab1318": {
+    "id": "m_36ab1318",
+    "name": "川邊",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_051f98dc": {
+    "id": "m_051f98dc",
+    "name": "杉本",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_84e584f4": {
+    "id": "m_84e584f4",
+    "name": "御手洗",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_37585d0d": {
+    "id": "m_37585d0d",
+    "name": "佐藤",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_92cf50b7": {
+    "id": "m_92cf50b7",
+    "name": "間下",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_9f9bd91d": {
+    "id": "m_9f9bd91d",
+    "name": "落合",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_1f468759": {
+    "id": "m_1f468759",
+    "name": "中室",
+    "party": null,
+    "role": "委員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_a47d3c65": {
+    "id": "m_a47d3c65",
+    "name": "高市内閣総理",
+    "party": "政府",
+    "role": "大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
   }
 }

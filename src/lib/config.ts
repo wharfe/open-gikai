@@ -82,6 +82,13 @@ export const TENSION_STYLE: Record<string, TensionStyle> = {
   議事: { icon: "assignment", color: "#94a3b8", bg: "rgba(148,163,184,0.1)" },
 };
 
+// Source styling — visual hints to distinguish data origins in the feed
+export const SOURCE_STYLE: Record<string, { icon: string; label: string; color: string }> = {
+  ndl:     { icon: "account_balance", label: "国会",   color: "#6366f1" },
+  kantei:  { icon: "podium",          label: "官邸",   color: "#f59e0b" },
+  council: { icon: "groups",          label: "審議会", color: "#22c55e" },
+};
+
 export const TREND_PERIODS = ["今週", "今国会", "今年"] as const;
 
 // Life themes for content discovery

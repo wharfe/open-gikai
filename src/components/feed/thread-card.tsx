@@ -6,7 +6,7 @@ import { useAppContext } from "@/components/providers/app-provider";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButton } from "@/components/ui/share-button";
 import { buildThreadShare } from "@/lib/utils";
-import { getLifeTheme, getLifeThemeConfig } from "@/lib/config";
+import { getLifeTheme, getLifeThemeConfig, SOURCE_STYLE } from "@/lib/config";
 
 type ThreadCardProps = {
   thread: Thread;
@@ -28,7 +28,17 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
           <span className="text-x-secondary">·</span>
           <span className="text-x-secondary">{thread.date}</span>
           <span className="text-x-secondary">·</span>
-          <span className="text-x-secondary">{thread.house}</span>
+          {SOURCE_STYLE[thread.source ?? ""] ? (
+            <span
+              className="inline-flex items-center gap-0.5 text-[13px] font-medium"
+              style={{ color: SOURCE_STYLE[thread.source!].color }}
+            >
+              <span className="material-symbols-rounded" style={{ fontSize: 14 }}>{SOURCE_STYLE[thread.source!].icon}</span>
+              {SOURCE_STYLE[thread.source!].label}
+            </span>
+          ) : (
+            <span className="text-x-secondary">{thread.house}</span>
+          )}
           {themeConfig && (
             <>
               <span className="text-x-secondary">·</span>
