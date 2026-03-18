@@ -15,6 +15,11 @@ type FeedViewProps = {
 
 export function FeedView({ threads, members }: FeedViewProps) {
   const { follows } = useAppContext();
+  // Only count follows that still exist in members data
+  const activeFollowCount = useMemo(
+    () => [...follows].filter((id) => id in members).length,
+    [follows, members],
+  );
   const searchParams = useSearchParams();
   const router = useRouter();
   const [feedFilter, setFeedFilter] = useState<"all" | "following">("all");
@@ -47,9 +52,9 @@ export function FeedView({ threads, members }: FeedViewProps) {
 
   // Apply following filter
   const followFiltered =
-    feedFilter === "following" && follows.size > 0
+    feedFilter === "following" && activeFollowCount > 0
       ? baseThreads.filter((t) =>
-          t.speeches.some((s) => follows.has(s.memberId))
+          t.speeches.some((s) => follows.has(s.memberId) && s.memberId in members)
         )
       : baseThreads;
 
@@ -83,7 +88,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
     ["all", "すべて"],
     [
       "following",
-      `フォロー中${follows.size > 0 ? ` (${follows.size})` : ""}`,
+      `フォロー中${activeFollowCount > 0 ? ` (${activeFollowCount})` : ""}`,
     ],
   ];
 
@@ -147,7 +152,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
         </div>
       )}
 
-      {feedFilter === "following" && follows.size === 0 ? (
+      {feedFilter === "following" && activeFollowCount === 0 ? (
         <div className="px-8 py-20 text-center">
           <div className="mb-4"><span className="material-symbols-rounded text-amber-400" style={{ fontSize: 36 }}>star</span></div>
           <p className="text-[15px] text-x-secondary">
