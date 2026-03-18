@@ -62,28 +62,6 @@ jobs:
             echo "NDL: No data file found"
           fi
 
-      # ----- Source: Council (審議会) Meeting Minutes -----
-      - name: Fetch from Council
-        id: check_council
-        continue-on-error: true
-        run: |
-          python scripts/fetch_council.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
-          FILE="data/raw/council-${{ steps.date.outputs.target }}.json"
-          if [ -f "$FILE" ]; then
-            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
-            echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
-            echo "Council: Found $COUNT speeches"
-          else
-            echo "speeches=0" >> "$GITHUB_OUTPUT"
-            echo "Council: No meetings found"
-          fi
-
-      - name: Summarize with Claude API
-        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0' || steps.check_council.outputs.speeches != '0'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
-
       # ----- Source: Kantei Press Conferences -----
       - name: Fetch from Kantei
         id: check_kantei
@@ -100,9 +78,34 @@ jobs:
             echo "Kantei: No press conferences found"
           fi
 
+      # ----- Source: Council (審議会) Meeting Minutes -----
+      - name: Fetch from Council
+        id: check_council
+        continue-on-error: true
+        run: |
+          TOTAL=0
+          for COUNCIL in kisei nichiiki; do
+            python scripts/fetch_council.py --council "$COUNCIL" --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }} || true
+          done
+          FILE="data/raw/council-${{ steps.date.outputs.target }}.json"
+          if [ -f "$FILE" ]; then
+            TOTAL=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
+          fi
+          echo "speeches=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "Council: Found $TOTAL speeches"
+
+      # ----- Summarize -----
+      - name: Summarize with Claude API
+        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0' || steps.check_council.outputs.speeches != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
+
       # ----- Post-processing -----
-      - name: Generate sitemap
-        run: node scripts/generate-feeds.js
+      - name: Generate feeds and sitemap
+        run: |
+          node scripts/generate-feeds.js
+          node scripts/generate-sitemap.mjs
 
       - name: Commit and push data
         run: |
