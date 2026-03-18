@@ -6,7 +6,7 @@ import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { ThreadCard } from "@/components/feed/thread-card";
 import { ThemeBar } from "@/components/feed/theme-bar";
-import { getLifeTheme, type LifeThemeId } from "@/lib/config";
+import { getLifeTheme, getLifeThemeConfig, type LifeThemeId } from "@/lib/config";
 
 type FeedViewProps = {
   threads: Thread[];
@@ -19,7 +19,9 @@ export function FeedView({ threads, members }: FeedViewProps) {
   const router = useRouter();
   const [feedFilter, setFeedFilter] = useState<"all" | "following">("all");
   const [showProcedural, setShowProcedural] = useState(false);
-  const themeParam = searchParams.get("theme") as LifeThemeId | null;
+  const themeRaw = searchParams.get("theme");
+  const themeParam: LifeThemeId | null =
+    themeRaw && getLifeThemeConfig(themeRaw as LifeThemeId) ? (themeRaw as LifeThemeId) : null;
   const [localTheme, setLocalTheme] = useState<LifeThemeId | null>(null);
   const selectedTheme = themeParam || localTheme;
 

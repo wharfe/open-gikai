@@ -148,6 +148,6 @@ export function getLifeTheme(topicTag: string): LifeThemeId | null {
   return TOPIC_TAG_TO_THEME[topicTag] ?? null;
 }
 
-export function getLifeThemeConfig(id: LifeThemeId): LifeTheme {
-  return LIFE_THEMES.find((t) => t.id === id)!;
+export function getLifeThemeConfig(id: LifeThemeId): LifeTheme | undefined {
+  return LIFE_THEMES.find((t) => t.id === id);
 }
