@@ -1,0 +1,23 @@
+{
+  "_comment": "Mapping from law base names to lex-diff URLs. Keys are simplified law names (without amendment boilerplate). Used by summarize.py to generate cross-links.",
+  "民法": {
+    "law_id": "129AC0000000089",
+    "url": "https://lexdiff.com/law/129AC0000000089"
+  },
+  "労働基準法": {
+    "law_id": "322AC0000000049",
+    "url": "https://lexdiff.com/law/322AC0000000049"
+  },
+  "道路交通法": {
+    "law_id": "335AC0000000105",
+    "url": "https://lexdiff.com/law/335AC0000000105"
+  },
+  "個人情報の保護に関する法律": {
+    "law_id": "415AC0000000057",
+    "url": "https://lexdiff.com/law/415AC0000000057"
+  },
+  "著作権法": {
+    "law_id": "345AC0000000048",
+    "url": "https://lexdiff.com/law/345AC0000000048"
+  }
+}

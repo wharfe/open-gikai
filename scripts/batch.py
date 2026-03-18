@@ -281,6 +281,11 @@ def build_thread_context(thread_info, meeting):
             {"q": f"{law_name} site:laws.e-gov.go.jp"}
         )
         links.append({"label": f"{law_name}（法令検索）", "url": egov_url})
+        # lex-diff cross-link
+        from summarize import _get_lexdiff_link
+        lexdiff_link = _get_lexdiff_link(law_name)
+        if lexdiff_link:
+            links.append(lexdiff_link)
     return {"description": description, "links": links if links else None}
 
 

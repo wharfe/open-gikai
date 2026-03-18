@@ -59,6 +59,30 @@ def save_progress(progress: dict, progress_path: str) -> None:
 
 
 # ---------------------------------------------------------------------------
+# lex-diff cross-linking
+# ---------------------------------------------------------------------------
+
+_LEXDIFF_MAP: Optional[Dict[str, dict]] = None
+
+def _get_lexdiff_link(law_name: str) -> Optional[dict]:
+    """Look up a lex-diff link for a law name."""
+    global _LEXDIFF_MAP
+    if _LEXDIFF_MAP is None:
+        mapping_path = os.path.join(os.path.dirname(__file__), "..", "data", "lexdiff-mapping.json")
+        if os.path.exists(mapping_path):
+            with open(mapping_path, "r", encoding="utf-8") as f:
+                _LEXDIFF_MAP = json.load(f)
+                _LEXDIFF_MAP.pop("_comment", None)
+        else:
+            _LEXDIFF_MAP = {}
+
+    if law_name in _LEXDIFF_MAP:
+        entry = _LEXDIFF_MAP[law_name]
+        return {"label": f"{law_name}（改正差分）", "url": entry["url"]}
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Thread assembly
 # ---------------------------------------------------------------------------
 
@@ -107,6 +131,11 @@ def build_thread_context(thread_info: dict, meeting: dict) -> Optional[dict]:
             "q": f"{law_name} site:laws.e-gov.go.jp"
         })
         links.append({"label": f"{law_name}（法令検索）", "url": egov_url})
+
+    # Generate lex-diff link if law has a matching entry
+    lexdiff_link = _get_lexdiff_link(law_name)
+    if lexdiff_link:
+        links.append(lexdiff_link)
 
     # Generate bill search link for Shugiin/Sangiin
     house = meeting.get("house", "")
