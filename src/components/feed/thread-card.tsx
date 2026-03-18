@@ -22,31 +22,31 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
   return (
     <article className="border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover">
       <Link href={`/t/${thread.id}`} className="block">
-        {/* Committee & date */}
-        <div className="flex items-center gap-1.5 text-[15px]">
-          <span className="min-w-0 shrink truncate font-bold text-x-text">{thread.committee}</span>
-          <span className="shrink-0 text-x-secondary">·</span>
-          <span className="shrink-0 text-x-secondary">{thread.date}</span>
-          <span className="shrink-0 text-x-secondary">·</span>
+        {/* Committee name */}
+        <div className="text-[15px] font-bold text-x-text">{thread.committee}</div>
+
+        {/* Meta: source · date · theme */}
+        <div className="mt-0.5 flex items-center gap-1.5 text-[13px] text-x-secondary">
           {SOURCE_STYLE[thread.source ?? ""] ? (
             <span
               className="material-symbols-rounded"
-              style={{ fontSize: 15, color: SOURCE_STYLE[thread.source!].color }}
+              style={{ fontSize: 14, color: SOURCE_STYLE[thread.source!].color }}
               title={SOURCE_STYLE[thread.source!].label}
             >
               {SOURCE_STYLE[thread.source!].icon}
             </span>
           ) : (
-            <span className="text-x-secondary">{thread.house}</span>
+            <span>{thread.house}</span>
           )}
+          <span>{thread.date}</span>
           {themeConfig && (
             <>
-              <span className="text-x-secondary">·</span>
+              <span>·</span>
               <span
-                className="inline-flex items-center gap-0.5 text-[13px]"
+                className="inline-flex items-center gap-0.5"
                 style={{ color: themeConfig.color }}
               >
-                <span className="material-symbols-rounded" style={{ fontSize: 14 }}>{themeConfig.icon}</span>
+                <span className="material-symbols-rounded" style={{ fontSize: 13 }}>{themeConfig.icon}</span>
                 {themeConfig.label}
               </span>
             </>
