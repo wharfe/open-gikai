@@ -7,6 +7,7 @@ import { SOURCE_STYLE } from "@/lib/config";
 export const metadata: Metadata = {
   title: "OpenGIKAIについて",
   description: "OpenGIKAIの仕組み、データソース、AI利用方針について。議会議事録をAIで要約・構造化するオープンソースプロジェクト。",
+  alternates: { canonical: "/about" },
 };
 
 type Summary = {
@@ -37,14 +38,55 @@ export default function AboutPage() {
   const committeeList = [...committeeMap.entries()]
     .map(([key, val]) => ({ name: key.split("::")[1], ...val }))
     .sort((a, b) => b.count - a.count);
+  const faqs = [
+    {
+      q: "要約は正確ですか？",
+      a: "AIによる要約のため、誤りや省略が含まれる可能性があります。重要な判断の根拠にする場合は、必ず原文（NDL議事録）をご確認ください。各発言には原文表示ボタンと出典リンクがあります。",
+    },
+    {
+      q: "政治的に中立ですか？",
+      a: "全発言を同一のアルゴリズム・プロンプトで処理しています。与党・野党による扱いの差はありません。処理ロジックとプロンプトはGitHubで全文公開しており、誰でも検証可能です。",
+    },
+    {
+      q: "特定の発言が省略されていませんか？",
+      a: "原則として、委員長の手続き的発言（開会宣言等）を除き、すべての発言を処理対象としています。ただし、AIのグルーピング処理で一部の発言がスレッドに含まれない場合があります。",
+    },
+    {
+      q: "議員のプロフィール情報はどこから取得していますか？",
+      a: "国会会議録のメタデータ（発言者名、所属会派、役職等）から自動抽出しています。経歴や政策スタンスなどの詳細情報は現時点では未実装です。",
+    },
+    {
+      q: "データの更新頻度は？",
+      a: "NDLの議事録公開後にバッチ処理で取得・要約します。議事録の公開は通常、審議の数日後です。",
+    },
+    {
+      q: "ソースコードはどこで見られますか？",
+      a: "GitHubで全ソースコードを公開しています。フロントエンド、データ取得スクリプト、AI要約プロンプトのすべてが含まれます。",
+    },
+  ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  };
+
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
         <MobileHeader />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
 
         {/* Sticky header */}
         <div className="sticky top-0 z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl">
-          <div className="text-[17px] font-bold">OpenGIKAIについて</div>
+          <h1 className="text-[17px] font-bold">OpenGIKAIについて</h1>
         </div>
 
         <div className="space-y-10 px-4 py-6">
@@ -227,32 +269,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-[20px] font-bold text-x-text">よくある質問</h2>
             <div className="mt-3 space-y-4">
-              {[
-                {
-                  q: "要約は正確ですか？",
-                  a: "AIによる要約のため、誤りや省略が含まれる可能性があります。重要な判断の根拠にする場合は、必ず原文（NDL議事録）をご確認ください。各発言には原文表示ボタンと出典リンクがあります。",
-                },
-                {
-                  q: "政治的に中立ですか？",
-                  a: "全発言を同一のアルゴリズム・プロンプトで処理しています。与党・野党による扱いの差はありません。処理ロジックとプロンプトはGitHubで全文公開しており、誰でも検証可能です。",
-                },
-                {
-                  q: "特定の発言が省略されていませんか？",
-                  a: "原則として、委員長の手続き的発言（開会宣言等）を除き、すべての発言を処理対象としています。ただし、AIのグルーピング処理で一部の発言がスレッドに含まれない場合があります。",
-                },
-                {
-                  q: "議員のプロフィール情報はどこから取得していますか？",
-                  a: "国会会議録のメタデータ（発言者名、所属会派、役職等）から自動抽出しています。経歴や政策スタンスなどの詳細情報は現時点では未実装です。",
-                },
-                {
-                  q: "データの更新頻度は？",
-                  a: "NDLの議事録公開後にバッチ処理で取得・要約します。議事録の公開は通常、審議の数日後です。",
-                },
-                {
-                  q: "ソースコードはどこで見られますか？",
-                  a: "GitHubで全ソースコードを公開しています。フロントエンド、データ取得スクリプト、AI要約プロンプトのすべてが含まれます。",
-                },
-              ].map(({ q, a }) => (
+              {faqs.map(({ q, a }) => (
                 <div key={q}>
                   <div className="text-[15px] font-bold text-x-text">{q}</div>
                   <p className="mt-1 text-[14px] leading-[22px] text-x-secondary">

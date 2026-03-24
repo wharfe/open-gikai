@@ -20,9 +20,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = getMember(memberId);
   if (!member) return {};
   const desc = [member.party, member.role].filter(Boolean).join("・");
+  const title = member.name;
+  const description = `${member.name}（${desc}）の国会発言一覧。審議スレッドをまとめて閲覧できます。`;
   return {
-    title: member.name,
-    description: `${member.name}（${desc}）の国会発言一覧。審議スレッドをまとめて閲覧できます。`,
+    title,
+    description,
+    alternates: { canonical: `/m/${memberId}` },
+    openGraph: {
+      title,
+      description,
+      type: "profile",
+      url: `https://open-gikai.net/m/${memberId}`,
+      siteName: "OpenGIKAI",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
   };
 }
 
@@ -34,10 +49,39 @@ export default async function MemberPage({ params }: Props) {
   const threads = getThreads();
   const members = getMembers();
 
+  const desc = [member.party, member.role].filter(Boolean).join("・");
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: member.name,
+    description: `${member.name}（${desc}）の国会発言一覧`,
+    jobTitle: member.role || undefined,
+    affiliation: member.party ? { "@type": "Organization", name: member.party } : undefined,
+    url: `https://open-gikai.net/m/${memberId}`,
+  };
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: "https://open-gikai.net" },
+      { "@type": "ListItem", position: 2, name: "発言者一覧", item: "https://open-gikai.net/members" },
+      { "@type": "ListItem", position: 3, name: member.name },
+    ],
+  };
+
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
         <MobileHeader />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        />
         <MemberProfileView member={member} threads={threads} members={members} />
       </main>
       <RightSidebar threads={threads} members={members} />

@@ -45,9 +45,9 @@ export function MemberProfileView({
           <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
         </Link>
         <div className="min-w-0">
-          <div className="truncate text-[17px] font-bold leading-tight">
+          <h1 className="truncate text-[17px] font-bold leading-tight">
             {member.name}
-          </div>
+          </h1>
           <div className="text-[13px] text-x-secondary">
             {speeches.length}件の発言
           </div>

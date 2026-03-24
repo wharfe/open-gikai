@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: { canonical: `/t/${threadId}` },
     openGraph: {
       title,
       description,
@@ -74,6 +75,16 @@ export default async function ThreadPage({ params }: Props) {
     mainEntityOfPage: `https://open-gikai.net/t/${threadId}`,
   };
 
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: "https://open-gikai.net" },
+      { "@type": "ListItem", position: 2, name: thread.committee, item: `https://open-gikai.net/search?q=${encodeURIComponent(thread.committee)}` },
+      { "@type": "ListItem", position: 3, name: thread.topic },
+    ],
+  };
+
   return (
     <>
       <main className="w-full min-w-0 md:border-r md:border-x-border md:max-w-[600px]">
@@ -81,6 +92,10 @@ export default async function ThreadPage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
         />
         <ThreadDetailView thread={thread} members={members} />
       </main>

@@ -41,9 +41,9 @@ export function ThreadDetailView({
           <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
         </button>
         <div className="min-w-0">
-          <div className="truncate text-[17px] font-bold leading-tight">
+          <h1 className="truncate text-[17px] font-bold leading-tight">
             {thread.topic}
-          </div>
+          </h1>
           <div className="text-[13px] text-x-secondary">
             {thread.speeches.length}件の発言
           </div>

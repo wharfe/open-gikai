@@ -6,6 +6,7 @@ import { getProcessingStatus } from "@/lib/data";
 export const metadata: Metadata = {
   title: "処理ステータス",
   description: "国会議事録の日別処理状況。各委員会の議事録取得・AI要約の進捗を公開しています。",
+  alternates: { canonical: "/about/stats" },
 };
 
 type CommitteeStatus = {
@@ -61,7 +62,7 @@ export default function StatsPage() {
           >
             <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
           </Link>
-          <div className="text-[17px] font-bold">処理ステータス</div>
+          <h1 className="text-[17px] font-bold">処理ステータス</h1>
         </div>
 
         <div className="px-4 py-6">

@@ -6,6 +6,7 @@ import { getCalendarData } from "@/lib/data";
 export const metadata: Metadata = {
   title: "カレンダー",
   description: "国会審議の日別カレンダー。日付から各委員会のスレッドを閲覧できます。",
+  alternates: { canonical: "/calendar" },
 };
 
 export default function CalendarPage() {
@@ -17,7 +18,7 @@ export default function CalendarPage() {
         <MobileHeader />
 
         <div className="sticky top-[53px] z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl md:top-0">
-          <div className="text-[17px] font-bold">カレンダー</div>
+          <h1 className="text-[17px] font-bold">カレンダー</h1>
         </div>
 
         <CalendarView days={days} />

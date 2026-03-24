@@ -7,6 +7,7 @@ import { getSearchIndex } from "@/lib/data";
 export const metadata: Metadata = {
   title: "検索",
   description: "国会審議スレッドをキーワード・委員会・議員名で検索。",
+  alternates: { canonical: "/search" },
 };
 
 export default function SearchPage() {
@@ -18,7 +19,7 @@ export default function SearchPage() {
         <MobileHeader />
 
         <div className="sticky top-[53px] z-40 flex h-[53px] items-center gap-5 bg-x-bg/65 px-4 backdrop-blur-xl md:top-0">
-          <div className="text-[17px] font-bold">検索</div>
+          <h1 className="text-[17px] font-bold">検索</h1>
         </div>
 
         <Suspense>
