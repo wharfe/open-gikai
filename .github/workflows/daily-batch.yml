@@ -11,6 +11,9 @@ on:
         description: "Date to process (YYYY-MM-DD), defaults to yesterday"
         required: false
 
+permissions:
+  contents: write
+
 jobs:
   fetch-and-summarize:
     name: Fetch & Summarize
