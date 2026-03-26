@@ -154,9 +154,61 @@ function checkTensions(threads) {
   }
 }
 
-// --- 3. status.json ---
+// --- 3. Material Symbols icons ---
+function checkIcons() {
+  console.log("\n[3/4] Material Symbols icons");
+
+  const LAYOUT_PATH = "src/app/layout.tsx";
+  const layoutSrc = readFileSync(LAYOUT_PATH, "utf-8");
+
+  // Extract icon_names from the font URL
+  const urlMatch = layoutSrc.match(/icon_names=([^&"]+)/);
+  if (!urlMatch) {
+    warn("Could not find icon_names parameter in layout.tsx font URL");
+    return;
+  }
+  const registered = new Set(urlMatch[1].split(","));
+
+  // Collect all icon names used in source code
+  const used = new Set();
+
+  // 1. Icons rendered directly: >icon_name<
+  const srcDir = "src";
+  const scanFiles = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        scanFiles(full);
+      } else if (entry.name.endsWith(".tsx") || entry.name.endsWith(".ts")) {
+        const content = readFileSync(full, "utf-8");
+        // Match material-symbols-rounded ... >icon_name< (literal only, skip JSX expressions)
+        for (const m of content.matchAll(/material-symbols-rounded[^>]*>\s*([a-z_]+)\s*</g)) {
+          used.add(m[1]);
+        }
+        // Match icon: "icon_name" in config objects
+        for (const m of content.matchAll(/icon:\s*"([a-z_]+)"/g)) {
+          used.add(m[1]);
+        }
+      }
+    }
+  };
+  scanFiles(srcDir);
+
+  const missing = [...used].filter((i) => !registered.has(i)).sort();
+  if (missing.length === 0) {
+    ok(`All ${used.size} icons registered in font URL`);
+  } else {
+    error(`${missing.length} icon(s) used in code but missing from font URL in ${LAYOUT_PATH}:`);
+    for (const i of missing) {
+      console.error(`        "${i}"`);
+    }
+    console.error(`        → Add to icon_names parameter in the Material Symbols font URL`);
+  }
+}
+
+// --- 4. status.json ---
 function checkStatus() {
-  console.log("\n[3/3] Status data");
+  console.log("\n[4/4] Status data");
 
   if (FIX) {
     try {
@@ -190,6 +242,7 @@ console.log(`Loaded ${threads.length} threads`);
 
 checkMembers(threads);
 checkTensions(threads);
+checkIcons();
 checkStatus();
 
 console.log(`\n${fixes ? `${fixes} fix(es) applied. ` : ""}${warnings} warning(s), ${errors} error(s)`);
