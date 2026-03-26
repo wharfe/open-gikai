@@ -88,6 +88,48 @@ COUNCILS: dict[str, CouncilConfig] = {
         index_format="ul",
         speaker_format="brackets",
     ),
+    "chihousousei": CouncilConfig(
+        council_id="chihousousei",
+        council_name="新しい地方経済・生活環境創生本部 有識者会議",
+        index_url="https://www.cas.go.jp/jp/seisaku/atarashii_chihousousei/index.html",
+        source_label="地方創生2.0有識者会議",
+        index_format="table",
+        speaker_format="maru",
+        minutes_link_text="議事要旨",
+    ),
+    "digital_denen": CouncilConfig(
+        council_id="digital_denen",
+        council_name="デジタル田園都市国家構想実現会議",
+        index_url="https://www.cas.go.jp/jp/seisaku/digital_denen/index.html",
+        source_label="デジタル田園都市構想",
+        index_format="table",
+        speaker_format="maru",
+        minutes_link_text="議事要旨",
+    ),
+    "kyojushien": CouncilConfig(
+        council_id="kyojushien",
+        council_name="住宅確保要配慮者に対する居住支援機能等のあり方に関する検討会",
+        index_url="https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk7_000043.html",
+        source_label="居住支援検討会",
+        index_format="paragraph",
+        speaker_format="brackets",
+    ),
+    "suishin": CouncilConfig(
+        council_id="suishin",
+        council_name="国土審議会 推進部会",
+        index_url="https://www.mlit.go.jp/policy/shingikai/s103_suishin01.html",
+        source_label="国土審議会推進部会",
+        index_format="ul",
+        speaker_format="brackets",
+    ),
+    "chiikiseikatsu": CouncilConfig(
+        council_id="chiikiseikatsu",
+        council_name="地域生活圏専門委員会",
+        index_url="https://www.mlit.go.jp/policy/shingikai/s104_chiikiseikatu01.html",
+        source_label="地域生活圏専門委員会",
+        index_format="ul",
+        speaker_format="brackets",
+    ),
 }
 
 # Speaker turn patterns — two formats used by different ministries:
@@ -205,6 +247,8 @@ class CouncilAdapter(SourceAdapter):
 
         if self.config.index_format == "ul":
             return self._discover_from_ul(soup, index_url, date_from, date_until, verbose)
+        if self.config.index_format == "paragraph":
+            return self._discover_from_paragraph(soup, index_url, date_from, date_until, verbose)
 
         results: list[dict] = []
 
@@ -252,7 +296,7 @@ class CouncilAdapter(SourceAdapter):
                     for link in cell.find_all("a", href=True):
                         href = link["href"]
                         link_text = link.get_text(strip=True)
-                        if "minutes" in href.lower() or "議事録" in link_text or "議事概要" in link_text:
+                        if "minutes" in href.lower() or "議事録" in link_text or "議事概要" in link_text or "議事要旨" in link_text:
                             pdf_url = urljoin(index_url, href)
                             break
                     if pdf_url:
@@ -370,6 +414,92 @@ class CouncilAdapter(SourceAdapter):
                 log.info("  Found: %s (%s) → %s", title, iso_date, pdf_url)
 
         return results
+
+    def _discover_from_paragraph(
+        self,
+        soup: BeautifulSoup,
+        index_url: str,
+        date_from: str,
+        date_until: str,
+        verbose: bool = False,
+    ) -> list[dict]:
+        """Discover meetings from ■-prefixed flat paragraph entries.
+
+        Structure: all entries in a single <p>, separated by <br/>.
+        Each entry is a text node (■第N回（和暦）) followed by <a> links.
+          ■第１回（令和５年７月３日）  <a>開催案内</a>  <a>議事録</a>  <br/>
+          ■第２回（令和５年８月１日）  <a>開催案内</a>  <a>議事録</a>  <br/>
+        """
+        from bs4 import NavigableString
+
+        results: list[dict] = []
+        minutes_text = self.config.minutes_link_text
+        marker_re = re.compile(
+            r"■\s*(第[０-９\d]+回).*?[（(](.*?)[）)]"
+        )
+
+        # Walk children of container elements, grouping by ■ markers
+        for container in soup.find_all(["p", "div"]):
+            current_title = None
+            current_date = None
+            current_links: list = []
+
+            for child in container.children:
+                if isinstance(child, NavigableString):
+                    text = str(child).strip()
+                    match = marker_re.search(text)
+                    if match:
+                        # Flush previous entry
+                        if current_title and current_date:
+                            pdf_url = self._find_minutes_link(
+                                current_links, minutes_text, index_url
+                            )
+                            if pdf_url and current_date >= date_from and current_date <= date_until:
+                                full_title = f"{current_title} {self.config.council_name}"
+                                results.append({
+                                    "title": full_title,
+                                    "date": current_date,
+                                    "pdf_url": pdf_url,
+                                    "page_url": index_url,
+                                })
+                                if verbose:
+                                    log.info("  Found: %s (%s) → %s", full_title, current_date, pdf_url)
+
+                        current_title = match.group(1).strip()
+                        current_date = self._parse_wareki_date(match.group(2).strip())
+                        current_links = []
+                elif child.name == "a" and child.get("href"):
+                    current_links.append(child)
+
+            # Flush last entry
+            if current_title and current_date:
+                pdf_url = self._find_minutes_link(
+                    current_links, minutes_text, index_url
+                )
+                if pdf_url and current_date >= date_from and current_date <= date_until:
+                    full_title = f"{current_title} {self.config.council_name}"
+                    results.append({
+                        "title": full_title,
+                        "date": current_date,
+                        "pdf_url": pdf_url,
+                        "page_url": index_url,
+                    })
+                    if verbose:
+                        log.info("  Found: %s (%s) → %s", full_title, current_date, pdf_url)
+
+        return results
+
+    @staticmethod
+    def _find_minutes_link(
+        links: list, minutes_text: str, base_url: str
+    ) -> Optional[str]:
+        """Find a minutes PDF link from a list of <a> tags."""
+        for link in links:
+            text = link.get_text(strip=True)
+            href = link["href"]
+            if minutes_text in text and href.endswith(".pdf"):
+                return urljoin(base_url, href)
+        return None
 
     # ----- Fetching & Parsing -----
 

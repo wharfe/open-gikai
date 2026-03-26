@@ -87,7 +87,7 @@ jobs:
         continue-on-error: true
         run: |
           TOTAL=0
-          for COUNCIL in kisei nichiiki kankeijinkou; do
+          for COUNCIL in kisei nichiiki kankeijinkou suishin chiikiseikatsu chihousousei digital_denen kyojushien; do
             python scripts/fetch_council.py --council "$COUNCIL" --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }} || true
           done
           for FILE in data/raw/council-*-${{ steps.date.outputs.target }}.json data/raw/council-${{ steps.date.outputs.target }}.json; do
