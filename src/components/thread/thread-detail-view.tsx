@@ -9,6 +9,7 @@ import { SpeechRow } from "@/components/ui/speech-row";
 import { ShareButton } from "@/components/ui/share-button";
 import { buildThreadShare } from "@/lib/utils";
 import { SOURCE_STYLE } from "@/lib/config";
+import { NewsCard } from "@/components/ui/news-card";
 
 type ThreadDetailViewProps = {
   thread: Thread;
@@ -159,6 +160,20 @@ export function ThreadDetailView({
           followed={follows.has(speech.memberId)}
         />
       ))}
+
+      {/* Related news */}
+      {thread.context?.news && thread.context.news.length > 0 && (
+        <div className="border-t border-x-border px-4 py-4">
+          <div className="text-[13px] font-bold uppercase tracking-wider text-x-secondary">
+            関連報道
+          </div>
+          <div className="mt-2 space-y-3">
+            {thread.context.news.map((article, i) => (
+              <NewsCard key={i} article={article} />
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Outcome section */}
       {thread.outcome &&

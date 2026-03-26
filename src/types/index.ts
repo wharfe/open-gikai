@@ -55,9 +55,18 @@ export type ThreadDebate = {
   counterPosition: string;
 };
 
+export type NewsArticle = {
+  title: string;
+  url: string;
+  source: string;
+  pubDate: string;
+  image?: string;
+};
+
 export type ThreadContext = {
   description: string;
   links?: { label: string; url: string }[];
+  news?: NewsArticle[];
 };
 
 export type Thread = {

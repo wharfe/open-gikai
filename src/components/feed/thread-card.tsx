@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
@@ -15,9 +16,11 @@ type ThreadCardProps = {
 
 export function ThreadCard({ thread, members }: ThreadCardProps) {
   const { follows } = useAppContext();
+  const [imgError, setImgError] = useState(false);
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))];
   const themeId = getLifeTheme(thread.topicTag);
   const themeConfig = themeId ? getLifeThemeConfig(themeId) : null;
+  const newsPreview = thread.context?.news?.find((n) => n.image);
 
   return (
     <article className="border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover">
@@ -108,6 +111,31 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
                 &rarr; 約束{thread.outcome.commitments.length}件
               </span>
             )}
+          </div>
+        )}
+
+        {/* News image preview (X-style link card) */}
+        {newsPreview && !imgError && (
+          <div className="mt-3 overflow-hidden rounded-2xl border border-x-border">
+            <div className="relative aspect-[2/1] w-full overflow-hidden bg-x-surface">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={newsPreview.image}
+                alt=""
+                className="h-full w-full object-cover"
+                loading="lazy"
+                onError={() => setImgError(true)}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-2">
+                <div className="flex items-center gap-1 text-[12px] text-white/80">
+                  <span className="material-symbols-rounded" style={{ fontSize: 12 }}>language</span>
+                  {(() => { try { return new URL(newsPreview.url).hostname.replace(/^www\./, ""); } catch { return ""; } })()}
+                </div>
+                <div className="line-clamp-1 text-[13px] leading-tight text-white">
+                  {newsPreview.title}
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </Link>
