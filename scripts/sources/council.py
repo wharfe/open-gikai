@@ -143,7 +143,7 @@ class CouncilAdapter(SourceAdapter):
 
     @property
     def source_id(self) -> str:
-        return "council"
+        return f"council-{self.config.council_id}"
 
     @property
     def source_label(self) -> str:
@@ -306,12 +306,20 @@ class CouncilAdapter(SourceAdapter):
         minutes_text = self.config.minutes_link_text
 
         for li in soup.find_all("li"):
-            # Look for a <p> with a date in parentheses
+            # Look for a <p> with a date, or fall back to the <li> text itself
             p = li.find("p", recursive=False)
-            if not p:
+            if p:
+                p_text = p.get_text(strip=True)
+            else:
+                # Some MLIT pages have text directly in <li> without <p> wrapper
+                # Extract only direct text nodes (not nested <ul> text)
+                p_text = li.find(string=True, recursive=False)
+                if p_text:
+                    p_text = p_text.strip()
+                else:
+                    continue
+            if not p_text:
                 continue
-
-            p_text = p.get_text(strip=True)
 
             # Parse date from formats like （2023年10月19日） or (2023年10月19日)
             date_match = re.search(

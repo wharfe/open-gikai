@@ -329,10 +329,12 @@ def run_pipeline(
 ) -> None:
     """Run the full summarization pipeline for a given date."""
     # Load raw data — collect meetings from all source files for this date
+    import glob as _glob
     candidates = [
         os.path.join(raw_dir, f"ndl-{date_str}.json"),
         os.path.join(raw_dir, f"kantei-{date_str}.json"),
-        os.path.join(raw_dir, f"council-{date_str}.json"),
+        os.path.join(raw_dir, f"council-{date_str}.json"),  # legacy
+        *sorted(_glob.glob(os.path.join(raw_dir, f"council-*-{date_str}.json"))),
         os.path.join(raw_dir, f"{date_str}.json"),  # legacy
     ]
     meetings: list = []
