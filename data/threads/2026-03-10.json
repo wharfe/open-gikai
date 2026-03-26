@@ -15,6 +15,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00220260310"
         }
+      ],
+      "news": [
+        {
+          "title": "『防災は国家の責任』",
+          "url": "https://www.townnews.co.jp/0105/2026/01/22/821372.html",
+          "source": "タウンニュース",
+          "pubDate": "Wed, 21 Jan 2026 15:59:00 GMT",
+          "image": "https://www.townnews.co.jp/0105/images/a001428560_03.jpg"
+        },
+        {
+          "title": "『防災は国家の責任』",
+          "url": "https://www.townnews.co.jp/0115/2026/01/22/821373.html",
+          "source": "タウンニュース",
+          "pubDate": "Wed, 21 Jan 2026 15:59:00 GMT",
+          "image": "https://www.townnews.co.jp/0115/images/a001428560_03.jpg"
+        },
+        {
+          "title": "防災庁発足で今世紀10番目の「庁」新設。区分けとともに上場企業 ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/c0e2ac74382197caa1ec59a7dc0e36203749e8f4",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 01 Jan 2026 13:30:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/tarobando/02490183/title-1767181444253.jpeg?exp=10800"
+        }
       ]
     },
     "speeches": [

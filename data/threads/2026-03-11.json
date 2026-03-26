@@ -17,6 +17,28 @@
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0311kaiken2.html"
         }
+      ],
+      "news": [
+        {
+          "title": "「駆け込み給油も…」ガソリン180円超え！ 高市総理「ガソリン170円台維持」へ 迅速対応の価格抑制策とは？",
+          "url": "https://www.msn.com/ja-jp/money/other/%E9%A7%86%E3%81%91%E8%BE%BC%E3%81%BF%E7%B5%A6%E6%B2%B9%E3%82%82-%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3180%E5%86%86%E8%B6%85%E3%81%88-%E9%AB%98%E5%B8%82%E7%B7%8F%E7%90%86-%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3170%E5%86%86%E5%8F%B0%E7%B6%AD%E6%8C%81-%E3%81%B8%E8%BF%85%E9%80%9F%E5%AF%BE%E5%BF%9C%E3%81%AE%E4%BE%A1%E6%A0%BC%E6%8A%91%E5%88%B6%E7%AD%96%E3%81%A8%E3%81%AF/ar-AA1Yr3ca",
+          "source": "くるまのニュース on MSN",
+          "pubDate": "Wed, 11 Mar 2026 17:53:00 GMT"
+        },
+        {
+          "title": "「190.8円」ガソリン代が過去最高値を更新…イラン情勢の緊迫で ...",
+          "url": "https://gentosha-go.com/articles/-/77048",
+          "source": "ゴールドオンライン",
+          "pubDate": "Wed, 25 Mar 2026 13:37:00 GMT",
+          "image": "https://ggo.ismcdn.jp/mwimgs/6/c/1200w/img_6c46f44b090aa6d46aa23eca3f8ce5be73945.jpg"
+        },
+        {
+          "title": "ガソリン補助「170円」抑制 原油高に伴う財政負担と出口戦略の課題",
+          "url": "https://zaikei.co.jp/article/20260323/847904.html",
+          "source": "財経新聞",
+          "pubDate": "Mon, 23 Mar 2026 02:02:00 GMT",
+          "image": "http://www.zaikei.co.jp/files/general/2026032317585613ecbig.jpg"
+        }
       ]
     },
     "speeches": [

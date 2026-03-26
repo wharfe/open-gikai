@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122114024X00320260220"
         }
+      ],
+      "news": [
+        {
+          "title": "令和9年法改正で合区解消を 自民・松山参院議員会長、改革協議会 ...",
+          "url": "https://www.sankei.com/article/20251117-IOFEKHC2YZKLNLCEBBYWRWT2UA/",
+          "source": "産経新聞",
+          "pubDate": "Mon, 17 Nov 2025 12:55:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/7RNPKN47XFPNVMAO7IKQLSO6QI.jpg?auth=56d70df1b3014fb5c82f1a905e957b5aebb7f5207620fe443833a61a8c8f1776&amp;quality=50&amp;focal=1416%2C1071&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "参院選挙制度改革も議論へ 与野党、近く協議会設置",
+          "url": "https://www.jiji.com/jc/article?k=2025112800721&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 27 Nov 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202511/20251128at43S_o.jpg"
+        },
+        {
+          "title": "参院「1票の格差」議論へ 協議会設置、合区も対象",
+          "url": "https://www.chibanippo.co.jp/newspack/20251128/1535391",
+          "source": "千葉日報",
+          "pubDate": "Fri, 28 Nov 2025 09:34:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -127,6 +149,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105253X00120260220"
         }
+      ],
+      "news": [
+        {
+          "title": "高市早苗首相、拉致問題は「私の代で突破口を開き、解決したい ...",
+          "url": "https://www.sankei.com/article/20260325-Q6CYHTHB3BICBOZPXMMQEILEJI/",
+          "source": "産経ニュース",
+          "pubDate": "Tue, 24 Mar 2026 18:44:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/DGL6JLYWRJJZJD7NPS7VFJEHKA.jpg?auth=c9129c17f70f27de3eb335939849c7a84653d2a9046a7e63a9614fb4eeb4fd9c&amp;quality=50&amp;focal=2396%2C1049&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "拉致被害者家族、高市首相と16日面会へ 家族会が運動方針、全被害 ...",
+          "url": "https://www.sankei.com/article/20260215-WHI6QNM7ONN75LEWKXIE6R23CY/",
+          "source": "産経新聞",
+          "pubDate": "Sun, 15 Feb 2026 10:12:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/2TRTXWIU7RITXCMVQKJVWM4UAU.jpg?auth=c67b1a7c8eec3ef249f6e2df7317aa036ef8ecef31dee0d695c2597fb5c3ea42&amp;quality=50&amp;focal=2438%2C1124&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "「寺越事件」行方不明者の家族 北朝鮮との交渉、政権安定で希望語る",
+          "url": "https://www.asahi.com/articles/ASV2L1VKRV2LPJLB00BM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Tue, 17 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260218003093_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -224,6 +269,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104541X00120260220"
         }
+      ],
+      "news": [
+        {
+          "title": "監視審査会長に額賀氏と金子氏 特定秘密保護",
+          "url": "https://www.asahi.com/sp/articles/DA3S11551248.html",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 14 Jan 2015 16:00:00 GMT",
+          "image": "https://www.asahicom.jp/images/logo_ogp.png"
+        }
       ]
     },
     "speeches": [
@@ -289,6 +343,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104183X00120260220"
+        }
+      ],
+      "news": [
+        {
+          "title": "改憲へ高市首相の「不退転の決意感じた」 衆院憲法審査会長務める ...",
+          "url": "https://www.chunichi.co.jp/article/1226224",
+          "source": "中日新聞Web",
+          "pubDate": "Sat, 21 Mar 2026 13:15:00 GMT",
+          "image": "https://static.chunichi.co.jp/image/article/size1/3/3/e/0/33e08cbbc65f9afeaf5a531b46757028_1.jpg"
+        },
+        {
+          "title": "衆院憲法審査会長に古屋圭司氏 自民、改憲環境の整備期待",
+          "url": "https://www.sanyonews.jp/article/1875022?rct=global_seiji",
+          "source": "山陽新聞",
+          "pubDate": "Tue, 17 Feb 2026 11:09:00 GMT",
+          "image": "https://static.sanyonews.jp/image/article/size1/7/a/3/a/7a3a5ab073bb3ccbb973f693b26afd88_1.jpg"
+        },
+        {
+          "title": "自民、憲法改正の早期実現に全力 定数削減法の今国会成立を",
+          "url": "https://www.tokyo-np.co.jp/article/476745",
+          "source": "東京新聞",
+          "pubDate": "Sun, 22 Mar 2026 20:54:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/tokyo-np/images/logo_ogp.png"
         }
       ]
     },
@@ -389,6 +466,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104183X00120260220"
         }
+      ],
+      "news": [
+        {
+          "title": "国民民主・玉木氏が憲法審査会復帰へ 「与野党間で丁寧な合意形成 ...",
+          "url": "https://www.sankei.com/article/20260215-IW46OI6WTNGCTIDESQRRZV5LOM/",
+          "source": "産経新聞",
+          "pubDate": "Sun, 15 Feb 2026 06:51:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/7UWWXKBD2JMVFGWI5BYE3E63NQ.jpg?auth=ec35266c43f9dea23fd554af39c450a4feccb4c63f4810bab5bed5d79780667c&amp;quality=50&amp;focal=1130%2C651&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "改憲へ高市首相の「不退転の決意感じた」 衆院憲法審査会長務める ...",
+          "url": "https://www.chunichi.co.jp/article/1226224",
+          "source": "中日新聞Web",
+          "pubDate": "Sat, 21 Mar 2026 13:15:00 GMT",
+          "image": "https://static.chunichi.co.jp/image/article/size1/3/3/e/0/33e08cbbc65f9afeaf5a531b46757028_1.jpg"
+        },
+        {
+          "title": "＜独自＞中道の憲法調査会長に階猛幹事長を起用へ 立民在籍時には ...",
+          "url": "https://www.sankei.com/article/20260319-F2DRBHRKMRN6LARBXBNBMV7F3M/",
+          "source": "産経ニュース",
+          "pubDate": "Thu, 19 Mar 2026 02:18:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/VQPPROT2CJERPP5FZ22MW3YK3M.jpg?auth=878ff069272168679e1c755fac4b8f9cc8e3045eddcadf689b970d20a69937bc&amp;quality=50&amp;focal=1242%2C663&amp;width=1200&amp;height=630"
+        }
       ]
     },
     "speeches": [
@@ -452,6 +552,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105387X00120260220"
+        }
+      ],
+      "news": [
+        {
+          "title": "【復興検証 震災・原発事故15年】第5部 自主避難 「想定外」総数 ...",
+          "url": "https://www.minpo.jp/news/moredetail/20260305130741",
+          "source": "福島民報",
+          "pubDate": "Thu, 05 Mar 2026 02:46:00 GMT",
+          "image": "https://minpo.ismcdn.jp/mwimgs/b/a/1200w/img_ba7851f1e7cb53127c574b554d4ef6fa304754.jpg"
+        },
+        {
+          "title": "東日本大震災15年 復興は日本全体で",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2026-03-03/2026030301_02_0.php",
+          "source": "日本共産党",
+          "pubDate": "Mon, 02 Mar 2026 15:59:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2026-03-03/img_2.jpg"
+        },
+        {
+          "title": "神田外語大生が震災復興の歩みを海外へ発信 ― 東日本大震災 ...",
+          "url": "https://digitalpr.jp/r/128140",
+          "source": "Degital PR Platform",
+          "pubDate": "Mon, 09 Feb 2026 16:00:00 GMT"
         }
       ]
     },
@@ -525,6 +647,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122103895X00120260220"
         }
+      ],
+      "news": [
+        {
+          "title": "水道整備、予算確保せよ／沖縄の漏水、老朽化対策訴え／衆院特委 ...",
+          "url": "https://www.komei.or.jp/km/komei-okinawa/2025/12/10/%e6%b0%b4%e9%81%93%e6%95%b4%e5%82%99%e3%80%81%e4%ba%88%e7%ae%97%e7%a2%ba%e4%bf%9d%e3%81%9b%e3%82%88%ef%bc%8f%e6%b2%96%e7%b8%84%e3%81%ae%e6%bc%8f%e6%b0%b4%e3%80%81%e8%80%81%e6%9c%bd%e5%8c%96%e5%af%be/",
+          "source": "公明党",
+          "pubDate": "Tue, 09 Dec 2025 16:00:00 GMT",
+          "image": "https://www.komei.or.jp/km/komei-okinawa/files/2025/12/Image-1-2025-12-10T115316.537-387x1024.jpg?ver=1765335227"
+        },
+        {
+          "title": "北方領土館 初の予算化",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-12-22/2025122202_03_0.php",
+          "source": "日本共産党",
+          "pubDate": "Sun, 21 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-12-22/img_4.jpg"
+        },
+        {
+          "title": "老朽化著しい北方領土館 建て替え予算「検討」",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-12-12/ftp2025121215_01_0.php",
+          "source": "日本共産党",
+          "pubDate": "Thu, 11 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-12-12/img_19.jpg"
+        }
       ]
     },
     "speeches": [
@@ -570,6 +715,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00120260220"
+        }
+      ],
+      "news": [
+        {
+          "title": "秋田県が大雪で災害救助法適用決定 大館や北秋田など7市町村",
+          "url": "https://www.sakigake.jp/news/article/20260203AK0037/",
+          "source": "秋田魁新報",
+          "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
+          "image": "https://www.sakigake.jp/images/news-entry/20260203ak0037_01_l.jpg"
+        },
+        {
+          "title": "屋根の雪下ろし「助かる」 災害救助作業を公開／青森市",
+          "url": "https://www.47news.jp/13828336.html",
+          "source": "47NEWS",
+          "pubDate": "Thu, 05 Feb 2026 16:00:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/561806bb6ad34fa42ffbd3a0c805de7e/photo.jpg"
+        },
+        {
+          "title": "大雪で「災害救助法」適用の秋田県大館 市長が語る「予算があって ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/7e2f36ef0edb7ca17586a53f6e6be07abc6c8628",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 04 Feb 2026 05:51:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/horijun/02528818/title-1770211756979.jpeg?exp=10800"
         }
       ]
     },
@@ -634,6 +802,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00320260220"
         }
+      ],
+      "news": [
+        {
+          "title": "与党が衆院の全委員長ポスト要求 常任委や審査会、継続協議に",
+          "url": "https://www.nikkei.com/article/DGXZQOUA1276Z0S6A210C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 12 Feb 2026 10:50:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2614898012022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.9&amp;fp-y=0.46&amp;h=630&amp;w=1200&amp;s=34fd36bfa7ac4b1ab8c7a5a606b0a377"
+        },
+        {
+          "title": "衆院委員長の一部野党に",
+          "url": "https://www.saga-s.co.jp/articles/-/1650116",
+          "source": "佐賀新聞",
+          "pubDate": "Fri, 13 Feb 2026 07:26:00 GMT",
+          "image": "https://saga.ismcdn.jp/mwimgs/4/a/1200m/img_4a79ed948348108b927ce1667ed4af9b47092.png"
+        },
+        {
+          "title": "「意趣返しだよ」少数転落から圧勝の自民、衆院で全委員長ポスト ...",
+          "url": "https://www.asahi.com/articles/ASV2D3SL5V2DUTFK00FM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 12 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260212004643_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -680,6 +871,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00320260220"
+        }
+      ],
+      "news": [
+        {
+          "title": "「情報公開・個人情報保護審査会 委員」の法律相談",
+          "url": "https://www.bengo4.com/c_5/c_1625/c_1678/bbs/%E6%83%85%E5%A0%B1%E5%85%AC%E9%96%8B%E3%83%BB%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E4%BF%9D%E8%AD%B7%E5%AF%A9%E6%9F%BB%E4%BC%9A+%E5%A7%94%E5%93%A1/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Thu, 21 Mar 2019 17:00:00 GMT",
+          "image": "https://www.bengo4.com/img/citizen/common/bengo4-ogp.png"
+        },
+        {
+          "title": "監視審査会長に額賀氏と金子氏 特定秘密保護",
+          "url": "https://www.asahi.com/sp/articles/DA3S11551248.html",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 14 Jan 2015 16:00:00 GMT",
+          "image": "https://www.asahicom.jp/images/logo_ogp.png"
         }
       ]
     },
@@ -745,6 +952,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00320260220"
         }
+      ],
+      "news": [
+        {
+          "title": "2026年度沖縄県予算案9468億円について予算特別委で全会一致で可決 ...",
+          "url": "https://www.fnn.jp/articles/-/1019823",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Tue, 24 Mar 2026 02:09:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/4/b/600/img_4b4da5326bb16303b9948d6d904d8d9633105.jpg"
+        },
+        {
+          "title": "知事ら特別職の退職金支給制限、対象基準を「懲戒停職相当」に ...",
+          "url": "https://www.fukuishimbun.co.jp/articles/-/2553647",
+          "source": "福井新聞ONLINE",
+          "pubDate": "Mon, 16 Mar 2026 19:34:00 GMT",
+          "image": "https://fki.ismcdn.jp/mwimgs/0/4/-/img_04bc679b26e14ee0112467dbbc76593a100211.jpg"
+        },
+        {
+          "title": "参院特別委員長を互選",
+          "url": "https://www.nikkei.com/article/DGXZQOUA189B50Y6A210C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 18 Feb 2026 11:29:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2645809018022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;fill=blur&amp;fit=fill&amp;h=630&amp;w=1200&amp;s=7fde9b7fbfd1d7f18cd8bc879ef1ad92"
+        }
       ]
     },
     "speeches": [
@@ -792,6 +1022,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00320260220"
         }
+      ],
+      "news": [
+        {
+          "title": "金正恩氏が施政方針演説で「核保有国堅持」方針表明 対米交渉には ...",
+          "url": "https://www.sankei.com/article/20260324-XX6Q5IZ3ZVPHZJH5YNHGSTKU74/",
+          "source": "産経ニュース",
+          "pubDate": "Mon, 23 Mar 2026 18:43:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/B55BJTPAHROBRBPKEAL7BTJ3T4.jpg?auth=409ffa1801dd00ac622a7cc93d345a6f3cf96ce593c76da51535b9b5b4525025&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "核保有を正当化、韓国を「最も敵対的な国家」と認定 金正恩氏が演説",
+          "url": "https://www.asahi.com/articles/ASV3S0SH0V3SUHBI00JM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Mon, 23 Mar 2026 20:30:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260324001308_comm.jpg"
+        },
+        {
+          "title": "金正恩氏「韓国を敵と認定」 演説で表明、憲法への反映には触れず",
+          "url": "https://www.nikkei.com/article/DGXZQOGM241FJ0U6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 24 Mar 2026 05:15:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2793941024032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.25&amp;fp-y=0.72&amp;h=630&amp;w=1200&amp;s=fbd16223f7478ed763527579d6c87d95"
+        }
       ]
     },
     "speeches": [
@@ -837,6 +1090,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00320260220"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市首相が予算案の年度内成立、スパイ防止法に意欲 衆院で代表 ...",
+          "url": "https://www.tokyo-np.co.jp/article/470864",
+          "source": "tokyo-np",
+          "pubDate": "Mon, 23 Feb 2026 16:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/b/e/7/3/be7338cc5ed0f46271c2b3883a245114_1.jpg"
+        },
+        {
+          "title": "予算審議「高市1強」の試金石 国会前例、踏襲か打破か",
+          "url": "https://www.jiji.com/jc/article?k=2026022100429&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Sat, 21 Feb 2026 16:01:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260221at31S_o.jpg"
+        },
+        {
+          "title": "共産がなめる56年ぶりの辛酸 衆院選で半減、参院だけの代表質問",
+          "url": "https://www.asahi.com/articles/ASV2V3HFHV2VUTFK008M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 25 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260226003511_comm.jpg"
         }
       ]
     },

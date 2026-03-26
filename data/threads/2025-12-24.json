@@ -17,6 +17,29 @@
           "label": "議事録（内閣府）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/agenda.html"
         }
+      ],
+      "news": [
+        {
+          "title": "フィンテックや医療のデジタル化…難題の法整備を次々実現 “理系 ...",
+          "url": "https://www.bengo4.com/c_18/n_20160/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Wed, 25 Mar 2026 01:11:00 GMT",
+          "image": "https://storage.bengo4.com/news/images/22896.png?1774426319"
+        },
+        {
+          "title": "AIやフードテック分野で規制改革を検討へ 成長戦略会議と連動",
+          "url": "https://www.nikkei.com/article/DGXZQOUA240WS0U5A221C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 24 Dec 2025 13:45:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2406053024122025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=5c8a0bd4ad7e98ec6f5ee2b66b9de6ee"
+        },
+        {
+          "title": "規制改革推進会議",
+          "url": "https://www.kantei.go.jp/jp/104/actions/202512/24kiseikaikaku.html",
+          "source": "首相官邸",
+          "pubDate": "Wed, 24 Dec 2025 04:16:00 GMT",
+          "image": "https://www.kantei.go.jp/jp/content/000189141.jpeg"
+        }
       ]
     },
     "speeches": [
@@ -91,6 +114,15 @@
         {
           "label": "議事録（内閣府）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/agenda.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "AIやフードテック分野で規制改革を検討へ 成長戦略会議と連動",
+          "url": "https://www.nikkei.com/article/DGXZQOUA240WS0U5A221C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 24 Dec 2025 13:45:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2406053024122025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=5c8a0bd4ad7e98ec6f5ee2b66b9de6ee"
         }
       ]
     },
@@ -313,6 +345,27 @@
         {
           "label": "議事録（内閣府）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251224/agenda.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "ジャーベル・アラブ首長国連邦産業・先端技術大臣兼日本担当特使 ...",
+          "url": "https://www.kantei.go.jp/jp/105/actions/202603/05hyoukei2.html",
+          "source": "首相官邸",
+          "pubDate": "Thu, 05 Mar 2026 02:53:00 GMT",
+          "image": "https://www.kantei.go.jp/jp/content/000192866.jpeg"
+        },
+        {
+          "title": "「もっと働いて…」。高市首相が前のめりの労働規制緩和…企業の ...",
+          "url": "https://373news.com/news/local/detail/229358/",
+          "source": "南日本新聞",
+          "pubDate": "Thu, 19 Feb 2026 03:37:00 GMT"
+        },
+        {
+          "title": "東京でAIの閣僚級会合を来月開催 高市総理が表明",
+          "url": "https://www.nagoyatv.com/news/1000/seiji.html?id=000486532",
+          "source": "名古屋テレビ【メ～テレ】",
+          "pubDate": "Thu, 19 Feb 2026 14:05:00 GMT"
         }
       ]
     },

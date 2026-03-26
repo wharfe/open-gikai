@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122114024X00220260219"
         }
+      ],
+      "news": [
+        {
+          "title": "予算案年度内成立に暗雲 参院多数野党の壁に暫定予算検討 「多勢 ...",
+          "url": "https://www.sankei.com/article/20260323-PGT3WC5IMVJWVBH6NZNOLPHX2Q/",
+          "source": "産経ニュース",
+          "pubDate": "Mon, 23 Mar 2026 05:34:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/FE7LGOSJONOM3I7AQWNOLY4UDI.jpg?auth=0f160d06e31dd96149acff4ac504472d572b6ed482d26630867d4aca592863cb&amp;quality=50&amp;focal=2446%2C990&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "参院予算委 山添氏が迫る",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2026-03-26/2026032601_01_0.php",
+          "source": "日本共産党",
+          "pubDate": "Wed, 25 Mar 2026 18:31:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2026-03-26/img_1.jpg"
+        },
+        {
+          "title": "艦船要求に9条歯止め?高市首相「コメント困難」 参院予算委",
+          "url": "https://www.msn.com/ja-jp/news/national/%E8%89%A6%E8%88%B9%E8%A6%81%E6%B1%82%E3%81%AB9%E6%9D%A1%E6%AD%AF%E6%AD%A2%E3%82%81-%E9%AB%98%E5%B8%82%E9%A6%96%E7%9B%B8-%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E5%9B%B0%E9%9B%A3-%E5%8F%82%E9%99%A2%E4%BA%88%E7%AE%97%E5%A7%94/ar-AA1ZlyPN",
+          "source": "毎日新聞デジタル on MSN",
+          "pubDate": "Wed, 25 Mar 2026 00:49:53 GMT"
+        }
       ]
     },
     "speeches": [
@@ -71,6 +93,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122114024X00220260219"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市首相、公邸のバリアフリーめぐるX投稿に、疑問の声広がる ...",
+          "url": "https://www.huffingtonpost.jp/entry/story_jp_6961a8e6e4b024bfe0b94fb7",
+          "source": "ハフポスト日本版",
+          "pubDate": "Fri, 09 Jan 2026 16:00:00 GMT",
+          "image": "https://img.huffingtonpost.com/asset/6961bb77140000d9477916e0.jpg?cache=oWgfJpas3w&amp;ops=1200_630"
+        },
+        {
+          "title": "学校施設におけるバリアフリー化の一層の推進について（通知）",
+          "url": "https://www.mext.go.jp/b_menu/hakusho/2022/mext_00004.html?uns_flg=1&__urlmid=11365433&adtype=mail",
+          "source": "mext.go",
+          "pubDate": "Mon, 01 Sep 2025 02:57:00 GMT",
+          "image": "https://www.mext.go.jp/common/img/mext_ogp_img.png"
+        },
+        {
+          "title": "みんなにやさしい駅へ！金町駅のバリアフリー化、公明党が推進！",
+          "url": "https://www.komei.or.jp/km/kakuo-seiichi/2025/10/24/kanamachi-barrierfree/",
+          "source": "公明党",
+          "pubDate": "Thu, 23 Oct 2025 17:00:00 GMT",
+          "image": "https://www.komei.or.jp/km/kakuo-seiichi/files/2025/10/c3c98a4e-1773-487f-a266-861726ea24b5-300x200.jpg"
         }
       ]
     },
@@ -256,6 +301,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00220260219"
         }
+      ],
+      "news": [
+        {
+          "title": "立法事務費制度矛盾の声 会派対象も「議員に交付」",
+          "url": "https://www.sanin-chuo.co.jp/articles/-/923991",
+          "source": "山陰中央新報デジタル",
+          "pubDate": "Tue, 30 Dec 2025 20:00:00 GMT",
+          "image": "https://sanin-chuo.ismcdn.jp/mwimgs/e/2/1200m/img_e2944028dc26b448fe525d12d372c30716058.png"
+        },
+        {
+          "title": "立法事務費は 制度矛盾か？ 会派対象も無所属議員に交付 与野党 ...",
+          "url": "https://www.fukuishimbun.co.jp/articles/-/2494643",
+          "source": "福井新聞",
+          "pubDate": "Mon, 29 Dec 2025 16:00:00 GMT",
+          "image": "https://fki.ismcdn.jp/mwimgs/1/4/-/img_141d0fae967e31b0ee8bda7fe92e0c4c18131.png"
+        },
+        {
+          "title": "NHK党・斉藤健一郎氏 vs 立憲・杉尾秀哉氏バトル続く「事実として ...",
+          "url": "https://www.tokyo-sports.co.jp/articles/-/366782",
+          "source": "tokyo-sports",
+          "pubDate": "Fri, 14 Nov 2025 14:11:00 GMT",
+          "image": "https://tokyo-sports.ismcdn.jp/mwimgs/4/7/1200w/img_47afb371c8a7c8665c426cc1efae8c26147451.jpg"
+        }
       ]
     },
     "speeches": [
@@ -310,6 +378,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00220260219"
+        }
+      ],
+      "news": [
+        {
+          "title": "暫定予算案27日に閣議決定、国会提出へ 令和8年度予算の月内成立は ...",
+          "url": "https://www.sankei.com/article/20260325-YDTSPDMAJZK75JMZK4MMVBQ5PA/",
+          "source": "産経ニュース",
+          "pubDate": "Wed, 25 Mar 2026 04:09:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/XRIWHRFRG5L3DKFWD5QJKKCPYA.jpg?auth=729d2d3efcaf892f3f88d429b97be76b76ca6a46c992d1aca46020037d88b907&amp;quality=50&amp;focal=1081%2C871&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "令和8年度予算案が衆院を通過 与党の賛成多数 16日に参院で実質 ...",
+          "url": "https://news.yahoo.co.jp/articles/6f8ef3afb61ab91cc875a46174f771b2b78f3640",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 13 Mar 2026 07:48:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260313-00000180-san-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "令和8年度予算案の審議が山場 与党は13日に衆院通過方針も ...",
+          "url": "https://www.sankei.com/article/20260308-VNXG54Y4KZLHROLTALSFU3AMUQ/",
+          "source": "産経ニュース",
+          "pubDate": "Sun, 08 Mar 2026 07:30:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/RM73E6V2ZZNNLP5ISAT7T54B3Y.jpg?auth=5b44e15bbc384fc14c09021fcbd275eed280414718d2553f73d36977bfd058c7&amp;quality=50&amp;focal=2223%2C1544&amp;width=1200&amp;height=630"
         }
       ]
     },
@@ -402,6 +493,21 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00220260219"
+        }
+      ],
+      "news": [
+        {
+          "title": "令和8年度経済産業省関連予算案等の概要",
+          "url": "https://www.meti.go.jp/main/yosan/yosan_fy2026/index.html",
+          "source": "経済産業省",
+          "pubDate": "Thu, 25 Dec 2025 16:00:00 GMT"
+        },
+        {
+          "title": "令和8年度予算概算要求の概要",
+          "url": "https://www.soumu.go.jp/kouchoi/menu/r8gaisan.html",
+          "source": "soumu.go",
+          "pubDate": "Thu, 23 Oct 2025 09:04:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
         }
       ]
     },
@@ -520,6 +626,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104037X00120260219"
+        }
+      ],
+      "news": [
+        {
+          "title": "暫定予算案27日に閣議決定、国会提出へ 令和8年度予算の月内成立は ...",
+          "url": "https://www.sankei.com/article/20260325-YDTSPDMAJZK75JMZK4MMVBQ5PA/",
+          "source": "産経ニュース",
+          "pubDate": "Wed, 25 Mar 2026 04:09:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/XRIWHRFRG5L3DKFWD5QJKKCPYA.jpg?auth=729d2d3efcaf892f3f88d429b97be76b76ca6a46c992d1aca46020037d88b907&amp;quality=50&amp;focal=1081%2C871&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "令和8年度予算案が衆院を通過 与党の賛成多数 16日に参院で実質 ...",
+          "url": "https://news.yahoo.co.jp/articles/6f8ef3afb61ab91cc875a46174f771b2b78f3640",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 13 Mar 2026 07:48:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260313-00000180-san-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "予算案年度内成立に暗雲 参院多数野党の壁に暫定予算検討 「多勢 ...",
+          "url": "https://www.sankei.com/article/20260323-PGT3WC5IMVJWVBH6NZNOLPHX2Q/",
+          "source": "産経ニュース",
+          "pubDate": "Mon, 23 Mar 2026 05:34:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/FE7LGOSJONOM3I7AQWNOLY4UDI.jpg?auth=0f160d06e31dd96149acff4ac504472d572b6ed482d26630867d4aca592863cb&amp;quality=50&amp;focal=2446%2C990&amp;width=1200&amp;height=630"
         }
       ]
     },

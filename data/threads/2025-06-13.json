@@ -17,6 +17,28 @@
           "label": "原文",
           "url": "https://www.mlit.go.jp/policy/shingikai/s103_suishin01.html"
         }
+      ],
+      "news": [
+        {
+          "title": "生活保護補償全額支給案を併記 一部支給妥当も、厚労省が報告書",
+          "url": "https://news.yahoo.co.jp/articles/81448d470bbc3837d0d9aa81e5a9db7bb58f12d1",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 17 Nov 2025 04:14:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20251117-00000065-kyodonews-000-3-view.jpg?exp=10800"
+        },
+        {
+          "title": "生活保護費の引き下げ「4000億円」全額補償“見送り”濃厚に ...",
+          "url": "https://news.yahoo.co.jp/articles/ee9c101333d3c49f118d4277556aaa6e89b12be6",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 18 Nov 2025 10:10:00 GMT"
+        },
+        {
+          "title": "MUJI HOUSE、花見川団地の地域生活圏活性化の取り組みで2025年度 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000152.000001246.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 15 Oct 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/1246/152/1246-152-5e958d122f8a550829b0b7d2719e1383-1920x1080.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -418,6 +440,28 @@
           "label": "国土形成計画法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%9B%BD%E5%9C%9F%E5%BD%A2%E6%88%90%E8%A8%88%E7%94%BB%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "東海第二 避難計画策定9市町村 残り7万2000人分 県、5市町支援",
+          "url": "https://www.yomiuri.co.jp/local/ibaraki/news/20260322-GYTNT00007/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Sat, 21 Mar 2026 13:00:00 GMT"
+        },
+        {
+          "title": "大洗町が広域避難計画策定 東海第2原発の重大事故に備え 自家用車 ...",
+          "url": "https://www.tokyo-np.co.jp/article/357643",
+          "source": "tokyo-np",
+          "pubDate": "Mon, 30 Sep 2024 17:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/0/6/e/a/06ea491372043c7595fa2b848ec7167c_1.jpg"
+        },
+        {
+          "title": "中経連「南海トラフの注意喚起を」 整備局と意見交換",
+          "url": "https://www.nikkei.com/article/DGXZQOFD218FO0R20C24A8000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 21 Aug 2024 12:52:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO5262889021082024000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.52&amp;fp-y=0.4&amp;h=630&amp;w=1200&amp;s=c8a052b6b174bf696ca5347f3d78c845"
+        }
       ]
     },
     "speeches": [
@@ -591,6 +635,29 @@
         {
           "label": "二地域居住等の促進のための地域再生法等の一部を改正する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E4%BA%8C%E5%9C%B0%E5%9F%9F%E5%B1%85%E4%BD%8F%E7%AD%89%E3%81%AE%E4%BF%83%E9%80%B2%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%9C%B0%E5%9F%9F%E5%86%8D%E7%94%9F%E6%B3%95%E7%AD%89%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "官民連携で「二地域居住」の先進モデルへ。株式会社NOTEが兵庫県 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000038.000053912.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 25 Mar 2026 21:50:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/53912/38/53912-38-b0fd9c8c29d5a8bc23773b6a1ab0338b-1181x305.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "シェアリングエコノミー協会、ニ地域居住を促進 潮流つくる",
+          "url": "https://www.zenchin.com/news/content-4909.php",
+          "source": "zenchin",
+          "pubDate": "Mon, 08 Dec 2025 16:00:00 GMT",
+          "image": "https://www.zenchin.com/news/assets_c/2025/12/20251208_0300-thumb-1020x765-42274.jpg"
+        },
+        {
+          "title": "株式会社吉村、静岡県焼津市の「特定居住支援法人」に指定",
+          "url": "https://beauty.oricon.co.jp/pressrelease/2652097/",
+          "source": "elthaエルザ",
+          "pubDate": "Fri, 23 Jan 2026 01:14:00 GMT",
+          "image": "https://prtimes.jp/img/31069/54/thumb/d31069-54-a1b992ba641063447299-0.jpg"
         }
       ]
     },
@@ -826,6 +893,28 @@
         {
           "label": "原文",
           "url": "https://www.mlit.go.jp/policy/shingikai/s103_suishin01.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市内閣、防災・国土強靭化は「危機管理投資」 成長戦略の肝に ...",
+          "url": "https://www.kankyo-business.jp/column/aa75ae78-3b1a-46e1-b585-181f4868b31b",
+          "source": "環境ビジネスオンライン",
+          "pubDate": "Mon, 23 Mar 2026 22:14:00 GMT",
+          "image": "https://www.kankyo-business.jp/uploads/2026/03/19/82EmLkyIo0vrvM5BPqPNyZshmn62blG1MMy7IwY9.webp"
+        },
+        {
+          "title": "コンクリート締固め状況管理の「AR締固め管理システム」が国土 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000068.000044685.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 23 Sep 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/44685/68/44685-68-06e2502695f57a2bd9654021f5d8abf6-1006x488.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "豊予海峡ルート構想、大分県知事「日本全体に大きな効果がある ...",
+          "url": "https://www.yomiuri.co.jp/local/kyushu/news/20251101-OYS1T50025/",
+          "source": "読売新聞",
+          "pubDate": "Sat, 01 Nov 2025 07:56:00 GMT"
         }
       ]
     },

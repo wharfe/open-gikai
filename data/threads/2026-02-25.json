@@ -15,6 +15,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122114024X00420260225"
         }
+      ],
+      "news": [
+        {
+          "title": "高市首相が消費税減税など検討の「国民会議」の意義を強調…参院 ...",
+          "url": "https://www.yomiuri.co.jp/politics/20260226-GYT1T00236/",
+          "source": "読売新聞",
+          "pubDate": "Thu, 26 Feb 2026 07:54:00 GMT"
+        },
+        {
+          "title": "第221回国会における高市内閣総理大臣施政方針演説",
+          "url": "https://www.kantei.go.jp/jp/105/actions/202602/20shu_san_honkaigi.html",
+          "source": "首相官邸",
+          "pubDate": "Fri, 20 Feb 2026 04:06:00 GMT",
+          "image": "https://www.kantei.go.jp/jp/content/20260220shiseihoshin11_1.jpg"
+        }
       ]
     },
     "speeches": [
@@ -59,6 +74,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00520260225"
+        }
+      ],
+      "news": [
+        {
+          "title": "米国務長官演説に安堵―ミュンヘン安保会議 欧州、米依存からの ...",
+          "url": "https://www.worldtimes.co.jp/global/europe/20260216-206027/",
+          "source": "Sekai Nippo",
+          "pubDate": "Sun, 15 Feb 2026 16:00:00 GMT",
+          "image": "https://www.worldtimes.co.jp/wp-content/uploads/2026/02/020260215AT_47____-1417x944-1.jpg"
+        },
+        {
+          "title": "欧州首脳が警戒するルビオ演説。海外メディアが使う「ramp up the ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/17d3b5d84d8e7426457303f2c3dfec174d439302",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sat, 14 Feb 2026 15:01:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/dk/expert-image/yamaguchitoko/article/02541508/title-1771066394431.jpeg?exp=10800"
+        },
+        {
+          "title": "ルビオによるミュンヘン演説はトランプの主張と大差なし！危機に ...",
+          "url": "https://wedge.ismedia.jp/articles/-/40272",
+          "source": "Wedge ONLINE",
+          "pubDate": "Tue, 03 Mar 2026 16:00:00 GMT",
+          "image": "https://wedge.ismcdn.jp/mwimgs/2/d/1024/img_2dfbd1dbb2fb1180b86d4805e7705dfb688641.jpg"
         }
       ]
     },

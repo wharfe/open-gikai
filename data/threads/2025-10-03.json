@@ -17,6 +17,29 @@
           "label": "議事録（内閣府）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/agenda.html"
         }
+      ],
+      "news": [
+        {
+          "title": "GOGEN、規制改革推進会議での提言内容が規制改革実施計画として ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000122.000088419.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 23 Jun 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/88419/122/88419-122-6af7413524aa0f1d6a19879a56982dc3-1200x630.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "規制改革推進会議",
+          "url": "https://www.kantei.go.jp/jp/104/actions/202512/24kiseikaikaku.html",
+          "source": "首相官邸",
+          "pubDate": "Wed, 24 Dec 2025 04:16:00 GMT",
+          "image": "https://www.kantei.go.jp/jp/content/000189141.jpeg"
+        },
+        {
+          "title": "がん検診の二重読影「片方はAIで」、規制改革会議が検討",
+          "url": "https://www.m3.com/news/open/iryoishin/1313543",
+          "source": "M3",
+          "pubDate": "Wed, 24 Dec 2025 16:00:00 GMT",
+          "image": "https://static.m3.com/news/ogp/IryoIshin/4a7663fcd30b1aedc4c3e359bbca2cd7a8f72a9830c38128b25779605e8583b0.jpg"
+        }
       ]
     },
     "speeches": [
@@ -88,6 +111,22 @@
         {
           "label": "議事録（内閣府）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/agenda.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "将来宇宙輸送システム株式会社が主催する「次世代型宇宙港 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000144.000061878.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 03 Nov 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/61878/144/61878-144-5245cf06bb54bcb8c1c75c8e4c429a6d-662x49.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "【岡山大学】「カーボンフットプリントを起点とした価値創造 ...",
+          "url": "https://www.sanyonews.jp/article/1821398",
+          "source": "山陽新聞",
+          "pubDate": "Tue, 04 Nov 2025 17:55:00 GMT",
+          "image": "https://static.sanyonews.jp/image/article/size1https://prtimes.jp/img/72793/3533/resize/d72793-3533-e0f857674c75fd197f3f-0.jpg"
         }
       ]
     },
@@ -320,6 +359,29 @@
         {
           "label": "議事録（内閣府）",
           "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/committee/251003/agenda.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "石破茂氏、イランの攻撃非難 超党派議連、UAEに連帯",
+          "url": "https://www.sankei.com/article/20260324-ZQOL2463KBOSPC373ZTGFOFT5U/",
+          "source": "産経ニュース",
+          "pubDate": "Tue, 24 Mar 2026 01:42:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/2XHG7RF64RMM7LLFGFFIJ2NEVY.jpg?auth=f888f9384f3d897fcce3e98d84a89448c9ce0d4c75d8edadc9bedff3bec37882&amp;quality=50&amp;focal=2141%2C1145&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "石破茂前首相、イランの攻撃非難 超党派のUAE友好議連で",
+          "url": "https://www.nikkei.com/article/DGXZQOUA2492A0U6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 24 Mar 2026 12:29:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2797524024032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.53&amp;fp-y=0.18&amp;h=630&amp;w=1200&amp;s=fcd8fa9753964e488c07ee23dd6e0644"
+        },
+        {
+          "title": "国防のスペシャリスト・石破前総理が語るイラン情勢の緊迫度 ...",
+          "url": "https://news.yahoo.co.jp/articles/65083ce282845289cbd31dfb17fa742483b38482",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 05 Mar 2026 23:40:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260306-10230022-abema-000-1-view.jpg?exp=10800"
         }
       ]
     },

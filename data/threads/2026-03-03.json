@@ -15,6 +15,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105124X00120260303"
         }
+      ],
+      "news": [
+        {
+          "title": "松本洋平文部科学大臣記者会見録（令和8年3月24日）",
+          "url": "https://www.mext.go.jp/b_menu/daijin/detail/mext_00678.html",
+          "source": "文部科学省",
+          "pubDate": "Tue, 24 Mar 2026 02:28:00 GMT",
+          "image": "https://www.mext.go.jp/common/img/mext_ogp_img.png"
+        },
+        {
+          "title": "文科省「SSH指定校」基礎枠31校など新規採択…追加支援も拡充",
+          "url": "https://resemom.jp/article/2026/03/26/85593.html",
+          "source": "リセマム",
+          "pubDate": "Wed, 25 Mar 2026 19:02:00 GMT",
+          "image": "https://resemom.jp/imgs/ogp_f/394101.jpg"
+        },
+        {
+          "title": "令和8年度宇宙航空科学技術推進委託費の公募について",
+          "url": "https://www.mext.go.jp/b_menu/boshu/detail/1401208_00013.html",
+          "source": "mext.go",
+          "pubDate": "Sun, 15 Feb 2026 20:00:00 GMT",
+          "image": "https://www.mext.go.jp/common/img/mext_ogp_img.png"
+        }
       ]
     },
     "speeches": [
@@ -90,6 +113,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105124X00120260303"
+        }
+      ],
+      "news": [
+        {
+          "title": "文部科学省「アントレプレナーシップ推進大使」にEduPorte株式会社 ...",
+          "url": "https://www.nishinippon.co.jp/item/1428909/",
+          "source": "西日本新聞",
+          "pubDate": "Fri, 28 Nov 2025 09:24:00 GMT",
+          "image": "https://www.nishinippon.co.jp/uploads/image/1845270/sns_bc41d3d953_org.png"
+        },
+        {
+          "title": "文部科学省「アントレプレナーシップ推進大使」にNEXYZ.Group近藤太 ...",
+          "url": "https://www.afpbb.com/articles/-/3611173",
+          "source": "AFPBB News",
+          "pubDate": "Thu, 27 Nov 2025 16:00:00 GMT"
+        },
+        {
+          "title": "文部科学省に聞く、教育は「生成AI」とどう向き合い、どのような ...",
+          "url": "https://news.yahoo.co.jp/articles/603819cc727016b09f46d1066de8e3418f2ec155",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 01 Feb 2026 19:04:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260202-00000003-impkitw-000-2-view.jpg?exp=10800"
         }
       ]
     },
@@ -179,6 +224,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104601X00120260303"
         }
+      ],
+      "news": [
+        {
+          "title": "維新への閣内協力要請...注目の大臣ポストは？ 橋下徹氏の予想は ...",
+          "url": "https://www.j-cast.com/2026/02/11511298.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Wed, 11 Feb 2026 11:07:00 GMT",
+          "image": "https://www.j-cast.com/images/origin/2026/02/news_20260211183718.jpg"
+        },
+        {
+          "title": "第27回参議院議員通常選挙における総務大臣表彰",
+          "url": "https://www.soumu.go.jp/menu_news/s-news/01gyosei15_02000471.html",
+          "source": "soumu.go",
+          "pubDate": "Tue, 13 Jan 2026 21:02:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        }
       ]
     },
     "speeches": [
@@ -232,6 +293,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104601X00120260303"
         }
+      ],
+      "news": [
+        {
+          "title": "暫定予算案27日に閣議決定、国会提出へ 令和8年度予算の月内成立は ...",
+          "url": "https://www.sankei.com/article/20260325-YDTSPDMAJZK75JMZK4MMVBQ5PA/",
+          "source": "産経ニュース",
+          "pubDate": "Wed, 25 Mar 2026 04:09:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/XRIWHRFRG5L3DKFWD5QJKKCPYA.jpg?auth=729d2d3efcaf892f3f88d429b97be76b76ca6a46c992d1aca46020037d88b907&amp;quality=50&amp;focal=1081%2C871&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "NTT東日本株式会社の第一種指定電気通信設備に関する接続約款の ...",
+          "url": "https://www.soumu.go.jp/menu_news/s-news/01kiban03_02001016.html",
+          "source": "総務省",
+          "pubDate": "Thu, 26 Mar 2026 02:22:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "令和8年度予算案が衆院を通過 与党の賛成多数 16日に参院で実質 ...",
+          "url": "https://news.yahoo.co.jp/articles/6f8ef3afb61ab91cc875a46174f771b2b78f3640",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 13 Mar 2026 07:48:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260313-00000180-san-000-1-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -275,6 +359,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104601X00120260303"
+        }
+      ],
+      "news": [
+        {
+          "title": "堀内総務副大臣の国立研究開発法人情報通信研究機構（NICT）の視察 ...",
+          "url": "https://www.soumu.go.jp/photo_gallery/02koho03_03005457.html",
+          "source": "soumu.go",
+          "pubDate": "Thu, 27 Nov 2025 03:42:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "賀詞交歓会への出席（令和8年1月6日）",
+          "url": "https://www.soumu.go.jp/photo_gallery/02koho03_03005537.html",
+          "source": "soumu.go",
+          "pubDate": "Thu, 08 Jan 2026 00:08:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "副大臣、政務官人事は19日実施と官房長官",
+          "url": "https://news.yahoo.co.jp/articles/247001a4870892e4faee053b17a2571db37b0590",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 18 Feb 2026 07:06:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/default.jpg?exp=10800"
         }
       ]
     },
@@ -371,6 +478,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00620260303"
         }
+      ],
+      "news": [
+        {
+          "title": "舛添要一氏、高市総理の所信表明と官邸人事に苦言を呈す「ミニ ...",
+          "url": "https://news.yahoo.co.jp/articles/cbd4eec786816c8dd38ab609e802e4b4747dc620",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 27 Oct 2025 23:50:00 GMT"
+        },
+        {
+          "title": "サンモニ膳場貴子がチクリ 高市首相の所信表明演説「何が語られ ...",
+          "url": "https://www.nikkansports.com/entertainment/news/202510260000544.html",
+          "source": "日刊スポーツ",
+          "pubDate": "Sun, 26 Oct 2025 05:41:00 GMT",
+          "image": "https://www.nikkansports.com/entertainment/news/img/202510260000544-w500_0.jpg"
+        },
+        {
+          "title": "【独自】所信表明演説中のヤジ 立憲・野田代表が議員に注意 当事 ...",
+          "url": "https://news.yahoo.co.jp/articles/e8d22b839854b59fcba951dec7c09ea6d8a23b31",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 26 Oct 2025 10:12:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20251026-03323929-sdt-000-1-thumb.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -440,6 +569,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00620260303"
+        }
+      ],
+      "news": [
+        {
+          "title": "政府、AIで公務員業務を効率化 働き方指針改定、人材確保狙い",
+          "url": "https://www.chunichi.co.jp/article/1225152",
+          "source": "中日新聞Web",
+          "pubDate": "Thu, 19 Mar 2026 00:16:00 GMT",
+          "image": "https://static.chunichi.co.jp/image/article/size1/7/6/b/a/76bafc6d3b74f0ca883ffa960604200c_1.jpg"
+        },
+        {
+          "title": "27年の国家公務員試験、前倒し 民間と人材獲得競争、応募者確保",
+          "url": "https://www.chunichi.co.jp/article/1218379",
+          "source": "中日新聞Web",
+          "pubDate": "Thu, 05 Mar 2026 00:17:00 GMT",
+          "image": "https://static.chunichi.co.jp/chunichi/images/logo_ogp.png"
+        },
+        {
+          "title": "政府、AIで公務員業務を効率化 働き方指針改定、人材確保狙い",
+          "url": "https://www.47news.jp/14021228.html",
+          "source": "47NEWS",
+          "pubDate": "Wed, 18 Mar 2026 07:59:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/e0b84e7b8a51b2a629e35fe38d3543cd/photo.jpg"
         }
       ]
     },
@@ -862,6 +1014,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00620260303"
         }
+      ],
+      "news": [
+        {
+          "title": "政府、AIで公務員業務を効率化 働き方指針改定、人材確保狙い",
+          "url": "https://www.chunichi.co.jp/article/1225152",
+          "source": "中日新聞Web",
+          "pubDate": "Thu, 19 Mar 2026 00:16:00 GMT",
+          "image": "https://static.chunichi.co.jp/image/article/size1/7/6/b/a/76bafc6d3b74f0ca883ffa960604200c_1.jpg"
+        },
+        {
+          "title": "政府、AIで公務員業務を効率化 働き方指針改定、人材確保狙い",
+          "url": "https://www.47news.jp/14021228.html",
+          "source": "47NEWS",
+          "pubDate": "Wed, 18 Mar 2026 07:59:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/e0b84e7b8a51b2a629e35fe38d3543cd/photo.jpg"
+        },
+        {
+          "title": "民間出身のIT系専門人材が行政官と肩を並べて大活躍! デジタル庁の ...",
+          "url": "https://president.jp/articles/-/108588",
+          "source": "プレジデント社",
+          "pubDate": "Wed, 25 Feb 2026 01:29:00 GMT",
+          "image": "https://president.ismcdn.jp/mwimgs/3/6/1200wm/img_36180afd52e17a6bccdb1bd4b95f22391285706.jpg"
+        }
       ]
     },
     "speeches": [
@@ -987,6 +1162,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00620260303"
+        }
+      ],
+      "news": [
+        {
+          "title": "民間から省庁交流449人 過去最多更新、25年",
+          "url": "https://www.daily.co.jp/society/politics/2026/03/25/0020163572.shtml",
+          "source": "デイリースポーツ",
+          "pubDate": "Tue, 24 Mar 2026 19:46:00 GMT"
+        },
+        {
+          "title": "官民連携のリアル｜現役自治体職員・議員が語る現場の実情【無料 ...",
+          "url": "https://www.asahi.com/and/pressrelease/16389512",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Mon, 23 Mar 2026 03:53:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "内閣府『地方創生SDGs 官民連携プラットフォーム』の対面型 ...",
+          "url": "https://mainichi.jp/articles/20260129/pr2/00m/020/842000c",
+          "source": "毎日新聞",
+          "pubDate": "Wed, 28 Jan 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/01/29/20260129pr200m020842000p/0.png?1"
         }
       ]
     },
@@ -1282,6 +1479,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00620260303"
         }
+      ],
+      "news": [
+        {
+          "title": "ボーナス0．05～0．10カ月増 国家公務員、月給上げは3％台―人事院",
+          "url": "https://www.jiji.com/jc/article?k=2025073100526&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 30 Jul 2025 17:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202507/20250731ds74_o.jpg"
+        },
+        {
+          "title": "物価・民間給与上昇に見劣り",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-08-29/2025082902_01_0.html",
+          "source": "日本共産党",
+          "pubDate": "Thu, 28 Aug 2025 17:31:00 GMT",
+          "image": "/akahata/web_img/akahata-kakusan.jpg"
+        },
+        {
+          "title": "人事院、4年連続の増額勧告へ 国家公務員給与、比較対象見直し",
+          "url": "https://www.kochinews.co.jp/article/detail/890291",
+          "source": "Kochi Shimbun",
+          "pubDate": "Wed, 23 Jul 2025 09:45:00 GMT",
+          "image": "https://images.www.kochinews.co.jp/media/article/890291/images/2025072301001465.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1438,6 +1658,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X00620260303"
+        }
+      ],
+      "news": [
+        {
+          "title": "経済拡大へ「積極財政が重要」 来年度予算案で公聴会―参院",
+          "url": "https://www.jiji.com/jc/article?k=2026032401074&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Tue, 24 Mar 2026 03:08:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260324at94S_o.jpg"
+        },
+        {
+          "title": "予算案の早期成立へ公聴会 鹿児島、岩手で異例の日曜開催―衆院",
+          "url": "https://www.jiji.com/jc/article?k=2026030800526&g=eco",
+          "source": "時事ドットコム",
+          "pubDate": "Sat, 07 Mar 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260308at93S_o.jpg"
+        },
+        {
+          "title": "「予算審議急ぐ高市政権の姿勢が表れ」…衆院予算委の地方公聴会 ...",
+          "url": "https://373news.com/news/local/photo/230464/",
+          "source": "南日本新聞",
+          "pubDate": "Sun, 08 Mar 2026 14:32:00 GMT"
         }
       ]
     },
