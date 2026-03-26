@@ -56,7 +56,7 @@ function topKeywords(thread: Thread, n: number): string[] {
 /** Lightweight thread summaries for sidebar panels (no speeches/context). */
 export type ThreadSummary = Pick<
   Thread,
-  "id" | "date" | "committee" | "house" | "topic" | "topicTag" | "topicColor" | "source" | "procedural"
+  "id" | "date" | "committee" | "house" | "topic" | "topicTag" | "topicColor" | "source" | "sourceLabel" | "procedural"
 > & {
   speechCount: number;
   memberIds: string[];
@@ -76,6 +76,7 @@ export function getThreadsSummary(): ThreadSummary[] {
       topicTag: t.topicTag,
       topicColor: t.topicColor,
       source: t.source,
+      sourceLabel: t.sourceLabel,
       procedural: t.procedural,
       speechCount: t.speeches.length,
       memberIds: [...new Set(t.speeches.map((s) => s.memberId))],

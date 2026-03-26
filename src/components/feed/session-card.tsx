@@ -14,9 +14,14 @@ export function SessionCard({ threads, session }: SessionCardProps) {
   const dates = threads.map((t) => t.date).sort();
   const latestDate = dates.length > 0 ? dates[dates.length - 1] : null;
 
-  // Source breakdown
+  // Source breakdown (use human-readable labels)
+  const SOURCE_LABELS: Record<string, string> = {
+    ndl: "国会会議録",
+    kantei: "首相記者会見",
+    council: "審議会",
+  };
   const sources = threads.reduce<Record<string, number>>((acc, t) => {
-    const label = t.source || "ndl";
+    const label = t.sourceLabel || SOURCE_LABELS[t.source || "ndl"] || t.source || "国会会議録";
     acc[label] = (acc[label] || 0) + 1;
     return acc;
   }, {});

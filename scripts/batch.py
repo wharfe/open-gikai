@@ -103,6 +103,12 @@ def update_public_status(
 # Phase 1: Submit grouping + outcome batch
 # ---------------------------------------------------------------------------
 
+def _safe_id(meeting_id: str) -> str:
+    """Convert meeting_id to batch-API-safe custom_id (ASCII, max 64 chars)."""
+    h = hashlib.sha256(meeting_id.encode("utf-8")).hexdigest()[:16]
+    return h
+
+
 def build_phase1_requests(
     meetings: List[dict],
     model: str,
@@ -125,7 +131,7 @@ def build_phase1_requests(
                 speeches=formatted,
             )
             requests.append({
-                "custom_id": f"group_{meeting_id}",
+                "custom_id": f"group_{_safe_id(meeting_id)}",
                 "params": {
                     "model": model,
                     "max_tokens": 8192,
@@ -155,7 +161,7 @@ def build_phase1_requests(
                     procedural_speeches="\n\n".join(procedural[-10:]),
                 )
                 requests.append({
-                    "custom_id": f"outcome_{meeting_id}",
+                    "custom_id": f"outcome_{_safe_id(meeting_id)}",
                     "params": {
                         "model": model,
                         "max_tokens": 1024,
@@ -200,7 +206,7 @@ def build_phase2_requests(
                 speeches=formatted,
             )
             requests.append({
-                "custom_id": f"summary_{meeting_id}_{i:03d}",
+                "custom_id": f"summary_{_safe_id(meeting_id)}_{i:03d}",
                 "params": {
                     "model": model,
                     "max_tokens": 8192,
@@ -323,7 +329,7 @@ def assemble_all(
         for i, thread_info in enumerate(thread_infos):
             thread_counter += 1
             thread_id = make_thread_id(date_str, meeting_id, thread_counter)
-            summary_key = f"summary_{meeting_id}_{i:03d}"
+            summary_key = f"summary_{_safe_id(meeting_id)}_{i:03d}"
             summary_text = summary_results.get(summary_key)
 
             if not summary_text:
@@ -438,6 +444,12 @@ def run(
     ]
     update_public_status(status_path, date_str, committee_names, "starting")
 
+    # Build hash→original meeting ID mapping
+    id_map = {}
+    for m in meetings:
+        mid = m.get("meetingId", "unknown")
+        id_map[_safe_id(mid)] = mid
+
     # --- Phase 1: Grouping + Outcome ---
     if state["phase"] in ("init", "phase1_submitted"):
         if state["phase"] == "init":
@@ -471,10 +483,12 @@ def run(
                 continue
 
             if cid.startswith("group_"):
-                meeting_id = cid[len("group_"):]
+                hashed = cid[len("group_"):]
+                meeting_id = id_map.get(hashed, hashed)
                 grouping_results[meeting_id] = parsed
             elif cid.startswith("outcome_"):
-                meeting_id = cid[len("outcome_"):]
+                hashed = cid[len("outcome_"):]
+                meeting_id = id_map.get(hashed, hashed)
                 outcome_results[meeting_id] = parsed
 
         # Also get pattern-matched outcomes for meetings without API outcome
