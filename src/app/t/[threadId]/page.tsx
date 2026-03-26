@@ -25,7 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .map((id) => members[id]?.name || "")
     .filter(Boolean);
 
-  const title = `${thread.topic} — ${thread.committee}`;
+  // Include top speaker names in title for SEO (politician name searches)
+  const topActors = actors.slice(0, 3).join("・");
+  const title = topActors
+    ? `${thread.topic}（${topActors}）— ${thread.committee}`
+    : `${thread.topic} — ${thread.committee}`;
   const description = `${thread.summary}（${actors.join("、")}）`;
 
   return {

@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = getMember(memberId);
   if (!member) return {};
   const desc = [member.party, member.role].filter(Boolean).join("・");
-  const title = member.name;
-  const description = `${member.name}（${desc}）の国会発言一覧。審議スレッドをまとめて閲覧できます。`;
+  const title = `${member.name}の発言一覧${desc ? `（${desc}）` : ""}`;
+  const description = `${member.name}の国会・審議会での発言をスレッド形式で閲覧。AI要約付きで審議の文脈がわかります。`;
   return {
     title,
     description,
