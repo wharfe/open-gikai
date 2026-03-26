@@ -621,6 +621,7 @@
       "commitments": [],
       "status": "ongoing"
     },
+    "procedural": true,
     "relatedThreads": [
       {
         "threadId": "t_20260219_48a04d_04",
@@ -629,8 +630,7 @@
         "committee": "議院運営委員会",
         "date": "2026.02.19"
       }
-    ],
-    "procedural": true
+    ]
   },
   {
     "id": "t_20260218_201dd7_07",
@@ -1218,6 +1218,7 @@
       "commitments": [],
       "status": "ongoing"
     },
+    "procedural": true,
     "relatedThreads": [
       {
         "threadId": "t_20260218_ed8c16_19",
@@ -1226,8 +1227,7 @@
         "committee": "議院運営委員会",
         "date": "2026.02.18"
       }
-    ],
-    "procedural": true
+    ]
   },
   {
     "id": "t_20260218_2bd6ea_13",
@@ -1535,15 +1535,6 @@
       "commitments": [],
       "status": "ongoing"
     },
-    "relatedThreads": [
-      {
-        "threadId": "t_20260220_359af9_03",
-        "relationship": "関連議論",
-        "topic": "北朝鮮拉致問題特別委員会の組織編成",
-        "committee": "北朝鮮による拉致問題等に関する特別委員会",
-        "date": "2026.02.20"
-      }
-    ],
     "procedural": true
   },
   {
@@ -2549,7 +2540,16 @@
       "position": "外国人との共生に総合的な法整備を",
       "counterPosition": "既存の制度運用の改善で対応可能"
     },
-    "impact": "外国人労働者の受け入れ拡大で、職場環境や地域社会に影響"
+    "impact": "外国人労働者の受け入れ拡大で、職場環境や地域社会に影響",
+    "relatedThreads": [
+      {
+        "threadId": "t_20250603_e14c73_04",
+        "relationship": "関連議論",
+        "topic": "地方創生3.0に向けた長期的課題と外国人政策",
+        "committee": "新しい地方経済・生活環境創生本部 有識者会議",
+        "date": "2025.06.03"
+      }
+    ]
   },
   {
     "id": "t_20260218_564428_27",

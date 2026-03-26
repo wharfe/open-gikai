@@ -233,6 +233,7 @@
       "commitments": [],
       "status": "ongoing"
     },
+    "procedural": true,
     "relatedThreads": [
       {
         "threadId": "t_20260220_a2c5de_07",
@@ -240,16 +241,8 @@
         "topic": "衆議院東日本大震災復興及び原子力問題調査特別委員会の設立",
         "committee": "東日本大震災復興及び原子力問題調査特別委員会",
         "date": "2026.02.20"
-      },
-      {
-        "threadId": "t_20260218_2bd6ea_16",
-        "relationship": "関連議論",
-        "topic": "常任委員・委員長選任",
-        "committee": "本会議",
-        "date": "2026.02.18"
       }
-    ],
-    "procedural": true
+    ]
   },
   {
     "id": "t_20260220_eb1f64_04",
@@ -430,22 +423,6 @@
       ],
       "status": "ongoing"
     },
-    "relatedThreads": [
-      {
-        "threadId": "t_20260218_b15e9c_04",
-        "relationship": "関連議論",
-        "topic": "消費者問題特別委員会の委員長選任手続",
-        "committee": "消費者問題に関する特別委員会",
-        "date": "2026.02.18"
-      },
-      {
-        "threadId": "t_20260218_2bd6ea_16",
-        "relationship": "関連議論",
-        "topic": "常任委員・委員長選任",
-        "committee": "本会議",
-        "date": "2026.02.18"
-      }
-    ],
     "procedural": true
   },
   {

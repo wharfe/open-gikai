@@ -50,6 +50,15 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20260226_31ca07_03",
+        "relationship": "関連議論",
+        "topic": "議院運営委員会における議事進行説明",
+        "committee": "議院運営委員会",
+        "date": "2026.02.26"
+      }
+    ]
   }
 ]

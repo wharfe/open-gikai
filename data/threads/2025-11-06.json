@@ -115,7 +115,16 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20241129_3bde83_01",
+        "relationship": "関連議論",
+        "topic": "新しい地方経済・生活環境創生会議の設置と運営体制整備",
+        "committee": "新しい地方経済・生活環境創生本部 有識者会議",
+        "date": "2024.11.29"
+      }
+    ]
   },
   {
     "id": "t_20251106_83fe41_02",
@@ -1196,15 +1205,6 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    },
-    "relatedThreads": [
-      {
-        "threadId": "t_20260218_2bd6ea_15",
-        "relationship": "関連議論",
-        "topic": "議院運営委員選任",
-        "committee": "本会議",
-        "date": "2026.02.18"
-      }
-    ]
+    }
   }
 ]

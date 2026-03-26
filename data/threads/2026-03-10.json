@@ -137,29 +137,6 @@
         "防災力強化総合交付金を新設する"
       ],
       "status": "ongoing"
-    },
-    "relatedThreads": [
-      {
-        "threadId": "t_20250314_454f0b_30",
-        "relationship": "関連議論",
-        "topic": "災害対策・防災庁設置に関する所信表明",
-        "committee": "災害対策特別委員会",
-        "date": "2025.03.14"
-      },
-      {
-        "threadId": "t_20250314_ed1ab8_60",
-        "relationship": "関連議論",
-        "topic": "災害時地下水利用ガイドラインと八潮市事故対応",
-        "committee": "国土交通委員会",
-        "date": "2025.03.14"
-      },
-      {
-        "threadId": "t_20250314_ed1ab8_64",
-        "relationship": "関連議論",
-        "topic": "能登半島地震復旧・復興の総合対策",
-        "committee": "国土交通委員会",
-        "date": "2025.03.14"
-      }
-    ]
+    }
   }
 ]

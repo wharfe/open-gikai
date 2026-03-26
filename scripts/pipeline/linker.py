@@ -14,13 +14,20 @@ KEYWORD_OVERLAP_THRESHOLD = 0.25
 # Minimum shared keywords count
 MIN_SHARED_KEYWORDS = 2
 
+# Procedural keywords that appear in most threads and carry no topical signal
+_PROCEDURAL_KEYWORDS = frozenset({
+    "議事進行", "質疑開始", "質疑終了", "質問者交代", "感謝",
+    "開会", "閉会", "散会", "休憩", "再開", "了承", "異議なし",
+    "出席", "定足数", "議事録", "委員長", "座長", "挨拶",
+})
+
 
 def _extract_keywords(thread: dict) -> Set[str]:
-    """Collect all keywords from a thread's speeches."""
+    """Collect substantive keywords from a thread's speeches."""
     kws = set()
     for s in thread.get("speeches", []):
         kws.update(s.get("keywords", []))
-    return kws
+    return kws - _PROCEDURAL_KEYWORDS
 
 
 def _extract_legislation_names(thread: dict) -> Set[str]:

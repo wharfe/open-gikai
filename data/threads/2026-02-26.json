@@ -223,13 +223,6 @@
     },
     "relatedThreads": [
       {
-        "threadId": "t_20260225_73abfd_02",
-        "relationship": "関連議論",
-        "topic": "国務大臣演説に対する質疑の運営",
-        "committee": "議院運営委員会",
-        "date": "2026.02.25"
-      },
-      {
         "threadId": "t_20260224_877426_01",
         "relationship": "関連議論",
         "topic": "国務大臣演説に対する質疑の実施順序",

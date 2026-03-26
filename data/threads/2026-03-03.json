@@ -197,6 +197,7 @@
       "commitments": [],
       "status": "ongoing"
     },
+    "procedural": true,
     "relatedThreads": [
       {
         "threadId": "t_20260303_1b69d5_01",
@@ -205,8 +206,7 @@
         "committee": "文部科学委員会",
         "date": "2026.03.03"
       }
-    ],
-    "procedural": true
+    ]
   },
   {
     "id": "t_20260303_17fcbc_03",
@@ -962,7 +962,33 @@
       ],
       "status": "ongoing"
     },
+    "debate": {
+      "position": "公務員の処遇改善で人材確保を",
+      "counterPosition": "行政効率化とデジタル化が先"
+    },
+    "impact": "公務員の処遇改善は行政サービスの質に関わる",
     "relatedThreads": [
+      {
+        "threadId": "t_20250125_a5cf7f_01",
+        "relationship": "関連議論",
+        "topic": "若者・女性に選ばれる地方づくり基本テーマ",
+        "committee": "新しい地方経済・生活環境創生本部 有識者会議",
+        "date": "2025.01.25"
+      },
+      {
+        "threadId": "t_20250125_a5cf7f_02",
+        "relationship": "関連議論",
+        "topic": "地方のジェンダーギャップ解消と女性活躍推進",
+        "committee": "新しい地方経済・生活環境創生本部 有識者会議",
+        "date": "2025.01.25"
+      },
+      {
+        "threadId": "t_20250125_a5cf7f_03",
+        "relationship": "関連議論",
+        "topic": "地方企業の人材確保と働き方改革",
+        "committee": "新しい地方経済・生活環境創生本部 有識者会議",
+        "date": "2025.01.25"
+      },
       {
         "threadId": "t_20260303_d537a4_08",
         "relationship": "関連議論",
@@ -983,20 +1009,8 @@
         "topic": "人事院の独立性と官民格差への対応",
         "committee": "議院運営委員会",
         "date": "2026.03.03"
-      },
-      {
-        "threadId": "t_20250314_3be0af_92",
-        "relationship": "関連議論",
-        "topic": "保育士の多様な働き方支援",
-        "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
-        "date": "2025.03.14"
       }
-    ],
-    "debate": {
-      "position": "公務員の処遇改善で人材確保を",
-      "counterPosition": "行政効率化とデジタル化が先"
-    },
-    "impact": "公務員の処遇改善は行政サービスの質に関わる"
+    ]
   },
   {
     "id": "t_20260303_d537a4_08",
@@ -1137,13 +1151,6 @@
         "topic": "国家公務員の人材確保と人事制度改革",
         "committee": "議院運営委員会",
         "date": "2026.03.03"
-      },
-      {
-        "threadId": "t_20250314_7d869c_158",
-        "relationship": "関連議論",
-        "topic": "裁判所デジタル化と業務効率化",
-        "committee": "法務委員会",
-        "date": "2025.03.14"
       }
     ]
   },
@@ -1629,6 +1636,10 @@
       "commitments": [],
       "status": "ongoing"
     },
+    "debate": {
+      "position": "人事院の独立性を堅持すべき",
+      "counterPosition": "官民格差の是正には柔軟な運用が必要"
+    },
     "relatedThreads": [
       {
         "threadId": "t_20260303_d537a4_07",
@@ -1637,11 +1648,7 @@
         "committee": "議院運営委員会",
         "date": "2026.03.03"
       }
-    ],
-    "debate": {
-      "position": "人事院の独立性を堅持すべき",
-      "counterPosition": "官民格差の是正には柔軟な運用が必要"
-    }
+    ]
   },
   {
     "id": "t_20260303_d537a4_11",
@@ -1742,6 +1749,15 @@
       "commitments": [],
       "status": "ongoing"
     },
-    "procedural": true
+    "procedural": true,
+    "relatedThreads": [
+      {
+        "threadId": "t_20260304_7c0a75_22",
+        "relationship": "関連議論",
+        "topic": "予算委員会地方公聴会の委員派遣承認",
+        "committee": "議院運営委員会",
+        "date": "2026.03.04"
+      }
+    ]
   }
 ]
