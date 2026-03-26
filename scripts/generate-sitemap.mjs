@@ -32,6 +32,32 @@ function collectMemberIds() {
   return Object.keys(members);
 }
 
+const COUNCIL_SLUG_MAP = {
+  "規制改革推進会議": "kisei",
+  "移住・二地域居住等促進専門委員会": "nichiiki",
+  "関係人口懇談会": "kankeijinkou",
+  "国土審議会推進部会": "suishin",
+  "地域生活圏専門委員会": "chiikiseikatsu",
+  "地方創生2.0有識者会議": "chihousousei",
+  "デジタル田園都市構想": "digital-denen",
+  "居住支援検討会": "kyojushien",
+  "審議会": "council-general",
+};
+
+function collectCouncilSlugs(threadsDir) {
+  const labels = new Set();
+  for (const file of readdirSync(threadsDir)) {
+    if (!file.endsWith(".json")) continue;
+    const threads = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
+    for (const t of threads) {
+      if (t.source === "council") {
+        labels.add(t.sourceLabel || t.committee);
+      }
+    }
+  }
+  return [...labels].map((l) => COUNCIL_SLUG_MAP[l] || l.replace(/[・\s]/g, "-")).filter(Boolean);
+}
+
 function buildSitemap() {
   const now = new Date().toISOString().split("T")[0];
   const threads = collectThreadIds();
@@ -64,6 +90,17 @@ function buildSitemap() {
   for (const id of members) {
     urls.push(
       entry({ loc: `/m/${id}`, changefreq: "weekly", priority: "0.6" })
+    );
+  }
+
+  // Council pages
+  const councilSlugs = collectCouncilSlugs(join(DATA_DIR, "threads"));
+  urls.push(
+    entry({ loc: "/council", lastmod: now, changefreq: "weekly", priority: "0.7" })
+  );
+  for (const slug of councilSlugs) {
+    urls.push(
+      entry({ loc: `/council/${slug}`, lastmod: now, changefreq: "weekly", priority: "0.7" })
     );
   }
 

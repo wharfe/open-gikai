@@ -99,6 +99,80 @@ export function getAllThreadIds(): string[] {
   return loadThreads().map((t) => t.id);
 }
 
+// --- Council data for /council pages ---
+
+export type CouncilMeeting = {
+  date: string;
+  threadCount: number;
+  speechCount: number;
+  topics: string[];
+};
+
+export type CouncilInfo = {
+  slug: string;
+  name: string;
+  meetings: CouncilMeeting[];
+  totalThreads: number;
+  totalSpeeches: number;
+};
+
+function councilSlug(name: string): string {
+  // Stable slug from Japanese council name
+  const map: Record<string, string> = {
+    "規制改革推進会議": "kisei",
+    "移住・二地域居住等促進専門委員会": "nichiiki",
+    "関係人口懇談会": "kankeijinkou",
+    "国土審議会推進部会": "suishin",
+    "地域生活圏専門委員会": "chiikiseikatsu",
+    "地方創生2.0有識者会議": "chihousousei",
+    "デジタル田園都市構想": "digital-denen",
+    "居住支援検討会": "kyojushien",
+    "審議会": "council-general",
+  };
+  return map[name] || name.replace(/[・\s]/g, "-");
+}
+
+export function getCouncils(): CouncilInfo[] {
+  const threads = loadThreads();
+  const byLabel: Record<string, Thread[]> = {};
+
+  for (const t of threads) {
+    if (t.source !== "council") continue;
+    const label = t.sourceLabel || t.committee;
+    if (!byLabel[label]) byLabel[label] = [];
+    byLabel[label].push(t);
+  }
+
+  return Object.entries(byLabel).map(([name, ts]) => {
+    const byDate: Record<string, Thread[]> = {};
+    for (const t of ts) {
+      if (!byDate[t.date]) byDate[t.date] = [];
+      byDate[t.date].push(t);
+    }
+
+    const meetings = Object.entries(byDate)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([date, dts]) => ({
+        date,
+        threadCount: dts.length,
+        speechCount: dts.reduce((s, t) => s + t.speeches.length, 0),
+        topics: dts.map((t) => t.topic),
+      }));
+
+    return {
+      slug: councilSlug(name),
+      name,
+      meetings,
+      totalThreads: ts.length,
+      totalSpeeches: ts.reduce((s, t) => s + t.speeches.length, 0),
+    };
+  }).sort((a, b) => b.totalThreads - a.totalThreads);
+}
+
+export function getCouncilSlugs(): string[] {
+  return getCouncils().map((c) => c.slug);
+}
+
 export function getAllMemberIds(): string[] {
   return Object.keys(loadMembers());
 }
