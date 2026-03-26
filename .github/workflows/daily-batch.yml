@@ -106,8 +106,9 @@ jobs:
         run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
 
       # ----- Post-processing -----
-      - name: Generate feeds and sitemap
+      - name: Validate and generate
         run: |
+          node scripts/validate-data.mjs --fix
           node scripts/generate-feeds.js
           node scripts/generate-sitemap.mjs
 

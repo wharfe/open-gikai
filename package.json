@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs && next build",
+    "validate": "node scripts/validate-data.mjs",
+    "build": "node scripts/validate-data.mjs --fix && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "playwright test"
