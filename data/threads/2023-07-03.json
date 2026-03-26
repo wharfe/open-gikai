@@ -8,8 +8,8 @@
     "topicTag": "意見交換",
     "topicColor": "#6b7280",
     "summary": "委員各位が居住支援における縦割り解消、大家支援、連携強化等の課題と改善案を提示",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅確保要配慮者の居住支援について、学識者、業界団体、自治体等の委員が現場の課題と解決策を議論。",
       "links": [
@@ -308,8 +308,8 @@
     "topicTag": "日程",
     "topicColor": "#6b7280",
     "summary": "検討会の今後5回の開催予定と中間とりまとめに向けたスケジュールを確認",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅確保要配慮者への居住支援機能等のあり方について、関係団体報告や論点整理を経て秋頃の中間とりまとめを目指す。",
       "links": [

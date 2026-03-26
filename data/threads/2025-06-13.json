@@ -8,8 +8,8 @@
     "topicTag": "地域生活圏",
     "topicColor": "#3b82f6",
     "summary": "人口減少下での生活サービス維持に向けた地域生活圏構想の報告書を審議し、民間活用や実装方法について議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "人口減少・高齢化が進む中で、生活に必要なサービスを持続的に提供するため、複数市町村による広域連携と民間活用を組み合わせた新たな地域運営の枠組み。",
       "links": [
@@ -405,8 +405,8 @@
     "topicTag": "広域計画",
     "topicColor": "#3b82f6",
     "summary": "全国8ブロックの広域地方計画策定進捗と、隣接圏域との連携や北海道・沖縄の特別法との整合性を議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "国土形成計画（全国計画）に基づき、全国を8つのブロックに分けて策定する地域別の国土計画。2年前の全国計画改定を受けて現在策定中。",
       "links": [
@@ -579,8 +579,8 @@
     "topicTag": "二地域居住",
     "topicColor": "#8b5cf6",
     "summary": "二地域居住促進法施行後の官民連携プラットフォーム運営状況と、税制・住民票等の制度課題を議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "都市部と地方部の2つの地域に生活拠点を持つライフスタイルを促進する法律。2024年11月施行。人口減少対策と地域活性化を目的とする。",
       "links": [
@@ -818,8 +818,8 @@
     "topicTag": "国土管理",
     "topicColor": "#22c55e",
     "summary": "人口減少下での適切な国土管理に向け、地域管理構想の策定支援と農地・山林等の荒廃防止策を議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "人口減少により管理が困難となる農地・森林等の国土を、地域が主体となって将来の土地利用方針を定め、適切に管理していく構想。令和3年に制度化。",
       "links": [

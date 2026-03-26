@@ -8,8 +8,8 @@
     "topicTag": "状況報告",
     "topicColor": "#6b7280",
     "summary": "前回委員会の意見をまとめ、地域生活圏形成に関する現状と課題を共有",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "国土審議会の専門委員会で議論している地域生活圏形成政策について、前回会議の意見整理と今後の方向性を確認する報告。",
       "links": [
@@ -54,8 +54,8 @@
     "topicTag": "事例発表",
     "topicColor": "#3b82f6",
     "summary": "民間企業による地域課題解決のためのリビングラボ活動を紹介",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "SUNDREDが全国各地で展開するリビングラボという手法で、地域住民と企業が協働して地域課題を解決する取組事例。",
       "links": [
@@ -100,8 +100,8 @@
     "topicTag": "事例発表",
     "topicColor": "#22c55e",
     "summary": "長野県伊那市の新技術活用による地域自立・課題解決の実践事例を紹介",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "人口減少・高齢化に直面する地方都市が、新技術を活用して医療・物流・エネルギーなどの課題解決に取り組む実例。",
       "links": [
@@ -197,8 +197,8 @@
     "topicTag": "質疑応答",
     "topicColor": "#6b7280",
     "summary": "委員からの質問と臨時委員による回答で事例の詳細や課題を深掘り",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "SUNDREDと伊那市の取組発表を受けて、委員が資金調達・官民連携・人材確保などの具体的な実現手法について質疑。",
       "links": [
@@ -422,8 +422,8 @@
     "topicTag": "論点整理",
     "topicColor": "#6b7280",
     "summary": "次回委員会に向けた論点整理の検討事項と今後のスケジュールを確認",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "委員会として3月19日に行う論点整理に向けて、ビジョン・連携・制度の3つの柱で検討すべき事項を整理。",
       "links": [
@@ -470,8 +470,8 @@
     "topicTag": "政策討議",
     "topicColor": "#6b7280",
     "summary": "事業枠組み・人材育成・資金調達・制度設計など幅広い政策課題を議論",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "地域生活圏形成を実現するための具体的な仕組みづくりについて、委員が様々な角度から課題と解決策を討議。",
       "links": [

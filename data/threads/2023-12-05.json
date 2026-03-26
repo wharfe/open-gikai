@@ -8,8 +8,8 @@
     "topicTag": "取まとめ",
     "topicColor": "#6b7280",
     "summary": "国交省・厚労省・法務省が連携した住宅確保要配慮者支援の中間取りまとめ案について事務局が説明",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅確保要配慮者（高齢者、障害者、外国人等）への居住支援のあり方を検討する省庁横断的な検討会の中間報告案。",
       "links": [
@@ -128,8 +128,8 @@
     "topicTag": "省庁連携",
     "topicColor": "#6366f1",
     "summary": "法務省更生部局と国交省・厚労省との連携について「等」の表記に含まれるかを確認",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "刑務所出所者等への居住支援において、法務省保護局と住宅・福祉部局の連携体制をどう位置づけるかの議論。",
       "links": [
@@ -337,8 +337,8 @@
     "topicTag": "高齢者",
     "topicColor": "#8b5cf6",
     "summary": "空き家・空室対策として高齢者の入居促進メリットを明記することを提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "賃貸住宅市場で高齢者が敬遠される現状に対し、高齢者が実際には安定した賃借人となり得ることの認識向上を図る議論。",
       "links": [
@@ -498,8 +498,8 @@
     "topicTag": "死後事務",
     "topicColor": "#8b5cf6",
     "summary": "賃貸人の高齢者入居拒否理由を「死亡事故」から「死後事務対応困難」へ表現修正を提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "高齢者の賃貸住宅入居が困難な理由として、大家側の死後の手続き対応への不安が大きな要因となっている現状の議論。",
       "links": [
@@ -580,8 +580,8 @@
     "topicTag": "住福連携",
     "topicColor": "#8b5cf6",
     "summary": "住宅部局と福祉部局の連携強化、社会保障制度との関連性明記など7点の修文提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅政策と社会保障政策の連携を深め、全世代型社会保障構築会議等の上位政策との整合性を図る取り組み。",
       "links": [
@@ -662,8 +662,8 @@
     "topicTag": "支援体制",
     "topicColor": "#8b5cf6",
     "summary": "居住支援協議会・法人の設置目標設定、赤字法人への支援強化、行政関与の明確化を要求",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅セーフティネット法に基づく居住支援協議会と居住支援法人の運営体制強化と持続可能性確保の議論。",
       "links": [
@@ -862,8 +862,8 @@
     "topicTag": "定期借家",
     "topicColor": "#3b82f6",
     "summary": "賃貸人が住宅提供しやすい環境整備として定期借家契約の明記を提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "外国人等への賃貸において実績のある定期借家契約を、住宅確保要配慮者全般への支援策として活用する提案。",
       "links": [
@@ -965,8 +965,8 @@
     "topicTag": "自治体",
     "topicColor": "#f59e0b",
     "summary": "市町村関与、死後事務の本人意思尊重、サポート付住宅と既存制度との関係整理の必要性を指摘",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "国の検討会での議論を受けて、実際の施策実施を担う都道府県・市町村レベルでの具体的な取り組み体制の構築。",
       "links": [
@@ -1028,8 +1028,8 @@
     "topicTag": "相談体制",
     "topicColor": "#f97316",
     "summary": "賃貸人が相談できる仕組み明確化と省庁・部署間連携の制度的枠組み構築を提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅確保要配慮者の受け入れに不安を抱える大家への支援体制と、関係省庁・部署の効果的な連携体制の整備。",
       "links": [
@@ -1091,8 +1091,8 @@
     "topicTag": "契約制度",
     "topicColor": "#6366f1",
     "summary": "残置物処理での本人意思重視、終身建物賃貸借の要件緩和を求める",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "高齢者の賃貸住宅利用促進のため、死後の残置物処理や終身契約に関する法的・実務的な障壁の軽減を図る議論。",
       "links": [
@@ -1222,8 +1222,8 @@
     "topicTag": "不動産業",
     "topicColor": "#3b82f6",
     "summary": "居住支援における不動産業者の明記と残置物処理モデル条項の使いやすさ改善を要望",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "賃貸住宅管理の実務を担う不動産業者の居住支援における役割の重要性と、契約条項の実用性向上。",
       "links": [
@@ -1301,8 +1301,8 @@
     "topicTag": "政策統合",
     "topicColor": "#8b5cf6",
     "summary": "上位政策との関係性明記と行政・居住支援法人の役割主語の明確化を提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "政府の全世代型社会保障構築会議等の包括的政策との整合性確保と、各支援主体の責任・役割分担の明確化。",
       "links": [
@@ -1460,8 +1460,8 @@
     "topicTag": "制度整理",
     "topicColor": "#6b7280",
     "summary": "サポート付住宅と既存制度の関係、家賃債務保証会社のモデル契約案作成を提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "新たに提案されるサポート付住宅と既存の住宅セーフティネット制度との関係整理、民間保証会社の活用促進。",
       "links": [
@@ -1589,8 +1589,8 @@
     "topicTag": "継続検討",
     "topicColor": "#6b7280",
     "summary": "今後の検討主体・時期明確化、導入部の充実、財政措置の検討を要望",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "中間取りまとめ後の具体的な制度設計・実施に向けた継続的な検討体制の構築と必要な予算措置の検討。",
       "links": [
@@ -1697,8 +1697,8 @@
     "topicTag": "基本計画",
     "topicColor": "#f97316",
     "summary": "2025年住生活基本計画改定での政策統合検討と貧困ビジネス表記の修正提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "5年ごとに改定される住生活基本計画における住宅政策の全体的な方向性と、不適切な住宅提供業者への対策。",
       "links": [
@@ -1845,8 +1845,8 @@
     "topicTag": "伴走支援",
     "topicColor": "#8b5cf6",
     "summary": "通勤寮等の伴走型支援モデル検討と緊急連絡先の適切な取扱いルール策定を提案",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "入居後の継続的な見守り・支援体制の構築と、身寄りのない入居者への配慮を含む連絡先確保の仕組み。",
       "links": [
@@ -1891,8 +1891,8 @@
     "topicTag": "更生保護",
     "topicColor": "#ef4444",
     "summary": "更生保護施設から民間住宅への移行支援の困難性と今後の連携強化への期待を表明",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "刑務所出所者等の社会復帰支援において、更生保護施設から一般住宅への円滑な移行を支援する仕組みの構築。",
       "links": [
@@ -1958,8 +1958,8 @@
     "topicTag": "手続き",
     "topicColor": "#6b7280",
     "summary": "中間取りまとめ案のパブリックコメント実施と修正後の最終決定プロセスを確認",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "検討会での議論を経た中間取りまとめ案について、一般からの意見募集と最終的な報告書確定までの手続き。",
       "links": [
@@ -2033,8 +2033,8 @@
     "topicTag": "現場意見",
     "topicColor": "#6b7280",
     "summary": "住み替え環境整備の重要性、寮付就労の課題、検証体制の必要性について現場目線での意見",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "賃貸住宅管理業者や生活困窮者支援の現場から見た住宅確保要配慮者支援の実態と今後の改善点。",
       "links": [

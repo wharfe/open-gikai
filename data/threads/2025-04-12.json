@@ -8,8 +8,8 @@
     "topicTag": "地域紹介",
     "topicColor": "#3b82f6",
     "summary": "北九州市の基本計画、COMPASS小倉の支援体制、産業特性など地域のスタートアップエコシステム構築への取り組みを紹介",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "北九州市が進める地方創生戦略の一環として、スタートアップ支援を通じた新しい産業創出と地域経済活性化の取り組み。",
       "links": [
@@ -97,8 +97,8 @@
     "topicTag": "産学連携",
     "topicColor": "#f59e0b",
     "summary": "九州工業大学のディープテック人材育成、博士・ポスドク活用、大学発スタートアップ創出の取り組みを説明",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "理工系大学として技術シーズを活用したディープテックスタートアップの創出と、博士人材の産業界での活躍促進を目指す教育改革。",
       "links": [
@@ -147,8 +147,8 @@
     "topicTag": "課題分析",
     "topicColor": "#ef4444",
     "summary": "ハインツテックの事例を通じて、地方でのスタートアップ運営における資金調達、人材確保、文化的障壁の課題を提起",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方都市でスタートアップを運営する際の実際の困難と、特に女性起業家が直面する家族や地域社会からの理解不足の問題。",
       "links": [
@@ -193,8 +193,8 @@
     "topicTag": "投資育成",
     "topicColor": "#3b82f6",
     "summary": "9Capitalの投資戦略とアクセラレーションプログラム、地方と都市部を結ぶエコシステム構築の取り組みを紹介",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "福岡を拠点とするベンチャーキャピタルによる、九州・瀬戸内エリアでの起業家支援と投資を通じた地域経済活性化の戦略。",
       "links": [
@@ -239,8 +239,8 @@
     "topicTag": "国際化",
     "topicColor": "#06b6d4",
     "summary": "外国人起業家の目線から見た福岡の魅力と、国際的なスタートアップエコシステム構築に向けた課題と提案",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "カナダ出身起業家による福岡での30年の事業経験をもとに、外国人が日本で起業・就労する際の制度的課題と改善提案。",
       "links": [
@@ -285,8 +285,8 @@
     "topicTag": "女性起業",
     "topicColor": "#8b5cf6",
     "summary": "女性の転出超過問題と起業環境、家族・地域社会の理解不足が女性起業家に与える影響について議論",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "北九州市で20-25歳女性の転出が続く中、女性起業家が直面する文化的障壁や家族の反対といった社会的課題への対応策。",
       "links": [
@@ -416,8 +416,8 @@
     "topicTag": "広域連携",
     "topicColor": "#3b82f6",
     "summary": "九州各県の首長連携や瀬戸内海エリアでの広域的なスタートアップ支援体制構築の重要性を議論",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "単一自治体を超えた広域連携により、スタートアップに必要な多様な機能や人材を相互補完する地域経済圏の形成戦略。",
       "links": [
@@ -540,8 +540,8 @@
     "topicTag": "人材活用",
     "topicColor": "#f59e0b",
     "summary": "大学の博士・ポスドク人材をディープテックスタートアップに活用する仕組みと、学生の安定志向への対応策を検討",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "高度な技術を持つ博士・ポスドク人材の産業界での活用促進と、日本の学生に多い安定志向からの意識転換による起業促進策。",
       "links": [
@@ -637,8 +637,8 @@
     "topicTag": "ハラスメント",
     "topicColor": "#ef4444",
     "summary": "資金調達や支援過程で発生するハラスメント問題への対応として、透明性確保と相談体制整備の必要性を議論",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "スタートアップ支援において支援者と起業家間の力関係格差を背景とするハラスメント問題と、その防止に向けた制度整備。",
       "links": [
@@ -709,8 +709,8 @@
     "topicTag": "国際人材",
     "topicColor": "#06b6d4",
     "summary": "海外学生や日本人留学生の受け入れ促進に向けた、有給長期インターン制度など受け入れ体制の整備課題を検討",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "グローバル人材の獲得競争が激化する中、海外の優秀な学生や研究者を日本のスタートアップエコシステムに取り込む制度設計。",
       "links": [

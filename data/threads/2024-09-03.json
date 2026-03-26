@@ -8,8 +8,8 @@
     "topicTag": "地域生活",
     "topicColor": "#6b7280",
     "summary": "人口減少下で持続可能な地域運営を図る地域生活圏専門委員会の設置について議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "国土形成計画に基づき、概ね10万人規模の地域生活圏で行政サービスや生活機能を維持する新たな取り組み。2024年10月から専門委員会を設置して具体的検討を開始。",
       "links": [
@@ -504,8 +504,8 @@
     "topicTag": "二地域居住",
     "topicColor": "#6b7280",
     "summary": "2024年11月施行予定の二地域居住促進法について、制度の概要と今後の取り組みを説明",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "都市と地方の二地域で生活する人を支援する制度を創設した法律。広域的地域活性化基盤整備法の改正により2024年5月に成立、11月施行予定。",
       "links": [
@@ -608,8 +608,8 @@
     "topicTag": "リニア",
     "topicColor": "#3b82f6",
     "summary": "リニア新幹線中間駅を核とした日本中央回廊構想の地域活性化について検討状況を報告",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "リニア中央新幹線の開業を見据え、中間駅周辺の地域活性化と経済圏域形成を図る国土形成計画の重点施策。関係省庁で検討中。",
       "links": [
@@ -707,8 +707,8 @@
     "topicTag": "広域計画",
     "topicColor": "#6b7280",
     "summary": "全国8ブロックの広域地方計画策定状況と北海道総合開発計画の特色について報告",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "国土形成計画の下位計画として全国を8ブロックに分けて策定する地方計画。北海道は別法に基づく総合開発計画として先行して策定済み。",
       "links": [
@@ -928,8 +928,8 @@
     "topicTag": "インフラ",
     "topicColor": "#22c55e",
     "summary": "半導体工場やデータセンター立地に伴う電力・水供給問題と地域への影響を議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "北海道等での大規模半導体工場やデータセンター建設に伴い、電力供給体制の見直しや水利権調整などのインフラ課題が浮上している状況。",
       "links": [

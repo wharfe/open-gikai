@@ -22,7 +22,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%A3%AE%E6%9C%AC%E7%9C%9F%E6%B2%BB+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "hayashiyoshimasa": {
     "id": "hayashiyoshimasa",
@@ -39,7 +42,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E6%9E%97%E8%8A%B3%E6%AD%A3"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "ishiimitsuko": {
     "id": "ishiimitsuko",
@@ -64,7 +70,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%9F%B3%E4%BA%95%E8%8B%97%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "makinotakao": {
     "id": "makinotakao",
@@ -89,7 +98,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%89%A7%E9%87%8E%E3%81%9F%E3%81%8B%E3%81%8A+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "okushitatakemitsu": {
     "id": "okushitatakemitsu",
@@ -114,7 +126,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%A5%A5%E4%B8%8B%E5%89%9B%E5%85%89+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nishiokahideko": {
     "id": "nishiokahideko",
@@ -139,7 +154,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E8%A5%BF%E5%B2%A1%E7%A7%80%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "tsushimajun": {
     "id": "tsushimajun",
@@ -164,7 +182,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%B4%A5%E5%B3%B6%E6%B7%B3+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "furukawanaoki": {
     "id": "furukawanaoki",
@@ -189,7 +210,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%8F%A4%E5%B7%9D%E7%9B%B4%E5%AD%A3+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c755a59b": {
     "id": "m_c755a59b",
@@ -206,7 +230,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E7%AF%89%E5%B1%B1%E4%BF%A1%E5%BD%A6"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_e596e3eb": {
     "id": "m_e596e3eb",
@@ -223,7 +250,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E6%96%87%E9%9D%96"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "katayamasatsuki": {
     "id": "katayamasatsuki",
@@ -248,7 +278,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%89%87%E5%B1%B1%E3%81%95%E3%81%A4%E3%81%8D+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "matsumotoyouhei": {
     "id": "matsumotoyouhei",
@@ -273,7 +306,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%9D%BE%E6%9C%AC%E6%B4%8B%E5%B9%B3+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nakamurahiroyuki": {
     "id": "nakamurahiroyuki",
@@ -298,7 +334,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9D%91%E8%A3%95%E4%B9%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kobayashishigeki": {
     "id": "kobayashishigeki",
@@ -323,7 +362,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E8%8C%82%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "shimizumasato": {
     "id": "shimizumasato",
@@ -348,7 +390,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%B8%85%E6%B0%B4%E7%9C%9F%E4%BA%BA+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "fukudakaoru": {
     "id": "fukudakaoru",
@@ -373,7 +418,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%A6%8F%E7%94%B0%E3%81%8B%E3%81%8A%E3%82%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "horiuchinoriko": {
     "id": "horiuchinoriko",
@@ -398,7 +446,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%A0%80%E5%86%85%E8%A9%94%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "takahashikatsunori": {
     "id": "takahashikatsunori",
@@ -423,7 +474,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E9%AB%98%E6%A9%8B%E5%85%8B%E6%B3%95+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nakanohideyuki": {
     "id": "nakanohideyuki",
@@ -448,7 +502,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%B8%AD%E9%87%8E%E8%8B%B1%E5%B9%B8+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kajiharadaisuke": {
     "id": "kajiharadaisuke",
@@ -473,7 +530,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%A2%B6%E5%8E%9F%E5%A4%A7%E4%BB%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "mukouyamajun": {
     "id": "mukouyamajun",
@@ -498,7 +558,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%90%91%E5%B1%B1%E6%B7%B3+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "yamaguchishunichi": {
     "id": "yamaguchishunichi",
@@ -523,7 +586,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E4%BF%8A%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_158186af": {
     "id": "m_158186af",
@@ -540,7 +606,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E8%8F%85%E5%8E%9F%E6%99%B6%E5%AD%90"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nakasoneyasutaka": {
     "id": "nakasoneyasutaka",
@@ -565,7 +634,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%B8%AD%E6%9B%BD%E6%A0%B9%E5%BA%B7%E9%9A%86+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nakagawahiromasa": {
     "id": "nakagawahiromasa",
@@ -590,7 +662,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E5%AE%8F%E6%98%8C+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "ishikawamasaru": {
     "id": "ishikawamasaru",
@@ -615,7 +690,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%9F%B3%E5%B7%9D%E5%8B%9D+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "mineshimayuuya": {
     "id": "mineshimayuuya",
@@ -640,7 +718,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B3%B0%E5%B3%B6%E4%BE%91%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "muraihideki": {
     "id": "muraihideki",
@@ -665,7 +746,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%9D%91%E4%BA%95%E8%8B%B1%E6%A8%B9+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nakagawayasuhiro": {
     "id": "nakagawayasuhiro",
@@ -690,7 +774,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E5%BA%B7%E6%B4%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nogamikoutarou": {
     "id": "nogamikoutarou",
@@ -715,7 +802,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E9%87%8E%E4%B8%8A%E6%B5%A9%E5%A4%AA%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_aad738ce": {
     "id": "m_aad738ce",
@@ -732,7 +822,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E4%BA%95%E5%A4%9A%E5%B8%8C%E5%AD%90"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_235835e9": {
     "id": "m_235835e9",
@@ -749,7 +842,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E9%87%8E%E9%A6%A8%E5%8D%97%E5%AD%90"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_2079857e": {
     "id": "m_2079857e",
@@ -766,7 +862,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E7%94%B0%E6%98%8C%E5%BC%98"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "hoshihokuto": {
     "id": "hoshihokuto",
@@ -791,7 +890,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%98%9F%E5%8C%97%E6%96%97+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kojimatomoko": {
     "id": "kojimatomoko",
@@ -816,7 +918,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B3%B6%E3%81%A8%E3%82%82%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "mizunokouichi": {
     "id": "mizunokouichi",
@@ -841,7 +946,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%B0%B4%E9%87%8E%E5%AD%9D%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kawamurayuudai": {
     "id": "kawamurayuudai",
@@ -866,7 +974,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B7%9D%E6%9D%91%E9%9B%84%E5%A4%A7+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "uenohotaru": {
     "id": "uenohotaru",
@@ -891,7 +1002,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%B8%8A%E9%87%8E%E3%81%BB%E3%81%9F%E3%82%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "miyadechisato": {
     "id": "miyadechisato",
@@ -916,7 +1030,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%AE%AE%E5%87%BA%E5%8D%83%E6%85%A7+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "shirakawayouko": {
     "id": "shirakawayouko",
@@ -941,7 +1058,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%99%BD%E5%B7%9D%E5%AE%B9%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "otsujitomomi": {
     "id": "otsujitomomi",
@@ -966,7 +1086,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B0%BE%E8%BE%BB%E6%9C%8B%E5%AE%9F+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "yamamotosachiko": {
     "id": "yamamotosachiko",
@@ -991,7 +1114,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%B1%B1%E6%9C%AC%E4%BD%90%E7%9F%A5%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kagoshimaakihiro": {
     "id": "kagoshimaakihiro",
@@ -1016,7 +1142,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E3%81%8B%E3%81%94%E3%81%97%E3%81%BE%E5%BD%B0%E5%AE%8F+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "suzukimuneo": {
     "id": "suzukimuneo",
@@ -1041,7 +1170,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E5%AE%97%E7%94%B7+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8135583f": {
     "id": "m_8135583f",
@@ -1058,7 +1190,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E4%BF%9D%E8%AC%99"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_cc1e341d": {
     "id": "m_cc1e341d",
@@ -1075,7 +1210,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E9%96%93%E9%99%BD%E5%AD%90"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_774693d1": {
     "id": "m_774693d1",
@@ -1092,7 +1230,10 @@
         "label": "Wikipedia",
         "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E5%9D%87"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "shiomuraayaka": {
     "id": "shiomuraayaka",
@@ -1117,7 +1258,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%A1%A9%E6%9D%91%E3%81%82%E3%82%84%E3%81%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "haradahidekazu": {
     "id": "haradahidekazu",
@@ -1142,7 +1286,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%8E%9F%E7%94%B0%E7%A7%80%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kubotatetsuya": {
     "id": "kubotatetsuya",
@@ -1167,7 +1314,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%AA%AA%E7%94%B0%E5%93%B2%E4%B9%9F+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "sekihei": {
     "id": "sekihei",
@@ -1192,7 +1342,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%9F%B3%E5%B9%B3+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "sugimotojunko": {
     "id": "sugimotojunko",
@@ -1217,7 +1370,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E6%9D%89%E6%9C%AC%E7%B4%94%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "isezakikenji": {
     "id": "isezakikenji",
@@ -1242,7 +1398,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E4%BC%8A%E5%8B%A2%E5%B4%8E%E8%B3%A2%E6%B2%BB+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "takarasachika": {
     "id": "takarasachika",
@@ -1267,7 +1426,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E9%AB%98%E8%89%AF%E6%B2%99%E5%93%89+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "niwatayukie": {
     "id": "niwatayukie",
@@ -1292,7 +1454,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E5%BA%AD%E7%94%B0%E5%B9%B8%E6%81%B5+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "akamajirou": {
     "id": "akamajirou",
@@ -1317,7 +1482,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E3%81%82%E3%81%8B%E3%81%BE%E4%BA%8C%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "setotakakazu": {
     "id": "setotakakazu",
@@ -1342,7 +1510,10 @@
         "label": "X (Twitter) 検索",
         "url": "https://www.google.com/search?q=%E7%80%AC%E6%88%B8%E9%9A%86%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
       }
-    ]
+    ],
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_5474c5dc": {
     "id": "m_5474c5dc",
@@ -1353,7 +1524,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_6258d2aa": {
     "id": "m_6258d2aa",
@@ -1364,7 +1538,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "pm"
+    "rank": "pm",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "fukuokatakamaro": {
     "id": "fukuokatakamaro",
@@ -1375,7 +1552,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "sekiguchimasakazu": {
     "id": "sekiguchimasakazu",
@@ -1386,7 +1566,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "rasaruishii": {
     "id": "rasaruishii",
@@ -1397,7 +1580,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "matsuzawashigefumi": {
     "id": "matsuzawashigefumi",
@@ -1408,7 +1594,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "aokikazuhiko": {
     "id": "aokikazuhiko",
@@ -1419,7 +1608,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "morieisuke": {
     "id": "morieisuke",
@@ -1430,7 +1622,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "ishiikeiichi": {
     "id": "ishiikeiichi",
@@ -1441,7 +1636,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "moriyamahiroshi": {
     "id": "moriyamahiroshi",
@@ -1452,7 +1650,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "koterahiroo": {
     "id": "koterahiroo",
@@ -1463,7 +1664,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "hamadayasukazu": {
     "id": "hamadayasukazu",
@@ -1474,7 +1678,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "yokosawatakanori": {
     "id": "yokosawatakanori",
@@ -1485,7 +1692,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d9d99ec1": {
     "id": "m_d9d99ec1",
@@ -1496,7 +1706,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nagashimaakihisa": {
     "id": "nagashimaakihisa",
@@ -1507,7 +1720,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "fukasakuhesusu": {
     "id": "fukasakuhesusu",
@@ -1518,7 +1734,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "hamachimasakazu": {
     "id": "hamachimasakazu",
@@ -1529,7 +1748,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "funadahajime": {
     "id": "funadahajime",
@@ -1540,7 +1762,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kunishigetooru": {
     "id": "kunishigetooru",
@@ -1551,7 +1776,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "hirasawakatsuei": {
     "id": "hirasawakatsuei",
@@ -1562,7 +1790,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "furuyakeiji": {
     "id": "furuyakeiji",
@@ -1573,7 +1804,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "nishimekousaburou": {
     "id": "nishimekousaburou",
@@ -1584,7 +1818,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "kanekoemi": {
     "id": "kanekoemi",
@@ -1595,7 +1832,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "shimajiriaiko": {
     "id": "shimajiriaiko",
@@ -1606,7 +1846,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "sekiyoshihiro": {
     "id": "sekiyoshihiro",
@@ -1617,7 +1860,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "takaichisanae": {
     "id": "takaichisanae",
@@ -1628,7 +1874,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "pm"
+    "rank": "pm",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_404d7c02": {
     "id": "m_404d7c02",
@@ -1639,7 +1888,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_09a841c3": {
     "id": "m_09a841c3",
@@ -1650,7 +1902,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_a53637f1": {
     "id": "m_a53637f1",
@@ -1661,7 +1916,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8170e15f": {
     "id": "m_8170e15f",
@@ -1672,7 +1930,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_fd697860": {
     "id": "m_fd697860",
@@ -1683,7 +1944,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3ffd2002": {
     "id": "m_3ffd2002",
@@ -1694,7 +1958,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_61a5f962": {
     "id": "m_61a5f962",
@@ -1705,7 +1972,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_fe6ad33c": {
     "id": "m_fe6ad33c",
@@ -1716,7 +1986,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_885455f4": {
     "id": "m_885455f4",
@@ -1727,7 +2000,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b7fc4b45": {
     "id": "m_b7fc4b45",
@@ -1738,7 +2014,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_9230a84f": {
     "id": "m_9230a84f",
@@ -1749,7 +2028,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_96b705cb": {
     "id": "m_96b705cb",
@@ -1760,7 +2042,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_2527ecf9": {
     "id": "m_2527ecf9",
@@ -1771,7 +2056,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_777be3bd": {
     "id": "m_777be3bd",
@@ -1782,7 +2070,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_63134bb0": {
     "id": "m_63134bb0",
@@ -1793,7 +2084,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b0533ae2": {
     "id": "m_b0533ae2",
@@ -1804,7 +2098,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "pm"
+    "rank": "pm",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3be05053": {
     "id": "m_3be05053",
@@ -1815,7 +2112,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_6e74f40a": {
     "id": "m_6e74f40a",
@@ -1826,7 +2126,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_6394494e": {
     "id": "m_6394494e",
@@ -1837,7 +2140,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_04bc3297": {
     "id": "m_04bc3297",
@@ -1848,7 +2154,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_52c1a8d5": {
     "id": "m_52c1a8d5",
@@ -1859,7 +2168,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_259596a8": {
     "id": "m_259596a8",
@@ -1870,7 +2182,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3041bd67": {
     "id": "m_3041bd67",
@@ -1881,7 +2196,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_0cec62f6": {
     "id": "m_0cec62f6",
@@ -1892,7 +2210,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b95a085c": {
     "id": "m_b95a085c",
@@ -1903,7 +2224,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_f161184d": {
     "id": "m_f161184d",
@@ -1914,7 +2238,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c1cc44c0": {
     "id": "m_c1cc44c0",
@@ -1925,7 +2252,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_262e437e": {
     "id": "m_262e437e",
@@ -1936,7 +2266,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b7e9fedd": {
     "id": "m_b7e9fedd",
@@ -1947,7 +2280,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_48c6c47b": {
     "id": "m_48c6c47b",
@@ -1958,7 +2294,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c7608ee3": {
     "id": "m_c7608ee3",
@@ -1969,7 +2308,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_be9231f9": {
     "id": "m_be9231f9",
@@ -1980,7 +2322,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_f55a2a35": {
     "id": "m_f55a2a35",
@@ -1991,7 +2336,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_1f472f02": {
     "id": "m_1f472f02",
@@ -2002,7 +2350,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_1e8efd7c": {
     "id": "m_1e8efd7c",
@@ -2013,7 +2364,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_75c4bd28": {
     "id": "m_75c4bd28",
@@ -2024,7 +2378,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b214606e": {
     "id": "m_b214606e",
@@ -2035,7 +2392,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_87fbfe41": {
     "id": "m_87fbfe41",
@@ -2046,7 +2406,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_5c7f03b1": {
     "id": "m_5c7f03b1",
@@ -2057,7 +2420,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_6c332a36": {
     "id": "m_6c332a36",
@@ -2068,7 +2434,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d039e7b9": {
     "id": "m_d039e7b9",
@@ -2079,7 +2448,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_f77d7d6f": {
     "id": "m_f77d7d6f",
@@ -2090,7 +2462,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_4e478ca2": {
     "id": "m_4e478ca2",
@@ -2101,7 +2476,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_614788c9": {
     "id": "m_614788c9",
@@ -2112,7 +2490,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_03876ed8": {
     "id": "m_03876ed8",
@@ -2123,7 +2504,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_485154a2": {
     "id": "m_485154a2",
@@ -2134,7 +2518,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_502a93b6": {
     "id": "m_502a93b6",
@@ -2145,7 +2532,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_ab15a338": {
     "id": "m_ab15a338",
@@ -2156,7 +2546,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_f2754dfb": {
     "id": "m_f2754dfb",
@@ -2167,7 +2560,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_e7dd330d": {
     "id": "m_e7dd330d",
@@ -2178,7 +2574,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_75eac270": {
     "id": "m_75eac270",
@@ -2189,7 +2588,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_935432d9": {
     "id": "m_935432d9",
@@ -2200,7 +2602,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_83911621": {
     "id": "m_83911621",
@@ -2211,7 +2616,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3b2bda5e": {
     "id": "m_3b2bda5e",
@@ -2222,7 +2630,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3abaf755": {
     "id": "m_3abaf755",
@@ -2233,7 +2644,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_fb6f8812": {
     "id": "m_fb6f8812",
@@ -2244,7 +2658,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_2e18202a": {
     "id": "m_2e18202a",
@@ -2255,7 +2672,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3236d3bc": {
     "id": "m_3236d3bc",
@@ -2266,7 +2686,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3ec0d40d": {
     "id": "m_3ec0d40d",
@@ -2277,7 +2700,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_dd0583c3": {
     "id": "m_dd0583c3",
@@ -2288,7 +2714,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d74b3800": {
     "id": "m_d74b3800",
@@ -2299,7 +2728,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_09a5ccf7": {
     "id": "m_09a5ccf7",
@@ -2310,7 +2742,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d25cf113": {
     "id": "m_d25cf113",
@@ -2321,7 +2756,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_a660a2e9": {
     "id": "m_a660a2e9",
@@ -2332,7 +2770,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_69452aee": {
     "id": "m_69452aee",
@@ -2343,7 +2784,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_fc363976": {
     "id": "m_fc363976",
@@ -2354,7 +2798,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_777a76b4": {
     "id": "m_777a76b4",
@@ -2365,7 +2812,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_1806496b": {
     "id": "m_1806496b",
@@ -2376,7 +2826,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_13976062": {
     "id": "m_13976062",
@@ -2387,7 +2840,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_45d4e168": {
     "id": "m_45d4e168",
@@ -2398,7 +2854,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b9b7d8e4": {
     "id": "m_b9b7d8e4",
@@ -2409,7 +2868,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_996050ad": {
     "id": "m_996050ad",
@@ -2420,7 +2882,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_bd661a81": {
     "id": "m_bd661a81",
@@ -2431,7 +2896,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_9c70271c": {
     "id": "m_9c70271c",
@@ -2442,7 +2910,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_87340261": {
     "id": "m_87340261",
@@ -2453,7 +2924,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_9c74e09b": {
     "id": "m_9c74e09b",
@@ -2464,7 +2938,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_55a50295": {
     "id": "m_55a50295",
@@ -2475,7 +2952,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3e874743": {
     "id": "m_3e874743",
@@ -2486,7 +2966,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_224d1032": {
     "id": "m_224d1032",
@@ -2497,7 +2980,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_27b14d32": {
     "id": "m_27b14d32",
@@ -2508,7 +2994,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_10ba6178": {
     "id": "m_10ba6178",
@@ -2519,7 +3008,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c2e56e97": {
     "id": "m_c2e56e97",
@@ -2530,7 +3022,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c3fd335b": {
     "id": "m_c3fd335b",
@@ -2541,7 +3036,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "minister"
+    "rank": "minister",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b61961a4": {
     "id": "m_b61961a4",
@@ -2552,7 +3050,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_f8e06048": {
     "id": "m_f8e06048",
@@ -2563,7 +3064,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8e78c5ef": {
     "id": "m_8e78c5ef",
@@ -2574,7 +3078,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_62aecb1d": {
     "id": "m_62aecb1d",
@@ -2585,7 +3092,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_bb8b40a6": {
     "id": "m_bb8b40a6",
@@ -2596,7 +3106,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_e446a2cc": {
     "id": "m_e446a2cc",
@@ -2607,7 +3120,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3417f31d": {
     "id": "m_3417f31d",
@@ -2618,7 +3134,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c172232f": {
     "id": "m_c172232f",
@@ -2629,7 +3148,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_0cbc819f": {
     "id": "m_0cbc819f",
@@ -2640,7 +3162,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_312a1c2d": {
     "id": "m_312a1c2d",
@@ -2651,7 +3176,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_adaab650": {
     "id": "m_adaab650",
@@ -2662,7 +3190,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3065aa2a": {
     "id": "m_3065aa2a",
@@ -2673,7 +3204,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_0f3eda92": {
     "id": "m_0f3eda92",
@@ -2684,7 +3218,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_b4d9676c": {
     "id": "m_b4d9676c",
@@ -2695,7 +3232,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_e7b13605": {
     "id": "m_e7b13605",
@@ -2706,7 +3246,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_6027665f": {
     "id": "m_6027665f",
@@ -2717,7 +3260,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d36fc515": {
     "id": "m_d36fc515",
@@ -2728,7 +3274,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d83dc6be": {
     "id": "m_d83dc6be",
@@ -2739,7 +3288,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_0d207e83": {
     "id": "m_0d207e83",
@@ -2750,7 +3302,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_2440025d": {
     "id": "m_2440025d",
@@ -2761,7 +3316,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "viceminister"
+    "rank": "viceminister",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_e941212f": {
     "id": "m_e941212f",
@@ -2772,7 +3330,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_9969049e": {
     "id": "m_9969049e",
@@ -2783,7 +3344,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_7d2c1549": {
     "id": "m_7d2c1549",
@@ -2794,7 +3358,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c7e8a41c": {
     "id": "m_c7e8a41c",
@@ -2805,7 +3372,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_4e03b1e5": {
     "id": "m_4e03b1e5",
@@ -2816,7 +3386,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_101f9b5a": {
     "id": "m_101f9b5a",
@@ -2827,7 +3400,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_9828c503": {
     "id": "m_9828c503",
@@ -2838,7 +3414,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_dfc767e9": {
     "id": "m_dfc767e9",
@@ -2849,7 +3428,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c56a8aae": {
     "id": "m_c56a8aae",
@@ -2860,7 +3442,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_930fc706": {
     "id": "m_930fc706",
@@ -2871,7 +3456,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_eb451788": {
     "id": "m_eb451788",
@@ -2882,7 +3470,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8cef600b": {
     "id": "m_8cef600b",
@@ -2893,7 +3484,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_fe242baf": {
     "id": "m_fe242baf",
@@ -2904,7 +3498,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_3dec0453": {
     "id": "m_3dec0453",
@@ -2915,7 +3512,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_e151dc93": {
     "id": "m_e151dc93",
@@ -2926,7 +3526,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_2908cade": {
     "id": "m_2908cade",
@@ -2937,7 +3540,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_d7556ae0": {
     "id": "m_d7556ae0",
@@ -2948,7 +3554,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_0650de30": {
     "id": "m_0650de30",
@@ -2959,7 +3568,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_c1cac246": {
     "id": "m_c1cac246",
@@ -2970,7 +3582,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_391a000d": {
     "id": "m_391a000d",
@@ -2981,7 +3596,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_40f6484a": {
     "id": "m_40f6484a",
@@ -2992,7 +3610,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_ed48ae35": {
     "id": "m_ed48ae35",
@@ -3003,7 +3624,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_dca99b7b": {
     "id": "m_dca99b7b",
@@ -3014,7 +3638,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_91959764": {
     "id": "m_91959764",
@@ -3025,7 +3652,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_86a72aa0": {
     "id": "m_86a72aa0",
@@ -3036,7 +3666,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_9df7ef53": {
     "id": "m_9df7ef53",
@@ -3047,7 +3680,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_514302c4": {
     "id": "m_514302c4",
@@ -3058,7 +3694,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_ec6eaf10": {
     "id": "m_ec6eaf10",
@@ -3069,7 +3708,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8c2e96f1": {
     "id": "m_8c2e96f1",
@@ -3080,7 +3722,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_2d9dbc48": {
     "id": "m_2d9dbc48",
@@ -3091,7 +3736,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_6a41cc41": {
     "id": "m_6a41cc41",
@@ -3102,7 +3750,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8b0329c5": {
     "id": "m_8b0329c5",
@@ -3113,7 +3764,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_4496ae62": {
     "id": "m_4496ae62",
@@ -3124,7 +3778,10 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
   },
   "m_8350892b": {
     "id": "m_8350892b",
@@ -3135,6 +3792,505 @@
     "since": null,
     "bio": "",
     "stance": [],
-    "rank": "member"
+    "rank": "member",
+    "nameReading": "",
+    "group": "",
+    "house": ""
+  },
+  "m_f9112eed": {
+    "name": "m_f9112eed",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_3609515a": {
+    "name": "m_3609515a",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_bb63352f": {
+    "name": "m_bb63352f",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_35f7c3fb": {
+    "name": "m_35f7c3fb",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_b9696f10": {
+    "name": "m_b9696f10",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_89d6d1a0": {
+    "name": "m_89d6d1a0",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_536f80d9": {
+    "name": "m_536f80d9",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_bd0719ba": {
+    "name": "m_bd0719ba",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_f03fd3ba": {
+    "name": "m_f03fd3ba",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_846c54db": {
+    "name": "m_846c54db",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_0cf00975": {
+    "name": "m_0cf00975",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_38d2f1bd": {
+    "name": "m_38d2f1bd",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_c0f0bb58": {
+    "name": "m_c0f0bb58",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_d87f02d9": {
+    "name": "m_d87f02d9",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_ffdd5c57": {
+    "name": "m_ffdd5c57",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_d5942a01": {
+    "name": "m_d5942a01",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_fc8ddad4": {
+    "name": "m_fc8ddad4",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_4e6895fc": {
+    "name": "m_4e6895fc",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_9bdd7294": {
+    "name": "m_9bdd7294",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_7e0f6be8": {
+    "name": "m_7e0f6be8",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_de1c437d": {
+    "name": "m_de1c437d",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_a515e4ca": {
+    "name": "m_a515e4ca",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_6a43cb83": {
+    "name": "m_6a43cb83",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_d93a6f50": {
+    "name": "m_d93a6f50",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_4f5455c7": {
+    "name": "m_4f5455c7",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_1d03655d": {
+    "name": "m_1d03655d",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_27a39082": {
+    "name": "m_27a39082",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_663d6cdc": {
+    "name": "m_663d6cdc",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_bc01ca27": {
+    "name": "m_bc01ca27",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_47b4be8e": {
+    "name": "m_47b4be8e",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
+  },
+  "m_3abc957a": {
+    "name": "m_3abc957a",
+    "nameReading": "",
+    "group": "",
+    "role": "",
+    "house": "審議会",
+    "party": "",
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": {
+      "score": 0,
+      "tier": "newcomer",
+      "speechCount": 0
+    }
   }
 }

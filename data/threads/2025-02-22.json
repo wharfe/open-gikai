@@ -8,8 +8,8 @@
     "topicTag": "開会",
     "topicColor": "#6b7280",
     "summary": "第4回新しい地方経済・生活環境創生会議の開会と主催者挨拶",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "愛媛県松山市で開催された地方創生に関する有識者会議の開会挨拶と会議趣旨の説明。",
       "links": [
@@ -88,8 +88,8 @@
     "topicTag": "まち創",
     "topicColor": "#3b82f6",
     "summary": "外資系投資銀行出身者による松山での地域産業高付加価値化の取組",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "投資銀行のキャリアを活かして地元松山に戻り、地域資源を活用した産業振興に取り組む事例。",
       "links": [
@@ -134,8 +134,8 @@
     "topicTag": "城下町",
     "topicColor": "#3b82f6",
     "summary": "伊予銀行と連携した大洲城での宿泊事業による城下町再生の7年間の取組",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方銀行の地域創生部門と連携し、歴史的建造物を活用した体験型観光による地域活性化事例。",
       "links": [
@@ -197,8 +197,8 @@
     "topicTag": "水産DX",
     "topicColor": "#3b82f6",
     "summary": "AI給餌機導入と移住女性活用による水産業の高付加価値化とデジタル変革",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "養殖業にAI技術を導入し、Iターン移住者の力を活用して水産業の革新を図る取組。",
       "links": [
@@ -324,8 +324,8 @@
     "topicTag": "農業DX",
     "topicColor": "#3b82f6",
     "summary": "西宇和みかん支援隊とAI技術によるスマート農業と新規就農者確保の取組",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "新規就農者支援とAI・IoTを活用したスマート農業により、柑橘産業の持続可能性を追求する事例。",
       "links": [
@@ -389,8 +389,8 @@
     "topicTag": "学校創",
     "topicColor": "#f59e0b",
     "summary": "全国唯一の高校内水族館による地域活性化と環境教育の推進活動",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "人口減少地域の高校が水族館運営を通じて地域活性化と環境保全活動に取り組む教育実践事例。",
       "links": [
@@ -703,8 +703,8 @@
     "topicTag": "観光政策",
     "topicColor": "#3b82f6",
     "summary": "しまなみ海道を活用したサイクリング観光とVelo-city国際会議の開催",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "瀬戸内海の景観を活かしたサイクリング観光の振興と国際的な自転車都市会議の誘致による地域ブランディング。",
       "links": [
@@ -749,8 +749,8 @@
     "topicTag": "成功要因",
     "topicColor": "#6b7280",
     "summary": "各事例の成功の秘訣と継続性、移住定住、人材確保の課題について議論",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方創生の成功事例から導き出される共通要因と、持続可能性や人材確保における課題の分析。",
       "links": [
@@ -1088,8 +1088,8 @@
     "topicTag": "DX戦略",
     "topicColor": "#06b6d4",
     "summary": "5G・AI等デジタル技術を活用した地方創生の次のステージへの展望",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "5G通信やAI技術の普及を背景とした、従来とは異なる新しい地方創生のアプローチと戦略。",
       "links": [
@@ -1291,8 +1291,8 @@
     "topicTag": "将来展望",
     "topicColor": "#6b7280",
     "summary": "若者・女性に選ばれる地域づくりと楽しい地方創生の実現に向けた総括",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "石破総理の「楽しい日本」構想も踏まえた、持続可能で魅力的な地方創生の将来ビジョン。",
       "links": [

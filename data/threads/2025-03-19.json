@@ -8,8 +8,8 @@
     "topicTag": "地域類型",
     "topicColor": "#6b7280",
     "summary": "地域生活圏を3つに分類し、それぞれに必要な地域経営主体の在り方を検討",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "人口減少下で持続可能な地域づくりを目指す「地域生活圏」の概念を具体化する議論。どのような主体が地域経営を担うべきかが焦点。",
       "links": [
@@ -432,8 +432,8 @@
     "topicTag": "事業計画",
     "topicColor": "#6b7280",
     "summary": "個別プロジェクトの事業計画策定について、対象範囲や規模感を議論",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "地域生活圏内で実施する具体的事業の計画策定方法。単一分野から分野横断まで様々な規模のプロジェクトが想定される。",
       "links": [
@@ -555,8 +555,8 @@
     "topicTag": "人材金融",
     "topicColor": "#8b5cf6",
     "summary": "外部人材活用、二地域居住推進、資金調達支援など制度設計を検討",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "地域経営を担う人材の確保と、必要な資金の調達支援方法。従来の人材交流制度の課題も踏まえた新たな仕組みづくりが求められる。",
       "links": [
@@ -703,8 +703,8 @@
     "topicTag": "運営方針",
     "topicColor": "#6b7280",
     "summary": "次回5月28日の取りまとめに向けた進め方と政府全体との連携を確認",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "国土審議会の専門委員会として、地域生活圏形成の具体策を政府方針に反映させるための議論の進め方を決定。",
       "links": [

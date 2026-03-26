@@ -8,8 +8,8 @@
     "topicTag": "重点課題",
     "topicColor": "#3b82f6",
     "summary": "総合戦略の深化・具体化に向けた当面の重点検討課題案を説明・決定",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "2022年12月策定の総合戦略をさらに発展させるため、年末改訂に向けた重点施策を整理する課題案の検討。",
       "links": [
@@ -58,8 +58,8 @@
     "topicTag": "窓口DX",
     "topicColor": "#f59e0b",
     "summary": "書かないワンストップ窓口の横展開とガバメントクラウド活用を推進",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "行政手続きの簡素化を目指し、複数窓口を回らず同じ内容を何度も記入しない仕組みの全国展開。",
       "links": [
@@ -108,8 +108,8 @@
     "topicTag": "交通DX",
     "topicColor": "#22c55e",
     "summary": "法改正を踏まえた地域公共交通の再設計とまちづくり連携を推進",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "地方の人流・物流を支える交通基盤の活性化のため、2023年通常国会で地域公共交通関連法を改正。",
       "links": [
@@ -169,8 +169,8 @@
     "topicTag": "中山間",
     "topicColor": "#22c55e",
     "summary": "デジタル活用する中山間地域22地域を第1弾登録、2027年度150地域目標",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "活力低下が懸念される中山間地域でデジタル技術による課題解決に取り組む地域を登録し関係府省が連携支援。",
       "links": [
@@ -219,8 +219,8 @@
     "topicTag": "基盤整備",
     "topicColor": "#3b82f6",
     "summary": "光ファイバ・5G整備計画改訂、自動運転・ドローン社会実装を加速",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "デジタル田園都市国家構想の基盤となる通信インフラ整備と、新技術の早期実用化に向けた取り組み。",
       "links": [
@@ -267,8 +267,8 @@
     "topicTag": "教育DX",
     "topicColor": "#f59e0b",
     "summary": "1人1台端末活用の日常化と個別最適学習で高度デジタル人材育成加速",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "全国の小中学校等に配布された1人1台端末の活用を進め、次世代のデジタル人材を育成する教育改革。",
       "links": [
@@ -313,8 +313,8 @@
     "topicTag": "整備計画",
     "topicColor": "#3b82f6",
     "summary": "10年でデジタル恩恵を全国展開、2024年度から自動運転支援道等開始",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "デジタル技術の恩恵を全国津々浦々に届けるため、線や面での実装を進める包括的な整備計画の策定。",
       "links": [
@@ -364,8 +364,8 @@
     "topicTag": "提言",
     "topicColor": "#6b7280",
     "summary": "Well-being指標発展、地域連携促進、デジタル基盤整備等の提言",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "外部有識者委員が政策の方向性や具体的な改善点について専門的見地から意見を表明する場。",
       "links": [
@@ -521,8 +521,8 @@
     "topicTag": "総理指示",
     "topicColor": "#6b7280",
     "summary": "デジタルとリアル融合の重要性強調、関係大臣に整備計画策定指示",
-    "source": "council-digital_denen",
-    "sourceLabel": "council-digital_denen",
+    "source": "council",
+    "sourceLabel": "デジタル田園都市構想",
     "context": {
       "description": "内閣総理大臣がデジタル田園都市国家構想の推進方針を示し、関係大臣に具体的な取り組みを指示。",
       "links": [

@@ -8,8 +8,8 @@
     "topicTag": "不動産前半",
     "topicColor": "#3b82f6",
     "summary": "全宅連と全日本不動産協会が住宅確保要配慮者支援の現状と課題について発表",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "不動産業界の視点から住宅確保要配慮者への支援策や課題を報告する前半グループの発表。終身建物賃貸借制度等の活用状況も含む。",
       "links": [
@@ -87,8 +87,8 @@
     "topicTag": "質疑前半",
     "topicColor": "#6b7280",
     "summary": "不動産業界団体の発表に対する委員からの質問と回答のやり取り",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "全宅連と全日本不動産協会の発表内容について、特に終身建物賃貸借制度の要件や課題について質疑が行われた。",
       "links": [
@@ -262,8 +262,8 @@
     "topicTag": "支援後半",
     "topicColor": "#8b5cf6",
     "summary": "消費者相談、社会福祉、更生保護の各分野から住宅確保要配慮者支援の実態を報告",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "相談員協会、社会福祉協議会、更生保護法人連盟による住宅確保要配慮者への支援活動の現状と課題の報告。",
       "links": [
@@ -372,8 +372,8 @@
     "topicTag": "質疑後半",
     "topicColor": "#6b7280",
     "summary": "支援団体の発表に対する個人情報提供範囲や身元保証トラブル等についての質疑",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "消費者相談、福祉、更生保護団体の発表について、個人情報の取扱いや居住支援協議会設置等について委員から質問された。",
       "links": [
@@ -706,8 +706,8 @@
     "topicTag": "制度見直",
     "topicColor": "#f59e0b",
     "summary": "これまでの議論を踏まえた制度見直しの方向性と論点について委員間で意見交換",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅セーフティネット制度の見直しに向けて、リスクとニーズの観点から論点整理を行い、具体的な改善策について議論した。",
       "links": [

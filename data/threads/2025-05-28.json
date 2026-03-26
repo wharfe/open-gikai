@@ -8,8 +8,8 @@
     "topicTag": "報告説明",
     "topicColor": "#6b7280",
     "summary": "人口減少社会の処方箋として地域生活圏構想をまとめた報告書案の内容説明",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "国土審議会地域生活圏専門委員会が約半年間の議論を集大成し、人口減少社会における地域運営の新たな枠組みを提案する報告書。",
       "links": [
@@ -128,8 +128,8 @@
     "topicTag": "意見表明",
     "topicColor": "#6b7280",
     "summary": "全委員が報告書案に対する意見を表明。ローカルマネジメント法人や柔軟性の重要性等を指摘",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "専門委員会最終回として、委員全員が地域生活圏報告書案に対する評価と改善提案を行う意見交換の場。",
       "links": [
@@ -402,8 +402,8 @@
     "topicTag": "省庁連携",
     "topicColor": "#6b7280",
     "summary": "中小企業庁のローカルゼブラ、農水省の農村RMO、環境省の地域循環共生圏等の説明",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "地域生活圏と類似する取組を各省庁が独自に推進しており、連携の必要性が議論されている状況。",
       "links": [
@@ -494,8 +494,8 @@
     "topicTag": "連携展開",
     "topicColor": "#6b7280",
     "summary": "各省庁の類似施策との連携方策とローカルマネジメント法人の定義等について議論",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "複数省庁で類似の地域支援施策が展開される中、効果的な連携と地域生活圏構想の実現に向けた具体的方策を検討。",
       "links": [
@@ -637,8 +637,8 @@
     "topicTag": "国土計画",
     "topicColor": "#6b7280",
     "summary": "第三次国土形成計画との関係や地域生活圏の規模・射程について最終調整",
-    "source": "council-chiikiseikatsu",
-    "sourceLabel": "council-chiikiseikatsu",
+    "source": "council",
+    "sourceLabel": "地域生活圏専門委員会",
     "context": {
       "description": "地域生活圏構想が国土形成計画の延長線上にある政策として、適切な規模設定と実現可能性を検討する議論。",
       "links": [

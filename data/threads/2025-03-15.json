@@ -8,8 +8,8 @@
     "topicTag": "開会",
     "topicColor": "#6b7280",
     "summary": "第５回地方創生会議の長野県伊那市開催における開会挨拶と地元歓迎",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "政府の地方創生有識者会議の地方開催。日常生活に不可欠なサービス維持向上、デジタル活用をテーマとする。",
       "links": [
@@ -97,8 +97,8 @@
     "topicTag": "人口対策",
     "topicColor": "#6b7280",
     "summary": "県民会議による信州未来共創戦略と産官学金労言連携による人口問題への取組",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "長野県が人口減少問題に対応するため、多様な主体との対話を重ねて策定した包括的な地域創生戦略。",
       "links": [
@@ -145,8 +145,8 @@
     "topicTag": "DX支援",
     "topicColor": "#3b82f6",
     "summary": "AIタクシー、モバイルクリニック、買物支援等デジタル技術活用の地域課題解決",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "人口減少・高齢化に直面する伊那市が、AI搭載タクシーや移動診療車などデジタル技術を活用して住民の生活を支援する取組。",
       "links": [
@@ -254,8 +254,8 @@
     "topicTag": "介護",
     "topicColor": "#8b5cf6",
     "summary": "宮田村での介護事業を核とした多世代・多機能型地域包括ケアの実践",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "介護保険制度下で、利用者の声に向き合い、多世代が集う「ごちゃまぜ」の地域包括ケアを展開する民間事業者の取組。",
       "links": [
@@ -302,8 +302,8 @@
     "topicTag": "協力隊",
     "topicColor": "#6b7280",
     "summary": "協力隊経験を活かした「ごちゃまぜ」のまちづくりと多世代交流拠点運営",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "青年海外協力隊の経験者らが設立した団体が、海外での経験を活かして全国各地で地域に根ざした活動を展開。",
       "links": [
@@ -348,8 +348,8 @@
     "topicTag": "医療",
     "topicColor": "#22c55e",
     "summary": "佐久地域における医療従事者確保と地域完結型医療体制の構築課題",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "過疎地域において高度な急性期医療を継続的に提供するための医療従事者確保と地域医療連携の仕組みづくり。",
       "links": [
@@ -394,8 +394,8 @@
     "topicTag": "創生2.0",
     "topicColor": "#3b82f6",
     "summary": "少子化対策と人口減少受容を両立させるデジタル活用型地方創生構想",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "人口減少を前提としつつ経済成長と社会機能維持を図る新たな地方創生戦略。デジタル技術活用による生活サービス維持が柱。",
       "links": [
@@ -473,8 +473,8 @@
     "topicTag": "男女参画",
     "topicColor": "#8b5cf6",
     "summary": "固定的役割分担意識克服による女性の地方定着促進と人口流出対策",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方部における男女の人口比率の偏りの背景にある固定的な性別役割分担意識の問題と、その解決に向けた取組。",
       "links": [
@@ -519,8 +519,8 @@
     "topicTag": "移動医療",
     "topicColor": "#22c55e",
     "summary": "広域・医師不足地域における移動診療車による在宅医療効率化",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "東京23区より広い面積に対し医師数が県内下位の地域で、往診時間短縮と医療アクセス向上を図る移動診療の取組。",
       "links": [
@@ -565,8 +565,8 @@
     "topicTag": "民間参入",
     "topicColor": "#3b82f6",
     "summary": "介護事業を通じた地域住民ニーズの把握と多角的サービス展開",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "CCRC構想に触発され、介護事業者が地域を巡回する中で住民の声を聞き、多様なサービスを展開する取組。",
       "links": [
@@ -611,8 +611,8 @@
     "topicTag": "経験活用",
     "topicColor": "#06b6d4",
     "summary": "途上国支援経験を地域課題解決に応用する人材活用の可能性",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "青年海外協力隊として途上国で培った経験やスキルを、日本の地方創生や地域課題解決にどう活かすかという人材活用論。",
       "links": [
@@ -674,8 +674,8 @@
     "topicTag": "医師定着",
     "topicColor": "#22c55e",
     "summary": "患者の生活全体を見る継続的医療による医療従事者のやりがい創出",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方の医療機関で医療従事者が長く働き続ける要因として、患者の地域生活全体に関わる医療の意義と職業的充実感。",
       "links": [
@@ -737,8 +737,8 @@
     "topicTag": "意見交換",
     "topicColor": "#6b7280",
     "summary": "オンライン勤務を活用した移住促進とコワーキングスペース設置効果",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "IT企業等がリモートワークを活用して地方移住を支援し、現地にコワーキングスペースを設置する取組の成果と課題。",
       "links": [
@@ -783,8 +783,8 @@
     "topicTag": "災害対応",
     "topicColor": "#dc2626",
     "summary": "能登半島地震を踏まえた災害時における生活必需サービス維持の課題",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "能登半島地震で住民が大幅減少する中、医療・介護・インフラ等の生活に不可欠なサービスを担う人材確保の困難。",
       "links": [
@@ -829,8 +829,8 @@
     "topicTag": "役割分担",
     "topicColor": "#f97316",
     "summary": "地方創生における国と地方自治体の役割分担と財源確保のあり方",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方創生施策を推進する上で、国と都道府県・市町村がそれぞれどのような役割を担い、財源をどう確保するかという制度論。",
       "links": [
@@ -892,8 +892,8 @@
     "topicTag": "外部人材",
     "topicColor": "#6b7280",
     "summary": "外部団体への過度な依存回避と地域主体のまちづくり体制構築",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "外部から来た人材や団体が地域活動を始める際の受入れプロセスと、地域住民の主体性を育む自立的な体制づくりの課題。",
       "links": [
@@ -938,8 +938,8 @@
     "topicTag": "制度改革",
     "topicColor": "#22c55e",
     "summary": "研修医制度等を通じた地域医療従事者のやりがい醸成と定着促進",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地方の医療機関で働く医療従事者が職業的充実感を得られるよう、研修制度や働き方の仕組みを改善する必要性。",
       "links": [
@@ -984,8 +984,8 @@
     "topicTag": "統合提供",
     "topicColor": "#8b5cf6",
     "summary": "縦割り解消による医療・福祉・生活支援サービスの一体的提供体制",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "従来の縦割り行政を超えて、住民の日常生活に必要な各種サービスを統合的・効率的に提供する体制づくりの必要性。",
       "links": [
@@ -1030,8 +1030,8 @@
     "topicTag": "多業種",
     "topicColor": "#3b82f6",
     "summary": "多様な事業種別展開による地域住民の活躍場所創出と施設整備",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "「ごちゃまぜ」のまちづくりを実現するため、様々な業種の事業を展開し、多様な住民が活躍できる場と施設を整備する取組。",
       "links": [
@@ -1076,8 +1076,8 @@
     "topicTag": "一次産業",
     "topicColor": "#22c55e",
     "summary": "食料・水・エネルギー自給を基盤とした地域の持続的発展モデル",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "地域が自立的に発展するため、まず食料・水・エネルギーを自給し、その基盤の上に新しい産業を創出するという発展戦略。",
       "links": [
@@ -1122,8 +1122,8 @@
     "topicTag": "理念転換",
     "topicColor": "#8b5cf6",
     "summary": "地域の全住民が居場所と役割を持つ全員参加型地方創生への転換",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "従来の地方創生から発想を転換し、地域住民の誰もが居場所と役割を持てる包摂的な地域社会の実現を目指す新たなアプローチ。",
       "links": [
@@ -1168,8 +1168,8 @@
     "topicTag": "圏域個性",
     "topicColor": "#6b7280",
     "summary": "県内10圏域の異なる個性を活かした多様な地方創生アプローチ",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "長野県内の10の地域圏域がそれぞれ異なる特性を持つ中で、画一的でない、各圏域の個性を活かした地方創生の取組。",
       "links": [
@@ -1217,8 +1217,8 @@
     "topicTag": "事例共有",
     "topicColor": "#f97316",
     "summary": "全国自治体の優良事例を相互に共有する仕組みづくりの必要性",
-    "source": "council-chihousousei",
-    "sourceLabel": "council-chihousousei",
+    "source": "council",
+    "sourceLabel": "地方創生2.0有識者会議",
     "context": {
       "description": "各自治体が独自に行っている課題解決の取組を他の自治体が知らない現状を改善し、優良事例を共有する仕組みの構築。",
       "links": [

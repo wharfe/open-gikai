@@ -221,12 +221,16 @@ def assemble_thread(
     )
 
     # Determine source from meeting metadata
-    source = meeting.get("source", "ndl")
+    raw_source = meeting.get("source", "ndl")
     source_labels = {
         "ndl": "国会会議録",
         "kantei": "首相記者会見",
         "council": "審議会",
     }
+    # Normalize council-* sources to "council" for frontend styling,
+    # but preserve the detailed label from sourceLabel metadata
+    source = "council" if raw_source.startswith("council") else raw_source
+    source_label = meeting.get("sourceLabel") or source_labels.get(source, source)
 
     return {
         "id": thread_id,
@@ -238,7 +242,7 @@ def assemble_thread(
         "topicColor": thread_info.get("topicColor", "#6b7280"),
         "summary": thread_info.get("summary", ""),
         "source": source,
-        "sourceLabel": source_labels.get(source, source),
+        "sourceLabel": source_label,
         "context": context,
         "speeches": assembled_speeches,
     }

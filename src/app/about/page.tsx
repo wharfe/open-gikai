@@ -189,6 +189,34 @@ export default function AboutPage() {
                   desc: "本会議および各ワーキング・グループ（デジタル・AI、健康・医療・介護、地域活性化等）の議事録。",
                   status: "稼働中" as const,
                 },
+                {
+                  name: "国土審議会 推進部会 / 専門委員会",
+                  href: "https://www.mlit.go.jp/policy/shingikai/s103_suishin01.html",
+                  org: "国土交通省",
+                  desc: "国土形成計画の推進部会・地域生活圏専門委員会・移住二地域居住専門委員会の議事録。",
+                  status: "稼働中" as const,
+                },
+                {
+                  name: "地方創生2.0 有識者会議",
+                  href: "https://www.cas.go.jp/jp/seisaku/atarashii_chihousousei/index.html",
+                  org: "内閣官房",
+                  desc: "新しい地方経済・生活環境創生本部の有識者会議・本部会議の議事要旨。",
+                  status: "稼働中" as const,
+                },
+                {
+                  name: "デジタル田園都市国家構想実現会議",
+                  href: "https://www.cas.go.jp/jp/seisaku/digital_denen/index.html",
+                  org: "内閣官房",
+                  desc: "テレワーク・デジタル活用による地方活性化を議論。2024年に地方創生2.0へ改組。",
+                  status: "稼働中" as const,
+                },
+                {
+                  name: "居住支援検討会",
+                  href: "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk7_000043.html",
+                  org: "国土交通省・厚生労働省・法務省",
+                  desc: "住宅確保要配慮者への居住支援のあり方に関する検討会の議事録。",
+                  status: "稼働中" as const,
+                },
               ].map(({ name, href, org, desc, status }) => (
                 <div key={name} className="rounded-xl border border-x-border p-3">
                   <div className="flex items-center justify-between">

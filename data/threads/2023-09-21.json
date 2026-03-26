@@ -8,8 +8,8 @@
     "topicTag": "中間報告",
     "topicColor": "#6b7280",
     "summary": "検討会での議論を整理した中間とりまとめ素案について事務局が説明",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "住宅確保要配慮者に対する居住支援機能のあり方を検討する会議の4回目。これまでの議論をまとめた中間報告の素案を提示。",
       "links": [
@@ -187,8 +187,8 @@
     "topicTag": "政策実効",
     "topicColor": "#8b5cf6",
     "summary": "住宅セーフティネット法の実効性を高めるため省庁間連携強化の必要性",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "平成29年の住宅セーフティネット法改正後も十分な成果が上がっていないため、福祉・住宅政策の一体的推進が課題となっている。",
       "links": [
@@ -356,8 +356,8 @@
     "topicTag": "担い手",
     "topicColor": "#f59e0b",
     "summary": "市町村における居住支援の担当部署の明確化と福祉部局の関与強化",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "居住支援協議会の設置推進や、住宅部局と福祉部局の連携強化により、地域における支援体制の充実を図る必要がある。",
       "links": [
@@ -458,8 +458,8 @@
     "topicTag": "死亡対策",
     "topicColor": "#3b82f6",
     "summary": "高齢者入居時の死亡リスクや残置物処理への賃貸業界の不安解消策",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "賃貸住宅で高齢者等が死亡した際の対応や残置物処理について、家主・管理業者・保証会社の不安を軽減する仕組みづくりが課題。",
       "links": [
@@ -636,8 +636,8 @@
     "topicTag": "出所者",
     "topicColor": "#8b5cf6",
     "summary": "刑務所出所者の住宅確保支援と既存の更生保護制度との連携強化",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "刑務所出所者の社会復帰において住居確保は重要な課題。保護観察所や更生保護施設との連携により支援体制の充実が求められる。",
       "links": [
@@ -749,8 +749,8 @@
     "topicTag": "相談体制",
     "topicColor": "#f59e0b",
     "summary": "居住支援のコーディネーター人材養成と消費生活センター等との連携",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "居住に関するトラブル相談に対応できる専門人材の養成と、既存の相談機関との連携により支援体制を強化する必要がある。",
       "links": [
@@ -845,8 +845,8 @@
     "topicTag": "対象拡大",
     "topicColor": "#8b5cf6",
     "summary": "ひとり親世帯等の増加を踏まえた住宅確保要配慮者の対象拡大検討",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "従来の高齢者中心の支援から、ひとり親世帯や若年層など多様化する住宅困窮者への対応拡大が求められている。",
       "links": [
@@ -942,8 +942,8 @@
     "topicTag": "業界課題",
     "topicColor": "#3b82f6",
     "summary": "不動産業界の人材不足や物価高騰への対応と契約件数増加策",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "不動産業界における人材確保難や物価上昇が賃貸住宅供給に影響。業界の持続可能性確保と住宅供給促進の両立が課題。",
       "links": [
@@ -1005,8 +1005,8 @@
     "topicTag": "認知度",
     "topicColor": "#f59e0b",
     "summary": "居住支援制度の認知度向上と若年層への早期からの周知教育",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "居住支援制度が十分認知されていないため、支援が必要な人に情報が届かない問題。特に若年層への教育・周知が重要。",
       "links": [
@@ -1068,8 +1068,8 @@
     "topicTag": "住宅手当",
     "topicColor": "#8b5cf6",
     "summary": "住宅確保給付金の拡充と住宅バウチャー制度導入の可能性検討",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "現金給付による住宅支援の効果が注目される中、住宅手当やバウチャー制度の本格的な検討が政策課題となっている。",
       "links": [
@@ -1148,8 +1148,8 @@
     "topicTag": "サブリース",
     "topicColor": "#3b82f6",
     "summary": "サブリース方式による居住支援とサポート住宅の既存入居者への拡大",
-    "source": "council-kyojushien",
-    "sourceLabel": "council-kyojushien",
+    "source": "council",
+    "sourceLabel": "居住支援検討会",
     "context": {
       "description": "居住支援法人等がサブリース方式で賃貸住宅を活用し、家賃補助や生活支援を組み合わせた新たな住宅セーフティネットの構築。",
       "links": [

@@ -8,8 +8,8 @@
     "topicTag": "専門委",
     "topicColor": "#6b7280",
     "summary": "第三次国土形成計画の進行管理のため新たに専門委員会を設置することを決定",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "国土形成計画のマネジメントサイクルを行うため、計画の推進状況を監視・評価する専門組織の設置について議論。",
       "links": [
@@ -138,8 +138,8 @@
     "topicTag": "生活圏",
     "topicColor": "#6b7280",
     "summary": "市町村界を越えた地域生活圏形成のリーディング事業や官民連携の進捗を報告",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "人口減少下で暮らしに必要なサービスを持続的に提供するため、市町村界にとらわれない地域生活圏の形成を推進する政策。",
       "links": [
@@ -566,8 +566,8 @@
     "topicTag": "二地域",
     "topicColor": "#6b7280",
     "summary": "二地域居住促進法に基づく計画策定状況や省庁間連携、医療・交通面の課題を議論",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "都市と地方の両方に居住拠点を持つライフスタイルを促進する法制度。2022年11月に施行された改正法に基づく取組。",
       "links": [
@@ -777,8 +777,8 @@
     "topicTag": "広域計",
     "topicColor": "#6b7280",
     "summary": "全国8圏域の広域地方計画中間取りまとめ案の状況と6月の最終決定予定を報告",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "国土形成計画の全国計画を基本として、8つの圏域ごとに国土の方向性や施策を定める計画の策定作業。",
       "links": [
@@ -945,8 +945,8 @@
     "topicTag": "退任",
     "topicColor": "#6b7280",
     "summary": "10年間委員を務めた木場委員と中出委員が退任挨拶を行い感謝が表された",
-    "source": "council-suishin",
-    "sourceLabel": "council-suishin",
+    "source": "council",
+    "sourceLabel": "国土審議会推進部会",
     "context": {
       "description": "国土審議会で長期間委員を務めた委員の任期満了に伴う退任の挨拶。",
       "links": [

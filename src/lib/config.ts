@@ -80,6 +80,7 @@ export const TENSION_STYLE: Record<string, TensionStyle> = {
   確認: { icon: "help", color: "#8b5cf6", bg: "rgba(139,92,246,0.1)" },
   割込み: { icon: "front_hand", color: "#eab308", bg: "rgba(234,179,8,0.1)" },
   議事: { icon: "assignment", color: "#94a3b8", bg: "rgba(148,163,184,0.1)" },
+  報告: { icon: "summarize", color: "#0ea5e9", bg: "rgba(14,165,233,0.1)" },
 };
 
 // Source styling — visual hints to distinguish data origins in the feed
@@ -162,6 +163,30 @@ export const TOPIC_TAG_TO_THEME: Record<string, LifeThemeId> = {
   交通実践: "demographics", 高知実践: "demographics",
   MaaS実践: "demographics", 各省施策: "demographics",
   施策方向: "demographics", 中間取: "demographics",
+  // Council: 国土審議会推進部会 / 地域生活圏
+  国土計画: "demographics", 広域計画: "demographics", 広域計: "demographics",
+  地域生活: "demographics", 地域生活圏: "demographics", 生活圏: "demographics",
+  二地域居住: "demographics", 二地域: "demographics", 移住: "demographics",
+  中山間: "demographics", 圏域個性: "demographics", 広域連携: "demographics",
+  交通DX: "demographics", 交通改革: "demographics", 窓口DX: "demographics",
+  国土DX: "demographics", 国土管理: "demographics", 整備計画: "demographics",
+  // Council: 地方創生2.0
+  地方創生: "demographics", "創生2.0": "demographics", 基本構想: "demographics",
+  人口減少: "demographics", 一極集中: "demographics", 人口分析: "demographics",
+  人口対策: "demographics", 若者定着: "demographics", 女性活躍: "demographics",
+  女性参画: "demographics", 女性起業: "demographics", 地方金融: "demographics",
+  地域DX: "demographics", 地域連携: "demographics", 地域紹介: "demographics",
+  担い手: "demographics", 関係人口: "demographics", 協力隊: "demographics",
+  // Council: デジタル田園都市
+  デジタル: "demographics", DX戦略: "demographics", DX支援: "demographics",
+  マイナ: "demographics", 農業DX: "demographics", 水産DX: "demographics",
+  教育DX: "demographics", 産学連携: "demographics",
+  // Council: 居住支援検討会
+  住宅手当: "society", 相談体制: "society", 住福連携: "society",
+  サブリース: "society", 定期借家: "society", 契約制度: "society",
+  支援体制: "society", 伴走支援: "society", 更生保護: "society",
+  死後事務: "society", 出所者: "society", 対象拡大: "society",
+  不動産業: "society",
 };
 
 export function getLifeTheme(topicTag: string): LifeThemeId | null {
