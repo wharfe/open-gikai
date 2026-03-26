@@ -8,6 +8,7 @@
 
 - Fetches official transcripts from multiple sources: [NDL Diet Records API](https://kokkai.ndl.go.jp/api.html), [kantei.go.jp](https://www.kantei.go.jp/) press conferences, and [government council](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) meeting minutes
 - Uses AI (Claude) to summarize and structure speeches by topic
+- Links each thread to related news articles with image previews (Bing News)
 - Presents them in a thread-based UI with three reading levels:
   - 🌱 **Easy** — Simple language for everyone
   - 📖 **Standard** — Balanced detail with brief explanations
@@ -58,13 +59,14 @@ npm run dev
 
 ```
 Sources (NDL, kantei, council, ...) → Fetch transcripts → Group by topic (Claude API)
-                           → Summarize at 3 levels → Generate static JSON → Deploy site
+     → Summarize at 3 levels → Enrich with related news → Generate static JSON → Deploy site
 ```
 
 1. **Daily batch**: Fetches previous day's content from configured sources (NDL, kantei, council, etc.) via the SourceAdapter abstraction
 2. **AI processing**: Groups speeches by topic, classifies tension type (questioning, response, follow-up, etc.), generates summaries at three reading levels
-3. **Static generation**: Outputs JSON files consumed by Next.js SSG
-4. **Deployment**: Auto-deploys to Vercel
+3. **News enrichment**: Searches Bing News for related articles, extracts OGP images for visual previews
+4. **Static generation**: Outputs JSON files consumed by Next.js SSG
+5. **Deployment**: Auto-deploys to Vercel
 
 ## Data Pipeline
 
@@ -94,7 +96,7 @@ See `.env.example` for configuration.
 
 Diet records are sourced from the [National Diet Library's Diet Records Search System](https://kokkai.ndl.go.jp/). These records are **not subject to copyright** under Japan's Copyright Act, Article 13. Press conference transcripts are sourced from [kantei.go.jp](https://www.kantei.go.jp/). Government council meeting minutes (審議会) are sourced from [cao.go.jp](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) and other ministry websites.
 
-AI-generated summaries are clearly attributed as such.
+AI-generated summaries are clearly attributed as such. Related news articles are linked from Bing News RSS; only URLs, source names, publication dates, and OGP preview images are displayed — no article content is reproduced.
 
 ## Contributing
 

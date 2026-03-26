@@ -256,6 +256,17 @@ export default function AboutPage() {
                   <span className="text-x-secondary"> — 法令の条文参照に使用。</span>
                 </div>
               </div>
+              <div className="flex items-start gap-2">
+                <span className="material-symbols-rounded shrink-0 text-x-brand" style={{ fontSize: 18 }}>arrow_forward</span>
+                <div>
+                  <span className="text-x-text font-medium">Bing News</span>
+                  <span className="text-x-secondary">
+                    {" "}— 各スレッドのトピックに関連するニュース記事を自動検索し、
+                    リンク・媒体名・掲載日・OGP画像をプレビュー表示しています。
+                    記事本文の転載は行っていません。
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
 
