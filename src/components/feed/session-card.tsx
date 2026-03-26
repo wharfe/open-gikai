@@ -1,16 +1,14 @@
-import type { Thread } from "@/types";
+import type { ThreadSummary } from "@/lib/data";
 import type { SessionInfo } from "@/lib/data";
 
 type SessionCardProps = {
-  threads: Thread[];
+  threads: ThreadSummary[];
   session: SessionInfo;
 };
 
 export function SessionCard({ threads, session }: SessionCardProps) {
-  const totalSpeeches = threads.reduce((s, t) => s + t.speeches.length, 0);
-  const uniqueMembers = new Set(
-    threads.flatMap((t) => t.speeches.map((s) => s.memberId))
-  ).size;
+  const totalSpeeches = threads.reduce((s, t) => s + t.speechCount, 0);
+  const uniqueMembers = new Set(threads.flatMap((t) => t.memberIds)).size;
 
   // Latest data date
   const dates = threads.map((t) => t.date).sort();
@@ -18,7 +16,7 @@ export function SessionCard({ threads, session }: SessionCardProps) {
 
   // Source breakdown
   const sources = threads.reduce<Record<string, number>>((acc, t) => {
-    const label = t.sourceLabel || "国会会議録";
+    const label = t.source || "ndl";
     acc[label] = (acc[label] || 0) + 1;
     return acc;
   }, {});

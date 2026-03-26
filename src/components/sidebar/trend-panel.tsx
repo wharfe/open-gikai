@@ -2,15 +2,15 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import type { Thread } from "@/types";
+import type { ThreadSummary } from "@/lib/data";
 import { TREND_PERIODS } from "@/lib/config";
 import { extractTrends } from "@/lib/utils";
 
 type TrendPanelProps = {
-  threads: Thread[];
+  threads: ThreadSummary[];
 };
 
-function findDefaultPeriod(threads: Thread[]): (typeof TREND_PERIODS)[number] {
+function findDefaultPeriod(threads: ThreadSummary[]): (typeof TREND_PERIODS)[number] {
   for (const p of TREND_PERIODS) {
     if (extractTrends(threads, p).length > 0) return p;
   }

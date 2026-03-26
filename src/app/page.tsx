@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getThreads, getMembers, getSessionInfo } from "@/lib/data";
+import { getThreads, getThreadsSummary, getMembers, getSessionInfo } from "@/lib/data";
 import { FeedView } from "@/components/feed/feed-view";
 import { SessionCard } from "@/components/feed/session-card";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const threads = getThreads();
+  const threadsSummary = getThreadsSummary();
   const members = getMembers();
   const session = getSessionInfo();
 
@@ -23,7 +24,7 @@ export default function Home() {
         <h1 className="sr-only">OpenGIKAI — 国会・審議会の議事録スレッド</h1>
         {/* Session card — mobile only (desktop shows in right sidebar) */}
         <div className="border-b border-x-border px-4 py-4 lg:hidden">
-          <SessionCard threads={threads} session={session} />
+          <SessionCard threads={threadsSummary} session={session} />
         </div>
         <Suspense>
           <FeedView threads={threads} members={members} />
@@ -31,7 +32,7 @@ export default function Home() {
       </main>
 
       {/* Right sidebar */}
-      <RightSidebar threads={threads} members={members} session={session} />
+      <RightSidebar threads={threadsSummary} members={members} session={session} />
     </>
   );
 }

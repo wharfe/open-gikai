@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getThread, getThreads, getMembers, getAllThreadIds } from "@/lib/data";
+import { getThread, getThreadsSummary, getMembers, getAllThreadIds } from "@/lib/data";
 import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
@@ -52,8 +52,8 @@ export default async function ThreadPage({ params }: Props) {
   const thread = getThread(threadId);
   if (!thread) notFound();
 
-  const threads = getThreads();
   const members = getMembers();
+  const threadsSummary = getThreadsSummary();
 
   const isoDate = thread.date.replace(/\./g, "-");
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))]
@@ -99,7 +99,7 @@ export default async function ThreadPage({ params }: Props) {
         />
         <ThreadDetailView thread={thread} members={members} />
       </main>
-      <RightSidebar threads={threads} members={members} />
+      <RightSidebar threads={threadsSummary} members={members} />
     </>
   );
 }

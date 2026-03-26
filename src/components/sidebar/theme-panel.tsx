@@ -1,9 +1,9 @@
 import Link from "next/link";
-import type { Thread } from "@/types";
+import type { ThreadSummary } from "@/lib/data";
 import { LIFE_THEMES, getLifeTheme } from "@/lib/config";
 
 type ThemePanelProps = {
-  threads: Thread[];
+  threads: ThreadSummary[];
 };
 
 export function ThemePanel({ threads }: ThemePanelProps) {

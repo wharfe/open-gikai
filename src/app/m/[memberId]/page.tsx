@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getMember, getMembers, getThreads, getAllMemberIds } from "@/lib/data";
+import { getMember, getMembers, getThreads, getThreadsSummary, getAllMemberIds } from "@/lib/data";
 import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
@@ -46,8 +46,13 @@ export default async function MemberPage({ params }: Props) {
   const member = getMember(memberId);
   if (!member) notFound();
 
-  const threads = getThreads();
+  const allThreads = getThreads();
   const members = getMembers();
+
+  // Only pass threads where this member has speeches (avoids serializing all thread data)
+  const threads = allThreads.filter((t) =>
+    t.speeches.some((s) => s.memberId === memberId)
+  );
 
   const desc = [member.party, member.role].filter(Boolean).join("・");
   const personJsonLd = {
@@ -84,7 +89,7 @@ export default async function MemberPage({ params }: Props) {
         />
         <MemberProfileView member={member} threads={threads} members={members} />
       </main>
-      <RightSidebar threads={threads} members={members} />
+      <RightSidebar threads={getThreadsSummary()} members={members} />
     </>
   );
 }

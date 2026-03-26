@@ -39,6 +39,33 @@ export function getThreads(): Thread[] {
   return loadThreads().sort((a, b) => b.date.localeCompare(a.date));
 }
 
+/** Lightweight thread summaries for sidebar panels (no speeches/context). */
+export type ThreadSummary = Pick<
+  Thread,
+  "id" | "date" | "committee" | "house" | "topic" | "topicTag" | "topicColor" | "source" | "procedural"
+> & {
+  speechCount: number;
+  memberIds: string[];
+};
+
+export function getThreadsSummary(): ThreadSummary[] {
+  return loadThreads()
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((t) => ({
+      id: t.id,
+      date: t.date,
+      committee: t.committee,
+      house: t.house,
+      topic: t.topic,
+      topicTag: t.topicTag,
+      topicColor: t.topicColor,
+      source: t.source,
+      procedural: t.procedural,
+      speechCount: t.speeches.length,
+      memberIds: [...new Set(t.speeches.map((s) => s.memberId))],
+    }));
+}
+
 export function getThread(id: string): Thread | undefined {
   return loadThreads().find((t) => t.id === id);
 }

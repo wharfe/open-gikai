@@ -1,13 +1,13 @@
 import Link from "next/link";
-import type { Member, Thread } from "@/types";
-import type { SessionInfo } from "@/lib/data";
+import type { Member } from "@/types";
+import type { SessionInfo, ThreadSummary } from "@/lib/data";
 import { TrendPanel } from "@/components/sidebar/trend-panel";
 import { ThemePanel } from "@/components/sidebar/theme-panel";
 import { FollowPanel } from "@/components/sidebar/follow-panel";
 import { SessionCard } from "@/components/feed/session-card";
 
 type RightSidebarProps = {
-  threads: Thread[];
+  threads: ThreadSummary[];
   members: Record<string, Member>;
   session?: SessionInfo;
 };
