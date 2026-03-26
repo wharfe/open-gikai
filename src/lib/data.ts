@@ -39,6 +39,20 @@ export function getThreads(): Thread[] {
   return loadThreads().sort((a, b) => b.date.localeCompare(a.date));
 }
 
+/** Extract top-N unique keywords from a thread's speeches. */
+function topKeywords(thread: Thread, n: number): string[] {
+  const counts: Record<string, number> = {};
+  for (const s of thread.speeches) {
+    for (const k of s.keywords) {
+      counts[k] = (counts[k] || 0) + 1;
+    }
+  }
+  return Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, n)
+    .map(([k]) => k);
+}
+
 /** Lightweight thread summaries for sidebar panels (no speeches/context). */
 export type ThreadSummary = Pick<
   Thread,
@@ -46,6 +60,8 @@ export type ThreadSummary = Pick<
 > & {
   speechCount: number;
   memberIds: string[];
+  /** Top keywords for trend aggregation (deduplicated, max 8 per thread). */
+  keywords: string[];
 };
 
 export function getThreadsSummary(): ThreadSummary[] {
@@ -63,6 +79,7 @@ export function getThreadsSummary(): ThreadSummary[] {
       procedural: t.procedural,
       speechCount: t.speeches.length,
       memberIds: [...new Set(t.speeches.map((s) => s.memberId))],
+      keywords: topKeywords(t, 8),
     }));
 }
 

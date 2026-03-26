@@ -33,7 +33,7 @@ const TREND_STOPWORDS = new Set([
 const COMMITTEE_SUFFIX_RE = /委員会$/;
 
 export function extractTrends(
-  threads: { date: string; topicTag: string; topic: string }[],
+  threads: { date: string; topicTag: string; keywords?: string[] }[],
   period?: "今週" | "今国会" | "今年",
 ): [string, number][] {
   // Filter threads by period based on date field (YYYY.MM.DD format)
@@ -64,9 +64,11 @@ export function extractTrends(
 
   const counts: Record<string, number> = {};
   for (const t of filtered) {
-    const tag = t.topicTag;
-    if (tag && !TREND_STOPWORDS.has(tag) && !COMMITTEE_SUFFIX_RE.test(tag)) {
-      counts[tag] = (counts[tag] || 0) + 1;
+    const kws = t.keywords || [];
+    for (const k of kws) {
+      if (!TREND_STOPWORDS.has(k) && !COMMITTEE_SUFFIX_RE.test(k)) {
+        counts[k] = (counts[k] || 0) + 1;
+      }
     }
   }
   return Object.entries(counts)
