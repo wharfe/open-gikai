@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://open-gikai.net/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/members</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/about/stats</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.4</priority>
   </url>
@@ -53,24 +53,6 @@
   </url>
   <url>
     <loc>https://open-gikai.net/t/t_20231019_b22e09_04</loc>
-    <lastmod>2023-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_05</loc>
-    <lastmod>2023-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_06</loc>
-    <lastmod>2023-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://open-gikai.net/t/t_20231019_b22e09_07</loc>
     <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

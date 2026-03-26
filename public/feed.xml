@@ -5,8 +5,32 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 18 Mar 2026 00:47:06 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 05:15:14 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>日米首脳会談の全般的成果とイラン情勢への対応 — 日米首脳会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260319_8365e8_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260319_8365e8_01</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description>イラン情勢の早期沈静化と中東地域の平和安定、エネルギー安定供給で日米が連携強化（首相記者会見・2026.03.19・2発言）</description>
+      <category>日米首脳会談についての会見</category>
+    </item>
+    <item>
+      <title>北朝鮮拉致問題への日米協力 — 日米首脳会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260319_8365e8_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260319_8365e8_02</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description>高市総理が金正恩氏との直接会談への強い意志を表明、トランプ大統領から全面協力を確約（首相記者会見・2026.03.19・2発言）</description>
+      <category>日米首脳会談についての会見</category>
+    </item>
+    <item>
+      <title>ホルムズ海峡への自衛隊艦船派遣問題 — 日米首脳会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260319_8365e8_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260319_8365e8_03</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description>ホルムズ海峡の安全確保の重要性を確認も、日本の法的制約を米側に詳細説明（首相記者会見・2026.03.19・2発言）</description>
+      <category>日米首脳会談についての会見</category>
+    </item>
     <item>
       <title>イラン情勢悪化に伴うガソリン価格高騰対策 — イラン情勢に関する政府の対応についての会見</title>
       <link>https://open-gikai.net/t/t_20260311_2e73fd_01</link>
@@ -382,30 +406,6 @@
       <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
       <description>古屋圭司議員を憲法審査会会長に選出し、就任挨拶を行った（国会会議録・2026.02.20・3発言）</description>
       <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>憲法審査会幹事選出 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260220_fc718f_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_fc718f_06</guid>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
-      <description>幹事9名を会長指名により選出し、審査会運営体制を整備した（国会会議録・2026.02.20・2発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>衆議院東日本大震災復興及び原子力問題調査特別委員会の設立 — 東日本大震災復興及び原子力問題調査特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260220_a2c5de_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_a2c5de_07</guid>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
-      <description>東日本大震災復興・原子力問題調査特別委員会の委員長選出と理事指名を実施（国会会議録・2026.02.20・2発言）</description>
-      <category>東日本大震災復興及び原子力問題調査特別委員会</category>
-    </item>
-    <item>
-      <title>沖縄及び北方問題特別委員会の設立と今後の課題 — 沖縄及び北方問題に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260220_c59ed2_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260220_c59ed2_08</guid>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
-      <description>委員長就任挨拶で沖縄振興の成果と課題、北方領土問題への取組方針を表明（国会会議録・2026.02.20・1発言）</description>
-      <category>沖縄及び北方問題に関する特別委員会</category>
     </item>
   </channel>
 </rss>
