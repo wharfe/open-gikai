@@ -50,39 +50,34 @@ function escapeXml(s) {
 // Sitemap (with lastmod)
 // ---------------------------------------------------------------------------
 
-function generateSitemap(threads) {
-  const latestDate =
-    threads.length > 0 ? toIsoDate(threads[0].date) : new Date().toISOString().slice(0, 10);
+// --- Week helpers for digest ---
 
-  function url(loc, changefreq, priority, lastmod) {
-    const lm = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : "";
-    return `  <url>\n    <loc>${loc}</loc>${lm}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
-  }
+function isoWeek(d) {
+  const copy = new Date(d.getTime());
+  copy.setHours(0, 0, 0, 0);
+  copy.setDate(copy.getDate() + 3 - ((copy.getDay() + 6) % 7));
+  const week1 = new Date(copy.getFullYear(), 0, 4);
+  return 1 + Math.round(((copy.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+}
 
-  const urls = [
-    url(BASE, "daily", "1.0", latestDate),
-    url(`${BASE}/search`, "daily", "0.7"),
-    url(`${BASE}/calendar`, "daily", "0.7"),
-    url(`${BASE}/members`, "weekly", "0.7", latestDate),
-    url(`${BASE}/about`, "monthly", "0.5"),
-    url(`${BASE}/about/stats`, "daily", "0.4", latestDate),
-  ];
+function isoWeekYear(d) {
+  const copy = new Date(d.getTime());
+  copy.setDate(copy.getDate() + 3 - ((copy.getDay() + 6) % 7));
+  return copy.getFullYear();
+}
 
+function threadWeekId(thread) {
+  const [y, m, d] = thread.date.split(".").map(Number);
+  const date = new Date(y, m - 1, d);
+  return `${isoWeekYear(date)}-W${String(isoWeek(date)).padStart(2, "0")}`;
+}
+
+function collectWeekIds(threads) {
+  const ids = new Set();
   for (const t of threads) {
-    urls.push(url(`${BASE}/t/${t.id}`, "weekly", "0.8", toIsoDate(t.date)));
+    ids.add(threadWeekId(t));
   }
-
-  for (const id of loadMemberIds()) {
-    urls.push(url(`${BASE}/m/${id}`, "weekly", "0.6"));
-  }
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.join("\n")}
-</urlset>
-`;
-  fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), xml, "utf-8");
-  console.log(`Sitemap generated: ${urls.length} URLs`);
+  return [...ids].sort();
 }
 
 // ---------------------------------------------------------------------------
@@ -96,8 +91,28 @@ function generateRss(threads) {
       ? new Date(toIsoDate(threads[0].date)).toUTCString()
       : buildDate;
 
+  // Weekly digest items
+  const weekIds = collectWeekIds(threads);
+  const digestItems = weekIds.slice(-4).reverse().map((wid) => {
+    const weekThreads = threads.filter((t) => threadWeekId(t) === wid);
+    const count = weekThreads.length;
+    const comms = [...new Set(weekThreads.map((t) => t.committee))];
+    const link = `${BASE}/digest/weekly/${wid}`;
+    // Use the Sunday of that week as pubDate
+    const sample = weekThreads[0];
+    const pubDate = sample ? new Date(toIsoDate(sample.date)).toUTCString() : buildDate;
+    return `    <item>
+      <title>${escapeXml(`${wid} 国会まとめ — ${count}件の議論`)}</title>
+      <link>${link}</link>
+      <guid isPermaLink="true">${link}</guid>
+      <pubDate>${pubDate}</pubDate>
+      <description>${escapeXml(`${count}件のスレッド、${comms.length}委員会の議論をまとめました。${comms.slice(0, 3).join("、")}ほか。`)}</description>
+      <category>週次ダイジェスト</category>
+    </item>`;
+  });
+
   // Include up to 50 most recent threads
-  const items = threads.slice(0, 50).map((t) => {
+  const threadItems = threads.slice(0, 50).map((t) => {
     const link = `${BASE}/t/${t.id}`;
     const pubDate = new Date(toIsoDate(t.date)).toUTCString();
     const source = t.sourceLabel || "国会会議録";
@@ -110,6 +125,8 @@ function generateRss(threads) {
       <category>${escapeXml(t.committee)}</category>
     </item>`;
   });
+
+  const items = [...digestItems, ...threadItems];
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -133,5 +150,4 @@ ${items.join("\n")}
 // ---------------------------------------------------------------------------
 
 const threads = loadAllThreads();
-generateSitemap(threads);
 generateRss(threads);

@@ -5,8 +5,40 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Mar 2026 13:24:49 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 13:54:59 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W12 国会まとめ — 3件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W12</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W12</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、1委員会の議論をまとめました。日米首脳会談についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>2026-W11 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W11</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W11</guid>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、2委員会の議論をまとめました。イラン情勢に関する政府の対応についての会見、災害対策特別委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>2026-W10 国会まとめ — 33件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W10</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W10</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description>33件のスレッド、5委員会の議論をまとめました。国民生活・経済に関する調査会、国際問題に関する調査会、議院運営委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>2026-W09 国会まとめ — 7件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W09</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W09</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <description>7件のスレッド、3委員会の議論をまとめました。イラン情勢についての会見、予算委員会、議院運営委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>日米首脳会談の全般的成果とイラン情勢への対応 — 日米首脳会談についての会見</title>
       <link>https://open-gikai.net/t/t_20260319_8365e8_01</link>

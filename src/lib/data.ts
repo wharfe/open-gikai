@@ -177,6 +177,162 @@ export function getAllMemberIds(): string[] {
   return Object.keys(loadMembers());
 }
 
+// --- Weekly digest data for /digest pages ---
+
+export type WeeklyDigest = {
+  weekId: string; // "2026-W12"
+  startDate: string; // "2026.03.16"
+  endDate: string; // "2026.03.22"
+  threadCount: number;
+  speechCount: number;
+  committees: { name: string; threads: number }[];
+  topKeywords: [string, number][];
+  highlights: {
+    id: string;
+    topic: string;
+    committee: string;
+    summary: string;
+    date: string;
+  }[];
+  sources: { source: string; count: number }[];
+};
+
+/** ISO week number from a Date object. */
+function isoWeek(d: Date): number {
+  const copy = new Date(d.getTime());
+  copy.setHours(0, 0, 0, 0);
+  copy.setDate(copy.getDate() + 3 - ((copy.getDay() + 6) % 7));
+  const week1 = new Date(copy.getFullYear(), 0, 4);
+  return (
+    1 +
+    Math.round(
+      ((copy.getTime() - week1.getTime()) / 86400000 -
+        3 +
+        ((week1.getDay() + 6) % 7)) /
+        7,
+    )
+  );
+}
+
+/** ISO week year (may differ from calendar year at year boundaries). */
+function isoWeekYear(d: Date): number {
+  const copy = new Date(d.getTime());
+  copy.setDate(copy.getDate() + 3 - ((copy.getDay() + 6) % 7));
+  return copy.getFullYear();
+}
+
+/** Format week number as "YYYY-WNN". */
+function weekId(d: Date): string {
+  return `${isoWeekYear(d)}-W${String(isoWeek(d)).padStart(2, "0")}`;
+}
+
+/** Parse "YYYY.MM.DD" to Date. */
+function dotToDate(dot: string): Date {
+  const [y, m, d] = dot.split(".").map(Number);
+  return new Date(y, m - 1, d);
+}
+
+/** Monday of the ISO week containing d. */
+function weekMonday(d: Date): Date {
+  const copy = new Date(d.getTime());
+  copy.setHours(0, 0, 0, 0);
+  const day = copy.getDay();
+  const diff = (day + 6) % 7; // 0=Mon, 6=Sun
+  copy.setDate(copy.getDate() - diff);
+  return copy;
+}
+
+/** Format Date as "YYYY.MM.DD". */
+function toDotDate(d: Date): string {
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+}
+
+export function getWeeklyDigests(): WeeklyDigest[] {
+  const threads = loadThreads();
+  const byWeek: Record<string, Thread[]> = {};
+
+  for (const t of threads) {
+    const d = dotToDate(t.date);
+    const wid = weekId(d);
+    if (!byWeek[wid]) byWeek[wid] = [];
+    byWeek[wid].push(t);
+  }
+
+  return Object.entries(byWeek)
+    .map(([wid, ts]) => {
+      const monday = weekMonday(dotToDate(ts[0].date));
+      const sunday = new Date(monday.getTime() + 6 * 86400000);
+
+      // Committee breakdown
+      const commCounts: Record<string, number> = {};
+      for (const t of ts) {
+        commCounts[t.committee] = (commCounts[t.committee] || 0) + 1;
+      }
+      const committees = Object.entries(commCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([name, count]) => ({ name, threads: count }));
+
+      // Keyword aggregation
+      const kwCounts: Record<string, number> = {};
+      for (const t of ts) {
+        for (const s of t.speeches) {
+          for (const k of s.keywords) {
+            kwCounts[k] = (kwCounts[k] || 0) + 1;
+          }
+        }
+      }
+      const topKw = Object.entries(kwCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10) as [string, number][];
+
+      // Top highlights (most speeches = most substantive)
+      const sorted = [...ts].sort(
+        (a, b) => b.speeches.length - a.speeches.length,
+      );
+      const highlights = sorted
+        .filter((t) => !t.procedural)
+        .slice(0, 5)
+        .map((t) => ({
+          id: t.id,
+          topic: t.topic,
+          committee: t.committee,
+          summary: t.summary,
+          date: t.date,
+        }));
+
+      // Source breakdown
+      const srcCounts: Record<string, number> = {};
+      for (const t of ts) {
+        const src = t.sourceLabel || "国会会議録";
+        srcCounts[src] = (srcCounts[src] || 0) + 1;
+      }
+      const sources = Object.entries(srcCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([source, count]) => ({ source, count }));
+
+      return {
+        weekId: wid,
+        startDate: toDotDate(monday),
+        endDate: toDotDate(sunday),
+        threadCount: ts.length,
+        speechCount: ts.reduce((s, t) => s + t.speeches.length, 0),
+        committees,
+        topKeywords: topKw,
+        highlights,
+        sources,
+      };
+    })
+    .sort((a, b) => b.weekId.localeCompare(a.weekId));
+}
+
+export function getWeeklyDigest(wid: string): WeeklyDigest | undefined {
+  return getWeeklyDigests().find((d) => d.weekId === wid);
+}
+
+export function getAllWeekIds(): string[] {
+  return getWeeklyDigests().map((d) => d.weekId);
+}
+
 export type SearchEntry = {
   threadId: string;
   topic: string;

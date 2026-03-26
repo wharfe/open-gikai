@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: "/search", label: "検索", icon: "search" },
   { href: "/calendar", label: "カレンダー", icon: "calendar_month" },
   { href: "/members", label: "発言者", icon: "group" },
+  { href: "/digest", label: "まとめ", icon: "summarize" },
   { href: "/about", label: "About", icon: "info" },
 ];
 

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "validate": "node scripts/validate-data.mjs",
-    "build": "node scripts/validate-data.mjs --fix && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs && next build",
+    "build": "node scripts/validate-data.mjs --fix && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs && node scripts/generate-og-images.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "playwright test"
@@ -17,12 +17,14 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "satori": "^0.26.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

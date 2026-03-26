@@ -32,6 +32,35 @@ function collectMemberIds() {
   return Object.keys(members);
 }
 
+function isoWeek(d) {
+  const copy = new Date(d.getTime());
+  copy.setHours(0, 0, 0, 0);
+  copy.setDate(copy.getDate() + 3 - ((copy.getDay() + 6) % 7));
+  const week1 = new Date(copy.getFullYear(), 0, 4);
+  return 1 + Math.round(((copy.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+}
+
+function isoWeekYear(d) {
+  const copy = new Date(d.getTime());
+  copy.setDate(copy.getDate() + 3 - ((copy.getDay() + 6) % 7));
+  return copy.getFullYear();
+}
+
+function collectWeekIds() {
+  const threadsDir = join(DATA_DIR, "threads");
+  const ids = new Set();
+  for (const file of readdirSync(threadsDir)) {
+    if (!file.endsWith(".json")) continue;
+    const threads = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
+    for (const t of threads) {
+      const [y, m, d] = t.date.split(".").map(Number);
+      const date = new Date(y, m - 1, d);
+      ids.add(`${isoWeekYear(date)}-W${String(isoWeek(date)).padStart(2, "0")}`);
+    }
+  }
+  return [...ids].sort();
+}
+
 const COUNCIL_SLUG_MAP = {
   "規制改革推進会議": "kisei",
   "移住・二地域居住等促進専門委員会": "nichiiki",
@@ -101,6 +130,17 @@ function buildSitemap() {
   for (const slug of councilSlugs) {
     urls.push(
       entry({ loc: `/council/${slug}`, lastmod: now, changefreq: "weekly", priority: "0.7" })
+    );
+  }
+
+  // Digest pages
+  const weekIds = collectWeekIds();
+  urls.push(
+    entry({ loc: "/digest", lastmod: now, changefreq: "weekly", priority: "0.7" })
+  );
+  for (const wid of weekIds) {
+    urls.push(
+      entry({ loc: `/digest/weekly/${wid}`, changefreq: "monthly", priority: "0.6" })
     );
   }
 
