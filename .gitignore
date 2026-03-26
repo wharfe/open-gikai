@@ -57,6 +57,9 @@ data/batch/
 # data/members.json — member data
 # data/status.json — processing status
 
+# Article drafts (not published)
+drafts/
+
 # Handoff / prototype (not part of source)
 HANDOFF.md
 kokkai-v5.jsx
