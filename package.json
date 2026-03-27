@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "validate": "node scripts/validate-data.mjs",
-    "build": "node scripts/validate-data.mjs --fix && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs && node scripts/generate-og-images.mjs && next build",
+    "build": "node scripts/validate-data.mjs --fix && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs && next build",
+    "generate:og": "node scripts/generate-og-images.mjs",
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "playwright test"
