@@ -43,8 +43,11 @@ html[data-theme="light"] {
   --x-brand: #047857;
 }
 
-html {
-  scroll-behavior: smooth;
+/* smooth scroll only for in-page anchors, not page navigations */
+@media (prefers-reduced-motion: no-preference) {
+  html:has(:target) {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Prevent text overflow on mobile */
