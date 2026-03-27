@@ -14536,6 +14536,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://open-gikai.net/t/t_20260326_f0dd01_01</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://open-gikai.net/m/morimotoshinji</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -20421,6 +20427,11 @@
   </url>
   <url>
     <loc>https://open-gikai.net/digest/weekly/2026-W12</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/digest/weekly/2026-W13</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

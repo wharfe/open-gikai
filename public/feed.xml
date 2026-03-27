@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 27 Mar 2026 11:46:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2026 21:18:18 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W13 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W13</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W13</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W12 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W12</link>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W09 国会まとめ — 7件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W09</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W09</guid>
-      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
-      <description>7件のスレッド、3委員会の議論をまとめました。イラン情勢についての会見、予算委員会、議院運営委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>高市総理の米国訪問報告と質疑 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260326_f0dd01_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260326_f0dd01_01</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+      <description>高市総理による米国訪問の報告と各党議員による質疑時間・要求大臣の決定（国会会議録・2026.03.26・3発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>日米首脳会談の全般的成果とイラン情勢への対応 — 日米首脳会談についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_17</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>内閣情報調査室の国家情報局格上げと情報収集・分析能力の向上（国会会議録・2026.03.04・4発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>中東情勢とアメリカのイラン攻撃 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_18</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_18</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>アメリカのイラン武力攻撃の背景と中東情勢への影響、日本の役割（国会会議録・2026.03.04・6発言）</description>
       <category>国際問題に関する調査会</category>
     </item>
   </channel>
