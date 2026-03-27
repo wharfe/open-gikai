@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ThreadSummary } from "@/lib/data";
 import type { SessionInfo } from "@/lib/data";
 
@@ -7,24 +8,21 @@ type SessionCardProps = {
 };
 
 export function SessionCard({ threads, session }: SessionCardProps) {
-  const totalSpeeches = threads.reduce((s, t) => s + t.speechCount, 0);
-  const uniqueMembers = new Set(threads.flatMap((t) => t.memberIds)).size;
+  // Filter to only Diet threads within the session period
+  const sessionStart = session.startDate.replace(/-/g, ".");
+  const dietThreads = threads.filter(
+    (t) => t.source !== "council" && t.source !== "kantei" && t.date >= sessionStart,
+  );
+  const dietSpeeches = dietThreads.reduce((s, t) => s + t.speechCount, 0);
+  const dietMembers = new Set(dietThreads.flatMap((t) => t.memberIds)).size;
+
+  // Other sources (site-wide, not session-specific)
+  const kanteiCount = threads.filter((t) => t.source === "kantei").length;
+  const councilCount = threads.filter((t) => t.source === "council").length;
 
   // Latest data date
   const dates = threads.map((t) => t.date).sort();
   const latestDate = dates.length > 0 ? dates[dates.length - 1] : null;
-
-  // Source breakdown (use human-readable labels)
-  const SOURCE_LABELS: Record<string, string> = {
-    ndl: "国会会議録",
-    kantei: "首相記者会見",
-    council: "審議会",
-  };
-  const sources = threads.reduce<Record<string, number>>((acc, t) => {
-    const label = t.sourceLabel || SOURCE_LABELS[t.source || "ndl"] || t.source || "国会会議録";
-    acc[label] = (acc[label] || 0) + 1;
-    return acc;
-  }, {});
 
   return (
     <div className="overflow-hidden rounded-2xl bg-x-surface">
@@ -46,30 +44,43 @@ export function SessionCard({ threads, session }: SessionCardProps) {
         </span>
       </div>
 
-      {/* Stats */}
+      {/* Diet stats */}
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 px-4 text-[13px]">
         <span className="text-x-secondary">
-          <span className="font-bold text-x-text">{threads.length}</span> スレッド
+          <span className="font-bold text-x-text">{dietThreads.length}</span> スレッド
         </span>
         <span className="text-x-secondary">
-          <span className="font-bold text-x-text">{totalSpeeches}</span> 発言
+          <span className="font-bold text-x-text">{dietSpeeches}</span> 発言
         </span>
         <span className="text-x-secondary">
-          <span className="font-bold text-x-text">{uniqueMembers}</span> 名
+          <span className="font-bold text-x-text">{dietMembers}</span> 名
         </span>
       </div>
 
-      {/* Source badges */}
-      <div className="mt-2 flex flex-wrap gap-2 px-4">
-        {Object.entries(sources).map(([label, count]) => (
-          <span
-            key={label}
-            className="rounded-full bg-x-accent/10 px-2.5 py-0.5 text-[12px] text-x-accent"
-          >
-            {label} {count}
-          </span>
-        ))}
-      </div>
+      {/* Other sources — linked, visually separated */}
+      {(kanteiCount > 0 || councilCount > 0) && (
+        <div className="mt-3 border-t border-x-border px-4 pt-3">
+          <div className="text-[12px] text-x-secondary mb-1.5">その他のソース</div>
+          <div className="flex flex-wrap gap-2">
+            {kanteiCount > 0 && (
+              <Link
+                href="/search?q=首相記者会見"
+                className="rounded-full bg-x-hover px-2.5 py-0.5 text-[12px] text-x-secondary transition-colors hover:text-x-text"
+              >
+                首相記者会見 {kanteiCount}
+              </Link>
+            )}
+            {councilCount > 0 && (
+              <Link
+                href="/council"
+                className="rounded-full bg-x-hover px-2.5 py-0.5 text-[12px] text-x-secondary transition-colors hover:text-x-text"
+              >
+                審議会 {councilCount}
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Last updated */}
       {latestDate && (
