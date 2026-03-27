@@ -22,7 +22,23 @@ export function FeedView({ threads, members }: FeedViewProps) {
   );
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [feedFilter, setFeedFilter] = useState<"all" | "following">("all");
+  const tabParam = searchParams.get("tab");
+  const [feedFilter, setFeedFilterState] = useState<"all" | "following">(
+    tabParam === "following" ? "following" : "all",
+  );
+
+  const setFeedFilter = (tab: "all" | "following") => {
+    setFeedFilterState(tab);
+    // Sync tab to URL so it persists across navigation
+    const params = new URLSearchParams(searchParams.toString());
+    if (tab === "following") {
+      params.set("tab", "following");
+    } else {
+      params.delete("tab");
+    }
+    const qs = params.toString();
+    router.replace(qs ? `/?${qs}` : "/", { scroll: false });
+  };
   const [showProcedural, setShowProcedural] = useState(false);
   const themeRaw = searchParams.get("theme");
   const themeParam: LifeThemeId | null =
