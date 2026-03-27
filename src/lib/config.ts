@@ -125,75 +125,32 @@ export const LIFE_THEMES: LifeTheme[] = [
   { id: "society", label: "社会・多文化", icon: "diversity_3", color: "#38bdf8", description: "外国人政策・バリアフリー・地域格差" },
 ];
 
-// Mapping from topicTag to life theme
-// Tags not listed here are either procedural (議事, 委員会, etc.) or unmapped
-export const TOPIC_TAG_TO_THEME: Record<string, LifeThemeId> = {
-  // Economy
-  消費税: "economy", 金融政策: "economy", 積極財政: "economy", 予算概要: "economy",
-  予算案: "economy", 予算審議: "economy", R8予算: "economy", 予算: "economy",
-  経済格差: "economy", 燃料対策: "economy",
+// Pattern-based theme classification
+// Each entry: [keywords to match in topicTag, theme ID]
+const THEME_PATTERNS: [string[], LifeThemeId][] = [
+  // Economy — tax, budget, finance, trade, industry
+  [["税", "予算", "財政", "金融", "経済", "物価", "賃", "成長", "産業", "通商", "貿易", "規制改革", "中小企", "スタートアップ", "VTOL", "国産", "燃料", "ガソリン", "補助金", "交付金", "WG報告", "補正", "国債", "為替", "株", "投資", "競争力", "万博", "IR", "観光", "インバウンド", "知財", "特許", "土地"], "economy"],
   // Diplomacy & Security
-  トランプ外交: "diplomacy", 日米協力: "diplomacy", 中国外交: "diplomacy",
-  台湾海峡: "diplomacy", 防衛装備: "diplomacy", 米軍基地: "diplomacy",
-  中東情勢: "diplomacy", イラン: "diplomacy", 米国秩序: "diplomacy",
-  日朝関係: "diplomacy", 情報機能: "diplomacy",
-  // Demographics
-  人口動態: "demographics", 少子化: "demographics", 高齢化: "demographics",
-  東京集中: "demographics", 地域格差: "demographics", 地方雇用: "demographics",
-  // Work
-  働き方: "work", 働方改革: "work", 人材確保: "work",
-  官民交流: "work", 院独立性: "work",
-  // Education
-  図書: "education", 図書館: "education", 図書館予算: "education",
-  // Constitution & Legal
-  憲法改正: "constitution", 国際法: "constitution", 法の支配: "constitution",
-  国際法意義: "constitution",
+  [["外交", "防衛", "安保", "日米", "米軍", "基地", "中国", "台湾", "北朝鮮", "韓国", "ロシア", "ウクライナ", "中東", "NATO", "国連", "PKO", "ミサイル", "核", "拉致", "サイバー", "情報機能", "海洋", "領土", "尖閣", "竹島", "地位協定", "邦人", "ODA", "ASEAN", "G7", "G20", "首脳"], "diplomacy"],
+  // Demographics — population, regional, migration
+  [["人口", "少子", "高齢", "過疎", "地方", "地域", "移住", "二地域", "創生", "一極", "東京集中", "国土", "広域", "中山間", "MaaS", "交通", "DX", "デジタル", "マイナ", "圏域", "担い手", "関係人口", "協力隊", "公共交通", "郵便", "離島", "過疎", "限界"], "demographics"],
+  // Work — labor, employment
+  [["雇用", "働", "労働", "人材", "賃上", "最賃", "年休", "シフト", "公務員", "官民", "テレワーク", "副業", "育休", "ハラスメント", "技能実習", "特定技能", "人身売買"], "work"],
+  // Education & Science
+  [["教育", "学校", "大学", "研究", "科学", "図書", "文科", "学術", "奨学", "いじめ", "不登校", "AI", "給食", "部活", "スポーツ", "文化"], "education"],
+  // Constitution & Legal — politics, governance, law
+  [["憲法", "法制", "国際法", "法の支配", "司法", "裁判", "刑法", "民法", "人権", "選挙", "政治改革", "政治資金", "政党", "国会運営", "議会", "行政", "公文書", "情報公開", "統計", "マイナンバ", "所信", "施政", "暫定"], "constitution"],
   // Energy & Disaster
-  防災所信: "energy", 大雪追悼: "energy",
-  // Society
-  外国人: "society", バリア: "society", 価値観: "society",
-  政権基盤: "society",
-  // Council: regulatory reform (規制改革推進会議)
-  規制改革: "economy", 基本方針: "economy", 分野別提案: "economy",
-  総理決意: "economy", 総理総括: "economy", WG報告: "economy",
-  年休算出: "work", シフト年休: "work",
-  // Council: drone/startup WG
-  VTOL免許: "economy", "レベル3.5": "economy", 国産強化: "economy",
-  VTOL: "economy", 国産化: "economy",
-  ホット処理: "economy", ホット: "economy",
-  // Council: 二地域居住
-  移住促進: "demographics", 二拠点事例: "demographics",
-  交通実践: "demographics", 高知実践: "demographics",
-  MaaS実践: "demographics", 各省施策: "demographics",
-  施策方向: "demographics", 中間取: "demographics",
-  // Council: 国土審議会推進部会 / 地域生活圏
-  国土計画: "demographics", 広域計画: "demographics", 広域計: "demographics",
-  地域生活: "demographics", 地域生活圏: "demographics", 生活圏: "demographics",
-  二地域居住: "demographics", 二地域: "demographics", 移住: "demographics",
-  中山間: "demographics", 圏域個性: "demographics", 広域連携: "demographics",
-  交通DX: "demographics", 交通改革: "demographics", 窓口DX: "demographics",
-  国土DX: "demographics", 国土管理: "demographics", 整備計画: "demographics",
-  // Council: 地方創生2.0
-  地方創生: "demographics", "創生2.0": "demographics", 基本構想: "demographics",
-  人口減少: "demographics", 一極集中: "demographics", 人口分析: "demographics",
-  人口対策: "demographics", 若者定着: "demographics", 女性活躍: "demographics",
-  女性参画: "demographics", 女性起業: "demographics", 地方金融: "demographics",
-  地域DX: "demographics", 地域連携: "demographics", 地域紹介: "demographics",
-  担い手: "demographics", 関係人口: "demographics", 協力隊: "demographics",
-  // Council: デジタル田園都市
-  デジタル: "demographics", DX戦略: "demographics", DX支援: "demographics",
-  マイナ: "demographics", 農業DX: "demographics", 水産DX: "demographics",
-  教育DX: "demographics", 産学連携: "demographics",
-  // Council: 居住支援検討会
-  住宅手当: "society", 相談体制: "society", 住福連携: "society",
-  サブリース: "society", 定期借家: "society", 契約制度: "society",
-  支援体制: "society", 伴走支援: "society", 更生保護: "society",
-  死後事務: "society", 出所者: "society", 対象拡大: "society",
-  不動産業: "society",
-};
+  [["エネルギー", "原発", "再エネ", "脱炭素", "気候", "環境", "防災", "災害", "地震", "台風", "復興", "水害", "大雪", "噴火", "熊", "鳥獣", "PFAS", "汚染", "廃棄", "下水", "河川", "治水", "耐震"], "energy"],
+  // Society — welfare, healthcare, housing, diversity
+  [["医療", "介護", "福祉", "年金", "保険", "障害", "バリア", "住宅", "居住", "子育", "保育", "児童", "虐待", "外国人", "多文化", "入管", "難民", "更生", "刑務", "自殺", "孤独", "食品", "農", "水産", "漁業", "薬", "感染", "病床", "看護", "ワクチン", "健康", "生活保護", "貧困", "ひとり親", "DV"], "society"],
+];
 
 export function getLifeTheme(topicTag: string): LifeThemeId | null {
-  return TOPIC_TAG_TO_THEME[topicTag] ?? null;
+  for (const [keywords, theme] of THEME_PATTERNS) {
+    if (keywords.some((kw) => topicTag.includes(kw))) return theme;
+  }
+  return null;
 }
 
 export function getLifeThemeConfig(id: LifeThemeId): LifeTheme | undefined {
