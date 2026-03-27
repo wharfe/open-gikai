@@ -5,7 +5,7 @@ import { getCouncils, getCouncilSlugs, getThreads, getMembers } from "@/lib/data
 import { MobileHeader } from "@/components/layout/header";
 import { ThreadCard } from "@/components/feed/thread-card";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return getCouncilSlugs().map((slug) => ({ slug }));

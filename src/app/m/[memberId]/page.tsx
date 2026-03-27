@@ -5,10 +5,12 @@ import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
-export const dynamicParams = false;
+// ISR: generate member pages on-demand
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllMemberIds().map((memberId) => ({ memberId }));
+  // Pre-render empty list; pages generated on first access
+  return [];
 }
 
 type Props = {

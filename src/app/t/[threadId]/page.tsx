@@ -5,10 +5,20 @@ import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
-export const dynamicParams = false;
+// ISR: pre-render recent threads, generate older ones on-demand
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllThreadIds().map((threadId) => ({ threadId }));
+  // Only pre-render threads from last 30 days to keep build fast
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 30);
+  const cutoffStr = cutoff.toISOString().slice(0, 10).replace(/-/g, ".");
+  return getAllThreadIds()
+    .filter((id) => {
+      const thread = getThread(id);
+      return thread && thread.date >= cutoffStr;
+    })
+    .map((threadId) => ({ threadId }));
 }
 
 type Props = {
