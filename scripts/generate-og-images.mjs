@@ -273,6 +273,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error("OGP generation failed:", err);
-  process.exit(1);
+  console.error("OGP generation failed (non-fatal):", err.message || err);
+  console.error("Continuing build without OGP images.");
 });

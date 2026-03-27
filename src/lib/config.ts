@@ -81,6 +81,9 @@ export const TENSION_STYLE: Record<string, TensionStyle> = {
   割込み: { icon: "front_hand", color: "#eab308", bg: "rgba(234,179,8,0.1)" },
   議事: { icon: "assignment", color: "#94a3b8", bg: "rgba(148,163,184,0.1)" },
   報告: { icon: "summarize", color: "#0ea5e9", bg: "rgba(14,165,233,0.1)" },
+  要求: { icon: "gavel", color: "#dc2626", bg: "rgba(220,38,38,0.1)" },
+  反対討論: { icon: "swap_horiz", color: "#f97316", bg: "rgba(249,115,22,0.1)" },
+  説明: { icon: "description", color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
 };
 
 // Source styling — visual hints to distinguish data origins in the feed

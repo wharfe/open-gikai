@@ -1,6 +1,6 @@
 export type Level = "easy" | "teen" | "adult";
 
-export type TensionType = "追及" | "答弁" | "再追及" | "確認" | "割込み";
+export type TensionType = "追及" | "答弁" | "再追及" | "確認" | "割込み" | "要求" | "反対討論" | "説明";
 
 export type House = "衆議院" | "参議院" | "内閣" | string;
 
