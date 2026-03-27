@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo } from "react"; // useMemo still used for filtering
 import Link from "next/link";
-import type { Member, Thread } from "@/types";
+import type { Member } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { Avatar } from "@/components/ui/avatar";
 import { getStyle } from "@/lib/utils";
@@ -10,7 +10,7 @@ import { PARTY_STYLE, RANK_BADGE } from "@/lib/config";
 
 type MemberListViewProps = {
   members: Record<string, Member>;
-  threads: Thread[];
+  speechCounts: Record<string, number>;
 };
 
 type FilterState = {
@@ -19,24 +19,13 @@ type FilterState = {
   rank: string;
 };
 
-export function MemberListView({ members, threads }: MemberListViewProps) {
+export function MemberListView({ members, speechCounts }: MemberListViewProps) {
   const { follows, toggleFollow } = useAppContext();
   const [filter, setFilter] = useState<FilterState>({
     query: "",
     party: "",
     rank: "",
   });
-
-  // Count speeches per member
-  const speechCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    threads.forEach((t) =>
-      t.speeches.forEach((s) => {
-        counts[s.memberId] = (counts[s.memberId] || 0) + 1;
-      }),
-    );
-    return counts;
-  }, [threads]);
 
   // Get unique parties for filter
   const parties = useMemo(() => {

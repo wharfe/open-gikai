@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { MobileHeader } from "@/components/layout/header";
 import { MemberListView } from "@/components/member/member-list-view";
-import { getMembers, getThreads } from "@/lib/data";
+import { getMembers, getThreadsSummary } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "発言者一覧",
@@ -11,7 +11,15 @@ export const metadata: Metadata = {
 
 export default function MembersPage() {
   const members = getMembers();
-  const threads = getThreads();
+  const summaries = getThreadsSummary();
+
+  // Pre-compute speech counts server-side to avoid sending all thread data
+  const speechCounts: Record<string, number> = {};
+  for (const t of summaries) {
+    for (const mid of t.memberIds) {
+      speechCounts[mid] = (speechCounts[mid] || 0) + t.speechCount;
+    }
+  }
 
   return (
     <>
@@ -22,7 +30,7 @@ export default function MembersPage() {
           <h1 className="text-[17px] font-bold">発言者一覧</h1>
         </div>
 
-        <MemberListView members={members} threads={threads} />
+        <MemberListView members={members} speechCounts={speechCounts} />
       </main>
     </>
   );

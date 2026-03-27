@@ -4,11 +4,10 @@ import { getAllWeekIds, getWeeklyDigest, getWeeklyDigests } from "@/lib/data";
 import { MobileHeader } from "@/components/layout/header";
 import { notFound } from "next/navigation";
 
-// ISR: pre-render last 8 weeks, older on-demand
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllWeekIds().slice(0, 8).map((weekId) => ({ weekId }));
+  return getAllWeekIds().map((weekId) => ({ weekId }));
 }
 
 export function generateMetadata({

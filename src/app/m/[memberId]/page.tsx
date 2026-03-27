@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getMember, getMembers, getThreads, getThreadsSummary, getAllMemberIds } from "@/lib/data";
+import { getMember, getMembers, getThreads, getAllMemberIds } from "@/lib/data";
 import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
-import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
-// ISR: generate member pages on-demand
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  // Pre-render empty list; pages generated on first access
-  return [];
+  return getAllMemberIds().map((memberId) => ({ memberId }));
 }
 
 type Props = {
@@ -91,7 +88,6 @@ export default async function MemberPage({ params }: Props) {
         />
         <MemberProfileView member={member} threads={threads} members={members} />
       </main>
-      <RightSidebar threads={getThreadsSummary()} members={members} />
     </>
   );
 }

@@ -1,24 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getThread, getThreadsSummary, getMembers, getAllThreadIds } from "@/lib/data";
+import { getThread, getMembers, getAllThreadIds } from "@/lib/data";
 import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
-import { RightSidebar } from "@/components/sidebar/right-sidebar";
 
-// ISR: pre-render recent threads, generate older ones on-demand
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  // Only pre-render threads from last 30 days to keep build fast
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - 30);
-  const cutoffStr = cutoff.toISOString().slice(0, 10).replace(/-/g, ".");
-  return getAllThreadIds()
-    .filter((id) => {
-      const thread = getThread(id);
-      return thread && thread.date >= cutoffStr;
-    })
-    .map((threadId) => ({ threadId }));
+  return getAllThreadIds().map((threadId) => ({ threadId }));
 }
 
 type Props = {
@@ -69,7 +58,6 @@ export default async function ThreadPage({ params }: Props) {
   if (!thread) notFound();
 
   const members = getMembers();
-  const threadsSummary = getThreadsSummary();
 
   const isoDate = thread.date.replace(/\./g, "-");
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))]
@@ -115,7 +103,6 @@ export default async function ThreadPage({ params }: Props) {
         />
         <ThreadDetailView thread={thread} members={members} />
       </main>
-      <RightSidebar threads={threadsSummary} members={members} />
     </>
   );
 }
