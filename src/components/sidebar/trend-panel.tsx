@@ -8,19 +8,20 @@ import { extractTrends } from "@/lib/utils";
 
 type TrendPanelProps = {
   threads: ThreadSummary[];
+  sessionStartDate?: string;
 };
 
-function findDefaultPeriod(threads: ThreadSummary[]): (typeof TREND_PERIODS)[number] {
+function findDefaultPeriod(threads: ThreadSummary[], sessionStartDate?: string): (typeof TREND_PERIODS)[number] {
   for (const p of TREND_PERIODS) {
-    if (extractTrends(threads, p).length > 0) return p;
+    if (extractTrends(threads, p, sessionStartDate).length > 0) return p;
   }
   return TREND_PERIODS[0];
 }
 
-export function TrendPanel({ threads }: TrendPanelProps) {
-  const defaultPeriod = useMemo(() => findDefaultPeriod(threads), [threads]);
+export function TrendPanel({ threads, sessionStartDate }: TrendPanelProps) {
+  const defaultPeriod = useMemo(() => findDefaultPeriod(threads, sessionStartDate), [threads, sessionStartDate]);
   const [period, setPeriod] = useState<(typeof TREND_PERIODS)[number]>(defaultPeriod);
-  const trends = extractTrends(threads, period);
+  const trends = extractTrends(threads, period, sessionStartDate);
 
   return (
     <div className="overflow-hidden rounded-2xl bg-x-surface">

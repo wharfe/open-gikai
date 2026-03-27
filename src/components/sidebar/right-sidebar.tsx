@@ -31,7 +31,7 @@ export function RightSidebar({ threads, members, session }: RightSidebarProps) {
       <div className="space-y-4 pb-20">
         {session && <SessionCard threads={threads} session={session} />}
         <ThemePanel threads={threads} />
-        <TrendPanel threads={threads} />
+        <TrendPanel threads={threads} sessionStartDate={session?.startDate} />
         <FollowPanel members={members} />
 
         {/* Footer links — X style */}

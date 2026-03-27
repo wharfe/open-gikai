@@ -35,6 +35,7 @@ const COMMITTEE_SUFFIX_RE = /委員会$/;
 export function extractTrends(
   threads: { date: string; topicTag: string; keywords?: string[] }[],
   period?: "今週" | "今国会" | "今年",
+  sessionStartDate?: string,
 ): [string, number][] {
   // Filter threads by period based on date field (YYYY.MM.DD format)
   const now = new Date();
@@ -55,7 +56,11 @@ export function extractTrends(
         if (period === "今年") {
           return threadDate.getFullYear() === now.getFullYear();
         }
-        // "今国会" — current Diet session, approximate as last 6 months
+        // "今国会" — use session start date if available
+        if (sessionStartDate) {
+          const sessionStart = new Date(sessionStartDate);
+          return threadDate >= sessionStart;
+        }
         const sessionStart = new Date(now);
         sessionStart.setMonth(sessionStart.getMonth() - 6);
         return threadDate >= sessionStart;
