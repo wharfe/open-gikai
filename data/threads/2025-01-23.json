@@ -17,6 +17,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121614024X00120250123"
         }
+      ],
+      "news": [
+        {
+          "title": "片山さつき財務相、暫定予算案の編成を表明「空白期間は許され ...",
+          "url": "https://www.huffingtonpost.jp/entry/story_jp_69c220f1e4b0964b5700ae2b",
+          "source": "ハフポスト",
+          "pubDate": "Mon, 23 Mar 2026 15:49:00 GMT",
+          "image": "https://img.huffingtonpost.com/asset/69c22d221b00006140d798f9.jpg?cache=vXIyxyWg7s&amp;ops=1200_630"
+        },
+        {
+          "title": "政府が8・6兆円規模の令和8年度暫定予算案を閣議決定 片山財務相 ...",
+          "url": "https://news.yahoo.co.jp/articles/64cac095d75787762ecfea80dcf12151fa3d12e1",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 26 Mar 2026 22:14:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260327-00000090-san-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "「高市1強」阻む参院の論理 独立性に配慮する首相、暫定予算提出",
+          "url": "https://www.nikkei.com/article/DGXZQOUA260YU0W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 19:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2815939027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.83&amp;fp-y=0.19&amp;h=630&amp;w=1200&amp;s=9c73732b941875c30340483332fbb4c9"
+        }
       ]
     },
     "speeches": [
@@ -62,6 +85,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121614024X00120250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "船橋市とNTT東日本 千葉支店が共同して地域DXを推進",
+          "url": "https://news.mynavi.jp/article/20260326-4207317/",
+          "source": "マイナビニュース",
+          "pubDate": "Wed, 25 Mar 2026 20:00:00 GMT"
+        },
+        {
+          "title": "物流連が基本政策委開催、施策の推進図る",
+          "url": "https://www.logi-today.com/928712",
+          "source": "LOGISTICS TODAY",
+          "pubDate": "Mon, 23 Mar 2026 17:00:00 GMT"
+        },
+        {
+          "title": "行政のオンライン化を推進 基山町初のDXアドバイザー藤尾さん 公式 ...",
+          "url": "https://www.saga-s.co.jp/articles/-/1650311",
+          "source": "佐賀新聞",
+          "pubDate": "Sat, 14 Feb 2026 00:00:00 GMT",
+          "image": "https://saga.ismcdn.jp/mwimgs/b/0/1200m/img_b03630745c5d6cac5ad672df12d2cffa623309.jpg"
         }
       ]
     },
@@ -245,6 +289,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121614024X00120250123"
         }
+      ],
+      "news": [
+        {
+          "title": "”脱炭素先行地域”大潟村 電気自動車2台を公用車に導入 地域の ...",
+          "url": "https://news.ntv.co.jp/category/society/ab9c4a25d3c67d40499eca27973872e664",
+          "source": "日テレNEWS NNN",
+          "pubDate": "Fri, 20 Mar 2026 05:20:00 GMT",
+          "image": "https://news.ntv.co.jp/gimage/n24/articles/b0ac219546bc43c58afd99914a1423b1/2b8dd41f-c242-4ccc-967c-3da9e5d3a30f.jpg?w=1200"
+        },
+        {
+          "title": "エコカー補助金、国産蓄電池の使用で重点配分 経産省が基準改定",
+          "url": "https://www.nikkei.com/article/DGXZQOUA277IZ0X20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 10:48:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2815420027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.48&amp;fp-y=0.22&amp;h=630&amp;w=1200&amp;s=cb22cf1511648cb4cdf262dd25e8ba5c"
+        },
+        {
+          "title": "群馬県、電気自動車購入で1台50万円まで補助 県内生産を後押し",
+          "url": "https://www.nikkei.com/article/DGXZQOCC267BE0W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 26 Mar 2026 11:48:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2809087026032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.74&amp;fp-y=0.36&amp;h=630&amp;w=1200&amp;s=37daa9dc036d3d7ad5873c943615236a"
+        }
       ]
     },
     "speeches": [
@@ -424,6 +491,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121614024X00120250123"
         }
+      ],
+      "news": [
+        {
+          "title": "国会議事堂、初の耐震改修 30年度着工へ 工期7～8年",
+          "url": "https://mainichi.jp/articles/20260104/ddm/001/010/082000c",
+          "source": "毎日新聞",
+          "pubDate": "Sat, 03 Jan 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2015/12/18/20151218hrc00m010001000q/9.jpg?2"
+        },
+        {
+          "title": "＜1分で解説＞国会議事堂が初の耐震改修へ",
+          "url": "https://mainichi.jp/articles/20260104/k00/00m/040/072000c",
+          "source": "毎日新聞",
+          "pubDate": "Sat, 03 Jan 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/01/02/20260102k0000m010017000p/0c10.jpg?1"
+        },
+        {
+          "title": "「白亜の殿堂」、建物のひみつ 朝日小学生新聞",
+          "url": "https://www.asahi.com/articles/DA3S16409843.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sun, 22 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260223000279_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -503,6 +593,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121614024X00120250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "個人情報の漏えいがなかったことが判明 ～ 国立国会図書館 開発中 ...",
+          "url": "https://scan.netsecurity.ne.jp/article/2026/03/25/54900.html",
+          "source": "ScanNetSecurity",
+          "pubDate": "Tue, 24 Mar 2026 16:05:00 GMT",
+          "image": "https://scan.netsecurity.ne.jp/imgs/ogp_f/52253.jpg"
+        },
+        {
+          "title": "古典を“Webサイト感覚”で読める 国会図書館「次世代デジタル ...",
+          "url": "https://www.itmedia.co.jp/news/articles/2512/03/news099.html",
+          "source": "ITmedia",
+          "pubDate": "Tue, 02 Dec 2025 16:00:00 GMT",
+          "image": "https://image.itmedia.co.jp/news/articles/2512/03/cover_news099.png"
         }
       ]
     },
@@ -584,6 +690,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121614024X00120250123"
         }
+      ],
+      "news": [
+        {
+          "title": "令和8年度予算案が衆院を通過 与党の賛成多数 16日に参院で実質 ...",
+          "url": "https://www.sankei.com/article/20260313-VTV7PAWIOVPMZCRZ5FB5GH2BAA/",
+          "source": "産経新聞",
+          "pubDate": "Fri, 13 Mar 2026 14:37:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/JREIV64TTBJZ5B5IHD7SR3IMEQ.jpg?auth=5f6c8739eb58d7e3ee983c7baea087236bd695981cc1cadc098c5d9e3f5e6094&amp;quality=50&amp;focal=3054%2C1434&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "令和8年度予算案の審議が山場 与党は13日に衆院通過方針も ...",
+          "url": "https://www.sankei.com/article/20260308-VNXG54Y4KZLHROLTALSFU3AMUQ/",
+          "source": "産経新聞",
+          "pubDate": "Sun, 08 Mar 2026 16:30:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/RM73E6V2ZZNNLP5ISAT7T54B3Y.jpg?auth=5b44e15bbc384fc14c09021fcbd275eed280414718d2553f73d36977bfd058c7&amp;quality=50&amp;focal=2223%2C1544&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "中道・小川代表「力が全てか」 予算審議で批判強める野党、強気 ...",
+          "url": "https://news.yahoo.co.jp/articles/1230dbb5d01df3e30883dd0195b8c6feb3e2cac4",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 09 Mar 2026 05:10:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -646,6 +774,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "北方領土館 初の予算化",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-12-22/2025122202_03_0.php",
+          "source": "日本共産党",
+          "pubDate": "Sun, 21 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-12-22/img_4.jpg"
+        },
+        {
+          "title": "老朽化著しい北方領土館 建て替え予算「検討」",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-12-12/ftp2025121215_01_0.php",
+          "source": "日本共産党",
+          "pubDate": "Thu, 11 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-12-12/img_19.jpg"
+        },
+        {
+          "title": "千葉・八千代の中学生らが北方領土隣接地を視察「すぐ近くの現実 ...",
+          "url": "https://www.sankei.com/article/20251113-QDMJ6AKD35NUTMNCO4JD274B4U/",
+          "source": "産経新聞",
+          "pubDate": "Thu, 13 Nov 2025 10:47:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/2HW5FTDYQVMPJOQHDC4FTY5NII.jpg?auth=3b2703d28bbe146b843a64a23b4403206b27a57341001c0781c599ba4f4ff1b9&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
         }
       ]
     },
@@ -774,6 +925,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "首相、北方四島墓参「最優先事項」 再開へ働きかけ強調 大会で ...",
+          "url": "https://www.nishinippon.co.jp/item/1455470/",
+          "source": "西日本新聞",
+          "pubDate": "Sat, 07 Feb 2026 21:59:00 GMT"
+        },
+        {
+          "title": "北方四島の墓参再開を強く要請 鈴木宗男議員、露外務省高官らと会談",
+          "url": "https://mainichi.jp/articles/20251227/k00/00m/030/009000c",
+          "source": "毎日新聞",
+          "pubDate": "Fri, 26 Dec 2025 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2025/12/27/20251227k0000m030011000p/0c10.jpg?1"
+        },
+        {
+          "title": "北方領土、墓参再開目指す",
+          "url": "https://www.saga-s.co.jp/articles/-/1646121",
+          "source": "佐賀新聞",
+          "pubDate": "Sat, 07 Feb 2026 04:41:00 GMT",
+          "image": "https://saga.ismcdn.jp/mwimgs/1/c/1200m/img_1c32e18066410696290608ac832b15bf13871.jpg"
+        }
       ]
     },
     "speeches": [
@@ -881,6 +1054,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "沖縄振興予算2647億円 10年ぶり増、県要望には届かず",
+          "url": "https://www.jiji.com/jc/article?k=2025121800109&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 17 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202512/20251218at14S_o.jpg"
+        },
+        {
+          "title": "沖縄県名護市で「スマートシティ名護モデル・観光DX推進事業」を実施",
+          "url": "https://www.jiji.com/jc/article?k=000000005.000156922&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 26 Dec 2025 00:10:00 GMT"
+        },
+        {
+          "title": "政府、沖縄振興予算2647億円 県要望に5年連続で届かず",
+          "url": "https://news.yahoo.co.jp/articles/c68346dc026a65282bafc26319da0bf11216c43c",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 17 Dec 2025 11:26:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/default.jpg?exp=10800"
         }
       ]
     },
@@ -1325,6 +1520,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "第6次沖縄振興計画 県が前期3年分を評価・検証 後期5年へ計画改定 ...",
+          "url": "https://www.okinawatimes.co.jp/articles/-/1802890",
+          "source": "沖縄タイムス",
+          "pubDate": "Wed, 25 Mar 2026 17:20:00 GMT",
+          "image": "https://oki.ismcdn.jp/mwimgs/5/9/1200wm/img_5926dbcfe4e170e9c33d9be88d1d1b05346731.jpg"
+        },
+        {
+          "title": "キンドリル、沖縄科学技術大学院大学に向けてAI プライベート ...",
+          "url": "https://www.asahi.com/and/pressrelease/16443658",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Mon, 23 Mar 2026 23:24:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "OIST学長辞任と「第2の創業期」への試練：日本社会のプランBを守り ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/6fc29593c3d52bdaef396083b562bc1ba3ea1865",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 15 Feb 2026 16:02:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/suzukitakahiro/02541592/title-1771071819796.jpeg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -1421,6 +1639,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "終戦前後の北方領土の記憶、次世代に 根室市が「記録集」再編集し ...",
+          "url": "https://www.47news.jp/13830132.html",
+          "source": "47NEWS",
+          "pubDate": "Thu, 05 Feb 2026 16:00:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/544f8413a1189dedd05d1d52ffde89e8/photo.jpg"
+        },
+        {
+          "title": "北方領土の元島民100人の写真集 「記憶を次世代に」 3世の写真家 ...",
+          "url": "https://www.tokyo-np.co.jp/article/440950",
+          "source": "tokyo-np",
+          "pubDate": "Sun, 12 Oct 2025 17:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/f/8/8/3/f883ccfe4a543a4ea84741f4f8808a19_2.jpg"
+        },
+        {
+          "title": "北方領土の日 元島民ら世代超え返還運動決意 根室の大会に700人",
+          "url": "https://www.47news.jp/13833997.html",
+          "source": "47NEWS",
+          "pubDate": "Fri, 06 Feb 2026 16:00:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/ccddcf97c4b316080ce8a11586869201/photo.jpg"
         }
       ]
     },
@@ -1689,6 +1930,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "霧島演習場に日米のヘリ6機飛来 共同訓練「アイアン・フィスト ...",
+          "url": "https://373news.com/news/local/detail/229778/",
+          "source": "南日本新聞",
+          "pubDate": "Wed, 25 Feb 2026 01:16:00 GMT"
+        },
+        {
+          "title": "史上最多…霧島演習場にオスプレイ16機含む航空25機が参加 日米 ...",
+          "url": "https://373news.com/news/local/detail/228594/",
+          "source": "南日本新聞",
+          "pubDate": "Fri, 06 Feb 2026 02:30:00 GMT"
+        },
+        {
+          "title": "日米共同訓練、霧島演習場に米軍ヘリ 騒音やトラブルなし",
+          "url": "https://www.47news.jp/13911448.html",
+          "source": "47NEWS",
+          "pubDate": "Tue, 24 Feb 2026 16:01:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/8fc2e7ab4f9a8c5b28a7a6a675d2070d/photo.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1863,6 +2125,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "【高校受験2026】滋賀県公立高入試＜社会＞講評…字数指定のある ...",
+          "url": "https://resemom.jp/article/2026/02/25/85228.html",
+          "source": "リセマム",
+          "pubDate": "Wed, 25 Feb 2026 13:15:00 GMT",
+          "image": "https://resemom.jp/imgs/ogp_f/392552.jpg"
+        },
+        {
+          "title": "【高校受験2026】神奈川県公立入試＜特色検査＞講評…現代的な ...",
+          "url": "https://resemom.jp/article/2026/02/19/85131.html",
+          "source": "リセマム",
+          "pubDate": "Thu, 19 Feb 2026 03:20:00 GMT",
+          "image": "https://resemom.jp/imgs/ogp_f/392074.jpg"
+        },
+        {
+          "title": "国語の出題意図は「筆者の考えを文章の展開の即して的確に把握 ...",
+          "url": "https://news.yahoo.co.jp/articles/8ec3cd2780adaea393fffb5349c5fff3b3184924",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 03 Mar 2026 22:31:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260304-90036148-sut-000-1-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -1996,6 +2281,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "中国が「一方的な批判や威圧的措置強める」、日本政府が外交青書 ...",
+          "url": "https://jp.reuters.com/world/security/U5Z26UQ7QVLYFIPQ74JUSQ6PGE-2026-03-24/",
+          "source": "ロイター",
+          "pubDate": "Mon, 23 Mar 2026 19:26:00 GMT",
+          "image": "https://www.reuters.com/resizer/v2/A7XWVTNWJRNRPH75FYO2QU2F2A.jpg?auth=134ba2bcf7769c528833a39d2b3bf1e3192d4700453621884bcefa629e0dbb47&amp;height=1005&amp;width=1920&amp;quality=80&amp;smart=true"
+        },
+        {
+          "title": "外交青書、原案判明 中国「最も重要な二国間関係」→「重要な隣国」",
+          "url": "https://www.asahi.com/articles/ASV3S3JKTV3SUTFK010M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Tue, 24 Mar 2026 04:02:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260324003661_comm.jpg"
+        },
+        {
+          "title": "焦点：日中関係の行方占う衆院選、高市氏勝利なら中国は戦略変更も",
+          "url": "https://jp.reuters.com/economy/IZYCKHA4GNKHLIY5ONJNJPD744-2026-01-29/",
+          "source": "ロイター",
+          "pubDate": "Thu, 29 Jan 2026 02:12:00 GMT",
+          "image": "https://www.reuters.com/resizer/v2/AG5YKULUGVMLBFC3HRRXSKVVJ4.jpg?auth=af82ee336661cbcd4b78972eb9aeb6d8db4fcd08e4c234ffebcabcdf4177005f&amp;height=1005&amp;width=1920&amp;quality=80&amp;smart=true"
         }
       ]
     },
@@ -2176,6 +2484,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "新たなクマ被害対策ロードマップ 政府が策定…目標数として「捕獲 ...",
+          "url": "https://www.fnn.jp/articles/-/1021506",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Thu, 26 Mar 2026 23:21:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/0/3/600/img_03d70585e06d7a6f71ff4fb2be0040d3775719.jpg"
+        },
+        {
+          "title": "クマ被害、過去最悪を更新 5道県で死者13人―ハンターは減少傾向",
+          "url": "https://www.jiji.com/jc/article?k=2026032700787&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Mar 2026 04:30:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260327ax03S_o.jpg"
+        },
+        {
+          "title": "クマ被害対策強化 31都道府県 調査や人材育成 来年度 ／新潟",
+          "url": "https://mainichi.jp/articles/20260328/ddl/k15/040/067000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 13:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2015/12/18/20151218hrc00m010001000q/9.jpg?2"
         }
       ]
     },
@@ -2427,6 +2758,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "【連載】沖縄の「帰属問題」－中国が仕掛ける認知戦（上）中国が ...",
+          "url": "https://www.worldtimes.co.jp/japan/okinawa/20260218-206075/",
+          "source": "Sekai Nippo",
+          "pubDate": "Tue, 17 Feb 2026 16:00:00 GMT",
+          "image": "https://www.worldtimes.co.jp/wp-content/uploads/2026/02/cgtn1-2.jpg"
+        },
+        {
+          "title": "北方領土問題、解決に意欲 高市首相、道内高校生と面会",
+          "url": "https://www.jiji.com/jc/article?k=2026031000809&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 09 Mar 2026 17:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260310at46S_o.jpg"
+        },
+        {
+          "title": "千島連盟、伝承者の募集開始へ 元島民の高齢化で危機感",
+          "url": "https://www.worldtimes.co.jp/japan/20260207-205766/",
+          "source": "Sekai Nippo",
+          "pubDate": "Fri, 06 Feb 2026 16:00:00 GMT",
+          "image": "https://www.worldtimes.co.jp/wp-content/uploads/2025/02/07h4589.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2540,6 +2894,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "「受け入れられない」沖縄県の玉城知事 米軍普天間飛行場を返還せ ...",
+          "url": "https://ryukyushimpo.jp/news/entry-5040653.html",
+          "source": "琉球新報デジタル",
+          "pubDate": "Mon, 16 Feb 2026 04:12:00 GMT",
+          "image": "https://ryukyushimpo.jp/tachyon/2026/02/%E7%9F%A5%E4%BA%8B%E6%9C%9D%E5%8F%8D%E5%BF%9C%EF%BC%90%EF%BC%92%EF%BC%91%EF%BC%96-scaled.jpg?resize=1200%2C630&gravity&crop_strategy=smart"
+        },
+        {
+          "title": "転覆した「平和丸」「不屈」 辺野古の基地建設伝える拠点 監視や ...",
+          "url": "https://www.okinawatimes.co.jp/articles/-/1796315",
+          "source": "沖縄タイムス",
+          "pubDate": "Mon, 16 Mar 2026 19:54:00 GMT",
+          "image": "https://oki.ismcdn.jp/mwimgs/b/e/1200wm/img_be9ddf8be1e85d3eadf007557f32dfdf538419.jpg"
+        },
+        {
+          "title": "「条件に応じ米軍再編続ける」 普天間返還めぐり海兵隊がコメント",
+          "url": "https://news.yahoo.co.jp/articles/aaa6038f60ff67faf430c506a24bfc154b8f2e26",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 22 Dec 2025 17:53:00 GMT"
         }
       ]
     },
@@ -2825,6 +3201,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "学童疎開船「対馬丸」28年ぶりの水中調査映像を内閣府が公表 船体 ...",
+          "url": "https://www.qab.co.jp/news/20260327288557.html",
+          "source": "QAB 琉球朝日放送",
+          "pubDate": "Fri, 27 Mar 2026 03:04:00 GMT"
+        },
+        {
+          "title": "＜社説＞対馬丸水中調査公表 悲劇を直視、警鐘としたい",
+          "url": "https://ryukyushimpo.jp/editorial/entry-5152905.html",
+          "source": "琉球新報",
+          "pubDate": "Fri, 27 Mar 2026 11:00:00 GMT",
+          "image": "https://ryukyushimpo.jp/tachyon/2023/09/7e0b4ff956cfd80a6e7bc90e000b06e3.jpg"
+        },
+        {
+          "title": "対馬丸の試料に「悲惨さ伝わる」 水中調査で収集した木片や金属片 ...",
+          "url": "https://www.okinawatimes.co.jp/articles/-/1804231",
+          "source": "沖縄タイムス",
+          "pubDate": "Thu, 26 Mar 2026 21:01:00 GMT",
+          "image": "https://oki.ismcdn.jp/mwimgs/7/0/1200wm/img_70dd0f87ce67322a68f91ccde659e3176128259.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2941,6 +3339,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "国内最大の観光&#215;Web3イベント＜Tourism&#215;Web3 Summit 2026＞3月26日（木 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000011.000126803.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 28 Jan 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/126803/11/126803-11-ddc855e497b98d969191440178238bbb-3900x2686.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -3111,6 +3518,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "米側、軍施設への立ち入り拒否 PFAS、沖縄県が申請",
+          "url": "https://www.toonippo.co.jp/articles/-/2175047",
+          "source": "東奥日報",
+          "pubDate": "Thu, 18 Dec 2025 15:59:00 GMT"
+        },
+        {
+          "title": "保育園・小学校で相次いで起きた米軍ヘリ部品落下事故 子どもの ...",
+          "url": "https://www.excite.co.jp/news/article/OkinawaTimes_1744526/",
+          "source": "Excite エキサイト",
+          "pubDate": "Fri, 26 Dec 2025 16:00:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/OkinawaTimes/89/OkinawaTimes_1744526/OkinawaTimes_1744526_1.jpg"
+        }
       ]
     },
     "speeches": [
@@ -3262,6 +3684,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "沖縄知事、再発防止要請へ 野球場に米軍ヘリ着陸で",
+          "url": "https://www.jiji.com/jc/article?k=2026030900442&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Sun, 08 Mar 2026 17:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260309ds52_o.jpg"
+        },
+        {
+          "title": "「米軍の犯罪・事件・事故」の記事一覧",
+          "url": "https://ryukyushimpo.jp/tag/us-military-crimes-incidents-accidents/page/65",
+          "source": "琉球新報デジタル",
+          "pubDate": "Mon, 19 Nov 2012 16:00:00 GMT",
+          "image": "https://ryukyushimpo.jp/tachyon/2024/05/ogp_1200-675_ryukyushimpo_logo.png"
+        },
+        {
+          "title": "大川原冤罪事件の遺族、全国警察の幹部に研修「再発防止に生かし ...",
+          "url": "https://www.asahi.com/articles/ASV1Z31H2V1ZUTIL011M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 29 Jan 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260130003015_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -3368,6 +3813,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
         }
+      ],
+      "news": [
+        {
+          "title": "石垣島のリネン会社に12億円を協調融資、沖縄公庫と海邦銀、琉球銀",
+          "url": "https://www.nikkei.com/article/DGXZQOJC027WU0S6A300C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Mon, 02 Mar 2026 12:23:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2696268002032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.2&amp;fp-y=0.29&amp;h=630&amp;w=1200&amp;s=1e3ed9d18ca4bb0453559e5523aa9f39"
+        },
+        {
+          "title": "衆院選最大の争点は 政権評価・沖縄振興・安全保障への見解は ...",
+          "url": "https://www.excite.co.jp/news/article/OkinawaTimes_1762360/",
+          "source": "Excite エキサイト",
+          "pubDate": "Mon, 26 Jan 2026 22:10:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/OkinawaTimes/9f/OkinawaTimes_1762360/OkinawaTimes_1762360_1.jpg"
+        },
+        {
+          "title": "自民4氏に当選証書授与 「物価高対策」「沖縄振興」に決意新た ...",
+          "url": "https://news.yahoo.co.jp/articles/826af72a7eb7fc9738c26e51dfa6cca97afec14c",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 11 Feb 2026 11:01:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260212-00010000-yaeyamanp-000-1-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -3463,6 +3931,21 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "衆院選最大の争点は 政権評価・沖縄振興・安全保障への見解は ...",
+          "url": "https://www.excite.co.jp/news/article/OkinawaTimes_1762360/",
+          "source": "Excite エキサイト",
+          "pubDate": "Mon, 26 Jan 2026 22:10:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/OkinawaTimes/9f/OkinawaTimes_1762360/OkinawaTimes_1762360_1.jpg"
+        },
+        {
+          "title": "沖縄4区 衆院選2026 各候補の訴え「離島振興」「台湾有事」で激論 ...",
+          "url": "https://news.yahoo.co.jp/articles/c63520e65fe0d2c95b361e286079b7fbd6b2a55d",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 05 Feb 2026 02:11:00 GMT"
         }
       ]
     },
@@ -3701,6 +4184,26 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121603895X00420250123"
+        }
+      ],
+      "news": [
+        {
+          "title": "農家に広がる危機感――植物腐らせる病害虫・セグロウリミバエ ...",
+          "url": "https://373news.com/news/local/detail/229200/",
+          "source": "南日本新聞",
+          "pubDate": "Mon, 16 Feb 2026 13:00:00 GMT"
+        },
+        {
+          "title": "【密着】沖縄で何が？……農作物を腐らせる“ハエ”根絶へ 作戦の全貌を緊急取材 54年前の「前代未聞の経験」がベースに『every.特集』",
+          "url": "https://www.msn.com/ja-jp/news/national/%E5%AF%86%E7%9D%80-%E6%B2%96%E7%B8%84%E3%81%A7%E4%BD%95%E3%81%8C-%E8%BE%B2%E4%BD%9C%E7%89%A9%E3%82%92%E8%85%90%E3%82%89%E3%81%9B%E3%82%8B-%E3%83%8F%E3%82%A8-%E6%A0%B9%E7%B5%B6%E3%81%B8%E4%BD%9C%E6%88%A6%E3%81%AE%E5%85%A8%E8%B2%8C%E3%82%92%E7%B7%8A%E6%80%A5%E5%8F%96%E6%9D%90-54%E5%B9%B4%E5%89%8D%E3%81%AE-%E5%89%8D%E4%BB%A3%E6%9C%AA%E8%81%9E%E3%81%AE%E7%B5%8C%E9%A8%93-%E3%81%8C%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB-every%E7%89%B9%E9%9B%86/ar-AA1Z9MlZ",
+          "source": "日テレNEWS NNN on MSN",
+          "pubDate": "Sun, 22 Mar 2026 01:22:00 GMT"
+        },
+        {
+          "title": "現地緊急取材！沖縄の“害虫根絶作戦”の全貌とは『every.特集』",
+          "url": "https://www.msn.com/ja-jp/news/national/%E7%8F%BE%E5%9C%B0%E7%B7%8A%E6%80%A5%E5%8F%96%E6%9D%90%E6%B2%96%E7%B8%84%E3%81%AE%E5%AE%B3%E8%99%AB%E6%A0%B9%E7%B5%B6%E4%BD%9C%E6%88%A6%E3%81%AE%E5%85%A8%E8%B2%8C%E3%81%A8%E3%81%AF-every%E7%89%B9%E9%9B%86/ar-AA1YTIfw",
+          "source": "日テレNEWS NNN on MSN",
+          "pubDate": "Wed, 18 Mar 2026 02:29:00 GMT"
         }
       ]
     },

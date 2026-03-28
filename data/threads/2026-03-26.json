@@ -17,6 +17,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X01220260326"
         }
+      ],
+      "news": [
+        {
+          "title": "高市総理が日米首脳会談を報告 拉致問題解決へ「トランプ大統領 ...",
+          "url": "https://times.abema.tv/articles/-/10234136",
+          "source": "ABEMA TIMES",
+          "pubDate": "Tue, 24 Mar 2026 20:11:00 GMT",
+          "image": "https://times-abema.ismcdn.jp/mwimgs/d/3/1200w/img_d3ae9bb44bcc3f254f68f99a1d6e0f29145456.jpg"
+        },
+        {
+          "title": "【速報】高市総理がアメリカから帰国 日米首脳会談終え 野党 ...",
+          "url": "https://news.yahoo.co.jp/articles/c1f90657447b64fe5046656fd9a988460f9ca077",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 22 Mar 2026 07:34:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260321-07293806-jnn-000-7-view.jpg?exp=10800"
+        },
+        {
+          "title": "トランプ氏、日本の制約に理解 高市首相、衆院で訪米報告",
+          "url": "https://www.jiji.com/jc/article?k=2026032601033&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 26 Mar 2026 02:33:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260326at98S_o.jpg"
+        }
       ]
     },
     "speeches": [

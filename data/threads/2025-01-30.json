@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121705261X00120250130"
         }
+      ],
+      "news": [
+        {
+          "title": "政府が8・6兆円規模の令和8年度暫定予算案を閣議決定 片山財務相 ...",
+          "url": "https://news.yahoo.co.jp/articles/64cac095d75787762ecfea80dcf12151fa3d12e1",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 26 Mar 2026 22:14:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260327-00000090-san-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "【飛騨高山・岐阜県高山市】総額約908億円 令和8年度予算案",
+          "url": "https://prtimes.jp/main/html/rd/p/000000344.000124925.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 17 Mar 2026 23:43:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/124925/344/124925-344-3dfdd04b3f12dcab0dd2af1026cfeeae-1920x1080.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "令和7年度補正予算「クリーンエネルギー自動車の普及促進に向けた ...",
+          "url": "https://www.meti.go.jp/policy/mono_info_service/mono/automobile/cev/r7hosei_juden.html",
+          "source": "経済産業省",
+          "pubDate": "Thu, 26 Feb 2026 23:32:00 GMT"
+        }
       ]
     },
     "speeches": [

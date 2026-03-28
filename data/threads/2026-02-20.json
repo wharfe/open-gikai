@@ -86,6 +86,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122114024X00320260220"
         }
+      ],
+      "news": [
+        {
+          "title": "ものづくり日本大賞内閣総理大臣賞表彰式",
+          "url": "https://www.kantei.go.jp/jp/105/actions/202603/25monozukuri.html",
+          "source": "首相官邸ホームページ",
+          "pubDate": "Wed, 25 Mar 2026 05:10:00 GMT",
+          "image": "https://www.kantei.go.jp/contents/topics/39096_ext_5_0.jpeg"
+        }
       ]
     },
     "speeches": [

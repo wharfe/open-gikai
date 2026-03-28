@@ -17,6 +17,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914889X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "ワット・ビット・コネクトフォーラムへの出席（令和8年1月13日）",
+          "url": "https://www.soumu.go.jp/photo_gallery/02koho03_03005546.html",
+          "source": "soumu.go",
+          "pubDate": "Thu, 15 Jan 2026 04:08:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "大臣・副大臣・政務官の政治資金パーティーを「全面的に自粛 ...",
+          "url": "https://www.oricon.co.jp/article/3149467/",
+          "source": "ORICON NEWS",
+          "pubDate": "Tue, 20 Jan 2026 07:04:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -367,6 +388,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914889X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "【最新給与実態】国家公務員の「平均給与」は月額いくら ...",
+          "url": "https://news.yahoo.co.jp/articles/0a1ecffafd64241379c5c631666940e65fb5a633",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 18 Nov 2025 03:10:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20251118-00101912-toushin-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "国家公務員給与、4年連続増 人事院勧告の実施決定―政府",
+          "url": "https://www.jiji.com/jc/article?k=2025111100427&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 10 Nov 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/img/jijicom_og_image.png"
+        },
+        {
+          "title": "【国家公務員と民間企業】「ボーナスを含めた年収」はどれくらい ...",
+          "url": "https://news.yahoo.co.jp/articles/1b9aa2f09f04c786be7dc9364b4dfed5f59f10f2",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 14 Jan 2026 21:56:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260115-00106687-toushin-000-1-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -415,6 +459,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914260X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "第2次高市内閣、強い経済へ本格始動 副大臣・政務官54人再任",
+          "url": "https://www.nikkan.co.jp/articles/view/00774408",
+          "source": "Nikkan Kogyo Shimbun",
+          "pubDate": "Thu, 19 Feb 2026 16:00:00 GMT",
+          "image": "https://d3ukgu32nhw07o.cloudfront.net/article/img1_file6996ef6c240e6.png"
+        },
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "第2次高市内閣が本格始動 副大臣・政務官を全員再任",
+          "url": "https://www.jiji.com/jc/article?k=2026021900156&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260219at70S_o.jpg"
         }
       ]
     },
@@ -532,6 +598,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914319X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "不正会計のニデック、取締役の指名委から社長を除外 客観性を向上",
+          "url": "https://www.asahi.com/articles/ASV3W368YV3WPLFA004M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 03:15:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327004212_comm.jpg"
+        },
+        {
+          "title": "不正会計のニデック、取締役候補選ぶ指名委員会から岸田光哉社長外す…岸田氏以外は引き続き委員に",
+          "url": "https://www.msn.com/ja-jp/news/money/%E4%B8%8D%E6%AD%A3%E4%BC%9A%E8%A8%88%E3%81%AE%E3%83%8B%E3%83%87%E3%83%83%E3%82%AF-%E5%8F%96%E7%B7%A0%E5%BD%B9%E5%80%99%E8%A3%9C%E9%81%B8%E3%81%B6%E6%8C%87%E5%90%8D%E5%A7%94%E5%93%A1%E4%BC%9A%E3%81%8B%E3%82%89%E5%B2%B8%E7%94%B0%E5%85%89%E5%93%89%E7%A4%BE%E9%95%B7%E5%A4%96%E3%81%99-%E5%B2%B8%E7%94%B0%E6%B0%8F%E4%BB%A5%E5%A4%96%E3%81%AF%E5%BC%95%E3%81%8D%E7%B6%9A%E3%81%8D%E5%A7%94%E5%93%A1%E3%81%AB/ar-AA1ZupUt",
+          "source": "読売新聞オンライン on MSN",
+          "pubDate": "Thu, 26 Mar 2026 18:22:00 GMT"
+        },
+        {
+          "title": "不正会計認定のニデック、取締役候補選定の指名委員会から岸田 ...",
+          "url": "https://www.sankei.com/article/20260327-VBSAAKENAZL3VNNGTJEQDKVIWI/",
+          "source": "産経ニュース",
+          "pubDate": "Thu, 26 Mar 2026 19:00:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/FKXPNETFYFILZLVXR67Y3RHSDQ.jpg?auth=a8acab04eed526d3425e0a3807635373805a5a5b1b9ff2f859c9787a80e5191d&amp;quality=50&amp;focal=996%2C856&amp;width=1200&amp;height=630"
+        }
       ]
     },
     "speeches": [
@@ -594,6 +682,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914319X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "3.11に「政治資金パーティー」でカネ集め…！自民党・現役副大臣を ...",
+          "url": "https://news.livedoor.com/article/detail/30781125/",
+          "source": "ライブドアニュース",
+          "pubDate": "Mon, 16 Mar 2026 16:48:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/f/5/f5cf4_1413_81443ce6_f1806416.jpg"
+        },
+        {
+          "title": "閣僚パーティー、一律自粛 政府が大臣規範改正",
+          "url": "https://www.jiji.com/jc/article?k=2026012000800&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 19 Jan 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202601/20260120at34S_ogp.jpg"
+        },
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
         }
       ]
     },
@@ -729,6 +839,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121913950X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "関西経済界｢外交力・防衛強化の推進を｣ 第2次高市内閣が発足",
+          "url": "https://www.nikkei.com/article/DGXZQOUF189030Y6A210C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 18 Feb 2026 11:47:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2645594018022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.49&amp;fp-y=0.27&amp;h=630&amp;w=1200&amp;s=4d15720953e393aef877dd4499e2a868"
         }
       ]
     },
@@ -939,6 +1058,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915104X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "政府、副大臣と政務官 全員の再任を閣議決定",
+          "url": "https://www.nikkei.com/article/DGXZQOUA1935M0Z10C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 19 Feb 2026 08:30:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2648573019022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-y=0.27&amp;h=630&amp;w=1200&amp;s=1603368205148bb875e99c766eb931e6"
+        }
       ]
     },
     "speeches": [
@@ -1068,6 +1196,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915206X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "立民・鎌田さゆり氏に階猛法務委員長が複数回の苦言「理事会協議 ...",
+          "url": "https://www.sankei.com/article/20251218-USEHBZHRYRDJTN2LJUNJS5LD6M/",
+          "source": "産経新聞",
+          "pubDate": "Thu, 18 Dec 2025 04:33:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/DXCZK2NKOVALLON5IVSMWOYDIU.jpg?auth=099d59e483aae2d6b7b2771fe08b8182164a91a6e79b04a2bb64e0083aed5c1e&amp;quality=50&amp;focal=601%2C301&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "【全掲載】兵庫県 人事異動 斎藤県政を担う幹部 特別職・理事職 ...",
+          "url": "https://www.fnn.jp/articles/-/1020873",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Wed, 25 Mar 2026 23:35:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/d/3/600/img_d3bd15ede4eb19bc605b19174fbc2d40987988.jpg"
+        },
+        {
+          "title": "葉梨法相は元警察官僚で法務行政に精通も…委員長時代に「2度 ...",
+          "url": "https://www.nikkan-gendai.com/articles/view/life/310138?p=column_top",
+          "source": "日刊ゲンダイ",
+          "pubDate": "Mon, 22 Aug 2022 23:00:00 GMT",
+          "image": "https://jmqvqzo7.user.webaccel.jp/img/article/000/310/138/b45d2cb4250e06dc6501cdad945fa8f120220822124826413.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1164,6 +1315,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915206X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "大臣・副大臣・大臣政務官の動き",
+          "url": "https://www.soumu.go.jp/photo_gallery/02koho03_03005574.html",
+          "source": "soumu.go",
+          "pubDate": "Fri, 23 Jan 2026 14:02:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "第2次高市内閣が本格始動 副大臣・政務官を全員再任",
+          "url": "https://www.jiji.com/jc/article?k=2026021900156&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260219at70S_o.jpg"
         }
       ]
     },
@@ -1292,6 +1465,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914080X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "経産省、フィジカルAIを重点分野にAI半導体・デジタル産業戦略の改定",
+          "url": "https://www.sbbit.jp/article/st/183026",
+          "source": "ビジネス+IT",
+          "pubDate": "Sat, 21 Mar 2026 19:54:00 GMT",
+          "image": "https://www.sbbit.jp/article/image/183026/OGP_bit202603221135247554.jpg"
+        },
+        {
+          "title": "「投資と株主還元のバランス見直しを」 経産省畠山氏が語る日本 ...",
+          "url": "https://business.nikkei.com/atcl/seminar/19/00030/032600750/",
+          "source": "日経ビジネス",
+          "pubDate": "Thu, 26 Mar 2026 01:23:00 GMT",
+          "image": "https://business.nikkei.com/atcl/seminar/19/00030/032600750/fb.jpg"
+        },
+        {
+          "title": "経済産業省とベスタス社による日本での風力発電設備製造拠点設立 ...",
+          "url": "https://www.meti.go.jp/press/2025/03/20260309005/20260309005.html",
+          "source": "経済産業省",
+          "pubDate": "Sun, 08 Mar 2026 17:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -1347,6 +1542,28 @@
           "label": "フリーランス・事業者間取引適正化等法（法令検索）",
           "url": "https://www.google.com/search?q=%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%BB%E4%BA%8B%E6%A5%AD%E8%80%85%E9%96%93%E5%8F%96%E5%BC%95%E9%81%A9%E6%AD%A3%E5%8C%96%E7%AD%89%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "建設業者二十数社に独禁法違反認定の方針 公取委 一般競争入札で ...",
+          "url": "https://news.ntv.co.jp/n/rnc/category/society/rn544d5d084e57400b87bb8738e69f96d3",
+          "source": "日テレNEWS NNN",
+          "pubDate": "Tue, 24 Mar 2026 02:43:00 GMT",
+          "image": "https://image.gallery.play.jp/rnc-news/articles/10083b72025146cc9b3932c4a276ea3a/68cde1d3-d6a2-4c62-91b0-dda0f9c7f7a0.jpg?w=1200"
+        },
+        {
+          "title": "二十数社に課徴金4億円 香川県工事で談合認定―公取委",
+          "url": "https://www.jiji.com/jc/article?k=2026032400112&g=eco",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 23 Mar 2026 10:01:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260324ds44_o.jpg"
+        },
+        {
+          "title": "(令和8年3月11日)株式会社電通グループに対する課徴金納付命令に ...",
+          "url": "https://www.jftc.go.jp/houdou/pressrelease/2026/mar/260311_daiichi.html",
+          "source": "公正取引委員会",
+          "pubDate": "Wed, 11 Mar 2026 00:27:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -1396,6 +1613,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914080X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "小森経済産業大臣政務官がアイスランド共和国のグンナルス ...",
+          "url": "https://www.meti.go.jp/press/2025/02/20260217001/20260217001.html",
+          "source": "経済産業省",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT"
+        },
+        {
+          "title": "第2次高市内閣、強い経済へ本格始動 副大臣・政務官54人再任",
+          "url": "https://www.nikkan.co.jp/articles/view/00774408",
+          "source": "Nikkan Kogyo Shimbun",
+          "pubDate": "Thu, 19 Feb 2026 16:00:00 GMT",
+          "image": "https://d3ukgu32nhw07o.cloudfront.net/article/img1_file6996ef6c240e6.png"
+        },
+        {
+          "title": "政府、副大臣と政務官 全員の再任を閣議決定",
+          "url": "https://www.nikkei.com/article/DGXZQOUA1935M0Z10C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 19 Feb 2026 08:30:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2648573019022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-y=0.27&amp;h=630&amp;w=1200&amp;s=1603368205148bb875e99c766eb931e6"
         }
       ]
     },
@@ -1565,6 +1804,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914080X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "公取委・茶谷委員長「政策官庁の役割果たす」 デジタル・価格転嫁 ...",
+          "url": "https://www.nikkei.com/article/DGXZQOUA199QE0Z10C26A1000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 20 Jan 2026 06:55:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2498801020012026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.17&amp;fp-y=0.35&amp;h=630&amp;w=1200&amp;s=9fc327870034cb9d10eb7a532e79c02d"
+        },
+        {
+          "title": "公取委員長・茶谷栄治氏「競争力確保、成長後押し」",
+          "url": "https://www.nikkei.com/article/DGKKZO93933810S6A120C2EP0000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 22 Jan 2026 17:59:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSKZZO9393650022012026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=76430f314a734fc12148455947d22394"
+        },
+        {
+          "title": "高松土木工事談合、課徴金命令へ 二十数社に4億円超、公取",
+          "url": "https://kumanichi.com/articles/1972141",
+          "source": "熊本日日新聞社",
+          "pubDate": "Mon, 23 Mar 2026 18:01:00 GMT",
+          "image": "https://kumanichi.com/sites/default/files/styles/sns_share/public/images/newspack/2026-03PN2026032301001899.-.-.CI0003.jpg?itok=jmj2rqq2"
         }
       ]
     },
@@ -1772,6 +2034,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915007X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "「何で大臣じゃないんだ」“竹島の日”大臣不参加で激しいヤジ ...",
+          "url": "https://news.yahoo.co.jp/articles/4e7b6ef01c92258445b79db59247e5b23cbecda8",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 24 Feb 2026 02:04:00 GMT"
+        },
+        {
+          "title": "閣僚パーティー、一律自粛 政府が大臣規範改正",
+          "url": "https://www.jiji.com/jc/article?k=2026012000800&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 19 Jan 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202601/20260120at34S_ogp.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1891,6 +2168,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "日米防衛相、29日会談で調整 安保関連3文書前倒し改定伝達へ",
+          "url": "https://www.sanyonews.jp/article/1814946?kw=３文",
+          "source": "山陽新聞",
+          "pubDate": "Thu, 23 Oct 2025 14:02:00 GMT"
+        },
+        {
+          "title": "防衛増税 関連ニュース",
+          "url": "https://www.jiji.com/jc/v7?id=202212defenseexpenses",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 26 Mar 2026 17:49:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260327ds54_t.jpg"
+        },
+        {
+          "title": "日本の防衛予算が曲がり角を迎えている。GDP比3％か5％か／世界で ...",
+          "url": "https://toyokeizai.net/articles/-/938345",
+          "source": "東洋経済オンライン",
+          "pubDate": "Wed, 18 Mar 2026 14:02:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/5/6/1200w/img_5632f275e03e1b0938fea39661f5af35353846.jpg"
         }
       ]
     },
@@ -2016,6 +2315,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "自衛隊員確保へ更なる処遇改善、活動広報強化へ",
+          "url": "https://www.excite.co.jp/news/article/Economic_0000106153/",
+          "source": "Excite エキサイト",
+          "pubDate": "Sat, 01 Nov 2025 17:00:00 GMT",
+          "image": "https://s.eximg.jp/exnews/logo/noimg_1200x630_domestic-topic.jpg"
+        },
+        {
+          "title": "自衛隊の定員削減へ検討進む 「防衛力強化」掲げる中、続く人員不足",
+          "url": "https://www.asahi.com/articles/ASV3V43HYV3VUTFK00HM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 15:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260326005632_comm.jpg"
+        },
+        {
+          "title": "自衛官確保は至上命題と待遇処遇一層改善を指示",
+          "url": "https://www.excite.co.jp/news/article/Economic_0000106736/",
+          "source": "Excite エキサイト",
+          "pubDate": "Tue, 23 Dec 2025 22:31:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/Economic/8c/Economic_0000106736/Economic_0000106736_1.jpg"
         }
       ]
     },
@@ -2168,6 +2490,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
         }
+      ],
+      "news": [
+        {
+          "title": "クマ出没時の緊急捕獲体制、各地で整備へ 政府の対策工程表案が判明",
+          "url": "https://www.asahi.com/articles/ASV3T34Z3V3TUTFL00RM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Wed, 25 Mar 2026 04:30:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260325003447_comm.jpg"
+        },
+        {
+          "title": "自衛隊の「クマ対策」支援、秋田12市町村で延べ924人が出動 “防衛 ...",
+          "url": "https://www.excite.co.jp/news/article/ben54_jp_news_3017/",
+          "source": "Excite エキサイト",
+          "pubDate": "Mon, 22 Dec 2025 01:56:00 GMT",
+          "image": "https://s.eximg.jp/exnews/logo/noimg_1200x630_domestic-topic.jpg"
+        },
+        {
+          "title": "自衛隊の「クマ対策」支援、秋田12市町村で延べ924人が出動 “防衛 ...",
+          "url": "https://news.yahoo.co.jp/articles/2927b9aca2f6bed845c64f57695d16e3a9be4f61",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 22 Dec 2025 02:00:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20251222-00010000-bengojp-000-2-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -2319,6 +2664,29 @@
         {
           "label": "自衛隊法（法令検索）",
           "url": "https://www.google.com/search?q=%E8%87%AA%E8%A1%9B%E9%9A%8A%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "＜主張＞日韓の退避協力 朝鮮・台湾有事も対象に",
+          "url": "https://www.sankei.com/article/20260326-RGSYLFBVEBJ2FOUVRVXV2C5EOI/",
+          "source": "産経ニュース",
+          "pubDate": "Wed, 25 Mar 2026 13:00:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/6Z3KZLXLZBLZHJZIQIHSKRBVNE.jpg?auth=a305cdff3c5c3e891f23ad7d118d95c6a1aeeba692a069a8633f6dfce25b4777&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "邦人退避、チャーター機8日運航 自衛隊機、モルディブ待機へ―政府",
+          "url": "https://www.jiji.com/jc/article?k=2026030600925&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 05 Mar 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260306at66S_o.jpg"
+        },
+        {
+          "title": "「日本はポーランドと似た立場」 元陸将が語る台湾有事での南西諸島",
+          "url": "https://www.asahi.com/articles/ASV2X42GHV2XUHBI01JM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 02 Mar 2026 15:59:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260228002978_comm.jpg"
         }
       ]
     },
@@ -2518,6 +2886,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
         }
+      ],
+      "news": [
+        {
+          "title": "山尾志桜里氏 高市首相の台湾有事発言で政府に注文「打ち返しを ...",
+          "url": "https://www.msn.com/ja-jp/news/world/%E5%B1%B1%E5%B0%BE%E5%BF%97%E6%A1%9C%E9%87%8C%E6%B0%8F-%E9%AB%98%E5%B8%82%E9%A6%96%E7%9B%B8%E3%81%AE%E5%8F%B0%E6%B9%BE%E6%9C%89%E4%BA%8B%E7%99%BA%E8%A8%80%E3%81%A7%E6%94%BF%E5%BA%9C%E3%81%AB%E6%B3%A8%E6%96%87-%E6%89%93%E3%81%A1%E8%BF%94%E3%81%97%E3%82%92%E5%85%B7%E4%BD%93%E7%9A%84%E3%81%AB%E5%BC%B7%E5%8C%96%E3%81%97%E3%81%A6%E3%81%BB%E3%81%97%E3%81%84/ar-AA1Z2TjP",
+          "source": "東スポWEB on MSN",
+          "pubDate": "Fri, 20 Mar 2026 04:22:23 GMT"
+        },
+        {
+          "title": "習近平が高市総理に激怒した原因は実は「台湾発言」だけでは ...",
+          "url": "https://www.msn.com/ja-jp/news/other/%E7%BF%92%E8%BF%91%E5%B9%B3%E3%81%8C%E9%AB%98%E5%B8%82%E7%B7%8F%E7%90%86%E3%81%AB%E6%BF%80%E6%80%92%E3%81%97%E3%81%9F%E5%8E%9F%E5%9B%A0%E3%81%AF%E5%AE%9F%E3%81%AF-%E5%8F%B0%E6%B9%BE%E7%99%BA%E8%A8%80-%E3%81%A0%E3%81%91%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E6%96%B0%E5%9E%8B%E8%BB%8D%E5%9B%BD%E4%B8%BB%E7%BE%A9-%E3%81%BE%E3%81%A7%E9%A3%9B%E3%81%B3%E5%87%BA%E3%81%97%E3%81%9F%E4%B8%AD%E5%9B%BD%E3%81%AE%E5%AF%BE%E6%97%A5%E6%89%B9%E5%88%A4%E3%81%AE%E6%9C%AC%E9%9F%B3/ar-AA1ZuB1i",
+          "source": "現代ビジネス on MSN",
+          "pubDate": "Thu, 26 Mar 2026 15:00:00 GMT"
+        },
+        {
+          "title": "日米首脳会談は習近平にダメージを与えられたか？",
+          "url": "https://news.yahoo.co.jp/expert/articles/7a380c35116d761bd411f9cfa51772d62d67f598",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 23 Mar 2026 03:27:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/endohomare/02584451/title-1774259640236.jpeg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -2647,6 +3036,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "公的債務・防衛・社会保障――分野別に財政の課題を詳述 評者 ...",
+          "url": "https://weekly-economist.mainichi.jp/articles/20260407/se1/00m/020/011000c",
+          "source": "週刊エコノミスト Online",
+          "pubDate": "Thu, 26 Mar 2026 08:10:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/24/20260324se100m020001000q/0c10.jpg?1"
+        },
+        {
+          "title": "竹中平蔵＆吉川洋が20年ぶりの再論戦､｢日本は経済成長で\"財政 ...",
+          "url": "https://toyokeizai.net/articles/-/939277",
+          "source": "東洋経済オンライン",
+          "pubDate": "Fri, 27 Mar 2026 01:02:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/6/4/1200w/img_64de54216a2dffc8c9e356aab2776803630441.jpg"
+        },
+        {
+          "title": "日本の防衛予算が曲がり角を迎えている。GDP比3％か5％か／世界で ...",
+          "url": "https://toyokeizai.net/articles/-/938345",
+          "source": "東洋経済オンライン",
+          "pubDate": "Wed, 18 Mar 2026 14:02:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/5/6/1200w/img_5632f275e03e1b0938fea39661f5af35353846.jpg"
         }
       ]
     },
@@ -2809,6 +3221,29 @@
           "label": "防衛装備移転三原則（法令検索）",
           "url": "https://www.google.com/search?q=%E9%98%B2%E8%A1%9B%E8%A3%85%E5%82%99%E7%A7%BB%E8%BB%A2%E4%B8%89%E5%8E%9F%E5%89%87+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "殺傷兵器輸出、原則容認 5類型撤廃、防衛産業強化狙う―与党提言 ...",
+          "url": "https://www.jiji.com/jc/article?k=2026030600199&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 06 Mar 2026 00:18:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260306at64S_ogp.jpg"
+        },
+        {
+          "title": "日本の「武器輸出解禁」はどこまで進むのか、5類型撤廃が ...",
+          "url": "https://jbpress.ismedia.jp/articles/-/93955?page=3",
+          "source": "JBpress",
+          "pubDate": "Thu, 26 Mar 2026 14:10:00 GMT",
+          "image": "https://jbpress.ismcdn.jp/mwimgs/2/c/1200mw/img_2c9d979a93a4777c7dfe1a5aac0a3505112836.jpg"
+        },
+        {
+          "title": "与党、装備品「5類型」撤廃を提言 同盟・同志国への武器輸出可能に",
+          "url": "https://www.nikkei.com/article/DGXZQOUA060X30W6A300C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 06 Mar 2026 03:17:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2716921006032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.42&amp;fp-y=0.19&amp;h=630&amp;w=1200&amp;s=03c851a4654b18734bf77688e234ce21"
+        }
       ]
     },
     "speeches": [
@@ -2915,6 +3350,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
         }
+      ],
+      "news": [
+        {
+          "title": "核大国の武力に対話力であらがう 平和教育を広める若者の切なる思い",
+          "url": "https://www.asahi.com/articles/ASV3R2PH8V3RTNLL003M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Tue, 24 Mar 2026 16:01:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260323002762_comm.jpg"
+        },
+        {
+          "title": "平和国家としての原点を、いま改めて",
+          "url": "https://www.komei.or.jp/km/ebetsu-tokuda-satoshi/2026/01/31/%E5%B9%B3%E5%92%8C%E5%9B%BD%E5%AE%B6%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E5%8E%9F%E7%82%B9%E3%82%92%E3%80%81%E3%81%84%E3%81%BE%E6%94%B9%E3%82%81%E3%81%A6/",
+          "source": "公明党",
+          "pubDate": "Fri, 30 Jan 2026 16:00:00 GMT",
+          "image": "https://www.komei.or.jp/km/ebetsu-tokuda-satoshi/files/2026/01/IMG_6929-300x300.png?ver=1769839663"
+        },
+        {
+          "title": "戦後80年 平和サミット 若者が紡ぐ次世代への平和メッセージ",
+          "url": "https://www.komei.or.jp/km/fussa-aoki/2026/02/15/%E6%88%A6%E5%BE%8C80%E5%B9%B4-%E5%B9%B3%E5%92%8C%E3%82%B5%E3%83%9F%E3%83%83%E3%83%88%E3%80%80%E8%8B%A5%E8%80%85%E3%81%8C%E7%B4%A1%E3%81%90%E6%AC%A1%E4%B8%96%E4%BB%A3%E3%81%B8%E3%81%AE%E5%B9%B3/",
+          "source": "公明党",
+          "pubDate": "Sat, 14 Feb 2026 16:00:00 GMT",
+          "image": "https://www.komei.or.jp/km/fussa-aoki/files/2026/02/915A4D76-7FA7-415C-9C7D-EA7AAC371559-1-768x1024.jpg?ver=1771167073"
+        }
       ]
     },
     "speeches": [
@@ -3001,6 +3459,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "25年度在日米軍関係経費 過去最大8886億円",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2026-01-18/2026011801_01_0.php",
+          "source": "日本共産党",
+          "pubDate": "Sat, 17 Jan 2026 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2026-01-18/img_1.jpg"
+        },
+        {
+          "title": "（社説）衆院選 沖縄の基地 負担軽減に具体策を",
+          "url": "https://www.asahi.com/articles/DA3S16396394.html",
+          "source": "朝日新聞社",
+          "pubDate": "Tue, 03 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260203004429_comm.jpg"
         }
       ]
     },
@@ -3090,6 +3564,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "急浮上する原潜保有論･その実現可能性は（後編）／建造能力 ...",
+          "url": "https://toyokeizai.net/articles/-/934791?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Sat, 14 Feb 2026 22:10:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/9/f/1200w/img_9f540aa0b62ac9e15b127190cf3532681005133.jpg"
+        },
+        {
+          "title": "急浮上する原子力潜水艦保有論･その可能性は（前編）／太平洋 ...",
+          "url": "https://toyokeizai.net/articles/-/934775?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Sat, 14 Feb 2026 22:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/7/3/1200w/img_73d0d5ada310735ea80775e75b6f81be265283.jpg"
+        },
+        {
+          "title": "課題山積の原子力潜水艦 自民と維新は導入に前のめり 高橋浩祐",
+          "url": "https://weekly-economist.mainichi.jp/articles/20260303/se1/00m/020/052000c",
+          "source": "週刊エコノミスト Online",
+          "pubDate": "Sun, 15 Feb 2026 12:12:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/02/12/20260212se100m020050000q/0c10.jpg?1"
         }
       ]
     },
@@ -3289,6 +3786,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "テラドローン、ドローンが防衛のゲームチェンジャーとなる時代に ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000406.000020194.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 23 Mar 2026 01:02:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/20194/406/20194-406-fbead70b8b444a77424016a6836ae0bd-1200x629.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "テラドローン、防衛装備品市場へ本格参入 米国で「Terra Defense ...",
+          "url": "https://drone.jp/news/20260324111118126759.html",
+          "source": "DRONE",
+          "pubDate": "Mon, 23 Mar 2026 19:29:00 GMT"
+        },
+        {
+          "title": "「ウクライナの無人機」ついに自衛隊も導入検討へ? なぜ今 ...",
+          "url": "https://www.msn.com/ja-jp/technology/aviation/%E3%82%A6%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%8A%E3%81%AE%E7%84%A1%E4%BA%BA%E6%A9%9F-%E3%81%A4%E3%81%84%E3%81%AB%E8%87%AA%E8%A1%9B%E9%9A%8A%E3%82%82%E5%B0%8E%E5%85%A5%E6%A4%9C%E8%A8%8E%E3%81%B8-%E3%81%AA%E3%81%9C%E4%BB%8A-%E3%83%89%E3%83%AD%E3%83%BC%E3%83%B3%E5%AE%9F%E8%B7%B5%E5%A4%A7%E5%9B%BD-%E3%81%AB%E4%B8%96%E7%95%8C%E3%81%8B%E3%82%89%E6%B3%A8%E3%81%8C%E3%82%8C%E3%82%8B%E8%A6%96%E7%B7%9A%E3%81%A8%E3%81%AF/ar-AA1ZpBFQ",
+          "source": "乗りものニュース on MSN",
+          "pubDate": "Wed, 25 Mar 2026 16:12:00 GMT"
         }
       ]
     },
@@ -3504,6 +4022,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "防衛省 整備計画局サイバー整備課長 荒 心平 氏がオンライン ...",
+          "url": "https://scan.netsecurity.ne.jp/article/2026/03/16/54839.html",
+          "source": "ScanNetSecurity",
+          "pubDate": "Sun, 15 Mar 2026 16:00:00 GMT",
+          "image": "https://scan.netsecurity.ne.jp/base/images/img_ogp.png"
+        },
+        {
+          "title": "「防衛省次世代情報通信戦略について」と題して、防衛省 整備計画 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000004330.000032407.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 09 Mar 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/32407/4330/32407-4330-3a65b4802d0494f633cc56afaf091b33-1280x491.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "小泉防衛大臣が示した日米同盟抑止：指揮統制アーキテクチャーの ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/4ffe27977cddcc87dd1c40cee5bad33dc7defb6c",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sat, 17 Jan 2026 03:35:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/satohitoshi/02507778/title-1768648879419.jpeg?exp=10800"
         }
       ]
     },
@@ -4017,6 +4558,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
         }
+      ],
+      "news": [
+        {
+          "title": "政府、防衛経費の対象事業拡大へ 宇宙・航空、インフラ防護に重点",
+          "url": "https://www.sanyonews.jp/article/1821896?kw=æ–¹é‡%20ç¤ºã™",
+          "source": "山陽新聞",
+          "pubDate": "Wed, 05 Nov 2025 16:36:00 GMT"
+        },
+        {
+          "title": "国内株特化の防衛ETF、このほど上場 予算拡大と輸出本格化に思惑",
+          "url": "https://www.nikkei.com/article/DGXZQOFL030TRTT00C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 03 Mar 2026 07:06:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2700412003032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.27&amp;fp-y=0.44&amp;h=630&amp;upscale=false&amp;w=1200&amp;s=59565128cf5c53dda56ef5fb496928d2"
+        },
+        {
+          "title": "防衛費拡大は景気対策なのか。GDP押し上げに潜む見落とされた疑問",
+          "url": "https://www.excite.co.jp/news/article/Economic_0000108276/",
+          "source": "Excite エキサイト",
+          "pubDate": "Wed, 04 Mar 2026 23:56:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/Economic/91/Economic_0000108276/Economic_0000108276_1.jpg"
+        }
       ]
     },
     "speeches": [
@@ -4127,6 +4690,28 @@
           "label": "防衛装備移転三原則（法令検索）",
           "url": "https://www.google.com/search?q=%E9%98%B2%E8%A1%9B%E8%A3%85%E5%82%99%E7%A7%BB%E8%BB%A2%E4%B8%89%E5%8E%9F%E5%89%87+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "日本の「武器輸出解禁」はどこまで進むのか、5類型撤廃が ...",
+          "url": "https://jbpress.ismedia.jp/articles/-/93955?page=3",
+          "source": "JBpress",
+          "pubDate": "Thu, 26 Mar 2026 14:10:00 GMT",
+          "image": "https://jbpress.ismcdn.jp/mwimgs/2/c/1200mw/img_2c9d979a93a4777c7dfe1a5aac0a3505112836.jpg"
+        },
+        {
+          "title": "与党、装備品「5類型」撤廃を提言 同盟・同志国への武器輸出可能に",
+          "url": "https://www.nikkei.com/article/DGXZQOUA060X30W6A300C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 06 Mar 2026 03:17:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2716921006032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.42&amp;fp-y=0.19&amp;h=630&amp;w=1200&amp;s=03c851a4654b18734bf77688e234ce21"
+        },
+        {
+          "title": "自民、5類型撤廃への提言案了承 殺傷能力ある武器輸出を原則容認",
+          "url": "https://news.yahoo.co.jp/articles/7ac06f94c860f39255fa12899765c9eed4dec4e8",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 24 Feb 2026 16:32:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -4189,6 +4774,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "非核三原則とは？世界の核軍縮動向と日本の立ち位置、現在の問題 ...",
+          "url": "https://www.komei.or.jp/komechan/safety/safety202602/",
+          "source": "公明党",
+          "pubDate": "Thu, 26 Feb 2026 16:00:00 GMT",
+          "image": "https://www.komei.or.jp/komechan/wp-content/uploads/2026/02/2026年2月「非核三原則（世界の核軍縮事情）」：非核三原則とは？世界の核軍縮動向と日本の立ち位置、現在の問題点を読み解く.jpg"
+        },
+        {
+          "title": "非核三原則法制化の要望、広島県知事「時期ではない」 県被団協に",
+          "url": "https://news.yahoo.co.jp/articles/cc3894908f97a387b12057c614fcd872fc290bbb",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 04 Mar 2026 17:15:00 GMT"
+        },
+        {
+          "title": "非核三原則の堅持",
+          "url": "https://www.komei.or.jp/km/iwasaki-kazuya-shiga/2026/03/07/5131/",
+          "source": "公明党",
+          "pubDate": "Sat, 07 Mar 2026 08:17:00 GMT"
         }
       ]
     },
@@ -4273,6 +4879,29 @@
         {
           "label": "防衛施設周辺の生活環境の整備等に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E9%98%B2%E8%A1%9B%E6%96%BD%E8%A8%AD%E5%91%A8%E8%BE%BA%E3%81%AE%E7%94%9F%E6%B4%BB%E7%92%B0%E5%A2%83%E3%81%AE%E6%95%B4%E5%82%99%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "沖縄の浄水場敷地で空の薬莢見つかる 駐車場や屋上など、県警が捜査",
+          "url": "https://www.asahi.com/articles/ASV3W3DWJV3WTPOB001M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 03:49:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327004444_comm.jpg"
+        },
+        {
+          "title": "北谷浄水場で薬きょう2発見つかる 沖縄【動画】",
+          "url": "https://ryukyushimpo.jp/news/entry-5151538.html",
+          "source": "琉球新報",
+          "pubDate": "Thu, 26 Mar 2026 19:27:00 GMT",
+          "image": "https://ryukyushimpo.jp/tachyon/2026/03/%E4%BC%81%E6%A5%AD%E5%B1%80.jpg"
+        },
+        {
+          "title": "沖縄県で初めてとなる妊産婦対象のPFAS血中濃度検査",
+          "url": "https://www.fnn.jp/articles/-/1020557",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Wed, 25 Mar 2026 02:08:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/7/d/600/img_7d878b8f41d3ee90779c2a4db21660d626744.jpg"
         }
       ]
     },
@@ -4516,6 +5145,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121903815X00220251118"
         }
+      ],
+      "news": [
+        {
+          "title": "【宜野湾市議会】普天間基地の返還求める決議と意見書を全会一致 ...",
+          "url": "https://www.fnn.jp/articles/-/1021213",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Wed, 25 Mar 2026 19:42:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/1/1/600/img_11da05810aee400d661616fb61508cfe30842.jpg"
+        },
+        {
+          "title": "基地返還跡地利用を官民一体で考える 「GW2050PROJECTS」がシンポ",
+          "url": "https://www.fnn.jp/articles/-/1019425",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Mon, 23 Mar 2026 19:42:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/8/5/600/img_85a216340f796f70071d47c3b87c36a324947.jpg"
+        },
+        {
+          "title": "【記者解説】シュワブ→グアムへの改編中止 沖縄、基地返還への ...",
+          "url": "https://ryukyushimpo.jp/politics/entry-4896945.html",
+          "source": "琉球新報デジタル",
+          "pubDate": "Wed, 24 Dec 2025 08:19:00 GMT",
+          "image": "https://ryukyushimpo.jp/tachyon/2025/12/NE20251223G03247000200.jpg?resize=960%2C630&gravity&crop=0px%2C365px%2C960px%2C504px"
+        }
       ]
     },
     "speeches": [
@@ -4687,6 +5339,29 @@
         {
           "label": "日米地位協定（法令検索）",
           "url": "https://www.google.com/search?q=%E6%97%A5%E7%B1%B3%E5%9C%B0%E4%BD%8D%E5%8D%94%E5%AE%9A+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "周辺住民の健康放置 地位協定などを議論",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2026-02-16/2026021611_01_0.php",
+          "source": "日本共産党",
+          "pubDate": "Sun, 15 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/web_img/akahata-kakusan.jpg"
+        },
+        {
+          "title": "騒音、PFAS、性暴力…沖縄出身の大学生が衆院選に問いかける ...",
+          "url": "https://www.tokyo-np.co.jp/article/466655",
+          "source": "tokyo-np",
+          "pubDate": "Wed, 04 Feb 2026 16:01:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/8/0/4/5/80458c329c892f122e1972ef6fbef6ec_1.jpg"
+        },
+        {
+          "title": "在日米軍、沖縄で基地がPFAS汚染源だと2023年に認めていた 防衛省は ...",
+          "url": "https://www.tokyo-np.co.jp/article/468146",
+          "source": "tokyo-np",
+          "pubDate": "Wed, 11 Feb 2026 16:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/8/e/9/5/8e95b42bedbef0cb9569f93d59370626_1.jpg"
         }
       ]
     },
@@ -5015,6 +5690,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905206X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "立民・鎌田さゆり氏に階猛法務委員長が複数回の苦言「理事会協議 ...",
+          "url": "https://www.sankei.com/article/20251218-USEHBZHRYRDJTN2LJUNJS5LD6M/",
+          "source": "産経新聞",
+          "pubDate": "Thu, 18 Dec 2025 04:33:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/DXCZK2NKOVALLON5IVSMWOYDIU.jpg?auth=099d59e483aae2d6b7b2771fe08b8182164a91a6e79b04a2bb64e0083aed5c1e&amp;quality=50&amp;focal=601%2C301&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "立憲・篠田奈保子議員、衆院法務委員会で...委員長から立憲議員へ ...",
+          "url": "https://www.j-cast.com/2025/12/19510323.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Fri, 19 Dec 2025 04:55:00 GMT",
+          "image": "https://www.j-cast.com/images/origin/2025/12/news_20251219122711.jpg"
+        },
+        {
+          "title": "衆院予算委員長就任の坂本氏 「公正、円満な委員会運営図る」と抱負",
+          "url": "https://kumanichi.com/articles/1961548",
+          "source": "熊本日日新聞",
+          "pubDate": "Thu, 26 Feb 2026 12:00:00 GMT",
+          "image": "https://kumanichi.com/sites/default/files/styles/sns_share/public/2026-02/IP260226TAN000107000_04.jpg?itok=BE3EpYRF"
+        }
       ]
     },
     "speeches": [
@@ -5060,6 +5758,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905206X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "閣僚パーティー、一律自粛 政府が大臣規範改正",
+          "url": "https://www.jiji.com/jc/article?k=2026012000800&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 19 Jan 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202601/20260120at34S_ogp.jpg"
+        },
+        {
+          "title": "副大臣、政務官人事は19日実施と官房長官",
+          "url": "https://www.minyu-net.com/newspack/detail/2026021801002224",
+          "source": "福島民友新聞",
+          "pubDate": "Wed, 18 Feb 2026 16:05:00 GMT",
+          "image": "https://www.minyu-net.com/img/common/ogp.jpg"
         }
       ]
     },
@@ -5153,6 +5873,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904601X00120251118"
         }
+      ],
+      "news": [
+        {
+          "title": "維新への閣内協力要請...注目の大臣ポストは？ 橋下徹氏の予想は ...",
+          "url": "https://www.j-cast.com/2026/02/11511298.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Wed, 11 Feb 2026 11:07:00 GMT",
+          "image": "https://www.j-cast.com/images/origin/2026/02/news_20260211183718.jpg"
+        },
+        {
+          "title": "第27回参議院議員通常選挙における総務大臣表彰",
+          "url": "https://www.soumu.go.jp/menu_news/s-news/01gyosei15_02000471.html",
+          "source": "soumu.go",
+          "pubDate": "Tue, 13 Jan 2026 21:02:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "ふるさとづくり大賞の総務大臣賞に大崎町政策研究員 地域の障害者 ...",
+          "url": "https://news.yahoo.co.jp/articles/837958c8d9de3c80c354901fe5eaffd3ddf7df72",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 12 Mar 2026 21:05:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -5205,6 +5947,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904601X00120251118"
+        }
+      ],
+      "news": [
+        {
+          "title": "全国市議会議長会 第243回理事会・第121回評議員会合同会議（令和8 ...",
+          "url": "https://www.soumu.go.jp/photo_gallery/02koho03_03005578.html",
+          "source": "soumu.go",
+          "pubDate": "Wed, 04 Feb 2026 04:21:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "フォトギャラリー：2026年1月",
+          "url": "https://www.soumu.go.jp/photo_gallery/2601.html",
+          "source": "soumu.go",
+          "pubDate": "Wed, 04 Feb 2026 17:33:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        },
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
         }
       ]
     },

@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122015253X00120260123"
         }
+      ],
+      "news": [
+        {
+          "title": "高市早苗首相、拉致問題は「私の代で突破口を開き、解決したい ...",
+          "url": "https://www.sankei.com/article/20260325-Q6CYHTHB3BICBOZPXMMQEILEJI/",
+          "source": "産経ニュース",
+          "pubDate": "Tue, 24 Mar 2026 18:44:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/DGL6JLYWRJJZJD7NPS7VFJEHKA.jpg?auth=c9129c17f70f27de3eb335939849c7a84653d2a9046a7e63a9614fb4eeb4fd9c&amp;quality=50&amp;focal=2396%2C1049&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "黒岩知事ら、政府に拉致問題の早期解決の要望書「一刻の猶予も ...",
+          "url": "https://news.yahoo.co.jp/articles/c22d04a42972c11d1d9102595bb33e1797b827fe",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 22 Feb 2026 01:35:00 GMT"
+        },
+        {
+          "title": "拉致再調査、韓国側に訪朝方針を伝達 日本政府",
+          "url": "https://www.asahi.com/articles/ASGBK67H2GBKUTFK011.html",
+          "source": "朝日新聞社",
+          "pubDate": "Fri, 17 Oct 2014 17:00:00 GMT",
+          "image": "https://www.asahicom.jp/images/logo_ogp.png"
+        }
       ]
     },
     "speeches": [
@@ -62,6 +84,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122015383X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "政府開発援助（ODA）とは 「量より質」の援助を模索",
+          "url": "https://www.nikkei.com/article/DGXZQOUA258TY0V20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 25 Mar 2026 19:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2803723025032026000000-3.jpg?auto=format&amp;bg=FFFF&amp;fill=blur&amp;fit=fill&amp;h=630&amp;upscale=false&amp;w=1200&amp;s=e55e33530c5cb6e9447619761fb58a38"
+        },
+        {
+          "title": "日本政府、UNICEFの人道支援に5,800万米ドルを拠出",
+          "url": "https://prtimes.jp/main/html/rd/p/000000077.000090848.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 11 Feb 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/90848/77/90848-77-5b8543dc90b9f964fa17a8648e43976c-3900x2600.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "政府開発援助（ODA） 「量より質」の援助を模索",
+          "url": "https://www.nikkei.com/article/DGKKZO95237540V20C26A3EA2000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 25 Mar 2026 19:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSKKZO9523755025032026EA2000-2.jpg?auto=format&amp;bg=FFFF&amp;fill=blur&amp;fit=fill&amp;h=630&amp;upscale=false&amp;w=1200&amp;s=bc987146e3cdbf5422aafb5082add800"
         }
       ]
     },
@@ -117,6 +162,14 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122015254X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "エリア墓碑銘2025 元参院議員 片山虎之助さんら",
+          "url": "https://www.sanyonews.jp/article/1848977?kw=æ˜ ç”»%20ãŸ",
+          "source": "山陽新聞",
+          "pubDate": "Thu, 25 Dec 2025 02:29:00 GMT"
         }
       ]
     },
@@ -189,6 +242,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122015254X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "ローム、特別委員会を設置し検討 デンソーからの買収提案で",
+          "url": "https://www.chunichi.co.jp/article/1224129",
+          "source": "中日新聞Web",
+          "pubDate": "Tue, 17 Mar 2026 03:06:00 GMT",
+          "image": "https://static.chunichi.co.jp/image/article/size1/b/5/3/a/b53a1bc6018d5e0745f25d879f9d7f00_1.jpg"
+        },
+        {
+          "title": "M＆Aで少数株主の利益を守る「特別委員会」に司法と市場から変革 ...",
+          "url": "https://diamond.jp/articles/-/385459",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Wed, 18 Mar 2026 12:50:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/4/1/-/img_413222fc11644fb9c8cef313a4804d2b433570.jpg"
+        },
+        {
+          "title": "大刀洗町の公金支出を巡る問題、百条委が最終報告書…職員が宿泊 ...",
+          "url": "https://www.yomiuri.co.jp/local/kyushu/news/20260327-GYS1T00058/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Thu, 26 Mar 2026 23:21:00 GMT"
         }
       ]
     },
@@ -296,6 +371,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122015254X00120260123"
         }
+      ],
+      "news": [
+        {
+          "title": "「家族の姓」閉会中審査へ 衆院法務委、18日で合意",
+          "url": "https://www.sankei.com/article/20251216-MDB3J7CXA5L7RBDMISXSHXE55M/",
+          "source": "産経新聞",
+          "pubDate": "Tue, 16 Dec 2025 04:01:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/M2IWXFTO55KZHBVYCMJ5W7NZMY.jpg?auth=cb366811c82c163e48223bd87db3f3b997e982a8efb2bc456bcabfac9accecb2&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "「家族の姓」問題、閉会中審査へ 衆院法務委、18日で合意",
+          "url": "https://www.toonippo.co.jp/articles/-/2172634",
+          "source": "東奥日報",
+          "pubDate": "Mon, 15 Dec 2025 16:01:00 GMT"
+        },
+        {
+          "title": "「家族の姓」問題、閉会中審査へ",
+          "url": "https://www.niigata-nippo.co.jp/articles/-/747135",
+          "source": "Niigata Nippo",
+          "pubDate": "Tue, 16 Dec 2025 03:55:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -390,6 +486,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
         }
+      ],
+      "news": [
+        {
+          "title": "片山虎之助さん死去 岡山県内 悼む声相次ぐ",
+          "url": "https://www.sanyonews.jp/article/1845547?kw=山　本",
+          "source": "山陽新聞",
+          "pubDate": "Thu, 18 Dec 2025 15:26:00 GMT"
+        },
+        {
+          "title": "再考の府、「トラ」は説いた 衆院3分の2を得た「ライオン」首相に",
+          "url": "https://www.asahi.com/articles/ASV2J2CXTV2JUTFK00PM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260216003349_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -445,6 +556,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
         }
+      ],
+      "news": [
+        {
+          "title": "国庫負担金の過大請求問題、徳島市が第三者委を設置へ 市長方針",
+          "url": "https://www.asahi.com/articles/ASV3V3WDNV3VPUTB003M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 18:30:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260326005513_comm.jpg"
+        },
+        {
+          "title": "【材料】nmsホールディングス---特別調査委員会の調査報告書の受領 ...",
+          "url": "https://kabutan.jp/news/marketnews/?b=n202603160876",
+          "source": "株探",
+          "pubDate": "Mon, 16 Mar 2026 01:02:00 GMT",
+          "image": "https://async.api.kabutan.jp/og_image?title=nms%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9---%E7%89%B9%E5%88%A5%E8%AA%BF%E6%9F%BB%E5%A7%94%E5%93%A1%E4%BC%9A%E3%81%AE%E8%AA%BF%E6%9F%BB%E5%A0%B1%E5%91%8A%E6%9B%B8%E3%81%AE%E5%8F%97%E9%A0%98%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B"
+        },
+        {
+          "title": "新庁舎建設巡り、百条委設置決定 八代市議会 ／熊本",
+          "url": "https://mainichi.jp/articles/20260117/ddl/k43/010/266000c",
+          "source": "毎日新聞",
+          "pubDate": "Fri, 16 Jan 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2015/12/18/20151218hrc00m010001000q/9.jpg?2"
+        }
       ]
     },
     "speeches": [
@@ -490,6 +624,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "与野党が「重要広範議案」に4法案指定 国家情報局や防災庁の設置",
+          "url": "https://www.nikkei.com/article/DGXZQOUA262D00W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 26 Mar 2026 05:54:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2806265026032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.09&amp;fp-y=0.29&amp;h=630&amp;w=1200&amp;s=3107ccd6b562ad2a9619b520a91bd5f0"
+        },
+        {
+          "title": "高市政権下の補正予算、16日にも参院で成立 チームみらいも賛成へ",
+          "url": "https://www.asahi.com/articles/ASTDH3QFKTDHUTFK00SM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sun, 14 Dec 2025 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20251215003108_comm.jpg"
+        },
+        {
+          "title": "証券取引委員長に中原氏再任 政府、同意人事案提示",
+          "url": "https://www.jiji.com/jc/article?k=2025111100440&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 10 Nov 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/img/jijicom_og_image.png"
         }
       ]
     },
@@ -558,6 +715,29 @@
           "label": "国会における各会派に対する立法事務費の交付に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E5%9B%BD%E4%BC%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%90%84%E4%BC%9A%E6%B4%BE%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E7%AB%8B%E6%B3%95%E4%BA%8B%E5%8B%99%E8%B2%BB%E3%81%AE%E4%BA%A4%E4%BB%98%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "立法事務費制度矛盾の声 会派対象も「議員に交付」",
+          "url": "https://www.sanin-chuo.co.jp/articles/-/923991",
+          "source": "山陰中央新報デジタル",
+          "pubDate": "Tue, 30 Dec 2025 20:00:00 GMT",
+          "image": "https://sanin-chuo.ismcdn.jp/mwimgs/e/2/1200m/img_e2944028dc26b448fe525d12d372c30716058.png"
+        },
+        {
+          "title": "NHK党・斉藤健一郎氏 vs 立憲・杉尾秀哉氏バトル続く「事実として ...",
+          "url": "https://www.tokyo-sports.co.jp/articles/-/366782",
+          "source": "tokyo-sports",
+          "pubDate": "Fri, 14 Nov 2025 14:11:00 GMT",
+          "image": "https://tokyo-sports.ismcdn.jp/mwimgs/4/7/1200w/img_47afb371c8a7c8665c426cc1efae8c26147451.jpg"
+        },
+        {
+          "title": "立法事務費は 制度矛盾か？ 会派対象も無所属議員に交付 与野党 ...",
+          "url": "https://www.fukuishimbun.co.jp/articles/-/2494643",
+          "source": "福井新聞",
+          "pubDate": "Mon, 29 Dec 2025 16:00:00 GMT",
+          "image": "https://fki.ismcdn.jp/mwimgs/1/4/-/img_141d0fae967e31b0ee8bda7fe92e0c4c18131.png"
+        }
       ]
     },
     "speeches": [
@@ -603,6 +783,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "今井絵理子議員、政務官退任報告が炎上 また蒸し返される ...",
+          "url": "https://www.j-cast.com/2025/10/23508648.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Thu, 23 Oct 2025 13:20:00 GMT",
+          "image": "https://www.j-cast.com/images/origin/2025/10/news_20251023201509.jpg"
+        },
+        {
+          "title": "収支報告書、オンライン提出16％ 国会議員関係政治団体",
+          "url": "https://www.jiji.com/jc/article?k=2025112800981&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 27 Nov 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202511/20251128ds94_ogp.jpg"
+        },
+        {
+          "title": "統一教会、韓国国会議員11人に違法献金か…報告書に政治家の名前",
+          "url": "https://news.yahoo.co.jp/articles/d5eb70c48e44b3b97377b9a2c7df6c8f0f5a2f50",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 31 Dec 2025 19:34:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260101-03616431-clc_korea-000-1-view.jpg?exp=10800"
         }
       ]
     },
@@ -650,6 +853,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
         }
+      ],
+      "news": [
+        {
+          "title": "2026年度予算案を13日衆院採決へ、月内成立めざす 野党は反発",
+          "url": "https://www.nikkei.com/article/DGXZQOUA129IR0S6A310C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 13 Mar 2026 06:03:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2748682012032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.73&amp;fp-y=0.92&amp;h=630&amp;w=1200&amp;s=6d681f099b272800ed6d17abf4239757"
+        },
+        {
+          "title": "新年度当初予算など49議案提出 三重県議会本会議、知事が提案説明",
+          "url": "https://news.yahoo.co.jp/articles/099c88f6a44b256a48282f24af196b3930f28479",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 17 Feb 2026 15:04:00 GMT"
+        },
+        {
+          "title": "「筆談ホステス」著者の衆院議員、文字起こしアプリで本会議に参加",
+          "url": "https://www.asahi.com/articles/ASV2L3DM9V2LUTFK01QM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Tue, 17 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260218004013_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -695,6 +920,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "与党が衆院の全委員長ポスト要求 常任委や審査会、継続協議に",
+          "url": "https://www.nikkei.com/article/DGXZQOUA1276Z0S6A210C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 12 Feb 2026 10:50:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2614898012022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.9&amp;fp-y=0.46&amp;h=630&amp;w=1200&amp;s=34fd36bfa7ac4b1ab8c7a5a606b0a377"
+        },
+        {
+          "title": "衆院本会議、23日で与野党合意 冒頭解散見込み、午後1時開会か",
+          "url": "https://www.47news.jp/13752292.html",
+          "source": "47NEWS",
+          "pubDate": "Tue, 20 Jan 2026 16:00:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/18b714ceffddb5c6c0fc60aeaf159efd/photo.jpg"
+        },
+        {
+          "title": "佐藤官房副長官、参院議運理事会で提出法案を説明 就任後初",
+          "url": "https://www.nikkei.com/article/DGXZQOUA198AH0Z10C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 19 Feb 2026 14:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2650959019022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.21&amp;fp-y=0.25&amp;h=630&amp;w=1200&amp;s=7f9a939b906f552763f7507190199982"
         }
       ]
     },
@@ -742,6 +990,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
         }
+      ],
+      "news": [
+        {
+          "title": "「家族の姓」閉会中審査へ 衆院法務委、18日で合意",
+          "url": "https://www.sankei.com/article/20251216-MDB3J7CXA5L7RBDMISXSHXE55M/",
+          "source": "産経新聞",
+          "pubDate": "Tue, 16 Dec 2025 04:01:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/M2IWXFTO55KZHBVYCMJ5W7NZMY.jpg?auth=cb366811c82c163e48223bd87db3f3b997e982a8efb2bc456bcabfac9accecb2&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "「家族の姓」問題、閉会中審査へ",
+          "url": "https://www.kyoto-np.co.jp/articles/-/1619177",
+          "source": "京都新聞",
+          "pubDate": "Tue, 16 Dec 2025 03:55:00 GMT",
+          "image": "https://kyoto-np.ismcdn.jp/mwimgs/6/7/1200wm/img_67ada2cd6f649cd040230af45853c308364076.png"
+        },
+        {
+          "title": "「家族の姓」問題、閉会中審査へ／衆院法務委、18日で合意",
+          "url": "https://www.shikoku-np.co.jp/national/political/20251216000385",
+          "source": "四国新聞社",
+          "pubDate": "Tue, 16 Dec 2025 03:55:00 GMT",
+          "image": "http://www.shikoku-np.co.jp/img/home.png"
+        }
       ]
     },
     "speeches": [
@@ -787,6 +1058,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122014024X00120260123"
+        }
+      ],
+      "news": [
+        {
+          "title": "斎藤知事の給料カット案、再び継続審査へ 兵庫県の情報漏洩問題",
+          "url": "https://www.asahi.com/articles/ASTBK3H1BTBKOXIE00TM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 16 Oct 2025 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20251017003921_comm.jpg"
         }
       ]
     },

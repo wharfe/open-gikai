@@ -593,6 +593,21 @@
           "label": "原文",
           "url": "https://www.cas.go.jp/jp/seisaku/digital_denen/dai12/gijisidai.html"
         }
+      ],
+      "news": [
+        {
+          "title": "岸田元総理「沈黙は中立ではない」 法の支配訴え アジア円卓会議",
+          "url": "https://www.nagoyatv.com/news/1000/seiji.html?id=000490684",
+          "source": "名古屋テレビ【メ～テレ】",
+          "pubDate": "Tue, 10 Mar 2026 16:21:00 GMT"
+        },
+        {
+          "title": "岸田文雄元首相「多国間主義追求を」 秩序構築へ、東京会議で",
+          "url": "https://www.nikkei.com/article/DGXZQOUA11B2V0R10C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 11 Mar 2026 13:30:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2743099011032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.6&amp;fp-y=0.25&amp;h=630&amp;w=1200&amp;s=323d5fd40906de7f4ea008d465f910f6"
+        }
       ]
     },
     "speeches": [

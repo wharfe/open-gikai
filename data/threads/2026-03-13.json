@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X01020260313"
         }
+      ],
+      "news": [
+        {
+          "title": "予算案、13日に衆院採択へ 野党4党が解任決議案提出、攻防山場",
+          "url": "https://mainichi.jp/articles/20260312/k00/00m/010/302000c",
+          "source": "毎日新聞",
+          "pubDate": "Wed, 11 Mar 2026 17:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/12/20260312k0000m010305000p/0c10.jpg?1"
+        },
+        {
+          "title": "【速報】坂本哲志予算委員長への解任決議案を反対多数で否決 新 ...",
+          "url": "https://news.yahoo.co.jp/articles/69fddbfc6e3544d97a31ab8d373bb0173dad6fb0",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 13 Mar 2026 05:25:00 GMT"
+        },
+        {
+          "title": "坂本衆院予算委員長「自身の判断は妥当」 野党が解任決議案を提出",
+          "url": "https://mainichi.jp/articles/20260312/k00/00m/010/323000c",
+          "source": "毎日新聞",
+          "pubDate": "Wed, 11 Mar 2026 17:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/12/20260312k0000m010232000p/0c10.jpg?1"
+        }
       ]
     },
     "speeches": [
@@ -97,6 +119,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X01020260313"
         }
+      ],
+      "news": [
+        {
+          "title": "AI音声が衆院本会議場に初降臨 職員による点呼を変更 予算委員長 ...",
+          "url": "https://www.nikkansports.com/general/nikkan/news/202603130000604.html",
+          "source": "日刊スポーツ",
+          "pubDate": "Thu, 12 Mar 2026 23:20:00 GMT",
+          "image": "https://www.nikkansports.com/general/nikkan/news/img/202603130000604-w500_0.jpg"
+        },
+        {
+          "title": "衆院本会議 採決で初めてAI音声で点呼",
+          "url": "https://news.yahoo.co.jp/articles/028316bbc8545d959b95a764e06e3e5fc991b4ff",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 13 Mar 2026 02:02:00 GMT"
+        },
+        {
+          "title": "衆院本会議 採決で初めてAI音声で点呼",
+          "url": "https://times.abema.tv/articles/-/10231596",
+          "source": "ABEMA TIMES",
+          "pubDate": "Fri, 13 Mar 2026 02:29:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -142,6 +185,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X01020260313"
+        }
+      ],
+      "news": [
+        {
+          "title": "11日間の暫定予算案8.6兆円を閣議決定 当初予算の月内成立は困難",
+          "url": "https://www.nikkei.com/article/DGXZQOUA264X70W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 02:45:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2811873027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.31&amp;fp-y=0.31&amp;h=630&amp;w=1200&amp;s=621c643c5b849aa359c1cbd3195d3156"
+        },
+        {
+          "title": "予算、見えない年度内成立の道 追い込まれる首相、「奥の手」も浮上",
+          "url": "https://www.asahi.com/articles/ASV3W35KFV3WULFA018M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 04:07:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327004245_comm.jpg"
+        },
+        {
+          "title": "予算案巡る衆院での攻防大詰め 与党は職権で13日に緊急上程、野党 ...",
+          "url": "https://www.sankei.com/article/20260312-6CKR5KZ2A5LJBLP7BHO7OIQPXM/",
+          "source": "産経新聞",
+          "pubDate": "Thu, 12 Mar 2026 13:53:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/EQQLPKRK7NONLBA2A6NSQDP5ZQ.jpg?auth=d56cd776e785a24067447702a2ac742684bebd5dadfd1472385358bbd46c8b7a&amp;quality=50&amp;focal=3235%2C1016&amp;width=1200&amp;height=630"
         }
       ]
     },
@@ -192,6 +258,29 @@
         {
           "label": "地方税法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%9C%B0%E6%96%B9%E7%A8%8E%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "政府、暫定予算案を閣議決定 首相こだわる「年度内成立」極めて困難",
+          "url": "https://www.asahi.com/articles/ASV3W02JPV3WUTFK015M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 00:49:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327001218_comm.jpg"
+        },
+        {
+          "title": "予算関連法案が衆院審議入り、赤字国債5年発行を可能に 野党に慎重論",
+          "url": "https://www.nikkei.com/article/DGXZQOUA052P50V00C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 05 Mar 2026 09:59:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2712511005032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.46&amp;fp-y=0.21&amp;h=630&amp;w=1200&amp;s=1348c54d1d23fda18ac0b6fb2fb93528"
+        },
+        {
+          "title": "政府、暫定予算案を27日に閣議決定へ 当初予算の年度内成立は困難",
+          "url": "https://www.asahi.com/articles/ASV3T3TJKV3TUTFK00JM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Wed, 25 Mar 2026 04:46:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260325004083_comm.jpg"
         }
       ]
     },
@@ -272,6 +361,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X01020260313"
+        }
+      ],
+      "news": [
+        {
+          "title": "埼玉県立小児医療センター、調査対策委員会の「議事要旨」公開 ...",
+          "url": "https://www.m3.com/news/iryoishin/1326187",
+          "source": "m3.com",
+          "pubDate": "Sun, 31 Dec 2000 16:00:00 GMT",
+          "image": "https://static.m3.com/news/ogp/IryoIshin/90e995ab95f9d616ce0ac7319118fde91af9b3c3aaf2c44629b7dea79cab3342.jpg"
+        },
+        {
+          "title": "「議長ぉぉー」 高市首相初の国会で大役務めた議員「失敗できない ...",
+          "url": "https://www.kyoto-np.co.jp/articles/-/1587487",
+          "source": "京都新聞",
+          "pubDate": "Fri, 24 Oct 2025 13:27:00 GMT",
+          "image": "https://kyoto-np.ismcdn.jp/mwimgs/d/7/1200wm/img_d723b677ec4c55589ec6008dc35e96252978620.jpg"
+        },
+        {
+          "title": "高市首相も困ってる…女性用トイレ不足の国会議事堂 「議事進行に ...",
+          "url": "https://www.tokyo-np.co.jp/article/454048",
+          "source": "tokyo-np",
+          "pubDate": "Fri, 05 Dec 2025 16:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/f/e/e/a/feea95d5784f98d91929fd7d9cb70ea1_4.jpg"
         }
       ]
     },

@@ -86,6 +86,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905254X00320251104"
         }
+      ],
+      "news": [
+        {
+          "title": "圧勝の高市政権／物価高抑制に防衛費増額…小泉､鳩山政権のよう ...",
+          "url": "https://toyokeizai.net/articles/-/934756?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Sat, 14 Feb 2026 00:30:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/0/9/1200w/img_092a5e759a4463d7e4b912ddadda6c8a787031.jpg"
+        },
+        {
+          "title": "強硬姿勢に身内からも不安の声… 高市政権が迷い込みかねない ...",
+          "url": "https://toyokeizai.net/articles/-/937103?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Fri, 06 Mar 2026 06:30:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/6/8/1200w/img_6813186454aadb693e173d9604e6f741102088.jpg"
+        },
+        {
+          "title": "【ヤフコメで話題】「高市政権の経済政策と支持層の姿勢」「円安 ...",
+          "url": "https://news.yahoo.co.jp/articles/f8b6289f2d103ad22716cfea6ee69b84567627db",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 02 Mar 2026 15:18:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -157,6 +179,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905254X00320251104"
+        }
+      ],
+      "news": [
+        {
+          "title": "「社会保障国民会議」実務者協議に中道・立憲・公明が参加",
+          "url": "https://www.msn.com/ja-jp/video/news/%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%9A%9C%E5%9B%BD%E6%B0%91%E4%BC%9A%E8%AD%B0-%E5%AE%9F%E5%8B%99%E8%80%85%E5%8D%94%E8%AD%B0%E3%81%AB%E4%B8%AD%E9%81%93-%E7%AB%8B%E6%86%B2-%E5%85%AC%E6%98%8E%E3%81%8C%E5%8F%82%E5%8A%A0/vi-AA1ZmJeK",
+          "source": "日テレNEWS NNN on MSN",
+          "pubDate": "Wed, 25 Mar 2026 04:12:00 GMT"
+        },
+        {
+          "title": "社保国民会議に中道、立民、公明が初参加 異なる主張…取りまとめ ...",
+          "url": "https://www.sankei.com/article/20260325-DDUCTX6TAZNFRDCEHMKBXQT4TE/",
+          "source": "産経ニュース",
+          "pubDate": "Wed, 25 Mar 2026 06:14:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/XISDNIIO6NPZHCBALJFAFMDUME.jpg?auth=6843414d208e4ce3e966dcba31476bcb44a2f403cb797bcafcb7e3286487f92e&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "中道・小川代表、迷走の末に「国民会議」参加 国民民主の参加で ...",
+          "url": "https://www.tokyo-np.co.jp/article/477379",
+          "source": "東京新聞",
+          "pubDate": "Wed, 25 Mar 2026 05:20:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/c/b/4/2/cb42ee7d9817efdd5c6e970117bef797_4.jpg"
         }
       ]
     },
@@ -318,6 +362,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904024X00320251104"
+        }
+      ],
+      "news": [
+        {
+          "title": "「内閣総理大臣が国務大臣を罷免」の法律相談",
+          "url": "https://www.bengo4.com/c_18/bbs/%E5%86%85%E9%96%A3%E7%B7%8F%E7%90%86%E5%A4%A7%E8%87%A3%E3%81%8C%E5%9B%BD%E5%8B%99%E5%A4%A7%E8%87%A3%E3%82%92%E7%BD%B7%E5%85%8D/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Sat, 18 Apr 2015 16:59:00 GMT",
+          "image": "https://www.bengo4.com/img/citizen/common/bengo4-ogp.png"
         }
       ]
     },

@@ -17,6 +17,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915386X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "大臣・副大臣・政務官の政治資金パーティーを「全面的に自粛 ...",
+          "url": "https://www.oricon.co.jp/article/3149467/",
+          "source": "ORICON NEWS",
+          "pubDate": "Tue, 20 Jan 2026 07:04:00 GMT"
+        },
+        {
+          "title": "閣僚パーティー、一律自粛 政府が大臣規範改正",
+          "url": "https://www.jiji.com/jc/article?k=2026012000800&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 19 Jan 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202601/20260120at34S_ogp.jpg"
+        }
       ]
     },
     "speeches": [
@@ -120,6 +141,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915385X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "閣僚パーティー、一律自粛 政府が大臣規範改正",
+          "url": "https://www.jiji.com/jc/article?k=2026012000800&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 19 Jan 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202601/20260120at34S_ogp.jpg"
+        },
+        {
+          "title": "大臣・副大臣・政務官の政治資金パーティーを「全面的に自粛 ...",
+          "url": "https://www.oricon.co.jp/article/3149467/",
+          "source": "ORICON NEWS",
+          "pubDate": "Tue, 20 Jan 2026 07:04:00 GMT"
         }
       ]
     },
@@ -270,6 +312,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915382X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "地域未来戦略策定へ 黄川田大臣視察 各町村の姿を評価／岡山 ...",
+          "url": "https://news.yahoo.co.jp/articles/97760544d062bfd6b2549621a259da18ea93a5cc",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 23 Feb 2026 15:02:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260224-00010000-tsuyamanp-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "「地方創生対話フォーラム＠九州・沖縄ブロック」を熊本県で開催 ...",
+          "url": "https://www.asahi.com/and/pressrelease/16311895",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 26 Jan 2026 16:00:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "地方の産業集積、広域・県・市町村･･･規模ごと3種の計画で支援",
+          "url": "https://www.nikkei.com/article/DGXZQOUA277X20X20C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Sat, 28 Feb 2026 17:59:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2687140027022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=e86d298118357b30a3dfe7ffe429cce3"
+        }
       ]
     },
     "speeches": [
@@ -370,6 +435,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915382X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "茂木外相、フランス外相と会談 安全保障・経済安保で連携",
+          "url": "https://www.nikkei.com/article/DGXZQOUA270EC0X20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 05:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2812022027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.28&amp;fp-y=0.23&amp;h=630&amp;w=1200&amp;s=805a46e8181793eb3ad2a7d2a258af39"
+        },
+        {
+          "title": "茂木外相、EU外相と会談 防衛産業・先端技術などで連携を提起",
+          "url": "https://www.nikkei.com/article/DGXZQOUA26BW20W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 26 Mar 2026 17:15:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2811137026032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.23&amp;fp-y=0.45&amp;h=630&amp;w=1200&amp;s=559290492fb35e0b26c1415ad0e7fa6a"
+        },
+        {
+          "title": "茂木外務大臣と米ルビオ国務長官が電話会談 ホルムズ海峡の航行 ...",
+          "url": "https://news.yahoo.co.jp/articles/59718e2692475a512fc1e7c2975ab6eb4441b382",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 16 Mar 2026 12:11:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -420,6 +507,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121915382X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "閣僚・副大臣ら政務三役、政治資金パーティーの開催を自粛 ...",
+          "url": "https://www.yomiuri.co.jp/election/shugiin/20260120-GYT1T00395/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 20 Jan 2026 11:48:00 GMT"
+        },
+        {
+          "title": "3.11に「政治資金パーティー」でカネ集め…!自民党・現役副大臣を ...",
+          "url": "https://www.msn.com/ja-jp/news/national/3-11%E3%81%AB-%E6%94%BF%E6%B2%BB%E8%B3%87%E9%87%91%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC-%E3%81%A7%E3%82%AB%E3%83%8D%E9%9B%86%E3%82%81-%E8%87%AA%E6%B0%91%E5%85%9A-%E7%8F%BE%E5%BD%B9%E5%89%AF%E5%A4%A7%E8%87%A3%E3%82%92%E7%9B%B4%E6%92%83%E3%81%99%E3%82%8B%E3%81%A8-%E3%81%BE%E3%81%95%E3%81%8B%E3%81%AE-%E9%96%8B%E3%81%8D%E7%9B%B4%E3%82%8A/ar-AA1YLjti",
+          "source": "現代ビジネス on MSN",
+          "pubDate": "Mon, 16 Mar 2026 15:00:00 GMT"
+        },
+        {
+          "title": "政府、副大臣と政務官 全員の再任を閣議決定",
+          "url": "https://www.nikkei.com/article/DGXZQOUA1935M0Z10C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 19 Feb 2026 08:30:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2648573019022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-y=0.27&amp;h=630&amp;w=1200&amp;s=1603368205148bb875e99c766eb931e6"
         }
       ]
     },
@@ -550,6 +658,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "あなたにはいい香りでも、私には頭痛のタネ…学校の「香害」深刻 ...",
+          "url": "https://373news.com/news/local/detail/222250/",
+          "source": "南日本新聞",
+          "pubDate": "Tue, 14 Oct 2025 04:50:00 GMT"
+        },
+        {
+          "title": "香水や柔軟剤の「香害」問題、国会で相次ぎ質疑 政府「原因未解明 ...",
+          "url": "https://www.sankei.com/article/20251205-6XFQE3RRSJEONC76VP27NBWTQQ/",
+          "source": "産経新聞",
+          "pubDate": "Fri, 05 Dec 2025 08:30:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/J2V4VMJS2ZNAXE7VUXEMPTOVN4.jpg?auth=92794ea5b7f030ce3d54d2eeb48761676b1328f45b18baee4963d43a8e5c9b94&amp;quality=50&amp;focal=1102%2C649&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "小中学生の10％が《香害》で体調不良､｢給食着の柔軟剤臭が ...",
+          "url": "https://toyokeizai.net/articles/-/935760?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Mon, 02 Mar 2026 22:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/d/e/1200w/img_de2b750018e58d9de0fe26066581a02c68448.jpg"
         }
       ]
     },
@@ -907,6 +1037,28 @@
           "label": "公益通報者保護法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%85%AC%E7%9B%8A%E9%80%9A%E5%A0%B1%E8%80%85%E4%BF%9D%E8%AD%B7%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "消費者庁が2026年度に公益通報制度の運用実態を調査へ…兵庫県内部 ...",
+          "url": "https://www.yomiuri.co.jp/local/kansai/news/20260325-GYO1T00190/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Wed, 25 Mar 2026 13:00:00 GMT"
+        },
+        {
+          "title": "あおぞら銀行「パワハラ」判決の波紋 内部通報の報復リスク、改正 ...",
+          "url": "https://business.nikkei.com/atcl/gen/19/00628/032400024/",
+          "source": "日経ビジネス",
+          "pubDate": "Wed, 25 Mar 2026 01:16:00 GMT",
+          "image": "https://business.nikkei.com/atcl/gen/19/00628/032400024/fb.jpg"
+        },
+        {
+          "title": "「適切一点張りでは通報制度形骸化」斎藤知事の姿勢に専門家苦言 ...",
+          "url": "https://www.kobe-np.co.jp/news/society/202603/0020139970.shtml",
+          "source": "神戸新聞",
+          "pubDate": "Wed, 18 Mar 2026 12:30:00 GMT",
+          "image": "https://i.kobe-np.co.jp/news/society/202603/img/a_20139973.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1125,6 +1277,29 @@
           "label": "法人等による寄附の不当な勧誘の防止等に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E6%B3%95%E4%BA%BA%E7%AD%89%E3%81%AB%E3%82%88%E3%82%8B%E5%AF%84%E9%99%84%E3%81%AE%E4%B8%8D%E5%BD%93%E3%81%AA%E5%8B%A7%E8%AA%98%E3%81%AE%E9%98%B2%E6%AD%A2%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "現段階で見直し不要 10年後？開いた口がふさがらない 誰も救えない ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/b5a9f46f9dbd1cedfa9d0696744ff41d147a5570",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 16 Dec 2025 02:52:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/tadafumiaki/02473029/title-1765845683841.jpeg?exp=10800"
+        },
+        {
+          "title": "「不当寄付勧誘防止法」は見直し不要…政府の判断に宗教2世は ...",
+          "url": "https://www.tokyo-np.co.jp/article/458577",
+          "source": "tokyo-np",
+          "pubDate": "Thu, 25 Dec 2025 16:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/2/7/d/6/27d6f14f516c4eed343e9473640018db_1.jpg"
+        },
+        {
+          "title": "宗教2世「救済の仕組みを」 不当寄付防止で法改正要望",
+          "url": "https://www.jiji.com/jc/article?k=2025122200836&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Sun, 21 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202512/20251222at80S_o.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1259,6 +1434,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "リチウムイオン電池の火災対策、非破壊画像診断で電流異常を可視 ...",
+          "url": "https://response.jp/article/2026/03/19/408872.html",
+          "source": "レスポンス（Response.jp）",
+          "pubDate": "Wed, 18 Mar 2026 16:44:00 GMT",
+          "image": "https://response.jp/imgs/ogp_f/2194149.jpg"
+        },
+        {
+          "title": "【南足柄市】リチウムイオン電池を回収開始 4月から月1回 南足柄市 ...",
+          "url": "https://www.msn.com/ja-jp/news/techandscience/%E5%8D%97%E8%B6%B3%E6%9F%84%E5%B8%82-%E3%83%AA%E3%83%81%E3%82%A6%E3%83%A0%E3%82%A4%E3%82%AA%E3%83%B3%E9%9B%BB%E6%B1%A0%E3%82%92%E5%9B%9E%E5%8F%8E%E9%96%8B%E5%A7%8B-%EF%BC%94%E6%9C%88%E3%81%8B%E3%82%89%E6%9C%88%EF%BC%91%E5%9B%9E-%E5%8D%97%E8%B6%B3%E6%9F%84%E5%B8%82-%E5%A4%A7%E4%BA%95%E7%94%BA-%E6%9D%BE%E7%94%B0%E7%94%BA-%E5%B1%B1%E5%8C%97%E7%94%BA-%E9%96%8B%E6%88%90%E7%94%BA/ar-AA1Z76Ja",
+          "source": "タウンニュース on MSN",
+          "pubDate": "Sat, 21 Mar 2026 04:16:30 GMT"
+        },
+        {
+          "title": "リチウムイオン電池の捨て方は？ 絶縁し透明な袋へ 衝撃などで ...",
+          "url": "https://news.ntv.co.jp/category/society/fbd513b2dcfc144049875adaabeda32fae",
+          "source": "日テレNEWS NNN",
+          "pubDate": "Thu, 26 Mar 2026 04:44:00 GMT",
+          "image": "https://news.ntv.co.jp/gimage/n24/articles/85fba5702a224f7e9ee9c893a325a2da/dc68b57f-9d7c-41fa-82f8-6e140baf0513.jpg?w=1200"
         }
       ]
     },
@@ -1574,6 +1771,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "「高齢者等終身サポート事業」の指針となる実務書が3月28日発売 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000014.000074393.html",
+          "source": "PR TIMES",
+          "pubDate": "Fri, 27 Mar 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/74393/14/74393-14-2fa9d5ddcaf3f947980709806a02ef99-298x425.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "全国高齢者等終身サポート事業者協会、需要増す身元保証 健全化へ",
+          "url": "https://www.zenchin.com/news/post-9035.php",
+          "source": "zenchin",
+          "pubDate": "Sun, 22 Feb 2026 16:00:00 GMT",
+          "image": "https://www.zenchin.com/style_images/pc/cat1_noimg.jpg"
+        },
+        {
+          "title": "単身高齢者支援トラブル急増 身元保証や死後手続き 健全性向上へ ...",
+          "url": "https://ibarakinews.jp/news/newsdetail.php?f_jun=1766326529114000",
+          "source": "茨城新聞",
+          "pubDate": "Sun, 21 Dec 2025 16:00:00 GMT",
+          "image": "https://ibarakinews.jp/photo/1766326529114000_photo1_001.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1757,6 +1977,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "900万戸と過去最多の空き家、商工会議所が管理・活用可能に…地方 ...",
+          "url": "https://www.yomiuri.co.jp/politics/20260326-GYT1T00270/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Wed, 25 Mar 2026 23:00:00 GMT"
+        },
+        {
+          "title": "県内9市町村で「地方消費者行政強化交付金」25年度終了 消費者行政 ...",
+          "url": "https://www.topics.or.jp/articles/-/1252924",
+          "source": "徳島新聞",
+          "pubDate": "Mon, 09 Jun 2025 10:31:00 GMT",
+          "image": "https://tokushima.ismcdn.jp/mwimgs/f/6/1200wm/img_f68975687ea6ab5fd9ed1d41c16dd7ef230004.jpg"
+        },
+        {
+          "title": "消費者行政 充実させよ",
+          "url": "https://www.komei.or.jp/komeinews/p419930/",
+          "source": "公明党",
+          "pubDate": "Thu, 22 May 2025 17:00:00 GMT",
+          "image": "https://www.komei.or.jp/wp-content/uploads/20250523_6.jpg"
         }
       ]
     },
@@ -2068,6 +2310,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "NTTドコモビジネス、「熊対策ソリューション」を体系化し提供 熊の ...",
+          "url": "https://cloud.watch.impress.co.jp/docs/news/2096075.html",
+          "source": "クラウド Watch",
+          "pubDate": "Wed, 25 Mar 2026 19:00:00 GMT",
+          "image": "https://cloud.watch.impress.co.jp/img/clw/list/2096/075/01.jpg"
+        },
+        {
+          "title": "クマ対策風変わり商品 安心安全へ期待",
+          "url": "https://www.yomiuri.co.jp/local/iwate/news/20260326-GYTNT00193/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Thu, 26 Mar 2026 13:00:00 GMT"
+        },
+        {
+          "title": "秋田発の「クマ撃退スプレー」登場 海外製品より高いコスパを実現 ...",
+          "url": "https://www.fnn.jp/articles/-/1017161",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Wed, 18 Mar 2026 01:30:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/8/3/600/img_83b19dfc28658f1ac47c8b2353cf70ef33226.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2134,6 +2398,15 @@
         {
           "label": "消費者安全法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%B6%88%E8%B2%BB%E8%80%85%E5%AE%89%E5%85%A8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "さいたま市消費生活審議会、地域協議会新設を明記した答申まとめる",
+          "url": "https://www.asahi.com/articles/ASV1Y3591V1YUTNB001M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 28 Jan 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260129003394_comm.jpg"
         }
       ]
     },
@@ -2271,6 +2544,29 @@
         {
           "label": "食品ロス削減推進法（法令検索）",
           "url": "https://www.google.com/search?q=%E9%A3%9F%E5%93%81%E3%83%AD%E3%82%B9%E5%89%8A%E6%B8%9B%E6%8E%A8%E9%80%B2%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "フードバンク認証制度を開始＝寄付推進し食品ロス削減狙う―4月 ...",
+          "url": "https://medical.jiji.com/news/61122",
+          "source": "時事メディカル",
+          "pubDate": "Thu, 26 Mar 2026 18:47:00 GMT",
+          "image": "https://medical.jiji.com/images/news/5/e/5ef45d9a6cae9da2ab076f15fd7ef9d6.jpeg"
+        },
+        {
+          "title": "【農林水産省】「食品ロス削減等緊急対策事業」の公募開始 ～最大 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000121.000036006.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/36006/121/36006-121-15449623f3f5360009ce9e98598c2193-1280x720.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "フードバンクに国がお墨付き、認証制度が4月開始 寄付の促進狙う",
+          "url": "https://www.asahi.com/articles/ASV3W007KV3WUTFL01TM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 19:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327001018_comm.jpg"
         }
       ]
     },
@@ -2412,6 +2708,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "消費者庁幹部の年頭挨拶、デジタル取引関連・被害増加トラブルを ...",
+          "url": "https://netshop.impress.co.jp/n/2026/01/14/15420",
+          "source": "impress.co.jp",
+          "pubDate": "Tue, 13 Jan 2026 16:00:00 GMT",
+          "image": "https://netshop.impress.co.jp/sites/default/files/styles/1200x630/public/images/news/2026/news-node15420-ogp.jpg?itok=DwNsoVgg"
+        },
+        {
+          "title": "ダークパターン対策協会 事務局長の石村卓也氏に聞く「消費者を ...",
+          "url": "https://news.mynavi.jp/kikaku/20250717-3181748/",
+          "source": "マイナビニュース",
+          "pubDate": "Thu, 17 Jul 2025 05:00:00 GMT"
+        },
+        {
+          "title": "免税制度改正は「インバウンド消費の転換点」 ー Ocean、訪日ラボ ...",
+          "url": "https://mainichi.jp/articles/20260203/pr2/00m/020/645000c",
+          "source": "毎日新聞",
+          "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/02/03/20260203pr200m020645000p/0.png?1"
+        }
       ]
     },
     "speeches": [
@@ -2552,6 +2870,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "HACCP対応のための支援制度はありますか？",
+          "url": "https://j-net21.smrj.go.jp/solution/qa/org/Q1392.html",
+          "source": "J-Net21",
+          "pubDate": "Wed, 02 Jun 2021 17:00:00 GMT"
+        },
+        {
+          "title": "飲食店のHACCP対応は何から始めたら良いですか？",
+          "url": "https://j-net21.smrj.go.jp/solution/qa/production/Q1432.html",
+          "source": "J-Net21",
+          "pubDate": "Mon, 02 Mar 2026 00:50:00 GMT",
+          "image": "https://j-net21.smrj.go.jp/solution/qa/production/d53v580000000fp2-img/d53v580000000frh.png"
+        },
+        {
+          "title": "中東情勢の影響が長期化 -- 中小企業の経営環境そのものが変化 ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/9805d4217afdfe4d7bda64c2f3c436eb6baf655d",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 25 Mar 2026 15:55:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/nakamuratomohiko/02584805/title-1774286353280.jpeg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -2614,6 +2954,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "訪日予定の中国人観光客の9割以上がAI活用、 旅行計画は“検索から ...",
+          "url": "https://ryukyushimpo.jp/prtimes/entry-5149044.html",
+          "source": "琉球新報",
+          "pubDate": "Wed, 25 Mar 2026 09:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/32118/156/32118-156-11a192f4fca62cc26f72937fb225fcac-1900x1068.jpg?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds&amp;bg-color=fff"
+        },
+        {
+          "title": "訪日ゲストの医療面支援体制を強化 24時間・256言語対応の ...",
+          "url": "https://www.jiji.com/jc/article?k=000000272.000084468&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Mar 2026 06:10:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/84468/272/84468-272-58a90a5c87dbe6c6eaa2bf2159330389-3500x2333.jpg"
+        },
+        {
+          "title": "オーバーツーリズムに関するインバウンド影響実態調査 | 87%が現場 ...",
+          "url": "https://mainichi.jp/articles/20260327/pr2/00m/020/646000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 23:21:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/27/20260327pr200m020646000p/0.png?1"
         }
       ]
     },
@@ -2679,6 +3042,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "神戸市の独自SDGs施策...持続可能な都市づくり「森の未来都市 神戸 ...",
+          "url": "https://www.j-cast.com/kaisha/2025/11/21509525.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Fri, 21 Nov 2025 13:15:00 GMT",
+          "image": "https://www.j-cast.com/kaisha/images/origin/2025/11/kaisha_20251121133102.jpg"
+        },
+        {
+          "title": "【東洋学園大学】大学から排出される古紙を再生し、持続可能な ...",
+          "url": "https://www.asahi.com/and/pressrelease/16447143",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Wed, 25 Mar 2026 01:22:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "静岡県御前崎市教育委員会と「熱中症対策及びSDGs教育の推進に向け ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000229.000045090.html",
+          "source": "PR TIMES",
+          "pubDate": "Sun, 22 Mar 2026 18:01:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/45090/229/45090-229-be39451ad7654193c626f446e04ac558-3900x2869.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -2807,6 +3193,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "特別用途食品（個別評価型病者用食品）表示許可取得「明治アクア ...",
+          "url": "https://www.minyu-net.com/release/prwire/detail/202603095308",
+          "source": "福島民友新聞",
+          "pubDate": "Wed, 11 Mar 2026 07:00:00 GMT"
+        },
+        {
+          "title": "特別用途食品（個別評価型病者用食品）表示許可取得「明治アクア ...",
+          "url": "https://japan.cnet.com/release/31153187/",
+          "source": "CNET",
+          "pubDate": "Tue, 10 Mar 2026 17:00:00 GMT",
+          "image": "https://japan.cnet.com/media/c/2012/images/logo/logo_ogp_1200.png"
+        },
+        {
+          "title": "特別用途食品（個別評価型病者用食品）表示許可取得「明治アクア ...",
+          "url": "https://www.shinmai.co.jp/news/article/PRPW202603095308",
+          "source": "信濃毎日新聞デジタル",
+          "pubDate": "Wed, 11 Mar 2026 07:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -2913,6 +3320,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "東京農工大学、先端鶏舎で動物福祉の可能性探る 持続可能な畜産模索",
+          "url": "https://www.nikkei.com/article/DGXZQOUD2559O0V20C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 24 Mar 2026 19:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2727713009032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.48&amp;fp-y=0.07&amp;h=630&amp;w=1200&amp;s=5c9ee782a7a4e7efd5d698d82f71d9ae"
+        },
+        {
+          "title": "アニマルウェルフェアアワード2025発表：無いなら作る、あらたな ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000017.000020822.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 22 Apr 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/20822/17/20822-17-376b32c5cf19b2cb1db38cacda4043b5-1920x1080.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "【イベントレポート】「アニマルウェルフェア」をテーマに、入居 ...",
+          "url": "https://digitalpr.jp/r/119445",
+          "source": "Degital PR Platform",
+          "pubDate": "Mon, 06 Oct 2025 17:00:00 GMT",
+          "image": "https://digitalpr.jp/simg/2269/119445/715_400_2025100315073668df6828c9fd5.jpg"
+        }
       ]
     },
     "speeches": [
@@ -3013,6 +3443,29 @@
         {
           "label": "食品衛生法（法令検索）",
           "url": "https://www.google.com/search?q=%E9%A3%9F%E5%93%81%E8%A1%9B%E7%94%9F%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "「食品の安全性確保と食品ロス削減に向けたMALDI-TOF MS微生物同定 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000832.000039153.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 06 Feb 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/39153/832/39153-832-89346e602b68c103af20eb1b954e294a-3648x2432.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "～ペットフード安全法を推進～ 輸入・製造・販売現場でペット ...",
+          "url": "https://digitalpr.jp/r/115119",
+          "source": "Degital PR Platform",
+          "pubDate": "Thu, 31 Jul 2025 04:00:00 GMT",
+          "image": "https://digitalpr.jp/simg/2484/115119/715_400_20250731071633688a99c14c62d.JPG"
+        },
+        {
+          "title": "ケネディ長官、食品添加物の削減と食品の安全性強化に本腰 米大手 ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/d16c4cef52ef9c1008bd1834a0ebcf344081008a",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 14 Mar 2025 05:47:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/inosehijiri/02133804/title-1741922742041.jpeg?exp=10800"
         }
       ]
     },
@@ -3145,6 +3598,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121914536X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "ブラックフライデーを狙った詐欺に要注意！「注意すべき詐欺手口 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000055.000058563.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 19 Nov 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/58563/55/58563-55-848805bc3dab8184e144d9693cf4e41e-1920x1280.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "特殊詐欺対策の効果が認められた「警察庁推奨アプリ」、認定式で ...",
+          "url": "https://news.yahoo.co.jp/articles/7fd270ee62c2971a81a72714dadd0bc4e2ee9664",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 05 Mar 2026 17:40:00 GMT"
+        },
+        {
+          "title": "電話・ネット詐欺対策アプリ「Whoscall」AIによる詐欺の巧妙化・自動 ...",
+          "url": "https://mainichi.jp/articles/20260217/pr2/00m/020/880000c",
+          "source": "毎日新聞",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/02/17/20260217pr200m020880000p/0.png?3"
         }
       ]
     },
@@ -3344,6 +3819,27 @@
         {
           "label": "ストーカー行為等の規制等に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AB%E3%83%BC%E8%A1%8C%E7%82%BA%E7%AD%89%E3%81%AE%E8%A6%8F%E5%88%B6%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "ストーカー相談 紛失防止タグ、GPS機器悪用 過去最多34件 茨城県警",
+          "url": "https://ibarakinews.jp/news/newsdetail.php?f_jun=1773928143113700",
+          "source": "茨城新聞クロスアイ",
+          "pubDate": "Thu, 19 Mar 2026 17:09:00 GMT",
+          "image": "https://ibarakinews.jp/photo/1773928143113700_photo1_001.JPG"
+        },
+        {
+          "title": "ストーカー摘発が昨年過去最多1546件、相談2万件超…「紛失防止 ...",
+          "url": "https://www.yomiuri.co.jp/national/20260319-GYT1T00131/2/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Wed, 18 Mar 2026 18:49:00 GMT"
+        },
+        {
+          "title": "ストーカー規制法「禁止命令」過去最多に 去年1年間に3037件 川崎 ...",
+          "url": "https://news.yahoo.co.jp/articles/ae326364f75209afdc8a0d4b37cabfaebf0b7548",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 18 Mar 2026 18:38:00 GMT"
         }
       ]
     },
@@ -3612,6 +4108,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "政府広報「ストーカーは犯罪です」→翌日にポケセン刺殺事件 ...",
+          "url": "https://sirabee.com/2026/03/27/20163533096/",
+          "source": "しらべぇ",
+          "pubDate": "Thu, 26 Mar 2026 19:30:00 GMT",
+          "image": "https://img.sirabee.com/wp-content/uploads/2020/04/sirabee20200410pokemon-scaled.jpg"
+        },
+        {
+          "title": "池袋ストーカー刺殺事件の深層 「タイプ別」で見極める凶行の予兆 ...",
+          "url": "https://news.yahoo.co.jp/articles/df2f2e11ed72bde191e8aad303da419d6e74fbb6",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 27 Mar 2026 17:18:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260328-00939513-toyo-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "元交際相手の男は過去に“ストーカー容疑”で逮捕 警察は助言 ...",
+          "url": "https://news.yahoo.co.jp/articles/2d677be1afeff9a0bf426d6aab53b84317ccfa7a",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 27 Mar 2026 05:41:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260327-22560626-jnn-000-2-thumb.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -3773,6 +4292,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "ポケモンセンターでのストーカー事件ーエスカレートと再発を防ぐ ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/a4cd3c42d6351c46a5fa5a70f74cf2035fe37f25",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 26 Mar 2026 21:05:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/haradatakayuki/02588588/title-1774583338263.jpeg?exp=10800"
+        },
+        {
+          "title": "ストーカー相談のうち年2000件以上が事件に発展している 殺人 ...",
+          "url": "https://www.tokyo-np.co.jp/article/477974",
+          "source": "東京新聞",
+          "pubDate": "Fri, 27 Mar 2026 06:17:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/2/a/f/f/2aff4c5e42a440b59be39240e9ca0c34_1.jpg"
+        },
+        {
+          "title": "元交際相手の男は過去にストーカー容疑で逮捕 警察は助言・対応も ...",
+          "url": "https://www.msn.com/ja-jp/news/national/%E5%85%83%E4%BA%A4%E9%9A%9B%E7%9B%B8%E6%89%8B%E3%81%AE%E7%94%B7%E3%81%AF%E9%81%8E%E5%8E%BB%E3%81%AB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AB%E3%83%BC%E5%AE%B9%E7%96%91%E3%81%A7%E9%80%AE%E6%8D%95-%E8%AD%A6%E5%AF%9F%E3%81%AF%E5%8A%A9%E8%A8%80-%E5%AF%BE%E5%BF%9C%E3%82%82-%E5%8A%A0%E5%AE%B3%E8%80%85%E6%9B%B4%E7%94%9F%E3%81%AE%E8%AA%B2%E9%A1%8C%E3%81%A8%E3%81%AF-%E6%B1%A0%E8%A2%8B%E3%83%9D%E3%82%B1%E3%82%BB%E3%83%B3%E5%A5%B3%E6%80%A7%E5%BA%97%E5%93%A1%E5%88%BA%E6%AE%BA-n%E3%82%B9%E3%82%BF%E8%A7%A3%E8%AA%AC/ar-AA1ZxaAj",
+          "source": "TBS NEWS DIG on MSN",
+          "pubDate": "Fri, 27 Mar 2026 05:26:28 GMT"
+        }
       ]
     },
     "speeches": [
@@ -3930,6 +4471,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "公益通報か情報漏えいか 県警トップの『隠蔽指示』はあったのか ...",
+          "url": "https://www.fnn.jp/articles/-/1019703",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Tue, 24 Mar 2026 02:31:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/b/5/600/img_b5d4f61fab88793c5cd52306c11c137a32799.jpg"
+        },
+        {
+          "title": "トクリュウに捜査情報漏洩の警視庁元捜査員に懲役1年6カ月・執行 ...",
+          "url": "https://www.fnn.jp/articles/-/1020060",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Tue, 24 Mar 2026 19:39:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/9/7/600/img_97fba7f6f0697d3fc7c789b0e376c036324218.jpg"
+        },
+        {
+          "title": "OBに情報漏洩の警部補、捜査と偽り289件もの不正照会 犯罪歴や口座 ...",
+          "url": "https://www.sankei.com/article/20260319-Z5EYH3BJOVMQPBVZFXTREK7NNU/",
+          "source": "産経ニュース",
+          "pubDate": "Thu, 19 Mar 2026 05:36:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/WBTIBTPBAVKFHGDKD4Q6FJ5COU.jpg?auth=f7472288e080f4c8884c07ee954358bede1f4adc1e1c671768dd808e9b667519&amp;quality=50&amp;focal=988%2C616&amp;width=1200&amp;height=630"
+        }
       ]
     },
     "speeches": [
@@ -4034,6 +4598,29 @@
         {
           "label": "配偶者からの暴力の防止及び被害者の保護等に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E9%85%8D%E5%81%B6%E8%80%85%E3%81%8B%E3%82%89%E3%81%AE%E6%9A%B4%E5%8A%9B%E3%81%AE%E9%98%B2%E6%AD%A2%E5%8F%8A%E3%81%B3%E8%A2%AB%E5%AE%B3%E8%80%85%E3%81%AE%E4%BF%9D%E8%AD%B7%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "大門氏 規制法改正で主張",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-12-04/2025120404_02_0.php",
+          "source": "日本共産党",
+          "pubDate": "Wed, 03 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-12-04/img_9.jpg"
+        },
+        {
+          "title": "「紛失防止タグ」規制施行 改正ストーカー、DV法",
+          "url": "https://www.kochinews.co.jp/article/detail/944013",
+          "source": "Kochi Shimbun",
+          "pubDate": "Mon, 29 Dec 2025 10:06:00 GMT",
+          "image": "https://images.www.kochinews.co.jp/media/article/944013/images/default.jpg"
+        },
+        {
+          "title": "紛失防止タグの悪用を規制 改正ストーカー、DV法が施行",
+          "url": "https://www.nikkei.com/article/DGXZQOUD292Y80Z21C25A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Mon, 29 Dec 2025 16:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2426405029122025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=b72d3564c1cd094f811a8a91e15329f2"
         }
       ]
     },
@@ -4157,6 +4744,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "「dv被害者支援」の法律相談",
+          "url": "https://www.bengo4.com/c_3/c_1020/c_1147/bbs/dv%E8%A2%AB%E5%AE%B3%E8%80%85%E6%94%AF%E6%8F%B4/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Sun, 11 Nov 2012 16:00:00 GMT",
+          "image": "https://www.bengo4.com/img/citizen/common/bengo4-ogp.png"
+        },
+        {
+          "title": "進まぬDV加害者の更生支援 専門家不足、地域差顕著に",
+          "url": "https://www.nikkei.com/article/DGXZQOUE284530Y5A420C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 21 Nov 2025 18:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO6485033004062025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.48&amp;fp-y=0.57&amp;h=630&amp;w=1200&amp;s=5eb8e21204ed7f501fc055f464cb8c80"
+        },
+        {
+          "title": "DV被害者がペットと避難できるシェルター改修が完了｜夏の ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000009.000166149.html",
+          "source": "PR TIMES",
+          "pubDate": "Sat, 15 Nov 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/166149/9/166149-9-d46887f123f04f77a2270a98f443c4f3-2669x1498.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -4314,6 +4924,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "凶悪な事件とも「地続き」…男性のモラハラ、暴力性に気づくには",
+          "url": "https://mainichi.jp/articles/20260327/k00/00m/040/518000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 13:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/27/20260327k0000m040504000p/0c10.jpg?1"
+        },
+        {
+          "title": "小金井ストーカー殺人未遂事件、被害女性が初めてテレビで語る ...",
+          "url": "https://www.oricon.co.jp/news/2431446/full/",
+          "source": "ORICON NEWS",
+          "pubDate": "Mon, 19 Jan 2026 23:05:00 GMT",
+          "image": "https://contents.oricon.co.jp/upimg/news/2432000/2431446/20260120_031046_p_o_56217345.jpg"
+        },
+        {
+          "title": "恋愛感情なくても…違反 GPS取り付けやホテル見張り 千葉県、来月 ...",
+          "url": "https://www.tokyo-np.co.jp/article/474611",
+          "source": "tokyo-np",
+          "pubDate": "Thu, 12 Mar 2026 17:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/5/b/7/c/5b7cd1a73f3178c21af1b096a339cec2_1.jpg"
         }
       ]
     },
@@ -4543,6 +5176,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "カードサイズの超薄型スマートタグ「MAMORIO CARD」新発売 IP67相当の ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000256.000022173.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 04 Feb 2026 16:01:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/22173/256/22173-256-26c12a492d9813f45027634b9c109a76-1200x600.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "カードサイズの超薄型スマートタグ「MAMORIO CARD」新発売 IP67相当の ...",
+          "url": "https://mainichi.jp/articles/20260205/pr2/00m/020/798000c",
+          "source": "毎日新聞",
+          "pubDate": "Wed, 04 Feb 2026 16:01:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/02/05/20260205pr200m020798000p/0c10.jpg?5"
         }
       ]
     },
@@ -4780,6 +5429,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "ストーカー最多 警察は被害者の安全確保を【社説】",
+          "url": "https://www.worldtimes.co.jp/opinion/editorial/20260326-207483/",
+          "source": "世界日報",
+          "pubDate": "Wed, 25 Mar 2026 14:54:00 GMT",
+          "image": "https://www.worldtimes.co.jp/wp-content/uploads/2026/03/020260319AX_01____2.jpg"
+        },
+        {
+          "title": "「紛失防止タグ」悪用を新たに規制、改正ストーカー規制法が成立 ...",
+          "url": "https://www.yomiuri.co.jp/politics/20251203-GYT1T00299/",
+          "source": "読売新聞",
+          "pubDate": "Wed, 03 Dec 2025 11:07:00 GMT"
+        },
+        {
+          "title": "ストーカー摘発、過去最多3717件 川崎の事件で対応強化",
+          "url": "https://mainichi.jp/articles/20260319/k00/00m/040/059000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Wed, 18 Mar 2026 18:57:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/19/20260319k0000m040057000p/0c10.jpg?1"
+        }
       ]
     },
     "speeches": [
@@ -4906,6 +5577,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "【12/18(木)開催】「GXの産業界への影響と対応～政策・規制、技術 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000078.000128655.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 05 Nov 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/128655/78/128655-78-0bc7a3e243b037f88f31722c914a489d-1078x256.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "世界の防衛エレクトロニクス市場は、技術の進歩と戦略的軍事投資 ...",
+          "url": "https://www.dreamnews.jp/press/0000332625/",
+          "source": "ドリームニュース",
+          "pubDate": "Wed, 29 Oct 2025 04:30:00 GMT",
+          "image": "https://www.dreamnews.jp/press/0000332625/images/bodyimage1"
+        },
+        {
+          "title": "【調査レポート】自動車の知能化・SDV化動向 ～市場、技術、収益 ...",
+          "url": "https://response.jp/article/2025/11/04/402999.html",
+          "source": "レスポンス",
+          "pubDate": "Mon, 03 Nov 2025 16:00:00 GMT",
+          "image": "https://response.jp/imgs/ogp_f/2156331.jpg"
+        }
       ]
     },
     "speeches": [
@@ -5021,6 +5715,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "紛失防止タグの悪用禁止、ストーカー警告を職権で 改正規制法が成立",
+          "url": "https://www.asahi.com/articles/ASTD27FDFTD2UTIL03DM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Tue, 02 Dec 2025 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20251203001894_comm.jpg"
+        },
+        {
+          "title": "「紛失防止タグ」悪用を新たに規制、改正ストーカー規制法が成立 ...",
+          "url": "https://www.yomiuri.co.jp/politics/20251203-GYT1T00299/",
+          "source": "読売新聞",
+          "pubDate": "Wed, 03 Dec 2025 11:07:00 GMT"
+        },
+        {
+          "title": "改正ストーカー規制法成立 紛失防止タグの悪用禁止や警察職権で警告",
+          "url": "https://www.nikkei.com/article/DGXZQOUF035OE0T01C25A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 03 Dec 2025 10:11:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2303485003122025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=ff19005f21e47a13c4a77b175a59ad68"
         }
       ]
     },
@@ -5304,6 +6020,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "共同親権の懸念、伝える映画 「五月の雨」、DV被害体験基に",
+          "url": "https://www.nishinippon.co.jp/item/1474243/",
+          "source": "西日本新聞",
+          "pubDate": "Thu, 26 Mar 2026 00:22:00 GMT",
+          "image": "https://www.nishinippon.co.jp/uploads/image/1883269/sns_PN2026032601001547.-.-.CI0003.jpg"
+        },
+        {
+          "title": "DVの加害者・被害者・傍観者にならないために。社会全体でDVを「し ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000016.000146427.html",
+          "source": "PR TIMES",
+          "pubDate": "Sat, 18 Oct 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/146427/16/146427-16-df8a4bc9e7ff662c0826958d8fc9e13d-2048x1208.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "DV・ストーカー被害者の安全確保を",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-11-26/ftp2025112615_02_0.php",
+          "source": "日本共産党",
+          "pubDate": "Tue, 25 Nov 2025 16:01:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-11-26/img_13.jpg"
         }
       ]
     },
@@ -5618,6 +6357,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "東京・品川区がストーカー・DV被害者に「最長21泊分」宿泊費 新 ...",
+          "url": "https://www.tokyo-np.co.jp/article/469239",
+          "source": "tokyo-np",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/5/3/6/5/536582e7a9c2b60d6cafb428515d3e38_1.jpg"
+        },
+        {
+          "title": "DV被害者の命を守れ",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-11-27/2025112704_03_0.php",
+          "source": "日本共産党",
+          "pubDate": "Wed, 26 Nov 2025 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2025-11-27/img_9.jpg"
+        },
+        {
+          "title": "ストーカーやDV被害者の一時避難に助成、ホテルなど全国最長21泊分 ...",
+          "url": "https://www.yomiuri.co.jp/national/20260217-GYT1T00311/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 17 Feb 2026 07:00:00 GMT"
         }
       ]
     },
@@ -6099,6 +6860,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "3年連続《日本の教員が世界一多忙》汚名返上へ…給特法改正で ...",
+          "url": "https://toyokeizai.net/articles/-/919055?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Sun, 23 Nov 2025 22:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/d/d/1200w/img_dd3d75bbd7b585417c9840e23a4e0ee2151403.jpg"
+        }
       ]
     },
     "speeches": [
@@ -6341,6 +7111,20 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "企業ガバナンス強化へ：リスキル、内部通報制度の運用を適正化 ...",
+          "url": "https://mainichi.jp/articles/20251222/pr1/00m/020/267000c",
+          "source": "毎日新聞",
+          "pubDate": "Sun, 21 Dec 2025 16:00:00 GMT"
+        },
+        {
+          "title": "「サプライチェーン強化に向けたセキュリティ対策評価制度に ...",
+          "url": "https://www.meti.go.jp/press/2025/12/20251226001/20251226001.html",
+          "source": "経済産業省",
+          "pubDate": "Thu, 25 Dec 2025 16:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -6562,6 +7346,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904889X00320251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "「同居者 定義」の法律相談",
+          "url": "https://www.bengo4.com/c_1009/c_1409/bbs/%E5%90%8C%E5%B1%85%E8%80%85+%E5%AE%9A%E7%BE%A9/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Mon, 04 Mar 2013 16:00:00 GMT",
+          "image": "https://www.bengo4.com/img/citizen/common/bengo4-ogp.png"
+        },
+        {
+          "title": "ストーカー規制、紛失防止タグも対象に 位置情報取得による被害急増",
+          "url": "https://www.nikkei.com/article/DGXZQOUD072600X01C25A1000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 11 Nov 2025 01:08:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO7191314010112025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=b57ce14a367a960ffda3e595057d35fc"
+        },
+        {
+          "title": "Xdinary Heroesの宿舎にストーカーが無断侵入…JYPが告訴状を提出 ...",
+          "url": "https://news.yahoo.co.jp/articles/024ea4e0f5c152d315f9b5f8638fb47e39f13333",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 10 Feb 2026 21:13:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260211-00000112-kstylens-000-1-view.jpg?exp=10800"
         }
       ]
     },
@@ -6943,6 +7750,29 @@
           "label": "医療法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%8C%BB%E7%99%82%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "トランスコスモス、札幌市と在宅医療のオンライン診療導入促進に ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000002068.000000183.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 25 Mar 2026 19:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/183/2068/183-2068-6fd1f56c868f4faa980ea1174596adc6-857x198.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "TISとWelby、地域包括ケア向けサービスの共同推進に向けて ...",
+          "url": "https://www.asahi.com/and/pressrelease/16454622",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 05:34:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "全国330医療圏の地域医療分析資料を無償公開",
+          "url": "https://www.jiji.com/jc/article?k=000000033.000105083&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Tue, 24 Mar 2026 19:15:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/105083/33/105083-33-137d90972e33ee99c08bfe3f18da2310-686x460.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
+        }
       ]
     },
     "speeches": [
@@ -7078,6 +7908,29 @@
         {
           "label": "医療法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%8C%BB%E7%99%82%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "地域・診療科・病診の医師偏在「経済的インセンティブ」含め是正",
+          "url": "https://www.m3.com/news/open/iryoishin/1214154?loggedIn=true",
+          "source": "M3",
+          "pubDate": "Mon, 10 Jun 2024 17:00:00 GMT",
+          "image": "https://static.m3.com/news/ogp/IryoIshin/9d603a0bf5e8a2ea457340eb8dc0a7f841b744fc3bc4e9f0ed5b36e75b52063e.jpg"
+        },
+        {
+          "title": "日本医師会ドクターバンク、全国ネットワーク構築へ始動",
+          "url": "https://www.cbnews.jp/news/entry/20260309133853",
+          "source": "医療介護CBnews",
+          "pubDate": "Wed, 18 Mar 2026 19:15:00 GMT",
+          "image": "https://www.cbnews.jp/img/cb_corridor_2.gif"
+        },
+        {
+          "title": "医師偏在の是正、手当支給 電子カルテなど医療DX推進―改正医療法 ...",
+          "url": "https://www.jiji.com/jc/article?k=2025120500141&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 04 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/img/jijicom_og_image.png"
         }
       ]
     },
@@ -7230,6 +8083,29 @@
         {
           "label": "医療法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%8C%BB%E7%99%82%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "クラウドネイティブレセコン一体型電子カルテを提供している ...",
+          "url": "https://www.jiji.com/jc/article?k=000000017.000102549&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Mar 2026 11:46:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/102549/17/102549-17-0288fa80628d5e0d9c5a10d8baf19768-2400x1260.jpg"
+        },
+        {
+          "title": "クラウドネイティブレセコン一体型電子カルテを提供するヘンリー ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000016.000102549.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 04 Mar 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/102549/16/102549-16-5a5325c18eae3d9849db4c104949c4c1-2400x1260.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "医療情報システムで病院を支える富士通のパートナーとして半世紀",
+          "url": "https://net.keizaikai.co.jp/archives/3314",
+          "source": "経済界ウェブ",
+          "pubDate": "Wed, 25 Mar 2026 13:11:00 GMT",
+          "image": "https://prd-cdn-keizaikai.storage.googleapis.com/images/TCxqTvZelRXzrvrRsXvTxsvFMrajiyyU/6487272d-d7c1-4eff-9508-6b05964d1854.jpg"
         }
       ]
     },
@@ -7489,6 +8365,29 @@
         {
           "label": "医療法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%8C%BB%E7%99%82%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "オンライン診療での向精神薬処方、規制強化",
+          "url": "https://www.m3.com/news/open/iryoishin/1318109",
+          "source": "M3",
+          "pubDate": "Tue, 27 Jan 2026 16:00:00 GMT",
+          "image": "https://static.m3.com/news/ogp/IryoIshin/a6b98e28efeefed22d0ad27eab1d1f47410976948e33463e9eb4f739a10cfe10.jpg"
+        },
+        {
+          "title": "オンライン診療実施医師は研修必修に、指針改定案まとまる",
+          "url": "https://www.m3.com/news/open/iryoishin/681671?portalId=news",
+          "source": "M3",
+          "pubDate": "Mon, 10 Jun 2019 17:00:00 GMT",
+          "image": "https://static.m3.com/news/ogp/ogp_news_iryoishin.jpg"
+        },
+        {
+          "title": "トランスコスモス、札幌市と在宅医療のオンライン診療導入促進に ...",
+          "url": "https://resemom.jp/release/prtimes/20260326/176139.html",
+          "source": "リセマム",
+          "pubDate": "Wed, 25 Mar 2026 19:00:00 GMT",
+          "image": "https://resemom.jp/release/imgs/list/323915.png"
         }
       ]
     },
@@ -7920,6 +8819,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904260X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "国民民主、年少控除復活へ法案",
+          "url": "https://www.jiji.com/jc/article?k=2026032700923&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Mar 2026 00:39:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260327atK7S_o.jpg"
+        },
+        {
+          "title": "「普通の家庭でも“所得制限”の対象…」障害児支援の“現状”に ...",
+          "url": "https://www.excite.co.jp/news/article/ben54_jp_news_2327/",
+          "source": "Excite エキサイト",
+          "pubDate": "Mon, 02 Jun 2025 12:33:00 GMT",
+          "image": "https://s.eximg.jp/exnews/logo/noimg_1200x630_domestic-topic.jpg"
+        },
+        {
+          "title": "障害児手当で所得制限撤廃法案 立民",
+          "url": "https://www.jiji.com/jc/article?k=2025120501037&g=pol&p=20251205at88S&rel=pv",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 05 Dec 2025 04:01:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202512/20251205at88S_o.jpg"
+        }
       ]
     },
     "speeches": [
@@ -8172,6 +9094,29 @@
         {
           "label": "医療法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%8C%BB%E7%99%82%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "【美容医療&#215;確定申告調査】医療費控除の対象を正しく理解して ...",
+          "url": "https://www.asahi.com/and/pressrelease/16379879",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 25 Feb 2026 16:00:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "Vol.1 拡大を続ける美容医療質の高い安全な環境づくりが急務に",
+          "url": "https://special.nikkeibp.co.jp/atclh/ONB/25/abbvie0523/",
+          "source": "日経BPスペシャル",
+          "pubDate": "Thu, 22 May 2025 08:00:00 GMT",
+          "image": "https://special.nikkeibp.co.jp/atclh/ONB/25/abbvie0523/600_315.jpg"
+        },
+        {
+          "title": "日本美容医療学会（JAPSA）学会誌『JAPSA JOURNAL』第2号を刊行 ー美容 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000025.000127002.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 06 Oct 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/127002/25/127002-25-6f5ec4b38b507784c941b5b9b57ef35e-597x846.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -8466,6 +9411,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904260X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "病院への補助金、都道府県を介さず国が「直接支給」…賃上げ ...",
+          "url": "https://www.yomiuri.co.jp/politics/20251204-GYT1T00245/",
+          "source": "読売新聞",
+          "pubDate": "Thu, 04 Dec 2025 07:00:00 GMT"
+        },
+        {
+          "title": "賃上げから人口減対策まで目配り 実効性確保に腐心も―診療報酬改定",
+          "url": "https://www.jiji.com/jc/article?k=2026021300774&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 13 Feb 2026 03:31:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260213ds59_o.jpg"
+        },
+        {
+          "title": "世界経済フォーラムにおいて、AIによる持続可能な病院経営支援 ...",
+          "url": "https://www.asahi.com/and/pressrelease/16296679",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 19 Jan 2026 16:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -8752,6 +9718,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904260X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "CBN規制で何が変わるのか──患者救済を残しつつ問われる業界責任",
+          "url": "https://forbesjapan.com/articles/detail/94119",
+          "source": "Forbes JAPAN",
+          "pubDate": "Thu, 19 Mar 2026 02:45:00 GMT"
+        },
+        {
+          "title": "「サヨナラCBN」 最終クリアランスセール開催中！＜公式サイト最大 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000245.000083735.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 28 Jan 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/83735/245/83735-245-e87b2f9e179e1ea2b56161942712dd9e-600x600.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "規制を超えて業界を成長させる──薬事法ドットコムがWSJ主催 ...",
+          "url": "https://getnews.jp/archives/3696945",
+          "source": "getnews.jp",
+          "pubDate": "Tue, 10 Feb 2026 04:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -8954,6 +9941,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904260X00320251121"
         }
+      ],
+      "news": [
+        {
+          "title": "【岡山大学】岡山県内の感染状況・医療提供体制の分析について ...",
+          "url": "https://www.sanyonews.jp/article/1896493",
+          "source": "山陽新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 20:08:00 GMT",
+          "image": "https://static.sanyonews.jp/image/article/size1https://prtimes.jp/img/72793/3888/resize/d72793-3888-4d30c24d7692afe9bfb7-0.jpg"
+        },
+        {
+          "title": "パンデミックとは？発生の原因や主な事例と歴史、対策を現役医師 ...",
+          "url": "https://www.asahi.com/sdgs/article/16264044",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 22 Jan 2026 16:00:00 GMT",
+          "image": "https://p1.potaufeu.asahi.com/54e3-p/picture/30440132/1d97f0d516cf72592cfd833c4d8677bb.png"
+        },
+        {
+          "title": "介護付き有料老人ホーム「アズハイム三鷹」が感染症対策における ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000003.000129488.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 10 Nov 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/129488/3/129488-3-36443a24b055ad7bf836d5d7552d99c5-2340x1560.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -9088,6 +10098,28 @@
         {
           "label": "医療法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%8C%BB%E7%99%82%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "「見えない医療格差を明らかに」全国330医療圏の全データを無料 ...",
+          "url": "https://prtimes.jp/story/detail/bj4y2lcR22x",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 24 Mar 2026 19:50:00 GMT"
+        },
+        {
+          "title": "松本市立病院、病床･手術室･診療室を削減へ ”地域型病院”へ ...",
+          "url": "https://www.shinmai.co.jp/news/article/gf01d72grnjikvg65aessen0",
+          "source": "信濃毎日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 14:03:00 GMT",
+          "image": "https://image.shinmai.co.jp/web-image/20260327/gf01d72habb2fo900kevv4m0_M.jpg"
+        },
+        {
+          "title": "「高齢化率33％、出生数は減少」――鹿児島の地域医療の課題と ...",
+          "url": "https://news.yahoo.co.jp/articles/6e3c4538203d64db6a1b25d609717da91095baf3",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 04 Feb 2026 18:51:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260205-00010000-medical-000-1-view.jpg?exp=10800"
         }
       ]
     },
@@ -9307,6 +10339,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "【東京農業大学】「2027年国際園芸博覧会（GREEN&#215;EXPO 2027）」花・緑 ...",
+          "url": "https://digitalpr.jp/r/131616",
+          "source": "デジタルPRプラットフォーム",
+          "pubDate": "Thu, 26 Mar 2026 20:07:00 GMT",
+          "image": "https://digitalpr.jp/simg/2209/131616/715_400_2026032711404769c5ee2f135fd.png"
+        },
+        {
+          "title": "開幕1年前に横浜グリーンエクスポの準備状況を報告！",
+          "url": "https://www.asahi.com/and/pressrelease/16435021",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Thu, 19 Mar 2026 02:21:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "2027年国際園芸博覧会関係閣僚会議",
+          "url": "https://www.kantei.go.jp/jp/pages/20260319choukan_engei_hakurankai.html",
+          "source": "首相官邸ホームページ",
+          "pubDate": "Thu, 19 Mar 2026 04:32:00 GMT",
+          "image": "https://www.kantei.go.jp/contents/topics/37772_ext_29_0.jpg"
         }
       ]
     },
@@ -9544,6 +10599,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "自動車整備業界の「人手不足」を救う新たな選択肢。セイビーが ...",
+          "url": "https://response.jp/release/prtimes/20260312/223051.html",
+          "source": "レスポンス（Response.jp）",
+          "pubDate": "Wed, 11 Mar 2026 19:01:00 GMT",
+          "image": "https://response.jp/release/imgs/list/383670.png"
+        },
+        {
+          "title": "【ジョイカル、2025年総括と2026年業界展望を発表】整備士不足と ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000070.000115844.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 18 Dec 2025 15:59:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/115844/70/115844-70-26e1a44e5abf8653877e975a2d99d486-960x540.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "国家資格取得を目指す「障がい者整備士」の育成を本格化",
+          "url": "https://www.jiji.com/jc/article?k=000000009.000117822&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 23 Mar 2026 19:15:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/117822/9/117822-9-c64b00127c0c133801017e6de9fa9c73-2664x1741.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
+        }
       ]
     },
     "speeches": [
@@ -9623,6 +10701,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "基調講演「日本の海事産業の再興に向けた提言」について",
+          "url": "https://news.mynavi.jp/article/20260327-4240685/",
+          "source": "マイナビニュース",
+          "pubDate": "Thu, 26 Mar 2026 23:22:00 GMT"
+        },
+        {
+          "title": "経済安保の最前線｢造船復活｣に潜む時限爆弾。4隻同時建造の超 ...",
+          "url": "https://toyokeizai.net/articles/-/933282",
+          "source": "toyokeizai.net",
+          "pubDate": "Mon, 09 Feb 2026 22:05:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/9/8/1200w/img_98d5b1a441548a1e538c7a920718b105329468.jpg"
+        },
+        {
+          "title": "【直撃】国土交通相が語る造船｢中韓超える｣覚悟と勝ち筋､日米 ...",
+          "url": "https://toyokeizai.net/articles/-/933075",
+          "source": "toyokeizai.net",
+          "pubDate": "Mon, 09 Feb 2026 22:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/a/1/1200w/img_a1ff4d1302a5bb3270a15bd499422267297928.jpg"
         }
       ]
     },
@@ -9949,6 +11049,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "高速道路「新・深夜割引制度」は結局“トク”なのか？ 2026年 ...",
+          "url": "https://news.yahoo.co.jp/articles/8bb7bd67b68e64659f5cdbd7651437a47d759cbf",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 01 Jan 2026 17:02:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260102-00010001-bengojp-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "高速道路「新・深夜割引制度」は結局“トク”なのか？ 2026年 ...",
+          "url": "https://www.excite.co.jp/news/article/ben54_jp_news_3064/",
+          "source": "Excite エキサイト",
+          "pubDate": "Fri, 02 Jan 2026 01:57:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/ben54/5f/ben54_jp_news_3064/ben54_jp_news_3064_1.jpg"
+        },
+        {
+          "title": "高速道路の「新しい深夜割引制度」が改悪といわれる理由",
+          "url": "https://dime.jp/genre/2009579/",
+          "source": "@DIME",
+          "pubDate": "Sat, 16 Aug 2025 17:00:00 GMT",
+          "image": "https://dime.jp/wp-content/uploads/2025/08/shutterstock_421583935-770x494.jpg"
+        }
       ]
     },
     "speeches": [
@@ -10045,6 +11168,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "新幹線実現へ一致団結 全国6路線、初の総決起大会 「整備計画 ...",
+          "url": "https://www.47news.jp/13761608.html",
+          "source": "47NEWS",
+          "pubDate": "Thu, 22 Jan 2026 16:00:00 GMT"
+        },
+        {
+          "title": "新幹線「空白地」大分市、基本計画3路線の結節点なのに…知事 ...",
+          "url": "https://www.yomiuri.co.jp/local/kyushu/news/20260310-GYS1T00098/2/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Wed, 25 Mar 2026 19:30:00 GMT"
+        },
+        {
+          "title": "四国など新幹線早期整備を 沿線首長ら、都内で総決起大会",
+          "url": "https://www.topics.or.jp/articles/-/1373616",
+          "source": "徳島新聞",
+          "pubDate": "Thu, 22 Jan 2026 21:00:00 GMT",
+          "image": "https://tokushima.ismcdn.jp/mwimgs/7/d/1200wm/img_7d11eb518a583edb2666c8d90c67c727337135.jpg"
         }
       ]
     },
@@ -10143,6 +11287,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "ガソリン代が月「1万2000円」なのに、また値上げ…。「暫定税率 ...",
+          "url": "https://news.infoseek.co.jp/article/financialfield_488447/",
+          "source": "楽天Infoseek",
+          "pubDate": "Thu, 05 Feb 2026 16:00:00 GMT",
+          "image": "https://media.image.infoseek.co.jp/isnews/photos/financialfield/financialfield_488447_0.jpg"
+        },
+        {
+          "title": "「野党の手柄を横取り」自民広報X ガソリン暫定税率廃止を「高市 ...",
+          "url": "https://news.yahoo.co.jp/articles/2bf0b0ae4b683b882df5a98e1b4f417b1186a71d",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 03 Feb 2026 13:04:00 GMT"
+        },
+        {
+          "title": "ガソリン暫定税率の廃止に歓喜するドライバーが知らない ...",
+          "url": "https://diamond.jp/articles/-/384257?page=2",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Fri, 06 Mar 2026 00:01:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/f/d/-/img_fdaf4dc27d00e6abbfed5e886929c8fb458520.jpg"
         }
       ]
     },
@@ -10360,6 +11526,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "【あと1週間でラストラン】”なごり雪”の中を走るJR留萌線_3月31日 ...",
+          "url": "https://www.fnn.jp/articles/-/1020928",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Thu, 26 Mar 2026 01:01:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/b/4/600/img_b4f953ab5e4d6e947f78eba84cc26c2d398820.jpg"
+        },
+        {
+          "title": "北海道、揺れる貨物の大動脈 道南いさりび鉄道の赤字負担見直し焦点",
+          "url": "https://www.nikkei.com/article/DGXZQOFC2024N0Q6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 25 Mar 2026 22:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2784672021032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=8da852c66f13025059962b2e1f27c966"
+        },
+        {
+          "title": "北海道新幹線10年 節目の年、歩みと未来…観光客増も雇用は苦戦 ...",
+          "url": "https://www.yomiuri.co.jp/local/hokkaido/news/20260325-GYTNT00277/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Wed, 25 Mar 2026 13:00:00 GMT"
         }
       ]
     },
@@ -10653,6 +11841,29 @@
           "label": "鉄道軌道整備法（法令検索）",
           "url": "https://www.google.com/search?q=%E9%89%84%E9%81%93%E8%BB%8C%E9%81%93%E6%95%B4%E5%82%99%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "地方の“公共交通”どう維持？運転手不足・利用者減…厳しい運営 ...",
+          "url": "https://www.fnn.jp/articles/-/1018584",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Wed, 18 Mar 2026 13:13:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/8/e/600/img_8edf95b2b3788780b8875922302427371517089.jpg"
+        },
+        {
+          "title": "地方債残高削減進む 富山・砺波、公共交通を再編",
+          "url": "https://www.nikkei.com/article/DGKKZO95284910X20C26A3LB0000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 18:49:00 GMT",
+          "image": "https://www.nikkei.com/.resources/k-components/rectangle.rev-d54ea30.png"
+        },
+        {
+          "title": "「交通空白」解消へ、地域交通をリ・デザイン 地域公共交通部会",
+          "url": "https://www.kankyo-business.jp/column/559fcef7-0653-4ce3-aa54-debb10d5d7d8",
+          "source": "環境ビジネスオンライン",
+          "pubDate": "Tue, 09 Sep 2025 17:00:00 GMT",
+          "image": "https://www.kankyo-business.jp/uploads/2025/09/10/63ptYzhAUyHHqGShS2LJuBc2d65VQiZnTc6k5BCC.jpg"
+        }
       ]
     },
     "speeches": [
@@ -10847,6 +12058,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "特区民泊の「重点監視対象」に2817施設 大阪市、認定取り消しも",
+          "url": "https://www.asahi.com/articles/ASV3W1Q8VV3WOXIE02PM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 00:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327002623_comm.jpg"
+        },
+        {
+          "title": "大阪市、特区民泊の事業者向け指針改正 「苦情発生時は直接注意を」",
+          "url": "https://www.nikkei.com/article/DGXZQOUF2565N0V20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 25 Mar 2026 11:50:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2802418025032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=03d95b88e24ac7259bc31a32d9c2d323"
+        },
+        {
+          "title": "特区民泊、来年5月での新規申請停止 大阪市の方針を政府が了承 ...",
+          "url": "https://www.sankei.com/article/20251117-YYY2LV6XRFOVZHQJGTSNZTHASI/",
+          "source": "産経新聞",
+          "pubDate": "Mon, 17 Nov 2025 14:08:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/QJV2O2Q5NJJQNIPDJQO5MLEU6I.jpg?auth=d10c37e03c6c61796ed44ca43e1a833902a03a78cc0dc7ad9ebdf2dce15a785a&amp;quality=50&amp;focal=1685%2C533&amp;width=1200&amp;height=630"
+        }
       ]
     },
     "speeches": [
@@ -10930,6 +12164,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "課題はごみ散乱、オーバーツーリズム対策で箱根にスマートごみ箱 ...",
+          "url": "https://www.msn.com/ja-jp/news/techandscience/%E8%AA%B2%E9%A1%8C%E3%81%AF%E3%81%94%E3%81%BF%E6%95%A3%E4%B9%B1-%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%84%E3%83%BC%E3%83%AA%E3%82%BA%E3%83%A0%E5%AF%BE%E7%AD%96%E3%81%A7%E7%AE%B1%E6%A0%B9%E3%81%AB%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%81%94%E3%81%BF%E7%AE%B1%E7%99%BB%E5%A0%B4-%E5%8F%8E%E5%AE%B9%E9%87%8F%E3%81%AF%E9%80%9A%E5%B8%B8%E3%81%AE%E7%B4%845%E5%80%8D-%E5%B0%8F%E7%94%B0%E6%80%A5%E7%AE%B1%E6%A0%B9%E3%81%8C5%E5%8F%B0%E5%AF%84%E8%B4%88/ar-AA1ZyOJp",
+          "source": "カナロコ on MSN",
+          "pubDate": "Fri, 27 Mar 2026 13:00:00 GMT"
+        },
+        {
+          "title": "オーバーツーリズムに関するインバウンド影響実態調査 | 87%が現場 ...",
+          "url": "https://www.jiji.com/jc/article?k=000000060.000107669&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Mar 2026 05:45:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/107669/60/107669-60-e078953d5c88adeaaf63a4613bdcd212-3900x2194.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
+        },
+        {
+          "title": "オーバーツーリズム対策 100カ所に倍増目標 政府",
+          "url": "https://www.agrinews.co.jp/ippan/index/370990",
+          "source": "日本農業新聞",
+          "pubDate": "Fri, 27 Mar 2026 13:11:00 GMT",
+          "image": "https://www.agrinews.co.jp/images/service/noimage-s.png"
         }
       ]
     },
@@ -11023,6 +12279,27 @@
         {
           "label": "国土利用計画法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%9B%BD%E5%9C%9F%E5%88%A9%E7%94%A8%E8%A8%88%E7%94%BB%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "【外国人の不動産取得規制】26年3月3週の注目記事2選",
+          "url": "https://www.nikkei.com/compass/theme/238562/pickup/20260323",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 25 Mar 2026 07:42:00 GMT",
+          "image": "https://www.nikkei.com/compass/assets/ogi_c.png"
+        },
+        {
+          "title": "山口県の離島の土地を中国人が取得 「島が外国人ばかりに」募る ...",
+          "url": "https://www.msn.com/ja-jp/news/national/%E5%B1%B1%E5%8F%A3%E7%9C%8C%E3%81%AE%E9%9B%A2%E5%B3%B6%E3%81%AE%E5%9C%9F%E5%9C%B0%E3%82%92%E4%B8%AD%E5%9B%BD%E4%BA%BA%E3%81%8C%E5%8F%96%E5%BE%97-%E5%B3%B6%E3%81%8C%E5%A4%96%E5%9B%BD%E4%BA%BA%E3%81%B0%E3%81%8B%E3%82%8A%E3%81%AB-%E5%8B%9F%E3%82%8B%E4%B8%8D%E5%AE%89-%E5%9B%BD%E3%81%AB%E8%A6%8F%E5%88%B6%E6%B1%82%E3%82%81%E3%82%8B%E7%BD%B2%E5%90%8D%E3%82%82/ar-AA1Z1wsB",
+          "source": "中国新聞 on MSN",
+          "pubDate": "Thu, 19 Mar 2026 19:00:00 GMT"
+        },
+        {
+          "title": "外国人、規制強化なら暮らしは？ 在留資格審査・不動産の取得 ...",
+          "url": "https://news.yahoo.co.jp/articles/262f0b3af0c5a6a7166c44dbbeb006821f350ed4",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 04 Feb 2026 13:04:00 GMT"
         }
       ]
     },
@@ -11205,6 +12482,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "観光庁・観光産業課が描く5大政策を聞いてきた、宿泊業を核に ...",
+          "url": "https://www.travelvoice.jp/20260325-159412",
+          "source": "トラベルボイス",
+          "pubDate": "Wed, 25 Mar 2026 01:40:00 GMT",
+          "image": "https://www.travelvoice.jp/wp-content/uploads/2026/03/e4aa675b-52c0-4f93-8ca8-0eb7823c2d58.jpg"
+        },
+        {
+          "title": "政府、新たな「観光立国推進基本計画」を閣議決定、リピーター数 ...",
+          "url": "https://www.travelvoice.jp/20260327-159496",
+          "source": "トラベルボイス",
+          "pubDate": "Fri, 27 Mar 2026 09:10:00 GMT",
+          "image": "https://www.travelvoice.jp/wp-content/uploads/2024/07/dd6ba4d5-c5f8-4473-9556-72244d00c0f8.jpg"
+        },
+        {
+          "title": "観光庁、2026年度の観光立国推進基本計画の施策3本柱とは？ 「住民 ...",
+          "url": "https://news.yahoo.co.jp/articles/9f5a9e06110fda4ebeea84eb563084a1795f3849",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 01 Feb 2026 20:30:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260202-00010003-travelv-000-1-view.jpg?exp=10800"
         }
       ]
     },
@@ -11453,6 +12753,29 @@
           "label": "旅館業法・住宅宿泊事業法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%97%85%E9%A4%A8%E6%A5%AD%E6%B3%95%E3%83%BB%E4%BD%8F%E5%AE%85%E5%AE%BF%E6%B3%8A%E4%BA%8B%E6%A5%AD%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "民泊問題が超えてしまった心のキャパシティー 問われているのは誰か",
+          "url": "https://www.asahi.com/articles/ASV3K1SHZV3KOXIE055M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 20 Mar 2026 22:05:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260317002179_comm.jpg"
+        },
+        {
+          "title": "民泊&#215;レンタルスペースの一括運用で収益を最大化。スペース ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000340.000015560.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 21 Jan 2026 15:59:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/15560/340/15560-340-8d076c1630e2b6837babc20cac3ca117-3840x2560.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "民泊売却・民泊M&A相談が増加！賃貸の転貸民泊でもイグジット!収益 ...",
+          "url": "https://www.jiji.com/jc/article?k=000000114.000125953&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 13 Mar 2026 20:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/125953/114/125953-114-2f26bdfa49ad4fe94bba387b29a96f27-1280x720.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
+        }
       ]
     },
     "speeches": [
@@ -11595,6 +12918,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "住宅高騰対策で「空室税」 国民民主が法案提出",
+          "url": "https://www.sanyonews.jp/article/1841554",
+          "source": "山陽新聞",
+          "pubDate": "Thu, 11 Dec 2025 10:33:00 GMT",
+          "image": "https://static.sanyonews.jp/image/article/size1/f/d/1/b/fd1b8026d5fbf48407210036e334eec9_1.jpg"
+        },
+        {
+          "title": "住宅高騰対策で「空室税」",
+          "url": "https://www.kyoto-np.co.jp/articles/-/1616709",
+          "source": "京都新聞",
+          "pubDate": "Thu, 11 Dec 2025 09:58:00 GMT",
+          "image": "https://kyoto-np.ismcdn.jp/mwimgs/9/8/1200wm/img_983a6718fe903c7d5cb1a3a43fd9c98422639.jpg"
+        }
       ]
     },
     "speeches": [
@@ -11710,6 +13049,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "明窓 防災庁の行方",
+          "url": "https://www.sanin-chuo.co.jp/articles/-/944330",
+          "source": "山陰中央新報デジタル",
+          "pubDate": "Thu, 05 Feb 2026 20:00:00 GMT",
+          "image": "https://sanin-chuo.ismcdn.jp/mwimgs/c/7/1200m/img_c7a402334a5aa9f082d888b144d0b15f919659.jpg"
+        },
+        {
+          "title": "頻繁する大規模火災。「防災庁」設置へ 早急な議論を",
+          "url": "https://www.townnews.co.jp/0607/2026/01/24/822206.html",
+          "source": "タウンニュース",
+          "pubDate": "Fri, 23 Jan 2026 16:00:00 GMT",
+          "image": "https://www.townnews.co.jp/0607/images/a001429762_20.jpg"
+        },
+        {
+          "title": "「大分市大規模火災を踏まえた消防防災対策のあり方に関する検討 ...",
+          "url": "https://www.soumu.go.jp/menu_news/s-news/01shoubo01_02001199.html",
+          "source": "総務省",
+          "pubDate": "Thu, 26 Mar 2026 23:14:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
         }
       ]
     },
@@ -11850,6 +13212,29 @@
           "label": "道路法（法令検索）",
           "url": "https://www.google.com/search?q=%E9%81%93%E8%B7%AF%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "交通の要衝に「防災道の駅」",
+          "url": "https://www.komei.or.jp/km/yachiyo-takahashi-hideyuki/2025/12/24/%e4%ba%a4%e9%80%9a%e3%81%ae%e8%a6%81%e8%a1%9d%e3%81%ab%e3%80%8c%e9%98%b2%e7%81%bd%e9%81%93%e3%81%ae%e9%a7%85%e3%80%8d/",
+          "source": "公明党",
+          "pubDate": "Tue, 23 Dec 2025 16:00:00 GMT",
+          "image": "https://viewer.komei-shimbun.jp/TCDBWS/DownloadS3?s3FileKey=/KM/photo/tecml/2025/12/23/AKM2025122420251223-001061/d26b58ee93f82313862be0447b373cf2e53175b9635dd6ef61d1dd8740ddb5ba/EAKM2025122420251223-001061.jpg"
+        },
+        {
+          "title": "道の駅が新たな防災拠点に 宮城県の防災道の駅三本木やまなみ",
+          "url": "https://news.yahoo.co.jp/articles/5ccfd16f10679cbdb816b377b1f5c1d5bc282fbd",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 11 Dec 2025 10:37:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20251211-11700393-khbv-000-1-thumb.jpg?exp=10800"
+        },
+        {
+          "title": "栃木・県内11町が「道の駅」を防災拠点に活用し相互支援へ 物資や ...",
+          "url": "https://www.tochigi-tv.jp/news2/page.php?id=295418",
+          "source": "とちぎテレビ",
+          "pubDate": "Thu, 19 Mar 2026 04:03:00 GMT",
+          "image": "https://www.tochigi-tv.jp/common/sysfile/news/ID00295418_img1.jpg"
+        }
       ]
     },
     "speeches": [
@@ -11984,6 +13369,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "日本の円安･債券安に警戒強めるトランプ政権。高市政権の積極 ...",
+          "url": "https://toyokeizai.net/articles/-/934206",
+          "source": "toyokeizai.net",
+          "pubDate": "Tue, 10 Feb 2026 22:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/0/2/1200w/img_02c52a0b21c1cf4d6813ec79123d36ef84206.jpg"
+        },
+        {
+          "title": "高市政権の「責任ある積極財政」見極めへ 政治安定で投資魅力向上 ...",
+          "url": "https://www.jiji.com/jc/article?k=2026021500275&g=int",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 16 Feb 2026 00:11:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260216ds42_o.jpg"
+        },
+        {
+          "title": "海外識者、高市政権の積極財政に注文 諮問会議で「PB黒字視野」提言",
+          "url": "https://www.nikkei.com/article/DGXZQOUA260KA0W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 26 Mar 2026 11:54:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2810338026032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.54&amp;fp-y=0.19&amp;h=630&amp;w=1200&amp;s=708f4e2d44c4b23d67d85d563d0af2c2"
+        }
       ]
     },
     "speeches": [
@@ -12100,6 +13508,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "家賃値上げで悲鳴！家賃補助・住宅手当の現状は？福利厚生・国 ...",
+          "url": "https://www.komei.or.jp/komechan/safety/safety202505/",
+          "source": "公明党",
+          "pubDate": "Tue, 27 May 2025 17:00:00 GMT",
+          "image": "https://www.komei.or.jp/komechan/wp-content/uploads/2025/05/「家賃補助」：家賃補助と住宅手当の違いは？福利厚生の相場や国・自治体の支援制度についても解説！.jpg"
+        },
+        {
+          "title": "住宅セーフティネット制度と住宅政策",
+          "url": "https://www.komei.or.jp/km/urayasu-nakamura-rikako/2017/06/13/%E4%BD%8F%E5%AE%85%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E5%88%B6%E5%BA%A6%E3%81%A8%E4%BD%8F%E5%AE%85%E6%94%BF%E7%AD%96/",
+          "source": "公明党",
+          "pubDate": "Mon, 12 Jun 2017 17:00:00 GMT",
+          "image": "https://www.komei.or.jp/km/urayasu-nakamura-rikako/files/2017/06/IMG_1891-300x225.jpg"
+        },
+        {
+          "title": "不動産ポータル初（※1）国土交通省との協業によりLIFULL HOME'Sで ...",
+          "url": "https://www.jiji.com/jc/article?k=000000809.000033058&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Tue, 03 Feb 2026 04:16:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/33058/809/33058-809-9e549976cb4995d8ed3f7a2596764a63-1920x1080.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
         }
       ]
     },
@@ -12245,6 +13676,29 @@
         {
           "label": "建設業法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%BB%BA%E8%A8%AD%E6%A5%AD%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "3党1会派 法案を共同提出",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2025-12-16/2025121601_05_0.php",
+          "source": "日本共産党",
+          "pubDate": "Mon, 15 Dec 2025 16:01:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/web_img/akahata-kakusan.jpg"
+        },
+        {
+          "title": "万博工事費未払い巡り法案提出 野党、建設業者救済",
+          "url": "https://www.47news.jp/13598741.html",
+          "source": "47NEWS",
+          "pubDate": "Sun, 14 Dec 2025 16:00:00 GMT",
+          "image": "https://img.cf.47news.jp/static/renewal/common/img/thumb_large.png"
+        },
+        {
+          "title": "万博工事未払いで法案 野党提出、協会が取り立て",
+          "url": "https://www.jiji.com/jc/article?k=2025121500861&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Sun, 14 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202512/20251215at55S_o.jpg"
         }
       ]
     },
@@ -12479,6 +13933,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "【JPIセミナー】内閣官房「”第1次国土強靱化実施中期計画” 及び ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000001561.000042328.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 11 Nov 2025 15:59:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/42328/1561/42328-1561-eb724151a67085f50105eff3d45c62c4-1200x627.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "東洋大学国際観光学部が国土交通省関東運輸局推進の「江戸街道 ...",
+          "url": "https://www.excite.co.jp/news/article/Dprp_128551/",
+          "source": "Excite エキサイト",
+          "pubDate": "Tue, 17 Feb 2026 06:20:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/Dprp/d9/Dprp_128551/Dprp_128551_1.jpg"
+        }
       ]
     },
     "speeches": [
@@ -12699,6 +14169,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904319X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "【4・5知事選】重要争点・北陸新幹線延伸計画 藤井候補「ストップ ...",
+          "url": "https://www.kyoto-minpo.net/archives/2026/03/27/post-32583.php",
+          "source": "京都民報Web",
+          "pubDate": "Fri, 27 Mar 2026 04:46:00 GMT",
+          "image": "https://www.kyoto-minpo.net/web/wp-content/uploads/2026/03/20260327-002.jpg"
+        },
+        {
+          "title": "北陸新幹線延伸小浜ルート 京都の地下水問題で国が見解「大きな ...",
+          "url": "https://www.msn.com/ja-jp/news/news/%E5%8C%97%E9%99%B8%E6%96%B0%E5%B9%B9%E7%B7%9A%E5%BB%B6%E4%BC%B8%E5%B0%8F%E6%B5%9C%E3%83%AB%E3%83%BC%E3%83%88-%E4%BA%AC%E9%83%BD%E3%81%AE%E5%9C%B0%E4%B8%8B%E6%B0%B4%E5%95%8F%E9%A1%8C%E3%81%A7%E5%9B%BD%E3%81%8C%E8%A6%8B%E8%A7%A3-%E5%A4%A7%E3%81%8D%E3%81%AA%E5%BD%B1%E9%9F%BF%E3%81%AF%E3%81%AA%E3%81%84-%E4%B8%8E%E5%85%9A%E6%95%B4%E5%82%99%E5%A7%94%E5%93%A1%E4%BC%9A/ar-AA1YRGh7",
+          "source": "日テレNEWS NNN on MSN",
+          "pubDate": "Tue, 17 Mar 2026 19:48:01 GMT"
+        },
+        {
+          "title": "北陸新幹線で未整備のルート選定、リーダーの発言に重み…京都府 ...",
+          "url": "https://www.yomiuri.co.jp/local/kansai/news/20260323-GYO1T00009/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Sun, 22 Mar 2026 18:49:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -12918,6 +14409,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "【文部科学省 後援】高度理系人材の確保と研究連携を支援 大学 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000742.000003965.html",
+          "source": "PR TIMES",
+          "pubDate": "Sun, 08 Feb 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/3965/742/3965-742-8cce2e07596f344c784a9920717739db-861x235.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "経営課題の90.2%「人材強化」を打破。イマジナが4/15、東京で世界 ...",
+          "url": "https://www.jiji.com/jc/article?k=000000528.000048039&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Mar 2026 19:45:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/48039/528/48039-528-58866fd36b48f3c5f8a2b3a6ee75ae01-2816x1536.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
+        },
+        {
+          "title": "テクノロジー時代の事業開発者育成──適応力と学習意欲が成功の ...",
+          "url": "https://forbesjapan.com/articles/detail/94660",
+          "source": "Forbes JAPAN",
+          "pubDate": "Fri, 27 Mar 2026 18:15:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -12982,6 +14495,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "外相の発言撤回と無償化求め／国会議員と有識者らが記者会見",
+          "url": "https://chosonsinbo.com/jp/2026/03/18-203/",
+          "source": "朝鮮新報",
+          "pubDate": "Tue, 17 Mar 2026 21:08:00 GMT",
+          "image": "https://chosonsinbo.com/jp/files/2026/03/S__21856284_R.jpg"
+        },
+        {
+          "title": "「全ての高校生の学び守って」 教員ら、高校無償化の外国人学校 ...",
+          "url": "https://www.kanaloco.jp/news/social/article-1259986.html",
+          "source": "カナロコ",
+          "pubDate": "Fri, 27 Mar 2026 19:57:00 GMT",
+          "image": "https://www.kanaloco.jp/system/files/styles/rectangle_750_390/private/2026-03/musyouka.jpg?itok=w3omQSSl"
+        },
+        {
+          "title": "高校無償化でも苦しい…年収950万円・48歳サラリーマンの悲鳴 ...",
+          "url": "https://news.yahoo.co.jp/articles/fa22e0b93d74aa5ff95e1406af07e57e94e59f4c",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 25 Mar 2026 14:25:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260326-00077062-gonline-000-1-view.jpg?exp=10800"
         }
       ]
     },
@@ -13108,6 +14644,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "通信制高校、スクーリング見直し検討 免除運用の適正化も 文科省 ...",
+          "url": "https://www.kyoiku-press.com/post-308705/",
+          "source": "日本教育新聞電子版 NIKKYOWEB",
+          "pubDate": "Wed, 25 Mar 2026 21:48:00 GMT",
+          "image": "https://www.kyoiku-press.com/wp-content/uploads/2018/09/nikkyoweb_logo.jpg"
+        },
+        {
+          "title": "高校改革で通信制の在り方議論 面接指導やメディア減免を適正化",
+          "url": "https://www.kyobun.co.jp/article/2026032502",
+          "source": "教育新聞",
+          "pubDate": "Wed, 25 Mar 2026 06:16:00 GMT",
+          "image": "https://cdn.prod.website-files.com/6513a78ab96029192a6bcf2a/69c3c347f0b54c9eae1402d0_flamelink%252Fmedia%252F2026032502.webp"
+        },
+        {
+          "title": "私立高校の「定時制」へ入学予定の息子。全日制と同じように無償 ...",
+          "url": "https://news.yahoo.co.jp/articles/c2755e4b72f8ee147bb82b349a815f445438f07b",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 10 Mar 2026 16:10:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260311-00010003-ffield-000-1-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -13175,6 +14734,28 @@
           "label": "学校給食法（法令検索）",
           "url": "https://www.google.com/search?q=%E5%AD%A6%E6%A0%A1%E7%B5%A6%E9%A3%9F%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "公立小学校の給食費が無償化へ 自治体の現場は…",
+          "url": "https://www.abn-tv.co.jp/news-abn/?detail=00042886",
+          "source": "abn 長野朝日放送",
+          "pubDate": "Fri, 27 Mar 2026 02:22:00 GMT",
+          "image": "https://www.abn-tv.co.jp/wp-content/uploads/2019/12/491f5510b601dbd5e5eec5650d4fdc52.jpg"
+        },
+        {
+          "title": "政府 暫定予算案を閣議決定 高校授業料や学校給食の無償化費用 ...",
+          "url": "https://www.fnn.jp/articles/-/1021366",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Thu, 26 Mar 2026 19:51:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/0/c/600/img_0c28a01e6de5b99540469dc158b428b161926.jpg"
+        },
+        {
+          "title": "小学校給食「無料」にならない? 松本文科大臣が国会でとことん ...",
+          "url": "https://www.msn.com/ja-jp/politics/government/%E5%B0%8F%E5%AD%A6%E6%A0%A1%E7%B5%A6%E9%A3%9F-%E7%84%A1%E6%96%99-%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84-%E6%9D%BE%E6%9C%AC%E6%96%87%E7%A7%91%E5%A4%A7%E8%87%A3%E3%81%8C%E5%9B%BD%E4%BC%9A%E3%81%A7%E3%81%A8%E3%81%93%E3%81%A8%E3%82%93-%E3%81%A4%E3%82%81%E3%82%89%E3%82%8C%E3%81%9F-%E7%9E%AC%E9%96%93-8%E5%9B%9E-%E7%AD%94%E5%BC%81%E5%B8%AD%E3%81%B8/ar-AA1ZvrZ7",
+          "source": "ABEMA TIMES on MSN",
+          "pubDate": "Thu, 26 Mar 2026 22:30:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -13237,6 +14818,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "国立大への運営費交付金、地域性や研究分野に応じた配分へ 文科省",
+          "url": "https://www.asahi.com/articles/ASV3R2DBZV3RUTIL027M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Mon, 23 Mar 2026 04:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260323002510_comm.jpg"
+        },
+        {
+          "title": "国立大運営費交付金など",
+          "url": "https://www.nnn.co.jp/articles/-/648869",
+          "source": "Nihonkai Shimbun",
+          "pubDate": "Thu, 27 Nov 2025 16:00:00 GMT",
+          "image": "https://nihonkai.ismcdn.jp/common/images/nnn/noimg_nnn.png"
+        },
+        {
+          "title": "国立大運営費交付金、9年ぶり増加の理由 予算案成立遅れで影響は?",
+          "url": "https://mainichi.jp/articles/20260213/k00/00m/040/119000c",
+          "source": "毎日新聞",
+          "pubDate": "Sat, 14 Feb 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/02/13/20260213k0000m040124000p/0c10.jpg?1"
         }
       ]
     },
@@ -13504,6 +15108,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "空調故障し研究室「避難」、講堂立ち入り禁止…国立大で老朽化加速",
+          "url": "https://www.asahi.com/articles/ASTBS34Y6TBSUTIL01YM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sat, 01 Nov 2025 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20251031002638_comm.jpg"
+        },
+        {
+          "title": "国立大や高専などの施設整備に1・4兆円、文部科学省が試算…老朽 ...",
+          "url": "https://www.yomiuri.co.jp/kyoiku/kyoiku/news/20251027-OYT1T50204/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 28 Oct 2025 08:39:00 GMT"
+        },
+        {
+          "title": "秋大・鉱業博物館寄付募る 学内予算不足目標1000万円 設備の老朽化 ...",
+          "url": "https://www.yomiuri.co.jp/local/akita/news/20251108-OYTNT50117/",
+          "source": "読売新聞",
+          "pubDate": "Sat, 08 Nov 2025 21:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -13618,6 +15243,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "学校給食費公会計化に伴う支払業務をDX（デジタル ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000022.000079281.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 26 Mar 2026 23:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/79281/22/79281-22-a3541d29e983d0f00ebb9620f6c3071e-3119x1980.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "公立小学校の給食費が無償化へ 自治体の現場は…",
+          "url": "https://www.abn-tv.co.jp/news-abn/?detail=00042886",
+          "source": "abn 長野朝日放送",
+          "pubDate": "Fri, 27 Mar 2026 02:22:00 GMT",
+          "image": "https://www.abn-tv.co.jp/wp-content/uploads/2019/12/491f5510b601dbd5e5eec5650d4fdc52.jpg"
+        },
+        {
+          "title": "給食費補助、物価高に応じ柔軟に 文科相「適切な額を設定する」",
+          "url": "https://www.47news.jp/14060859.html",
+          "source": "47NEWS",
+          "pubDate": "Thu, 26 Mar 2026 20:50:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/c636f51013e2787edc81afb9b0a31175/photo.jpg"
+        }
       ]
     },
     "speeches": [
@@ -13706,6 +15354,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "STEAM JAPAN、長年の実績を基盤に高校教育改革「N-E.X.T.ハイスクール ...",
+          "url": "https://www.jiji.com/jc/article?k=000000117.000060003&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 26 Mar 2026 19:16:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/60003/117/60003-117-e544f1604f80ab489101ef82c01ee831-3900x2042.png?width=536&amp;quality=85%2C75&amp;format=jpeg"
+        },
+        {
+          "title": "Aoba-BBTグループ、文部科学省「N-E.X.T.ハイスクール構想」に対応した ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000398.000059894.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 26 Feb 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/59894/398/59894-398-46372751cc521aaf65ea3f9f1b63434e-644x449.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "数理工教育セミナー、科目横断・文理融合型教育の展開―STEAM教育 ...",
+          "url": "https://www.shinmai.co.jp/news/article/PRPW202601202708",
+          "source": "信濃毎日新聞デジタル",
+          "pubDate": "Wed, 21 Jan 2026 05:30:00 GMT"
         }
       ]
     },
@@ -13806,6 +15476,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "【大学受験】活水女子大、校名変更＆共学化へ…大学改革",
+          "url": "https://resemom.jp/article/2026/03/03/85323.html",
+          "source": "リセマム",
+          "pubDate": "Tue, 03 Mar 2026 09:45:00 GMT",
+          "image": "https://resemom.jp/imgs/ogp_f/393017.jpg"
+        },
+        {
+          "title": "〝女子大サバイバル〟京女の改革 3学部新設で「実学」分野拡充 ...",
+          "url": "https://www.sankei.com/article/20250926-UUXKQVPOIZM3VAN5SSHEYRRM6A/",
+          "source": "産経新聞",
+          "pubDate": "Fri, 26 Sep 2025 00:00:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/U4EVLOP7A5IBBP7KOQYIHCUSPE.jpg?auth=ca26a7fcb368276c7950544df931693b18bde36dbff35ff040ce62bfee4ba03b&amp;quality=50&amp;focal=769%2C368&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "【大学受験】活水女子大、校名変更＆共学化へ…大学改革",
+          "url": "https://news.yahoo.co.jp/articles/50a06fbd7483e32f2bb16f2e5a19b93a693a27bf",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 03 Mar 2026 00:46:00 GMT"
         }
       ]
     },
@@ -13942,6 +15634,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "国立大学病院7割が赤字も…“人口最少県”で黒字維持 秘策は ...",
+          "url": "https://news.yahoo.co.jp/articles/0ee0e4679074b7c74a76b5c3272230dac250b586",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 23 Mar 2026 21:11:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260324-22548985-jnn-000-1-thumb.jpg?exp=10800"
+        },
+        {
+          "title": "「大学病院改革プラン」策定提言、「取り巻く状況は危機的」と警鐘",
+          "url": "https://www.m3.com/news/open/iryoishin/1163848?portalId=mailmag&mmp=LZ230913&mc.l=984379209",
+          "source": "M3",
+          "pubDate": "Sun, 10 Sep 2023 17:00:00 GMT",
+          "image": "https://static.m3.com/news/ogp/ogp_news_iryoishin.jpg"
+        },
+        {
+          "title": "国立大学病院の7割が赤字経営で債務超過のケースも…一方で広島 ...",
+          "url": "https://www.nikkan-gendai.com/articles/view/life/380082/2",
+          "source": "日刊ゲンダイ",
+          "pubDate": "Mon, 10 Nov 2025 22:00:00 GMT",
+          "image": "https://jmqvqzo7.user.webaccel.jp/img/article/000/380/082/fadad36d240dc30aa605bd18d1bb3b2820251109230232987.jpg"
+        }
       ]
     },
     "speeches": [
@@ -14040,6 +15755,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "歓迎の裏で…高校授業料無償化の影 不安定な財源と先行導入大阪で ...",
+          "url": "https://www.msn.com/ja-jp/money/%E5%85%A8%E8%88%AC/%E6%AD%93%E8%BF%8E%E3%81%AE%E8%A3%8F%E3%81%A7-%E9%AB%98%E6%A0%A1%E6%8E%88%E6%A5%AD%E6%96%99%E7%84%A1%E5%84%9F%E5%8C%96%E3%81%AE%E5%BD%B1-%E4%B8%8D%E5%AE%89%E5%AE%9A%E3%81%AA%E8%B2%A1%E6%BA%90%E3%81%A8%E5%85%88%E8%A1%8C%E5%B0%8E%E5%85%A5%E5%A4%A7%E9%98%AA%E3%81%A7%E8%A6%8B%E3%81%88%E3%81%9F-%E5%AD%A6%E6%A0%A1%E9%81%B8%E5%88%A5%E6%99%82%E4%BB%A3/ar-AA1ZxUeo",
+          "source": "産経ニュース on MSN",
+          "pubDate": "Fri, 27 Mar 2026 05:51:12 GMT"
+        },
+        {
+          "title": "8兆5641億円の暫定予算を閣議決定、30日成立へ 高校無償化や年金 ...",
+          "url": "https://www.sankei.com/article/20260327-4IMKJCPNI5P6HJHPHW4W35PFSM/",
+          "source": "産経ニュース",
+          "pubDate": "Thu, 26 Mar 2026 17:35:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/IP7K4AHCBBM63CDY3JVWJ332XY.jpg?auth=e87ae41f33581f5859da639997a94b0630eb5b5d75d735cba495b546b27cd65c&amp;quality=50&amp;focal=2371%2C884&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "高校無償化でも苦しい…年収950万円・48歳サラリーマンの悲鳴 ...",
+          "url": "https://news.yahoo.co.jp/articles/fa22e0b93d74aa5ff95e1406af07e57e94e59f4c",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 25 Mar 2026 14:25:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260326-00077062-gonline-000-1-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -14131,6 +15868,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "全日制県立高校入試 推薦入試と一般入試を統合へ 2027年度から新制度",
+          "url": "https://www.fnn.jp/articles/-/1021044",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Thu, 26 Mar 2026 02:20:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/7/a/600/img_7a571135b9cb0bcf617cd88696e9f20f24638.jpg"
+        },
+        {
+          "title": "高校入試日程「一本化を」高教研が意見まとめ岡山県教委に提言へ",
+          "url": "https://www.asahi.com/articles/ASV2L41F9V2LPPZB005M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260218004573_comm.jpg"
+        },
+        {
+          "title": "今春の公立高校入試で３３道府県で平均志願倍率が１倍下回る…私立含む授業料無償化で「公立離れ」加速か、読売調査",
+          "url": "https://www.msn.com/ja-jp/news/national/%E4%BB%8A%E6%98%A5%E3%81%AE%E5%85%AC%E7%AB%8B%E9%AB%98%E6%A0%A1%E5%85%A5%E8%A9%A6%E3%81%A7%EF%BC%93%EF%BC%93%E9%81%93%E5%BA%9C%E7%9C%8C%E3%81%A7%E5%B9%B3%E5%9D%87%E5%BF%97%E9%A1%98%E5%80%8D%E7%8E%87%E3%81%8C%EF%BC%91%E5%80%8D%E4%B8%8B%E5%9B%9E%E3%82%8B-%E7%A7%81%E7%AB%8B%E5%90%AB%E3%82%80%E6%8E%88%E6%A5%AD%E6%96%99%E7%84%A1%E5%84%9F%E5%8C%96%E3%81%A7-%E5%85%AC%E7%AB%8B%E9%9B%A2%E3%82%8C-%E5%8A%A0%E9%80%9F%E3%81%8B-%E8%AA%AD%E5%A3%B2%E8%AA%BF%E6%9F%BB/ar-AA1Z7xUd",
+          "source": "読売新聞オンライン on MSN",
+          "pubDate": "Sat, 21 Mar 2026 13:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -14196,6 +15955,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "シリーズ部活動改革 朝日町の中学校部活「地域」へ完全移行 ...",
+          "url": "https://www.msn.com/ja-jp/education-and-learning/secondary-education/%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E9%83%A8%E6%B4%BB%E5%8B%95%E6%94%B9%E9%9D%A9-%E6%9C%9D%E6%97%A5%E7%94%BA%E3%81%AE%E4%B8%AD%E5%AD%A6%E6%A0%A1%E9%83%A8%E6%B4%BB-%E5%9C%B0%E5%9F%9F-%E3%81%B8%E5%AE%8C%E5%85%A8%E7%A7%BB%E8%A1%8C-%E5%AD%90%E3%81%A9%E3%82%82%E3%81%9F%E3%81%A1%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AA%E3%82%89%E4%B8%80%E8%82%8C%E8%84%B1%E3%81%90%E3%82%88/ar-AA1Zih8c",
+          "source": "FNNプライムオンライン on MSN",
+          "pubDate": "Tue, 24 Mar 2026 04:17:19 GMT"
+        },
+        {
+          "title": "シリーズ部活動改革 「学校だけでは限界」上市町が描く中学生の ...",
+          "url": "https://www.fnn.jp/articles/-/1020560",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Wed, 25 Mar 2026 03:50:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/d/c/600/img_dcdbcaf0bdc3f90fa117b5cefe794d5623174.jpg"
+        },
+        {
+          "title": "「吹奏楽部」が部活の地域展開で継続が困難に？ すでに部員が1 ...",
+          "url": "https://dot.asahi.com/aerakids/articles/-/275921",
+          "source": "朝日新聞社",
+          "pubDate": "Tue, 24 Feb 2026 16:01:00 GMT",
+          "image": "https://aeradot.ismcdn.jp/mwimgs/2/f/1200xm/img_2f7bc80dde452669aba5ebf9ed509d3b427468.jpg"
+        }
       ]
     },
     "speeches": [
@@ -14260,6 +16041,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "「2階シート」で指導・支援計画を一体運用 不登校や通級なども",
+          "url": "https://www.kyobun.co.jp/article/2026032405",
+          "source": "教育新聞",
+          "pubDate": "Mon, 23 Mar 2026 08:00:00 GMT",
+          "image": "https://cdn.prod.website-files.com/6513a78ab96029192a6bcf2a/69c27057e5053935fba861e3_flamelink%252Fmedia%252F2026032405.webp"
+        },
+        {
+          "title": "eboard、不登校支援拡充のためのプロセスを先進自治体調査から分析 ...",
+          "url": "https://www.kknews.co.jp/news/20260323o02",
+          "source": "教育家庭新聞",
+          "pubDate": "Sun, 22 Mar 2026 15:04:00 GMT",
+          "image": "https://www.kknews.co.jp/wordpress/wp-content/uploads/2026/03/15008c48f2b85114de8ca8db31d07f53-1.png"
+        },
+        {
+          "title": "不登校支援のNIJIN、「新シラバス」を2026年4月公開開始。",
+          "url": "https://prtimes.jp/main/html/rd/p/000000751.000099150.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 24 Mar 2026 18:10:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/99150/751/99150-751-39b19edc9ef6d2b2cc5b72caaf2cd186-920x450.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -14340,6 +16144,29 @@
         {
           "label": "給特法（法令検索）",
           "url": "https://www.google.com/search?q=%E7%B5%A6%E7%89%B9%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "【教職員の働き方改革】業務見直しを徹底したい",
+          "url": "https://www.shimotsuke.co.jp/articles/-/1242222",
+          "source": "下野新聞SOON",
+          "pubDate": "Wed, 03 Dec 2025 16:00:00 GMT",
+          "image": "https://soon.ismcdn.jp/mwimgs/a/9/1200wm/img_a96c127d9addda296b56cdd612c4082887047.png"
+        },
+        {
+          "title": "3年連続《日本の教員が世界一多忙》汚名返上へ…給特法改正で ...",
+          "url": "https://toyokeizai.net/articles/-/919055?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Sun, 23 Nov 2025 22:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/d/d/1200w/img_dd3d75bbd7b585417c9840e23a4e0ee2151403.jpg"
+        },
+        {
+          "title": "教員の働き方改革を支援する「時短のパートナー」。Copilot+ PCの ...",
+          "url": "https://cloud.watch.impress.co.jp/docs/topic/special/2093982.html",
+          "source": "クラウド Watch",
+          "pubDate": "Mon, 23 Mar 2026 17:00:00 GMT",
+          "image": "https://cloud.watch.impress.co.jp/img/clw/list/2093/982/_LAB4820_A.jpg"
         }
       ]
     },
@@ -14449,6 +16276,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "通学路の安全対策を 文科省が緊急連絡会",
+          "url": "https://mainichi.jp/articles/20250617/ddm/013/100/005000c",
+          "source": "毎日新聞",
+          "pubDate": "Mon, 16 Jun 2025 17:01:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2015/12/18/20151218hrc00m010001000q/9.jpg?2"
+        },
+        {
+          "title": "校内フリースクール拡充、経費補助校2.5倍",
+          "url": "https://www.nikkei.com/article/DGKKZO90899900W5A820C2CE0000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 26 Aug 2025 07:30:00 GMT",
+          "image": "https://www.nikkei.com/.resources/k-components/rectangle.rev-d54ea30.png"
+        },
+        {
+          "title": "向丘小学校 通学路の安全対策について",
+          "url": "https://www.komei.or.jp/km/kawsaki-tamura-shinichiro/2025/10/18/%e5%90%91%e4%b8%98%e5%b0%8f%e5%ad%a6%e6%a0%a1-%e9%80%9a%e5%ad%a6%e8%b7%af%e3%81%ae%e5%ae%89%e5%85%a8%e5%af%be%e7%ad%96%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/",
+          "source": "公明党",
+          "pubDate": "Fri, 17 Oct 2025 17:00:00 GMT",
+          "image": "https://static.xx.fbcdn.net/images/emoji.php/v9/t7f/1/16/1f7e5.png"
+        }
       ]
     },
     "speeches": [
@@ -14557,6 +16407,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "10小学校に「チーム担任制」、若手教諭支援に注力 2026年度高知県 ...",
+          "url": "https://www.kochinews.co.jp/article/detail/983160",
+          "source": "高知新聞",
+          "pubDate": "Thu, 19 Mar 2026 16:40:00 GMT",
+          "image": "https://images.www.kochinews.co.jp/media/article/983160/images/main_d3404c259ee0109dccd1217546289a2e.jpg"
+        },
+        {
+          "title": "教職員の働き方改革を支援する校務スマート化支援アプリ「SKYMENU ...",
+          "url": "https://www.jiji.com/jc/article?k=000001177.000001552&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 01 Dec 2025 14:10:00 GMT"
+        },
+        {
+          "title": "アルサーガパートナーズ、東京都教育庁より「人事業務改善に係る ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000301.000028308.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 07 Jan 2026 15:59:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/28308/301/28308-301-c4c02b7a69d696d6cb6304d279eec1c3-1000x630.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -14605,6 +16477,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121905124X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "JAみやざきと県教育委員会 特別支援学校の生徒を実習で受け入れる ...",
+          "url": "https://www.fnn.jp/articles/-/1019202",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Mon, 23 Mar 2026 02:20:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/2/d/600/img_2dfe9d12580c985268f2acbc80171f7f30657.jpg"
+        },
+        {
+          "title": "「インクルーシブ教育」の先導的役割を期待…福岡教育大と国立 ...",
+          "url": "https://www.yomiuri.co.jp/local/kyushu/news/20250708-OYTNT50077/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 08 Jul 2025 06:23:00 GMT"
+        },
+        {
+          "title": "LITALICO、宮崎県教育委員会と連携協定を締結。ICTを活用した切れ目 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000197.000025994.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 21 Aug 2025 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/25994/197/25994-197-e571a2ebc89e0f8a57c38675a5ddd82c-992x523.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -14689,6 +16583,29 @@
         {
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "更生支える「他者の見守り」大切に 佐賀県内の保護司がやりがいや ...",
+          "url": "https://www.saga-s.co.jp/articles/-/1631974",
+          "source": "佐賀新聞",
+          "pubDate": "Thu, 15 Jan 2026 23:00:00 GMT",
+          "image": "https://saga.ismcdn.jp/mwimgs/0/d/1200m/img_0d1104775acfb35f2bac7a44fa2869b5835084.jpg"
+        },
+        {
+          "title": "｢86.4％が保護司を引き受けたくない｣…約半数が自分や家族の身に ...",
+          "url": "https://toyokeizai.net/articles/-/937900?display=b",
+          "source": "東洋経済オンライン",
+          "pubDate": "Sat, 21 Mar 2026 13:46:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/3/a/1200w/img_3ab82647277dcf397e2b82fcb511689a273216.jpg"
+        },
+        {
+          "title": "【保護司】AIにできない心の対話重ねて : ブログ : 公明党 八千代市 ...",
+          "url": "https://www.komei.or.jp/km/yachiyo-takahashi-hideyuki/2026/02/19/%E3%80%90%E4%BF%9D%E8%AD%B7%E5%8F%B8%E3%80%91%EF%BD%81%EF%BD%89%E3%81%AB%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%BF%83%E3%81%AE%E5%AF%BE%E8%A9%B1%E9%87%8D%E3%81%AD%E3%81%A6/",
+          "source": "公明党",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://viewer.komei-shimbun.jp/TCDBWS/DownloadS3?s3FileKey=/KM/photo/tecml/2026/02/18/AKM2026021920260218-001047/e67206583617c0b1648321e1946adb8ecb3de2db473d95c5c0fc19b34fcd94ec/EAKM2026021920260218-001047.jpg"
         }
       ]
     },
@@ -14967,6 +16884,29 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "【社説】保護司法の改正 社会で支える姿へ進化を",
+          "url": "https://www.nishinippon.co.jp/item/1470776/",
+          "source": "西日本新聞",
+          "pubDate": "Tue, 17 Mar 2026 14:00:00 GMT",
+          "image": "https://www.nishinippon.co.jp/uploads/image/1557701/sns_IP230527JAA000649000_0000_CDSP.jpg"
+        },
+        {
+          "title": "【保護司法改正】理念規定多い「延命措置」",
+          "url": "https://www.saga-s.co.jp/articles/-/1606360",
+          "source": "佐賀新聞",
+          "pubDate": "Thu, 04 Dec 2025 02:49:00 GMT",
+          "image": "https://saga.ismcdn.jp/mwimgs/2/f/1200m/img_2feb51bb5d9e4520427b232a59ea8ffd24572.jpg"
+        },
+        {
+          "title": "「改正保護司法」成立で“若返り”進むか 現状は77％が高齢者も ...",
+          "url": "https://www.excite.co.jp/news/article/ben54_jp_news_2956/",
+          "source": "Excite エキサイト",
+          "pubDate": "Fri, 05 Dec 2025 02:18:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/ben54/e5/ben54_jp_news_2956/ben54_jp_news_2956_1.jpg"
+        }
       ]
     },
     "speeches": [
@@ -15203,6 +17143,28 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "更生保護施設入所者の食費を43年ぶり増 委託基準見直しへ 物価高で ...",
+          "url": "https://www.sankei.com/article/20260323-6SJHCYIGMVLMBNW3YOSJLA3TOU/",
+          "source": "産経ニュース",
+          "pubDate": "Sun, 22 Mar 2026 15:32:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/K45WEHHDUJABHNOHRJ45IH7NBM.jpg?auth=b3c1bf7d96f842dde2e5b1b17dedaae4d3b2a9311c8a41d1b56b2c5520ed66b6&amp;quality=50&amp;focal=446%2C389&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "受刑者と保護犬、慈しみの心育む 更生プログラム全国に拡大へ",
+          "url": "https://www.msn.com/ja-jp/news/national/%E5%8F%97%E5%88%91%E8%80%85%E3%81%A8%E4%BF%9D%E8%AD%B7%E7%8A%AC-%E6%85%88%E3%81%97%E3%81%BF%E3%81%AE%E5%BF%83%E8%82%B2%E3%82%80-%E6%9B%B4%E7%94%9F%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E5%9B%BD%E3%81%AB%E6%8B%A1%E5%A4%A7%E3%81%B8/ar-AA1Z8GMp",
+          "source": "毎日新聞デジタル on MSN",
+          "pubDate": "Sat, 21 Mar 2026 16:01:00 GMT"
+        },
+        {
+          "title": "福岡市城南区に就労支援B型事業所「AND友泉亭」開所――更生保護 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000006.000178624.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 26 Feb 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/178624/6/178624-6-54cc0e329899c90fd77ab6cbaa187481-2000x1333.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -15418,6 +17380,29 @@
         {
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "【社説】保護司法の改正 社会で支える姿へ進化を",
+          "url": "https://www.nishinippon.co.jp/item/1470776/",
+          "source": "西日本新聞",
+          "pubDate": "Tue, 17 Mar 2026 14:00:00 GMT",
+          "image": "https://www.nishinippon.co.jp/uploads/image/1557701/sns_IP230527JAA000649000_0000_CDSP.jpg"
+        },
+        {
+          "title": "論説 保護司制度の課題 報酬制の積極的検討を",
+          "url": "https://www.sanin-chuo.co.jp/articles/-/933504",
+          "source": "山陰中央新報デジタル",
+          "pubDate": "Sun, 18 Jan 2026 20:00:00 GMT",
+          "image": "https://sanin-chuo.ismcdn.jp/mwimgs/d/e/1200m/img_de81b71656dfa63d17cab1c1067ef474371185.jpg"
+        },
+        {
+          "title": "保護司制度の課題 報酬制の積極的検討を",
+          "url": "https://www.oita-press.co.jp/1042000000/2042002000/2026/01/JDC2026011601254",
+          "source": "大分合同新聞",
+          "pubDate": "Sun, 18 Jan 2026 16:01:00 GMT",
+          "image": "https://www.oita-press.co.jp/-/media/Images/oita-press/2026/01/19/JDC2026011601254_01_91677.ashx"
         }
       ]
     },
@@ -15837,6 +17822,29 @@
         {
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "「首の皮一枚つながった」更生保護施設の委託費不足、補正予算で2 ...",
+          "url": "https://www.bengo4.com/c_18/n_19814/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Thu, 25 Dec 2025 16:00:00 GMT",
+          "image": "https://storage.bengo4.com/news/images/22488.png?1766711111"
+        },
+        {
+          "title": "入所者の食費、43年ぶり増 更生保護施設、委託基準見直しへ",
+          "url": "https://www.shinmai.co.jp/news/article/gfkn2026032301000049",
+          "source": "信濃毎日新聞デジタル",
+          "pubDate": "Sun, 22 Mar 2026 13:31:00 GMT",
+          "image": "https://image.shinmai.co.jp/web-image/20260323/gfkn2026032301000194_M.jpg"
+        },
+        {
+          "title": "「首の皮一枚つながった」更生保護施設の委託費不足、補正予算で2 ...",
+          "url": "https://news.yahoo.co.jp/articles/bb6507bd99d1ec4d486f60928d7a27a3bf96c84d/images/000",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 26 Dec 2025 02:20:00 GMT",
+          "image": "https://news-pctr.c.yimg.jp/uUzvQ3lML_bkIqyakc1vFhNrRI0RUQxg5aFkrX0xDg1_T0wXrbEJjtNGtrf1o9y3ugr42hCqJyTALw7zRmdegfj-gqM6Rx_9Qw-7nQbttmt5F6B_bdhAalt7wtigIhZOkbYDYz7sZ94yYso4L4mvCx-1D-XGDw_yv_2KrWxYroQlZHdL3CIA89RAxjmUrEYr"
         }
       ]
     },
@@ -16465,6 +18473,29 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "【社説】保護司法の改正 社会で支える姿へ進化を",
+          "url": "https://www.nishinippon.co.jp/item/1470776/",
+          "source": "西日本新聞",
+          "pubDate": "Tue, 17 Mar 2026 14:00:00 GMT",
+          "image": "https://www.nishinippon.co.jp/uploads/image/1557701/sns_IP230527JAA000649000_0000_CDSP.jpg"
+        },
+        {
+          "title": "【保護司】AIにできない心の対話重ねて : ブログ : 公明党 八千代市 ...",
+          "url": "https://www.komei.or.jp/km/yachiyo-takahashi-hideyuki/2026/02/19/%E3%80%90%E4%BF%9D%E8%AD%B7%E5%8F%B8%E3%80%91%EF%BD%81%EF%BD%89%E3%81%AB%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%BF%83%E3%81%AE%E5%AF%BE%E8%A9%B1%E9%87%8D%E3%81%AD%E3%81%A6/",
+          "source": "公明党",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://viewer.komei-shimbun.jp/TCDBWS/DownloadS3?s3FileKey=/KM/photo/tecml/2026/02/18/AKM2026021920260218-001047/e67206583617c0b1648321e1946adb8ecb3de2db473d95c5c0fc19b34fcd94ec/EAKM2026021920260218-001047.jpg"
+        },
+        {
+          "title": "若手の保護司確保に期待 県内関係者、改正法成立受け 活動への ...",
+          "url": "https://www.topics.or.jp/articles/-/1363223",
+          "source": "徳島新聞",
+          "pubDate": "Tue, 30 Dec 2025 21:00:00 GMT",
+          "image": "https://tokushima.ismcdn.jp/mwimgs/6/f/1200wm/img_6f618709996a7cedc31601ebd11efb28374686.jpg"
+        }
       ]
     },
     "speeches": [
@@ -16795,6 +18826,29 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "保護司制度の課題 報酬制の積極的検討を",
+          "url": "https://www.saga-s.co.jp/articles/-/1633672",
+          "source": "佐賀新聞",
+          "pubDate": "Sun, 18 Jan 2026 21:15:00 GMT",
+          "image": "https://saga.ismcdn.jp/mwimgs/d/1/1200m/img_d1220b110f1e334f95984955173b181f131163.jpg"
+        },
+        {
+          "title": "見直し進む保護司制度 信頼構築との両立「課題」",
+          "url": "https://www.jiji.com/jc/article?k=2026021700081&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260217ds55_o.jpg"
+        },
+        {
+          "title": "保護司制度の課題 報酬制の積極的検討を",
+          "url": "https://www.oita-press.co.jp/1042000000/2042002000/2026/01/JDC2026011601254",
+          "source": "大分合同新聞",
+          "pubDate": "Sun, 18 Jan 2026 16:01:00 GMT",
+          "image": "https://www.oita-press.co.jp/-/media/Images/oita-press/2026/01/19/JDC2026011601254_01_91677.ashx"
+        }
       ]
     },
     "speeches": [
@@ -17081,6 +19135,14 @@
         {
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "受刑者と保護犬、慈しみの心育む 更生プログラム全国に拡大へ",
+          "url": "https://www.msn.com/ja-jp/news/national/%E5%8F%97%E5%88%91%E8%80%85%E3%81%A8%E4%BF%9D%E8%AD%B7%E7%8A%AC-%E6%85%88%E3%81%97%E3%81%BF%E3%81%AE%E5%BF%83%E8%82%B2%E3%82%80-%E6%9B%B4%E7%94%9F%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E5%9B%BD%E3%81%AB%E6%8B%A1%E5%A4%A7%E3%81%B8/ar-AA1Z8GMp",
+          "source": "毎日新聞デジタル on MSN",
+          "pubDate": "Sat, 21 Mar 2026 16:01:00 GMT"
         }
       ]
     },
@@ -17451,6 +19513,29 @@
         {
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "再犯防止へ官民連携 三重県など7団体、全国初協定 就労先の確保など",
+          "url": "https://www.isenp.co.jp/2026/03/27/145106/",
+          "source": "伊勢新聞",
+          "pubDate": "Thu, 26 Mar 2026 18:28:00 GMT",
+          "image": "http://www.isenp.co.jp/wp-content/uploads/2026/03/a2b6fd81d0003c978475b1ea89fb482e.jpg"
+        },
+        {
+          "title": "web01 P説・再犯防止で連携へ、県など7団体が協定",
+          "url": "https://www.isenp.co.jp/2026/03/27/145106/web01%e2%97%8e%ef%bd%90%e8%aa%ac%e3%83%bb%e5%86%8d%e7%8a%af%e9%98%b2%e6%ad%a2%e3%81%a7%e9%80%a3%e6%90%ba%e3%81%b8%e3%80%81%e7%9c%8c%e3%81%aa%e3%81%a9%ef%bc%97%e5%9b%a3%e4%bd%93%e3%81%8c%e5%8d%94/",
+          "source": "伊勢新聞",
+          "pubDate": "Thu, 26 Mar 2026 06:18:00 GMT",
+          "image": "https://www.isenp.co.jp/2026/03/27/145106/web01%E2%97%8E%EF%BD%90%E8%AA%AC%E3%83%BB%E5%86%8D%E7%8A%AF%E9%98%B2%E6%AD%A2%E3%81%A7%E9%80%A3%E6%90%BA%E3%81%B8%E3%80%81%E7%9C%8C%E3%81%AA%E3%81%A9%EF%BC%97%E5%9B%A3%E4%BD%93%E3%81%8C%E5%8D%94"
+        },
+        {
+          "title": "地方自治体向けに全職員向けサイバーセキュリティ研修・訓練の ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000980.000069194.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 25 Mar 2026 17:59:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/69194/980/69194-980-b7d1bf1932d7a8f1e5c4b0ffa742f6bb-1047x429.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -17871,6 +19956,29 @@
         {
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "千葉で“元タレント”含む20人の「新任保護司」が誕生 大津市 ...",
+          "url": "https://news.yahoo.co.jp/articles/633b0a5d85db4878655137fd49a81c5577eea246",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 09 Mar 2026 18:01:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260310-00010000-bengojp-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "【保護司】AIにできない心の対話重ねて : ブログ : 公明党 八千代市 ...",
+          "url": "https://www.komei.or.jp/km/yachiyo-takahashi-hideyuki/2026/02/19/%E3%80%90%E4%BF%9D%E8%AD%B7%E5%8F%B8%E3%80%91%EF%BD%81%EF%BD%89%E3%81%AB%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%BF%83%E3%81%AE%E5%AF%BE%E8%A9%B1%E9%87%8D%E3%81%AD%E3%81%A6/",
+          "source": "公明党",
+          "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
+          "image": "https://viewer.komei-shimbun.jp/TCDBWS/DownloadS3?s3FileKey=/KM/photo/tecml/2026/02/18/AKM2026021920260218-001047/e67206583617c0b1648321e1946adb8ecb3de2db473d95c5c0fc19b34fcd94ec/EAKM2026021920260218-001047.jpg"
+        },
+        {
+          "title": "千葉で“元タレント”含む20人の「新任保護司」が誕生 大津市 ...",
+          "url": "https://www.excite.co.jp/news/article/ben54_jp_news_3282/",
+          "source": "Excite エキサイト",
+          "pubDate": "Tue, 10 Mar 2026 02:59:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/ben54/4a/ben54_jp_news_3282/ben54_jp_news_3282_1.jpg"
         }
       ]
     },
@@ -18341,6 +20449,28 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "若年犯罪者の更生のためケニア政府関係者10名が来日 日本が誇る ...",
+          "url": "https://digitalpr.jp/r/107023",
+          "source": "Degital PR Platform",
+          "pubDate": "Sun, 13 Apr 2025 17:00:00 GMT"
+        },
+        {
+          "title": "刑務所や少年院を出所・出院するひとたちの社会復帰、更生自立を ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/184fbe6630b17b8946cc2cf67bbd30b7dfc8a7c1",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 27 Nov 2025 01:20:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/kudokei/02451336/title-1764201667107.jpeg?exp=10800"
+        },
+        {
+          "title": "更生保護の意義再確認",
+          "url": "https://www.townnews.co.jp/0201/2025/12/12/815488.html",
+          "source": "タウンニュース",
+          "pubDate": "Thu, 11 Dec 2025 16:00:00 GMT",
+          "image": "https://www.townnews.co.jp/0201/images/a001421423_01.jpg"
+        }
       ]
     },
     "speeches": [
@@ -18673,6 +20803,27 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "非行少年から保護司になった男性「被告が（面接は）茶番と言う ...",
+          "url": "https://www.yomiuri.co.jp/local/kansai/news/20260304-GYO1T00035/",
+          "source": "読売新聞",
+          "pubDate": "Wed, 04 Mar 2026 05:00:00 GMT"
+        },
+        {
+          "title": "「保護司」とは 用語解説・ニュース",
+          "url": "https://www.jiji.com/jc/article?k=2026021700079&g=tha",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/img/jijicom_og_image.png"
+        },
+        {
+          "title": "滋賀・大津で起きた「保護司殺害事件」17日に初公判 「同じ立場に ...",
+          "url": "https://news.yahoo.co.jp/articles/d2aca3fd8dd73aed5ac23785b1f6a6aeca3e7e59",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 16 Feb 2026 18:05:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -18835,6 +20986,29 @@
           "label": "更生保護制度の充実を図るための保護司法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%9B%B4%E7%94%9F%E4%BF%9D%E8%AD%B7%E5%88%B6%E5%BA%A6%E3%81%AE%E5%85%85%E5%AE%9F%E3%82%92%E5%9B%B3%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E4%BF%9D%E8%AD%B7%E5%8F%B8%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "赤ちゃんの遺体を切断し勤務先の冷凍庫へ…22歳女性に執行猶予 ...",
+          "url": "https://www.bengo4.com/c_18/n_20154/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Sun, 22 Mar 2026 21:02:00 GMT",
+          "image": "https://storage.bengo4.com/news/images/22890.png?1774238619"
+        },
+        {
+          "title": "「執行猶予者保護観察法とは」の法律相談",
+          "url": "https://www.bengo4.com/c_1009/c_19/c_1095/bbs/%E5%9F%B7%E8%A1%8C%E7%8C%B6%E4%BA%88%E8%80%85%E4%BF%9D%E8%AD%B7%E8%A6%B3%E5%AF%9F%E6%B3%95%E3%81%A8%E3%81%AF/",
+          "source": "弁護士ドットコム",
+          "pubDate": "Mon, 20 May 2019 17:00:00 GMT",
+          "image": "https://www.bengo4.com/img/citizen/common/bengo4-ogp.png"
+        },
+        {
+          "title": "80歳の母親に執行猶予付き判決 アルコール依存症の長男殺害 広島地裁",
+          "url": "https://www.sankei.com/article/20251217-KNDBE53C5JNETPZDLAB54EU7OM/",
+          "source": "産経新聞",
+          "pubDate": "Wed, 17 Dec 2025 11:48:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/Q2NPSSSPPZJTDDAAYYOGT5CPD4.jpg?auth=89d6fdba478c498995464ce8f78a31a2b2c0cb26d54f97530b406c59c63a0002&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        }
       ]
     },
     "speeches": [
@@ -18969,6 +21143,28 @@
         {
           "label": "下請代金支払遅延等防止法（法令検索）",
           "url": "https://www.google.com/search?q=%E4%B8%8B%E8%AB%8B%E4%BB%A3%E9%87%91%E6%94%AF%E6%89%95%E9%81%85%E5%BB%B6%E7%AD%89%E9%98%B2%E6%AD%A2%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "「高水準」の賃上げ続いた東海企業の春闘 中小への波及のカギは？",
+          "url": "https://www.asahi.com/articles/ASV3W328HV3WULFA008M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 03:52:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327003918_comm.jpg"
+        },
+        {
+          "title": "「賃上げしても…物価高で帳消し」 連合鹿児島が鹿児島県と労働局 ...",
+          "url": "https://373news.com/news/local/detail/231406/",
+          "source": "南日本新聞",
+          "pubDate": "Thu, 26 Mar 2026 05:21:00 GMT"
+        },
+        {
+          "title": "26年春闘、神奈川でも大手と中小で格差 苦心の賃上げも物価高が ...",
+          "url": "https://www.kanaloco.jp/news/economy/article-1257172.html",
+          "source": "カナロコ",
+          "pubDate": "Wed, 18 Mar 2026 13:03:00 GMT",
+          "image": "https://www.kanaloco.jp/sites/default/files/styles/rectangle_750_390/public/2026-03/eye_72.jpg?itok=7o7ghLBl"
         }
       ]
     },
@@ -19165,6 +21361,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "高市内閣、防災・国土強靭化は「危機管理投資」 成長戦略の肝に ...",
+          "url": "https://www.kankyo-business.jp/column/aa75ae78-3b1a-46e1-b585-181f4868b31b",
+          "source": "環境ビジネスオンライン",
+          "pubDate": "Mon, 23 Mar 2026 22:14:00 GMT",
+          "image": "https://www.kankyo-business.jp/uploads/2026/03/19/82EmLkyIo0vrvM5BPqPNyZshmn62blG1MMy7IwY9.webp"
+        },
+        {
+          "title": "日本のエネルギー市場リスク見通し2026（戦後シナリオにおける市場 ...",
+          "url": "https://www.rbbtoday.com/release/dreamnews/20260324/1233932.html",
+          "source": "RBB TODAY",
+          "pubDate": "Tue, 24 Mar 2026 01:30:00 GMT",
+          "image": "https://www.rbbtoday.com/release/imgs/list/7353687.png"
+        },
+        {
+          "title": "高市「危機管理投資」企業行動変われば“実質1％成長”視野に ...",
+          "url": "https://diamond.jp/articles/-/378122",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Thu, 27 Nov 2025 20:49:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/d/2/-/img_d2749489382ce2c6333cf58843f9aae5269965.jpg"
+        }
       ]
     },
     "speeches": [
@@ -19280,6 +21499,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "日本政府の造船復興策のトリガーは｢米ハリス候補の大統領選失速 ...",
+          "url": "https://toyokeizai.net/articles/-/934162",
+          "source": "toyokeizai.net",
+          "pubDate": "Sun, 15 Feb 2026 21:30:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/9/f/1200w/img_9f0621a5865b858337bdd2f82db28bdf680249.jpg"
+        },
+        {
+          "title": "日本政府の造船復興策のトリガーは｢米ハリス候補の大統領選失速 ...",
+          "url": "https://toyokeizai.net/articles/-/934162?page=2",
+          "source": "toyokeizai.net",
+          "pubDate": "Sun, 15 Feb 2026 21:30:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/9/f/1200w/img_9f0621a5865b858337bdd2f82db28bdf680249.jpg"
+        },
+        {
+          "title": "日米同盟の質高める具体的な協力確認と首相",
+          "url": "https://www.minpo.jp/articles/-/84571",
+          "source": "福島民報",
+          "pubDate": "Thu, 19 Mar 2026 12:32:00 GMT",
+          "image": "https://minpo.ismcdn.jp/common/images/site-img.png"
         }
       ]
     },
@@ -19460,6 +21702,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "吉村洋文大阪府知事 万博・海外パビリオンの未払い問題を説明 ...",
+          "url": "https://www.tokyo-sports.co.jp/articles/-/372647",
+          "source": "tokyo-sports",
+          "pubDate": "Mon, 05 Jan 2026 06:49:00 GMT",
+          "image": "https://tokyo-sports.ismcdn.jp/mwimgs/d/b/1200w/img_db3c6d0c76fd6cb187ab17ee1943404764503.jpg"
+        },
+        {
+          "title": "万博工事業者元経理の男、書類送検 1．2億円横領容疑―大阪府警",
+          "url": "https://www.jiji.com/jc/article?k=2026022700941&g=soc",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 27 Feb 2026 15:59:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260227ds74_o.jpg"
+        },
+        {
+          "title": "万博定期船運航の1社が桟橋使用料7200万円未払い、協会が支払い ...",
+          "url": "https://www.yomiuri.co.jp/national/20251226-GYT1T00473/",
+          "source": "読売新聞",
+          "pubDate": "Fri, 26 Dec 2025 21:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -19575,6 +21839,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "エコカー補助金、国産蓄電池の使用で重点配分 経産省が基準改定",
+          "url": "https://www.nikkei.com/article/DGXZQOUA277IZ0X20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 10:48:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2815420027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.48&amp;fp-y=0.22&amp;h=630&amp;w=1200&amp;s=cb22cf1511648cb4cdf262dd25e8ba5c"
+        },
+        {
+          "title": "エコカー補助金の算出基準見直し、国産電池のEVは補助額アップ ...",
+          "url": "https://www.yomiuri.co.jp/economy/20260327-GYT1T00219/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Thu, 26 Mar 2026 21:01:00 GMT"
+        },
+        {
+          "title": "自動車税・自動車重量税・環境性能割…結局どれが何の税金なのか？",
+          "url": "https://motor-fan.jp/headline/1425825/",
+          "source": "Motor-Fan",
+          "pubDate": "Thu, 26 Mar 2026 18:23:00 GMT",
+          "image": "https://motor-fan.jp/wp-content/uploads/2026/03/26801448_m-e1773227331512.jpg?v=1773226764"
         }
       ]
     },
@@ -19714,6 +22000,29 @@
           "label": "下請代金支払遅延等防止法（法令検索）",
           "url": "https://www.google.com/search?q=%E4%B8%8B%E8%AB%8B%E4%BB%A3%E9%87%91%E6%94%AF%E6%89%95%E9%81%85%E5%BB%B6%E7%AD%89%E9%98%B2%E6%AD%A2%E6%B3%95+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "公取委による「金型無償保管」の是正勧告が31社に急増する中 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000005.000145787.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 04 Mar 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/145787/5/145787-5-745273f4fc3da53e2e09cb32e331653d-2961x2220.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "公取委による「金型無償保管」の是正勧告が31社に急増する中 ...",
+          "url": "https://www.jiji.com/jc/article?k=000000005.000145787&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 05 Mar 2026 04:15:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/145787/5/145787-5-745273f4fc3da53e2e09cb32e331653d-2961x2220.jpg"
+        },
+        {
+          "title": "トヨタもスズキも違反、やまない金型無償保管 公取委勧告は30社に",
+          "url": "https://www.nikkei.com/article/DGXZQOUC031CT0T00C26A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 19 Feb 2026 21:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2567584003022026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=7542fdbfa44039b4ba5e39ea6e8073e0"
+        }
       ]
     },
     "speeches": [
@@ -19845,6 +22154,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "日米首脳会談 日本財政で特定企業支援",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2026-03-21/2026032102_03_0.php",
+          "source": "日本共産党",
+          "pubDate": "Fri, 20 Mar 2026 17:50:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/web_img/akahata-kakusan.jpg"
+        },
+        {
+          "title": "日米の市民団体が共同声明「日本政府はトランプ関税の「取引材料 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000084.000077060.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 19 Feb 2026 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/77060/84/77060-84-4cd656aa2d28f77dcc411475e8475308-1280x853.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "赤沢経産相、米商務長官と対米投資で会談 第1号案件、合意に至らず",
+          "url": "https://www.asahi.com/articles/ASV2D7H6CV2DUHBI00CM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 12 Feb 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260213000943_comm.jpg"
+        }
       ]
     },
     "speeches": [
@@ -19927,6 +22259,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "2026年3月24日、中小企業庁の「中小企業M＆A戦略セミナー」へマエダ ...",
+          "url": "https://www.jiji.com/jc/article?k=000000004.000178705&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 20 Mar 2026 01:15:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/178705/4/178705-4-27fd87968606d2d24052d08ca5a32dc4-1000x1500.jpg"
+        },
+        {
+          "title": "令和8年度「中小企業活性化・事業承継総合支援事業（中小M&A支援の ...",
+          "url": "https://www.chusho.meti.go.jp/koukai/itaku/kobo/2026/260209001.html",
+          "source": "中小企業庁",
+          "pubDate": "Sun, 08 Feb 2026 20:12:00 GMT",
+          "image": "https://www.chusho.meti.go.jp/images2023/common/img_ogp.png"
+        },
+        {
+          "title": "M&A後のIT統合を専門支援する「IT PMIパッケージ」を提供開始 ― 中小 ...",
+          "url": "https://japan.cnet.com/release/31153023/",
+          "source": "CNET",
+          "pubDate": "Tue, 10 Mar 2026 17:00:00 GMT",
+          "image": "https://japan.cnet.com/media/c/2012/images/logo/logo_ogp_1200.png"
         }
       ]
     },
@@ -20041,6 +22396,29 @@
         {
           "label": "下請代金支払遅延等防止法（法令検索）",
           "url": "https://www.google.com/search?q=%E4%B8%8B%E8%AB%8B%E4%BB%A3%E9%87%91%E6%94%AF%E6%89%95%E9%81%85%E5%BB%B6%E7%AD%89%E9%98%B2%E6%AD%A2%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "東京商工リサーチ、2026年2月「価格転嫁」に関するアンケート調査 ...",
+          "url": "https://www.nikkei.com/article/DGXZRSP703345_Q6A220C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 20 Feb 2026 03:24:00 GMT",
+          "image": "https://www.nikkei.com/.resources/k-components/rectangle.rev-d54ea30.png"
+        },
+        {
+          "title": "2025年度に「価格転嫁」できた 中小企業は 57.1％ 取適法をきっかけ ...",
+          "url": "https://news.yahoo.co.jp/articles/7d130973b02249ea95ebe77596be675fb1ee3630",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 19 Feb 2026 14:18:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260220-00010001-biz_shoko-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "2025年度に「価格転嫁」できた中小企業は57.1％ 取適法をきっかけに ...",
+          "url": "https://www.excite.co.jp/news/article/Tsr_1202512/",
+          "source": "Excite エキサイト",
+          "pubDate": "Thu, 19 Feb 2026 23:00:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/Tsr/0b/Tsr_1202512/Tsr_1202512_1.jpg"
         }
       ]
     },
@@ -20157,6 +22535,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "メガソーラーなど太陽光発電を厳格運用へ 地域共生の取り組み支援",
+          "url": "https://www.kankyo-business.jp/column/484ef292-56c1-46a1-8e95-b0588843578a",
+          "source": "環境ビジネスオンライン",
+          "pubDate": "Mon, 16 Feb 2026 16:00:00 GMT",
+          "image": "https://www.kankyo-business.jp/uploads/2026/02/12/yLby5uSK2Ww2HGJ9TIkHqF52J9dADhNRHVauZNUd.jpg"
+        },
+        {
+          "title": "三笠市議会が「メガソーラー規制」可決…重要農地でパネル設置禁止",
+          "url": "https://www.yomiuri.co.jp/local/hokkaido/news/20260326-GYTNT00284/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Thu, 26 Mar 2026 13:00:00 GMT"
+        },
+        {
+          "title": "政府、メガソーラー対策でパッケージ策定 規制強化と地域共生を柱 ...",
+          "url": "https://www.kankyo-business.jp/news/659ebde1-ac0e-477f-a1ca-7d4d863c04f9",
+          "source": "環境ビジネスオンライン",
+          "pubDate": "Wed, 24 Dec 2025 16:00:00 GMT",
+          "image": "https://www.kankyo-business.jp/uploads/2025/12/25/FJI1jzRKc2pMFX2Cao3HXLuBXrKUUjOYAOlzGSIG.webp"
         }
       ]
     },
@@ -20358,6 +22758,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "日中関係の悪化、「悪影響」懸念が 26.6％ 対策は、調達面で「中国 ...",
+          "url": "https://news.yahoo.co.jp/articles/c24f63be514c5db6f110c098cb25c8069ea86686",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 16 Feb 2026 19:00:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260217-00010000-biz_shoko-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "日中対立の本質とは（後編）： 戦略的曖昧性を磨き直す契機に",
+          "url": "https://news.yahoo.co.jp/articles/0d71e753d95293a9121afa5a1d3d9e1ce23c0d55",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 31 Dec 2024 22:05:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260120-00000003-nipponcom-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "首相の「不用意」答弁で日中関係悪化 不満漏らす経済界、打開の道は",
+          "url": "https://www.asahi.com/articles/ASV1Z0TJYV1ZUTFK029M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 29 Jan 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260130001394_comm.jpg"
         }
       ]
     },
@@ -20628,6 +23051,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "エネルギー安保を考察 『原子力はいる？いらない？ 原発大国 ...",
+          "url": "https://www.sankei.com/article/20260315-323GIKY3ENNLPGDOFHXRCKZTRU/",
+          "source": "産経ニュース",
+          "pubDate": "Sat, 14 Mar 2026 17:00:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/7JYC4UVLIRNKBOQQZ7356G6G3E.jpg?auth=deaf1a7a9e0a2f30ec68b0bc3147cd8c64fa5725d5b09ef5fd824a805390be37&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "安全性は誰が保証するのか？原発に頼る街の今後は？ 東日本大震災 ...",
+          "url": "https://www.sut-tv.com/news/single/index.php?id=36231",
+          "source": "テレビ静岡",
+          "pubDate": "Thu, 12 Mar 2026 18:19:00 GMT",
+          "image": "https://www.sut-tv.com/news/data/36231/image.jpg"
+        },
+        {
+          "title": "柏崎刈羽、再稼働2カ月 安全対策、福島を教訓に",
+          "url": "https://www.nikkei.com/article/DGKKZO95285380X20C26A3L31000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 18:49:00 GMT",
+          "image": "https://www.nikkei.com/.resources/k-components/rectangle.rev-d54ea30.png"
+        }
       ]
     },
     "speeches": [
@@ -20775,6 +23221,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "AI、データセンターによる電力需要急増で恩恵「原発関連銘柄5選 ...",
+          "url": "https://gendai.media/articles/-/165400",
+          "source": "現代ビジネス",
+          "pubDate": "Mon, 23 Mar 2026 13:32:00 GMT",
+          "image": "https://res.cloudinary.com/gb-cache/image/upload/prod/bqur6w8d38zo1g1th12e2iaj"
+        },
+        {
+          "title": "加速する原発回帰、でもその先は… エネルギー政策はどこへ向かう",
+          "url": "https://www.asahi.com/articles/ASV2F1Q3JV2FULFA001M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 05 Mar 2026 16:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260303000042_comm.jpg"
+        },
+        {
+          "title": "東日本大震災15年 原発への回帰 風化許されぬ福島の教訓",
+          "url": "https://mainichi.jp/articles/20260318/ddm/005/070/098000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Tue, 17 Mar 2026 10:30:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/18/20260318ddm005070114000p/0c10.jpg?1"
         }
       ]
     },
@@ -20983,6 +23452,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "AIがもたらす「増エネ」時代 日本のGXは成長戦略へと転換できるか",
+          "url": "https://forbesjapan.com/articles/detail/94300",
+          "source": "Forbes JAPAN",
+          "pubDate": "Tue, 24 Mar 2026 19:17:00 GMT"
+        },
+        {
+          "title": "【新レポート発行】不動産マーケットリサーチレポートVol.300「生成 ...",
+          "url": "https://www.asahi.com/and/pressrelease/16375961",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Mon, 16 Mar 2026 19:36:00 GMT",
+          "image": "https://www.asahi.com/and/ogp/ogp_and.png"
+        },
+        {
+          "title": "【経済産業省】再エネ・原発周辺に産業集積 「GX戦略地域」選定へ",
+          "url": "https://news.mynavi.jp/techplus/article/20260130-4060333/",
+          "source": "マイナビニュース",
+          "pubDate": "Fri, 30 Jan 2026 03:30:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -21062,6 +23552,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "大阪府内の25年宿泊者、過去最多の5760万人 万博効果で日本人増加",
+          "url": "https://www.nikkei.com/article/DGXZQOUF269AM0W6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 10:05:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2813992027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.26&amp;fp-y=0.45&amp;h=630&amp;w=1200&amp;s=ccae3ccec7bfe59316f2690378cf35b6"
+        },
+        {
+          "title": "黒字の万博「剰余金」、大屋根リングの一部保存に活用へ…「空 ...",
+          "url": "https://www.yomiuri.co.jp/expo2025/20260225-GYO1T00169/",
+          "source": "読売新聞",
+          "pubDate": "Wed, 25 Feb 2026 21:00:00 GMT"
+        },
+        {
+          "title": "大阪府民4割「万博行ったで」 経済効果は2兆1千億円、試算",
+          "url": "https://www.47news.jp/13864216.html",
+          "source": "47NEWS",
+          "pubDate": "Thu, 12 Feb 2026 16:00:00 GMT",
+          "image": "https://img.cf.47news.jp/public/photo/ddd7ef1d0b4a0e7fa932bf9bb761e2d0/photo.jpg"
         }
       ]
     },
@@ -21144,6 +23656,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "積水化学と積水ソーラーフィルム、フィルム型ペロブスカイト太陽 ...",
+          "url": "https://www.nikkei.com/article/DGXZRSP705026_X20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 08:11:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2813892027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;upscale=false&amp;w=1200&amp;s=a933d8d129c0955cde7d25001324cdb3"
+        },
+        {
+          "title": "積水化学工業系、ペロブスカイト太陽電池の販売を開始",
+          "url": "https://www.nikkei.com/article/DGXZQOUC275OM0X20C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 27 Mar 2026 11:55:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2815806027032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=c303d15436e004feb149a236f27214f7"
+        },
+        {
+          "title": "低コストなペロブスカイト太陽電池の開発へ 東京ガスと英パワー ...",
+          "url": "https://www.kankyo-business.jp/news/d34e19fb-bff8-4fae-879b-c9d44256e07c",
+          "source": "環境ビジネスオンライン",
+          "pubDate": "Thu, 26 Mar 2026 22:13:00 GMT",
+          "image": "https://www.kankyo-business.jp/uploads/2026/03/27/cI3Z80IUyHsAhZh8aJEM6iCRjZBNDpKE18xVdgsh.webp"
         }
       ]
     },
@@ -21241,6 +23776,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "経産省、フィジカルAIを重点分野にAI半導体・デジタル産業戦略の改定",
+          "url": "https://www.sbbit.jp/article/st/183026",
+          "source": "ビジネス+IT",
+          "pubDate": "Sat, 21 Mar 2026 19:54:00 GMT",
+          "image": "https://www.sbbit.jp/article/image/183026/OGP_bit202603221135247554.jpg"
+        },
+        {
+          "title": "国産半導体の売上高40兆円達成へ…経産省、国家戦略を再改定",
+          "url": "https://newswitch.jp/p/48702",
+          "source": "ニュースイッチ",
+          "pubDate": "Sun, 22 Mar 2026 14:20:00 GMT",
+          "image": "https://images.newswitch.jp/images/04ea088d-04e5-4076-9db5-725d5c0c8534.png"
+        },
+        {
+          "title": "優先投資対象に61製品 AIロボット、半導体など選定―成長戦略会議",
+          "url": "https://www.jiji.com/jc/article?k=2026031001077&g=eco",
+          "source": "時事ドットコム",
+          "pubDate": "Tue, 10 Mar 2026 04:07:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202603/20260310at85S_ogp.jpg"
         }
       ]
     },
@@ -21342,6 +23900,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904080X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "税制優遇、適用企業名の公表検討 租税特別措置の効果検証で―政府 ...",
+          "url": "https://www.jiji.com/jc/article?k=2025120401091&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 03 Dec 2025 16:00:00 GMT",
+          "image": "https://www.jiji.com/img/jijicom_og_image.png"
+        },
+        {
+          "title": "政府与党、研究開発税制を縮小へ 効果が不透明と指摘",
+          "url": "https://kumanichi.com/articles/1933018",
+          "source": "熊本日日新聞",
+          "pubDate": "Fri, 05 Dec 2025 09:42:00 GMT"
+        },
+        {
+          "title": "研究開発税制を縮小へ",
+          "url": "https://www.kyoto-np.co.jp/articles/-/1612842",
+          "source": "京都新聞",
+          "pubDate": "Fri, 05 Dec 2025 08:47:00 GMT",
+          "image": "https://kyoto-np.ismcdn.jp/mwimgs/6/7/1200wm/img_67ada2cd6f649cd040230af45853c308364076.png"
+        }
       ]
     },
     "speeches": [
@@ -21421,6 +24001,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "片山さつき財務相、円安加速に「断固とした措置」を明言。原油高 ...",
+          "url": "https://www.huffingtonpost.jp/entry/story_jp_69c61969e4b09f8e0050d18e",
+          "source": "ハフポスト",
+          "pubDate": "Thu, 26 Mar 2026 16:30:00 GMT",
+          "image": "https://img.huffingtonpost.com/asset/69c22d221b00006140d798f9.jpg?cache=vXIyxyWg7s&amp;ops=1200_630"
+        },
+        {
+          "title": "れいわ奥田氏、高市首相＆片山財務相の「ふくらはぎから妖気 ...",
+          "url": "https://news.yahoo.co.jp/articles/90b6f4747e6fd892b2deab9bf89e6bb9c624fc07",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 26 Mar 2026 20:42:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260327-00000008-jct-000-11-view.jpg?exp=10800"
+        },
+        {
+          "title": "「ガソリン補助金」財源がもう底を突きそうで…片山さつき財務大臣、「予備費」から8000億円追加表明",
+          "url": "https://www.msn.com/ja-jp/money/other/%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3%E8%A3%9C%E5%8A%A9%E9%87%91-%E8%B2%A1%E6%BA%90%E3%81%8C%E3%82%82%E3%81%86%E5%BA%95%E3%82%92%E7%AA%81%E3%81%8D%E3%81%9D%E3%81%86%E3%81%A7-%E7%89%87%E5%B1%B1%E3%81%95%E3%81%A4%E3%81%8D%E8%B2%A1%E5%8B%99%E5%A4%A7%E8%87%A3-%E4%BA%88%E5%82%99%E8%B2%BB-%E3%81%8B%E3%82%898000%E5%84%84%E5%86%86%E8%BF%BD%E5%8A%A0%E8%A1%A8%E6%98%8E/ar-AA1Zi5ve",
+          "source": "東京新聞 on MSN",
+          "pubDate": "Tue, 24 Mar 2026 03:45:00 GMT"
         }
       ]
     },
@@ -21672,6 +24274,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "ガソリン店頭最高値190.8円、19日から30円補助へ 財政への影響懸念",
+          "url": "https://www.nikkei.com/article/DGXZQOUA183YG0Y6A310C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 18 Mar 2026 07:25:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2772208018032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=7a75a4f9f1c92a1b7e4abb38bf4d62a8"
+        },
+        {
+          "title": "[社説]燃料高対策の補助金再開は問題が多い",
+          "url": "https://www.nikkei.com/article/DGXZQODK2023U0Q6A320C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Sat, 21 Mar 2026 12:05:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2783434020032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.15&amp;fp-y=0.06&amp;h=630&amp;w=1200&amp;s=7f75661d1f124d6a784a95c7696628bb"
+        },
+        {
+          "title": "レギュラーガソリン「170円」へ綱渡り、政府、予備費から8000億円 ...",
+          "url": "https://response.jp/article/2026/03/24/409040.html",
+          "source": "レスポンス（Response.jp）",
+          "pubDate": "Mon, 23 Mar 2026 16:11:00 GMT",
+          "image": "https://response.jp/imgs/ogp_f/2195670.jpg"
+        }
       ]
     },
     "speeches": [
@@ -21887,6 +24512,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "基礎控除とは？2025年税制改正の内容や給与所得控除との違いも解説",
+          "url": "https://www.excite.co.jp/news/article/MoneyBuJPX_article066177/",
+          "source": "Excite エキサイト",
+          "pubDate": "Fri, 23 Jan 2026 22:31:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/MoneyBuJPX/1f/MoneyBuJPX_article066177/MoneyBuJPX_article066177_1.png"
+        },
+        {
+          "title": "「103万円の壁」解消でも、665万円の壁が新たに出現、給付付き税額 ...",
+          "url": "https://diamond.jp/articles/-/383840",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Sun, 15 Feb 2026 22:30:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/3/7/-/img_376ae93f22170d6e423b5e2a6052884f170590.jpg"
+        },
+        {
+          "title": "税制改正、基礎控除見直しで「手取り減」も 年収で段差大きく",
+          "url": "https://www.nikkei.com/article/DGXZQOUB1077I0Q6A210C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 11 Feb 2026 20:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2610585012022026000000-1.png?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;upscale=false&amp;w=1200&amp;s=b0f58c7e6fbcf29d9b33334fc2d55487"
+        }
       ]
     },
     "speeches": [
@@ -22028,6 +24676,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "首相の「責任ある積極財政」に米経済学者ら相次ぎ注文 諮問会議",
+          "url": "https://www.msn.com/ja-jp/news/money/%E9%A6%96%E7%9B%B8%E3%81%AE-%E8%B2%AC%E4%BB%BB%E3%81%82%E3%82%8B%E7%A9%8D%E6%A5%B5%E8%B2%A1%E6%94%BF-%E3%81%AB%E7%B1%B3%E7%B5%8C%E6%B8%88%E5%AD%A6%E8%80%85%E3%82%89%E7%9B%B8%E6%AC%A1%E3%81%8E%E6%B3%A8%E6%96%87-%E8%AB%AE%E5%95%8F%E4%BC%9A%E8%AD%B0/ar-AA1ZskJo",
+          "source": "毎日新聞デジタル on MSN",
+          "pubDate": "Thu, 26 Mar 2026 05:06:03 GMT"
+        },
+        {
+          "title": "リベラルの経済政策を考える",
+          "url": "https://synodos.jp/talklounge/30856/",
+          "source": "SYNODOS",
+          "pubDate": "Sun, 22 Mar 2026 18:08:00 GMT"
+        },
+        {
+          "title": "高市首相の「責任ある積極財政」に海外識者が注文 政府主催の会議で",
+          "url": "https://www.asahi.com/articles/ASV3V1DJ5V3VULFA00GM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 13:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260326004430_comm.jpg"
         }
       ]
     },
@@ -22331,6 +25000,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市首相の「責任ある積極財政」に海外識者が注文 政府主催の会議で",
+          "url": "https://www.asahi.com/articles/ASV3V1DJ5V3VULFA00GM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 13:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260326004430_comm.jpg"
+        },
+        {
+          "title": "市場の信認確保を提言 責任ある積極財政への転換推進―諮問会議",
+          "url": "https://www.jiji.com/jc/article?k=2026022401017&g=eco",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 23 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260224at64S_o.jpg"
+        },
+        {
+          "title": "首相の「責任ある積極財政」に米経済学者ら相次ぎ注文 諮問会議",
+          "url": "https://www.msn.com/ja-jp/news/money/%E9%A6%96%E7%9B%B8%E3%81%AE-%E8%B2%AC%E4%BB%BB%E3%81%82%E3%82%8B%E7%A9%8D%E6%A5%B5%E8%B2%A1%E6%94%BF-%E3%81%AB%E7%B1%B3%E7%B5%8C%E6%B8%88%E5%AD%A6%E8%80%85%E3%82%89%E7%9B%B8%E6%AC%A1%E3%81%8E%E6%B3%A8%E6%96%87-%E8%AB%AE%E5%95%8F%E4%BC%9A%E8%AD%B0/ar-AA1ZskJo",
+          "source": "毎日新聞デジタル on MSN",
+          "pubDate": "Thu, 26 Mar 2026 05:06:03 GMT"
         }
       ]
     },
@@ -22810,6 +25501,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "物価高対策の「3本柱」と限界 補助金・減税・給付はどこまで続くか",
+          "url": "https://zaikei.co.jp/article/20260325/848283.html",
+          "source": "財経新聞",
+          "pubDate": "Wed, 25 Mar 2026 02:34:00 GMT",
+          "image": "http://www.zaikei.co.jp/files/general/2026032518322114ecbig.jpg"
+        },
+        {
+          "title": "2026年度新潟県予算が成立 「物価高対策」「強い経済」が柱 3選 ...",
+          "url": "https://www.niigata-nippo.co.jp/articles/-/804568",
+          "source": "新潟日報デジタルプラス",
+          "pubDate": "Fri, 27 Mar 2026 06:00:00 GMT",
+          "image": "https://niigata-nippo.ismcdn.jp/mwimgs/1/6/1200m/img_167a2693c8b54b1f9839007b22b8014d162550.jpg?rd=202603271355"
+        },
+        {
+          "title": "【新潟県2026年度予算案】総額1兆1698億円「物価高対策」と「強い ...",
+          "url": "https://www.niigata-nippo.co.jp/articles/-/782080",
+          "source": "Niigata Nippo",
+          "pubDate": "Wed, 18 Feb 2026 09:30:00 GMT",
+          "image": "https://niigata-nippo.ismcdn.jp/mwimgs/8/8/1200m/img_8829f525729cfac3fd55080fd1d9365a566596.jpg?rd=202603271355"
+        }
       ]
     },
     "speeches": [
@@ -23183,6 +25897,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "高市旋風への揶揄「推し活選挙」は的外れ？メディア・野党に欠け ...",
+          "url": "https://news.yahoo.co.jp/articles/9a47b0942790960967c9f9c845788620b3803842",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 20 Feb 2026 08:09:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260220-10226805-abema-000-2-view.jpg?exp=10800"
+        },
+        {
+          "title": "「立憲と公明がバラバラでは勝てぬ」中北教授が提唱する連携の形",
+          "url": "https://mainichi.jp/articles/20260322/k00/00m/010/044000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Tue, 24 Mar 2026 14:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/22/20260322k0000m010045000p/0c10.jpg?1"
+        },
+        {
+          "title": "5票差で辛勝の中道･小川新代表､ベテラン不在･結束なき船出の ...",
+          "url": "https://toyokeizai.net/articles/-/934824?display=b",
+          "source": "toyokeizai.net",
+          "pubDate": "Fri, 13 Feb 2026 08:00:00 GMT",
+          "image": "https://tk.ismcdn.jp/mwimgs/c/1/1200w/img_c1cbb3c2b9dc8761e78004e3d56cd38f102275.jpg"
+        }
       ]
     },
     "speeches": [
@@ -23483,6 +26220,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "日銀のイラン情勢対応は「物価上振れリスク」重視で「4月利上げ ...",
+          "url": "https://diamond.jp/articles/-/386670",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Thu, 26 Mar 2026 12:40:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/4/d/-/img_4dd1fde7b3b80a686a46a8d20fb14be3283406.jpg"
+        },
+        {
+          "title": "日銀植田総裁、円安は「過去より物価に影響しやすい」",
+          "url": "https://www.nikkei.com/article/DGXZQOUB121XP0S6A310C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 12 Mar 2026 04:48:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2744884012032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.51&amp;fp-y=0.24&amp;h=630&amp;w=1200&amp;s=05055326e1c50325622ec6df6f627331"
+        },
+        {
+          "title": "来週の為替相場見通し＝中東情勢横目に日銀金融政策の方向性を注視",
+          "url": "https://minkabu.jp/news/4475974",
+          "source": "みんかぶ",
+          "pubDate": "Fri, 27 Mar 2026 01:52:00 GMT",
+          "image": "https://assets.minkabu.jp/images/ogp/og_news_fx.webp"
+        }
       ]
     },
     "speeches": [
@@ -23749,6 +26509,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "証券口座乗っ取りに関与、会社経営の男に有罪判決 東京地裁",
+          "url": "https://www.asahi.com/articles/ASV3R2R0SV3RUTIL001M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Mon, 23 Mar 2026 03:14:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260323002849_comm.jpg"
+        },
+        {
+          "title": "証券口座乗っ取りで有罪判決 不正アクセス禁止法違反の罪",
+          "url": "https://373news.com/news/national/detail/2026032301001038/",
+          "source": "南日本新聞",
+          "pubDate": "Mon, 23 Mar 2026 00:47:00 GMT"
+        },
+        {
+          "title": "他人名義の証券口座に不正アクセスし株価をつり上げた罪 中国籍の ...",
+          "url": "https://www.khb-tv.co.jp/news/16442264",
+          "source": "khb東日本放送",
+          "pubDate": "Mon, 23 Mar 2026 05:21:00 GMT",
+          "image": "https://news.tv-asahi.co.jp/articles_img/000493596_640.jpg"
+        }
       ]
     },
     "speeches": [
@@ -23923,6 +26705,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "スルガ銀行が解決金121億円支払いへ…メガバンク幹部が解説する ...",
+          "url": "https://bunshun.jp/articles/-/87290",
+          "source": "文春オンライン",
+          "pubDate": "Wed, 25 Mar 2026 15:37:00 GMT",
+          "image": "https://bunshun.jp/mwimgs/9/a/1200wm/img_9ab65801ea54b014935a9474f1c9678e47413.jpg"
+        },
+        {
+          "title": "スルガ銀行不正融資「アパマン問題」の泥沼、オーナー350人が調停 ...",
+          "url": "https://diamond.jp/articles/-/386529",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Mon, 23 Mar 2026 12:52:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/7/1/-/img_713ed70303e4ea3f3a53971cd4f9a6e4417270.jpg"
+        },
+        {
+          "title": "スルガ銀行問題で河合氏が語る「なぜ調停を選んだのか」",
+          "url": "https://mainichi.jp/premier/business/articles/20260323/biz/00m/020/012000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Thu, 26 Mar 2026 17:05:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/23/20260323biz00m020009000p/0c10.jpg?1"
         }
       ]
     },
@@ -24192,6 +26997,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "結局どこが違う？ステーブルコイン・CBDC「仕組み」と「日米中欧の ...",
+          "url": "https://www.sbbit.jp/article/fj/181051",
+          "source": "ビジネス＋IT",
+          "pubDate": "Mon, 02 Mar 2026 15:59:00 GMT",
+          "image": "https://www.sbbit.jp/article/image/181051/OGP_bit202603021325597442.jpg"
+        },
+        {
+          "title": "暗号資産、株式トークン、ステーブルコインはどうなる？20年後の「デジタル金融」未来予想図",
+          "url": "https://www.msn.com/ja-jp/money/%E5%85%A8%E8%88%AC/%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3-%E6%A0%AA%E5%BC%8F%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3-%E3%82%B9%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%82%B3%E3%82%A4%E3%83%B3%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%82%8B-20%E5%B9%B4%E5%BE%8C%E3%81%AE-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E9%87%91%E8%9E%8D-%E6%9C%AA%E6%9D%A5%E4%BA%88%E6%83%B3%E5%9B%B3/ar-AA1Zg9sf",
+          "source": "BUSINESS INSIDER JAPAN on MSN",
+          "pubDate": "Mon, 23 Mar 2026 19:00:00 GMT"
+        },
+        {
+          "title": "暗号資産制度改正で初心者増加か ビットフライヤーHDの加納CEO",
+          "url": "https://www.nikkei.com/article/DGXZQOUB10C7S0Q6A310C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 12 Mar 2026 21:01:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2737383010032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;h=630&amp;w=1200&amp;s=01bb78cf2bc43ca62de105cae66c3525"
+        }
       ]
     },
     "speeches": [
@@ -24405,6 +27232,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "【韓国NCSOFT】「2026経営戦略懇談会」で成長戦略ロードマップと2030 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000002950.000001868.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 11 Mar 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/1868/2950/1868-2950-b64bb74d3f242602cfdb45bd3f815ce4-2000x1334.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -24639,6 +27475,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "基礎控除が大幅に引き上げ！今年、あなたはいくら減税される？",
+          "url": "https://dime.jp/genre/2079809/",
+          "source": "@DIME",
+          "pubDate": "Sat, 07 Feb 2026 16:01:00 GMT",
+          "image": "https://dime.jp/wp-content/uploads/2026/02/f25fe450a0a492cb8c6067fabd138b4f.jpg"
+        },
+        {
+          "title": "基礎控除とは？2025年税制改正の内容や給与所得控除との違いも解説",
+          "url": "https://www.excite.co.jp/news/article/MoneyBuJPX_article066177/",
+          "source": "Excite エキサイト",
+          "pubDate": "Fri, 23 Jan 2026 22:31:00 GMT",
+          "image": "https://s.eximg.jp/exnews/feed/MoneyBuJPX/1f/MoneyBuJPX_article066177/MoneyBuJPX_article066177_1.png"
+        },
+        {
+          "title": "基礎控除が大幅に引き上げ！今年、あなたはいくら減税される？",
+          "url": "https://dime.jp/genre/2079809/2/",
+          "source": "@DIME",
+          "pubDate": "Sat, 07 Feb 2026 16:01:00 GMT",
+          "image": "https://dime.jp/wp-content/uploads/2026/02/f25fe450a0a492cb8c6067fabd138b4f.jpg"
+        }
       ]
     },
     "speeches": [
@@ -24831,6 +27690,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "東邦、七十七、山形3銀行…地銀連携で地方創生 事業承継や課題解決",
+          "url": "https://www.minyu-net.com/news/detail/2026032608442247719",
+          "source": "福島民友新聞社 みんゆうNet",
+          "pubDate": "Wed, 25 Mar 2026 16:40:00 GMT",
+          "image": "https://www.minyu-net.com/common/news/2026032608442247719_0.jpg"
+        },
+        {
+          "title": "地域金融機関 地方の活性化へ戦略練りたい",
+          "url": "https://www.yomiuri.co.jp/editorial/20260307-GYT1T00455/",
+          "source": "読売新聞",
+          "pubDate": "Sat, 07 Mar 2026 20:59:00 GMT"
+        },
+        {
+          "title": "Digital Platformer 株式会社と地方金融機関の業務連携に向け共同検討を ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000292.000054018.html",
+          "source": "PR TIMES",
+          "pubDate": "Mon, 17 Nov 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/54018/292/54018-292-04f09868c8923777a4f20b608bd7e9ec-1280x720.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -25199,6 +28080,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "「責任ある積極財政政策」とマンキューサンキュー論争",
+          "url": "https://news.yahoo.co.jp/expert/articles/6c59e98071e3b38124278abe6cfcca9824409be3",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 09 Dec 2025 01:51:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/morinobushigeki/02465287/title-1765241336731.jpeg?exp=10800"
+        },
+        {
+          "title": "中国、積極財政と緩和的な金融政策維持",
+          "url": "https://www.niigata-nippo.co.jp/articles/-/744769",
+          "source": "Niigata Nippo",
+          "pubDate": "Thu, 11 Dec 2025 11:21:00 GMT"
+        },
+        {
+          "title": "1）消費税と財政政策】衆院選 主要各党の公約・政策まとめ",
+          "url": "https://news.yahoo.co.jp/articles/f068be741f17e0f0a35ea20f9789e513c77b2ef6",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 26 Jan 2026 20:46:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260127-07828773-nnn-000-4-view.jpg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -25478,6 +28381,28 @@
           "label": "租税特別措置法及び東日本大震災の被災者等に係る国税関係法律の臨時特例に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E7%A7%9F%E7%A8%8E%E7%89%B9%E5%88%A5%E6%8E%AA%E7%BD%AE%E6%B3%95%E5%8F%8A%E3%81%B3%E6%9D%B1%E6%97%A5%E6%9C%AC%E5%A4%A7%E9%9C%87%E7%81%BD%E3%81%AE%E8%A2%AB%E7%81%BD%E8%80%85%E7%AD%89%E3%81%AB%E4%BF%82%E3%82%8B%E5%9B%BD%E7%A8%8E%E9%96%A2%E4%BF%82%E6%B3%95%E5%BE%8B%E3%81%AE%E8%87%A8%E6%99%82%E7%89%B9%E4%BE%8B%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "「野党の手柄を横取り」自民広報X ガソリン暫定税率廃止を「高市 ...",
+          "url": "https://jisin.jp/domestic/2562656/",
+          "source": "女性自身",
+          "pubDate": "Tue, 03 Feb 2026 22:00:00 GMT",
+          "image": "https://img.jisin.jp/uploads/2026/02/takaichi_sanae_fb_jiji-1.jpg"
+        },
+        {
+          "title": "「野党の手柄を横取り」自民広報X ガソリン暫定税率廃止を「高市 ...",
+          "url": "https://news.yahoo.co.jp/articles/2bf0b0ae4b683b882df5a98e1b4f417b1186a71d",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Tue, 03 Feb 2026 13:04:00 GMT"
+        },
+        {
+          "title": "ガソリン税の暫定税率廃止が決定！ガソリンはいつからどれくらい ...",
+          "url": "https://dime.jp/genre/2079504/",
+          "source": "@DIME",
+          "pubDate": "Thu, 05 Feb 2026 16:00:00 GMT",
+          "image": "https://dime.jp/wp-content/uploads/2026/02/521da6b65c68ad082e84a6138d3bf86d-770x462.jpg"
+        }
       ]
     },
     "speeches": [
@@ -25578,6 +28503,28 @@
         {
           "label": "租税特別措置法及び東日本大震災の被災者等に係る国税関係法律の臨時特例に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E7%A7%9F%E7%A8%8E%E7%89%B9%E5%88%A5%E6%8E%AA%E7%BD%AE%E6%B3%95%E5%8F%8A%E3%81%B3%E6%9D%B1%E6%97%A5%E6%9C%AC%E5%A4%A7%E9%9C%87%E7%81%BD%E3%81%AE%E8%A2%AB%E7%81%BD%E8%80%85%E7%AD%89%E3%81%AB%E4%BF%82%E3%82%8B%E5%9B%BD%E7%A8%8E%E9%96%A2%E4%BF%82%E6%B3%95%E5%BE%8B%E3%81%AE%E8%87%A8%E6%99%82%E7%89%B9%E4%BE%8B%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "ガソリン・軽油、暫定税率廃止に喜びの声",
+          "url": "https://www.komei.or.jp/komeinews/p472275/",
+          "source": "公明党",
+          "pubDate": "Tue, 06 Jan 2026 23:37:00 GMT",
+          "image": "https://www.komei.or.jp/wp-content/uploads/20260107_5.jpg"
+        },
+        {
+          "title": "＜2026年衆院選＞ガソリン価格低下も道路整備は… 暫定税率廃止に ...",
+          "url": "https://news.yahoo.co.jp/articles/ab8fde966791aad257e5d401a20c8c63489f4eb2",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 05 Feb 2026 20:49:00 GMT"
+        },
+        {
+          "title": "ガソリン・軽油、暫定税率廃止に喜びの声",
+          "url": "https://www.komei.or.jp/km/yachiyo-takahashi-hideyuki/2026/01/07/%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3%E3%83%BB%E8%BB%BD%E6%B2%B9%E3%80%81%E6%9A%AB%E5%AE%9A%E7%A8%8E%E7%8E%87%E5%BB%83%E6%AD%A2%E3%81%AB%E5%96%9C%E3%81%B3%E3%81%AE%E5%A3%B0/",
+          "source": "公明党",
+          "pubDate": "Tue, 06 Jan 2026 16:00:00 GMT",
+          "image": "https://viewer.komei-shimbun.jp/TCDBWS/DownloadS3?s3FileKey=/KM/photo/tecml/2026/01/06/AKM2026010720260106-001092/563a4d0ab1ea86ef5075750be7101ec8c0febad291229ffed8feee1bd5357f1a/EAKM2026010720260106-001092.jpg"
         }
       ]
     },
@@ -25989,6 +28936,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "与野党がSNSでの偽・誤情報拡散対策を議論 利用者規制には憲法の ...",
+          "url": "https://www.sankei.com/article/20260323-PTZNHGJK2FPFTG3ATQCSDUOG6M/",
+          "source": "産経ニュース",
+          "pubDate": "Mon, 23 Mar 2026 05:38:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/XIRWHBRJRBNYRKD2DWVGUH66GE.jpg?auth=dcd57d448e47106816c58899e0bb30611078177307187e0802ddfc588a99665c&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=630"
+        },
+        {
+          "title": "皇室典範改正めぐる与野党協議、4月15日で調整 1年ぶりに再開",
+          "url": "https://www.asahi.com/articles/ASV3W41HDV3WUTFK00ZM.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 05:20:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260327005237_comm.jpg"
+        },
+        {
+          "title": "与野党がSNSの事業者から対応聴取 選挙運動巡る協議会",
+          "url": "https://mainichi.jp/articles/20260323/k00/00m/010/235000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Mon, 23 Mar 2026 04:33:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/23/20260323k0000m010234000p/0c10.jpg?1"
+        }
       ]
     },
     "speeches": [
@@ -26289,6 +29259,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
         }
+      ],
+      "news": [
+        {
+          "title": "「公明が先導してくれた」 振興交付金維持で謝意／全日本トラック ...",
+          "url": "https://www.komei.or.jp/km/tanaka-masaru-hiroshima/2025/11/28/052746/",
+          "source": "公明党",
+          "pubDate": "Thu, 27 Nov 2025 16:00:00 GMT",
+          "image": "https://www.komei.or.jp/km/tanaka-masaru-hiroshima/files/2025/11/1764274833366-300x287.jpg?ver=1764276091"
+        },
+        {
+          "title": "運輸業界向け交付金、「物流・公共交通維持の観点で議論を」 国交相",
+          "url": "https://www.nikkei.com/article/DGXZQOUA0715L0X01C25A1000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 07 Nov 2025 04:41:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO7182907007112025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.49&amp;fp-y=0.26&amp;h=630&amp;w=1200&amp;s=4efc732bdd574eb55e1ad314ca4115dc"
+        },
+        {
+          "title": "運輸事業交付金は維持",
+          "url": "https://www.komei.or.jp/komeinews/p465067/",
+          "source": "公明党",
+          "pubDate": "Fri, 21 Nov 2025 16:00:00 GMT",
+          "image": "https://www.komei.or.jp/wp-content/uploads/20251122_02.jpg"
+        }
       ]
     },
     "speeches": [
@@ -26479,6 +29472,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "自民・小林氏「予算案審議のプロセスに瑕疵ない」 野党の批判に",
+          "url": "https://mainichi.jp/articles/20260315/k00/00m/010/081000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Sat, 14 Mar 2026 19:42:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2025/10/08/20251008hpr00m010001000q/0c10.jpg?1"
+        },
+        {
+          "title": "米山隆一氏、枝野幸男氏ゲストの政治資金パーティー批判に反論 ...",
+          "url": "https://news.yahoo.co.jp/articles/9039b3c835f1accd2ed74e622f48b469c4c46796",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 09 Mar 2026 22:58:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260310-00000011-jct-000-6-view.jpg?exp=10800"
+        },
+        {
+          "title": "米山隆一氏、枝野幸男氏ゲストの政治資金パーティー批判に反論 ...",
+          "url": "https://www.j-cast.com/2026/03/10512686.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Tue, 10 Mar 2026 07:26:00 GMT",
+          "image": "https://www.j-cast.com/images/origin/2026/03/news_20260310141724.jpg"
         }
       ]
     },
@@ -26703,6 +29719,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121904376X00220251121"
+        }
+      ],
+      "news": [
+        {
+          "title": "マクロスコープ：自民公約の食品減税、財源論先送り 費用対効果に ...",
+          "url": "https://jp.reuters.com/business/GFPXZUB7I5KPJGEEWNNMMUVWRE-2026-01-21/",
+          "source": "ロイター",
+          "pubDate": "Wed, 21 Jan 2026 02:04:00 GMT",
+          "image": "https://www.reuters.com/resizer/v2/PGUDNSQ3LJI2RL7ZNFY7YLUKBM.jpg?auth=64b63722b106bc535fc0ecbf293e7a8716f36e364aecc01adab1ad69b5c03b9e&amp;height=1005&amp;width=1920&amp;quality=80&amp;smart=true"
+        },
+        {
+          "title": "消費減税、財源論は乏しく 外食の打撃対策は議論生煮え 党首討論",
+          "url": "https://mainichi.jp/articles/20260126/k00/00m/020/276000c",
+          "source": "毎日新聞",
+          "pubDate": "Sun, 25 Jan 2026 16:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/01/26/20260126k0000m010267000p/0c10.jpg?2"
+        },
+        {
+          "title": "競う消費税減税、深まらぬ財源論 市場の信認失墜の恐れ―高市政権 ...",
+          "url": "https://www.jiji.com/jc/article?k=2026013000891&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202601/20260130at32S_o.jpg"
         }
       ]
     },

@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121705254X00220250127"
         }
+      ],
+      "news": [
+        {
+          "title": "首相、消費減税「国民的議論を」 参院代表質問、今夕に初会合",
+          "url": "https://www.chunichi.co.jp/article/1214828",
+          "source": "中日新聞Web",
+          "pubDate": "Wed, 25 Feb 2026 19:54:00 GMT",
+          "image": "https://static.chunichi.co.jp/image/article/size1/0/b/c/c/0bcc43703555eddab5d36ccf11f22825_1.jpg"
+        },
+        {
+          "title": "立憲民主と公明が予算修正案、他党に協力呼びかけ…少数与党の ...",
+          "url": "https://www.yomiuri.co.jp/politics/20260327-GYT1T00029/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Thu, 26 Mar 2026 18:00:00 GMT"
+        },
+        {
+          "title": "参院代表質問、自立が25、26日実施で合意",
+          "url": "https://www.niigata-nippo.co.jp/articles/-/782530",
+          "source": "Niigata Nippo",
+          "pubDate": "Thu, 19 Feb 2026 03:44:00 GMT",
+          "image": "https://niigata-nippo.ismcdn.jp/common/images/site/ogp_v2.jpg"
+        }
       ]
     },
     "speeches": [
@@ -134,6 +156,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121705254X00220250127"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市首相が予算案の年度内成立、スパイ防止法に意欲 衆院で代表 ...",
+          "url": "https://www.tokyo-np.co.jp/article/470864",
+          "source": "tokyo-np",
+          "pubDate": "Mon, 23 Feb 2026 16:00:00 GMT",
+          "image": "https://static.tokyo-np.co.jp/image/article/size1/b/e/7/3/be7338cc5ed0f46271c2b3883a245114_1.jpg"
+        },
+        {
+          "title": "予算3月中成立へ早くも攻防 与党「審議短縮を」、野党は反発",
+          "url": "https://www.47news.jp/13899102.html",
+          "source": "47NEWS",
+          "pubDate": "Fri, 20 Feb 2026 07:01:00 GMT",
+          "image": "https://img.cf.47news.jp/static/renewal/common/img/thumb_large.png"
+        },
+        {
+          "title": "首相、予算3月中の成立目指す スパイ防止法必要、衆院代表質問",
+          "url": "https://373news.com/news/national/detail/2026022401001047/",
+          "source": "南日本新聞",
+          "pubDate": "Tue, 24 Feb 2026 08:22:00 GMT"
         }
       ]
     },
@@ -257,6 +301,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121705254X00220250127"
         }
+      ],
+      "news": [
+        {
+          "title": "高市首相、対米投資「着実に実施」 経済安保に寄与―衆参代表質問",
+          "url": "https://www.jiji.com/jc/article?k=2026022500911&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Tue, 24 Feb 2026 16:01:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202602/20260225at39S_ogp.jpg"
+        },
+        {
+          "title": "高市首相、カタログギフト配布は「法令上問題ない」 衆参両院で ...",
+          "url": "https://news.yahoo.co.jp/articles/a16ac202f9bdce2adf2bbbbb07a26033ef726b7f",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 25 Feb 2026 04:15:00 GMT"
+        },
+        {
+          "title": "積極財政、消費減税で論戦 衆院選後初の代表質問",
+          "url": "https://www.chunichi.co.jp/article/1213824",
+          "source": "中日新聞",
+          "pubDate": "Mon, 23 Feb 2026 16:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -323,6 +388,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121705254X00220250127"
+        }
+      ],
+      "news": [
+        {
+          "title": "「舐めてるな」萩生田光一氏 衆院本会議中の“居眠り疑惑”が波紋 ...",
+          "url": "https://news.yahoo.co.jp/articles/98eac5e7a18a5e1f7362c5b750b83e1723887cae",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sun, 01 Mar 2026 23:14:00 GMT"
+        },
+        {
+          "title": "積極財政、消費減税で論戦 衆院選後初の代表質問",
+          "url": "https://www.toonippo.co.jp/articles/-/2216160",
+          "source": "東奥日報",
+          "pubDate": "Mon, 23 Feb 2026 16:00:00 GMT",
+          "image": "https://toonippo.ismcdn.jp/mwimgs/9/f/1200wm/img_9f72909a0e9ab7a83b88812769ac738e25800.jpg"
+        },
+        {
+          "title": "衆参代表質問で見えた政党配置の構図",
+          "url": "https://www.jcp.or.jp/akahata/aik25/2026-02-27/2026022702_04_0.php",
+          "source": "日本共産党",
+          "pubDate": "Thu, 26 Feb 2026 16:00:00 GMT",
+          "image": "https://www.jcp.or.jp/akahata/aik25/2026-02-27/img_2.jpg"
         }
       ]
     },
@@ -391,6 +478,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/121704024X00220250127"
+        }
+      ],
+      "news": [
+        {
+          "title": "米国務長官演説に安堵―ミュンヘン安保会議 欧州、米依存からの ...",
+          "url": "https://www.worldtimes.co.jp/global/europe/20260216-206027/",
+          "source": "Sekai Nippo",
+          "pubDate": "Sun, 15 Feb 2026 16:00:00 GMT",
+          "image": "https://www.worldtimes.co.jp/wp-content/uploads/2026/02/020260215AT_47____-1417x944-1.jpg"
+        },
+        {
+          "title": "欧州首脳が警戒するルビオ演説。海外メディアが使う「ramp up the ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/17d3b5d84d8e7426457303f2c3dfec174d439302",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Sat, 14 Feb 2026 15:01:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/creators/yamaguchitoko/02541508/title-1773114849739.jpeg?exp=10800"
+        },
+        {
+          "title": "ルビオによるミュンヘン演説はトランプの主張と大差なし！危機に ...",
+          "url": "https://wedge.ismedia.jp/articles/-/40272",
+          "source": "Wedge ONLINE",
+          "pubDate": "Tue, 03 Mar 2026 16:00:00 GMT",
+          "image": "https://wedge.ismcdn.jp/mwimgs/2/d/1024/img_2dfbd1dbb2fb1180b86d4805e7705dfb688641.jpg"
         }
       ]
     },

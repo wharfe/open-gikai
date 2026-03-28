@@ -146,6 +146,29 @@
           "label": "原文",
           "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk7_000043.html"
         }
+      ],
+      "news": [
+        {
+          "title": "契約業務における情報共有と説明責任の可視化。「リーガルテック ...",
+          "url": "https://mainichi.jp/articles/20260327/pr2/00m/020/826000c",
+          "source": "毎日新聞デジタル",
+          "pubDate": "Fri, 27 Mar 2026 03:21:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/03/27/20260327pr200m020826000p/0c10.jpg?1"
+        },
+        {
+          "title": "法務省の研究会が初会合 取り調べ可視化対象拡大など議題に",
+          "url": "https://www.nikkei.com/article/DGXZQOUF19A4N0Z11C25A2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 19 Dec 2025 10:21:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2385303019122025000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.66&amp;fp-y=0.17&amp;h=630&amp;w=1200&amp;s=74eb6bedc896980f90ec4e63ce6838e3"
+        },
+        {
+          "title": "【1/14(水)無料ウェブセミナー】法務&#215;経理の連携で乗り越える 新 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000223.000015843.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/15843/223/15843-223-80ce39c3de08f1893e0ed3de3939180d-960x540.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
