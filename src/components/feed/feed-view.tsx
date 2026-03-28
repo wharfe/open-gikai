@@ -101,6 +101,12 @@ export function FeedView({ threads, members }: FeedViewProps) {
     ? nonProceduralThreads.filter((t) => getLifeTheme(t.topicTag) === selectedTheme)
     : nonProceduralThreads;
 
+  // Pagination: show 20 threads initially, load 20 more each time
+  const PAGE_SIZE = 20;
+  const [displayCount, setDisplayCount] = useState(PAGE_SIZE);
+  const displayedThreads = visibleThreads.slice(0, displayCount);
+  const hasMore = displayCount < visibleThreads.length;
+
   const tabs: [string, string][] = [
     ["all", "すべて"],
     [
@@ -180,9 +186,17 @@ export function FeedView({ threads, members }: FeedViewProps) {
         </div>
       ) : (
         <>
-          {visibleThreads.map((t) => (
+          {displayedThreads.map((t) => (
             <ThreadCard key={t.id} thread={t} members={members} />
           ))}
+          {hasMore && (
+            <button
+              onClick={() => setDisplayCount((c) => c + PAGE_SIZE)}
+              className="flex w-full cursor-pointer items-center justify-center gap-2 border-b border-x-border bg-transparent py-5 text-[14px] text-x-accent transition-colors hover:bg-x-hover"
+            >
+              さらに表示（残り{visibleThreads.length - displayCount}件）
+            </button>
+          )}
           {!showProcedural && proceduralCount > 0 && !hasFilter && (
             <button
               onClick={() => setShowProcedural(true)}
