@@ -2,14 +2,15 @@
 
 import { useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import type { Member, Thread } from "@/types";
+import type { Member } from "@/types";
+import type { ThreadSummary } from "@/lib/data";
 import { useAppContext } from "@/components/providers/app-provider";
 import { ThreadCard } from "@/components/feed/thread-card";
 import { ThemeBar } from "@/components/feed/theme-bar";
 import { getLifeTheme, getLifeThemeConfig, type LifeThemeId } from "@/lib/config";
 
 type FeedViewProps = {
-  threads: Thread[];
+  threads: ThreadSummary[];
   members: Record<string, Member>;
 };
 
@@ -70,7 +71,7 @@ export function FeedView({ threads, members }: FeedViewProps) {
   const followFiltered =
     feedFilter === "following" && activeFollowCount > 0
       ? baseThreads.filter((t) =>
-          t.speeches.some((s) => follows.has(s.memberId) && s.memberId in members)
+          t.memberIds.some((id) => follows.has(id) && id in members)
         )
       : baseThreads;
 

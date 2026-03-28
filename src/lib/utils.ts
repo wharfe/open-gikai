@@ -99,10 +99,12 @@ export function buildSpeechShare(
   ].join("\n");
 }
 
-export function buildThreadShare(thread: Thread, members: Record<string, Member>): string {
-  const actors = [
-    ...new Set(thread.speeches.map((s) => s.memberId)),
-  ].map((id) => members[id].name.split(" ")[0]);
+export function buildThreadShare(
+  thread: { id: string; committee: string; date: string; topic: string; topicTag: string; summary: string; memberIds?: string[]; speeches?: { memberId: string }[] },
+  members: Record<string, Member>,
+): string {
+  const ids = thread.memberIds ?? [...new Set(thread.speeches?.map((s) => s.memberId) ?? [])];
+  const actors = ids.map((id) => members[id]?.name?.split(" ")[0] ?? "").filter(Boolean);
   return [
     `📋【${thread.committee}・${thread.date}】`,
     `テーマ：${thread.topic}`,
@@ -110,7 +112,7 @@ export function buildThreadShare(thread: Thread, members: Record<string, Member>
     thread.summary,
     "",
     `登場：${actors.join("、")}`,
-    `全${thread.speeches.length}発言 → https://open-gikai.net/t/${thread.id}`,
+    `全${thread.speeches?.length ?? 0}発言 → https://open-gikai.net/t/${thread.id}`,
     `#OpenGIKAI #国会 #${thread.topicTag}`,
   ].join("\n");
 }

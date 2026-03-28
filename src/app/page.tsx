@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getThreads, getThreadsSummary, getMembers, getSessionInfo } from "@/lib/data";
+import { getThreadsSummary, getMembers, getSessionInfo } from "@/lib/data";
 import { FeedView } from "@/components/feed/feed-view";
 import { SessionCard } from "@/components/feed/session-card";
 import { RightSidebar } from "@/components/sidebar/right-sidebar";
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const threads = getThreads();
   const threadsSummary = getThreadsSummary();
   const members = getMembers();
   const session = getSessionInfo();
@@ -27,7 +26,7 @@ export default function Home() {
           <SessionCard threads={threadsSummary} session={session} />
         </div>
         <Suspense>
-          <FeedView threads={threads} members={members} />
+          <FeedView threads={threadsSummary} members={members} />
         </Suspense>
       </main>
 

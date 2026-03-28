@@ -53,35 +53,48 @@ function topKeywords(thread: Thread, n: number): string[] {
     .map(([k]) => k);
 }
 
-/** Lightweight thread summaries for sidebar panels (no speeches/context). */
+/** Lightweight thread summaries for feed and sidebar (no raw speeches). */
 export type ThreadSummary = Pick<
   Thread,
-  "id" | "date" | "committee" | "house" | "topic" | "topicTag" | "topicColor" | "source" | "sourceLabel" | "procedural"
+  | "id" | "date" | "committee" | "house" | "topic" | "topicTag" | "topicColor"
+  | "source" | "sourceLabel" | "procedural" | "summary" | "impact" | "debate" | "outcome"
 > & {
   speechCount: number;
   memberIds: string[];
   /** Top keywords for trend aggregation (deduplicated, max 8 per thread). */
   keywords: string[];
+  /** First news article with an image, for link-card preview. */
+  newsPreview?: { title: string; url: string; image: string };
 };
 
 export function getThreadsSummary(): ThreadSummary[] {
   return loadThreads()
     .sort((a, b) => b.date.localeCompare(a.date))
-    .map((t) => ({
-      id: t.id,
-      date: t.date,
-      committee: t.committee,
-      house: t.house,
-      topic: t.topic,
-      topicTag: t.topicTag,
-      topicColor: t.topicColor,
-      source: t.source,
-      sourceLabel: t.sourceLabel,
-      procedural: t.procedural,
-      speechCount: t.speeches.length,
-      memberIds: [...new Set(t.speeches.map((s) => s.memberId))],
-      keywords: topKeywords(t, 8),
-    }));
+    .map((t) => {
+      const newsWithImage = t.context?.news?.find((n) => n.image);
+      return {
+        id: t.id,
+        date: t.date,
+        committee: t.committee,
+        house: t.house,
+        topic: t.topic,
+        topicTag: t.topicTag,
+        topicColor: t.topicColor,
+        source: t.source,
+        sourceLabel: t.sourceLabel,
+        procedural: t.procedural,
+        summary: t.summary,
+        impact: t.impact,
+        debate: t.debate,
+        outcome: t.outcome,
+        speechCount: t.speeches.length,
+        memberIds: [...new Set(t.speeches.map((s) => s.memberId))],
+        keywords: topKeywords(t, 8),
+        newsPreview: newsWithImage
+          ? { title: newsWithImage.title, url: newsWithImage.url, image: newsWithImage.image! }
+          : undefined,
+      };
+    });
 }
 
 export function getThread(id: string): Thread | undefined {

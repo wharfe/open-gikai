@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Member, Thread } from "@/types";
+import type { ThreadSummary } from "@/lib/data";
 import { useAppContext } from "@/components/providers/app-provider";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButton } from "@/components/ui/share-button";
@@ -10,17 +11,21 @@ import { buildThreadShare } from "@/lib/utils";
 import { getLifeTheme, getLifeThemeConfig, SOURCE_STYLE } from "@/lib/config";
 
 type ThreadCardProps = {
-  thread: Thread;
+  thread: ThreadSummary | Thread;
   members: Record<string, Member>;
 };
 
 export function ThreadCard({ thread, members }: ThreadCardProps) {
   const { follows } = useAppContext();
   const [imgError, setImgError] = useState(false);
-  const actors = [...new Set(thread.speeches.map((s) => s.memberId))];
+  const actors = "memberIds" in thread
+    ? (thread as ThreadSummary).memberIds
+    : [...new Set((thread as Thread).speeches?.map((s) => s.memberId) ?? [])];
   const themeId = getLifeTheme(thread.topicTag);
   const themeConfig = themeId ? getLifeThemeConfig(themeId) : null;
-  const newsPreview = thread.context?.news?.find((n) => n.image);
+  const newsPreview = "newsPreview" in thread
+    ? (thread as ThreadSummary).newsPreview
+    : (thread as Thread).context?.news?.find((n) => n.image);
 
   return (
     <article className="border-b border-x-border px-4 py-4 transition-colors hover:bg-x-hover">
@@ -161,7 +166,7 @@ export function ThreadCard({ thread, members }: ThreadCardProps) {
         </div>
         <div className="flex shrink-0 items-center gap-3 pl-3">
           <span className="text-[13px] text-x-secondary">
-            <span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>chat_bubble</span> {thread.speeches.length}
+            <span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>chat_bubble</span> {"speechCount" in thread ? (thread as ThreadSummary).speechCount : ((thread as Thread).speeches?.length ?? 0)}
           </span>
           <ShareButton text={buildThreadShare(thread, members)} />
         </div>
