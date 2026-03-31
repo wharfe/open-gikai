@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 30 Mar 2026 21:21:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 21:20:41 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W14 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W14</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W14</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W13 国会まとめ — 1件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W13</link>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W10 国会まとめ — 35件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W10</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W10</guid>
-      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
-      <description>35件のスレッド、5委員会の議論をまとめました。議院運営委員会、国民生活・経済に関する調査会、国際問題に関する調査会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>暫定予算三案の緊急上程・採決 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260330_ac8734_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260330_ac8734_01</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+      <description>暫定予算三案を緊急上程し採決。日本共産党と無所属山本議員が反対（国会会議録・2026.03.30・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>高市総理の米国訪問報告と質疑 — 議院運営委員会</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_16</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>中国による台湾武力統一の可能性と現状では困難とする理由を分析（国会会議録・2026.03.04・2発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>日本の情報・インテリジェンス機能強化 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_17</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_17</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>内閣情報調査室の国家情報局格上げと情報収集・分析能力の向上（国会会議録・2026.03.04・4発言）</description>
       <category>国際問題に関する調査会</category>
     </item>
   </channel>
