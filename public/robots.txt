@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://open-gikai.net/sitemap.xml
+Sitemap: https://open-gikai.net/sitemap_index.xml
