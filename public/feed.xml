@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Apr 2026 21:23:12 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 21:24:47 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W15 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W15</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W15</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。令和８年度予算成立及び中東情勢への対応等についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W14 国会まとめ — 2件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W14</link>
@@ -32,12 +40,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W11 国会まとめ — 27件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W11</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W11</guid>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
-      <description>27件のスレッド、3委員会の議論をまとめました。議院運営委員会、災害対策特別委員会、イラン情勢に関する政府の対応についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>令和8年度予算の成立と年度内成立の失敗 — 令和８年度予算成立及び中東情勢への対応等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260407_81821c_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260407_81821c_01</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <description>高市内閣初の本格予算が4月に成立。年度内成立失敗の責任と解散判断を問われる（首相記者会見・2026.04.07・3発言）</description>
+      <category>令和８年度予算成立及び中東情勢への対応等についての会見</category>
+    </item>
+    <item>
+      <title>予算委員会の審議時間と国会運営 — 令和８年度予算成立及び中東情勢への対応等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260407_81821c_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260407_81821c_02</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <description>予算委員会の審議時間短縮と総理出席時間の不足を野党が批判、国会審議の重要性を確認（首相記者会見・2026.04.07・2発言）</description>
+      <category>令和８年度予算成立及び中東情勢への対応等についての会見</category>
     </item>
     <item>
       <title>国家情報会議設置法案の議事運営 — 議院運営委員会</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_13</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>防衛装備移転五類型見直しと日本の平和国家ブランドへの影響を検討（国会会議録・2026.03.04・4発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>法の支配と国際協調の維持 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_14</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>自国第一主義の時代における法の支配と国際制度維持の重要性を議論（国会会議録・2026.03.04・4発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>中国外交政策の変化と対応 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_15</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>2016-17年頃から始まった中国の戦狼外交への転換と日本の対応策（国会会議録・2026.03.04・9発言）</description>
       <category>国際問題に関する調査会</category>
     </item>
   </channel>
