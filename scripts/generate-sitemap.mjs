@@ -67,40 +67,6 @@ function writeSitemapIndex(sitemapFiles, now) {
 
 /* ── data collectors ─────────────────────────── */
 
-function collectThreadIds() {
-  const threadsDir = join(DATA_DIR, "threads");
-  const ids = [];
-  for (const file of readdirSync(threadsDir)) {
-    if (!file.endsWith(".json")) continue;
-    const threads = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
-    for (const t of threads) {
-      ids.push({ id: t.id, date: t.date?.replace(/\./g, "-") });
-    }
-  }
-  return ids;
-}
-
-function collectMemberIds() {
-  const membersPath = join(DATA_DIR, "members.json");
-  const members = JSON.parse(readFileSync(membersPath, "utf-8"));
-  return Object.keys(members);
-}
-
-function collectWeekIds() {
-  const threadsDir = join(DATA_DIR, "threads");
-  const ids = new Set();
-  for (const file of readdirSync(threadsDir)) {
-    if (!file.endsWith(".json")) continue;
-    const threads = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
-    for (const t of threads) {
-      const [y, m, d] = t.date.split(".").map(Number);
-      const date = new Date(y, m - 1, d);
-      ids.add(`${isoWeekYear(date)}-W${String(isoWeek(date)).padStart(2, "0")}`);
-    }
-  }
-  return [...ids].sort();
-}
-
 const COUNCIL_SLUG_MAP = {
   "規制改革推進会議": "kisei",
   "移住・二地域居住等促進専門委員会": "nichiiki",
@@ -113,60 +79,111 @@ const COUNCIL_SLUG_MAP = {
   "審議会": "council-general",
 };
 
-function collectCouncilSlugs() {
+// Single-pass collection over all thread files. Returns per-entity lastmod
+// so sitemaps can use accurate dates instead of the build date.
+function collectAll() {
   const threadsDir = join(DATA_DIR, "threads");
-  const labels = new Set();
+  const threads = []; // { id, lastmod }
+  const weekLastmod = new Map(); // weekId -> latest isoDate
+  const memberLastmod = new Map(); // memberId -> latest isoDate
+  const councilLabels = new Set();
+  let globalLatest = "";
+
   for (const file of readdirSync(threadsDir)) {
     if (!file.endsWith(".json")) continue;
-    const threads = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
-    for (const t of threads) {
+    const parsed = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
+    for (const t of parsed) {
+      const iso = t.date?.replace(/\./g, "-");
+      if (!iso) continue;
+      threads.push({ id: t.id, lastmod: iso });
+      if (iso > globalLatest) globalLatest = iso;
+
+      // Week bucket
+      const [y, m, d] = t.date.split(".").map(Number);
+      const dObj = new Date(y, m - 1, d);
+      const wid = `${isoWeekYear(dObj)}-W${String(isoWeek(dObj)).padStart(2, "0")}`;
+      const prevW = weekLastmod.get(wid);
+      if (!prevW || iso > prevW) weekLastmod.set(wid, iso);
+
+      // Member lastmod = latest thread date the member appeared in
+      const speakerIds = new Set();
+      for (const s of t.speeches || []) {
+        if (s.memberId) speakerIds.add(s.memberId);
+      }
+      for (const id of speakerIds) {
+        const prev = memberLastmod.get(id);
+        if (!prev || iso > prev) memberLastmod.set(id, iso);
+      }
+
+      // Council labels
       if (t.source === "council") {
-        labels.add(t.sourceLabel || t.committee);
+        councilLabels.add(t.sourceLabel || t.committee);
       }
     }
   }
-  return [...labels].map((l) => COUNCIL_SLUG_MAP[l] || l.replace(/[・\s]/g, "-")).filter(Boolean);
+
+  const councilSlugs = [...councilLabels]
+    .map((l) => COUNCIL_SLUG_MAP[l] || l.replace(/[・\s]/g, "-"))
+    .filter(Boolean);
+
+  return { threads, weekLastmod, memberLastmod, councilSlugs, globalLatest };
+}
+
+function collectAllMemberIds() {
+  const membersPath = join(DATA_DIR, "members.json");
+  const members = JSON.parse(readFileSync(membersPath, "utf-8"));
+  return Object.keys(members);
 }
 
 /* ── main ────────────────────────────────────── */
 
 function buildSitemaps() {
   const now = new Date().toISOString().split("T")[0];
-  const threads = collectThreadIds();
-  const members = collectMemberIds();
-  const weekIds = collectWeekIds();
-  const councilSlugs = collectCouncilSlugs();
+  const { threads, weekLastmod, memberLastmod, councilSlugs, globalLatest } =
+    collectAll();
+  const allMemberIds = collectAllMemberIds();
+
+  // Use the latest known content date as the "site updated" signal for
+  // listing pages. Falls back to today for fresh repos.
+  const siteLastmod = globalLatest || now;
 
   const files = [];
 
-  // 1. Static pages
+  // 1. Static pages — listing pages track the latest content date,
+  // truly static pages track today.
   files.push(
     writeSitemap("sitemap-pages.xml", [
-      urlEntry({ loc: "/", lastmod: now, changefreq: "daily", priority: "1.0" }),
-      urlEntry({ loc: "/search", lastmod: now, changefreq: "daily", priority: "0.7" }),
-      urlEntry({ loc: "/calendar", lastmod: now, changefreq: "daily", priority: "0.7" }),
-      urlEntry({ loc: "/members", lastmod: now, changefreq: "weekly", priority: "0.7" }),
+      urlEntry({ loc: "/", lastmod: siteLastmod, changefreq: "daily", priority: "1.0" }),
+      urlEntry({ loc: "/search", lastmod: siteLastmod, changefreq: "daily", priority: "0.7" }),
+      urlEntry({ loc: "/calendar", lastmod: siteLastmod, changefreq: "daily", priority: "0.7" }),
+      urlEntry({ loc: "/members", lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" }),
       urlEntry({ loc: "/about", lastmod: now, changefreq: "monthly", priority: "0.5" }),
-      urlEntry({ loc: "/about/stats", lastmod: now, changefreq: "daily", priority: "0.4" }),
+      urlEntry({ loc: "/about/stats", lastmod: siteLastmod, changefreq: "daily", priority: "0.4" }),
     ])
   );
 
-  // 2. Thread pages
+  // 2. Thread pages — lastmod = the debate date itself.
   files.push(
     writeSitemap(
       "sitemap-threads.xml",
       threads.map((t) =>
-        urlEntry({ loc: `/t/${t.id}`, lastmod: now, changefreq: "monthly", priority: "0.8" })
+        urlEntry({ loc: `/t/${t.id}`, lastmod: t.lastmod, changefreq: "monthly", priority: "0.8" })
       )
     )
   );
 
-  // 3. Member pages
+  // 3. Member pages — lastmod = latest debate the member appeared in.
+  // Members without any recorded speeches fall back to siteLastmod.
   files.push(
     writeSitemap(
       "sitemap-members.xml",
-      members.map((id) =>
-        urlEntry({ loc: `/m/${id}`, lastmod: now, changefreq: "weekly", priority: "0.6" })
+      allMemberIds.map((id) =>
+        urlEntry({
+          loc: `/m/${id}`,
+          lastmod: memberLastmod.get(id) || siteLastmod,
+          changefreq: "weekly",
+          priority: "0.6",
+        })
       )
     )
   );
@@ -174,33 +191,39 @@ function buildSitemaps() {
   // 4. Council pages
   files.push(
     writeSitemap("sitemap-councils.xml", [
-      urlEntry({ loc: "/council", lastmod: now, changefreq: "weekly", priority: "0.7" }),
+      urlEntry({ loc: "/council", lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" }),
       ...councilSlugs.map((slug) =>
-        urlEntry({ loc: `/council/${slug}`, lastmod: now, changefreq: "weekly", priority: "0.7" })
+        urlEntry({ loc: `/council/${slug}`, lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" })
       ),
     ])
   );
 
-  // 5. Digest pages
+  // 5. Digest pages — per-week lastmod = latest thread date in that week.
+  const weekIds = [...weekLastmod.keys()].sort();
   files.push(
     writeSitemap("sitemap-digests.xml", [
-      urlEntry({ loc: "/digest", lastmod: now, changefreq: "weekly", priority: "0.7" }),
+      urlEntry({ loc: "/digest", lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" }),
       ...weekIds.map((wid) =>
-        urlEntry({ loc: `/digest/weekly/${wid}`, lastmod: now, changefreq: "monthly", priority: "0.6" })
+        urlEntry({
+          loc: `/digest/weekly/${wid}`,
+          lastmod: weekLastmod.get(wid),
+          changefreq: "monthly",
+          priority: "0.6",
+        })
       ),
     ])
   );
 
-  // Sitemap index
+  // Sitemap index — use today (index itself was regenerated now).
   writeSitemapIndex(files, now);
 
   // Keep sitemap.xml as a redirect target for any cached references
   writeSitemap("sitemap.xml", [
-    urlEntry({ loc: "/", lastmod: now, changefreq: "daily", priority: "1.0" }),
+    urlEntry({ loc: "/", lastmod: siteLastmod, changefreq: "daily", priority: "1.0" }),
   ]);
 
   console.log(
-    `Sitemaps generated: ${threads.length} threads, ${members.length} members, ` +
+    `Sitemaps generated: ${threads.length} threads, ${allMemberIds.length} members, ` +
       `${weekIds.length} digests, ${councilSlugs.length} councils → ${files.length} files + sitemap_index.xml`
   );
 }
