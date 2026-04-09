@@ -25,12 +25,14 @@ export function generateStaticParams() {
 const FONT_URL =
   "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-jp@latest/japanese-700-normal.woff";
 
+// Module-level font cache to avoid refetching on every image render.
+let _fontCache: ArrayBuffer | null = null;
 async function loadFont(): Promise<ArrayBuffer> {
-  // Next.js dedupes identical fetches within a worker, so the font is
-  // downloaded at most once per build worker rather than per image.
+  if (_fontCache) return _fontCache;
   const res = await fetch(FONT_URL, { cache: "force-cache" });
   if (!res.ok) throw new Error(`Font fetch failed: ${res.status}`);
-  return res.arrayBuffer();
+  _fontCache = await res.arrayBuffer();
+  return _fontCache;
 }
 
 function truncate(text: string, max: number): string {

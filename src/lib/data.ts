@@ -5,7 +5,16 @@ import path from "path";
 const THREADS_DIR = path.join(process.cwd(), "data", "threads");
 const MEMBERS_PATH = path.join(process.cwd(), "data", "members.json");
 
+// Module-level caches — safe because data files are read-only during a
+// build and the Node.js process is reused across static generation calls
+// within the same worker. Without this cache, every getThread/getMembers
+// call re-reads all JSON files from disk, which becomes catastrophic when
+// generating 2,400+ OGP images on a single Vercel worker.
+let _threadsCache: Thread[] | null = null;
+let _membersCache: Record<string, Member> | null = null;
+
 function loadThreads(): Thread[] {
+  if (_threadsCache) return _threadsCache;
   if (!fs.existsSync(THREADS_DIR)) return [];
 
   const files = fs
@@ -21,15 +30,18 @@ function loadThreads(): Thread[] {
       threads.push(...data);
     }
   }
+  _threadsCache = threads;
   return threads;
 }
 
 function loadMembers(): Record<string, Member> {
+  if (_membersCache) return _membersCache;
   if (!fs.existsSync(MEMBERS_PATH)) return {};
 
   const raw = fs.readFileSync(MEMBERS_PATH, "utf-8");
   const data = JSON.parse(raw);
   if (data && typeof data === "object" && !Array.isArray(data)) {
+    _membersCache = data;
     return data;
   }
   return {};
