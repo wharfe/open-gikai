@@ -35,19 +35,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: `/t/${threadId}` },
+    // OG/Twitter images are emitted by opengraph-image.tsx in this
+    // segment and injected automatically by Next.js — no explicit
+    // images array needed here.
     openGraph: {
       title,
       description,
       type: "article",
       url: `https://open-gikai.net/t/${threadId}`,
       siteName: "OpenGIKAI",
-      images: [{ url: `/og/${threadId}.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`/og/${threadId}.png`],
     },
   };
 }
