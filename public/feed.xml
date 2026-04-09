@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Apr 2026 21:24:47 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 21:23:35 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W15 国会まとめ — 2件の議論</title>
+      <title>2026-W15 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W15</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W15</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。令和８年度予算成立及び中東情勢への対応等についての会見ほか。</description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、2委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見、令和８年度予算成立及び中東情勢への対応等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,14 @@
       <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
       <description>3件のスレッド、1委員会の議論をまとめました。日米首脳会談についての会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>ペゼシュキアン・イラン大統領との電話会談 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260408_d9326d_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260408_d9326d_01</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <description>中東情勢の沈静化とホルムズ海峡の航行安全確保について日イ首脳が協議（首相記者会見・2026.04.08・3発言）</description>
+      <category>ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</category>
     </item>
     <item>
       <title>令和8年度予算の成立と年度内成立の失敗 — 令和８年度予算成立及び中東情勢への対応等についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_12</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>2002年日朝首脳会談での拉致被害者帰国に関する約束と経緯の検証（国会会議録・2026.03.04・2発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>防衛装備移転と平和国家としての日本 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_13</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>防衛装備移転五類型見直しと日本の平和国家ブランドへの影響を検討（国会会議録・2026.03.04・4発言）</description>
       <category>国際問題に関する調査会</category>
     </item>
   </channel>
