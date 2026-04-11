@@ -51,16 +51,51 @@ export function getThreads(): Thread[] {
   return loadThreads().sort((a, b) => b.date.localeCompare(a.date));
 }
 
+// Existing ministries and institutions that are "actors" rather than
+// trending topics. Proposed/debated bodies (e.g. 防災庁) are intentionally
+// NOT listed — they can legitimately be the subject of debate.
+const TREND_MINISTRY_BLOCKLIST: ReadonlySet<string> = new Set([
+  // Cabinet and ministries
+  "内閣府", "内閣官房", "総務省", "法務省", "外務省", "財務省",
+  "文部科学省", "厚生労働省", "農林水産省", "経済産業省",
+  "国土交通省", "環境省", "防衛省", "国交省",
+  // Agencies
+  "復興庁", "デジタル庁", "こども家庭庁", "消費者庁", "金融庁",
+  "警察庁", "文化庁", "スポーツ庁", "観光庁", "気象庁",
+  "会計検査院", "人事院",
+  // Other institutional actors
+  "国立国会図書館", "関係省庁", "事務局",
+]);
+
+let _trendBlocklistCache: Set<string> | null = null;
+
+/** Blocklist of keywords that should never appear in trend aggregation. */
+function getTrendBlocklist(): Set<string> {
+  if (_trendBlocklistCache) return _trendBlocklistCache;
+  const blocklist = new Set<string>(TREND_MINISTRY_BLOCKLIST);
+  // Politicians are handled by dedicated profile pages — they should not
+  // surface as trend keywords even when an AI extractor names them.
+  for (const m of Object.values(loadMembers())) {
+    if (m.name) blocklist.add(m.name);
+  }
+  _trendBlocklistCache = blocklist;
+  return blocklist;
+}
+
 /**
  * Count, for each keyword in a thread, how many distinct speeches mention it.
  * Returns the top-N most-mentioned keywords as a map.
  * A keyword repeated within a single speech is counted once.
+ * Keywords matching politician names or known institutional actors are
+ * filtered out before counting.
  */
 function threadKeywordCounts(thread: Thread, n: number): Record<string, number> {
+  const blocklist = getTrendBlocklist();
   const counts: Record<string, number> = {};
   for (const s of thread.speeches) {
     const unique = new Set(s.keywords);
     for (const k of unique) {
+      if (blocklist.has(k)) continue;
       counts[k] = (counts[k] || 0) + 1;
     }
   }
