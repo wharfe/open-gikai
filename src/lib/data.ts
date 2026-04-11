@@ -51,18 +51,23 @@ export function getThreads(): Thread[] {
   return loadThreads().sort((a, b) => b.date.localeCompare(a.date));
 }
 
-/** Extract top-N unique keywords from a thread's speeches. */
-function topKeywords(thread: Thread, n: number): string[] {
+/**
+ * Count, for each keyword in a thread, how many distinct speeches mention it.
+ * Returns the top-N most-mentioned keywords as a map.
+ * A keyword repeated within a single speech is counted once.
+ */
+function threadKeywordCounts(thread: Thread, n: number): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const s of thread.speeches) {
-    for (const k of s.keywords) {
+    const unique = new Set(s.keywords);
+    for (const k of unique) {
       counts[k] = (counts[k] || 0) + 1;
     }
   }
-  return Object.entries(counts)
+  const top = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, n)
-    .map(([k]) => k);
+    .slice(0, n);
+  return Object.fromEntries(top);
 }
 
 /** Lightweight thread summaries for feed and sidebar (no raw speeches). */
@@ -73,8 +78,11 @@ export type ThreadSummary = Pick<
 > & {
   speechCount: number;
   memberIds: string[];
-  /** Top keywords for trend aggregation (deduplicated, max 8 per thread). */
-  keywords: string[];
+  /**
+   * Top keywords for trend aggregation: keyword → number of distinct speeches
+   * in this thread that mention it. Capped at top-10 unique keywords.
+   */
+  keywordCounts: Record<string, number>;
   /** First news article with an image, for link-card preview. */
   newsPreview?: { title: string; url: string; image: string };
 };
@@ -101,7 +109,7 @@ export function getThreadsSummary(): ThreadSummary[] {
         outcome: t.outcome,
         speechCount: t.speeches.length,
         memberIds: [...new Set(t.speeches.map((s) => s.memberId))],
-        keywords: topKeywords(t, 8),
+        keywordCounts: threadKeywordCounts(t, 10),
         newsPreview: newsWithImage
           ? { title: newsWithImage.title, url: newsWithImage.url, image: newsWithImage.image! }
           : undefined,

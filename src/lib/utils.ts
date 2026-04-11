@@ -41,11 +41,17 @@ const TREND_STOPWORDS = new Set([
 // Committee names should not appear as trending topics
 const COMMITTEE_SUFFIX_RE = /委員会$/;
 
+export type TrendEntry = {
+  keyword: string;
+  threadCount: number;
+  speechCount: number;
+};
+
 export function extractTrends(
-  threads: { date: string; topicTag: string; keywords?: string[] }[],
+  threads: { date: string; topicTag: string; keywordCounts?: Record<string, number> }[],
   period?: "今週" | "今国会" | "今年",
   sessionStartDate?: string,
-): [string, number][] {
+): TrendEntry[] {
   // Filter threads by period based on date field (YYYY.MM.DD format)
   const now = new Date();
   const filtered = period
@@ -76,17 +82,23 @@ export function extractTrends(
       })
     : threads;
 
-  const counts: Record<string, number> = {};
+  const threadCounts: Record<string, number> = {};
+  const speechCounts: Record<string, number> = {};
   for (const t of filtered) {
-    const kws = t.keywords || [];
-    for (const k of kws) {
-      if (!TREND_STOPWORDS.has(k) && !COMMITTEE_SUFFIX_RE.test(k)) {
-        counts[k] = (counts[k] || 0) + 1;
-      }
+    const kc = t.keywordCounts || {};
+    for (const [k, n] of Object.entries(kc)) {
+      if (TREND_STOPWORDS.has(k) || COMMITTEE_SUFFIX_RE.test(k)) continue;
+      threadCounts[k] = (threadCounts[k] || 0) + 1;
+      speechCounts[k] = (speechCounts[k] || 0) + n;
     }
   }
-  return Object.entries(counts)
-    .sort((a, b) => b[1] - a[1])
+  return Object.keys(threadCounts)
+    .map((k) => ({
+      keyword: k,
+      threadCount: threadCounts[k],
+      speechCount: speechCounts[k],
+    }))
+    .sort((a, b) => b.speechCount - a.speechCount || b.threadCount - a.threadCount)
     .slice(0, 10);
 }
 

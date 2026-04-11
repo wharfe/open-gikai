@@ -54,20 +54,20 @@ export function TrendPanel({ threads, sessionStartDate }: TrendPanelProps) {
           この期間のトレンドはありません
         </div>
       ) : (
-        trends.map(([keyword, count], i) => (
+        trends.map((t, i) => (
           <Link
-            key={keyword}
-            href={`/search?q=${encodeURIComponent(keyword)}`}
+            key={t.keyword}
+            href={`/search?q=${encodeURIComponent(t.keyword)}`}
             className="block cursor-pointer px-4 py-3 transition-colors hover:bg-x-hover"
           >
             <div className="text-[13px] text-x-secondary">
               {i + 1} · トレンド
             </div>
             <div className="text-[15px] font-bold text-x-text">
-              #{keyword}
+              #{t.keyword}
             </div>
             <div className="text-[13px] text-x-secondary">
-              {count}件の発言
+              {t.threadCount}スレッド・{t.speechCount}発言
             </div>
           </Link>
         ))
