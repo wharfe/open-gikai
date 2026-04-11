@@ -36,6 +36,9 @@ const TREND_STOPWORDS = new Set([
   "継続調査", "継続審査", "委員派遣", "視察報告",
   "人事", "弔詞", "就任挨拶", "就任", "新体制", "会長選任",
   "本会議", "特別委", "補正予算",
+  // Observed in trend output 2026-04-11 — procedural noise that leaked through
+  "委員長就任挨拶", "委員発言整理", "総理出席", "審議時間", "議事説明",
+  "総理大臣出席", "内閣総理大臣出席", "委員長挨拶", "委員長選任",
 ]);
 
 // Committee names should not appear as trending topics

@@ -11,8 +11,13 @@ type TrendPanelProps = {
   sessionStartDate?: string;
 };
 
+// Display order is chronological (今週→今国会→今年), but the initial
+// selection prefers the session window because a single week is often too
+// sparse to surface meaningful trends.
+const DEFAULT_PERIOD_PREFERENCE: (typeof TREND_PERIODS)[number][] = ["今国会", "今週", "今年"];
+
 function findDefaultPeriod(threads: ThreadSummary[], sessionStartDate?: string): (typeof TREND_PERIODS)[number] {
-  for (const p of TREND_PERIODS) {
+  for (const p of DEFAULT_PERIOD_PREFERENCE) {
     if (extractTrends(threads, p, sessionStartDate).length > 0) return p;
   }
   return TREND_PERIODS[0];
