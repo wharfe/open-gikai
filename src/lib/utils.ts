@@ -13,7 +13,7 @@ export function getStyle(member: Member): PartyStyle {
 }
 
 // Procedural keywords that don't represent meaningful topics
-const TREND_STOPWORDS = new Set([
+export const TREND_STOPWORDS = new Set([
   // Procedural
   "議事進行", "質疑終了", "質疑開始", "委員長", "感謝",
   "参考人紹介", "参考人意見", "参考人", "参考人招致", "参考人出頭", "参考人交代",
@@ -39,10 +39,35 @@ const TREND_STOPWORDS = new Set([
   // Observed in trend output 2026-04-11 — procedural noise that leaked through
   "委員長就任挨拶", "委員発言整理", "総理出席", "審議時間", "議事説明",
   "総理大臣出席", "内閣総理大臣出席", "委員長挨拶", "委員長選任",
+  // Additional procedural clusters found 2026-04-11 via keyword frequency survey
+  "委員長一任", "委員長報告", "委員長指名", "委員長就任",
+  "有識者検討会", "有識者意見",
+  "厚生労働副大臣就任", "厚生労働大臣政務官就任",
+  "経済産業大臣政務官", "経済産業副大臣",
 ]);
 
 // Committee names should not appear as trending topics
-const COMMITTEE_SUFFIX_RE = /委員会$/;
+export const COMMITTEE_SUFFIX_RE = /委員会$/;
+
+/**
+ * Canonical form map for keyword variants. Apply BEFORE stopword and top-N
+ * filtering so variant forms merge their counts into the canonical form.
+ * Keep this set small and high-confidence — aggressive aliasing risks
+ * collapsing genuinely distinct concepts (e.g. "令和8年度予算" vs
+ * "令和8年度概算要求" look similar but refer to different fiscal artifacts).
+ */
+export const TREND_ALIASES: Record<string, string> = {
+  // Budget: "予算成立" is the action, but trend-wise it's the same topic
+  "令和8年度予算成立": "令和8年度予算",
+  "令和7年度予算成立": "令和7年度予算",
+  // Gasoline provisional tax — the debate target is the tax itself,
+  // whether "廃止" or otherwise
+  "ガソリン暫定税率廃止": "ガソリン暫定税率",
+  // My Number abbreviations
+  "マイナ": "マイナンバー",
+  // Noto earthquake — same event, variant naming
+  "能登地震": "能登半島地震",
+};
 
 export type TrendEntry = {
   keyword: string;

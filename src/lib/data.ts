@@ -1,6 +1,7 @@
 import type { Member, Thread } from "@/types";
 import fs from "fs";
 import path from "path";
+import { COMMITTEE_SUFFIX_RE, TREND_ALIASES, TREND_STOPWORDS } from "@/lib/utils";
 
 const THREADS_DIR = path.join(process.cwd(), "data", "threads");
 const MEMBERS_PATH = path.join(process.cwd(), "data", "members.json");
@@ -85,17 +86,30 @@ function getTrendBlocklist(): Set<string> {
 /**
  * Count, for each keyword in a thread, how many distinct speeches mention it.
  * Returns the top-N most-mentioned keywords as a map.
- * A keyword repeated within a single speech is counted once.
- * Keywords matching politician names or known institutional actors are
- * filtered out before counting.
+ *
+ * Pipeline per keyword:
+ *   1. Alias normalization (variant → canonical form) — merges variant counts
+ *      BEFORE any filtering, so "令和8年度予算成立" joins "令和8年度予算".
+ *   2. Drop politician names and institutional actors (member + ministry list).
+ *   3. Drop procedural stopwords and bare committee names.
+ *   4. Dedupe within each speech so one repeated keyword counts once.
+ *   5. Take the top-N by speech frequency.
+ *
+ * Filters are applied BEFORE the top-N cap so noise can't evict legitimate
+ * topics.
  */
 function threadKeywordCounts(thread: Thread, n: number): Record<string, number> {
   const blocklist = getTrendBlocklist();
   const counts: Record<string, number> = {};
   for (const s of thread.speeches) {
-    const unique = new Set(s.keywords);
-    for (const k of unique) {
+    const seenInSpeech = new Set<string>();
+    for (const raw of s.keywords) {
+      const k = TREND_ALIASES[raw] ?? raw;
+      if (seenInSpeech.has(k)) continue;
+      seenInSpeech.add(k);
       if (blocklist.has(k)) continue;
+      if (TREND_STOPWORDS.has(k)) continue;
+      if (COMMITTEE_SUFFIX_RE.test(k)) continue;
       counts[k] = (counts[k] || 0) + 1;
     }
   }
