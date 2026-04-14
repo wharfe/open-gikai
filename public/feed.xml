@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 13 Apr 2026 21:23:52 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 21:25:13 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W16 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W16</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W16</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W15 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W15</link>
@@ -32,12 +40,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W12 国会まとめ — 3件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W12</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W12</guid>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、1委員会の議論をまとめました。日米首脳会談についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>日・ベトナム首脳電話会談の内容と中東情勢への対応 — トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260413_d78e0b_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260413_d78e0b_01</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <description>ラム書記長兼国家主席への祝意表明と中東情勢を受けたアジア地域のエネルギー強靱化協力を確認（首相記者会見・2026.04.13・2発言）</description>
+      <category>トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</category>
+    </item>
+    <item>
+      <title>ベトナムからの石油提供要請への対応 — トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260413_d78e0b_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260413_d78e0b_02</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <description>ベトナムからの石油提供要請に対し、現地での石油関連製品製造等の必要な対応を実施中（首相記者会見・2026.04.13・2発言）</description>
+      <category>トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</category>
     </item>
     <item>
       <title>ペゼシュキアン・イラン大統領との電話会談 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_10</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>トランプ2.0外交政策がインド太平洋戦略環境と日米同盟に与える影響を分析（国会会議録・2026.03.04・6発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>国際法と武力行使の合法性 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_11</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>戦争違法化の歴史と現在の国際法における武力行使の合法性について議論（国会会議録・2026.03.04・4発言）</description>
-      <category>国際問題に関する調査会</category>
-    </item>
-    <item>
-      <title>日朝首脳会談と拉致問題 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_12</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>2002年日朝首脳会談での拉致被害者帰国に関する約束と経緯の検証（国会会議録・2026.03.04・2発言）</description>
       <category>国際問題に関する調査会</category>
     </item>
   </channel>
