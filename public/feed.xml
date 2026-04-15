@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 14 Apr 2026 21:25:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 21:26:15 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W16 国会まとめ — 2件の議論</title>
+      <title>2026-W16 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W16</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W16</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見ほか。</description>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、2委員会の議論をまとめました。ハイサム・オマーン国王との電話会談等についての会見、トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,22 @@
       <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
       <description>1件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>日・オマーン首脳電話会談とイラン攻撃被害への対応 — ハイサム・オマーン国王との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260414_803e65_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260414_803e65_01</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <description>オマーン国王との電話会談でイラン攻撃による被害にお見舞いを表明（首相記者会見・2026.04.14・2発言）</description>
+      <category>ハイサム・オマーン国王との電話会談等についての会見</category>
+    </item>
+    <item>
+      <title>自民党大会での自衛官国歌斉唱問題 — ハイサム・オマーン国王との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260414_803e65_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260414_803e65_02</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <description>自衛官が私人として自民党大会で君が代を歌唱したことの適法性を説明（首相記者会見・2026.04.14・4発言）</description>
+      <category>ハイサム・オマーン国王との電話会談等についての会見</category>
     </item>
     <item>
       <title>日・ベトナム首脳電話会談の内容と中東情勢への対応 — トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</title>
@@ -422,22 +438,6 @@
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>地方製造業での女性雇用確保と子育て支援体制、インターンシップ活用による意識変化（国会会議録・2026.03.04・8発言）</description>
       <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>高齢男性の社会参加と働き方改革 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_09</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>高齢男性単身世帯の社会参加促進と労働時間規制緩和が少子化対策に与える影響（国会会議録・2026.03.04・16発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>トランプ第二期政権の外交・安全保障政策とその影響 — 国際問題に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_cf2e13_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_cf2e13_10</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>トランプ2.0外交政策がインド太平洋戦略環境と日米同盟に与える影響を分析（国会会議録・2026.03.04・6発言）</description>
-      <category>国際問題に関する調査会</category>
     </item>
   </channel>
 </rss>
