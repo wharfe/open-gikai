@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Apr 2026 21:24:06 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 21:22:35 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W17 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W17</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W17</guid>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。三陸沖を震源とする地震についての会見（２）ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W16 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W16</link>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W13 国会まとめ — 1件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W13</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W13</guid>
-      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
-      <description>1件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>三陸沖地震における津波警報発表に対する緊急避難指示と防災対応 — 三陸沖を震源とする地震についての会見（２）</title>
+      <link>https://open-gikai.net/t/t_20260420_c92cc7_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260420_c92cc7_01</guid>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
+      <description>三陸沖地震発生を受けて津波警報対象地域への避難指示と後発地震注意情報発表の可能性を説明（首相記者会見・2026.04.20・1発言）</description>
+      <category>三陸沖を震源とする地震についての会見（２）</category>
     </item>
     <item>
       <title>AZEC+オンライン首脳会合とエネルギー協力強化 — 冒頭に発言する高市総理</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_06</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>バーチャル関係重視やAI依存など個人の価値観変化が結婚・家族形成に与える影響（国会会議録・2026.03.04・10発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>経済格差と結婚・出産への影響 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_07</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>所得格差が結婚・出産行動に与える影響と教育費負担、格差の世代間継承問題（国会会議録・2026.03.04・13発言）</description>
       <category>国民生活・経済に関する調査会</category>
     </item>
   </channel>
