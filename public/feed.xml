@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Apr 2026 21:22:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 21:26:04 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W17 国会まとめ — 1件の議論</title>
+      <title>2026-W17 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W17</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W17</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <description>1件のスレッド、1委員会の議論をまとめました。三陸沖を震源とする地震についての会見（２）ほか。</description>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>5件のスレッド、3委員会の議論をまとめました。議院運営委員会、総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見、三陸沖を震源とする地震についての会見（２）ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,38 @@
       <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
       <description>2件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>山崎正恭議員の防衛大臣質問の議題適合性 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260421_4b8f6c_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_4b8f6c_01</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>山崎議員の防衛大臣への質問が議題外発言にあたるとして与党が出席要求を拒否する動議を提出（国会会議録・2026.04.21・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>総理就任半年の政権運営振り返り — 総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260421_d1b854_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_d1b854_02</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>高市総理の就任半年を振り返り、決断と前進の内閣として国力強化に取り組む姿勢を表明（首相記者会見・2026.04.21・2発言）</description>
+      <category>総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</category>
+    </item>
+    <item>
+      <title>防衛装備移転三原則の改正 — 総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260421_d1b854_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_d1b854_03</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>防衛装備移転三原則改正により従来の5類型制限を撤廃し、パートナー国との装備協力を拡大（首相記者会見・2026.04.21・2発言）</description>
+      <category>総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</category>
+    </item>
+    <item>
+      <title>靖国神社春季例大祭への対応 — 総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260421_d1b854_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_d1b854_04</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <description>総理が真榊奉納を行い、国のために命を捧げた方への敬意表明は普通のことと述べる（首相記者会見・2026.04.21・2発言）</description>
+      <category>総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</category>
     </item>
     <item>
       <title>三陸沖地震における津波警報発表に対する緊急避難指示と防災対応 — 三陸沖を震源とする地震についての会見（２）</title>
@@ -405,38 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_02</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>結婚率低下の要因分析と少子化対策の効果、経済支援から働き方改革まで幅広い議論（国会会議録・2026.03.04・15発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>地域格差と課題先進地域の対応策 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_03</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>人口減少の地域格差と課題先進地域での対応策、重層的支援体制整備の課題を議論（国会会議録・2026.03.04・10発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>高齢単身世帯と地域包括ケア — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_04</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>高齢単身世帯急増への対応として医療・介護・福祉連携と地域支援体制構築を議論（国会会議録・2026.03.04・8発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>東京一極集中と女性の地方定着 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_05</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>東京一極集中の実態と地方での女性雇用確保策、リモートワークやDX推進の重要性（国会会議録・2026.03.04・8発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>社会構造変化と個人の価値観 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_06</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>バーチャル関係重視やAI依存など個人の価値観変化が結婚・家族形成に与える影響（国会会議録・2026.03.04・10発言）</description>
       <category>国民生活・経済に関する調査会</category>
     </item>
   </channel>
