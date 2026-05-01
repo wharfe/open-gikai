@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 30 Apr 2026 21:28:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 21:24:55 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W18 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W18</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W18</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W17 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W17</link>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W14 国会まとめ — 2件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W14</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W14</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>ペゼシュキアン・イラン大統領との電話会談内容とホルムズ海峡航行 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260430_2c6d20_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260430_2c6d20_01</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <description>イラン大統領との電話会談で米イラン協議再開への期待と日本関係船舶のホルムズ海峡通過について確認（首相記者会見・2026.04.30・2発言）</description>
+      <category>ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</category>
     </item>
     <item>
       <title>山崎正恭議員の防衛大臣質問の議題適合性 — 議院運営委員会</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_01</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>日本の人口動態の現状と課題について3名の専門家が出生率低下、高齢化、地域格差等を分析（国会会議録・2026.03.04・7発言）</description>
-      <category>国民生活・経済に関する調査会</category>
-    </item>
-    <item>
-      <title>人口減少・少子化対策と結婚支援 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_02</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>結婚率低下の要因分析と少子化対策の効果、経済支援から働き方改革まで幅広い議論（国会会議録・2026.03.04・15発言）</description>
       <category>国民生活・経済に関する調査会</category>
     </item>
   </channel>
