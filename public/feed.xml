@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 01 May 2026 21:24:55 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2026 21:21:29 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W18 国会まとめ — 1件の議論</title>
+      <title>2026-W18 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W18</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W18</guid>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
-      <description>1件のスレッド、1委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見ほか。</description>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、2委員会の議論をまとめました。高市総理はベトナム及びオーストラリア訪問等についての会見を行いました、ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,22 @@
       <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
       <description>3件のスレッド、2委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見、令和８年度予算成立及び中東情勢への対応等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>高市総理のベトナム・オーストラリア訪問の意義と成果 — 高市総理はベトナム及びオーストラリア訪問等についての会見を行いました</title>
+      <link>https://open-gikai.net/t/t_20260501_e82249_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260501_e82249_01</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <description>ベトナムで経済安全保障協力を軸とした新指導部との関係構築、豪州との友好協力を推進（首相記者会見・2026.05.01・2発言）</description>
+      <category>高市総理はベトナム及びオーストラリア訪問等についての会見を行いました</category>
+    </item>
+    <item>
+      <title>中国の海洋進出・経済威圧への対応と日中関係 — 高市総理はベトナム及びオーストラリア訪問等についての会見を行いました</title>
+      <link>https://open-gikai.net/t/t_20260501_e82249_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260501_e82249_02</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <description>中国の強引な海洋進出を踏まえた対応について、重要な隣国として戦略的に対話を継続する方針（首相記者会見・2026.05.01・3発言）</description>
+      <category>高市総理はベトナム及びオーストラリア訪問等についての会見を行いました</category>
     </item>
     <item>
       <title>ペゼシュキアン・イラン大統領との電話会談内容とホルムズ海峡航行 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
@@ -422,22 +438,6 @@
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <description>公債発行特例法改正案など財政関連4法案の本会議での趣旨説明・質疑手続きを決定（国会会議録・2026.03.05・2発言）</description>
       <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>地方財政関連法案2件の本会議趣旨説明手続き — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260305_516387_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260305_516387_02</guid>
-      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
-      <description>地方財政計画発言と地方税法等改正案など2法案の本会議での趣旨説明・質疑手続きを決定（国会会議録・2026.03.05・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>人口動態と少子化・高齢化問題の現状 — 国民生活・経済に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20260304_919e15_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260304_919e15_01</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <description>日本の人口動態の現状と課題について3名の専門家が出生率低下、高齢化、地域格差等を分析（国会会議録・2026.03.04・7発言）</description>
-      <category>国民生活・経済に関する調査会</category>
     </item>
   </channel>
 </rss>
