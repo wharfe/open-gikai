@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 04 May 2026 21:31:24 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 21:30:38 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W19 国会まとめ — 3件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W19</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W19</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、1委員会の議論をまとめました。ベトナム及びオーストラリア訪問等についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W18 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W18</link>
@@ -32,12 +40,28 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W15 国会まとめ — 3件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W15</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W15</guid>
-      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、2委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見、令和８年度予算成立及び中東情勢への対応等についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>ベトナム・オーストラリア訪問成果とサプライチェーン強化 — ベトナム及びオーストラリア訪問等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260504_fc7965_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260504_fc7965_01</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <description>中東情勢を踏まえたエネルギー等サプライチェーン強靱化協力と経済安保分野の協力文書発出（首相記者会見・2026.05.04・2発言）</description>
+      <category>ベトナム及びオーストラリア訪問等についての会見</category>
+    </item>
+    <item>
+      <title>日豪「もがみ」型護衛艦共同開発と防衛産業強化 — ベトナム及びオーストラリア訪問等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260504_fc7965_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260504_fc7965_02</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <description>「もがみ」型護衛艦の豪州導入による日豪安保協力強化と防衛装備移転3原則見直し（首相記者会見・2026.05.04・2発言）</description>
+      <category>ベトナム及びオーストラリア訪問等についての会見</category>
+    </item>
+    <item>
+      <title>中東情勢対応補正予算と再審法案提出 — ベトナム及びオーストラリア訪問等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260504_fc7965_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260504_fc7965_03</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <description>中東情勢影響への補正予算編成判断と自民党内反発で遅れる再審法案の今国会提出方針（首相記者会見・2026.05.04・2発言）</description>
+      <category>ベトナム及びオーストラリア訪問等についての会見</category>
     </item>
     <item>
       <title>高市総理のベトナム・オーストラリア訪問の意義と成果 — 高市総理はベトナム及びオーストラリア訪問等についての会見を行いました</title>
@@ -414,30 +438,6 @@
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <description>地震防災緊急事業五か年計画の実施期間延長のための法改正を可決（国会会議録・2026.03.12・2発言）</description>
       <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>イラン情勢悪化に伴うガソリン価格高騰対策 — イラン情勢に関する政府の対応についての会見</title>
-      <link>https://open-gikai.net/t/t_20260311_2e73fd_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260311_2e73fd_01</guid>
-      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
-      <description>中東情勢悪化による原油高騰を受け、ガソリン価格対策の検討状況を確認（首相記者会見・2026.03.11・2発言）</description>
-      <category>イラン情勢に関する政府の対応についての会見</category>
-    </item>
-    <item>
-      <title>防災担当大臣・副大臣・政務官の所信表明 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260310_b0cd80_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260310_b0cd80_01</guid>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <description>防災担当の閣僚らが災害対策への決意と能登半島地震等への対応方針を表明（国会会議録・2026.03.10・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>財政関連法案4件の本会議趣旨説明手続き — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260305_516387_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260305_516387_01</guid>
-      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
-      <description>公債発行特例法改正案など財政関連4法案の本会議での趣旨説明・質疑手続きを決定（国会会議録・2026.03.05・2発言）</description>
-      <category>議院運営委員会</category>
     </item>
   </channel>
 </rss>
