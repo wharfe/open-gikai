@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 15 May 2026 21:29:06 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2026 21:24:00 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W20 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W20</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W20</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W19 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W19</link>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W16 国会まとめ — 5件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W16</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W16</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <description>5件のスレッド、3委員会の議論をまとめました。冒頭に発言する高市総理、ハイサム・オマーン国王との電話会談等についての会見、トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>トランプ米大統領との電話会談内容 — トランプ米国大統領との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260515_29b669_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260515_29b669_01</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>トランプ大統領の中国訪問直後に電話会談を実施、中国関連課題とイラン情勢について意見交換（首相記者会見・2026.05.15・4発言）</description>
+      <category>トランプ米国大統領との電話会談についての会見</category>
     </item>
     <item>
       <title>ベトナム・オーストラリア訪問成果とサプライチェーン強化 — ベトナム及びオーストラリア訪問等についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_19</guid>
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <description>新総合防災情報システムの整備と災害情報共有体制のデジタル化（国会会議録・2026.03.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>地震防災対策特別措置法改正 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_20</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_20</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>地震防災緊急事業五か年計画の実施期間延長のための法改正を可決（国会会議録・2026.03.12・2発言）</description>
       <category>災害対策特別委員会</category>
     </item>
   </channel>
