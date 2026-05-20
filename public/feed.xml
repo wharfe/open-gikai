@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 19 May 2026 21:38:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 21:41:52 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W21 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W21</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W21</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。記者の質問に答える高市総理ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W20 国会まとめ — 1件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W20</link>
@@ -32,12 +40,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W17 国会まとめ — 5件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W17</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W17</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description>5件のスレッド、3委員会の議論をまとめました。議院運営委員会、総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見、三陸沖を震源とする地震についての会見（２）ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>韓国訪問と日韓首脳会談 — 記者の質問に答える高市総理</title>
+      <link>https://open-gikai.net/t/t_20260519_d35e4e_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260519_d35e4e_01</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>高市総理の韓国訪問と李在明大統領との首脳会談の意義や期待する成果について（首相記者会見・2026.05.19・2発言）</description>
+      <category>記者の質問に答える高市総理</category>
+    </item>
+    <item>
+      <title>週刊誌報道と中傷動画投稿疑惑 — 記者の質問に答える高市総理</title>
+      <link>https://open-gikai.net/t/t_20260519_d35e4e_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260519_d35e4e_02</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>選挙期間中の他候補中傷動画投稿に関する週刊誌報道と総理答弁の整合性について（首相記者会見・2026.05.19・5発言）</description>
+      <category>記者の質問に答える高市総理</category>
     </item>
     <item>
       <title>トランプ米大統領との電話会談内容 — トランプ米国大統領との電話会談についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_17</guid>
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <description>グループ補助金の用途変更手続き簡素化と豪雪災害適用を要望（国会会議録・2026.03.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>外国人災害対応・避難所運営 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_18</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_18</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>在留外国人増加に対応した災害時の避難所運営体制整備を議論（国会会議録・2026.03.12・9発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災デジタルプラットフォーム・SOBO-WEB — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_19</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_19</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>新総合防災情報システムの整備と災害情報共有体制のデジタル化（国会会議録・2026.03.12・5発言）</description>
       <category>災害対策特別委員会</category>
     </item>
   </channel>
