@@ -83,6 +83,10 @@ jobs:
           echo "list=$DATES" >> "$GITHUB_OUTPUT"
 
       # ----- Summarize (auto-resume per date) -----
+      # --batch routes the per-thread summary calls through the Message
+      # Batches API for a 50% input/output token discount, stackable with
+      # the prompt-caching prefix. Grouping and outcome extraction remain
+      # synchronous (one small call per meeting; not worth batching).
       - name: Summarize new content with Claude API
         if: steps.dates.outputs.list != ''
         env:
@@ -92,7 +96,7 @@ jobs:
           set -e
           for d in $DATES_LIST; do
             echo "::group::Summarize $d"
-            python scripts/summarize.py --date "$d"
+            python scripts/summarize.py --date "$d" --batch
             echo "::endgroup::"
           done
 
