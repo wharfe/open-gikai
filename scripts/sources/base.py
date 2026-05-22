@@ -117,6 +117,40 @@ class SourceAdapter(ABC):
 
         return filepath
 
+    def write_output_by_meeting_date(
+        self,
+        result: FetchResult,
+        output_dir: str = "data/raw",
+    ) -> list[tuple[str, str, int]]:
+        """Split a multi-date FetchResult by meeting date and write per-date files.
+
+        Returns a list of (meeting_date, filepath, speech_count) tuples for
+        each date that had at least one meeting. Each output file uses the
+        single-date filename convention (e.g. ``ndl-2026-04-10.json``) so the
+        downstream summarizer can pick it up without changes.
+        """
+        from collections import defaultdict
+
+        by_date: dict[str, list] = defaultdict(list)
+        for meeting in result.meetings:
+            if meeting.date:
+                by_date[meeting.date].append(meeting)
+
+        written: list[tuple[str, str, int]] = []
+        for meeting_date, meetings in sorted(by_date.items()):
+            single = FetchResult(
+                source=result.source,
+                fetched_at=result.fetched_at,
+                date_from=meeting_date,
+                date_until=meeting_date,
+                total_speeches=sum(len(m.speeches) for m in meetings),
+                meetings=meetings,
+            )
+            filepath = self.write_output(single, output_dir=output_dir)
+            written.append((meeting_date, filepath, single.total_speeches))
+
+        return written
+
 
 def _meeting_to_dict(m: RawMeeting) -> dict:
     """Convert RawMeeting to the dict format expected by the pipeline.

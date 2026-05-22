@@ -2,14 +2,16 @@ name: Daily Batch
 
 on:
   schedule:
-    # Run at 6:00 AM JST (21:00 UTC previous day)
-    # NDL transcripts are typically published a few days after proceedings
+    # Run at 6:00 AM JST (21:00 UTC previous day).
+    # NDL transcripts are typically published days or weeks after a session,
+    # so the batch re-fetches a sliding window each run.
     - cron: "0 21 * * *"
   workflow_dispatch:
     inputs:
-      date:
-        description: "Date to process (YYYY-MM-DD), defaults to yesterday"
+      lookback_days:
+        description: "How many past days to (re-)fetch. Default: 30"
         required: false
+        default: "30"
 
 permissions:
   contents: write
@@ -19,6 +21,10 @@ jobs:
     name: Fetch & Summarize
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    env:
+      # Route untrusted input through env so it never lands in a run: string
+      # as a literal expression interpolation.
+      LOOKBACK_DAYS: ${{ inputs.lookback_days || '30' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -37,73 +43,77 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Determine date
-        id: date
+      - name: Validate lookback window
+        # Defense-in-depth: the input is admin-only and is also routed through
+        # env, but we still pin it to a small integer before any shell use.
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            echo "target=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "target=$(date -u -d 'yesterday' +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          case "$LOOKBACK_DAYS" in
+            ''|*[!0-9]*) echo "Invalid LOOKBACK_DAYS: $LOOKBACK_DAYS"; exit 1 ;;
+          esac
+          if [ "$LOOKBACK_DAYS" -gt 365 ]; then
+            echo "LOOKBACK_DAYS too large: $LOOKBACK_DAYS"; exit 1
           fi
 
       # ----- Source: NDL Diet Records -----
-      - name: Fetch from NDL API
-        run: python scripts/fetch_ndl.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
-
-      - name: Check NDL speeches
-        id: check_ndl
-        run: |
-          FILE="data/raw/ndl-${{ steps.date.outputs.target }}.json"
-          # Fallback to legacy filename
-          [ ! -f "$FILE" ] && FILE="data/raw/${{ steps.date.outputs.target }}.json"
-          if [ -f "$FILE" ]; then
-            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
-            echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
-            echo "NDL: Found $COUNT speeches"
-          else
-            echo "speeches=0" >> "$GITHUB_OUTPUT"
-            echo "NDL: No data file found"
-          fi
+      - name: Fetch from NDL API (lookback window)
+        run: python scripts/fetch_ndl.py --lookback-days "$LOOKBACK_DAYS"
 
       # ----- Source: Kantei Press Conferences -----
-      - name: Fetch from Kantei
-        id: check_kantei
+      - name: Fetch from Kantei (lookback window)
         continue-on-error: true
-        run: |
-          python scripts/fetch_kantei.py --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }}
-          FILE="data/raw/kantei-${{ steps.date.outputs.target }}.json"
-          if [ -f "$FILE" ]; then
-            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
-            echo "speeches=$COUNT" >> "$GITHUB_OUTPUT"
-            echo "Kantei: Found $COUNT speeches"
-          else
-            echo "speeches=0" >> "$GITHUB_OUTPUT"
-            echo "Kantei: No press conferences found"
-          fi
+        run: python scripts/fetch_kantei.py --lookback-days "$LOOKBACK_DAYS"
 
       # ----- Source: Council (審議会) Meeting Minutes -----
-      - name: Fetch from Council
-        id: check_council
+      - name: Fetch from Council (lookback window)
         continue-on-error: true
         run: |
-          TOTAL=0
           for COUNCIL in kisei nichiiki kankeijinkou suishin chiikiseikatsu chihousousei digital_denen kyojushien; do
-            python scripts/fetch_council.py --council "$COUNCIL" --date-from ${{ steps.date.outputs.target }} --date-until ${{ steps.date.outputs.target }} || true
+            python scripts/fetch_council.py --council "$COUNCIL" --lookback-days "$LOOKBACK_DAYS" || true
           done
-          for FILE in data/raw/council-*-${{ steps.date.outputs.target }}.json data/raw/council-${{ steps.date.outputs.target }}.json; do
-            [ -f "$FILE" ] || continue
-            COUNT=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['metadata']['totalSpeeches'])")
-            TOTAL=$((TOTAL + COUNT))
-          done
-          echo "speeches=$TOTAL" >> "$GITHUB_OUTPUT"
-          echo "Council: Found $TOTAL speeches"
 
-      # ----- Summarize -----
-      - name: Summarize with Claude API
-        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0' || steps.check_council.outputs.speeches != '0'
+      # ----- Determine which dates have raw data -----
+      - name: Detect dates with raw data
+        id: dates
+        run: |
+          DATES=$(ls data/raw/ 2>/dev/null \
+            | grep -E '^(ndl|kantei|council-[a-z_]+)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.json$' \
+            | sed -E 's/^(ndl|kantei|council-[a-z_]+)-([0-9]{4}-[0-9]{2}-[0-9]{2})\.json$/\2/' \
+            | sort -u | tr '\n' ' ')
+          echo "Found raw data for dates: $DATES"
+          echo "list=$DATES" >> "$GITHUB_OUTPUT"
+
+      # ----- Summarize (auto-resume per date) -----
+      # --batch routes the per-thread summary calls through the Message
+      # Batches API for a 50% input/output token discount, stackable with
+      # the prompt-caching prefix. Grouping and outcome extraction remain
+      # synchronous (one small call per meeting; not worth batching).
+      - name: Summarize new content with Claude API
+        if: steps.dates.outputs.list != ''
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/summarize.py --date ${{ steps.date.outputs.target }}
+          DATES_LIST: ${{ steps.dates.outputs.list }}
+        run: |
+          set -e
+          for d in $DATES_LIST; do
+            echo "::group::Summarize $d"
+            python scripts/summarize.py --date "$d" --batch
+            echo "::endgroup::"
+          done
+
+      # ----- Enrich threads with news articles (Bing News RSS) -----
+      - name: Enrich threads with news
+        if: steps.dates.outputs.list != ''
+        continue-on-error: true
+        env:
+          DATES_LIST: ${{ steps.dates.outputs.list }}
+        run: |
+          for d in $DATES_LIST; do
+            if [ -f "data/threads/$d.json" ]; then
+              echo "::group::Enrich $d"
+              python scripts/enrich-news.py --date "$d" || true
+              echo "::endgroup::"
+            fi
+          done
 
       # ----- Post-processing -----
       - name: Validate and generate
@@ -112,33 +122,100 @@ jobs:
           node scripts/generate-feeds.js
           node scripts/generate-sitemap.mjs
 
+      # ----- Compute "new threads added" metrics for monitoring -----
+      - name: Compute new-thread metrics
+        id: metrics
+        env:
+          DATES_LIST: ${{ steps.dates.outputs.list }}
+        run: |
+          TOTAL_NEW=0
+          NEW_DATES=""
+          for d in $DATES_LIST; do
+            FILE="data/threads/$d.json"
+            [ -f "$FILE" ] || continue
+            COUNT=$(python3 -c "import json; print(len(json.load(open('$FILE'))))")
+            BEFORE=$(git show HEAD:"$FILE" 2>/dev/null \
+              | python3 -c "import json,sys; print(len(json.load(sys.stdin)))" 2>/dev/null \
+              || echo 0)
+            DELTA=$((COUNT - BEFORE))
+            if [ "$DELTA" -gt 0 ]; then
+              TOTAL_NEW=$((TOTAL_NEW + DELTA))
+              NEW_DATES="$NEW_DATES $d(+$DELTA)"
+            fi
+          done
+          echo "new_threads=$TOTAL_NEW" >> "$GITHUB_OUTPUT"
+          echo "new_dates=$NEW_DATES" >> "$GITHUB_OUTPUT"
+          echo "Total new threads this run: $TOTAL_NEW"
+
       - name: Commit and push data
+        id: commit
+        env:
+          NEW_THREADS: ${{ steps.metrics.outputs.new_threads }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/threads/ data/members.json data/status.json public/sitemap.xml public/feed.xml
+          # public/sitemap*.xml covers sitemap.xml, sitemap-*.xml and sitemap_index.xml
+          # — all variants emitted by generate-sitemap.mjs.
+          git add data/threads/ data/members.json data/status.json \
+            public/sitemap.xml public/sitemap-*.xml public/sitemap_index.xml \
+            public/feed.xml
           if git diff --cached --quiet; then
             echo "No changes to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "data: update ${{ steps.date.outputs.target }}"
+            DATE_TAG=$(date -u +%Y-%m-%d)
+            git commit -m "data: daily-batch run ${DATE_TAG} (+${NEW_THREADS} threads)"
             git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Notify IndexNow
-        if: steps.check_ndl.outputs.speeches != '0' || steps.check_kantei.outputs.speeches != '0' || steps.check_council.outputs.speeches != '0'
+        if: steps.metrics.outputs.new_threads != '0'
         continue-on-error: true
-        run: node scripts/notify-indexnow.mjs --date ${{ steps.date.outputs.target }}
+        env:
+          DATES_LIST: ${{ steps.dates.outputs.list }}
+        run: |
+          for d in $DATES_LIST; do
+            if [ -f "data/threads/$d.json" ]; then
+              node scripts/notify-indexnow.mjs --date "$d" || true
+            fi
+          done
+
+      # ----- Surface "stalled pipeline" alerts in the workflow summary -----
+      # Several consecutive zero-thread runs likely indicate a real pipeline
+      # failure (NDL schema change, auth issue), not just a quiet Diet week.
+      - name: Detect stalled pipeline
+        id: stall
+        run: |
+          STALLED=0
+          while read -r line; do
+            if echo "$line" | grep -q '(+0 threads)'; then
+              STALLED=$((STALLED + 1))
+            else
+              break
+            fi
+          done < <(git log --pretty=format:"%s" -n 10)
+          echo "consecutive_zero_runs=$STALLED" >> "$GITHUB_OUTPUT"
+          if [ "$STALLED" -ge 7 ]; then
+            echo "::warning::Pipeline has produced 0 new threads for $STALLED consecutive runs — investigate fetchers"
+          fi
 
       - name: Summary
+        env:
+          DATES_LIST: ${{ steps.dates.outputs.list }}
+          NEW_THREADS: ${{ steps.metrics.outputs.new_threads }}
+          NEW_DATES: ${{ steps.metrics.outputs.new_dates }}
+          COMMITTED: ${{ steps.commit.outputs.committed }}
+          STALLED: ${{ steps.stall.outputs.consecutive_zero_runs }}
         run: |
-          echo "## Daily Batch Summary" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Date**: ${{ steps.date.outputs.target }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **NDL speeches**: ${{ steps.check_ndl.outputs.speeches }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Kantei speeches**: ${{ steps.check_kantei.outputs.speeches || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Council speeches**: ${{ steps.check_council.outputs.speeches || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          if [ -f "data/threads/${{ steps.date.outputs.target }}.json" ]; then
-            THREADS=$(python3 -c "import json; print(len(json.load(open('data/threads/${{ steps.date.outputs.target }}.json'))))")
-            echo "- **Threads generated**: $THREADS" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "- **Threads generated**: 0 (no data or weekend)" >> "$GITHUB_STEP_SUMMARY"
-          fi
+          {
+            echo "## Daily Batch Summary"
+            echo "- **Lookback window**: ${LOOKBACK_DAYS} days"
+            echo "- **Dates with raw data**: ${DATES_LIST:-(none)}"
+            echo "- **New threads this run**: ${NEW_THREADS}"
+            if [ -n "${NEW_DATES}" ]; then
+              echo "- **Per-date breakdown**:${NEW_DATES}"
+            fi
+            echo "- **Committed**: ${COMMITTED}"
+            echo "- **Consecutive zero-thread runs**: ${STALLED}"
+          } >> "$GITHUB_STEP_SUMMARY"

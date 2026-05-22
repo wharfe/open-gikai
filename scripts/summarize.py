@@ -30,7 +30,13 @@ load_dotenv()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from pipeline.grouper import group_meeting, extract_meeting_outcome
-from pipeline.summarizer import summarize_thread
+from pipeline.summarizer import (
+    summarize_thread,
+    build_summary_request,
+    submit_summary_batch,
+    poll_summary_batch,
+    fetch_summary_results,
+)
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
 
@@ -320,6 +326,202 @@ def process_meeting(
     return threads, thread_counter
 
 
+# ---------------------------------------------------------------------------
+# Batch-mode helpers (SUMMARY phase only)
+#
+# Grouping and outcome extraction stay synchronous because they each emit one
+# small call per meeting. The summarization phase emits 3+ calls per meeting
+# with large repeated prompts — that's where the 50% Batches API discount
+# (stackable with prompt caching) actually moves the needle.
+# ---------------------------------------------------------------------------
+
+def make_batch_custom_id(meeting_id: str, thread_idx: int) -> str:
+    """Build an ASCII custom_id for a thread's batch request.
+
+    Meeting IDs contain Japanese characters; the Batches API requires
+    ``custom_id`` to match ``^[a-zA-Z0-9_-]{1,64}$``. We use a 12-hex-char
+    SHA256 prefix which is collision-safe for any plausible batch size.
+    """
+    h = hashlib.sha256(meeting_id.encode("utf-8")).hexdigest()[:12]
+    return f"s_{h}_{thread_idx:02d}"
+
+
+def prepare_meeting_for_batch(
+    client,
+    meeting: dict,
+    model: str,
+) -> dict:
+    """Run grouping + outcome extraction for one meeting (synchronous).
+
+    Returns a dict with the data needed to (a) build the per-thread batch
+    requests and (b) re-assemble threads after the batch returns.
+    """
+    meeting_id = meeting.get("meetingId", "unknown")
+    speeches = meeting.get("speeches", [])
+    raw_lookup = build_speech_lookup(speeches)
+
+    thread_infos = group_meeting(client, meeting, model=model)
+    time.sleep(1)
+    meeting_outcome = extract_meeting_outcome(client, meeting, model=model)
+    time.sleep(1)
+
+    pending = []
+    for idx, thread_info in enumerate(thread_infos):
+        orders = thread_info.get("speechOrders", [])
+        thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+        if not thread_speeches:
+            log.warning(
+                "No speeches for thread '%s' in %s",
+                thread_info.get("topic"), meeting_id,
+            )
+            continue
+        pending.append({
+            "custom_id": make_batch_custom_id(meeting_id, idx),
+            "meeting": meeting,
+            "thread_info": thread_info,
+            "thread_speeches": thread_speeches,
+            "raw_lookup": raw_lookup,
+        })
+
+    return {
+        "meeting_id": meeting_id,
+        "thread_infos": thread_infos,
+        "outcome": meeting_outcome,
+        "pending": pending,
+    }
+
+
+def run_batch_phase(
+    client,
+    meetings: List[dict],
+    progress: dict,
+    members: Dict[str, dict],
+    model: str,
+    date_str: str,
+    thread_counter: int,
+    batch_timeout_seconds: int = 5400,  # 90 min
+    batch_poll_seconds: int = 30,
+) -> tuple:
+    """Process meetings via Batches API for the summary phase.
+
+    Returns ``(new_threads, updated_thread_counter, completed_meeting_ids)``.
+    """
+    # Phase 1: synchronously group + extract outcome for every new meeting.
+    prepared_meetings: list[dict] = []
+    all_pending: list[dict] = []
+
+    for meeting in meetings:
+        meeting_id = meeting.get("meetingId", "unknown")
+        if meeting_id in progress["completed"]:
+            log.info("Skipping already completed: %s", meeting_id)
+            continue
+
+        log.info("Preparing for batch: %s", meeting_id)
+        try:
+            prep = prepare_meeting_for_batch(client, meeting, model)
+        except Exception as e:
+            log.error("Failed to prepare %s: %s", meeting_id, e)
+            progress["failed"].append(meeting_id)
+            continue
+
+        prepared_meetings.append(prep)
+        all_pending.extend(prep["pending"])
+
+    if not all_pending:
+        log.info("Batch phase: nothing to summarize")
+        return [], thread_counter, []
+
+    # Phase 2: submit + poll + fetch.
+    requests = [
+        build_summary_request(
+            p["meeting"], p["thread_info"], p["thread_speeches"],
+            p["custom_id"], model,
+        )
+        for p in all_pending
+    ]
+    log.info("Submitting %d summary requests via Batches API", len(requests))
+    batch_id = submit_summary_batch(client, requests)
+    poll_summary_batch(
+        client, batch_id,
+        timeout_seconds=batch_timeout_seconds,
+        poll_interval_seconds=batch_poll_seconds,
+    )
+    results = fetch_summary_results(client, batch_id)
+
+    # Phase 3: assemble threads in deterministic order (matches sync mode).
+    new_threads: list = []
+    completed_meeting_ids: list = []
+
+    for prep in prepared_meetings:
+        meeting_id = prep["meeting_id"]
+        outcome = prep["outcome"]
+        thread_infos = prep["thread_infos"]
+
+        for p in prep["pending"]:
+            result = results.get(p["custom_id"])
+            if not result:
+                log.warning(
+                    "No result for %s (thread '%s'); skipping",
+                    p["custom_id"], p["thread_info"].get("topic"),
+                )
+                continue
+
+            thread_counter += 1
+            thread_id = make_thread_id(date_str, meeting_id, thread_counter)
+            thread = assemble_thread(
+                p["meeting"], p["thread_info"], result["speeches"],
+                p["raw_lookup"], members, thread_id,
+            )
+            if not thread:
+                continue
+
+            is_last = (p["thread_info"] is thread_infos[-1])
+            thread["outcome"] = {
+                "result": outcome.get("result") if is_last else None,
+                "resolution": outcome.get("resolution") if is_last else None,
+                "commitments": result["commitments"] or [],
+                "status": outcome.get("status", "ongoing"),
+            }
+            new_threads.append(thread)
+
+        # Mark the meeting as completed even if some of its threads failed —
+        # matches the sync path, which catches per-thread exceptions inside
+        # the meeting loop and still records the meeting as done.
+        completed_meeting_ids.append(meeting_id)
+
+    return new_threads, thread_counter, completed_meeting_ids
+
+
+def collect_processed_meeting_ids(threads_path: str) -> set[str]:
+    """Recover the set of meeting_ids already represented in a threads file.
+
+    The thread_id encodes the meeting via a 6-char hash of meeting_id, so we
+    cannot recover the meeting_id directly. Instead we rely on the convention
+    that every thread carries the meeting_id derivable from (committee, house,
+    date) — we reconstruct candidate hashes and compare. To keep this robust
+    we additionally treat the presence of a per-meeting thread as a marker.
+
+    Returns a set of meeting_id hash prefixes (6 chars) that are already
+    represented in the file.
+    """
+    if not os.path.exists(threads_path):
+        return set()
+    try:
+        with open(threads_path, "r", encoding="utf-8") as f:
+            threads = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        log.warning("Could not read %s for resume: %s", threads_path, e)
+        return set()
+    # Thread IDs look like ``t_YYYYMMDD_<6hex>_<index>``. Extract the hash.
+    hashes: set[str] = set()
+    for t in threads:
+        tid = t.get("id", "")
+        parts = tid.split("_")
+        if len(parts) >= 3:
+            hashes.add(parts[2])
+    return hashes
+
+
 def run_pipeline(
     date_str: str,
     meeting_filter: Optional[str] = None,
@@ -330,6 +532,9 @@ def run_pipeline(
     resume: bool = False,
     dry_run: bool = False,
     verbose: bool = False,
+    batch: bool = False,
+    batch_timeout_seconds: int = 5400,
+    batch_poll_seconds: int = 30,
 ) -> None:
     """Run the full summarization pipeline for a given date."""
     # Load raw data — collect meetings from all source files for this date
@@ -368,11 +573,36 @@ def run_pipeline(
         return
 
     # Progress tracking
+    output_path = os.path.join(output_dir, f"{date_str}.json")
     progress_path = os.path.join(output_dir, f"{date_str}.progress.json")
+
+    # Auto-resume: if the threads file already exists, treat already-summarized
+    # meetings as completed so we only spend API calls on new ones. This keeps
+    # the daily window-fetch idempotent without requiring callers to pass --resume.
+    auto_resume = not resume and os.path.exists(output_path)
+
     if resume:
         progress = load_progress(progress_path)
-        # Clear failed list so they get retried
         progress["failed"] = []
+    elif auto_resume:
+        progress = load_progress(progress_path)
+        progress["failed"] = []
+        # Seed completed list from existing threads when the progress file is
+        # missing (it's deleted on clean completion).
+        if not progress["completed"]:
+            existing_hashes = collect_processed_meeting_ids(output_path)
+            for m in meetings:
+                mid = m.get("meetingId", "")
+                if not mid:
+                    continue
+                h = hashlib.sha256(mid.encode("utf-8")).hexdigest()[:6]
+                if h in existing_hashes:
+                    progress["completed"].append(mid)
+            if progress["completed"]:
+                log.info(
+                    "Auto-resume: %d meeting(s) already represented in %s",
+                    len(progress["completed"]), output_path,
+                )
     else:
         progress = {"completed": [], "failed": []}
 
@@ -385,38 +615,63 @@ def run_pipeline(
     all_threads = []
     thread_counter = 0
 
-    # On resume, load previously generated threads
-    output_path = os.path.join(output_dir, f"{date_str}.json")
-    if resume and os.path.exists(output_path):
+    # On resume (explicit or auto), load previously generated threads so new
+    # meetings get appended instead of overwriting the file.
+    if (resume or auto_resume) and os.path.exists(output_path):
         with open(output_path, "r", encoding="utf-8") as f:
             all_threads = json.load(f)
         thread_counter = len(all_threads)
-        log.info("Resumed with %d existing threads", len(all_threads))
+        log.info(
+            "%s with %d existing threads",
+            "Resumed" if resume else "Auto-resumed",
+            len(all_threads),
+        )
 
-    for meeting in meetings:
-        meeting_id = meeting.get("meetingId", "unknown")
-
-        if meeting_id in progress["completed"]:
-            log.info("Skipping already completed: %s", meeting_id)
-            continue
-
-        log.info("Processing: %s", meeting_id)
-
+    if batch:
         try:
-            threads, thread_counter = process_meeting(
-                client, meeting, members, model, date_str, thread_counter,
+            new_threads, thread_counter, completed_ids = run_batch_phase(
+                client, meetings, progress, members, model, date_str,
+                thread_counter,
+                batch_timeout_seconds=batch_timeout_seconds,
+                batch_poll_seconds=batch_poll_seconds,
             )
-            all_threads.extend(threads)
-            progress["completed"].append(meeting_id)
+            all_threads.extend(new_threads)
+            for mid in completed_ids:
+                if mid not in progress["completed"]:
+                    progress["completed"].append(mid)
             save_progress(progress, progress_path)
-            log.info(
-                "Completed %s — %d threads", meeting_id, len(threads),
-            )
+            log.info("Batch phase: +%d threads from %d meeting(s)",
+                     len(new_threads), len(completed_ids))
         except Exception as e:
-            log.error("Failed to process %s: %s", meeting_id, e)
-            progress["failed"].append(meeting_id)
-            save_progress(progress, progress_path)
-            continue
+            log.error("Batch phase failed: %s", e)
+            # Don't mark any meetings completed on a batch-level failure —
+            # they'll be retried on the next run.
+            raise
+    else:
+        for meeting in meetings:
+            meeting_id = meeting.get("meetingId", "unknown")
+
+            if meeting_id in progress["completed"]:
+                log.info("Skipping already completed: %s", meeting_id)
+                continue
+
+            log.info("Processing: %s", meeting_id)
+
+            try:
+                threads, thread_counter = process_meeting(
+                    client, meeting, members, model, date_str, thread_counter,
+                )
+                all_threads.extend(threads)
+                progress["completed"].append(meeting_id)
+                save_progress(progress, progress_path)
+                log.info(
+                    "Completed %s — %d threads", meeting_id, len(threads),
+                )
+            except Exception as e:
+                log.error("Failed to process %s: %s", meeting_id, e)
+                progress["failed"].append(meeting_id)
+                save_progress(progress, progress_path)
+                continue
 
     # Cross-thread linking
     if all_threads:
@@ -490,6 +745,19 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     parser.add_argument("--resume", action="store_true", help="Resume from last checkpoint")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be processed")
     parser.add_argument("--verbose", "-v", action="store_true", help="Verbose logging")
+    parser.add_argument(
+        "--batch", action="store_true",
+        help="Use Message Batches API for the summary phase (50%% cost discount, "
+             "stackable with prompt caching). Polls until results are ready.",
+    )
+    parser.add_argument(
+        "--batch-timeout", type=int, default=5400,
+        help="Max seconds to wait for batch completion (default: 5400 = 90min)",
+    )
+    parser.add_argument(
+        "--batch-poll", type=int, default=30,
+        help="Seconds between batch status polls (default: 30)",
+    )
 
     return parser.parse_args(argv)
 
@@ -512,6 +780,9 @@ def main(argv: Optional[List[str]] = None) -> None:
         resume=args.resume,
         dry_run=args.dry_run,
         verbose=args.verbose,
+        batch=args.batch,
+        batch_timeout_seconds=args.batch_timeout,
+        batch_poll_seconds=args.batch_poll,
     )
 
 
