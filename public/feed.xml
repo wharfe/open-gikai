@@ -5,38 +5,38 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 21 May 2026 21:38:25 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 05:51:49 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W21 国会まとめ — 2件の議論</title>
+      <title>2026-W21 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W21</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W21</guid>
       <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。記者の質問に答える高市総理ほか。</description>
+      <description>3件のスレッド、2委員会の議論をまとめました。記者の質問に答える高市総理、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W20 国会まとめ — 1件の議論</title>
+      <title>2026-W20 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W20</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W20</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>1件のスレッド、1委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見ほか。</description>
+      <description>4件のスレッド、3委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W19 国会まとめ — 3件の議論</title>
+      <title>2026-W19 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W19</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W19</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、1委員会の議論をまとめました。ベトナム及びオーストラリア訪問等についての会見ほか。</description>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+      <description>5件のスレッド、2委員会の議論をまとめました。議院運営委員会、ベトナム及びオーストラリア訪問等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W18 国会まとめ — 3件の議論</title>
+      <title>2026-W18 国会まとめ — 20件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W18</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W18</guid>
       <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、2委員会の議論をまとめました。高市総理はベトナム及びオーストラリア訪問等についての会見を行いました、ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見ほか。</description>
+      <description>20件のスレッド、4委員会の議論をまとめました。高市総理はベトナム及びオーストラリア訪問等についての会見を行いました、ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見、災害対策特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -56,12 +56,60 @@
       <category>記者の質問に答える高市総理</category>
     </item>
     <item>
+      <title>本会議日程と各委員会採決結果の報告 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260519_b65258_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260519_b65258_03</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description>災害対策、安全保障、内閣委員会の各議案について採決結果と反対会派を報告（国会会議録・2026.05.19・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
       <title>トランプ米大統領との電話会談内容 — トランプ米国大統領との電話会談についての会見</title>
       <link>https://open-gikai.net/t/t_20260515_29b669_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260515_29b669_01</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
       <description>トランプ大統領の中国訪問直後に電話会談を実施、中国関連課題とイラン情勢について意見交換（首相記者会見・2026.05.15・4発言）</description>
       <category>トランプ米国大統領との電話会談についての会見</category>
+    </item>
+    <item>
+      <title>国家基本政策委員会の設立と運営体制整備 — 国家基本政策委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_c3bc51_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_c3bc51_01</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>委員長就任挨拶、理事選任、国政調査承認要求などの委員会設立手続き（国会会議録・2026.05.14・3発言）</description>
+      <category>国家基本政策委員会</category>
+    </item>
+    <item>
+      <title>本会議日程の委員長報告と各党の賛否状況 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_4ca55f_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_4ca55f_02</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>総務・財務金融・国土交通・経済産業委員長からの報告と各党の反対表明（国会会議録・2026.05.14・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>主要食糧需給価格安定法改正案の趣旨説明・質疑 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260512_893abf_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_893abf_01</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>食糧法改正案の趣旨説明と中道改革連合・国民民主党による質疑実施を決定（国会会議録・2026.05.12・3発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>理事の補欠選任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260508_9f152b_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260508_9f152b_01</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+      <description>委員の異動に伴い欠員となった理事2名の補欠選任を実施（国会会議録・2026.05.08・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国家情報会議設置法案の本会議運営 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260508_9f152b_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260508_9f152b_02</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+      <description>国家情報会議設置法案の本会議における趣旨説明と各会派の質疑時間を決定（国会会議録・2026.05.08・2発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>ベトナム・オーストラリア訪問成果とサプライチェーン強化 — ベトナム及びオーストラリア訪問等についての会見</title>
@@ -112,331 +160,283 @@
       <category>ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</category>
     </item>
     <item>
-      <title>山崎正恭議員の防衛大臣質問の議題適合性 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260421_4b8f6c_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_4b8f6c_01</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description>山崎議員の防衛大臣への質問が議題外発言にあたるとして与党が出席要求を拒否する動議を提出（国会会議録・2026.04.21・2発言）</description>
+      <title>防災庁設置法案の参考人質疑 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_01</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>気仙沼市長らが防災庁の必要性と課題を証言、勧告権や組織体制について議論（国会会議録・2026.04.28・4発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災庁の勧告権と省庁間連携機能 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_02</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>災害時の省庁間連携強化と勧告権の実効性について具体的な運用方法を検討（国会会議録・2026.04.28・6発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害伝承・記憶継承と防災教育 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_03</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>震災遺構保存や防災教育の重要性、海外支援での日本の防災技術活用を議論（国会会議録・2026.04.28・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災局設置基準と専門人材育成 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_04</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>防災局の設置要件と防災専門職員の育成、防災大学校構想について検討（国会会議録・2026.04.28・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>被災者支援における官民協働 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_05</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>災害ケースマネジメントや福祉支援での民間活用、広域避難体制を議論（国会会議録・2026.04.28・8発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>自治体応援職員派遣制度 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_06</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>被災自治体への職員派遣の制度化と財政支援、復興庁の経験を踏まえた改善案（国会会議録・2026.04.28・6発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>被災者データベースとDX活用 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_07</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>被災者情報のデジタル化によるプッシュ型支援と避難所外被災者の把握方法（国会会議録・2026.04.28・6発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害関連死防止と避難所環境改善 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_08</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>災害関連死ゼロ目標に向けた避難所の設備改善と長期避難生活の質向上策（国会会議録・2026.04.28・9発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>備蓄格差解消と物資支援 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_09</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>自治体間の備蓄格差是正と災害時物資支援の効率化、善意の混乱防止策（国会会議録・2026.04.28・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>補完性原理と災害対応の役割分担 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_10</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>災害規模に応じた国・県・市町村の役割分担見直しと戦後制度からの転換（国会会議録・2026.04.28・6発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災庁の地方自治体支援機能 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_11</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>防災庁設置法案での自治体支援明記の是非と防災局による支援体制整備（国会会議録・2026.04.28・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>首長の災害対応能力と防災庁の役割 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_12</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>災害対策本部長となる首長への支援と防災庁による実務面でのバックアップ体制（国会会議録・2026.04.28・2発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災訓練の形骸化防止と日常化 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_13</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>避難訓練の実効性向上とまちづくりと連動した防災の日常化について議論（国会会議録・2026.04.28・6発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災・減災の概念と用語整理 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_14</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>法案で防災と減災どちらの用語を使うかと被災者の人権・尊厳保護の重要性（国会会議録・2026.04.28・4発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害時の教育継続と学校機能 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_73bd12_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_73bd12_15</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>発災後の子供の学習継続と避難所としての学校機能の両立について検討（国会会議録・2026.04.28・3発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>経済安保推進法改正案の本会議趣旨説明手続き — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_62cc50_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_62cc50_16</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>経済安保推進法改正案の本会議趣旨説明について小野田国務大臣が行い、各党質疑者を決定（国会会議録・2026.04.28・2発言）</description>
       <category>議院運営委員会</category>
     </item>
     <item>
-      <title>総理就任半年の政権運営振り返り — 総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260421_d1b854_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_d1b854_02</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description>高市総理の就任半年を振り返り、決断と前進の内閣として国力強化に取り組む姿勢を表明（首相記者会見・2026.04.21・2発言）</description>
-      <category>総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</category>
-    </item>
-    <item>
-      <title>防衛装備移転三原則の改正 — 総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260421_d1b854_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_d1b854_03</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description>防衛装備移転三原則改正により従来の5類型制限を撤廃し、パートナー国との装備協力を拡大（首相記者会見・2026.04.21・2発言）</description>
-      <category>総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</category>
-    </item>
-    <item>
-      <title>靖国神社春季例大祭への対応 — 総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260421_d1b854_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260421_d1b854_04</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description>総理が真榊奉納を行い、国のために命を捧げた方への敬意表明は普通のことと述べる（首相記者会見・2026.04.21・2発言）</description>
-      <category>総理就任半年の振り返り及び防衛装備移転三原則の改正等についての会見</category>
-    </item>
-    <item>
-      <title>三陸沖地震における津波警報発表に対する緊急避難指示と防災対応 — 三陸沖を震源とする地震についての会見（２）</title>
-      <link>https://open-gikai.net/t/t_20260420_c92cc7_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260420_c92cc7_01</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <description>三陸沖地震発生を受けて津波警報対象地域への避難指示と後発地震注意情報発表の可能性を説明（首相記者会見・2026.04.20・1発言）</description>
-      <category>三陸沖を震源とする地震についての会見（２）</category>
-    </item>
-    <item>
-      <title>AZEC+オンライン首脳会合とエネルギー協力強化 — 冒頭に発言する高市総理</title>
-      <link>https://open-gikai.net/t/t_20260415_f046ed_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260415_f046ed_01</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <description>中東情勢を踏まえアジア諸国とのエネルギーサプライチェーン強靱化を議論（首相記者会見・2026.04.15・3発言）</description>
-      <category>冒頭に発言する高市総理</category>
-    </item>
-    <item>
-      <title>日・オマーン首脳電話会談とイラン攻撃被害への対応 — ハイサム・オマーン国王との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260414_803e65_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260414_803e65_01</guid>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
-      <description>オマーン国王との電話会談でイラン攻撃による被害にお見舞いを表明（首相記者会見・2026.04.14・2発言）</description>
-      <category>ハイサム・オマーン国王との電話会談等についての会見</category>
-    </item>
-    <item>
-      <title>自民党大会での自衛官国歌斉唱問題 — ハイサム・オマーン国王との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260414_803e65_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260414_803e65_02</guid>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
-      <description>自衛官が私人として自民党大会で君が代を歌唱したことの適法性を説明（首相記者会見・2026.04.14・4発言）</description>
-      <category>ハイサム・オマーン国王との電話会談等についての会見</category>
-    </item>
-    <item>
-      <title>日・ベトナム首脳電話会談の内容と中東情勢への対応 — トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260413_d78e0b_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260413_d78e0b_01</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
-      <description>ラム書記長兼国家主席への祝意表明と中東情勢を受けたアジア地域のエネルギー強靱化協力を確認（首相記者会見・2026.04.13・2発言）</description>
-      <category>トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</category>
-    </item>
-    <item>
-      <title>ベトナムからの石油提供要請への対応 — トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260413_d78e0b_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260413_d78e0b_02</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
-      <description>ベトナムからの石油提供要請に対し、現地での石油関連製品製造等の必要な対応を実施中（首相記者会見・2026.04.13・2発言）</description>
-      <category>トー・ラム・ベトナム共産党中央委員会書記長兼国家主席及びシャリフ・パキスタン・イスラム共和国首相との中東情勢への対応等に関する電話会談についての会見</category>
-    </item>
-    <item>
-      <title>ペゼシュキアン・イラン大統領との電話会談 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260408_d9326d_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260408_d9326d_01</guid>
-      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
-      <description>中東情勢の沈静化とホルムズ海峡の航行安全確保について日イ首脳が協議（首相記者会見・2026.04.08・3発言）</description>
-      <category>ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</category>
-    </item>
-    <item>
-      <title>令和8年度予算の成立と年度内成立の失敗 — 令和８年度予算成立及び中東情勢への対応等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260407_81821c_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260407_81821c_01</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
-      <description>高市内閣初の本格予算が4月に成立。年度内成立失敗の責任と解散判断を問われる（首相記者会見・2026.04.07・3発言）</description>
-      <category>令和８年度予算成立及び中東情勢への対応等についての会見</category>
-    </item>
-    <item>
-      <title>予算委員会の審議時間と国会運営 — 令和８年度予算成立及び中東情勢への対応等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260407_81821c_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260407_81821c_02</guid>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
-      <description>予算委員会の審議時間短縮と総理出席時間の不足を野党が批判、国会審議の重要性を確認（首相記者会見・2026.04.07・2発言）</description>
-      <category>令和８年度予算成立及び中東情勢への対応等についての会見</category>
-    </item>
-    <item>
-      <title>国家情報会議設置法案の議事運営 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260402_012c5b_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260402_012c5b_01</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
-      <description>国家情報会議設置法案の趣旨説明と質疑の議事進行について確認（国会会議録・2026.04.02・3発言）</description>
+      <title>本会議議事日程の報告と討論・採決予定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260428_62cc50_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260428_62cc50_17</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>特別委員会報告3件について討論時間配分を決定し、共産党等の反対意見を確認（国会会議録・2026.04.28・2発言）</description>
       <category>議院運営委員会</category>
     </item>
     <item>
-      <title>暫定予算三案の緊急上程・採決 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260330_ac8734_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260330_ac8734_01</guid>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
-      <description>暫定予算三案を緊急上程し採決。日本共産党と無所属山本議員が反対（国会会議録・2026.03.30・1発言）</description>
+      <title>永年在職議員の表彰に関する件 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260424_7ee563_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260424_7ee563_01</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
+      <description>宮沢洋一議員ら4名の国会議員25年在職に対する表彰決定と本会議での手続き確認（国会会議録・2026.04.24・2発言）</description>
       <category>議院運営委員会</category>
     </item>
     <item>
-      <title>高市総理の米国訪問報告と質疑 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260326_f0dd01_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260326_f0dd01_01</guid>
-      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
-      <description>高市総理による米国訪問の報告と各党議員による質疑時間・要求大臣の決定（国会会議録・2026.03.26・3発言）</description>
-      <category>議院運営委員会</category>
+      <title>緊急事態条項の総論的議論 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260423_a4b2d0_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_a4b2d0_01</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>各会派が緊急事態条項の必要性や対象事態、制度設計について基本的立場を表明（国会会議録・2026.04.23・7発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
-      <title>日米首脳会談の全般的成果とイラン情勢への対応 — 日米首脳会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260319_8365e8_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260319_8365e8_01</guid>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-      <description>イラン情勢の早期沈静化と中東地域の平和安定、エネルギー安定供給で日米が連携強化（首相記者会見・2026.03.19・2発言）</description>
-      <category>日米首脳会談についての会見</category>
+      <title>国会機能維持のための憲法改正（五会派案） — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260423_a4b2d0_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_a4b2d0_02</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>選挙困難事態での選挙期日延期・議員任期延長について起草委員会設置を提案（国会会議録・2026.04.23・1発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
-      <title>北朝鮮拉致問題への日米協力 — 日米首脳会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260319_8365e8_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260319_8365e8_02</guid>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-      <description>高市総理が金正恩氏との直接会談への強い意志を表明、トランプ大統領から全面協力を確約（首相記者会見・2026.03.19・2発言）</description>
-      <category>日米首脳会談についての会見</category>
+      <title>諸外国の緊急事態条項制度 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260423_a4b2d0_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_a4b2d0_03</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>世界91%の憲法が緊急事態条項を規定、各国の具体的制度設計を紹介（国会会議録・2026.04.23・2発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
-      <title>ホルムズ海峡への自衛隊艦船派遣問題 — 日米首脳会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260319_8365e8_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260319_8365e8_03</guid>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-      <description>ホルムズ海峡の安全確保の重要性を確認も、日本の法的制約を米側に詳細説明（首相記者会見・2026.03.19・2発言）</description>
-      <category>日米首脳会談についての会見</category>
+      <title>緊急政令・緊急財政処分の制度論 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260423_a4b2d0_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_a4b2d0_04</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>内閣による緊急政令制定権と財政処分権について学説整理と制度設計を議論（国会会議録・2026.04.23・4発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
-      <title>予算委員長坂本哲志君解任決議案の本会議上程 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260313_bf388a_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260313_bf388a_01</guid>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
-      <description>野党4会派共同提出の予算委員長解任決議案を本会議で議題とすることを決定（国会会議録・2026.03.13・3発言）</description>
-      <category>議院運営委員会</category>
+      <title>憲法審査会のNHK中継問題 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260423_a4b2d0_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_a4b2d0_05</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>NHKによる憲法審査会中継の申し入れ経緯とNHK側の対応状況を確認（国会会議録・2026.04.23・6発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
-      <title>AI音声による点呼システムの導入 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260313_bf388a_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260313_bf388a_02</guid>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
-      <description>従来の参事による点呼をAI音声読み上げシステムに変更することを決定（国会会議録・2026.03.13・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>今後の議論の進め方 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260423_a4b2d0_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_a4b2d0_06</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>条文案作成への着手や論点整理の方法について各会派から提案（国会会議録・2026.04.23・2発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
-      <title>令和4年度予算三案の緊急上程への反対表明 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260313_bf388a_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260313_bf388a_03</guid>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
-      <description>野党4会派が予算三案の緊急上程に反対の立場を表明（国会会議録・2026.03.13・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>予算三案及び関連法案の討論時間配分 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260313_bf388a_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260313_bf388a_04</guid>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
-      <description>予算三案と地方税法改正案等の討論について各会派の時間配分を決定（国会会議録・2026.03.13・3発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>本会議の議事進行予定の報告 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260313_bf388a_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260313_bf388a_05</guid>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
-      <description>事務総長が本会議での予算審議と法案採決の進行スケジュールを報告（国会会議録・2026.03.13・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>能登半島地震復旧・職員派遣支援 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_01</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>能登半島地震被災市町への中長期職員派遣の現状と課題について議論（国会会議録・2026.03.12・3発言）</description>
+      <title>防災庁の事前防災機能と自治体支援体制 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_07</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>防災庁の地域リスク評価、自治体伴走支援、勧告権の実効性について質疑（国会会議録・2026.04.23・12発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>能登半島地震インフラ復旧・入札不調対策 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_02</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>生活道路の復旧遅れと入札不調への対策について政府の取組を確認（国会会議録・2026.03.12・3発言）</description>
+      <title>災害時の福祉・医療支援体制とDWAT活動基盤 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_08</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>DWAT活動の財政基盤強化と医療福祉分野の災害時連携体制構築（国会会議録・2026.04.23・6発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>災害時クラウドファンディング課税問題 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_03</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>能登地震被災事業者のクラウドファンディング収入への課税問題を提起（国会会議録・2026.03.12・3発言）</description>
+      <title>避難所環境の改善とスフィア基準対応 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_09</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>避難所の良好な環境確保、段ボールベッド等資機材整備、世界基準への対応（国会会議録・2026.04.23・13発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>地域福祉推進支援臨時特例交付金 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_04</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>能登地震被災者向け特例給付金の申請期限延長と対象年齢要件を議論（国会会議録・2026.03.12・2発言）</description>
+      <title>災害時情報発信とデマ対策 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_10</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>SNSでの偽情報拡散防止と被災者への正確な情報提供体制整備（国会会議録・2026.04.23・3発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>防災庁設置・体制強化 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_05</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>防災庁の予算・人員規模拡充と将来的な体制強化について意見交換（国会会議録・2026.03.12・3発言）</description>
+      <title>大槌町山火事への対応状況 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_11</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>岩手県大槌町で発生した林野火災の被害状況と消防庁の対応（国会会議録・2026.04.23・5発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>燃料油価格激変緩和措置 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_06</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>原油価格高騰を受けた緊急的な燃料油価格抑制策の実施内容を説明（国会会議録・2026.03.12・3発言）</description>
+      <title>首都直下地震対応と広域防災拠点機能 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_12</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>東京湾臨海部基幹的広域防災拠点の役割と首都直下地震時の政府対応体制（国会会議録・2026.04.23・5発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>能登地震住まい確保・災害公営住宅 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_07</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>災害公営住宅整備とコミュニティ維持に配慮した住宅再建支援を議論（国会会議録・2026.03.12・3発言）</description>
+      <title>南海トラフ後発地震注意情報への対応 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_13</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>南海トラフ後発地震注意情報発出時の防災庁の対応と観光への影響配慮（国会会議録・2026.04.23・2発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>能登地震住宅再建支援・建築費高騰対策 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_08</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>建築費高騰による住宅再建負担増への追加支援策を政府に要望（国会会議録・2026.03.12・3発言）</description>
+      <title>自治体間広域連携と災害時応援体制 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_14</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>自治体間の災害時応援協定の実効性向上と広域的な資機材共同保有（国会会議録・2026.04.23・10発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>能登地震集落維持・創造的復興 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_09</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>人口減少地域での集落維持と人が戻る復興政策について方向性を確認（国会会議録・2026.03.12・3発言）</description>
+      <title>災害時の外国人避難者対応 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_15</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>在留外国人の災害時避難支援と多言語対応、文化的配慮の必要性（国会会議録・2026.04.23・3発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>能登地震農林水産業復興 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_10</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>世界農業遺産地域の農林水産業復興状況と今後の支援策を確認（国会会議録・2026.03.12・3発言）</description>
+      <title>国土強靱化中期計画の予算規模と財政方針 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_16</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>第一次国土強靱化実施中期計画の20兆円規模事業と積極財政論（国会会議録・2026.04.23・5発言）</description>
       <category>災害対策特別委員会</category>
     </item>
     <item>
-      <title>首都直下地震・政府中枢機能継続 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_11</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>首都直下地震時の政府中枢機能継続計画と防災庁の役割を議論（国会会議録・2026.03.12・9発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>東日本大震災復興政策の教訓・事前復興 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_12</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>復興政策十年史の教訓を踏まえた事前復興まちづくり計画策定推進（国会会議録・2026.03.12・7発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>南海トラフ地震災害廃棄物仮置場確保 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_13</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>南海トラフ地震で発生する膨大な災害廃棄物の仮置場確保が課題（国会会議録・2026.03.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>避難行動要支援者個別避難計画 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_14</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>高齢者等要支援者の個別避難計画策定率向上への取組を議論（国会会議録・2026.03.12・3発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時の子ども支援・学校再開 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_15</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>災害時の子どもの居場所確保と学校再開に向けた支援体制を確認（国会会議録・2026.03.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>大船渡山林火災復旧・激甚災害指定 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_16</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_16</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>大船渡市大規模山林火災の激甚災害指定と森林復旧事業の進捗（国会会議録・2026.03.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>東日本大震災グループ補助金制度 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260312_6043b6_17</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260312_6043b6_17</guid>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-      <description>グループ補助金の用途変更手続き簡素化と豪雪災害適用を要望（国会会議録・2026.03.12・5発言）</description>
+      <title>能登半島地震の復旧復興支援と住まい再建 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260423_21c510_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260423_21c510_17</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>珠洲市等被災地の人口減少問題と被災者生活再建支援金の限界（国会会議録・2026.04.23・6発言）</description>
       <category>災害対策特別委員会</category>
     </item>
   </channel>
