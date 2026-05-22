@@ -4,10 +4,19 @@
 For each thread, searches Bing News by topic keywords, extracts article
 metadata and OGP images, then stores them in context.news[].
 
+With --rank-with-claude, the candidate articles are passed through a
+short Claude API call (haiku, temperature=0) that picks the most-relevant
+ones and discards the noise — Bing News' first results often include
+semantically-similar-but-actually-unrelated articles.
+
 Usage:
     python scripts/enrich-news.py --date 2025-01-25
-    python scripts/enrich-news.py --all          # process all thread files
-    python scripts/enrich-news.py --all --dry-run # preview without writing
+    python scripts/enrich-news.py --all
+    python scripts/enrich-news.py --all --dry-run
+    python scripts/enrich-news.py --date 2026-04-22 --rank-with-claude
+
+This is an auxiliary-information layer. The neutrality-critical summary
+pipeline (scripts/pipeline/summarizer.py) stays LLM-deterministic.
 """
 
 from __future__ import annotations
@@ -17,6 +26,7 @@ import json
 import logging
 import os
 import re
+import sys
 import time
 from datetime import date, timedelta
 from urllib.parse import quote, unquote
@@ -34,6 +44,9 @@ HEADERS = {
     ),
 }
 MAX_ARTICLES_PER_THREAD = 3
+# When --rank-with-claude is on, pull this many candidates from Bing so
+# the ranker has room to filter out unrelated hits.
+RANK_POOL_SIZE = 8
 BING_DELAY = 1.0  # seconds between Bing requests
 OGP_TIMEOUT = 5
 OGP_DELAY = 0.3
@@ -122,8 +135,17 @@ def build_query(thread: dict) -> str:
     return query
 
 
-def enrich_thread(thread: dict, dry_run: bool = False) -> int:
-    """Add news articles to a single thread. Returns count of articles added."""
+def enrich_thread(
+    thread: dict,
+    dry_run: bool = False,
+    rank_client=None,
+) -> int:
+    """Add news articles to a single thread. Returns count of articles added.
+
+    If ``rank_client`` is provided, candidate articles are filtered with
+    Claude relevance ranking; otherwise the first ``MAX_ARTICLES_PER_THREAD``
+    Bing results are kept verbatim.
+    """
     # Skip if already enriched
     context = thread.get("context", {})
     if context.get("news"):
@@ -138,6 +160,14 @@ def enrich_thread(thread: dict, dry_run: bool = False) -> int:
 
     if not articles:
         return 0
+
+    if rank_client is not None:
+        # Lazy import keeps the module usable on machines without `anthropic`.
+        from pipeline.news_ranker import rank_news_articles
+        articles = rank_news_articles(
+            rank_client, thread, articles[:RANK_POOL_SIZE],
+            max_keep=MAX_ARTICLES_PER_THREAD,
+        )
 
     news_items = []
     for article in articles[:MAX_ARTICLES_PER_THREAD]:
@@ -164,7 +194,11 @@ def enrich_thread(thread: dict, dry_run: bool = False) -> int:
     return len(news_items)
 
 
-def process_file(filepath: str, dry_run: bool = False) -> tuple[int, int]:
+def process_file(
+    filepath: str,
+    dry_run: bool = False,
+    rank_client=None,
+) -> tuple[int, int]:
     """Process a single thread file. Returns (threads_enriched, articles_added)."""
     with open(filepath, "r", encoding="utf-8") as f:
         threads = json.load(f)
@@ -173,7 +207,7 @@ def process_file(filepath: str, dry_run: bool = False) -> tuple[int, int]:
     total_articles = 0
 
     for thread in threads:
-        count = enrich_thread(thread, dry_run=dry_run)
+        count = enrich_thread(thread, dry_run=dry_run, rank_client=rank_client)
         if count > 0:
             total_enriched += 1
             total_articles += count
@@ -206,6 +240,11 @@ def main():
     parser.add_argument("--all", action="store_true", help="Process all thread files")
     parser.add_argument("--dry-run", action="store_true", help="Preview without writing")
     parser.add_argument("--verbose", "-v", action="store_true")
+    parser.add_argument(
+        "--rank-with-claude", action="store_true",
+        help="Filter Bing News candidates with a Claude relevance ranker. "
+             "Requires ANTHROPIC_API_KEY in the environment.",
+    )
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -224,6 +263,21 @@ def main():
     else:
         parser.error("Specify --date or --all")
 
+    rank_client = None
+    if args.rank_with_claude:
+        # Add scripts/ to sys.path so `pipeline.news_ranker` resolves the
+        # same way the summarizer does.
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        try:
+            import anthropic
+            from dotenv import load_dotenv
+            load_dotenv()
+            rank_client = anthropic.Anthropic()
+        except ImportError as e:
+            parser.error(
+                f"--rank-with-claude requires anthropic and python-dotenv: {e}"
+            )
+
     grand_enriched = 0
     grand_articles = 0
 
@@ -233,7 +287,9 @@ def main():
             continue
 
         log.info("Processing %s", filepath)
-        enriched, articles = process_file(filepath, dry_run=args.dry_run)
+        enriched, articles = process_file(
+            filepath, dry_run=args.dry_run, rank_client=rank_client,
+        )
         grand_enriched += enriched
         grand_articles += articles
 
