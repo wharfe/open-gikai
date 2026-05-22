@@ -6,9 +6,14 @@ OpenGIKAI (議会) is a public media project that restructures Japanese parliame
 
 ## Tech Stack
 
-- **Frontend**: Next.js 15 (App Router), TypeScript, Tailwind CSS
-- **Deployment**: Vercel (SSG - Static Site Generation)
-- **Data Pipeline**: Python scripts + Claude API (batch processing), with a SourceAdapter abstraction for multi-source ingestion (`scripts/sources/`)
+- **Frontend**: Next.js 16 (App Router), TypeScript, Tailwind CSS. `output: "export"` — fully static, no server runtime at the root.
+- **Deployment**: Two Vercel projects from one repo. Root → SSG frontend at `open-gikai.net`. `apps/mcp/` → dynamic MCP server.
+- **Data Pipeline**: Python scripts + Claude API
+  - Sliding 30-day lookback per run (NDL publishes transcripts with multi-day lag — see `scripts/fetch_ndl.py --lookback-days`).
+  - `summarize.py --batch` uses Anthropic's Message Batches API for the summary phase (50% input/output discount).
+  - System+user prompt instructions cached with `cache_control: ephemeral` (`scripts/pipeline/prompts.py` + `summarizer.py` / `grouper.py`).
+  - `scripts/pipeline/news_ranker.py` (Haiku 4.5) filters Bing News candidates — auxiliary layer only.
+  - SourceAdapter abstraction lives in `scripts/sources/`.
 - **Data Sources**: NDL Diet Records API (`https://kokkai.ndl.go.jp/api/speech`), kantei.go.jp PM press conferences (`https://www.kantei.go.jp/`), cao.go.jp council meeting minutes (`https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html`)
 
 ## Key Design Principles
@@ -41,17 +46,23 @@ When adding any new Claude-using script, ask yourself: **does this change what a
 ## Development Commands
 
 ```bash
-# Install dependencies
+# --- Frontend (repo root) ---
 npm install
-
-# Development server
-npm run dev
-
-# Build
-npm run build
-
-# Lint
+npm run dev      # localhost:3000
+npm run build    # static export → out/
 npm run lint
+
+# --- MCP server (apps/mcp) ---
+cd apps/mcp
+npm install
+npm run dev      # localhost:3100
+npm run build    # prebuild script copies data/ from repo root
+
+# --- Data pipeline (Python) ---
+# Daily-batch.yml runs these in sequence each morning. To replay locally:
+python scripts/fetch_ndl.py --lookback-days 30
+python scripts/summarize.py --date YYYY-MM-DD --batch
+python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
 ```
 
 ## Project Structure
@@ -75,9 +86,13 @@ npm run lint
 The repo hosts **two Vercel projects** pointing at the same GitHub repo:
 
 - Root → frontend SSG (open-gikai.net). `next.config.ts` sets `output: "export"`.
-- `apps/mcp` → dynamic MCP server (mcp.open-gikai.net or similar). Reads the
-  same `data/threads/` and `data/members.json` via `outputFileTracingRoot`
-  pointing at the repo root.
+- `apps/mcp` → dynamic MCP server. A `prebuild` script
+  (`apps/mcp/scripts/copy-data.mjs`) copies `data/threads/` and
+  `data/members.json` from the repo root into `apps/mcp/data/` so they ship
+  with the serverless function bundle. The runtime reads from
+  `process.cwd()/data` — see `apps/mcp/src/lib/data.ts`. We deliberately
+  avoid `outputFileTracingRoot` pointing above the project root because
+  Vercel double-prefixes such absolute paths during deploy.
 
 Because the frontend uses static export, **server-side features (Route
 Handlers, dynamic API routes, middleware) cannot be added under `src/app/`**.

@@ -23,10 +23,11 @@
 
 | レイヤー | 技術 |
 |----------|------|
-| フロントエンド | Next.js 15 (App Router)、TypeScript、Tailwind CSS |
-| デプロイ | Vercel（静的サイト生成） |
-| データパイプライン | Python + Claude API |
+| フロントエンド | Next.js 16 (App Router)、TypeScript、Tailwind CSS |
+| デプロイ | Vercel — 同一リポジトリから2つの project: ルートが SSG フロントエンド、`apps/mcp/` が動的 MCP server |
+| データパイプライン | Python + Claude API (Message Batches API + prompt caching) |
 | データソース | [NDL 国会会議録検索システムAPI](https://kokkai.ndl.go.jp/api.html)、[首相官邸](https://www.kantei.go.jp/)、[内閣府 審議会](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) |
+| 公開 API | Claude Desktop / Cline / その他エージェント向けの読み取り専用 [MCP server](./apps/mcp/README.md) |
 
 ## はじめかた
 
@@ -35,62 +36,118 @@
 git clone https://github.com/wharfe/open-gikai.git
 cd open-gikai
 
-# 依存パッケージをインストール
+# フロントエンドの依存パッケージをインストール
 npm install
 
-# 開発サーバーを起動
+# フロントエンドの開発サーバーを起動
 npm run dev
 ```
+
+MCP server は `apps/mcp/` 配下の独立した Next.js project で、依存も独自管理です。
+
+```bash
+cd apps/mcp
+npm install
+npm run dev   # http://localhost:3100 で起動
+```
+
+MCP server のデプロイ詳細は [`apps/mcp/README.md`](./apps/mcp/README.md) を参照してください。
 
 ## プロジェクト構成
 
 ```
-├── src/
-│   ├── app/          # Next.js App Router ページ
-│   ├── components/   # Reactコンポーネント
-│   ├── lib/          # ユーティリティ・データ取得
-│   └── types/        # TypeScript型定義
-├── scripts/          # Pythonバッチ処理（ソースアダプター → Claude API → JSON）
-│   └── sources/      # ソースアダプター（NDL、官邸、審議会など）
-├── data/             # SSG用の生成済みJSONデータ
-└── public/           # 静的アセット
+├── src/                  # フロントエンド（Next.js SSG — output: "export"）
+│   ├── app/              # App Router ページ
+│   ├── components/       # React コンポーネント
+│   ├── lib/              # ユーティリティ・データ取得
+│   └── types/            # TypeScript 型定義
+├── apps/
+│   └── mcp/              # MCP server（別 Vercel project、動的 Node ランタイム）
+├── scripts/              # Python バッチ処理
+│   ├── sources/          # ソースアダプター（NDL・官邸・審議会など）
+│   └── pipeline/         # AI パイプライン（グルーピング・要約・ニュース ranker）
+├── data/                 # SSG と MCP server 共有の生成済み JSON
+│   ├── threads/          # 日付別スレッドファイル
+│   └── members.json      # 蓄積される議員レジストリ
+├── public/               # 静的アセット（sitemap, RSS feed 等）
+└── .github/workflows/    # daily-batch.yml（6:00 JST cron）
 ```
+
+フロントエンドは `output: "export"` を使うため、Node ランタイムを必要とするもの（Route Handler、動的 API 等）は `apps/` 配下に置く設計です。
 
 ## 仕組み
 
 ```
-ソース（NDL、官邸、審議会等） → データ取得 → テーマ別グルーピング（Claude API）
-                      → 3レベル要約生成 → 静的JSON出力 → サイトデプロイ
+ソース（NDL、官邸、審議会）
+   ├─► fetch（毎回 30 日のスライディングウィンドウ）
+   │
+   ├─► テーマ別グルーピング                ┐
+   ├─► tension 分類                          │  Claude API
+   ├─► 3レベル要約（Message Batches API）   │  + prompt caching
+   ├─► コミットメント・採決結果抽出           ┘
+   │
+   ├─► 関連ニュース付与（Bing News + Claude 関連度判定）
+   │
+   └─► JSON 生成
+         ├─► フロントエンド SSG → open-gikai.net (Vercel)
+         └─► MCP server         → /api/mcp        (Vercel, apps/mcp)
 ```
 
-1. **デイリーバッチ**: SourceAdapterを通じて各ソース（NDL、官邸、審議会等）から前日のデータを取得
-2. **AI処理**: テーマ別にグルーピング、テンション分類（追及・答弁・再追及など）、3レベルの要約を生成
-3. **静的生成**: Next.js SSG用のJSONファイルを出力
-4. **デプロイ**: Vercelに自動デプロイ
+1. **スライディングウィンドウ取得**: 各実行で過去 30 日を再取得。NDL は議事録を数日〜数週間遅れで掲載するため、「前日のみ」取得では遡及掲載分を取り逃す。
+2. **AI 処理**:
+   - **グルーピング** — 会議ごとに同期呼び出し。発言をテーマ別スレッドに分割。
+   - **要約** — スレッド単位で Message Batches API（入出力 50% 割引）。prompt caching と併用でキャッシュ部分の入力コストは ~10% に。
+   - **採決抽出** — 会議ごとに同期呼び出し。委員長発言から採決結果・附帯決議を抽出。
+3. **ニュース付与**: Bing News でテーマ検索 → Claude Haiku ranker（`scripts/pipeline/news_ranker.py`）が候補から最も関連の高い 3 件を選別。これは補助情報レイヤー — 要約レイヤーとの境界は CLAUDE.md「Summary Layer Invariants」を参照。
+4. **静的生成**: `data/threads/*.json` と `data/members.json` を Next.js SSG が消費して静的 HTML を生成。
+5. **デプロイ**: 同一リポジトリから 2 つの Vercel project（ルート = SSG / `apps/mcp` = 動的 MCP server）。
+6. **監視**: daily-batch のコミットメッセージに `(+N threads)` を付与。7 回連続で 0 が続くと CI warning を発火（緑チェックだけでは見えない fetcher リグレッションを構造的に検知）。
 
 ## データパイプライン
 
 ```bash
-# 1. 各ソースからデータを取得
-python scripts/fetch_ndl.py --date-from 2025-03-14
-python scripts/fetch_kantei.py --date-from 2025-03-14
-python scripts/fetch_council.py --date-from 2025-12-24  # 審議会議事録（PDF）
+# 1. スライディングウィンドウで取得（30日で NDL 遡及掲載を拾う）
+python scripts/fetch_ndl.py     --lookback-days 30
+python scripts/fetch_kantei.py  --lookback-days 30
+python scripts/fetch_council.py --lookback-days 30 --council kisei
+# (... 各 council 分繰り返し。フルリストは daily-batch.yml 参照)
 
-# 2. Claude APIで要約（.envにANTHROPIC_API_KEYが必要）
-python scripts/summarize.py --date 2025-03-14
+# 2. Message Batches API で要約（既存 data/threads/ に対して auto-resume）
+#    .env に ANTHROPIC_API_KEY が必要
+python scripts/summarize.py --date 2026-04-22 --batch
 
-# 3. ビルド・プレビュー
+# 3. ニュース付与 + Claude 関連度判定
+python scripts/enrich-news.py --date 2026-04-22 --rank-with-claude
+
+# 4. sitemap・feed 生成 + バリデーション + SSG ビルド
+node scripts/validate-data.mjs --fix
+node scripts/generate-feeds.js
+node scripts/generate-sitemap.mjs
 npm run build && npx serve out
 ```
 
-設定は `.env.example` を参照してください。
+設定は `.env.example` を参照してください。`.github/workflows/daily-batch.yml` が上記を 6:00 JST に毎日自動実行します。
+
+## MCP Server
+
+OpenGIKAI は読み取り専用の [Model Context Protocol](https://modelcontextprotocol.io) server としても公開しており、Claude Desktop / Cline / MCP 対応エージェントから直接議事録を検索できます。
+
+| Tool | 用途 |
+|------|------|
+| `search_threads` | キーワード・日付範囲・委員会・ソースでスレッド検索 |
+| `get_thread` | スレッドの完全な内容（3レベル要約・原文引用・tension 分類・採決結果） |
+| `get_member` | 議員プロフィール |
+| `list_members` | 議員一覧（氏名・政党フィルタ） |
+| `list_dates` | データのある日付と各日のスレッド数 |
+
+MCP server は `apps/mcp/` 配下にあり、同じリポジトリから 2 つ目の Vercel project としてデプロイされます。**OpenGIKAI 側は LLM 推論コストを負担しません** — クライアント（Claude Desktop 等）が自分の API キーで Claude を呼び、サーバーは JSON を返すだけです。エンドポイント URL と Claude Desktop の設定例は [`apps/mcp/README.md`](./apps/mcp/README.md) を参照してください。
 
 ## 設計原則
 
-- **設計による政治的中立性** — すべての発言を同一のアルゴリズムで処理。編集上の取捨選択なし。プロンプトはオープンソース。
-- **出典の透明性** — すべての要約がNDLの原文議事録にリンク
-- **AIの透明性** — AI生成コンテンツは明確にラベル表示
-- **アクセシビリティ** — 3つの読みやすさレベルで国会審議を身近に
+- **設計による政治的中立性** — すべての発言を同一のアルゴリズムで処理。編集上の取捨選択なし。プロンプトはオープンソース。要約レイヤーは stateless / deterministic / プロンプト挙動のみ（Memory tool・Agent ループ・対話 UI を要約レイヤーに導入しない）— 詳しくは [`CLAUDE.md`](./CLAUDE.md) の「Summary Layer Invariants」を参照。
+- **出典の透明性** — すべての要約が NDL / 官邸 / 審議会の原文にリンク。
+- **AI の透明性** — AI 生成コンテンツは明示的にラベル表示。MCP のレスポンスには `attribution` ブロックを必ず含め、下流エージェントにも明確に伝える。
+- **アクセシビリティ** — 3 つの読みやすさレベルで国会審議を身近に。
 
 ## データソース
 
