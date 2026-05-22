@@ -24,6 +24,20 @@ Summaries must express the **content of the speech itself**, not report on it.
 - **Bad** (reporting style): "Pointed out that the AI definition is too vague and requested comparison with EU."
 - **Good** (direct style): "The AI definition is too vague — recommendation engines could fall under regulation. Show the comparison with EU and impact estimates."
 
+## Summary Layer Invariants (Critical for Neutrality)
+
+The summary pipeline (`scripts/summarize.py` + `scripts/pipeline/grouper.py` + `scripts/pipeline/summarizer.py` + `scripts/pipeline/prompts.py`) is the core of OpenGIKAI's political-neutrality guarantee. The following are **non-negotiable**:
+
+1. **Stateless**: No Memory tool, no carrying state across runs. A speech summarized today must produce the same output if re-summarized tomorrow on the same model.
+2. **Deterministic**: temperature=0, no agent loops, no tool calls that branch on intermediate results. Same input → same output.
+3. **Prompt-only behavior**: All summarization rules live in `prompts.py` and are open-source. No retrieval-augmented prompts, no examples sourced from prior runs.
+4. **No conversational UI inside OpenGIKAI's domain**: Chat answers are non-deterministic and break the "Claude AI summary" transparency label. External MCP server (separate Vercel project) is fine because clients bring their own LLM and we expose only deterministic JSON.
+
+### What IS allowed
+Auxiliary information layers (news enrichment, members extraction, sitemap generation, OGP image generation) may use LLM/agent patterns. They affect *which* context surfaces alongside a thread, not *what* a speech says. Example: `scripts/pipeline/news_ranker.py` uses Claude with temperature=0 and prompt caching to filter Bing News candidates — that is auxiliary, not summary.
+
+When adding any new Claude-using script, ask yourself: **does this change what a speech is summarized to say?** If yes → must obey the invariants above. If no → reasonable freedom (still keep it deterministic where practical).
+
 ## Development Commands
 
 ```bash
