@@ -17,6 +17,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X01820260421"
         }
+      ],
+      "news": [
+        {
+          "title": "中道改革議員、個人情報保護法改正案の質疑で防衛装備移転につい ...",
+          "url": "https://www.yomiuri.co.jp/politics/20260421-GYT1T00268/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 21 Apr 2026 12:23:00 GMT"
+        },
+        {
+          "title": "中道の防衛相出席要求「却下」 衆院本会議、混乱で30分遅延",
+          "url": "https://www.jiji.com/jc/article?k=2026042101054&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Tue, 21 Apr 2026 03:50:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202604/20260421at92S_ogp.jpg"
+        },
+        {
+          "title": "議題外発言巡り自民・中道が場外応酬…中道・重徳氏「質問権の ...",
+          "url": "https://www.yomiuri.co.jp/politics/20260426-GYT1T00238/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Sun, 26 Apr 2026 15:17:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -79,6 +100,28 @@
         {
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0421kaiken.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "首相、イラン情勢に「悪戦苦闘している最中」 政権半年振り返り",
+          "url": "https://mainichi.jp/articles/20260421/k00/00m/010/264000c",
+          "source": "毎日新聞",
+          "pubDate": "Mon, 20 Apr 2026 17:00:00 GMT",
+          "image": "https://cdn.mainichi.jp/vol1/2026/04/21/20260421k0000m010268000p/0c10.jpg?1"
+        },
+        {
+          "title": "高市政権発足から半年 番記者が見た高市総理の“正念場”と ...",
+          "url": "https://www.msn.com/ja-jp/news/other/%E9%AB%98%E5%B8%82%E6%94%BF%E6%A8%A9%E7%99%BA%E8%B6%B3%E3%81%8B%E3%82%89%E5%8D%8A%E5%B9%B4-%E7%95%AA%E8%A8%98%E8%80%85%E3%81%8C%E8%A6%8B%E3%81%9F%E9%AB%98%E5%B8%82%E7%B7%8F%E7%90%86%E3%81%AE-%E6%AD%A3%E5%BF%B5%E5%A0%B4-%E3%81%A8-%E4%B8%8E%E9%87%8E%E5%85%9A%E3%81%B8%E3%81%AE%E5%A4%89%E5%8C%96-%E9%95%B7%E6%9C%9F%E6%94%BF%E6%A8%A9%E3%81%B8%E5%90%91%E3%81%91%E3%81%9F%E5%91%A8%E5%9B%B2%E3%81%AE%E5%8B%95%E3%81%8D%E3%81%A8%E6%80%9D%E6%83%91%E3%81%A8%E3%81%AF-edge23/ar-AA22fVTu",
+          "source": "TBS NEWS DIG on MSN",
+          "pubDate": "Sat, 02 May 2026 16:06:12 GMT"
+        },
+        {
+          "title": "高市政権半年、「咲き誇る外交」の現実 「ホルムズ海峡危機」で ...",
+          "url": "https://news.yahoo.co.jp/articles/71bd8fa0b45e9cdf7ba7162a6ac714f7e1d91749",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 04 May 2026 18:07:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260505-00000001-yonnana-000-5-view.jpg?exp=10800"
         }
       ]
     },
@@ -148,6 +191,29 @@
         {
           "label": "防衛装備移転三原則（法令検索）",
           "url": "https://www.google.com/search?q=%E9%98%B2%E8%A1%9B%E8%A3%85%E5%82%99%E7%A7%BB%E8%BB%A2%E4%B8%89%E5%8E%9F%E5%89%87+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "フィリピンへの防衛装備品移転：当局間ワーキンググループでの ...",
+          "url": "https://news.yahoo.co.jp/expert/articles/a93eb480a4c43a42a62a909a7d1e1ee50d54c0f3",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 15 May 2026 19:36:00 GMT",
+          "image": "https://s.yimg.jp/images/news-web/versions/20260521-6fe5003/all/images/ogp_default.png"
+        },
+        {
+          "title": "殺傷能力ある武器の輸出が原則可能に 政府決定に野党から賛否両論 ...",
+          "url": "https://www.fnn.jp/articles/-/1033409",
+          "source": "FNNプライムオンライン",
+          "pubDate": "Mon, 20 Apr 2026 23:38:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/8/5/600/img_852f12b65ea833d032ac69919470c2a6142937.jpg"
+        },
+        {
+          "title": "高市政権「武器輸出解禁」で注目の「防衛関連銘柄」…三菱重工で ...",
+          "url": "https://gendai.media/articles/-/166972",
+          "source": "現代ビジネス",
+          "pubDate": "Sun, 10 May 2026 13:34:00 GMT",
+          "image": "https://res.cloudinary.com/gb-cache/image/upload/prod/f4gyas08qw6wa7upd9p4o3ws"
         }
       ]
     },
@@ -224,6 +290,29 @@
         {
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0421kaiken.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "靖国神社の春季例大祭 高市首相が真榊奉納、参拝は見送りへ",
+          "url": "https://news.yahoo.co.jp/articles/fadff2825d7903e095a25953e3904ae92349c102",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 20 Apr 2026 20:24:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260421-08162777-nnn-000-3-thumb.jpg?exp=10800"
+        },
+        {
+          "title": "超党派議連が靖国神社参拝 逢沢会長、首相参拝見送り「ご自身の ...",
+          "url": "https://www.sankei.com/article/20260422-WXVYAY2HABPJ5FGUFDW6XOEWEY/",
+          "source": "産経ニュース",
+          "pubDate": "Tue, 21 Apr 2026 19:06:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/HF476JTEDNLMDP4QTN46MTLU7U.jpg?auth=cd3e9f3f0eb0bf61bf9b977f810e54493f770d4259f56a99f9f8cb15edcadae0&amp;quality=50&amp;focal=2141%2C880&amp;width=1200&amp;height=675"
+        },
+        {
+          "title": "靖国神社の春季例大祭、高市首相が真榊奉納 維新は幹部らが参拝",
+          "url": "https://www.asahi.com/articles/ASV4P03KZV4PUTFK003M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 20 Apr 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260421000881_comm.jpg"
         }
       ]
     },

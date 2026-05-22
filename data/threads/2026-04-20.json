@@ -17,6 +17,27 @@
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0420kaiken2.html"
         }
+      ],
+      "news": [
+        {
+          "title": "三陸沖地震避難5282人…発生1か月、指示対象者の1割",
+          "url": "https://www.yomiuri.co.jp/local/iwate/news/20260520-GYTNT00365/",
+          "source": "読売新聞オンライン",
+          "pubDate": "Wed, 20 May 2026 13:00:00 GMT"
+        },
+        {
+          "title": "三陸沖の地震で日高・十勝に津波警報、4万4000人に避難指示･･･JR ...",
+          "url": "https://www.yomiuri.co.jp/local/hokkaido/news/20260420-GYTNT00307/",
+          "source": "読売新聞",
+          "pubDate": "Mon, 20 Apr 2026 22:00:00 GMT"
+        },
+        {
+          "title": "【速報】高市総理 官邸危機管理センターに官邸連絡室を設置 青森 ...",
+          "url": "https://tenki.jp/news/fnn/b93c0dc0-fc9c-468a-b4c2-b922a73b2445.html",
+          "source": "tenki.jp",
+          "pubDate": "Wed, 20 May 2026 22:45:00 GMT",
+          "image": "https://fnn.ismcdn.jp/mwimgs/8/a/-/img_8ae88d9eccadfb4b8b396701470a09ad293995.jpg"
+        }
       ]
     },
     "speeches": [

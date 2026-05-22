@@ -17,6 +17,28 @@
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0430kaiken.html"
         }
+      ],
+      "news": [
+        {
+          "title": "【速報】高市首相、イラン大統領と電話会談 “ホルムズ海峡の安全航行確保”求める",
+          "url": "https://www.msn.com/ja-jp/news/national/%E9%80%9F%E5%A0%B1-%E9%AB%98%E5%B8%82%E9%A6%96%E7%9B%B8-%E3%82%A4%E3%83%A9%E3%83%B3%E5%A4%A7%E7%B5%B1%E9%A0%98%E3%81%A8%E9%9B%BB%E8%A9%B1%E4%BC%9A%E8%AB%87/ar-AA2251hm",
+          "source": "日テレNEWS NNN on MSN",
+          "pubDate": "Thu, 30 Apr 2026 04:28:00 GMT"
+        },
+        {
+          "title": "仏大統領、イラン大統領と電話会談 ホルムズ海峡の封鎖解除求める",
+          "url": "https://news.yahoo.co.jp/articles/407100e213af2d32c08d704f0e232d2da32e9f13",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 06 May 2026 10:57:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260507-00000007-reut-000-2-view.jpg?exp=10800"
+        },
+        {
+          "title": "高市首相がイラン大統領と電話協議 ホルムズ通過「前向きな動き」",
+          "url": "https://www.asahi.com/articles/ASV4Z3QM7V4ZUTFK014M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Wed, 29 Apr 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260430003737_comm.jpg"
+        }
       ]
     },
     "speeches": [
