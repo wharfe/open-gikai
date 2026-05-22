@@ -320,6 +320,36 @@ def process_meeting(
     return threads, thread_counter
 
 
+def collect_processed_meeting_ids(threads_path: str) -> set[str]:
+    """Recover the set of meeting_ids already represented in a threads file.
+
+    The thread_id encodes the meeting via a 6-char hash of meeting_id, so we
+    cannot recover the meeting_id directly. Instead we rely on the convention
+    that every thread carries the meeting_id derivable from (committee, house,
+    date) — we reconstruct candidate hashes and compare. To keep this robust
+    we additionally treat the presence of a per-meeting thread as a marker.
+
+    Returns a set of meeting_id hash prefixes (6 chars) that are already
+    represented in the file.
+    """
+    if not os.path.exists(threads_path):
+        return set()
+    try:
+        with open(threads_path, "r", encoding="utf-8") as f:
+            threads = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        log.warning("Could not read %s for resume: %s", threads_path, e)
+        return set()
+    # Thread IDs look like ``t_YYYYMMDD_<6hex>_<index>``. Extract the hash.
+    hashes: set[str] = set()
+    for t in threads:
+        tid = t.get("id", "")
+        parts = tid.split("_")
+        if len(parts) >= 3:
+            hashes.add(parts[2])
+    return hashes
+
+
 def run_pipeline(
     date_str: str,
     meeting_filter: Optional[str] = None,
@@ -368,11 +398,36 @@ def run_pipeline(
         return
 
     # Progress tracking
+    output_path = os.path.join(output_dir, f"{date_str}.json")
     progress_path = os.path.join(output_dir, f"{date_str}.progress.json")
+
+    # Auto-resume: if the threads file already exists, treat already-summarized
+    # meetings as completed so we only spend API calls on new ones. This keeps
+    # the daily window-fetch idempotent without requiring callers to pass --resume.
+    auto_resume = not resume and os.path.exists(output_path)
+
     if resume:
         progress = load_progress(progress_path)
-        # Clear failed list so they get retried
         progress["failed"] = []
+    elif auto_resume:
+        progress = load_progress(progress_path)
+        progress["failed"] = []
+        # Seed completed list from existing threads when the progress file is
+        # missing (it's deleted on clean completion).
+        if not progress["completed"]:
+            existing_hashes = collect_processed_meeting_ids(output_path)
+            for m in meetings:
+                mid = m.get("meetingId", "")
+                if not mid:
+                    continue
+                h = hashlib.sha256(mid.encode("utf-8")).hexdigest()[:6]
+                if h in existing_hashes:
+                    progress["completed"].append(mid)
+            if progress["completed"]:
+                log.info(
+                    "Auto-resume: %d meeting(s) already represented in %s",
+                    len(progress["completed"]), output_path,
+                )
     else:
         progress = {"completed": [], "failed": []}
 
@@ -385,13 +440,17 @@ def run_pipeline(
     all_threads = []
     thread_counter = 0
 
-    # On resume, load previously generated threads
-    output_path = os.path.join(output_dir, f"{date_str}.json")
-    if resume and os.path.exists(output_path):
+    # On resume (explicit or auto), load previously generated threads so new
+    # meetings get appended instead of overwriting the file.
+    if (resume or auto_resume) and os.path.exists(output_path):
         with open(output_path, "r", encoding="utf-8") as f:
             all_threads = json.load(f)
         thread_counter = len(all_threads)
-        log.info("Resumed with %d existing threads", len(all_threads))
+        log.info(
+            "%s with %d existing threads",
+            "Resumed" if resume else "Auto-resumed",
+            len(all_threads),
+        )
 
     for meeting in meetings:
         meeting_id = meeting.get("meetingId", "unknown")

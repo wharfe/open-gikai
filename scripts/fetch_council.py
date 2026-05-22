@@ -28,12 +28,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         description="Fetch council meeting minutes from government websites"
     )
     parser.add_argument(
-        "--date-from", default=yesterday,
-        help="Start date YYYY-MM-DD (default: yesterday)",
+        "--date-from", default=None,
+        help="Start date YYYY-MM-DD (default: yesterday, ignored when --lookback-days is set)",
     )
     parser.add_argument(
         "--date-until", default=None,
         help="End date YYYY-MM-DD (default: same as --date-from)",
+    )
+    parser.add_argument(
+        "--lookback-days", type=int, default=None,
+        help="Fetch the last N days up to today. Overrides --date-from/--date-until. "
+             "Recommended for daily batches because council minutes (PDFs) are "
+             "often uploaded weeks after the meeting.",
     )
     parser.add_argument(
         "--council", default="kisei",
@@ -48,8 +54,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
 
     args = parser.parse_args(argv)
-    if args.date_until is None:
-        args.date_until = args.date_from
+
+    if args.lookback_days is not None:
+        if args.lookback_days < 0:
+            parser.error("--lookback-days must be >= 0")
+        today = date.today()
+        args.date_from = (today - timedelta(days=args.lookback_days)).isoformat()
+        args.date_until = today.isoformat()
+    else:
+        if args.date_from is None:
+            args.date_from = yesterday
+        if args.date_until is None:
+            args.date_until = args.date_from
+
     return args
 
 
@@ -75,14 +92,21 @@ def main(argv: list[str] | None = None) -> None:
         verbose=args.verbose,
     )
 
-    if result.meetings:
+    if not result.meetings:
+        log.info("No meetings with minutes found in date range")
+        return
+
+    if args.date_from != args.date_until:
+        written = adapter.write_output_by_meeting_date(result, output_dir=args.output_dir)
+        for meeting_date, filepath, count in written:
+            log.info("  %s: %d speeches → %s", meeting_date, count, filepath)
+        log.info("Wrote %d per-date raw files", len(written))
+    else:
         filepath = adapter.write_output(result, output_dir=args.output_dir)
         log.info(
             "Wrote %d meeting(s) (%d speeches) → %s",
             len(result.meetings), result.total_speeches, filepath,
         )
-    else:
-        log.info("No meetings with minutes found in date range")
 
 
 if __name__ == "__main__":
