@@ -1,20 +1,21 @@
 /**
  * Data loader for the MCP server.
  *
- * Reads the same data/threads/*.json and data/members.json that the frontend
- * SSG build consumes, from the repo root (two levels up from this package).
- * On Vercel, outputFileTracingRoot in next.config.ts ensures these files
- * are bundled.
+ * Reads data from a local apps/mcp/data/ directory that the build step
+ * (scripts/copy-data.mjs, wired via prebuild/predev npm hooks) populates
+ * from the repo-root data/. We use a local copy rather than reaching
+ * across the monorepo so the Vercel serverless function bundle is
+ * self-contained and so Next.js' file tracing does not need to look
+ * above the project root — that path-resolves incorrectly on Vercel.
  */
 
 import fs from "fs";
 import path from "path";
 import type { Member, Thread } from "@/types";
 
-// Repo root is two levels up: apps/mcp/src/lib/data.ts → repo root
-const REPO_ROOT = path.resolve(process.cwd(), "..", "..");
-const THREADS_DIR = path.join(REPO_ROOT, "data", "threads");
-const MEMBERS_PATH = path.join(REPO_ROOT, "data", "members.json");
+const DATA_DIR = path.join(process.cwd(), "data");
+const THREADS_DIR = path.join(DATA_DIR, "threads");
+const MEMBERS_PATH = path.join(DATA_DIR, "members.json");
 
 let _threadsCache: Thread[] | null = null;
 let _membersCache: Record<string, Member> | null = null;
