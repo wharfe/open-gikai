@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     "kokkai-v5.jsx",
     // Non-TypeScript scripts
     "scripts/**",
+    // Sibling Next.js apps (e.g. apps/mcp) own their own lint and build.
+    "apps/**",
   ]),
 ]);
 
