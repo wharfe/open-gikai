@@ -14082,5 +14082,71 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "ishiitaku": {
+    "id": "ishiitaku",
+    "name": "石井拓",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_57827373": {
+    "id": "m_57827373",
+    "name": "稲原浩",
+    "party": null,
+    "role": "内閣府地方分権改革推進室長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "inukaiakiyoshi": {
+    "id": "inukaiakiyoshi",
+    "name": "犬飼明佳",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "tanikouichirou": {
+    "id": "tanikouichirou",
+    "name": "谷浩一郎",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "takayamasatoshi": {
+    "id": "takayamasatoshi",
+    "name": "高山聡史",
+    "party": "チームみらい",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "harayamadaisuke": {
+    "id": "harayamadaisuke",
+    "name": "原山大亮",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
