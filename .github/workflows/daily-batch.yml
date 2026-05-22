@@ -101,16 +101,21 @@ jobs:
           done
 
       # ----- Enrich threads with news articles (Bing News RSS) -----
+      # --rank-with-claude filters Bing candidates through a Haiku 4.5 call
+      # so we don't attach semantically-similar-but-unrelated articles
+      # (e.g. "AI絵画展" for an "AI規制" thread). Best-effort; if the call
+      # fails, the script falls back to the top Bing results.
       - name: Enrich threads with news
         if: steps.dates.outputs.list != ''
         continue-on-error: true
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DATES_LIST: ${{ steps.dates.outputs.list }}
         run: |
           for d in $DATES_LIST; do
             if [ -f "data/threads/$d.json" ]; then
               echo "::group::Enrich $d"
-              python scripts/enrich-news.py --date "$d" || true
+              python scripts/enrich-news.py --date "$d" --rank-with-claude || true
               echo "::endgroup::"
             fi
           done
