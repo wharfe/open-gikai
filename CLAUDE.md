@@ -57,18 +57,31 @@ npm run lint
 ## Project Structure
 
 ```
-/                     Project root
+/                     Project root (frontend SSG project — `output: "export"`)
 ├── CLAUDE.md         This file
 ├── src/              Source code (Next.js App Router)
 │   ├── app/          Pages and layouts
 │   ├── components/   React components
 │   ├── lib/          Utilities and data fetching
 │   └── types/        TypeScript type definitions
+├── apps/
+│   └── mcp/          MCP server (separate Vercel project, dynamic Node runtime)
 ├── scripts/          Python batch processing scripts
 │   └── sources/      Source adapters (NDL, kantei, council, etc.)
-├── data/             Generated JSON data (SSG source)
+├── data/             Generated JSON data (consumed by both frontend SSG and MCP server)
 └── public/           Static assets
 ```
+
+The repo hosts **two Vercel projects** pointing at the same GitHub repo:
+
+- Root → frontend SSG (open-gikai.net). `next.config.ts` sets `output: "export"`.
+- `apps/mcp` → dynamic MCP server (mcp.open-gikai.net or similar). Reads the
+  same `data/threads/` and `data/members.json` via `outputFileTracingRoot`
+  pointing at the repo root.
+
+Because the frontend uses static export, **server-side features (Route
+Handlers, dynamic API routes, middleware) cannot be added under `src/app/`**.
+Anything requiring a runtime belongs under `apps/`.
 
 ## Git Conventions
 
