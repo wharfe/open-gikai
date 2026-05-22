@@ -7,7 +7,13 @@ import logging
 import re
 from typing import Dict, List, Optional
 
-from .prompts import GROUPING_SYSTEM, GROUPING_PROMPT, OUTCOME_SYSTEM, OUTCOME_PROMPT
+from .prompts import (
+    GROUPING_SYSTEM,
+    GROUPING_INSTRUCTIONS,
+    GROUPING_INPUT_TEMPLATE,
+    OUTCOME_SYSTEM,
+    OUTCOME_PROMPT,
+)
 
 log = logging.getLogger("pipeline.grouper")
 
@@ -100,12 +106,27 @@ def group_meeting(
 
     formatted = "\n\n".join(_format_speech_for_grouping(s) for s in substantive)
 
-    prompt = GROUPING_PROMPT.format(
+    user_input = GROUPING_INPUT_TEMPLATE.format(
         house=meeting.get("house", ""),
         meeting=meeting.get("meeting", ""),
         date=meeting.get("date", ""),
         speeches=formatted,
     )
+
+    # Static rules + format spec are sent as a separate content block with
+    # cache_control so subsequent calls within ~5min only pay ~10% of input
+    # tokens for this prefix. See pipeline/prompts.py for details.
+    messages = [{
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": GROUPING_INSTRUCTIONS,
+                "cache_control": {"type": "ephemeral"},
+            },
+            {"type": "text", "text": user_input},
+        ],
+    }]
 
     log.info(
         "Grouping %s (%d substantive speeches)",
@@ -116,7 +137,7 @@ def group_meeting(
         model=model,
         max_tokens=8192,
         system=GROUPING_SYSTEM,
-        messages=[{"role": "user", "content": prompt}],
+        messages=messages,
     )
 
     # Check if response was truncated
@@ -127,14 +148,27 @@ def group_meeting(
             model=model,
             max_tokens=16384,
             system=GROUPING_SYSTEM,
-            messages=[{"role": "user", "content": prompt}],
+            messages=messages,
         )
+
+    _log_cache_usage(response, "grouping")
 
     result = _parse_json_response(response.content[0].text)
     threads = result.get("threads", [])
 
     log.info("Found %d threads in %s", len(threads), meeting.get("meetingId", "?"))
     return threads
+
+
+def _log_cache_usage(response, phase: str) -> None:
+    """Log prompt cache hit/write stats so we can verify caching works."""
+    usage = getattr(response, "usage", None)
+    if usage is None:
+        return
+    read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    write = getattr(usage, "cache_creation_input_tokens", 0) or 0
+    if read or write:
+        log.info("  cache[%s]: read=%d write=%d", phase, read, write)
 
 
 # ---------------------------------------------------------------------------

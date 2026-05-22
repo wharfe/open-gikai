@@ -2,6 +2,19 @@
 
 All prompts are centralized here for transparency and auditability.
 These prompts are open-sourced as part of GIKAI's political neutrality guarantee.
+
+Each prompt is split into two parts:
+    *_INSTRUCTIONS — the static rules / examples / output format. This block
+                      is identical across every call and is marked with
+                      ``cache_control: {"type": "ephemeral"}`` by the caller
+                      so subsequent calls within the 5-minute window only pay
+                      for the variable input. The literal rule text is
+                      unchanged from the original combined prompt; only the
+                      block ordering changed.
+    *_INPUT_TEMPLATE — the per-call variable portion (meeting metadata and
+                       speeches) that is filled in with ``.format(...)``.
+
+The system prompt is also unchanged.
 """
 
 # ---------------------------------------------------------------------------
@@ -12,11 +25,8 @@ GROUPING_SYSTEM = """\
 あなたは国会の議事録を構造化するアシスタントです。
 政治的に中立な立場で、与党・野党を区別せず同じ基準で処理してください。"""
 
-GROUPING_PROMPT = """\
-以下は国会の{house}{meeting}（{date}）の発言一覧です。
-各発言の冒頭部分と発言者情報を示します。
-
-これらの発言をテーマ（議題・話題）単位でグルーピングしてください。
+GROUPING_INSTRUCTIONS = """\
+国会の発言一覧をテーマ（議題・話題）単位でグルーピングしてください。
 
 ## ルール
 - 委員長の手続き発言（開会宣言、議案朗読、採決宣告など）はどのテーマにも含めない
@@ -34,14 +44,11 @@ GROUPING_PROMPT = """\
   例: 「AIの開発・利用に関するリスク分類と規制の枠組みを定める法案。2024年に閣議決定。」
 - legislationName: 議論の対象となっている法案・法律名があれば正式名称（なければnull）
 
-## 発言一覧
-{speeches}
-
 ## 出力（JSONのみ、他のテキストは不要）
 ```json
-{{
+{
   "threads": [
-    {{
+    {
       "topic": "テーマ名",
       "topicTag": "短縮タグ",
       "topicColor": "#hex",
@@ -49,10 +56,17 @@ GROUPING_PROMPT = """\
       "contextDescription": "このテーマの背景説明（80字以内）",
       "legislationName": "正式な法案・法律名（あれば）",
       "speechOrders": [4, 5, 6, 7]
-    }}
+    }
   ]
-}}
+}
 ```"""
+
+GROUPING_INPUT_TEMPLATE = """\
+以下は国会の{house}{meeting}（{date}）の発言一覧です。
+各発言の冒頭部分と発言者情報を示します。
+
+## 発言一覧
+{speeches}"""
 
 
 # ---------------------------------------------------------------------------
@@ -63,9 +77,8 @@ SUMMARY_SYSTEM = """\
 あなたは国会の議事録を要約するアシスタントです。
 政治的に中立な立場で、与党・野党を区別せず同じ基準で処理してください。"""
 
-SUMMARY_PROMPT = """\
-以下は{house}{meeting}の「{topic}」に関する発言です。
-各発言について、要約・分類・キーワード抽出を行ってください。
+SUMMARY_INSTRUCTIONS = """\
+発言について、要約・分類・キーワード抽出を行ってください。
 
 ## 要約の文体ルール（最重要）
 要約は発言内容そのものを簡潔に表現する。報告文体は絶対に使わない。
@@ -107,9 +120,6 @@ SUMMARY_PROMPT = """\
 
 同じ概念を指す表記が複数あり得る場合は、常に最も一般的で短い形を選ぶ。
 
-## 発言一覧
-{speeches}
-
 ## コミットメント抽出
 答弁の中で大臣・政府委員が具体的に約束・表明したことを抽出する。
 例: 「採決前に影響試算を提出する」「次の国会で法案を出す」「検討会を設置する」
@@ -117,28 +127,36 @@ SUMMARY_PROMPT = """\
 
 ## 出力（JSONのみ、他のテキストは不要）
 ```json
-{{
+{
   "speeches": [
-    {{
+    {
       "speechOrder": 4,
       "tension": "追及",
       "keywords": ["キーワード1", "キーワード2", "キーワード3"],
       "quote": "原文から最も重要な一文をそのまま抜粋（改変不可）",
-      "summaries": {{
+      "summaries": {
         "easy": "...(60-80字)",
         "teen": "...(80-100字)",
         "adult": "...(60-80字)"
-      }}
-    }}
+      }
+    }
   ],
   "commitments": ["具体的な約束1", "具体的な約束2"]
-}}
+}
 ```"""
+
+SUMMARY_INPUT_TEMPLATE = """\
+以下は{house}{meeting}の「{topic}」に関する発言です。
+
+## 発言一覧
+{speeches}"""
 
 
 # ---------------------------------------------------------------------------
 # Phase D: Meeting-level outcome extraction (votes, resolutions)
 # ---------------------------------------------------------------------------
+# This prompt is short enough that caching is not worthwhile (cached prefix
+# must reach 1,024 tokens). Kept as a single combined template.
 
 OUTCOME_SYSTEM = """\
 あなたは国会の議事録から採決結果と附帯決議を抽出するアシスタントです。"""

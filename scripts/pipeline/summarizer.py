@@ -7,7 +7,7 @@ import logging
 import re
 from typing import Dict, List, Optional
 
-from .prompts import SUMMARY_SYSTEM, SUMMARY_PROMPT
+from .prompts import SUMMARY_SYSTEM, SUMMARY_INSTRUCTIONS, SUMMARY_INPUT_TEMPLATE
 
 log = logging.getLogger("pipeline.summarizer")
 
@@ -72,12 +72,27 @@ def summarize_thread(
 
     formatted = "\n\n---\n\n".join(_format_speech_for_summary(s) for s in speeches)
 
-    prompt = SUMMARY_PROMPT.format(
+    user_input = SUMMARY_INPUT_TEMPLATE.format(
         house=meeting.get("house", ""),
         meeting=meeting.get("meeting", ""),
         topic=thread_info.get("topic", ""),
         speeches=formatted,
     )
+
+    # Static rules / NG-OK examples / output format are sent as a separate
+    # content block with cache_control. Per-thread variable content (committee
+    # + topic + speeches) lives in the second block.
+    messages = [{
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": SUMMARY_INSTRUCTIONS,
+                "cache_control": {"type": "ephemeral"},
+            },
+            {"type": "text", "text": user_input},
+        ],
+    }]
 
     log.info(
         "Summarizing thread '%s' (%d speeches)",
@@ -88,11 +103,24 @@ def summarize_thread(
         model=model,
         max_tokens=8192,
         system=SUMMARY_SYSTEM,
-        messages=[{"role": "user", "content": prompt}],
+        messages=messages,
     )
+
+    _log_cache_usage(response)
 
     result = _parse_json_response(response.content[0].text)
     return {
         "speeches": result.get("speeches", []),
         "commitments": result.get("commitments", []),
     }
+
+
+def _log_cache_usage(response) -> None:
+    """Log prompt cache hit/write stats so we can verify caching works."""
+    usage = getattr(response, "usage", None)
+    if usage is None:
+        return
+    read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    write = getattr(usage, "cache_creation_input_tokens", 0) or 0
+    if read or write:
+        log.info("  cache[summary]: read=%d write=%d", read, write)
