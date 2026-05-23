@@ -4071,6 +4071,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00620260423"
         }
+      ],
+      "news": [
+        {
+          "title": "交通・医療・防災・行政 ─‟地域のすべてをAIでひとつに”「AI SmartCity on IDX」リリース 〜 全国スマートシティ構想を統合するAI ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000680.000040956.html",
+          "source": "PR TIMES",
+          "pubDate": "Sun, 12 Apr 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/40956/680/40956-680-33855931b06d50dafa27c13aa9631187-3222x1984.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "未来の災害を可視化 都市の立体データサービス「プラトー」、自治体で防災活用広がる",
+          "url": "https://mag.executive.itmedia.co.jp/executive/articles/2603/11/news065.html",
+          "source": "ITmedia",
+          "pubDate": "Tue, 10 Mar 2026 17:00:00 GMT",
+          "image": "https://image.itmedia.co.jp/executive/articles/2603/11/l_0311sai.jpg"
+        }
       ]
     },
     "speeches": [
