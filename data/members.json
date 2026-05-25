@@ -14148,5 +14148,71 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "imaokaueki": {
+    "id": "imaokaueki",
+    "name": "今岡植",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "tajimakaname": {
+    "id": "tajimakaname",
+    "name": "田嶋要",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "takazawakazumoto": {
+    "id": "takazawakazumoto",
+    "name": "高沢一基",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "aokihitomi": {
+    "id": "aokihitomi",
+    "name": "青木ひとみ",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "mutoukazuko": {
+    "id": "mutoukazuko",
+    "name": "武藤かず子",
+    "party": "チームみらい",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "ogawajunya": {
+    "id": "ogawajunya",
+    "name": "小川淳也",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
