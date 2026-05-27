@@ -246,6 +246,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104024X02320260519"
         }
+      ],
+      "news": [
+        {
+          "title": "26年度予算、今夕成立へ 少数与党、賛成過半数確保",
+          "url": "https://news.yahoo.co.jp/articles/5bdb209b5fab8be8e6b1f8cafa38b5d3072cf9fe",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Mon, 06 Apr 2026 11:12:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260407-00000008-kyodonews-000-4-view.jpg?exp=10800"
+        },
+        {
+          "title": "2026年度予算案を13日衆院採決へ、月内成立めざす 野党は反発",
+          "url": "https://www.nikkei.com/article/DGXZQOUA129IR0S6A310C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 13 Mar 2026 06:03:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2748682012032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.73&amp;fp-y=0.92&amp;h=630&amp;w=1200&amp;s=6d681f099b272800ed6d17abf4239757"
+        },
+        {
+          "title": "26年度予算案、与党が13日衆院採決の構え 野党は委員長解任決議",
+          "url": "https://www.nikkei.com/article/DGXZQOUA124Y10S6A310C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 12 Mar 2026 12:21:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2748051012032026000000-1.jpg?auto=format&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fp-x=0.31&amp;fp-y=0.86&amp;h=630&amp;w=1200&amp;s=2e0f4b4272efcbe950e3758b85122478"
+        }
       ]
     },
     "speeches": [

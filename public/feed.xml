@@ -5,30 +5,30 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 26 May 2026 21:39:56 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 21:51:04 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W22 国会まとめ — 2件の議論</title>
+      <title>2026-W22 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W22</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W22</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。中東情勢を踏まえた令和８年度補正予算等についての会見ほか。</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、2委員会の議論をまとめました。国家情報会議設置法の成立についての会見、中東情勢を踏まえた令和８年度補正予算等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W21 国会まとめ — 12件の議論</title>
+      <title>2026-W21 国会まとめ — 13件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W21</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W21</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>12件のスレッド、3委員会の議論をまとめました。国家基本政策委員会合同審査会、記者の質問に答える高市総理、議院運営委員会ほか。</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>13件のスレッド、4委員会の議論をまとめました。北朝鮮による拉致問題等に関する特別委員会、国家基本政策委員会合同審査会、記者の質問に答える高市総理ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W20 国会まとめ — 34件の議論</title>
+      <title>2026-W20 国会まとめ — 36件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W20</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W20</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>34件のスレッド、4委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
+      <description>36件のスレッド、5委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,14 @@
       <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
       <description>5件のスレッド、2委員会の議論をまとめました。議院運営委員会、ベトナム及びオーストラリア訪問等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>国家情報会議設置法の成立と意義 — 国家情報会議設置法の成立についての会見</title>
+      <link>https://open-gikai.net/t/t_20260527_0b9a6f_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260527_0b9a6f_01</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <description>インテリジェンス司令塔機能強化を目指す法案が成立、総理が意義を説明（首相記者会見・2026.05.27・2発言）</description>
+      <category>国家情報会議設置法の成立についての会見</category>
     </item>
     <item>
       <title>中東情勢を受けた令和８年度補正予算案の概要 — 中東情勢を踏まえた令和８年度補正予算等についての会見</title>
@@ -54,6 +62,14 @@
       <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
       <description>長期金利上昇下での補正予算案の市場信認と多額予備費の説明責任を質問（首相記者会見・2026.05.25・2発言）</description>
       <category>中東情勢を踏まえた令和８年度補正予算等についての会見</category>
+    </item>
+    <item>
+      <title>拉致問題の現状と政府の取組方針 — 北朝鮮による拉致問題等に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260522_b1bd41_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260522_b1bd41_01</guid>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>拉致問題担当大臣と外務大臣が拉致問題解決への政府方針と現状を報告（国会会議録・2026.05.22・2発言）</description>
+      <category>北朝鮮による拉致問題等に関する特別委員会</category>
     </item>
     <item>
       <title>補正予算編成と緊急経済対策 — 国家基本政策委員会合同審査会</title>
@@ -174,6 +190,22 @@
       <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
       <description>総務・財務金融・国土交通・経済産業委員長からの報告と各党の反対表明（国会会議録・2026.05.14・1発言）</description>
       <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>緊急事態条項のイメージ案についての説明 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260514_cc7cd0_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_cc7cd0_03</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>衆議院法制局が作成した緊急事態条項のイメージ案について詳細な説明を実施（国会会議録・2026.05.14・1発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>緊急事態条項イメージ案への各党討議 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260514_cc7cd0_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_cc7cd0_04</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>自民・公明・維新・国民・参政・みらい・共産各党が緊急事態条項案に対する見解を表明（国会会議録・2026.05.14・7発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
       <title>健康保険法等改正法案の本会議審議手続 — 議院運営委員会</title>
@@ -406,38 +438,6 @@
       <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
       <description>防災庁地方機関としての防災局設置検討と地域災害特性に応じた体制構築（国会会議録・2026.05.12・2発言）</description>
       <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時医療連携と学校避難所整備促進 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_29</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_29</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>DMAT等医療チーム統括機能と学校体育館空調整備の連携推進（国会会議録・2026.05.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災予算適正執行と災害時情報発信体制 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_30</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_30</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>補助金不正受給防止策と災害時SNS偽情報対策の体制強化（国会会議録・2026.05.12・6発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>理事の補欠選任 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260508_9f152b_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260508_9f152b_01</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
-      <description>委員の異動に伴い欠員となった理事2名の補欠選任を実施（国会会議録・2026.05.08・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>国家情報会議設置法案の本会議運営 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260508_9f152b_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260508_9f152b_02</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
-      <description>国家情報会議設置法案の本会議における趣旨説明と各会派の質疑時間を決定（国会会議録・2026.05.08・2発言）</description>
-      <category>議院運営委員会</category>
     </item>
   </channel>
 </rss>
