@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 May 2026 21:51:04 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 21:51:14 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W22 国会まとめ — 3件の議論</title>
+      <title>2026-W22 国会まとめ — 6件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W22</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W22</guid>
       <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、2委員会の議論をまとめました。国家情報会議設置法の成立についての会見、中東情勢を踏まえた令和８年度補正予算等についての会見ほか。</description>
+      <description>6件のスレッド、3委員会の議論をまとめました。国家情報会議設置法の成立についての会見、議院運営委員会、中東情勢を踏まえた令和８年度補正予算等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -46,6 +46,30 @@
       <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
       <description>インテリジェンス司令塔機能強化を目指す法案が成立、総理が意義を説明（首相記者会見・2026.05.27・2発言）</description>
       <category>国家情報会議設置法の成立についての会見</category>
+    </item>
+    <item>
+      <title>国会議員の期末手当支給割合の改正 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260526_db6b83_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260526_db6b83_01</guid>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <description>議長・副議長・議員の期末手当を令和6年改正前の特別職給与法水準に一時的に戻す措置（国会会議録・2026.05.26・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>刑事訴訟法改正案の本会議審議 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260526_db6b83_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260526_db6b83_02</guid>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <description>内閣提出と議員提出の刑事訴訟法改正案2本の趣旨説明と質疑の議事進行（国会会議録・2026.05.26・3発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>特別委員長報告と採決の進行 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260526_db6b83_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260526_db6b83_03</guid>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <description>丹羽特別委員長報告後、討論を経て日程第一・第二の2回の採決を実施（国会会議録・2026.05.26・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>中東情勢を受けた令和８年度補正予算案の概要 — 中東情勢を踏まえた令和８年度補正予算等についての会見</title>
@@ -413,30 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_25</guid>
       <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
       <description>全国トイレカー整備状況と支援自治体への施設損傷補償制度（国会会議録・2026.05.12・4発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>地方の人口流出防止と被災者支援制度拡充 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_26</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_26</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>復興庁設置法と防災庁設置法の国支援規定差異と被災者生活再建支援金見直し（国会会議録・2026.05.12・8発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>郷土愛育成教育となりわい再建支援 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_27</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_27</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災教育による郷土愛醸成と中小企業なりわい再建補助金の柔軟運用（国会会議録・2026.05.12・7発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災局設置構想と地域特性への対応 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_28</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_28</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災庁地方機関としての防災局設置検討と地域災害特性に応じた体制構築（国会会議録・2026.05.12・2発言）</description>
       <category>災害対策特別委員会</category>
     </item>
   </channel>
