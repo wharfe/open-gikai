@@ -5,22 +5,22 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 28 May 2026 21:51:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 21:47:50 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W22 国会まとめ — 6件の議論</title>
+      <title>2026-W22 国会まとめ — 8件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W22</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W22</guid>
       <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>6件のスレッド、3委員会の議論をまとめました。国家情報会議設置法の成立についての会見、議院運営委員会、中東情勢を踏まえた令和８年度補正予算等についての会見ほか。</description>
+      <description>8件のスレッド、4委員会の議論をまとめました。国家情報会議設置法の成立についての会見、決算行政監視委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W21 国会まとめ — 13件の議論</title>
+      <title>2026-W21 国会まとめ — 14件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W21</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W21</guid>
       <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <description>13件のスレッド、4委員会の議論をまとめました。北朝鮮による拉致問題等に関する特別委員会、国家基本政策委員会合同審査会、記者の質問に答える高市総理ほか。</description>
+      <description>14件のスレッド、5委員会の議論をまとめました。北朝鮮による拉致問題等に関する特別委員会、国家基本政策委員会合同審査会、国家基本政策委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -46,6 +46,22 @@
       <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
       <description>インテリジェンス司令塔機能強化を目指す法案が成立、総理が意義を説明（首相記者会見・2026.05.27・2発言）</description>
       <category>国家情報会議設置法の成立についての会見</category>
+    </item>
+    <item>
+      <title>委員会の運営組織決定 — 決算行政監視委員会</title>
+      <link>https://open-gikai.net/t/t_20260527_c27676_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260527_c27676_02</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <description>決算行政監視委員会の理事指名と国政調査承認要求について手続き決定（国会会議録・2026.05.27・2発言）</description>
+      <category>決算行政監視委員会</category>
+    </item>
+    <item>
+      <title>令和6年度予備費使用の事後承諾 — 決算行政監視委員会</title>
+      <link>https://open-gikai.net/t/t_20260527_c27676_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260527_c27676_03</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <description>原油価格・物価高騰対策及び賃上げ促進対応予備費約9891億円使用の承諾審議（国会会議録・2026.05.27・2発言）</description>
+      <category>決算行政監視委員会</category>
     </item>
     <item>
       <title>国会議員の期末手当支給割合の改正 — 議院運営委員会</title>
@@ -166,6 +182,14 @@
       <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
       <description>AIの急速な進化に対する規制とリスク管理、社会実装促進のバランスを議論（国会会議録・2026.05.20・2発言）</description>
       <category>国家基本政策委員会合同審査会</category>
+    </item>
+    <item>
+      <title>理事の補欠選任 — 国家基本政策委員会</title>
+      <link>https://open-gikai.net/t/t_20260520_b31a9c_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_b31a9c_10</guid>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <description>委員異動に伴う理事3名欠員の補欠選任を委員長指名で実施（国会会議録・2026.05.20・2発言）</description>
+      <category>国家基本政策委員会</category>
     </item>
     <item>
       <title>韓国訪問と日韓首脳会談 — 記者の質問に答える高市総理</title>
@@ -413,30 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_22</guid>
       <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
       <description>大槌山林火災事例による避難指示解除基準と火使用注意喚起の強化（国会会議録・2026.05.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時の学校再開と代替施設確保 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_23</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_23</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>災害時教育継続のための学校再開計画と代替施設の事前確保（国会会議録・2026.05.12・3発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害対応職員の生活環境整備 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_24</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_24</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>緊急消防援助隊・自衛隊災害派遣部隊の長期活動における生活環境確保（国会会議録・2026.05.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>トイレカー普及と広域支援体制の課題 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_25</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_25</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>全国トイレカー整備状況と支援自治体への施設損傷補償制度（国会会議録・2026.05.12・4発言）</description>
       <category>災害対策特別委員会</category>
     </item>
   </channel>

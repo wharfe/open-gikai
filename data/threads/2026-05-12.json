@@ -106,6 +106,13 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20260526_db6b83_02",
+        "relationship": "関連議論",
+        "topic": "刑事訴訟法改正案の本会議審議",
+        "committee": "議院運営委員会",
+        "date": "2026.05.26"
+      },
+      {
         "threadId": "t_20260305_516387_01",
         "relationship": "関連議論",
         "topic": "財政関連法案4件の本会議趣旨説明手続き",
