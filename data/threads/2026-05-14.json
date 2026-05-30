@@ -89,6 +89,13 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20260527_c27676_02",
+        "relationship": "関連議論",
+        "topic": "委員会の運営組織決定",
+        "committee": "決算行政監視委員会",
+        "date": "2026.05.27"
+      },
+      {
         "threadId": "t_20251119_cefe53_72",
         "relationship": "関連議論",
         "topic": "文部科学委員会新体制発足と所信挨拶",
@@ -108,6 +115,13 @@
         "topic": "法務委員会委員長及び理事補欠選任",
         "committee": "法務委員会",
         "date": "2025.11.18"
+      },
+      {
+        "threadId": "t_20260520_b31a9c_10",
+        "relationship": "関連議論",
+        "topic": "理事の補欠選任",
+        "committee": "国家基本政策委員会",
+        "date": "2026.05.20"
       },
       {
         "threadId": "t_20250124_43dcf1_19",
