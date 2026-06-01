@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 May 2026 21:29:41 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 22:31:09 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W23 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W23</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W23</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W22 国会まとめ — 8件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W22</link>
@@ -16,28 +24,28 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W21 国会まとめ — 14件の議論</title>
+      <title>2026-W21 国会まとめ — 20件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W21</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W21</guid>
       <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <description>14件のスレッド、5委員会の議論をまとめました。北朝鮮による拉致問題等に関する特別委員会、国家基本政策委員会合同審査会、国家基本政策委員会ほか。</description>
+      <description>20件のスレッド、6委員会の議論をまとめました。北朝鮮による拉致問題等に関する特別委員会、憲法審査会、国家基本政策委員会合同審査会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W20 国会まとめ — 36件の議論</title>
+      <title>2026-W20 国会まとめ — 51件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W20</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W20</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>36件のスレッド、5委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
+      <description>51件のスレッド、5委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W19 国会まとめ — 5件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W19</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W19</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
-      <description>5件のスレッド、2委員会の議論をまとめました。議院運営委員会、ベトナム及びオーストラリア訪問等についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>イラン大統領との電話会談と中東情勢への対応 — ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260601_d16f01_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260601_d16f01_01</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <description>ペゼシュキアン・イラン大統領との3回目電話会談で話し合いによる事態沈静化を要請（首相記者会見・2026.06.01・2発言）</description>
+      <category>ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見</category>
     </item>
     <item>
       <title>国家情報会議設置法の成立と意義 — 国家情報会議設置法の成立についての会見</title>
@@ -110,6 +118,54 @@
       <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
       <description>拉致問題担当大臣と外務大臣が拉致問題解決への政府方針と現状を報告（国会会議録・2026.05.22・2発言）</description>
       <category>北朝鮮による拉致問題等に関する特別委員会</category>
+    </item>
+    <item>
+      <title>緊急事態条項のイメージ案全般についての各会派の基本見解 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260521_82699f_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_01</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>緊急事態条項のイメージ案について各会派が基本的な立場と見解を表明（国会会議録・2026.05.21・7発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>オンライン国会の必要性と制度設計 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260521_82699f_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_02</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>緊急時における国会のオンライン開催について過去の議論経過を踏まえた意見（国会会議録・2026.05.21・1発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>憲法議論の進め方と権力濫用防止への懸念 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260521_82699f_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_03</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>改憲議論の手法への批判と個人の尊厳・自由を守る立場からの基本姿勢（国会会議録・2026.05.21・1発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>内閣による国家機能維持の具体的制度設計 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260521_82699f_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_04</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>緊急事態における内閣の権限拡大と国家機能維持に関する制度設計の議論（国会会議録・2026.05.21・1発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>参議院緊急集会の射程と議員任期延長の関係 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260521_82699f_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_05</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>参議院緊急集会の期間・範囲と衆議院議員任期延長のすみ分けの具体論（国会会議録・2026.05.21・2発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>選挙困難事態認定時の内閣解散権と不信任決議の扱い — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20260521_82699f_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_06</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <description>選挙困難事態での内閣の解散権行使と国会の不信任決議権の制限の是非（国会会議録・2026.05.21・1発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
       <title>補正予算編成と緊急経済対策 — 国家基本政策委員会合同審査会</title>
@@ -256,188 +312,132 @@
       <category>憲法審査会</category>
     </item>
     <item>
+      <title>防災庁設置法案の司令塔機能と勧告権 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_05</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>防災庁の司令塔機能と尊重義務つき勧告権の行使方針について議論（国会会議録・2026.05.14・10発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害時の専門人材確保と派遣体制 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_06</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>DMAT、DWAT等の医療・福祉専門人材の確保と災害時派遣体制の課題（国会会議録・2026.05.14・7発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>広域避難体制と受援態勢の整備 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_07</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>首都直下地震等における広域避難計画と災害公営住宅活用の課題（国会会議録・2026.05.14・4発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>林野火災対策と消火技術の強化 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_08</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>山林火災の消火薬剤開発と野焼き規制の見直し検討（国会会議録・2026.05.14・3発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>津波避難における車両使用基準 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_09</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>津波避難時の車避難要件と個別避難計画策定の促進（国会会議録・2026.05.14・3発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災人材登録制度の創設検討 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_10</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>防災士等の民間防災人材を個人単位で登録する制度の必要性（国会会議録・2026.05.14・4発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災庁と復興庁の将来的統合論 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_11</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>復興庁の時限設置終了後の防災庁との統合可能性について議論（国会会議録・2026.05.14・10発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害情報のデジタル化と民間連携 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_12</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>防災DX推進における民間企業との連携体制と標準化（国会会議録・2026.05.14・3発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>人口減少下の地域防災力維持 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_13</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>人口減少・高齢化による消防団等地域防災担い手の減少対策（国会会議録・2026.05.14・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害対策基本法の役割分担見直し — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_14</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>災害規模に応じた国・自治体の責任分担と実施体制の見直し（国会会議録・2026.05.14・5発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>国際緊急援助隊の国内活用 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_15</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>海外派遣用の国際緊急援助隊を国内災害対応に活用する制度検討（国会会議録・2026.05.14・9発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災関連予算と人員の確保 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_16</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>防災庁の実効性確保に必要な予算規模と人員配置の方針（国会会議録・2026.05.14・2発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>防災技術の国際展開と貢献 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_17</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>日本の防災技術・ノウハウの国際展開と防災立国構想（国会会議録・2026.05.14・4発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>災害関連死ゼロに向けた取組 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_18</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>避難生活環境改善による災害関連死防止策の推進（国会会議録・2026.05.14・2発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>被災者情報保護とデータ活用 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260514_37ef49_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_19</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <description>防災システムにおける個人情報保護と外資系企業への提供制限（国会会議録・2026.05.14・7発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
       <title>健康保険法等改正法案の本会議審議手続 — 議院運営委員会</title>
       <link>https://open-gikai.net/t/t_20260513_425e76_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260513_425e76_01</guid>
       <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
       <description>健康保険法等改正法案の本会議での趣旨説明と質疑時間配分を決定（国会会議録・2026.05.13・2発言）</description>
       <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>主要食糧需給価格安定法改正案の趣旨説明・質疑 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_893abf_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_893abf_01</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>食糧法改正案の趣旨説明と中道改革連合・国民民主党による質疑実施を決定（国会会議録・2026.05.12・3発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>防災庁設置法案の審議開始と政府参考人出席 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_02</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災庁設置法案及び整備法案の審査開始と政府参考人19名の出席決定（国会会議録・2026.05.12・1発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災庁の災害対応体制と現地対策本部の役割分担 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_03</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>能登半島地震の経験を踏まえた政府現地対策本部の機能強化と役割分担（国会会議録・2026.05.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>各府省の業務継続計画（BCP）の実効性確保 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_04</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>首都直下地震を想定した各府省BCPの作成状況と実効性評価体制（国会会議録・2026.05.12・1発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災大学校構想と防災人材育成 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_05</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災大学校設置による国・地方・民間の防災人材育成体制構築（国会会議録・2026.05.12・3発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時の保健・医療・福祉分野連携強化 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_06</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>DMAT・JMAT等医療チーム連携とケースマネジメント体制整備（国会会議録・2026.05.12・2発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時の学校支援と子どもの居場所確保 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_07</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>学校支援チーム（D-EST）構築と災害時子ども居場所づくり体制（国会会議録・2026.05.12・4発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時動物救護とVMAT支援体制 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_08</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>ペット同伴避難対策とVMAT（獣医療チーム）活動支援強化（国会会議録・2026.05.12・3発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災庁設置への期待と復興庁との関係 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_09</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災庁設置の意義と復興大臣の三つの担当職務との関係整理（国会会議録・2026.05.12・4発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>原子力災害と自然災害の複合災害対応 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_10</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>原子力防災と防災庁の役割分担及び福島復興継続の重要性（国会会議録・2026.05.12・1発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>避難所環境改善とスフィア基準の適用 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_11</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>避難所の一人当たり面積基準と段階的環境改善の考え方整理（国会会議録・2026.05.12・6発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災大学校の具体的構想と既存研修との関係 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_12</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災大学校の設置場所・方式と既存防災研修機関との連携方針（国会会議録・2026.05.12・7発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>スフィア基準の具体的運用と学校避難所整備 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_13</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>災害フェーズ別スフィア基準適用と学校施設の避難所機能強化（国会会議録・2026.05.12・8発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>副首都構想と首都機能バックアップ体制 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_14</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>首都直下地震時の副首都機能と防災庁による首都機能維持戦略（国会会議録・2026.05.12・6発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>福島復興と防災庁の長期的関与 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_15</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>福島復興の中長期継続と防災庁による将来災害への教訓活用（国会会議録・2026.05.12・4発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>ふるさと防災職員制度と地方連携強化 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_16</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_16</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>47都道府県担当ふるさと防災職員の体制拡充と伴走型支援（国会会議録・2026.05.12・7発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>被災者支援の省庁間連携と情報データベース — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_17</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_17</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>在宅・広域避難者含む被災者データベースと個人情報共有課題（国会会議録・2026.05.12・4発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>感染症災害対応（ハンタウイルス事例） — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_18</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_18</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>クルーズ船ハンタウイルス感染事例と国内感染拡大リスク評価（国会会議録・2026.05.12・5発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>訪問診療の災害時BCP策定と基幹病院連携 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_19</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_19</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>在宅医療機関の災害時業務継続計画策定と基幹病院との連携強化（国会会議録・2026.05.12・6発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>国道1号富士由比バイパス通行止め事例と交通要所対策 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_20</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_20</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>東西交通大動脈の脆弱性と代替路確保・高速無料化措置の課題（国会会議録・2026.05.12・17発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災庁の事前防災と国土強靱化との連携 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_21</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_21</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>防災庁の司令塔機能による事前防災推進と国土強靱化事業との表裏一体連携（国会会議録・2026.05.12・8発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>山林火災対応と避難指示解除基準 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260512_28a5e7_22</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260512_28a5e7_22</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <description>大槌山林火災事例による避難指示解除基準と火使用注意喚起の強化（国会会議録・2026.05.12・5発言）</description>
-      <category>災害対策特別委員会</category>
     </item>
   </channel>
 </rss>

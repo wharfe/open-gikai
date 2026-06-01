@@ -14214,5 +14214,137 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "iharatakumi": {
+    "id": "iharatakumi",
+    "name": "井原巧",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_8f3152d3": {
+    "id": "m_8f3152d3",
+    "name": "前田剛志",
+    "party": null,
+    "role": "内閣官房地域未来戦略本部事務局審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "yokotamitsuhiro": {
+    "id": "yokotamitsuhiro",
+    "name": "横田光弘",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_368454ab": {
+    "id": "m_368454ab",
+    "name": "早田豪",
+    "party": null,
+    "role": "内閣府大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_75945854": {
+    "id": "m_75945854",
+    "name": "吉田修",
+    "party": null,
+    "role": "厚生労働省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_002b0dc7": {
+    "id": "m_002b0dc7",
+    "name": "森田稔",
+    "party": null,
+    "role": "デジタル庁総括審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "niwahideki": {
+    "id": "niwahideki",
+    "name": "丹羽秀樹",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "tanakamasashi": {
+    "id": "tanakamasashi",
+    "name": "田中昌史",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "tanikouichi": {
+    "id": "tanikouichi",
+    "name": "谷公一",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_d99bde88": {
+    "id": "m_d99bde88",
+    "name": "岡田智裕",
+    "party": null,
+    "role": "デジタル庁審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "takagaiemiko": {
+    "id": "takagaiemiko",
+    "name": "高階恵美子",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nishimurachinami": {
+    "id": "nishimurachinami",
+    "name": "西村智奈美",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
