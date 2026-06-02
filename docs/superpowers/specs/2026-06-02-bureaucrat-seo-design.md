@@ -37,15 +37,18 @@ GSC/GA4 の実測(2026-06-02 時点)に基づく施策。
 
 ## 設計
 
-### 1. 省庁抽出ロジック (`src/lib/ministry.ts`)
+### 1. 省庁抽出ロジック (`src/lib/ministry.mjs`)
 
 純関数のみの新規モジュール。LLM 不使用・完全決定論的。
 
+**配置: plain ESM の `src/lib/ministry.mjs`(JSDoc 型注釈)を単一実装とし、隣に型宣言 `src/lib/ministry.d.mts` を添える。** 理由: build は `node scripts/*.mjs && next build` で tsx / ts-node / jiti は不在のため、TS ファイルは Node スクリプトから import できない。Next(TS)側は `@/lib/ministry.mjs`、`scripts/generate-sitemap.mjs` と `scripts/notify-indexnow.mjs` は相対パスで同じ実装を import する(ロジックの二重実装を作らない)。
+
 - 省庁マスタ: `{ slug: string; name: string }[]` 約35件(例: `{ slug: "mlit", name: "国土交通省" }`)。府省だけでなく外局(海上保安庁・観光庁・文化庁・消防庁等)も独立エントリとする
+- **公開 API は `getMemberMinistry(member: { id, role }): Ministry | null` とし、role 文字列のみを受ける prefix マッチは内部関数に隠蔽する。** `m_` ID 限定と blocklist を API 内部で強制し、呼び出し側(/gov ページ・sitemap・IndexNow の3箇所)のフィルタ忘れによる政治家混入の再発を型レベルで防ぐ
 - **対象は ID が `m_` で始まる発言者(政府参考人系)に限定する。** slug ID の政治家には「内閣官房長官」「内閣府特命担当大臣」等、省庁名で始まる役職が13人存在し、prefix マッチだけでは省庁ハブに混入するため(実データで検証済み)
 - 加えて防御層として、政治職名 blocklist(`内閣官房長官`・`内閣官房副長官`・`内閣府特命担当大臣`・`内閣府副大臣`・`内閣府大臣政務官` に一致する role)を除外する。将来 `m_` ID に政治家が混入した場合の保険
 - ※ `rank` による除外は採用しない。rank データは「気象庁長官」「文部科学戦略官」等の官僚を `minister` と誤分類しており、正しい官僚を除外してしまうため(実データで検証済み)
-- `extractMinistry(role: string): Ministry | null` — role 文字列の **最長一致 prefix マッチ**(「内閣官房」vs「内閣府」のような前方重複対策のため、名前の長い順に評価)
+- 内部の prefix マッチは **最長一致**(「内閣官房」vs「内閣府」のような前方重複対策のため、名前の長い順に評価)
 - マッチしない者(参考人・衆参事務局・「委員」「大臣」等の汎用役職・role 空)は `null` を返し、ハブ非掲載。既存の表示には影響しない
 
 検証済みデータ: 官僚551人中330人が機械的に分類可能(国交省31・厚労省28・内閣官房26・内閣府23・総務省23…)。
@@ -85,7 +88,7 @@ getMemberStats(): Map<memberId, { speechCount: number; latestDate: string; lates
 ### 5. sitemap / IndexNow
 
 - `scripts/generate-sitemap.mjs`: `sitemap-gov.xml` を追加し `sitemap_index.xml` に登録。lastmod は所属発言者の最新スレッド日
-- `scripts/notify-indexnow.mjs`: **当日スレッドに出現した全 memberId**(既存実装が収集済み)から省庁 slug を導出し、該当する `/gov/{slug}` と `/gov` を送信対象に追加(既存発言者の発言でも省庁ページの発言数・直近発言日・並び順が変わるため、新規発言者に限定しない)
+- `scripts/notify-indexnow.mjs`: **当日スレッドに出現した全 memberId**(既存実装が収集済み)を members.json と突合し、`getMemberMinistry()` で省庁 slug を導出して、該当する `/gov/{slug}` と `/gov` を送信対象に追加(既存発言者の発言でも省庁ページの発言数・直近発言日・並び順が変わるため、新規発言者に限定しない)
 
 ### 6. 手動運用(コード外)
 
