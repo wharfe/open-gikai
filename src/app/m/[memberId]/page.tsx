@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getMember, getMembers, getThreads, getAllMemberIds } from "@/lib/data";
+import { getMember, getMembers, getThreads, getAllMemberIds, getMemberStats } from "@/lib/data";
+import { getMemberMinistry } from "@/lib/ministry.mjs";
 import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
 
@@ -20,7 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!member) return {};
   const desc = [member.party, member.role].filter(Boolean).join("・");
   const title = `${member.name}の発言一覧${desc ? `（${desc}）` : ""}`;
-  const description = `${member.name}の国会・審議会での発言をスレッド形式で閲覧。AI要約付きで審議の文脈がわかります。`;
+  const stats = getMemberStats().get(memberId);
+  const namePart = member.role ? `${member.name}（${member.role}）` : member.name;
+  const description = stats
+    ? `${namePart}の国会・審議会での発言${stats.speechCount}件をAI要約付きで掲載。直近は${stats.latestDate}の${stats.latestCommittee}。`
+    : `${member.name}の国会・審議会での発言をスレッド形式で閲覧。AI要約付きで審議の文脈がわかります。`;
   return {
     title,
     description,
@@ -64,13 +69,17 @@ export default async function MemberPage({ params }: Props) {
     url: `https://open-gikai.net/m/${memberId}`,
   };
 
+  const ministry = getMemberMinistry(member);
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "ホーム", item: "https://open-gikai.net" },
       { "@type": "ListItem", position: 2, name: "発言者一覧", item: "https://open-gikai.net/members" },
-      { "@type": "ListItem", position: 3, name: member.name },
+      ...(ministry
+        ? [{ "@type": "ListItem", position: 3, name: ministry.name, item: `https://open-gikai.net/gov/${ministry.slug}` }]
+        : []),
+      { "@type": "ListItem", position: ministry ? 4 : 3, name: member.name },
     ],
   };
 
@@ -86,7 +95,7 @@ export default async function MemberPage({ params }: Props) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
         />
-        <MemberProfileView member={member} threads={threads} members={members} />
+        <MemberProfileView member={member} threads={threads} members={members} ministry={ministry} />
       </main>
     </>
   );
