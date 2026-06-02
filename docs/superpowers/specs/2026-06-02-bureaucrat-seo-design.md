@@ -42,6 +42,9 @@ GSC/GA4 の実測(2026-06-02 時点)に基づく施策。
 純関数のみの新規モジュール。LLM 不使用・完全決定論的。
 
 - 省庁マスタ: `{ slug: string; name: string }[]` 約35件(例: `{ slug: "mlit", name: "国土交通省" }`)。府省だけでなく外局(海上保安庁・観光庁・文化庁・消防庁等)も独立エントリとする
+- **対象は ID が `m_` で始まる発言者(政府参考人系)に限定する。** slug ID の政治家には「内閣官房長官」「内閣府特命担当大臣」等、省庁名で始まる役職が13人存在し、prefix マッチだけでは省庁ハブに混入するため(実データで検証済み)
+- 加えて防御層として、政治職名 blocklist(`内閣官房長官`・`内閣官房副長官`・`内閣府特命担当大臣`・`内閣府副大臣`・`内閣府大臣政務官` に一致する role)を除外する。将来 `m_` ID に政治家が混入した場合の保険
+- ※ `rank` による除外は採用しない。rank データは「気象庁長官」「文部科学戦略官」等の官僚を `minister` と誤分類しており、正しい官僚を除外してしまうため(実データで検証済み)
 - `extractMinistry(role: string): Ministry | null` — role 文字列の **最長一致 prefix マッチ**(「内閣官房」vs「内閣府」のような前方重複対策のため、名前の長い順に評価)
 - マッチしない者(参考人・衆参事務局・「委員」「大臣」等の汎用役職・role 空)は `null` を返し、ハブ非掲載。既存の表示には影響しない
 
@@ -58,22 +61,33 @@ GSC/GA4 の実測(2026-06-02 時点)に基づく施策。
 
 - title: 「{省庁名}の国会発言者一覧(局長・審議官など)」
 - 各発言者: 氏名・正式役職(フルテキスト)・発言数・直近発言日、`/m/{id}` へのリンク。発言数降順
-- `generateStaticParams`: members.json から抽出した**発言者1人以上の省庁のみ**生成(空ページを作らない)
+- **発言1件以上のメンバーのみ掲載**(members.json には threads から参照されない member が3人存在するため、所属判定は members.json の role、統計は後述の `getMemberStats()` を正とする)
+- `generateStaticParams`: 上記の結果、**掲載発言者が1人以上の省庁のみ**生成(空ページを作らない)
 - JSON-LD: `ItemList` + `BreadcrumbList`
 - 役職フルテキストがページ内に並ぶことで「{省庁} {役職}」型クエリの受け皿となる
 
-### 3. 既存メンバーページの改善 (`src/app/m/[memberId]/page.tsx`)
+### 3. 発言者別統計 (`src/lib/data.ts` に `getMemberStats()` を追加)
+
+既存の `getThreadsSummary()` はスレッド単位の `speechCount` しか持たず、発言者別の集計は存在しない。`threads[].speeches` を走査して memberId ごとに以下を算出する共有関数を追加する(既存ローダーと同様にモジュールスコープでキャッシュ):
+
+```
+getMemberStats(): Map<memberId, { speechCount: number; latestDate: string; latestCommittee: string }>
+```
+
+/gov ページ(発言数・直近発言日)とメンバーページの description 動的化の両方がこれを使う。
+
+### 4. 既存メンバーページの改善 (`src/app/m/[memberId]/page.tsx`)
 
 - **description 動的化**: 現行の全員同文を廃止し、「{name}({role})の国会・審議会での発言{n}件をAI要約付きで掲載。直近は{date}の{committee}。」をビルド時に算出(データローダーはキャッシュ済みのためビルド時間影響は軽微)。role が空の場合は括弧ごと省略する(既存 title の `desc` 組み立てと同じ規則)
 - **パンくず拡張**: 省庁マッチ者は「ホーム > 発言者一覧 > {省庁} > 人名」(表示・JSON-LD とも)。非マッチ者は現行どおり
 - **役職リンク化**: プロフィールの役職表示を `/gov/{slug}` へのリンクにする(マッチ者のみ)。/m/ ↔ /gov/ の双方向内部リンクを形成
 
-### 4. sitemap / IndexNow
+### 5. sitemap / IndexNow
 
 - `scripts/generate-sitemap.mjs`: `sitemap-gov.xml` を追加し `sitemap_index.xml` に登録。lastmod は所属発言者の最新スレッド日
-- `scripts/notify-indexnow.mjs`: 当日の新規発言者が属する `/gov/{slug}` と `/gov` を送信対象に追加
+- `scripts/notify-indexnow.mjs`: **当日スレッドに出現した全 memberId**(既存実装が収集済み)から省庁 slug を導出し、該当する `/gov/{slug}` と `/gov` を送信対象に追加(既存発言者の発言でも省庁ページの発言数・直近発言日・並び順が変わるため、新規発言者に限定しない)
 
-### 5. 手動運用(コード外)
+### 6. 手動運用(コード外)
 
 GSC(sc-domain: open-gikai.net)で以下を実施:
 
