@@ -40,7 +40,13 @@ export default function GovIndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
-      <div className="sticky top-0 z-40 flex h-[53px] items-center bg-x-bg/65 px-4 backdrop-blur-xl">
+      <div className="sticky top-0 z-40 flex h-[53px] items-center gap-3 bg-x-bg/65 px-4 backdrop-blur-xl">
+        <Link
+          href="/"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-x-text transition-colors hover:bg-x-hover"
+        >
+          <span className="material-symbols-rounded" style={{ fontSize: 20 }}>arrow_back</span>
+        </Link>
         <h1 className="text-[17px] font-bold">{TITLE}</h1>
       </div>
 
