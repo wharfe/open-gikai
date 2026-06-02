@@ -262,6 +262,13 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20260521_82699f_03",
+        "relationship": "関連議論",
+        "topic": "憲法議論の進め方と権力濫用防止への懸念",
+        "committee": "憲法審査会",
+        "date": "2026.05.21"
+      },
+      {
         "threadId": "t_20260423_a4b2d0_01",
         "relationship": "関連議論",
         "topic": "緊急事態条項の総論的議論",
@@ -446,6 +453,27 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20260521_82699f_01",
+        "relationship": "関連議論",
+        "topic": "緊急事態条項のイメージ案全般についての各会派の基本見解",
+        "committee": "憲法審査会",
+        "date": "2026.05.21"
+      },
+      {
+        "threadId": "t_20260521_82699f_02",
+        "relationship": "関連議論",
+        "topic": "オンライン国会の必要性と制度設計",
+        "committee": "憲法審査会",
+        "date": "2026.05.21"
+      },
+      {
+        "threadId": "t_20260521_82699f_05",
+        "relationship": "関連議論",
+        "topic": "参議院緊急集会の射程と議員任期延長の関係",
+        "committee": "憲法審査会",
+        "date": "2026.05.21"
+      },
+      {
         "threadId": "t_20260423_a4b2d0_01",
         "relationship": "関連議論",
         "topic": "緊急事態条項の総論的議論",
@@ -535,6 +563,27 @@
         {
           "label": "議案情報（衆議院）",
           "url": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm"
+        }
+      ],
+      "news": [
+        {
+          "title": "「防災庁」設置法案が審議入りへ 事務統括役の防災大臣に“勧告権”付与 今年中の設置目指す 石破前政権の看板政策",
+          "url": "https://news.livedoor.com/article/detail/30991803/",
+          "source": "livedoor ニュース",
+          "pubDate": "Mon, 13 Apr 2026 17:00:00 GMT"
+        },
+        {
+          "title": "防災庁設置法案が衆院通過 災害対応の政府司令塔担う",
+          "url": "https://www.toonippo.co.jp/articles/-/2276480",
+          "source": "Web東奥",
+          "pubDate": "Mon, 18 May 2026 21:39:00 GMT",
+          "image": "https://toonippo.ismcdn.jp/mwimgs/6/0/1200wm/img_60ff84e00d7e035bab522f98e69222c840817.jpg"
+        },
+        {
+          "title": "防災庁創設へ法案を閣議決定 11月に、司令塔機能担う",
+          "url": "https://news.livedoor.com/article/detail/30706264/",
+          "source": "livedoor ニュース",
+          "pubDate": "Thu, 05 Mar 2026 16:00:00 GMT"
         }
       ]
     },
@@ -1005,6 +1054,26 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
         }
+      ],
+      "news": [
+        {
+          "title": "災害時の福祉専門チーム「DWAT」迅速派遣へ…名簿一元化で調整短縮、災害関連死減らす",
+          "url": "https://www.yomiuri.co.jp/national/20260419-GYT1T00233/",
+          "source": "読売新聞",
+          "pubDate": "Sun, 19 Apr 2026 22:00:00 GMT"
+        },
+        {
+          "title": "薬剤師派遣調整役を育成 災害時迅速に動ける体制に 県薬剤師会・岡田会長に聞く",
+          "url": "https://www.yomiuri.co.jp/local/shizuoka/news/20260324-GYTNT00217/",
+          "source": "読売新聞",
+          "pubDate": "Tue, 24 Mar 2026 21:59:00 GMT"
+        },
+        {
+          "title": "災害時に要請待たず市町村を支援 土木技術職員派遣専門チーム「TEC－奈良」発足",
+          "url": "https://www.msn.com/ja-jp/news/national/%E7%81%BD%E5%AE%B3%E6%99%82%E3%81%AB%E8%A6%81%E8%AB%8B%E5%BE%85%E3%81%9F%E3%81%9A%E5%B8%82%E7%94%BA%E6%9D%91%E3%82%92%E6%94%AF%E6%8F%B4-%E5%9C%9F%E6%9C%A8%E6%8A%80%E8%A1%93%E8%81%B7%E5%93%A1%E6%B4%BE%E9%81%A3%E5%B0%82%E9%96%80%E3%83%81%E3%83%BC%E3%83%A0-tec-%E5%A5%88%E8%89%AF-%E7%99%BA%E8%B6%B3/ar-AA24x9C3",
+          "source": "産経ニュース on MSN",
+          "pubDate": "Mon, 01 Jun 2026 00:39:08 GMT"
+        }
       ]
     },
     "speeches": [
@@ -1196,6 +1265,20 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
+        }
+      ],
+      "news": [
+        {
+          "title": "須沢栞さん「大規模災害時の広域避難と居住の復興」インタビュー 膨大な支援記録たどる",
+          "url": "https://news.livedoor.com/article/detail/30891050/",
+          "source": "livedoor ニュース",
+          "pubDate": "Wed, 01 Apr 2026 17:00:00 GMT"
+        },
+        {
+          "title": "要支援者は3万4773人いるのに福祉避難所は8429人分…しかも多くは「まず一般避難所へ」――災害弱者どう守る？ 専門家が恐れる ...",
+          "url": "https://373news.com/news/local/detail/231506/",
+          "source": "南日本新聞",
+          "pubDate": "Sun, 29 Mar 2026 04:53:00 GMT"
         }
       ]
     },
@@ -1417,6 +1500,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
+        }
+      ],
+      "news": [
+        {
+          "title": "大規模化する山火事、消火剤導入し対応力向上へ…総務省消防庁が効果評価にガイドライン",
+          "url": "https://www.yomiuri.co.jp/national/20260516-GYT1T00315/",
+          "source": "読売新聞",
+          "pubDate": "Sat, 16 May 2026 22:00:00 GMT"
+        },
+        {
+          "title": "大規模林野火災に備え 県と君津市 ヘリ空中放水など訓練",
+          "url": "https://www.yomiuri.co.jp/local/chiba/news/20260514-GYTNT00387/",
+          "source": "読売新聞",
+          "pubDate": "Thu, 14 May 2026 21:59:00 GMT"
+        },
+        {
+          "title": "岡山県が地域防災計画を修正「被災者支援の充実」と「林野火災の予防強化」を新たに盛り込む【岡山】",
+          "url": "https://news.yahoo.co.jp/articles/35d25f3da773a3c5a76ecf0aa0148f21551c5a77",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 07 May 2026 02:33:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260507-90031582-ohk-000-2-thumb.jpg?exp=10800"
         }
       ]
     },
@@ -1652,6 +1756,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
         }
+      ],
+      "news": [
+        {
+          "title": "石破氏「防災省の創設検討を」 防災担当相の負担増指摘",
+          "url": "https://www.asahi.com/articles/ASJ4P5FP6J4PUTFK00K.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 21 Apr 2016 17:00:00 GMT",
+          "image": "https://www.asahicom.jp/images/logo_ogp.png"
+        },
+        {
+          "title": "災害時の救命・身元確認・避難所登録をつなぐ「大阪防災二次元コード」構想を公開",
+          "url": "https://prtimes.jp/main/html/rd/p/000000071.000033183.html",
+          "source": "PR TIMES",
+          "pubDate": "Sun, 15 Mar 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/33183/71/33183-71-fde6198b0f7fb3e717616b370beb6c21-1280x720.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -1748,6 +1868,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
+        }
+      ],
+      "news": [
+        {
+          "title": "復興庁と防災庁、統合せず 木原官房長官",
+          "url": "https://www.jiji.com/jc/article?k=2026041601003&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 15 Apr 2026 17:00:00 GMT",
+          "image": "https://www.jiji.com/img/jijicom_og_image.png"
+        },
+        {
+          "title": "防災庁設置法案が衆院で審議入り 高市早苗首相「26年中に設置」",
+          "url": "https://www.nikkei.com/article/DGXZQOUA142H60U6A410C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 14 Apr 2026 10:30:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2890918014042026000000-1.jpg?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;fp-x=0.46&amp;fp-y=0.28&amp;h=630&amp;w=1200&amp;s=d9f954cb61677b7a114d3bf9a5ac03b8"
+        },
+        {
+          "title": "防災庁設置法案が衆院で審議入り 高市首相が答弁「一段高い司令塔」",
+          "url": "https://www.asahi.com/articles/ASV4G3R5BV4GULFA01MM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 13 Apr 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260414003513_comm.jpg"
         }
       ]
     },
@@ -2055,6 +2198,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
         }
+      ],
+      "news": [
+        {
+          "title": "“人・物・金・情報”をデジタルでつなぐ…LINEヤフーが挑む「災害支援のプラットフォーム化」とは？",
+          "url": "https://news.yahoo.co.jp/articles/542c1f05fb308ccb75e909aef9c5c6cc1582fcd9",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 13 Mar 2026 04:51:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260313-00010005-tokyofm-000-1-view.jpg?exp=10800"
+        },
+        {
+          "title": "災害時どこにいても避難情報 データ基盤活用し広域対応 関経連、関西広域連合が訓練へ",
+          "url": "https://www.msn.com/ja-jp/public-safety-and-emergencies/health-and-safety-alerts/%E7%81%BD%E5%AE%B3%E6%99%82%E3%81%A9%E3%81%93%E3%81%AB%E3%81%84%E3%81%A6%E3%82%82%E9%81%BF%E9%9B%A3%E6%83%85%E5%A0%B1-%E3%83%87%E3%83%BC%E3%82%BF%E5%9F%BA%E7%9B%A4%E6%B4%BB%E7%94%A8%E3%81%97%E5%BA%83%E5%9F%9F%E5%AF%BE%E5%BF%9C-%E9%96%A2%E7%B5%8C%E9%80%A3-%E9%96%A2%E8%A5%BF%E5%BA%83%E5%9F%9F%E9%80%A3%E5%90%88%E3%81%8C%E8%A8%93%E7%B7%B4%E3%81%B8/ar-AA24CDaW",
+          "source": "産経ニュース on MSN",
+          "pubDate": "Tue, 02 Jun 2026 01:20:55 GMT"
+        },
+        {
+          "title": "災害初動を変える、安否確認とドローン統合防災DXを静岡で実証",
+          "url": "https://prtimes.jp/main/html/rd/p/000000039.000066730.html",
+          "source": "PR TIMES",
+          "pubDate": "Tue, 31 Mar 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/66730/39/66730-39-1a79f4b3450036601c196a01df3b79e7-1280x722.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -2164,6 +2329,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
+        }
+      ],
+      "news": [
+        {
+          "title": "止まらぬ人口減少 消える学校、集落維持に懸念も 【天草市発足20年 宝島の航跡㊤】",
+          "url": "https://www.msn.com/ja-jp/news/national/%E6%AD%A2%E3%81%BE%E3%82%89%E3%81%AC%E4%BA%BA%E5%8F%A3%E6%B8%9B%E5%B0%91-%E6%B6%88%E3%81%88%E3%82%8B%E5%AD%A6%E6%A0%A1-%E9%9B%86%E8%90%BD%E7%B6%AD%E6%8C%81%E3%81%AB%E6%87%B8%E5%BF%B5%E3%82%82-%E5%A4%A9%E8%8D%89%E5%B8%82%E7%99%BA%E8%B6%B320%E5%B9%B4-%E5%AE%9D%E5%B3%B6%E3%81%AE%E8%88%AA%E8%B7%A1/ar-AA1Zv2aR",
+          "source": "MSN",
+          "pubDate": "Thu, 26 Mar 2026 21:57:00 GMT"
+        },
+        {
+          "title": "街 にぎわいと防災力を(大阪公立大 嘉名光市教授)",
+          "url": "https://www.yomiuri.co.jp/local/kansai/feature/CO086244/20260310-GYTAT00008/",
+          "source": "読売新聞",
+          "pubDate": "Sat, 07 Mar 2026 07:00:00 GMT"
+        },
+        {
+          "title": "【日本最大級350社*&#185;が出展】防災庁設置やクマ被害などの社会課題解決へ地域の未来を創る総合展示会「自治体・公共 Week 2026」2026 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000002002.000026157.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 15 Apr 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/26157/2002/26157-2002-7aa4470a005704c5ecdde2c2a7cd6470-1920x1080.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -2747,6 +2933,28 @@
           "label": "国際緊急援助隊の派遣に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E5%9B%BD%E9%9A%9B%E7%B7%8A%E6%80%A5%E6%8F%B4%E5%8A%A9%E9%9A%8A%E3%81%AE%E6%B4%BE%E9%81%A3%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "「国際緊急援助隊」の総合訓練 海外での大規模災害を想定 48時間連続の救助訓練も 兵庫・三木市",
+          "url": "https://news.livedoor.com/article/detail/30717181/",
+          "source": "livedoor ニュース",
+          "pubDate": "Fri, 06 Mar 2026 16:00:00 GMT"
+        },
+        {
+          "title": "廃棄物火災沈静化に向けた国際協力の現場から",
+          "url": "https://prtimes.jp/main/html/rd/p/000000043.000151049.html",
+          "source": "PR TIMES",
+          "pubDate": "Thu, 30 Apr 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/151049/43/151049-43-e829614111a30d8cd47a392cd6e7ae24-3504x2336.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        },
+        {
+          "title": "廃棄物火災沈静化に向けた国際協力の現場から",
+          "url": "https://www.sankei.com/pressrelease/prtimes/5JLB2XMSUFNJZJ7FA5ZZNAUAAQ/",
+          "source": "産経新聞",
+          "pubDate": "Fri, 01 May 2026 13:19:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/https%3A%2F%2Fdpgdieoe6npux.cloudfront.net%2Fprtimes%2FM2FSLGEXSFNJ7D2XXSJ4UCEQMQ?auth=3f43cf9e91e27ca5267cd54415e98fe08f5be777c2e76fcd564e711a3c8b61f6&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=675"
+        }
       ]
     },
     "speeches": [
@@ -3059,6 +3267,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
+        }
+      ],
+      "news": [
+        {
+          "title": "防災技術の司令塔新設へ ニーズとシーズを照らし合わせ 海外展開も視野に",
+          "url": "https://www.msn.com/ja-jp/news/other/%E9%98%B2%E7%81%BD%E6%8A%80%E8%A1%93%E3%81%AE%E5%8F%B8%E4%BB%A4%E5%A1%94%E6%96%B0%E8%A8%AD%E3%81%B8-%E3%83%8B%E3%83%BC%E3%82%BA%E3%81%A8%E3%82%B7%E3%83%BC%E3%82%BA%E3%82%92%E7%85%A7%E3%82%89%E3%81%97%E5%90%88%E3%82%8F%E3%81%9B-%E6%B5%B7%E5%A4%96%E5%B1%95%E9%96%8B%E3%82%82%E8%A6%96%E9%87%8E%E3%81%AB/ar-AA24AMPS",
+          "source": "FNNプライムオンライン on MSN",
+          "pubDate": "Mon, 01 Jun 2026 19:37:24 GMT"
+        },
+        {
+          "title": "災害大国・日本の防災技術を「世界のインフラ」へ 産官学民で挑む、日本発・レジリエンス産業の幕開け",
+          "url": "https://forbesjapan.com/articles/detail/93534",
+          "source": "フォーブスジャパン",
+          "pubDate": "Wed, 25 Mar 2026 13:00:00 GMT"
+        },
+        {
+          "title": "香川大学、JICAと包括連携協定 医療・防災などで国際貢献",
+          "url": "https://www.nikkei.com/article/DGXZQOCC195470Z10C26A5000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 19 May 2026 10:40:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO3041975019052026000000-1.jpg?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;fp-x=0.64&amp;fp-y=0.3&amp;h=630&amp;w=1200&amp;s=2abd84884266cfcae8267ab76dfedb8b"
         }
       ]
     },
@@ -3413,6 +3642,29 @@
         {
           "label": "デジタル行政推進法（法令検索）",
           "url": "https://www.google.com/search?q=%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E8%A1%8C%E6%94%BF%E6%8E%A8%E9%80%B2%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "サイボウズが 「災害関連死ゼロ」モデルと「被災者台帳システム」を提案。災害時の避難所における医療・福祉とのデータ連携を ...",
+          "url": "https://www.sankei.com/pressrelease/prtimes/ZNRU5MQ2IJNRNJJU3P2RBRTIIA/",
+          "source": "産経新聞",
+          "pubDate": "Tue, 27 Jan 2026 03:00:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/https%3A%2F%2Fdpgdieoe6npux.cloudfront.net%2Fprtimes%2FRBIRBBSVGRK6DM2Q6RTMPUSLKU?auth=d1130417879d2bcf7e01be1c21d27e187afb9750ba1aec09b8ef6e54213a048f&amp;quality=50&amp;smart=true&amp;width=1200&amp;height=675"
+        },
+        {
+          "title": "統計情報やAI開発への利用なら「本人の同意が不要」など個人情報保護法改正で変わる「データ活用」「委託先管理」のポイント",
+          "url": "https://netshop.impress.co.jp/n/2026/01/23/15474",
+          "source": "impress.co.jp",
+          "pubDate": "Thu, 22 Jan 2026 16:00:00 GMT",
+          "image": "https://netshop.impress.co.jp/sites/default/files/styles/1200x630/public/images/news/2026/news-node15474-ogp.png?itok=Ru-S_-O9"
+        },
+        {
+          "title": "進むデータ活用、消えた団体訴訟 個情法改正案｢密室の政策形成｣",
+          "url": "https://www.asahi.com/articles/ASV4C2TQKV4CULZU001M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sat, 11 Apr 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260411002631_comm.jpg"
         }
       ]
     },

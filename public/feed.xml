@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 01 Jun 2026 22:31:09 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 22:08:32 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W23 国会まとめ — 1件の議論</title>
@@ -16,11 +16,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W22 国会まとめ — 8件の議論</title>
+      <title>2026-W22 国会まとめ — 9件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W22</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W22</guid>
-      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>8件のスレッド、4委員会の議論をまとめました。国家情報会議設置法の成立についての会見、決算行政監視委員会、議院運営委員会ほか。</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <description>9件のスレッド、5委員会の議論をまとめました。消費者問題に関する特別委員会、国家情報会議設置法の成立についての会見、決算行政監視委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -46,6 +46,14 @@
       <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <description>ペゼシュキアン・イラン大統領との3回目電話会談で話し合いによる事態沈静化を要請（首相記者会見・2026.06.01・2発言）</description>
       <category>ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見</category>
+    </item>
+    <item>
+      <title>消費者行政担当大臣・副大臣・政務官の所信表明 — 消費者問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260528_7931a7_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_7931a7_01</guid>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <description>黄川田消費者担当大臣が地方消費者行政強化等の施策方針を表明し、津島副大臣と古川政務官が協力姿勢を示した（国会会議録・2026.05.28・3発言）</description>
+      <category>消費者問題に関する特別委員会</category>
     </item>
     <item>
       <title>国家情報会議設置法の成立と意義 — 国家情報会議設置法の成立についての会見</title>
@@ -430,14 +438,6 @@
       <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
       <description>防災システムにおける個人情報保護と外資系企業への提供制限（国会会議録・2026.05.14・7発言）</description>
       <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>健康保険法等改正法案の本会議審議手続 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260513_425e76_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260513_425e76_01</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
-      <description>健康保険法等改正法案の本会議での趣旨説明と質疑時間配分を決定（国会会議録・2026.05.13・2発言）</description>
-      <category>議院運営委員会</category>
     </item>
   </channel>
 </rss>

@@ -187,6 +187,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
         }
+      ],
+      "news": [
+        {
+          "title": "「地域未来戦略本部」発足 地方の産業を支援",
+          "url": "https://news.livedoor.com/article/detail/29962035/",
+          "source": "livedoor ニュース",
+          "pubDate": "Mon, 10 Nov 2025 16:00:00 GMT"
+        },
+        {
+          "title": "2026年度「地方創生」の新たな潮流 デジタルと移住が描く地域の未来",
+          "url": "https://zaikei.co.jp/article/20260217/843688.html",
+          "source": "財経新聞",
+          "pubDate": "Tue, 17 Feb 2026 09:53:00 GMT",
+          "image": "http://www.zaikei.co.jp/files/general/2026021714301096ecbig.jpg"
+        },
+        {
+          "title": "石破茂前首相が提唱した産業や観光振興の広域連携、政府が推進へ…交付金に特別枠",
+          "url": "https://www.yomiuri.co.jp/politics/20260228-GYT1T00157/",
+          "source": "読売新聞",
+          "pubDate": "Sat, 28 Feb 2026 07:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -470,6 +491,20 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
         }
+      ],
+      "news": [
+        {
+          "title": "母子守る施設、装い新た 大分の「しらゆりハイツ」 多人数世帯入居可、各部屋に浴室… ／大分",
+          "url": "https://mainichi.jp/articles/20260328/ddl/k44/100/302000c",
+          "source": "毎日新聞",
+          "pubDate": "Fri, 27 Mar 2026 17:00:00 GMT"
+        },
+        {
+          "title": "令和6年度予算特別委員会② 親子支援事業について",
+          "url": "https://www.komei.or.jp/km/ishida-shoko-hiroshima/2025/03/",
+          "source": "公明党",
+          "pubDate": "Thu, 13 Mar 2025 17:00:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -620,6 +655,26 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
         }
+      ],
+      "news": [
+        {
+          "title": "中東情勢受け高市総理が補正予算案の検討指示明かす 夏場の電気ガス料金支援など早急に具体策取りまとめへ",
+          "url": "https://www.msn.com/ja-jp/news/other/%E4%B8%AD%E6%9D%B1%E6%83%85%E5%8B%A2%E5%8F%97%E3%81%91%E9%AB%98%E5%B8%82%E7%B7%8F%E7%90%86%E3%81%8C%E8%A3%9C%E6%AD%A3%E4%BA%88%E7%AE%97%E6%A1%88%E3%81%AE%E6%A4%9C%E8%A8%8E%E6%8C%87%E7%A4%BA%E6%98%8E%E3%81%8B%E3%81%99-%E5%A4%8F%E5%A0%B4%E3%81%AE%E9%9B%BB%E6%B0%97%E3%82%AC%E3%82%B9%E6%96%99%E9%87%91%E6%94%AF%E6%8F%B4%E3%81%AA%E3%81%A9%E6%97%A9%E6%80%A5%E3%81%AB%E5%85%B7%E4%BD%93%E7%AD%96%E5%8F%96%E3%82%8A%E3%81%BE%E3%81%A8%E3%82%81%E3%81%B8/ar-AA23soAR",
+          "source": "MSN",
+          "pubDate": "Sun, 17 May 2026 23:10:00 GMT"
+        },
+        {
+          "title": "国民・玉木氏「高市首相に党首会談を呼びかけも」 中東情勢受けた経済対策を念頭 ガソリン補助「毎月5000億円」可能性",
+          "url": "https://news.livedoor.com/article/detail/30915731/",
+          "source": "livedoor ニュース",
+          "pubDate": "Sat, 04 Apr 2026 17:00:00 GMT"
+        },
+        {
+          "title": "日銀が物価見通しの大幅引き上げ検討へ、中東情勢受け原油高－関係者",
+          "url": "https://www.bloomberg.com/jp/news/articles/2026-04-14/TD9ABGKJH6VC00",
+          "source": "Bloomberg L.P.",
+          "pubDate": "Mon, 13 Apr 2026 19:27:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -708,6 +763,28 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
+        }
+      ],
+      "news": [
+        {
+          "title": "埼玉・富士見の学童保育で常勤支援員不足 民間移行で人材確保できず",
+          "url": "https://www.asahi.com/articles/ASV473VZHV47UTNB012M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Tue, 07 Apr 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260407004531_comm.jpg"
+        },
+        {
+          "title": "加古川市の放課後児童クラブ、全79クラブを民間委託へ 27年度から「事業者と連携し質の確保に努める」",
+          "url": "https://www.kobe-np.co.jp/news/touban/202603/0020128401.shtml",
+          "source": "神戸新聞",
+          "pubDate": "Sun, 15 Mar 2026 22:30:00 GMT",
+          "image": "https://i.kobe-np.co.jp/news/touban/202603/img/a_20128402.jpg"
+        },
+        {
+          "title": "〈学童クラブ登録数156万人超で過去最多〉広がる「無償化」の波と疲弊する現場とのギャップ…それでも求められる職員の質と ...",
+          "url": "https://www.msn.com/ja-jp/news/national/%E5%AD%A6%E7%AB%A5%E3%82%AF%E3%83%A9%E3%83%96%E7%99%BB%E9%8C%B2%E6%95%B0156%E4%B8%87%E4%BA%BA%E8%B6%85%E3%81%A7%E9%81%8E%E5%8E%BB%E6%9C%80%E5%A4%9A-%E5%BA%83%E3%81%8C%E3%82%8B-%E7%84%A1%E5%84%9F%E5%8C%96-%E3%81%AE%E6%B3%A2%E3%81%A8%E7%96%B2%E5%BC%8A%E3%81%99%E3%82%8B%E7%8F%BE%E5%A0%B4%E3%81%A8%E3%81%AE%E3%82%AE%E3%83%A3%E3%83%83%E3%83%97-%E3%81%9D%E3%82%8C%E3%81%A7%E3%82%82%E6%B1%82%E3%82%81%E3%82%89%E3%82%8C%E3%82%8B%E8%81%B7%E5%93%A1%E3%81%AE%E8%B3%AA%E3%81%A8%E6%A7%8B%E9%80%A0%E6%94%B9%E9%9D%A9/ar-AA1MxyE1",
+          "source": "MSN",
+          "pubDate": "Sun, 14 Sep 2025 17:04:00 GMT"
         }
       ]
     },
@@ -1223,6 +1300,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
         }
+      ],
+      "news": [
+        {
+          "title": "PKSHA代表 上野山勝也、内閣官房のデジタル行財政改革会議にてAI行政改革とデータ利活用に関する提言を実施",
+          "url": "https://japan.cnet.com/release/31137928/",
+          "source": "CNET",
+          "pubDate": "Wed, 24 Dec 2025 16:00:00 GMT",
+          "image": "https://japan.cnet.com/media/c/2012/images/logo/logo_ogp_1200.png"
+        },
+        {
+          "title": "日本総研名誉理事長・高橋進氏「体制整備から成果を生む実行段階へ」…データで見る自治体DXの現在地と今後の課題",
+          "url": "https://jbpress.ismedia.jp/articles/-/93026",
+          "source": "ジェイビープレス",
+          "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
+          "image": "https://jbpress.ismcdn.jp/mwimgs/d/1/1200mw/img_d1d1360fcf80a8d0d509947aed3daefd102307.jpg"
+        },
+        {
+          "title": "行政DX第1ラウンド締め切り間近 3.5万システムの壮大な引っ越し大作戦",
+          "url": "https://www.watch.impress.co.jp/docs/series/kodera/2074193.html",
+          "source": "Impress Watch",
+          "pubDate": "Thu, 25 Dec 2025 02:00:00 GMT",
+          "image": "https://www.watch.impress.co.jp/img/ipw/list/2074/193/k01.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1347,6 +1447,29 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
+        }
+      ],
+      "news": [
+        {
+          "title": "「子供たちに必要な性の学びが制限されている」”性交”教えない日本の性教育 世界と何が違うのか 変化を求める大人たちの声を ...",
+          "url": "https://news.yahoo.co.jp/articles/c9e5ac8cdc40718694bfd2ea7f92a1f6b04d27be",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 15 May 2026 04:15:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260515-22664580-rkbv-000-1-thumb.jpg?exp=10800"
+        },
+        {
+          "title": "保健は「雨の日」、重視されない性教育 養護教諭でさえハードル",
+          "url": "https://www.asahi.com/articles/AST694QGJT69UTIL04SM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sat, 14 Jun 2025 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20250609004934_comm.jpg"
+        },
+        {
+          "title": "性教育、学校への期待と情報公開ニーズ浮き彫りに…保護者調査",
+          "url": "https://resemom.jp/article/2026/01/21/84737.html",
+          "source": "リセマム",
+          "pubDate": "Wed, 21 Jan 2026 08:16:00 GMT",
+          "image": "https://resemom.jp/imgs/ogp_f/390586.jpg"
         }
       ]
     },
@@ -1540,6 +1663,29 @@
         {
           "label": "労働基準法（改正差分）",
           "url": "https://lexdiff.com/law/322AC0000000049"
+        }
+      ],
+      "news": [
+        {
+          "title": "安心して誕生の準備を「ふたご手帖」 滋賀県、多胎妊婦に無料配布へ",
+          "url": "https://www.asahi.com/articles/ASV4M3WHKV4MPTJB002M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sun, 19 Apr 2026 17:01:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260419003723_comm.jpg"
+        },
+        {
+          "title": "東京都、電子版母子手帳実証 マイナカードと連携",
+          "url": "https://www.watch.impress.co.jp/docs/news/2078240.html",
+          "source": "Impress Watch",
+          "pubDate": "Thu, 15 Jan 2026 12:00:00 GMT",
+          "image": "https://www.watch.impress.co.jp/img/ipw/list/2078/240/tokyo_01.jpg"
+        },
+        {
+          "title": "ミラボ、埼玉県 川口市で 母子保健DX「mila-e」母子手帳アプリ・オンライン予約の提供を開始",
+          "url": "https://prtimes.jp/main/html/rd/p/000000283.000068399.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 01 Apr 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/68399/283/68399-283-c87800c499d085a11306da769bff5843-2416x1276.png?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
         }
       ]
     },
@@ -1737,6 +1883,28 @@
         {
           "label": "議案情報（衆議院）",
           "url": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm"
+        }
+      ],
+      "news": [
+        {
+          "title": "医療費が最大で月約10万円の負担増…今年8月と来年8月の2段階で進む「高額療養費」改悪で要注意の人",
+          "url": "https://www.msn.com/ja-jp/money/insurance/%E5%8C%BB%E7%99%82%E8%B2%BB%E3%81%8C%E6%9C%80%E5%A4%A7%E3%81%A7%E6%9C%88%E7%B4%8410%E4%B8%87%E5%86%86%E3%81%AE%E8%B2%A0%E6%8B%85%E5%A2%97-%E4%BB%8A%E5%B9%B48%E6%9C%88%E3%81%A8%E6%9D%A5%E5%B9%B48%E6%9C%88%E3%81%AE2%E6%AE%B5%E9%9A%8E%E3%81%A7%E9%80%B2%E3%82%80-%E9%AB%98%E9%A1%8D%E7%99%82%E9%A4%8A%E8%B2%BB-%E6%94%B9%E6%82%AA%E3%81%A7%E8%A6%81%E6%B3%A8%E6%84%8F%E3%81%AE%E4%BA%BA/ar-AA23xDNP",
+          "source": "MSN",
+          "pubDate": "Tue, 19 May 2026 00:24:00 GMT"
+        },
+        {
+          "title": "成立の予算には高額療養費制度見直しも...保険医団体が声明「満身の怒りを持って抗議」「患者の命・健康が犠牲に」",
+          "url": "https://www.j-cast.com/2026/04/08513632.html?p=all",
+          "source": "J-CASTニュース",
+          "pubDate": "Wed, 08 Apr 2026 10:59:00 GMT",
+          "image": "https://www.j-cast.com/images/origin/2026/04/news_20260408174855.jpg"
+        },
+        {
+          "title": "収入減で「破滅的医療費支出」超えも 高額療養費制度、問われる機能",
+          "url": "https://www.asahi.com/articles/ASV4723SKV47UTFL01XM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sun, 12 Apr 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260407002775_comm.jpg"
         }
       ]
     },
@@ -2253,6 +2421,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
         }
+      ],
+      "news": [
+        {
+          "title": "少子化の原因「晩婚化・未婚化」71％、対策に「恒久財源」83％…読売世論調査",
+          "url": "https://news.livedoor.com/article/detail/28873587/",
+          "source": "livedoor ニュース",
+          "pubDate": "Sun, 01 Jun 2025 17:00:00 GMT"
+        },
+        {
+          "title": "【学習院大学】子どもを持ちたくない・迷っていることが結婚を遅らせる要因に東アジアの少子化の原因への新たな示唆",
+          "url": "https://digitalpr.jp/r/130319",
+          "source": "Degital PR Platform",
+          "pubDate": "Mon, 09 Mar 2026 17:00:00 GMT"
+        },
+        {
+          "title": "少子化対策の失敗から目を背けるな：財源論より効果検証を",
+          "url": "https://news.yahoo.co.jp/expert/articles/60e7d3842071ae221a2e0ad13d445a8cb22247be",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 06 May 2026 20:02:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/shimasawamanabu/02617943/title-1778120705825.jpeg?exp=10800"
+        }
       ]
     },
     "speeches": [
@@ -2506,6 +2695,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105367X00520260508"
         }
+      ],
+      "news": [
+        {
+          "title": "こども家庭庁に「自殺対策」部署…小倉少子化相「司令塔機能を発揮できる」",
+          "url": "https://news.livedoor.com/article/detail/24038524/",
+          "source": "livedoor ニュース",
+          "pubDate": "Mon, 10 Apr 2023 16:59:00 GMT"
+        },
+        {
+          "title": "こども家庭庁法案、審議入り＝岸田首相「強い司令塔機能」",
+          "url": "https://news.livedoor.com/article/detail/22028221/",
+          "source": "livedoor ニュース",
+          "pubDate": "Mon, 18 Apr 2022 17:00:00 GMT"
+        },
+        {
+          "title": "デジタル庁、政府AI「源内」をオープンソース化、GitHubで公開 商用利用も可能に",
+          "url": "https://www.sbbit.jp/article/cont1/185139",
+          "source": "ビジネス＋IT",
+          "pubDate": "Fri, 24 Apr 2026 17:00:00 GMT",
+          "image": "https://img.sbbit.jp/article/image/185139/OGP_bit202604250748193618.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2671,6 +2881,13 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20260514_37ef49_05",
+        "relationship": "関連議論",
+        "topic": "防災庁設置法案の司令塔機能と勧告権",
+        "committee": "災害対策特別委員会",
+        "date": "2026.05.14"
+      },
+      {
         "threadId": "t_20251128_3b9f2b_06",
         "relationship": "関連議論",
         "topic": "こども家庭庁の理念実現と自治体との連携",
@@ -2714,6 +2931,14 @@
         {
           "label": "情報通信技術を活用した行政の推進等に関する法律及び情報処理の促進に関する法律、個人情報の保護に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E6%83%85%E5%A0%B1%E9%80%9A%E4%BF%A1%E6%8A%80%E8%A1%93%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%E8%A1%8C%E6%94%BF%E3%81%AE%E6%8E%A8%E9%80%B2%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E5%8F%8A%E3%81%B3%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E3%81%AE%E4%BF%83%E9%80%B2%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E3%80%81%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E3%81%AE%E4%BF%9D%E8%AD%B7%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "別姓法案、30日に趣旨説明 審議入り合意、衆院法務委",
+          "url": "https://news.livedoor.com/topics/detail/28850919/",
+          "source": "livedoor ニュース",
+          "pubDate": "Wed, 28 May 2025 17:00:00 GMT"
         }
       ]
     },
