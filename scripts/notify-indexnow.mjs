@@ -10,6 +10,7 @@
 import { readFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { getMemberMinistry } from "../src/lib/ministry.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = "https://open-gikai.net";
@@ -57,6 +58,25 @@ function collectNewUrls(date) {
   }
   for (const id of memberIds) {
     urls.push(`${BASE_URL}/m/${id}`);
+  }
+
+  // Gov (ministry hub) pages: any speech by a ministry's witness changes the
+  // hub's speech counts / latest-date ordering, so notify for ALL of the
+  // day's speakers, not only new ones.
+  const membersPath = join(DATA_DIR, "members.json");
+  if (existsSync(membersPath)) {
+    const members = JSON.parse(readFileSync(membersPath, "utf-8"));
+    const govSlugs = new Set();
+    for (const id of memberIds) {
+      const ministry = members[id] ? getMemberMinistry(members[id]) : null;
+      if (ministry) govSlugs.add(ministry.slug);
+    }
+    if (govSlugs.size > 0) {
+      urls.push(`${BASE_URL}/gov`);
+      for (const slug of [...govSlugs].sort()) {
+        urls.push(`${BASE_URL}/gov/${slug}`);
+      }
+    }
   }
 
   // Always include the home page and sitemap (updated content)

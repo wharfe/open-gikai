@@ -2,6 +2,7 @@ import type { Member, Thread } from "@/types";
 import fs from "fs";
 import path from "path";
 import { COMMITTEE_SUFFIX_RE, TREND_ALIASES, TREND_STOPWORDS } from "@/lib/utils";
+import { getMemberMinistry } from "@/lib/ministry.mjs";
 
 const THREADS_DIR = path.join(process.cwd(), "data", "threads");
 const MEMBERS_PATH = path.join(process.cwd(), "data", "members.json");
@@ -258,6 +259,111 @@ export function getCouncilSlugs(): string[] {
 
 export function getAllMemberIds(): string[] {
   return Object.keys(loadMembers());
+}
+
+// --- Per-member speech statistics (shared by /gov pages and /m metadata) ---
+
+export type MemberStats = {
+  speechCount: number;
+  /** Same "YYYY.MM.DD" format as Thread.date. */
+  latestDate: string;
+  latestCommittee: string;
+};
+
+let _memberStatsCache: Map<string, MemberStats> | null = null;
+
+/** Aggregate speech count / latest appearance per memberId over all threads. */
+export function getMemberStats(): Map<string, MemberStats> {
+  if (_memberStatsCache) return _memberStatsCache;
+  const stats = new Map<string, MemberStats>();
+  for (const t of loadThreads()) {
+    const perThread = new Map<string, number>();
+    for (const s of t.speeches) {
+      if (!s.memberId) continue;
+      perThread.set(s.memberId, (perThread.get(s.memberId) || 0) + 1);
+    }
+    for (const [id, count] of perThread) {
+      const prev = stats.get(id);
+      if (!prev) {
+        stats.set(id, {
+          speechCount: count,
+          latestDate: t.date,
+          latestCommittee: t.committee,
+        });
+      } else {
+        prev.speechCount += count;
+        if (t.date.localeCompare(prev.latestDate) > 0) {
+          prev.latestDate = t.date;
+          prev.latestCommittee = t.committee;
+        }
+      }
+    }
+  }
+  _memberStatsCache = stats;
+  return stats;
+}
+
+// --- Ministry rosters for /gov pages ---
+
+export type MinistryRosterEntry = {
+  member: Member;
+  speechCount: number;
+  latestDate: string;
+  latestCommittee: string;
+};
+
+export type MinistryRoster = {
+  slug: string;
+  name: string;
+  entries: MinistryRosterEntry[];
+  totalSpeeches: number;
+};
+
+let _ministryRostersCache: MinistryRoster[] | null = null;
+
+/**
+ * Group government witnesses by ministry. Only members with at least one
+ * recorded speech are listed (members.json contains a few entries never
+ * referenced by threads). Entries are sorted by speech count.
+ */
+export function getMinistryRosters(): MinistryRoster[] {
+  if (_ministryRostersCache) return _ministryRostersCache;
+  const stats = getMemberStats();
+  const bySlug = new Map<string, MinistryRoster>();
+  for (const member of Object.values(loadMembers())) {
+    const ministry = getMemberMinistry(member);
+    if (!ministry) continue;
+    const s = stats.get(member.id);
+    if (!s) continue;
+    let roster = bySlug.get(ministry.slug);
+    if (!roster) {
+      roster = {
+        slug: ministry.slug,
+        name: ministry.name,
+        entries: [],
+        totalSpeeches: 0,
+      };
+      bySlug.set(ministry.slug, roster);
+    }
+    roster.entries.push({
+      member,
+      speechCount: s.speechCount,
+      latestDate: s.latestDate,
+      latestCommittee: s.latestCommittee,
+    });
+    roster.totalSpeeches += s.speechCount;
+  }
+  for (const r of bySlug.values()) {
+    r.entries.sort((a, b) => b.speechCount - a.speechCount);
+  }
+  _ministryRostersCache = [...bySlug.values()].sort(
+    (a, b) => b.entries.length - a.entries.length,
+  );
+  return _ministryRostersCache;
+}
+
+export function getMinistrySlugs(): string[] {
+  return getMinistryRosters().map((r) => r.slug);
 }
 
 // --- Weekly digest data for /digest pages ---
