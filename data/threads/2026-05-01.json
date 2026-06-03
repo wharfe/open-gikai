@@ -89,18 +89,25 @@
     },
     "relatedThreads": [
       {
-        "threadId": "t_20250912_c5569a_03",
+        "threadId": "t_20251128_9cdc9a_109",
         "relationship": "関連議論",
-        "topic": "トランプ関税の国民生活への影響",
-        "committee": "予算委員会",
-        "date": "2025.09.12"
+        "topic": "日米投資イニシアチブ5500億ドルの詳細",
+        "committee": "外務委員会",
+        "date": "2025.11.28"
       },
       {
-        "threadId": "t_20251121_fb8f03_55",
+        "threadId": "t_20250127_195c40_02",
         "relationship": "関連議論",
-        "topic": "造船業の現状と経済安全保障上の課題",
-        "committee": "国土交通委員会",
-        "date": "2025.11.21"
+        "topic": "政府四演説に対する自民党代表質問",
+        "committee": "本会議",
+        "date": "2025.01.27"
+      },
+      {
+        "threadId": "t_20251119_29eb48_21",
+        "relationship": "関連議論",
+        "topic": "ソブリンAI・国産半導体戦略",
+        "committee": "内閣委員会",
+        "date": "2025.11.19"
       },
       {
         "threadId": "t_20251120_c41d0a_62",
@@ -124,25 +131,25 @@
         "date": "2026.05.04"
       },
       {
-        "threadId": "t_20251119_29eb48_21",
+        "threadId": "t_20251121_fb8f03_55",
         "relationship": "関連議論",
-        "topic": "ソブリンAI・国産半導体戦略",
-        "committee": "内閣委員会",
-        "date": "2025.11.19"
+        "topic": "造船業の現状と経済安全保障上の課題",
+        "committee": "国土交通委員会",
+        "date": "2025.11.21"
       },
       {
-        "threadId": "t_20251114_ac1fcd_25",
+        "threadId": "t_20260428_605917_25",
         "relationship": "関連議論",
-        "topic": "国産エネルギーとメガソーラー規制",
+        "topic": "消防におけるドローン活用と安全保障",
+        "committee": "総務委員会",
+        "date": "2026.04.28"
+      },
+      {
+        "threadId": "t_20250912_c5569a_03",
+        "relationship": "関連議論",
+        "topic": "トランプ関税の国民生活への影響",
         "committee": "予算委員会",
-        "date": "2025.11.14"
-      },
-      {
-        "threadId": "t_20251128_9cdc9a_109",
-        "relationship": "関連議論",
-        "topic": "日米投資イニシアチブ5500億ドルの詳細",
-        "committee": "外務委員会",
-        "date": "2025.11.28"
+        "date": "2025.09.12"
       },
       {
         "threadId": "t_20251216_e68016_29",
@@ -159,11 +166,11 @@
         "date": "2025.12.16"
       },
       {
-        "threadId": "t_20250127_195c40_02",
+        "threadId": "t_20251114_ac1fcd_25",
         "relationship": "関連議論",
-        "topic": "政府四演説に対する自民党代表質問",
-        "committee": "本会議",
-        "date": "2025.01.27"
+        "topic": "国産エネルギーとメガソーラー規制",
+        "committee": "予算委員会",
+        "date": "2025.11.14"
       }
     ]
   },
@@ -269,6 +276,13 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20251128_9cdc9a_105",
+        "relationship": "関連議論",
+        "topic": "日中関係悪化と総理発言への対応",
+        "committee": "外務委員会",
+        "date": "2025.11.28"
+      },
+      {
         "threadId": "t_20251121_94caef_116",
         "relationship": "関連議論",
         "topic": "日中関係とエネルギー政策基本方針",
@@ -281,13 +295,6 @@
         "topic": "日中関係と存立危機事態の認定基準",
         "committee": "国家基本政策委員会合同審査会",
         "date": "2025.11.26"
-      },
-      {
-        "threadId": "t_20251128_9cdc9a_105",
-        "relationship": "関連議論",
-        "topic": "日中関係悪化と総理発言への対応",
-        "committee": "外務委員会",
-        "date": "2025.11.28"
       }
     ]
   }

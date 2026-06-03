@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://open-gikai.net/gov</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -26,37 +26,37 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/cao</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/cas</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/cfa</loc>
-    <lastmod>2025-12-11</lastmod>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/chusho</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/digital</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/enecho</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/fdma</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -146,31 +146,31 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/meti</loc>
-    <lastmod>2025-12-10</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/mext</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/mhlw</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/mlit</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/mod</loc>
-    <lastmod>2025-12-16</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/moj</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/soumu</loc>
-    <lastmod>2025-12-16</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
