@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { getThread, getMembers, getAllThreadIds } from "@/lib/data";
 
 // Static OGP image generation for thread pages.
@@ -22,16 +24,19 @@ export function generateStaticParams() {
   return getAllThreadIds().map((threadId) => ({ threadId }));
 }
 
-const FONT_URL =
-  "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-jp@latest/japanese-700-normal.woff";
+// Font is bundled in-repo (assets/fonts/) rather than fetched from a CDN.
+// A previous CDN + Next fetch-cache setup poisoned the build: a corrupted
+// cached @latest woff made satori throw "Matched points out of range",
+// failing every OGP prerender. Reading a pinned local file is deterministic
+// and network-independent (consistent with the data layer reading from cwd).
+const FONT_PATH = join(process.cwd(), "assets", "fonts", "noto-sans-jp-700.woff");
 
-// Module-level font cache to avoid refetching on every image render.
+// Module-level font cache to avoid re-reading on every image render.
 let _fontCache: ArrayBuffer | null = null;
-async function loadFont(): Promise<ArrayBuffer> {
+function loadFont(): ArrayBuffer {
   if (_fontCache) return _fontCache;
-  const res = await fetch(FONT_URL, { cache: "force-cache" });
-  if (!res.ok) throw new Error(`Font fetch failed: ${res.status}`);
-  _fontCache = await res.arrayBuffer();
+  const buf = readFileSync(FONT_PATH);
+  _fontCache = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);
   return _fontCache;
 }
 
@@ -59,7 +64,7 @@ export default async function Image({ params }: Props) {
   const topic = truncate(thread.topic, 40);
   const actorsLine = actorNames.slice(0, 4).join("  ");
   const source = thread.sourceLabel || "国会会議録";
-  const fontData = await loadFont();
+  const fontData = loadFont();
 
   return new ImageResponse(
     (
