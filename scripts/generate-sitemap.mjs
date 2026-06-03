@@ -8,6 +8,7 @@
 
 import { readFileSync, readdirSync, writeFileSync } from "fs";
 import { join } from "path";
+import { getMemberMinistry } from "../src/lib/ministry.mjs";
 
 const BASE_URL = "https://open-gikai.net";
 const DATA_DIR = "data";
@@ -214,6 +215,36 @@ function buildSitemaps() {
     ])
   );
 
+  // 6. Gov (ministry hub) pages — lastmod = latest debate any of the
+  // ministry's witnesses appeared in. Same membership rule as the pages
+  // themselves: getMemberMinistry() + at least one recorded speech.
+  const members = JSON.parse(
+    readFileSync(join(DATA_DIR, "members.json"), "utf-8")
+  );
+  const govLastmod = new Map(); // slug -> latest isoDate
+  for (const [id, m] of Object.entries(members)) {
+    const ministry = getMemberMinistry(m);
+    if (!ministry) continue;
+    const lm = memberLastmod.get(id);
+    if (!lm) continue; // skip members with no recorded speeches
+    const prev = govLastmod.get(ministry.slug);
+    if (!prev || lm > prev) govLastmod.set(ministry.slug, lm);
+  }
+  const govSlugs = [...govLastmod.keys()].sort();
+  files.push(
+    writeSitemap("sitemap-gov.xml", [
+      urlEntry({ loc: "/gov", lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" }),
+      ...govSlugs.map((slug) =>
+        urlEntry({
+          loc: `/gov/${slug}`,
+          lastmod: govLastmod.get(slug),
+          changefreq: "weekly",
+          priority: "0.7",
+        })
+      ),
+    ])
+  );
+
   // Sitemap index — use today (index itself was regenerated now).
   writeSitemapIndex(files, now);
 
@@ -224,7 +255,8 @@ function buildSitemaps() {
 
   console.log(
     `Sitemaps generated: ${threads.length} threads, ${allMemberIds.length} members, ` +
-      `${weekIds.length} digests, ${councilSlugs.length} councils → ${files.length} files + sitemap_index.xml`
+      `${weekIds.length} digests, ${councilSlugs.length} councils, ${govSlugs.length} gov pages → ` +
+      `${files.length} files + sitemap_index.xml`
   );
 }
 
