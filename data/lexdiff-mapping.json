@@ -1,23 +1,63 @@
 {
-  "_comment": "Mapping from law base names to lex-diff URLs. Keys are simplified law names (without amendment boilerplate). Used by summarize.py to generate cross-links.",
+  "_comment": "Mapping from law names to lex-diff URLs. Keys are matched two ways by scripts/summarize.py: (1) exact match against the simplified legislationName, and (2) substring match against summary text. The matched key is also used as the link label, so every key must read as a proper law name (formal or conventional short name), never a fragment. Multiple keys may point at the same law. Only laws that lex-diff actually hosts (data/raw/<law_id>) are listed.",
   "民法": {
     "law_id": "129AC0000000089",
     "url": "https://lexdiff.com/law/129AC0000000089"
+  },
+  "刑法": {
+    "law_id": "140AC0000000045",
+    "url": "https://lexdiff.com/law/140AC0000000045"
   },
   "労働基準法": {
     "law_id": "322AC0000000049",
     "url": "https://lexdiff.com/law/322AC0000000049"
   },
+  "建築基準法": {
+    "law_id": "325AC0000000201",
+    "url": "https://lexdiff.com/law/325AC0000000201"
+  },
   "道路交通法": {
     "law_id": "335AC0000000105",
     "url": "https://lexdiff.com/law/335AC0000000105"
+  },
+  "著作権法": {
+    "law_id": "345AC0000000048",
+    "url": "https://lexdiff.com/law/345AC0000000048"
+  },
+  "消費者契約法": {
+    "law_id": "412AC0000000061",
+    "url": "https://lexdiff.com/law/412AC0000000061"
   },
   "個人情報の保護に関する法律": {
     "law_id": "415AC0000000057",
     "url": "https://lexdiff.com/law/415AC0000000057"
   },
-  "著作権法": {
-    "law_id": "345AC0000000048",
-    "url": "https://lexdiff.com/law/345AC0000000048"
+  "不動産登記法": {
+    "law_id": "416AC0000000123",
+    "url": "https://lexdiff.com/law/416AC0000000123"
+  },
+  "育児・介護休業法": {
+    "law_id": "403AC0000000076",
+    "url": "https://lexdiff.com/law/403AC0000000076"
+  },
+  "育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律": {
+    "law_id": "403AC0000000076",
+    "url": "https://lexdiff.com/law/403AC0000000076"
+  },
+  "情報流通プラットフォーム対処法": {
+    "law_id": "413AC0000000137",
+    "url": "https://lexdiff.com/law/413AC0000000137"
+  },
+  "マイナンバー法": {
+    "law_id": "425AC0000000027",
+    "url": "https://lexdiff.com/law/425AC0000000027"
+  },
+  "番号利用法": {
+    "law_id": "425AC0000000027",
+    "url": "https://lexdiff.com/law/425AC0000000027"
+  },
+  "行政手続における特定の個人を識別するための番号の利用等に関する法律": {
+    "law_id": "425AC0000000027",
+    "url": "https://lexdiff.com/law/425AC0000000027"
   }
 }
