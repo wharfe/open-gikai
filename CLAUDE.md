@@ -39,7 +39,9 @@ The summary pipeline (`scripts/summarize.py` + `scripts/pipeline/grouper.py` + `
 4. **No conversational UI inside OpenGIKAI's domain**: Chat answers are non-deterministic and break the "Claude AI summary" transparency label. External MCP server (separate Vercel project) is fine because clients bring their own LLM and we expose only deterministic JSON.
 
 ### What IS allowed
-Auxiliary information layers (news enrichment, members extraction, sitemap generation, OGP image generation) may use LLM/agent patterns. They affect *which* context surfaces alongside a thread, not *what* a speech says. Example: `scripts/pipeline/news_ranker.py` uses Claude with temperature=0 and prompt caching to filter Bing News candidates — that is auxiliary, not summary.
+Auxiliary information layers (news enrichment, members extraction, sitemap generation, OGP image generation, ministry hub pages, lex-diff cross-links) may use LLM/agent patterns. They affect *which* context surfaces alongside a thread, not *what* a speech says. Example: `scripts/pipeline/news_ranker.py` uses Claude with temperature=0 and prompt caching to filter Bing News candidates — that is auxiliary, not summary.
+
+`src/lib/ministry.mjs` is a related auxiliary module: it deterministically maps a government-witness (政府参考人) member to a ministry from their `role` string (no LLM), powering the `/gov` hub pages, member-page breadcrumbs, sitemap-gov, and IndexNow. It is **plain ESM (+ `ministry.d.mts`)** rather than TS so the node-run build scripts (`scripts/generate-sitemap.mjs`, `scripts/notify-indexnow.mjs`) can import it — the repo has no tsx/ts-node. Politicians are excluded inside its API (m_-prefixed IDs only + political-title blocklist; `rank` is NOT used — it misclassifies bureaucrats). `data/lexdiff-mapping.json` (outbound law cross-links, consumed by `summarize.py`) is similarly auxiliary.
 
 When adding any new Claude-using script, ask yourself: **does this change what a speech is summarized to say?** If yes → must obey the invariants above. If no → reasonable freedom (still keep it deterministic where practical).
 
@@ -71,9 +73,9 @@ python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
 /                     Project root (frontend SSG project — `output: "export"`)
 ├── CLAUDE.md         This file
 ├── src/              Source code (Next.js App Router)
-│   ├── app/          Pages and layouts
+│   ├── app/          Pages and layouts (incl. /m member pages, /gov ministry hubs)
 │   ├── components/   React components
-│   ├── lib/          Utilities and data fetching
+│   ├── lib/          Utilities and data fetching (incl. ministry.mjs — see below)
 │   └── types/        TypeScript type definitions
 ├── apps/
 │   └── mcp/          MCP server (separate Vercel project, dynamic Node runtime)
