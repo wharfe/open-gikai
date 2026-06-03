@@ -110,7 +110,7 @@ test("every ministry has a unique non-empty slug and name", () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `node --test tests/unit/`
+Run: `node --test "tests/unit/*.test.mjs"`
 Expected: FAIL — `Cannot find module .../src/lib/ministry.mjs`
 
 - [ ] **Step 3: Write the implementation**
@@ -226,7 +226,7 @@ export function getMemberMinistry(member: {
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `node --test tests/unit/`
+Run: `node --test "tests/unit/*.test.mjs"`
 Expected: PASS (7 tests)
 
 - [ ] **Step 5: 実データでの分類結果を確認(スポットチェック)**
@@ -874,7 +874,7 @@ git commit -m "feat: notify IndexNow for /gov pages touched by the day's speaker
 - [ ] **Step 1: 全チェックを順に実行**
 
 ```bash
-node --test tests/unit/
+node --test "tests/unit/*.test.mjs"
 npm run lint
 npm run build
 ```

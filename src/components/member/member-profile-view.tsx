@@ -11,11 +11,13 @@ type MemberProfileViewProps = {
   member: Member;
   threads: Thread[];
   members: Record<string, Member>;
+  ministry?: { slug: string; name: string } | null;
 };
 
 export function MemberProfileView({
   member,
   threads,
+  ministry,
 }: MemberProfileViewProps) {
   const { follows, toggleFollow, level } = useAppContext();
 
@@ -108,7 +110,16 @@ export function MemberProfileView({
 
         {/* Role info */}
         <div className="mt-1.5 text-[15px] text-x-secondary">
-          {member.role}
+          {ministry ? (
+            <Link
+              href={`/gov/${ministry.slug}`}
+              className="text-x-accent hover:underline"
+            >
+              {member.role}
+            </Link>
+          ) : (
+            member.role
+          )}
           {member.district ? ` · ${member.district}` : ""}
           {member.since ? ` · ${member.since}年〜` : ""}
         </div>
