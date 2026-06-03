@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getMember, getMembers, getThreads, getAllMemberIds, getMemberStats } from "@/lib/data";
+import { getMember, getMembers, getThreads, getAllMemberIds, getMemberStats, getMinistrySlugs } from "@/lib/data";
 import { getMemberMinistry } from "@/lib/ministry.mjs";
 import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
@@ -69,7 +69,15 @@ export default async function MemberPage({ params }: Props) {
     url: `https://open-gikai.net/m/${memberId}`,
   };
 
-  const ministry = getMemberMinistry(member);
+  // Only surface the ministry link when its /gov/{slug} page is actually
+  // built. A ministry-matched member with no recorded speeches (and no
+  // speaking colleagues) yields no roster page; linking there would 404
+  // because /gov/[slug] has dynamicParams = false.
+  const ministryMatch = getMemberMinistry(member);
+  const ministry =
+    ministryMatch && getMinistrySlugs().includes(ministryMatch.slug)
+      ? ministryMatch
+      : null;
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
