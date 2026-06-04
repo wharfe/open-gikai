@@ -120,6 +120,27 @@
           "label": "主要食糧の需給及び価格の安定に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E4%B8%BB%E8%A6%81%E9%A3%9F%E7%B3%A7%E3%81%AE%E9%9C%80%E7%B5%A6%E5%8F%8A%E3%81%B3%E4%BE%A1%E6%A0%BC%E3%81%AE%E5%AE%89%E5%AE%9A%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
         }
+      ],
+      "news": [
+        {
+          "title": "食糧法改正案が審議入り、石破前首相のコメ増産路線を修正…鈴木農相「決して生産調整を意味するものではない」",
+          "url": "https://news.livedoor.com/topics/detail/31257975/",
+          "source": "livedoor ニュース",
+          "pubDate": "Tue, 12 May 2026 16:59:00 GMT"
+        },
+        {
+          "title": "コメ放出拒否で事業者名公表 官民備蓄、食糧法改正案",
+          "url": "https://www.msn.com/ja-jp/politics/government/%E3%82%B3%E3%83%A1%E6%94%BE%E5%87%BA%E6%8B%92%E5%90%A6%E3%81%A7%E4%BA%8B%E6%A5%AD%E8%80%85%E5%90%8D%E5%85%AC%E8%A1%A8-%E5%AE%98%E6%B0%91%E5%82%99%E8%93%84-%E9%A3%9F%E7%B3%A7%E6%B3%95%E6%94%B9%E6%AD%A3%E6%A1%88/ar-AA1Srvr7",
+          "source": "MSN",
+          "pubDate": "Tue, 16 Dec 2025 01:33:00 GMT"
+        },
+        {
+          "title": "＜ニッポンの米＞米民間備蓄なぜ規定？ 食糧法改正案に明文化",
+          "url": "https://www.agrinews.co.jp/news/index/377600",
+          "source": "日本農業新聞",
+          "pubDate": "Wed, 29 Apr 2026 17:00:00 GMT",
+          "image": "https://www.agrinews.co.jp/media/2026/04/29/20260429_awg4tdmnjnktdhacwquc.jpg"
+        }
       ]
     },
     "speeches": [
@@ -1679,6 +1700,13 @@
         "topic": "食料・農業・農村基本計画の実装推進",
         "committee": "農林水産委員会",
         "date": "2025.11.25"
+      },
+      {
+        "threadId": "t_20260512_3a9eef_65",
+        "relationship": "続き",
+        "topic": "肥料価格高騰対策と下水汚泥リン回収",
+        "committee": "農林水産委員会",
+        "date": "2026.05.12"
       }
     ]
   },
@@ -1974,6 +2002,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105007X00920260513"
         }
+      ],
+      "news": [
+        {
+          "title": "高市政権「需要に応じた生産」食糧法改正案で進むコメ統制、米価維持政策に欠ける食料安全保障の視点",
+          "url": "https://diamond.jp/articles/-/387716",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Sat, 11 Apr 2026 21:55:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/3/1/-/img_315a428d701e59e3d2d86911aced5198409353.jpg"
+        },
+        {
+          "title": "[論説]備蓄米の入札開始 危機感高め適正生産を",
+          "url": "https://www.agrinews.co.jp/opinion/index/374351",
+          "source": "日本農業新聞",
+          "pubDate": "Mon, 13 Apr 2026 17:00:00 GMT",
+          "image": "https://www.agrinews.co.jp/media/2026/04/13/20260413_x96o1kwsvsbmtegzjuxk.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2087,6 +2131,29 @@
         {
           "label": "主要食糧の需給及び価格の安定に関する法律（法令検索）",
           "url": "https://www.google.com/search?q=%E4%B8%BB%E8%A6%81%E9%A3%9F%E7%B3%A7%E3%81%AE%E9%9C%80%E7%B5%A6%E5%8F%8A%E3%81%B3%E4%BE%A1%E6%A0%BC%E3%81%AE%E5%AE%89%E5%AE%9A%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市政権「需要に応じた生産」食糧法改正案で進むコメ統制、米価維持政策に欠ける食料安全保障の視点",
+          "url": "https://diamond.jp/articles/-/387716",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Sat, 11 Apr 2026 21:55:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/3/1/-/img_315a428d701e59e3d2d86911aced5198409353.jpg"
+        },
+        {
+          "title": "コメ流通、合理的で一貫性ある政策を 日本チェーンストア協会が食糧法見直しに要望",
+          "url": "https://news.livedoor.com/article/detail/30477491/",
+          "source": "livedoor ニュース",
+          "pubDate": "Thu, 29 Jan 2026 16:00:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/2/b/2b571_1735_eb60b919_ae461b00.jpg"
+        },
+        {
+          "title": "コメ「需要に応じた生産」を明記 食糧法17年ぶり本格改正案を決定",
+          "url": "https://www.asahi.com/articles/ASV4336HYV43ULFA016M.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 02 Apr 2026 17:01:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260403003172_comm.jpg"
         }
       ]
     },
@@ -2286,6 +2353,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105007X00920260513"
         }
+      ],
+      "news": [
+        {
+          "title": "米粉用原料米の安定確保を支援する「令和8年度米粉原料安定供給事業」、7月1日（水）より公募受付開始",
+          "url": "https://prtimes.jp/main/html/rd/p/000000181.000089547.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 29 Apr 2026 17:00:00 GMT"
+        },
+        {
+          "title": "米粉用原料米の安定確保を支援する「令和8年度米粉原料安定供給事業」、7月1日（水）より公募受付開始",
+          "url": "https://www.agrinews.co.jp/news/prtimes/377708",
+          "source": "日本農業新聞",
+          "pubDate": "Wed, 29 Apr 2026 17:00:00 GMT",
+          "image": "https://prtimes.jp/img/89547/181/resize/d89547-181-a15dd9134344b0a9103a-0.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2383,6 +2465,20 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105007X00920260513"
         }
+      ],
+      "news": [
+        {
+          "title": "国産ドローン普及へ研究会が誕生 環境整備や経済安保強化を推進",
+          "url": "https://news.yahoo.co.jp/articles/bd18ac8b6c274fdb9824581c50be366a6bea747b",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Thu, 16 Apr 2026 16:07:00 GMT"
+        },
+        {
+          "title": "農食品部の「K農機近代化」支援、実態は融資購入ドローンの8割が中国製",
+          "url": "https://www.msn.com/ja-jp/money/other/%E8%BE%B2%E9%A3%9F%E5%93%81%E9%83%A8%E3%81%AE-%EF%BD%8B%E8%BE%B2%E6%A9%9F%E8%BF%91%E4%BB%A3%E5%8C%96-%E6%94%AF%E6%8F%B4-%E5%AE%9F%E6%85%8B%E3%81%AF%E8%9E%8D%E8%B3%87%E8%B3%BC%E5%85%A5%E3%83%89%E3%83%AD%E3%83%BC%E3%83%B3%E3%81%AE%EF%BC%98%E5%89%B2%E3%81%8C%E4%B8%AD%E5%9B%BD%E8%A3%BD/ar-AA1OaYSQ",
+          "source": "MSN",
+          "pubDate": "Thu, 09 Oct 2025 16:46:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -2454,6 +2550,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105007X00920260513"
+        }
+      ],
+      "news": [
+        {
+          "title": "AGRIST、宮崎発「自動収穫ロボット」の現場実装モデルが高評価。DX INNOVATION AWARD 2025にて2冠",
+          "url": "https://www.jiji.com/jc/article?k=000000173.000050444&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 05 Mar 2026 07:46:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/50444/173/50444-173-5571d6675ffb526cae446b6e9b72e0e4-3900x2600.jpg"
         }
       ]
     },

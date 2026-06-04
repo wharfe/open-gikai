@@ -494,6 +494,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104183X00720260528"
         }
+      ],
+      "news": [
+        {
+          "title": "緊急事態条項、議員任期の延長案が軸 衆院憲法審査会に法制局が提示",
+          "url": "https://www.nikkei.com/article/DGXZQOUA124100S6A510C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Tue, 12 May 2026 12:48:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO3002916012052026000000-1.jpg?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;fp-x=0.18&amp;fp-y=0.11&amp;h=630&amp;w=1200&amp;s=688ad4abbd0ae910bc620869ef28bcb7"
+        },
+        {
+          "title": "緊急事態条項巡る議論 論点の多さと衆参の足並みに課題 14日の衆院憲法審で本格化",
+          "url": "https://www.sankei.com/article/20260513-6XNJ3B673VL7LIRBBVIVLFYYSE/",
+          "source": "産経新聞",
+          "pubDate": "Wed, 13 May 2026 14:08:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/7VQJRXP3AVNGXNGYKPLXSJ27MY.jpg?auth=d6c2bd303d0cdff22fa16830cd28877c53a79d4a66e06a9d765c6153b7767c02&amp;quality=50&amp;focal=1979%2C767&amp;width=1200&amp;height=675"
+        },
+        {
+          "title": "「緊急政令」で与野党対立 衆院憲法審、緊急事態条項の合意見通せず",
+          "url": "https://www.jiji.com/jc/article?k=2026051401091&g=pol",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 14 May 2026 17:00:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202605/20260514atH0S_o.jpg"
+        }
       ]
     },
     "speeches": [
@@ -580,6 +603,27 @@
         {
           "label": "日本国憲法（法令検索）",
           "url": "https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E5%9B%BD%E6%86%B2%E6%B3%95+site%3Alaws.e-gov.go.jp"
+        }
+      ],
+      "news": [
+        {
+          "title": "【社説】高市政権と憲法 「権力を縛るもの」と自覚せよ",
+          "url": "https://www.msn.com/ja-jp/politics/government/%E7%A4%BE%E8%AA%AC-%E9%AB%98%E5%B8%82%E6%94%BF%E6%A8%A9%E3%81%A8%E6%86%B2%E6%B3%95-%E6%A8%A9%E5%8A%9B%E3%82%92%E7%B8%9B%E3%82%8B%E3%82%82%E3%81%AE-%E3%81%A8%E8%87%AA%E8%A6%9A%E3%81%9B%E3%82%88/ar-AA22fm29",
+          "source": "MSN",
+          "pubDate": "Sat, 02 May 2026 15:11:00 GMT"
+        },
+        {
+          "title": "「時は来た」高市総理の悲願“憲法改正”の実現度は？改憲論議の変遷から見る難しさ…ジャーナリストが解説「実現には壁 ...",
+          "url": "https://news.livedoor.com/article/detail/31240376/",
+          "source": "livedoor ニュース",
+          "pubDate": "Mon, 11 May 2026 17:00:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/7/5/750d2_1585_ca22b2a04fd3d71554d7cd8581371f23.jpg"
+        },
+        {
+          "title": "憲法記念日 護憲派5万人集会",
+          "url": "https://www.msn.com/ja-jp/news/other/%E6%86%B2%E6%B3%95%E6%94%B9%E6%AD%A3%E5%B7%A1%E3%82%8A%E6%9C%89%E6%98%8E%E3%81%A75%E4%B8%87%E4%BA%BA%E9%9B%86%E4%BC%9A/gm-GMFD00229E",
+          "source": "MSN",
+          "pubDate": "Sun, 03 May 2026 05:48:00 GMT"
         }
       ]
     },
@@ -1051,6 +1095,15 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104183X00720260528"
+        }
+      ],
+      "news": [
+        {
+          "title": "憲法審査会とは（朝日キーワード2027）",
+          "url": "https://www.asahi.com/articles/ASV4J1S1XV4JDIFI00KM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Sun, 10 May 2026 17:00:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260416002038_comm.jpg"
         }
       ]
     },

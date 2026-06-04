@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 03 Jun 2026 22:21:26 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 22:03:48 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W23 国会まとめ — 1件の議論</title>
+      <title>2026-W23 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W23</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W23</guid>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
-      <description>1件のスレッド、1委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見ほか。</description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、3委員会の議論をまとめました。懲罰委員会、議院運営委員会、ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +32,36 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W20 国会まとめ — 92件の議論</title>
+      <title>2026-W20 国会まとめ — 162件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W20</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W20</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>92件のスレッド、8委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
+      <description>162件のスレッド、10委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>衆議院懲罰委員会の委員長選任と理事指名 — 懲罰委員会</title>
+      <link>https://open-gikai.net/t/t_20260602_02ea15_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260602_02ea15_01</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>斉藤鉄夫委員長の就任挨拶と理事5名の指名を行った（国会会議録・2026.06.02・1発言）</description>
+      <category>懲罰委員会</category>
+    </item>
+    <item>
+      <title>ポーランド下院議員団の国会傍聴 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260602_a29b2a_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260602_a29b2a_02</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>ポーランド下院議員団の本会議傍聴に関する手続きと紹介（国会会議録・2026.06.02・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本会議日程と各委員会報告 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260602_a29b2a_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260602_a29b2a_03</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description>総務・環境・内閣各委員会からの報告と採決見通し（国会会議録・2026.06.02・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>イラン大統領との電話会談と中東情勢への対応 — ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見</title>
@@ -413,30 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_07</guid>
       <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
       <description>首都直下地震等における広域避難計画と災害公営住宅活用の課題（国会会議録・2026.05.14・4発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>林野火災対策と消火技術の強化 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_37ef49_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_08</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>山林火災の消火薬剤開発と野焼き規制の見直し検討（国会会議録・2026.05.14・3発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>津波避難における車両使用基準 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_37ef49_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_09</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>津波避難時の車避難要件と個別避難計画策定の促進（国会会議録・2026.05.14・3発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>防災人材登録制度の創設検討 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_37ef49_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_10</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>防災士等の民間防災人材を個人単位で登録する制度の必要性（国会会議録・2026.05.14・4発言）</description>
       <category>災害対策特別委員会</category>
     </item>
   </channel>

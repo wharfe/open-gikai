@@ -453,6 +453,20 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20260528_8c76f9_02",
+        "relationship": "関連議論",
+        "topic": "緊急事態条項の議論総括と今後の方向性",
+        "committee": "憲法審査会",
+        "date": "2026.05.28"
+      },
+      {
+        "threadId": "t_20260528_8c76f9_08",
+        "relationship": "関連議論",
+        "topic": "国民投票法の課題と整備",
+        "committee": "憲法審査会",
+        "date": "2026.05.28"
+      },
+      {
         "threadId": "t_20260521_82699f_01",
         "relationship": "関連議論",
         "topic": "緊急事態条項のイメージ案全般についての各会派の基本見解",
@@ -3205,6 +3219,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104339X00920260514"
         }
+      ],
+      "news": [
+        {
+          "title": "【日本初】政府関連団体2箇所へ導入の二段ベッドが、避難所の過密とプライバシーを解消。令和7年度補正予算「地域未来交付金 ...",
+          "url": "https://prtimes.jp/main/html/rd/p/000000014.000103014.html",
+          "source": "PR TIMES",
+          "pubDate": "Wed, 13 May 2026 17:00:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/103014/14/103014-14-a3de7215aad84043c68933ea5496c9cc-1200x800.jpg?format=jpeg&amp;auto=webp&amp;fit=bounds&amp;width=2400&amp;height=1260"
+        }
       ]
     },
     "speeches": [
@@ -3864,6 +3887,27 @@
         "relationship": "続き",
         "topic": "地方の人口流出防止と被災者支援制度拡充",
         "committee": "災害対策特別委員会",
+        "date": "2026.05.12"
+      },
+      {
+        "threadId": "t_20260512_b8d225_69",
+        "relationship": "同一法案",
+        "topic": "デジタル行政推進法と個人情報保護法改正案の基本趣旨",
+        "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
+        "date": "2026.05.12"
+      },
+      {
+        "threadId": "t_20260512_b8d225_73",
+        "relationship": "関連議論",
+        "topic": "統計作成等特例による要配慮個人情報の本人同意不要化",
+        "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
+        "date": "2026.05.12"
+      },
+      {
+        "threadId": "t_20260512_b8d225_97",
+        "relationship": "関連議論",
+        "topic": "安全保障上の懸念排除と認定制度の運用",
+        "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
         "date": "2026.05.12"
       },
       {

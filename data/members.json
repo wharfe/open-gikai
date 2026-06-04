@@ -14555,5 +14555,148 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_69310184": {
+    "id": "m_69310184",
+    "name": "三井祐子",
+    "party": null,
+    "role": "独立行政法人国際協力機構理事",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_d262bf2b": {
+    "id": "m_d262bf2b",
+    "name": "田中明彦",
+    "party": null,
+    "role": "独立行政法人国際協力機構理事長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_fbb84b6a": {
+    "id": "m_fbb84b6a",
+    "name": "花田貴裕",
+    "party": null,
+    "role": "外務省大臣官房サイバーセキュリティ・情報化参事官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_69aaea72": {
+    "id": "m_69aaea72",
+    "name": "小林広幸",
+    "party": null,
+    "role": "独立行政法人国際協力機構理事",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_e153769d": {
+    "id": "m_e153769d",
+    "name": "佐々木雅人",
+    "party": null,
+    "role": "経済産業省大臣官房エネルギー・地域政策統括調整官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "shindoukanehiko": {
+    "id": "shindoukanehiko",
+    "name": "進藤金日子",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_c00f61e4": {
+    "id": "m_c00f61e4",
+    "name": "佐脇紀代志",
+    "party": null,
+    "role": "個人情報保護委員会事務局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nagatsumaakira": {
+    "id": "nagatsumaakira",
+    "name": "長妻昭",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "maekawamegumi": {
+    "id": "maekawamegumi",
+    "name": "前川恵",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f057d909": {
+    "id": "m_f057d909",
+    "name": "遠藤剛",
+    "party": null,
+    "role": "警察庁長官官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_4c2b057f": {
+    "id": "m_4c2b057f",
+    "name": "三田一博",
+    "party": null,
+    "role": "総務省サイバーセキュリティ統括官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "takamiryou": {
+    "id": "takamiryou",
+    "name": "高見亮",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_cfbddbb4": {
+    "id": "m_cfbddbb4",
+    "name": "山下正通",
+    "party": null,
+    "role": "金融庁総合政策局参事官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
