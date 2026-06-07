@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 04 Jun 2026 22:03:48 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 21:40:04 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W23 国会まとめ — 4件の議論</title>
+      <title>2026-W23 国会まとめ — 7件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W23</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W23</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>4件のスレッド、3委員会の議論をまとめました。懲罰委員会、議院運営委員会、ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見ほか。</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <description>7件のスレッド、4委員会の議論をまとめました。議院運営委員会、予算委員会、懲罰委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,30 @@
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
       <description>162件のスレッド、10委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>令和8年度補正予算緊急上程・採決手続き — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260604_f08a36_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260604_f08a36_01</guid>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <description>令和8年度一般会計・特別会計補正予算の緊急上程と討論・採決の手続きを決定（国会会議録・2026.06.04・3発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>令和8年度補正予算の趣旨説明 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260603_3929e5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260603_3929e5_01</guid>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <description>財務大臣が令和8年度補正予算案の内容と重点支援地方交付金について説明（国会会議録・2026.06.03・1発言）</description>
+      <category>予算委員会</category>
+    </item>
+    <item>
+      <title>本会議の議事運営・質疑時間配分 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260603_e1c34f_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260603_e1c34f_02</guid>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <description>財政演説に対する6名の質疑時間配分と要求大臣について決定（国会会議録・2026.06.03・3発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>衆議院懲罰委員会の委員長選任と理事指名 — 懲罰委員会</title>
@@ -414,30 +438,6 @@
       <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
       <description>自民・公明・維新・国民・参政・みらい・共産各党が緊急事態条項案に対する見解を表明（国会会議録・2026.05.14・7発言）</description>
       <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>防災庁設置法案の司令塔機能と勧告権 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_37ef49_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_05</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>防災庁の司令塔機能と尊重義務つき勧告権の行使方針について議論（国会会議録・2026.05.14・10発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>災害時の専門人材確保と派遣体制 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_37ef49_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_06</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>DMAT、DWAT等の医療・福祉専門人材の確保と災害時派遣体制の課題（国会会議録・2026.05.14・7発言）</description>
-      <category>災害対策特別委員会</category>
-    </item>
-    <item>
-      <title>広域避難体制と受援態勢の整備 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_37ef49_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_37ef49_07</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>首都直下地震等における広域避難計画と災害公営住宅活用の課題（国会会議録・2026.05.14・4発言）</description>
-      <category>災害対策特別委員会</category>
     </item>
   </channel>
 </rss>
