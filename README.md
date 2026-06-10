@@ -100,7 +100,7 @@ Sources (NDL, kantei, council)
 3. **News enrichment**: Searches Bing News by topic, then a Claude Haiku ranker (`scripts/pipeline/news_ranker.py`) picks the most-relevant 3 articles from the candidate pool. Auxiliary information layer — see CLAUDE.md "Summary Layer Invariants" for the boundary.
 4. **Static generation**: `data/threads/*.json` and `data/members.json` are consumed by the Next.js SSG to produce static HTML pages.
 5. **Deployment**: Two Vercel projects pointing at the same repo — root (SSG frontend) and `apps/mcp` (dynamic MCP server).
-6. **Monitoring**: Daily batch commits include `(+N threads)` in the message; the workflow emits a CI warning when 7+ consecutive runs add 0 threads (catches fetcher regressions that the green checkmark alone wouldn't).
+6. **Monitoring**: Daily batch commits include `(+N threads)` in the message; the workflow emits a CI warning when 7+ consecutive runs add 0 threads (catches fetcher regressions that the green checkmark alone wouldn't). A hard job failure (e.g. NDL API 403 from a datacenter IP, Anthropic credit exhaustion) opens or updates a `pipeline-failure` GitHub Issue so it surfaces without polling `gh run list`.
 
 ## Data Pipeline
 

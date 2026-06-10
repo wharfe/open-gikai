@@ -101,7 +101,7 @@ MCP server のデプロイ詳細は [`apps/mcp/README.md`](./apps/mcp/README.md)
 3. **ニュース付与**: Bing News でテーマ検索 → Claude Haiku ranker（`scripts/pipeline/news_ranker.py`）が候補から最も関連の高い 3 件を選別。これは補助情報レイヤー — 要約レイヤーとの境界は CLAUDE.md「Summary Layer Invariants」を参照。
 4. **静的生成**: `data/threads/*.json` と `data/members.json` を Next.js SSG が消費して静的 HTML を生成。
 5. **デプロイ**: 同一リポジトリから 2 つの Vercel project（ルート = SSG / `apps/mcp` = 動的 MCP server）。
-6. **監視**: daily-batch のコミットメッセージに `(+N threads)` を付与。7 回連続で 0 が続くと CI warning を発火（緑チェックだけでは見えない fetcher リグレッションを構造的に検知）。
+6. **監視**: daily-batch のコミットメッセージに `(+N threads)` を付与。7 回連続で 0 が続くと CI warning を発火（緑チェックだけでは見えない fetcher リグレッションを構造的に検知）。ジョブ自体が失敗した場合（NDL API の 403、Anthropic クレジット切れなど）は `pipeline-failure` ラベルの GitHub Issue を起票/追記し、`gh run list` を見に行かずとも気づけるようにする。
 
 ## データパイプライン
 
