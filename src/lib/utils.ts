@@ -2,7 +2,7 @@ import type { Level, Member, Speech, Thread } from "@/types";
 import {
   PARTY_STYLE,
   MINISTER_STYLE,
-  TENSION_STYLE,
+  getTensionStyle,
 } from "@/lib/config";
 import type { PartyStyle } from "@/types";
 
@@ -136,7 +136,7 @@ export function buildSpeechShare(
   thread: Thread,
   level: Level
 ): string {
-  const t = TENSION_STYLE[speech.tension];
+  const t = getTensionStyle(speech.tension);
   return [
     `${t.icon}【${thread.committee}・${thread.date}】`,
     `${member.name}（${member.party || member.role}）`,

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { Member, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
-import { RANK_BADGE, TENSION_STYLE, PARTY_STYLE } from "@/lib/config";
+import { RANK_BADGE, getTensionStyle, PARTY_STYLE } from "@/lib/config";
 import { getStyle } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
 
@@ -174,7 +174,7 @@ export function MemberProfileView({
         {/* Tension stats */}
         <div className="mt-4 flex flex-wrap gap-4">
           {Object.entries(tensionCount).map(([t, n]) => {
-            const ts = TENSION_STYLE[t] || { icon: "•", color: "#6b7280", bg: "transparent" };
+            const ts = getTensionStyle(t);
             return (
               <span key={t} className="text-[14px]">
                 <span className="font-bold text-x-text">{n}</span>{" "}
@@ -195,7 +195,7 @@ export function MemberProfileView({
 
       {/* Speech list */}
       {speeches.map((sp, i) => {
-        const ts = TENSION_STYLE[sp.tension];
+        const ts = getTensionStyle(sp.tension);
         return (
           <Link
             key={i}

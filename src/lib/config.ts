@@ -84,7 +84,23 @@ export const TENSION_STYLE: Record<string, TensionStyle> = {
   要求: { icon: "gavel", color: "#dc2626", bg: "rgba(220,38,38,0.1)" },
   反対討論: { icon: "swap_horiz", color: "#f97316", bg: "rgba(249,115,22,0.1)" },
   説明: { icon: "description", color: "#6b7280", bg: "rgba(107,114,128,0.1)" },
+  提案: { icon: "add", color: "#10b981", bg: "rgba(16,185,129,0.1)" },
 };
+
+// Neutral fallback for tension labels the summarizer may emit that aren't yet
+// styled above. The summarizer writes `tension` as free text, so an unexpected
+// value must degrade gracefully — a missing TENSION_STYLE entry would otherwise
+// crash static prerender at TENSION_STYLE[x].color. validate-data.mjs still
+// warns so we add a proper style later.
+const DEFAULT_TENSION_STYLE: TensionStyle = {
+  icon: "chat_bubble",
+  color: "#6b7280",
+  bg: "rgba(107,114,128,0.1)",
+};
+
+export function getTensionStyle(tension: string): TensionStyle {
+  return TENSION_STYLE[tension] ?? DEFAULT_TENSION_STYLE;
+}
 
 // Source styling — visual hints to distinguish data origins in the feed
 export const SOURCE_STYLE: Record<string, { icon: string; label: string; color: string }> = {

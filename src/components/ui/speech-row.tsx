@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Level, Member, Speech, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
-import { RANK_BADGE, TENSION_STYLE, PARTY_STYLE } from "@/lib/config";
+import { RANK_BADGE, getTensionStyle, PARTY_STYLE } from "@/lib/config";
 import { getStyle, buildSpeechShare } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButton } from "@/components/ui/share-button";
@@ -29,7 +29,7 @@ export function SpeechRow({
 }: SpeechRowProps) {
   const [expanded, setExpanded] = useState(false);
   const { toggleFollow } = useAppContext();
-  const tension = TENSION_STYLE[speech.tension];
+  const tension = getTensionStyle(speech.tension);
   const ms = getStyle(member);
   const badge = RANK_BADGE[member.rank];
 
