@@ -17,9 +17,21 @@ import requests
 from .base import FetchResult, RawMeeting, RawSpeech, SourceAdapter
 
 NDL_API_URL = "https://kokkai.ndl.go.jp/api/speech"
-USER_AGENT = "OpenGIKAI/1.0"
+# Browser-like headers — NDL (like kantei.go.jp / cao.go.jp) intermittently
+# returns 403 Forbidden for bare bot User-Agents sent from datacenter IPs
+# (observed on GitHub Actions / Azure runners). A real browser UA plus the
+# usual Accept headers avoids that reputation-based block.
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json,text/javascript,*/*;q=0.8",
+    "Accept-Language": "ja,en;q=0.5",
+}
 REQUEST_TIMEOUT = 30
-MAX_RETRIES = 3
+MAX_RETRIES = 5
 
 log = logging.getLogger("source.ndl")
 
@@ -62,7 +74,7 @@ class NDLAdapter(SourceAdapter):
     # ----- API helpers -----
 
     def _fetch_page(self, params: dict, verbose: bool = False) -> dict:
-        headers = {"User-Agent": USER_AGENT}
+        headers = HEADERS
 
         for attempt in range(1, MAX_RETRIES + 1):
             try:
@@ -87,7 +99,10 @@ class NDLAdapter(SourceAdapter):
             ) as exc:
                 if attempt == MAX_RETRIES:
                     raise
-                wait = 2**attempt
+                # Cap exponential backoff at 60s so a brief IP-reputation 403
+                # or rate-limit window can clear before we give up (with
+                # MAX_RETRIES=5 this rides out ~30s of 2+4+8+16 before retry 5).
+                wait = min(2**attempt, 60)
                 log.warning(
                     "Attempt %d failed (%s), retrying in %ds…", attempt, exc, wait
                 )

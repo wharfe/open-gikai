@@ -224,3 +224,34 @@ jobs:
             echo "- **Committed**: ${COMMITTED}"
             echo "- **Consecutive zero-thread runs**: ${STALLED}"
           } >> "$GITHUB_STEP_SUMMARY"
+
+  # Surface hard job failures (NDL 403, Anthropic credit exhaustion, etc.) as a
+  # GitHub Issue so they don't sit silently until someone runs `gh run list`.
+  # Runs even when the fetch step itself dies, since it's a separate job.
+  notify-on-failure:
+    name: Notify on failure
+    needs: fetch-and-summarize
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update failure-tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          DATE_TAG=$(date -u +%Y-%m-%d)
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, or a fetcher schema change.' "$DATE_TAG" "$RUN_URL")
+          # Ensure the dedup label exists (no-op if already present).
+          gh label create pipeline-failure \
+            --color B60205 \
+            --description "Daily batch pipeline failure" 2>/dev/null || true
+          EXISTING=$(gh issue list --state open --label pipeline-failure \
+            --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "Daily Batch failed" \
+              --label pipeline-failure --body "$BODY"
+          fi
