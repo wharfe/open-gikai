@@ -239,10 +239,14 @@ jobs:
       - name: Open or update failure-tracking issue
         env:
           GH_TOKEN: ${{ github.token }}
+          # This job intentionally skips actions/checkout, so gh cannot infer the
+          # repo from a local .git. Pin it explicitly or every gh call dies with
+          # "fatal: not a git repository".
+          GH_REPO: ${{ github.repository }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           DATE_TAG=$(date -u +%Y-%m-%d)
-          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, or a fetcher schema change.' "$DATE_TAG" "$RUN_URL")
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), or a fetcher schema change.' "$DATE_TAG" "$RUN_URL")
           # Ensure the dedup label exists (no-op if already present).
           gh label create pipeline-failure \
             --color B60205 \

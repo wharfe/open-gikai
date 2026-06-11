@@ -219,6 +219,17 @@ def poll_summary_batch(
             last_logged = elapsed
 
         if elapsed >= timeout_seconds:
+            # The batch_id is not persisted across runs, so a timed-out batch
+            # can never be collected — cancel it to stop paying for results we
+            # will throw away (the next run re-submits a fresh batch anyway).
+            try:
+                client.messages.batches.cancel(batch_id)
+                log.warning("Cancelled timed-out batch %s", batch_id)
+            except Exception as cancel_err:  # noqa: BLE001 - best-effort cleanup
+                log.warning(
+                    "Failed to cancel timed-out batch %s: %s",
+                    batch_id, cancel_err,
+                )
             raise TimeoutError(
                 f"Batch {batch_id} did not end within {timeout_seconds}s "
                 f"(last status: {batch.processing_status})"
