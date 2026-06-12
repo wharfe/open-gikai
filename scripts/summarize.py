@@ -377,6 +377,78 @@ def build_manifest_meetings(prepared_meetings: list, model: str) -> list:
     return meetings
 
 
+def assemble_from_manifest(
+    sidecar: dict,
+    meetings_by_id: Dict[str, dict],
+    results: Dict[str, Optional[dict]],
+    members: Dict[str, dict],
+    thread_counter: int,
+) -> tuple:
+    """Assemble threads from a sidecar manifest + a completed batch's results.
+
+    Does NOT re-group. Verifies each thread's input_hash against re-fetched raw
+    and requires every custom_id to have a parsed result. Returns
+    ``(threads, ok)`` where ok is False if ANY thread fails verification or is
+    missing — in that case the caller keeps the sidecar for retry.
+    """
+    model = sidecar["model"]
+    date_str = sidecar["date"]
+    threads: list = []
+
+    for m in sidecar["meetings"]:
+        meeting_id = m["meeting_id"]
+        meeting = meetings_by_id.get(meeting_id)
+        if meeting is None:
+            log.error("Resume: raw missing for %s — cannot assemble", meeting_id)
+            return [], False
+        raw_lookup = build_speech_lookup(meeting.get("speeches", []))
+        outcome = m["outcome"]
+        manifest_threads = m["threads"]
+
+        for mt in manifest_threads:
+            custom_id = mt["custom_id"]
+            thread_info = mt["thread_info"]
+            orders = mt["speechOrders"]
+            thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+            if len(thread_speeches) != len(orders):
+                log.error("Resume: speechOrder gap in %s/%s", meeting_id, custom_id)
+                return [], False
+
+            request = build_summary_request(
+                meeting, thread_info, thread_speeches, custom_id, model,
+            )
+            if bs.compute_input_hash(request["params"]) != mt["input_hash"]:
+                log.error("Resume: input_hash mismatch for %s — raw/prompt changed",
+                          custom_id)
+                return [], False
+
+            result = results.get(custom_id)
+            if not result:
+                log.error("Resume: missing result for %s", custom_id)
+                return [], False
+
+            thread_counter += 1
+            thread_id = make_thread_id(date_str, meeting_id, thread_counter)
+            thread = assemble_thread(
+                meeting, thread_info, result["speeches"], raw_lookup, members,
+                thread_id,
+            )
+            if not thread:
+                log.error("Resume: assemble_thread returned None for %s", custom_id)
+                return [], False
+
+            is_last = (mt is manifest_threads[-1])
+            thread["outcome"] = {
+                "result": outcome.get("result") if is_last else None,
+                "resolution": outcome.get("resolution") if is_last else None,
+                "commitments": result["commitments"] or [],
+                "status": outcome.get("status", "ongoing"),
+            }
+            threads.append(thread)
+
+    return threads, True
+
+
 def prepare_meeting_for_batch(
     client,
     meeting: dict,

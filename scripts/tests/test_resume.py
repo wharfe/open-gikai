@@ -37,3 +37,68 @@ def test_build_manifest_meetings_captures_full_thread_info_and_hash():
     assert t["thread_info"]["topicTag"] == "tag"   # FULL thread_info, not a subset
     assert t["speechOrders"] == [1, 2]
     assert t["input_hash"].startswith("sha256:")
+
+
+def _sidecar_with_one_thread(input_hash):
+    return {
+        "schema_version": 1, "date": "2026-05-14", "model": "claude-x",
+        "retry_count": 0,
+        "attempts": [{"batch_id": "b1", "submitted_at": "2026-06-11T21:50:00Z",
+                      "terminal_status": None, "terminal_at": None}],
+        "meetings": [{
+            "meeting_id": "M1",
+            "outcome": {"result": None, "resolution": None, "status": "ongoing"},
+            "threads": [{
+                "custom_id": "s_abc_00", "thread_idx": 0,
+                "thread_info": {"topic": "T", "topicTag": "tag", "topicColor": "#111",
+                                "summary": "s", "speechOrders": [1]},
+                "speechOrders": [1], "input_hash": input_hash,
+            }],
+        }],
+    }
+
+
+def _meeting():
+    return {"meetingId": "M1", "house": "参議院", "meeting": "外交防衛委員会",
+            "date": "2026-05-14", "source": "ndl",
+            "speeches": [{"speechOrder": 1, "speech": "a", "speaker": "X",
+                          "speakerGroup": "G", "speakerPosition": "P",
+                          "speechURL": "http://x"}]}
+
+
+def _correct_hash():
+    m = _meeting()
+    ti = {"topic": "T", "topicTag": "tag", "topicColor": "#111", "summary": "s",
+          "speechOrders": [1]}
+    req = summarize.build_summary_request(m, ti, [m["speeches"][0]], "s_abc_00", "claude-x")
+    return bs.compute_input_hash(req["params"])
+
+
+def test_assemble_from_manifest_success():
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    results = {"s_abc_00": {"speeches": [{"speechOrder": 1, "tension": "確認",
+               "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+               "commitments": []}}
+    threads, ok = summarize.assemble_from_manifest(
+        sidecar, {"M1": _meeting()}, results, members={}, thread_counter=0,
+    )
+    assert ok is True
+    assert len(threads) == 1
+    assert threads[0]["topicTag"] == "tag"
+
+
+def test_assemble_fails_on_hash_mismatch():
+    sidecar = _sidecar_with_one_thread("sha256:deadbeef")  # wrong
+    results = {"s_abc_00": {"speeches": [{"speechOrder": 1}], "commitments": []}}
+    threads, ok = summarize.assemble_from_manifest(
+        sidecar, {"M1": _meeting()}, results, members={}, thread_counter=0,
+    )
+    assert ok is False
+
+
+def test_assemble_fails_on_missing_result():
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    threads, ok = summarize.assemble_from_manifest(
+        sidecar, {"M1": _meeting()}, results={}, members={}, thread_counter=0,
+    )
+    assert ok is False
