@@ -39,6 +39,7 @@ from pipeline.summarizer import (
 )
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
+from pipeline import batch_state as bs
 
 log = logging.getLogger("summarize")
 
@@ -344,6 +345,36 @@ def make_batch_custom_id(meeting_id: str, thread_idx: int) -> str:
     """
     h = hashlib.sha256(meeting_id.encode("utf-8")).hexdigest()[:12]
     return f"s_{h}_{thread_idx:02d}"
+
+
+def build_manifest_meetings(prepared_meetings: list, model: str) -> list:
+    """Build sidecar ``meetings[]`` from prepared meetings.
+
+    Captures the FULL thread_info (assemble_thread needs topicTag/topicColor/
+    summary/etc.) plus a per-thread input_hash so a resumed batch result can be
+    verified against re-fetched raw before being assembled.
+    """
+    meetings = []
+    for prep in prepared_meetings:
+        threads = []
+        for idx, p in enumerate(prep["pending"]):
+            request = build_summary_request(
+                p["meeting"], p["thread_info"], p["thread_speeches"],
+                p["custom_id"], model,
+            )
+            threads.append({
+                "custom_id": p["custom_id"],
+                "thread_idx": idx,
+                "thread_info": p["thread_info"],
+                "speechOrders": p["thread_info"].get("speechOrders", []),
+                "input_hash": bs.compute_input_hash(request["params"]),
+            })
+        meetings.append({
+            "meeting_id": prep["meeting_id"],
+            "outcome": prep["outcome"],
+            "threads": threads,
+        })
+    return meetings
 
 
 def prepare_meeting_for_batch(
