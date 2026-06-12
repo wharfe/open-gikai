@@ -101,6 +101,7 @@ Sources (NDL, kantei, council)
 4. **Static generation**: `data/threads/*.json` and `data/members.json` are consumed by the Next.js SSG to produce static HTML pages.
 5. **Deployment**: Two Vercel projects pointing at the same repo — root (SSG frontend) and `apps/mcp` (dynamic MCP server).
 6. **Monitoring**: Daily batch commits include `(+N threads)` in the message; the workflow emits a CI warning when 7+ consecutive runs add 0 threads (catches fetcher regressions that the green checkmark alone wouldn't). A hard job failure (e.g. NDL API 403 from a datacenter IP, Anthropic credit exhaustion) opens or updates a `pipeline-failure` GitHub Issue so it surfaces without polling `gh run list`.
+   - **Batch resume**: A summary batch that exceeds the per-run poll budget is no longer cancelled. Its id + a grouping manifest (with per-thread `input_hash`) are persisted to a committed sidecar at `data/pending-batches/{date}.json` and resumed on the next run, which re-fetches raw, verifies the hash, and assembles without re-grouping. A batch stuck in-flight for >2 days, or one that fails 3 runs in a row, opens/updates the same `pipeline-failure` Issue.
 
 ## Data Pipeline
 
