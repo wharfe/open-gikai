@@ -176,3 +176,30 @@ def test_collect_hard_fails_at_retry_threshold(fake_client, tmp_path):
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
     assert hard_fail is True
+
+
+def test_collect_resubmits_on_expired(fake_client, tmp_path):
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    sidecar = _sidecar_with_one_thread(_correct_hash())  # current batch id "b1"
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "expired"
+    b.next_id = "msgbatch_resub_1"
+    b.statuses["msgbatch_resub_1"] = "in_progress"
+
+    hard = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert hard is False
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc is not None                       # kept — resubmitted, not abandoned
+    assert sc["retry_count"] == 1               # the expired batch counted once
+    assert bs.current_batch_id(sc) == "msgbatch_resub_1"  # a new attempt was pushed
+    assert len(sc["attempts"]) == 2

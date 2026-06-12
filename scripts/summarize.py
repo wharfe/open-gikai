@@ -504,6 +504,59 @@ def _append_threads_to_date_file(threads: list, threads_dir: str, date_str: str)
         json.dump(existing, f, ensure_ascii=False, indent=2)
 
 
+def _rebuild_requests_from_manifest(sidecar: dict, meetings_by_id: Dict[str, dict],
+                                    model: str) -> Optional[list]:
+    """Rebuild batch requests from a sidecar manifest for resubmission.
+
+    Reuses the persisted custom_ids and thread_info (NO re-grouping), so a
+    resubmitted batch's results still match the manifest's input_hash. Returns
+    None if raw is missing or a speechOrder gap prevents a faithful rebuild.
+    """
+    requests: list = []
+    for m in sidecar["meetings"]:
+        meeting = meetings_by_id.get(m["meeting_id"])
+        if meeting is None:
+            return None
+        raw_lookup = build_speech_lookup(meeting.get("speeches", []))
+        for mt in m["threads"]:
+            orders = mt["speechOrders"]
+            thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+            if len(thread_speeches) != len(orders):
+                return None
+            requests.append(build_summary_request(
+                meeting, mt["thread_info"], thread_speeches, mt["custom_id"], model,
+            ))
+    return requests
+
+
+def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
+                       raw_dir: str, model: str, ci_commit: bool) -> bool:
+    """Count a non-collectable batch failure, then either hard-fail (>=3 retries)
+    or resubmit a fresh batch from the manifest (new attempt). Returns True on
+    hard-fail (caller should exit non-zero)."""
+    bs.record_terminal(sidecar, reason, _utcnow_iso())
+    if bs.should_hard_fail(sidecar):
+        bs.save_sidecar(path, sidecar)
+        log.error("Sidecar %s hit retry threshold (%d, last=%s) — hard fail",
+                  path, sidecar["retry_count"], reason)
+        return True
+    meetings_by_id = _load_meetings_for_date(sidecar["date"], raw_dir)
+    requests = _rebuild_requests_from_manifest(sidecar, meetings_by_id, model)
+    if requests is None:
+        bs.save_sidecar(path, sidecar)
+        log.error("Resume: cannot rebuild %s for resubmit (raw missing/gap) — keeping sidecar",
+                  sidecar["date"])
+        return False
+    new_batch_id = submit_summary_batch(client, requests)
+    bs.add_attempt(sidecar, new_batch_id, _utcnow_iso())
+    bs.save_sidecar(path, sidecar)
+    if ci_commit:
+        _git_commit_sidecar(path, sidecar["date"])
+    log.warning("Resubmitted %s as %s after %s (retry %d)",
+                sidecar["date"], new_batch_id, reason, sidecar["retry_count"])
+    return False
+
+
 def collect_pending_batches(
     client,
     members: Dict[str, dict],
@@ -540,12 +593,9 @@ def collect_pending_batches(
 
         if batch.processing_status != "ended":
             if batch.processing_status in bs.TERMINAL_FAILURES:
-                if bs.record_terminal(sidecar, batch.processing_status, _utcnow_iso()):
-                    bs.save_sidecar(path, sidecar)
-                    if ci_commit:
-                        _git_commit_sidecar(path, date_str)
-                log.warning("Batch %s %s — will re-submit next run", batch_id,
-                            batch.processing_status)
+                if _retry_or_hardfail(client, sidecar, path, batch.processing_status,
+                                      raw_dir, model, ci_commit):
+                    hard_fail = True
             else:
                 log.info("Batch %s still %s — leaving for next run", batch_id,
                          batch.processing_status)
@@ -561,9 +611,10 @@ def collect_pending_batches(
             sidecar, meetings_by_id, results, members, thread_counter=0,
         )
         if not ok:
-            if bs.record_terminal(sidecar, "assemble_failed", _utcnow_iso()):
-                bs.save_sidecar(path, sidecar)
-            log.error("Resume: assembly incomplete for %s — keeping sidecar", date_str)
+            log.error("Resume: assembly incomplete for %s", date_str)
+            if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
+                                  raw_dir, model, ci_commit):
+                hard_fail = True
             continue
 
         _append_threads_to_date_file(threads, threads_dir, date_str)
