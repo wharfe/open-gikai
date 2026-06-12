@@ -961,12 +961,29 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
              "stackable with prompt caching). Polls until results are ready.",
     )
     parser.add_argument(
-        "--batch-timeout", type=int, default=5400,
-        help="Max seconds to wait for batch completion (default: 5400 = 90min)",
+        "--batch-timeout", type=int, default=1800,
+        help="Max seconds to wait for batch completion (default: 1800 = 30min)",
     )
     parser.add_argument(
         "--batch-poll", type=int, default=30,
         help="Seconds between batch status polls (default: 30)",
+    )
+    parser.add_argument(
+        "--collect-pending", action="store_true",
+        help="Resume in-flight batches from data/pending-batches/ and exit. "
+             "Non-zero exit if a sidecar exceeds the retry threshold.",
+    )
+    parser.add_argument(
+        "--pending-dir", default="data/pending-batches",
+        help="Directory for in-flight batch sidecars",
+    )
+    parser.add_argument(
+        "--batch-budget", type=int, default=1800,
+        help="Per-run poll budget in seconds (default 1800 = 30min)",
+    )
+    parser.add_argument(
+        "--ci-commit", action="store_true",
+        help="Early-commit+push the sidecar after submit (CI only)",
     )
 
     return parser.parse_args(argv)
@@ -980,6 +997,20 @@ def main(argv: Optional[List[str]] = None) -> None:
         format="%(levelname)s %(message)s",
     )
 
+    if args.collect_pending:
+        client = anthropic.Anthropic()
+        members = load_members(args.members_path)
+        hard_fail = collect_pending_batches(
+            client, members, args.model,
+            pending_dir=args.pending_dir, threads_dir=args.output_dir,
+            raw_dir=args.raw_dir, budget_seconds=args.batch_budget,
+            poll_seconds=args.batch_poll, ci_commit=args.ci_commit,
+        )
+        save_members(members, args.members_path)
+        if hard_fail:
+            sys.exit(1)
+        return
+
     run_pipeline(
         date_str=args.date,
         meeting_filter=args.meeting,
@@ -991,8 +1022,10 @@ def main(argv: Optional[List[str]] = None) -> None:
         dry_run=args.dry_run,
         verbose=args.verbose,
         batch=args.batch,
-        batch_timeout_seconds=args.batch_timeout,
+        batch_timeout_seconds=args.batch_budget,
         batch_poll_seconds=args.batch_poll,
+        pending_dir=args.pending_dir,
+        ci_commit=args.ci_commit,
     )
 
 
