@@ -13,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from datetime import datetime, timezone
 from typing import Any, Optional
 
 PENDING_DIR = os.path.join("data", "pending-batches")
@@ -72,3 +73,61 @@ def save_sidecar(path: str, sidecar: dict) -> None:
 def delete_sidecar(path: str) -> None:
     if os.path.exists(path):
         os.remove(path)
+
+
+HARD_FAIL_RETRIES = 3
+STUCK_AGE_DAYS = 2.0
+
+
+def add_attempt(sidecar: dict, batch_id: str, submitted_at: str) -> None:
+    sidecar["attempts"].append({
+        "batch_id": batch_id,
+        "submitted_at": submitted_at,
+        "terminal_status": None,
+        "terminal_at": None,
+    })
+
+
+def current_batch_id(sidecar: dict) -> Optional[str]:
+    if not sidecar["attempts"]:
+        return None
+    return sidecar["attempts"][-1]["batch_id"]
+
+
+def record_terminal(sidecar: dict, status: str, at: str) -> bool:
+    """Record a terminal failure on the current attempt.
+
+    Increments ``retry_count`` only on the null -> failure transition so the
+    same terminal state observed across multiple runs is not double counted.
+    Returns True if it newly transitioned (and counted), else False.
+    """
+    if not sidecar["attempts"]:
+        return False
+    attempt = sidecar["attempts"][-1]
+    if attempt["terminal_status"] is not None:
+        return False
+    attempt["terminal_status"] = status
+    attempt["terminal_at"] = at
+    sidecar["retry_count"] += 1
+    return True
+
+
+def should_hard_fail(sidecar: dict) -> bool:
+    return sidecar["retry_count"] >= HARD_FAIL_RETRIES
+
+
+def _parse_iso(ts: str) -> datetime:
+    dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt
+
+
+def age_days(sidecar: dict, now_iso: str) -> float:
+    submitted = sidecar["attempts"][-1]["submitted_at"]
+    delta = _parse_iso(now_iso) - _parse_iso(submitted)
+    return delta.total_seconds() / 86400.0
+
+
+def is_stuck(sidecar: dict, now_iso: str, threshold_days: float = STUCK_AGE_DAYS) -> bool:
+    return age_days(sidecar, now_iso) > threshold_days

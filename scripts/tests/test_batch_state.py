@@ -51,3 +51,50 @@ def test_sidecar_path_lives_outside_threads():
     p = bs.sidecar_path("2026-05-14")
     assert p == os.path.join("data", "pending-batches", "2026-05-14.json")
     assert "threads" not in p
+
+
+def test_add_attempt_and_current_batch_id():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(sc, "msgbatch_A", "2026-06-11T21:50:00Z")
+    assert bs.current_batch_id(sc) == "msgbatch_A"
+    assert sc["attempts"][-1]["terminal_status"] is None
+
+
+def test_record_terminal_increments_once_per_transition():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(sc, "msgbatch_A", "2026-06-11T21:50:00Z")
+    # First observation of a failure transitions null -> expired: count.
+    assert bs.record_terminal(sc, "expired", "2026-06-11T23:20:00Z") is True
+    assert sc["retry_count"] == 1
+    # Re-observing the same terminal on the same attempt must NOT double count.
+    assert bs.record_terminal(sc, "expired", "2026-06-12T00:00:00Z") is False
+    assert sc["retry_count"] == 1
+
+
+def test_record_terminal_three_failures_across_attempts():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    for i in range(3):
+        bs.add_attempt(sc, f"msgbatch_{i}", "2026-06-11T21:50:00Z")
+        assert bs.record_terminal(sc, "expired", "2026-06-11T23:20:00Z") is True
+    assert sc["retry_count"] == 3
+    assert bs.should_hard_fail(sc) is True
+
+
+def test_should_hard_fail_below_threshold():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(sc, "msgbatch_A", "2026-06-11T21:50:00Z")
+    bs.record_terminal(sc, "canceled", "2026-06-11T23:20:00Z")
+    assert bs.should_hard_fail(sc) is False
+
+
+def test_age_days_from_last_attempt():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(sc, "msgbatch_A", "2026-06-10T00:00:00Z")
+    assert bs.age_days(sc, "2026-06-12T00:00:00Z") == 2.0
+
+
+def test_is_stuck_uses_threshold():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(sc, "msgbatch_A", "2026-06-10T00:00:00Z")
+    assert bs.is_stuck(sc, "2026-06-12T01:00:00Z") is True   # >2d
+    assert bs.is_stuck(sc, "2026-06-11T00:00:00Z") is False  # 1d
