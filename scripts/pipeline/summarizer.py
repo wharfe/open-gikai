@@ -189,12 +189,16 @@ def submit_summary_batch(client, requests: List[dict]) -> str:
 def poll_summary_batch(
     client,
     batch_id: str,
-    timeout_seconds: int = 5400,
+    timeout_seconds: int = 1800,
     poll_interval_seconds: int = 30,
 ):
-    """Poll a batch until it ends or the timeout elapses.
+    """Poll a batch until it ends or the budget elapses.
 
-    Returns the final batch object. Raises TimeoutError on timeout.
+    Returns the final batch object in BOTH cases. The caller inspects
+    ``batch.processing_status``: ``"ended"`` -> collect results; anything else
+    -> the batch is still in flight and will be resumed on a later run (its id
+    is persisted in a sidecar). We never cancel: cancelling would throw away a
+    batch that simply needs more time than this run's budget.
     """
     start = time.time()
     last_logged = 0.0
@@ -210,7 +214,6 @@ def poll_summary_batch(
             )
             return batch
 
-        # Log every ~2 minutes to avoid spamming CI logs
         if elapsed - last_logged >= 120:
             log.info(
                 "Batch %s status=%s elapsed=%ds",
@@ -219,21 +222,11 @@ def poll_summary_batch(
             last_logged = elapsed
 
         if elapsed >= timeout_seconds:
-            # The batch_id is not persisted across runs, so a timed-out batch
-            # can never be collected — cancel it to stop paying for results we
-            # will throw away (the next run re-submits a fresh batch anyway).
-            try:
-                client.messages.batches.cancel(batch_id)
-                log.warning("Cancelled timed-out batch %s", batch_id)
-            except Exception as cancel_err:  # noqa: BLE001 - best-effort cleanup
-                log.warning(
-                    "Failed to cancel timed-out batch %s: %s",
-                    batch_id, cancel_err,
-                )
-            raise TimeoutError(
-                f"Batch {batch_id} did not end within {timeout_seconds}s "
-                f"(last status: {batch.processing_status})"
+            log.info(
+                "Batch %s still %s after %ds budget — leaving for resume",
+                batch_id, batch.processing_status, elapsed,
             )
+            return batch
         time.sleep(poll_interval_seconds)
 
 
