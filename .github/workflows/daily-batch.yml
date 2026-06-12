@@ -94,6 +94,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          set -e
           python scripts/summarize.py --collect-pending --batch-budget 1800 --ci-commit
           if ls data/pending-batches/*.json >/dev/null 2>&1; then
             echo "has_pending=true" >> "$GITHUB_OUTPUT"
