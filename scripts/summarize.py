@@ -16,9 +16,10 @@ import hashlib
 import json
 import logging
 import os
+import subprocess
 import sys
 import time
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from typing import Dict, List, Optional
 
 import anthropic
@@ -44,6 +45,25 @@ from pipeline import batch_state as bs
 log = logging.getLogger("summarize")
 
 DEFAULT_MODEL = "claude-sonnet-4-20250514"
+
+
+def _utcnow_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _git_commit_sidecar(path: str, date_str: str) -> None:
+    """Commit + push just the sidecar (CI only) so the in-flight batch survives
+    a later kill or set -e failure before the run's final commit."""
+    try:
+        subprocess.run(["git", "add", path], check=True)
+        subprocess.run(
+            ["git", "commit", "-m", f"chore(pipeline): persist pending batch {date_str}"],
+            check=True,
+        )
+        subprocess.run(["git", "push"], check=True)
+        log.info("Early-committed sidecar %s", path)
+    except subprocess.CalledProcessError as e:
+        log.warning("Early sidecar commit failed (%s) — relying on final commit", e)
 
 
 # ---------------------------------------------------------------------------
@@ -502,14 +522,16 @@ def run_batch_phase(
     model: str,
     date_str: str,
     thread_counter: int,
-    batch_timeout_seconds: int = 5400,  # 90 min
+    batch_timeout_seconds: int = 1800,  # 30 min default budget
     batch_poll_seconds: int = 30,
+    pending_dir: str = bs.PENDING_DIR,
+    ci_commit: bool = False,
 ) -> tuple:
-    """Process meetings via Batches API for the summary phase.
+    """Process meetings via Batches API. Persists a sidecar so a batch that
+    does not finish within the budget resumes on a later run.
 
-    Returns ``(new_threads, updated_thread_counter, completed_meeting_ids)``.
+    Returns ``(new_threads, thread_counter, completed_meeting_ids, pending)``.
     """
-    # Phase 1: synchronously group + extract outcome for every new meeting.
     prepared_meetings: list[dict] = []
     all_pending: list[dict] = []
 
@@ -518,7 +540,6 @@ def run_batch_phase(
         if meeting_id in progress["completed"]:
             log.info("Skipping already completed: %s", meeting_id)
             continue
-
         log.info("Preparing for batch: %s", meeting_id)
         try:
             prep = prepare_meeting_for_batch(client, meeting, model)
@@ -526,15 +547,13 @@ def run_batch_phase(
             log.error("Failed to prepare %s: %s", meeting_id, e)
             progress["failed"].append(meeting_id)
             continue
-
         prepared_meetings.append(prep)
         all_pending.extend(prep["pending"])
 
     if not all_pending:
         log.info("Batch phase: nothing to summarize")
-        return [], thread_counter, []
+        return [], thread_counter, [], False
 
-    # Phase 2: submit + poll + fetch.
     requests = [
         build_summary_request(
             p["meeting"], p["thread_info"], p["thread_speeches"],
@@ -544,55 +563,39 @@ def run_batch_phase(
     ]
     log.info("Submitting %d summary requests via Batches API", len(requests))
     batch_id = submit_summary_batch(client, requests)
-    poll_summary_batch(
+
+    # Persist the sidecar BEFORE the long poll so a kill mid-poll still resumes.
+    submitted_at = _utcnow_iso()
+    sidecar = bs.new_sidecar(date_str, model)
+    sidecar["meetings"] = build_manifest_meetings(prepared_meetings, model)
+    bs.add_attempt(sidecar, batch_id, submitted_at)
+    path = bs.sidecar_path(date_str, pending_dir)
+    bs.save_sidecar(path, sidecar)
+    if ci_commit:
+        _git_commit_sidecar(path, date_str)
+
+    batch = poll_summary_batch(
         client, batch_id,
         timeout_seconds=batch_timeout_seconds,
         poll_interval_seconds=batch_poll_seconds,
     )
+    if batch.processing_status != "ended":
+        log.info("Batch %s not ended within budget — sidecar kept for resume", batch_id)
+        return [], thread_counter, [], True
+
     results = fetch_summary_results(client, batch_id)
+    meetings_by_id = {m.get("meetingId", "unknown"): m for m in meetings}
+    new_threads, ok = assemble_from_manifest(
+        sidecar, meetings_by_id, results, members, thread_counter,
+    )
+    if not ok:
+        log.error("Batch %s ended but assembly incomplete — keeping sidecar", batch_id)
+        return [], thread_counter, [], True
 
-    # Phase 3: assemble threads in deterministic order (matches sync mode).
-    new_threads: list = []
-    completed_meeting_ids: list = []
-
-    for prep in prepared_meetings:
-        meeting_id = prep["meeting_id"]
-        outcome = prep["outcome"]
-        thread_infos = prep["thread_infos"]
-
-        for p in prep["pending"]:
-            result = results.get(p["custom_id"])
-            if not result:
-                log.warning(
-                    "No result for %s (thread '%s'); skipping",
-                    p["custom_id"], p["thread_info"].get("topic"),
-                )
-                continue
-
-            thread_counter += 1
-            thread_id = make_thread_id(date_str, meeting_id, thread_counter)
-            thread = assemble_thread(
-                p["meeting"], p["thread_info"], result["speeches"],
-                p["raw_lookup"], members, thread_id,
-            )
-            if not thread:
-                continue
-
-            is_last = (p["thread_info"] is thread_infos[-1])
-            thread["outcome"] = {
-                "result": outcome.get("result") if is_last else None,
-                "resolution": outcome.get("resolution") if is_last else None,
-                "commitments": result["commitments"] or [],
-                "status": outcome.get("status", "ongoing"),
-            }
-            new_threads.append(thread)
-
-        # Mark the meeting as completed even if some of its threads failed —
-        # matches the sync path, which catches per-thread exceptions inside
-        # the meeting loop and still records the meeting as done.
-        completed_meeting_ids.append(meeting_id)
-
-    return new_threads, thread_counter, completed_meeting_ids
+    thread_counter += len(new_threads)
+    completed_meeting_ids = [m["meeting_id"] for m in sidecar["meetings"]]
+    bs.delete_sidecar(path)
+    return new_threads, thread_counter, completed_meeting_ids, False
 
 
 def collect_processed_meeting_ids(threads_path: str) -> set[str]:
@@ -638,6 +641,8 @@ def run_pipeline(
     batch: bool = False,
     batch_timeout_seconds: int = 5400,
     batch_poll_seconds: int = 30,
+    pending_dir: str = bs.PENDING_DIR,
+    ci_commit: bool = False,
 ) -> None:
     """Run the full summarization pipeline for a given date."""
     # Load raw data — collect meetings from all source files for this date
@@ -730,26 +735,24 @@ def run_pipeline(
             len(all_threads),
         )
 
+    pending = False
     if batch:
-        try:
-            new_threads, thread_counter, completed_ids = run_batch_phase(
-                client, meetings, progress, members, model, date_str,
-                thread_counter,
-                batch_timeout_seconds=batch_timeout_seconds,
-                batch_poll_seconds=batch_poll_seconds,
-            )
-            all_threads.extend(new_threads)
-            for mid in completed_ids:
-                if mid not in progress["completed"]:
-                    progress["completed"].append(mid)
-            save_progress(progress, progress_path)
-            log.info("Batch phase: +%d threads from %d meeting(s)",
-                     len(new_threads), len(completed_ids))
-        except Exception as e:
-            log.error("Batch phase failed: %s", e)
-            # Don't mark any meetings completed on a batch-level failure —
-            # they'll be retried on the next run.
-            raise
+        new_threads, thread_counter, completed_ids, pending = run_batch_phase(
+            client, meetings, progress, members, model, date_str,
+            thread_counter,
+            batch_timeout_seconds=batch_timeout_seconds,
+            batch_poll_seconds=batch_poll_seconds,
+            pending_dir=pending_dir,
+            ci_commit=ci_commit,
+        )
+        all_threads.extend(new_threads)
+        for mid in completed_ids:
+            if mid not in progress["completed"]:
+                progress["completed"].append(mid)
+        save_progress(progress, progress_path)
+        log.info("Batch phase: +%d threads from %d meeting(s)%s",
+                 len(new_threads), len(completed_ids),
+                 " (batch pending — will resume)" if pending else "")
     else:
         for meeting in meetings:
             meeting_id = meeting.get("meetingId", "unknown")

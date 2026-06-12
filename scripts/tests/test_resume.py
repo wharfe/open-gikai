@@ -102,3 +102,33 @@ def test_assemble_fails_on_missing_result():
         sidecar, {"M1": _meeting()}, results={}, members={}, thread_counter=0,
     )
     assert ok is False
+
+
+import os
+
+
+def test_run_batch_phase_persists_sidecar_when_pending(fake_client, tmp_path, monkeypatch):
+    # One meeting, grouping stubbed to a single thread; batch stays in_progress.
+    monkeypatch.setattr(summarize, "group_meeting",
+                        lambda c, m, model: [{"topic": "T", "topicTag": "tag",
+                                              "topicColor": "#111", "summary": "s",
+                                              "speechOrders": [1]}])
+    monkeypatch.setattr(summarize, "extract_meeting_outcome",
+                        lambda c, m, model: {"result": None, "resolution": None,
+                                             "status": "ongoing"})
+    pending_dir = str(tmp_path / "pending")
+    meeting = _meeting()
+    fake_client.messages.batches.statuses["msgbatch_fake_0001"] = "in_progress"
+
+    new_threads, _, completed, pending = summarize.run_batch_phase(
+        fake_client, [meeting], {"completed": [], "failed": []},
+        members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
+        batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=pending_dir, ci_commit=False,
+    )
+    assert pending is True
+    assert new_threads == []
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc is not None
+    assert bs.current_batch_id(sc) == "msgbatch_fake_0001"
+    assert sc["meetings"][0]["threads"][0]["input_hash"].startswith("sha256:")
