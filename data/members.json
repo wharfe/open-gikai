@@ -14698,5 +14698,115 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_4e0cb569": {
+    "id": "m_4e0cb569",
+    "name": "宮本雄二",
+    "party": null,
+    "role": "元駐中国特命全権大使／公益財団法人日中友好会館会長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_0bc0f832": {
+    "id": "m_0bc0f832",
+    "name": "和田春樹",
+    "party": null,
+    "role": "東京大学名誉教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "wakaiatsuko": {
+    "id": "wakaiatsuko",
+    "name": "若井敦子",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "iwamototsuyohito": {
+    "id": "iwamototsuyohito",
+    "name": "岩本剛人",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_fcc6d661": {
+    "id": "m_fcc6d661",
+    "name": "藤澤秀昭",
+    "party": null,
+    "role": "経済産業省通商政策局国際経済部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_8ec29e1f": {
+    "id": "m_8ec29e1f",
+    "name": "石瀬素行",
+    "party": null,
+    "role": "外務省中南米局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f40f2bac": {
+    "id": "m_f40f2bac",
+    "name": "今西靖治",
+    "party": null,
+    "role": "外務省大臣官房参事官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f5606acf": {
+    "id": "m_f5606acf",
+    "name": "渡邉和紀",
+    "party": null,
+    "role": "財務省大臣官房参事官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_60c20878": {
+    "id": "m_60c20878",
+    "name": "高橋美佐子",
+    "party": null,
+    "role": "外務省中東アフリカ局アフリカ部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_8f95e5a5": {
+    "id": "m_8f95e5a5",
+    "name": "伊藤晋哉",
+    "party": null,
+    "role": "防衛省整備計画局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }

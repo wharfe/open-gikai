@@ -1,0 +1,1610 @@
+{
+  "schema_version": 1,
+  "date": "2026-05-14",
+  "model": "claude-sonnet-4-20250514",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01ASRnUJjdPLShgAAErqZ8nr",
+      "submitted_at": "2026-06-12T21:46:00Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_外交防衛委員会_2026-05-14_第8号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_1191930079c8_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "防衛産業基盤強化とキャッシュフロー改善",
+            "topicTag": "防衛基盤",
+            "topicColor": "#ef4444",
+            "summary": "防衛産業のキャッシュフロー悪化への対策と防衛基盤整備について議論",
+            "contextDescription": "防衛装備品の開発・生産を担う企業の資金繰り改善と、装備品輸出の五類型撤廃後のサプライチェーン強化策。",
+            "legislationName": null,
+            "speechOrders": [
+              7,
+              8,
+              9,
+              11,
+              12,
+              13
+            ]
+          },
+          "speechOrders": [
+            7,
+            8,
+            9,
+            11,
+            12,
+            13
+          ],
+          "input_hash": "sha256:68b5134ac27bac6fc5be891267d9843e7b577c9cbc76bb09a4e97ee548788186"
+        },
+        {
+          "custom_id": "s_1191930079c8_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "投資協定の戦略的意義と締結状況",
+            "topicTag": "投資戦略",
+            "topicColor": "#3b82f6",
+            "summary": "97の国・地域をカバーする投資協定の意義と今後の展開方針について",
+            "contextDescription": "企業の安定的投資環境整備と法的保護を目的とする二国間協定。2016年のアクションプランで100か国を目標設定。",
+            "legislationName": null,
+            "speechOrders": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ]
+          },
+          "speechOrders": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "input_hash": "sha256:e598c2b748b1f64b2a87627be0028804200a570e0c888f240c956fb59abc2ae9"
+        },
+        {
+          "custom_id": "s_1191930079c8_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "セルビア投資協定と西バルカン戦略",
+            "topicTag": "セルビア",
+            "topicColor": "#06b6d4",
+            "summary": "中露影響下のセルビアでの日本プレゼンス向上とEU加盟支援戦略",
+            "contextDescription": "バルカン半島に位置するセルビアは中国・ロシアの影響が強い地域。2027年に日セルビア友好145周年を迎える。",
+            "legislationName": "投資の促進及び保護に関する日本国とセルビア共和国との間の協定",
+            "speechOrders": [
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ]
+          },
+          "speechOrders": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "input_hash": "sha256:ed2d205fbf25160ac52db280cafebd4852a5c8c7667aaa1f71e785e627c83aec"
+        },
+        {
+          "custom_id": "s_1191930079c8_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "パラグアイ投資協定と南米外交",
+            "topicTag": "パラグアイ",
+            "topicColor": "#06b6d4",
+            "summary": "台湾承認国パラグアイとの関係深化とブラジル・アルゼンチン投資協定の課題",
+            "contextDescription": "南米唯一の台湾承認国で大規模日系社会を有する親日国。今年移住90周年。ブラジルはISDS条項が憲法違反とされる。",
+            "legislationName": "投資の促進及び保護に関する日本国とパラグアイ共和国との間の協定",
+            "speechOrders": [
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:168d69c2d765596b61dde0027d917d0cd57ac9e7b42a2a302b6d2b336b0e1999"
+        },
+        {
+          "custom_id": "s_1191930079c8_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "ザンビア投資協定とナカラ回廊開発",
+            "topicTag": "ザンビア",
+            "topicColor": "#06b6d4",
+            "summary": "重要鉱物産出国ザンビアとの協力とナカラ回廊によるサプライチェーン強化",
+            "contextDescription": "高品位の銅など重要鉱物を産出するアフリカの内陸国。ナカラ回廊は日本の経済安全保障上重要な国際輸送ルート。",
+            "legislationName": "投資の促進及び保護に関する日本国とザンビア共和国との間の協定",
+            "speechOrders": [
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44
+            ]
+          },
+          "speechOrders": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "input_hash": "sha256:de40bca4b245e44c1da6c4567b7c92389b4d3b2523adc96fc76b67e6984ccb27"
+        },
+        {
+          "custom_id": "s_1191930079c8_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "タジキスタン投資協定と中央アジア戦略",
+            "topicTag": "タジク",
+            "topicColor": "#06b6d4",
+            "summary": "地政学的要衝タジキスタンとの自由化型協定締結の意義と資源協力",
+            "contextDescription": "中国・ロシア・イラン・アフガニスタンに囲まれた中央アジアの要衝。銀・アルミ・アンチモンなど鉱物資源が豊富。",
+            "legislationName": "投資の自由化、促進及び保護に関する日本国とタジキスタン共和国との間の協定",
+            "speechOrders": [
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:3c3272266dcd59959242aece030544bd5416d34a6ec1ee8c6c2cc268e882dee5"
+        },
+        {
+          "custom_id": "s_1191930079c8_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "米中首脳会談前の日米協議",
+            "topicTag": "日米協議",
+            "topicColor": "#06b6d4",
+            "summary": "ベッセント財務長官来日による日米経済協力と対中戦略の協議",
+            "contextDescription": "米中首脳会談を控えた日米間の関税合意実施や中国のデュアルユース品輸出規制などについて財務・外相レベルで協議。",
+            "legislationName": null,
+            "speechOrders": [
+              74,
+              75,
+              76,
+              77,
+              78
+            ]
+          },
+          "speechOrders": [
+            74,
+            75,
+            76,
+            77,
+            78
+          ],
+          "input_hash": "sha256:5c2f6d326149f839296898632554f43814c83672a24ed71c347b57875c11dd8a"
+        },
+        {
+          "custom_id": "s_1191930079c8_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "投資協定の質的向上と企業支援",
+            "topicTag": "投資質向上",
+            "topicColor": "#3b82f6",
+            "summary": "日本型投資の特色と相手国の経済社会発展への配慮について",
+            "contextDescription": "投資協定締結により企業進出を促進しつつ、環境・労働・人材育成など相手国の持続的発展に配慮した投資のあり方。",
+            "legislationName": null,
+            "speechOrders": [
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              88,
+              89
+            ]
+          },
+          "speechOrders": [
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            88,
+            89
+          ],
+          "input_hash": "sha256:e8e3a610144b2f2ac3a6b1c93e9ab90df91e1409218619d90bb1ff3a7b353b5d"
+        },
+        {
+          "custom_id": "s_1191930079c8_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "東シナ海ガス田開発問題",
+            "topicTag": "東シナ海",
+            "topicColor": "#ef4444",
+            "summary": "中国による一方的ガス田開発と2008年日中合意の履行要求",
+            "contextDescription": "日中中間線付近での中国による一方的な海洋資源開発。2008年の共同開発合意が実質的に破綻している問題。",
+            "legislationName": null,
+            "speechOrders": [
+              90,
+              91,
+              92,
+              93,
+              94
+            ]
+          },
+          "speechOrders": [
+            90,
+            91,
+            92,
+            93,
+            94
+          ],
+          "input_hash": "sha256:f1b4246737e8d6a795013086ca0cb41b8a96b42a1cd9b2f4a3d01c5cd8d19521"
+        },
+        {
+          "custom_id": "s_1191930079c8_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "投資協定の類型と戦略的締結",
+            "topicTag": "協定類型",
+            "topicColor": "#3b82f6",
+            "summary": "保護型と自由化型投資協定の違いと100か国目標の進捗状況",
+            "contextDescription": "投資保護のみの保護型と投資前段階から待遇を規定する自由化型がある。2016年アクションプランの100か国目標。",
+            "legislationName": null,
+            "speechOrders": [
+              94,
+              95,
+              96,
+              97,
+              98,
+              100,
+              102
+            ]
+          },
+          "speechOrders": [
+            94,
+            95,
+            96,
+            97,
+            98,
+            100,
+            102
+          ],
+          "input_hash": "sha256:1f977bb1c005e08788fc4130a5698d534913701d93310214e1960773075aa21c"
+        },
+        {
+          "custom_id": "s_1191930079c8_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "日本の文化外交とソフトパワー",
+            "topicTag": "文化外交",
+            "topicColor": "#f59e0b",
+            "summary": "アニメ・漫画等のコンテンツ活用による国際的影響力の拡大",
+            "contextDescription": "アニメ・漫画から伝統的な華道・茶道・武道まで、日本の文化的魅力を活用したパブリックディプロマシーの展開。",
+            "legislationName": null,
+            "speechOrders": [
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109
+            ]
+          },
+          "speechOrders": [
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109
+          ],
+          "input_hash": "sha256:40e37e9140da5aa03ae80df1e1cc8593b22d2316106803fec6cc7ba7c577f92c"
+        },
+        {
+          "custom_id": "s_1191930079c8_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "ISDS条項と投資家の権利保護",
+            "topicTag": "ISDS",
+            "topicColor": "#6366f1",
+            "summary": "投資家対国家紛争解決制度の人権・環境規制への影響懸念",
+            "contextDescription": "投資協定に含まれる紛争解決制度で、投資家が投資受入れ国を国際仲裁に提訴できる。人権・環境保護措置への制約が懸念される。",
+            "legislationName": null,
+            "speechOrders": [
+              111,
+              112,
+              113,
+              114,
+              115
+            ]
+          },
+          "speechOrders": [
+            111,
+            112,
+            113,
+            114,
+            115
+          ],
+          "input_hash": "sha256:5f5db001f05309a77fd67779ac12f55ca20d75e3935c74833744590649e145a8"
+        },
+        {
+          "custom_id": "s_1191930079c8_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "米国対日関税問題と通商合意",
+            "topicTag": "対米関税",
+            "topicColor": "#3b82f6",
+            "summary": "トランプ関税違憲判決を受けた日米合意の前提変化と新たな調査",
+            "contextDescription": "米連邦最高裁がトランプ政権の関税を違憲とした中、5500億ドル投資約束で合意した日米関税協議の法的基盤が揺らいでいる。",
+            "legislationName": null,
+            "speechOrders": [
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "speechOrders": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "input_hash": "sha256:bd40c14baec32ea9fc3ec4d323d86c2ebd7abde6fd3de5e7c15fffcfb8019d47"
+        },
+        {
+          "custom_id": "s_1191930079c8_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "投資協定におけるビジネスと人権",
+            "topicTag": "人権配慮",
+            "topicColor": "#8b5cf6",
+            "summary": "投資活動における人権・環境・労働基準への配慮義務",
+            "contextDescription": "国連でビジネスと人権が重視される中、投資協定でも環境・健康・労働基準の緩和を禁止する条項が含まれている。",
+            "legislationName": null,
+            "speechOrders": [
+              128,
+              129,
+              130
+            ]
+          },
+          "speechOrders": [
+            128,
+            129,
+            130
+          ],
+          "input_hash": "sha256:ca10308087abcfc36f0d3b2409638789c3497a6af745b92f7acfad30cf8bb09c"
+        },
+        {
+          "custom_id": "s_1191930079c8_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "沖縄住民避難計画の問題点",
+            "topicTag": "沖縄避難",
+            "topicColor": "#dc2626",
+            "summary": "先島諸島と沖縄本島で異なる避難方針と九州避難先の安全性への疑問",
+            "contextDescription": "有事を想定した国民保護訓練で、12万人の先島住民は九州・山口へ島外避難、沖縄本島は島内避難とする想定の妥当性が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              149
+            ]
+          },
+          "speechOrders": [
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            149
+          ],
+          "input_hash": "sha256:96a86a42ab5bc5824bffb22a76a25884ea06bf1be66e26a5fd40d040060452cd"
+        },
+        {
+          "custom_id": "s_1191930079c8_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "海上輸送の安全確保と船員問題",
+            "topicTag": "海上輸送",
+            "topicColor": "#3b82f6",
+            "summary": "ホルムズ海峡情勢と原油調達多角化、日本人外航船員の確保策",
+            "contextDescription": "中東情勢緊迫化で原油輸送ルートの代替調達が必要。日本商船隊2277隻中、日本籍船は323隻、日本人船員は約2000人にとどまる。",
+            "legislationName": null,
+            "speechOrders": [
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67
+            ]
+          },
+          "speechOrders": [
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
+          ],
+          "input_hash": "sha256:0dc6fd2572ab5c2a0bd0198da9311a29da0e296106e6b3500e43ccc2d7d6c13f"
+        },
+        {
+          "custom_id": "s_1191930079c8_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "普天間基地移設と沖縄基地問題",
+            "topicTag": "普天間",
+            "topicColor": "#ef4444",
+            "summary": "辺野古建設進捗と普天間返還時期、沖縄基地負担軽減の課題",
+            "contextDescription": "普天間基地の危険性除去のため辺野古への移設工事を実施。工事完了まで9年3か月、提供手続完了まで約12年を要する見込み。",
+            "legislationName": null,
+            "speechOrders": [
+              68,
+              69,
+              70,
+              71,
+              72,
+              73
+            ]
+          },
+          "speechOrders": [
+            68,
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "input_hash": "sha256:2bf33b046f74082b1712dc202e3a931967af1b28d255737a718a1ce7100edbde"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_農林水産委員会_2026-05-14_第9号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "家畜伝染病予防法改正に伴い、ランピースキン病対策、豚熱選択的殺処分の適切実施、登録飼養衛生管理者研修徹底、野生イノシシ対策推進、輸入禁止品販売禁止の実効性確保、水際対策充実、家畜防疫員確保育成等の実現を求める。",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_712d404cb5bb_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "ランピースキン病の法定伝染病格上げと防疫体制",
+            "topicTag": "ランピー",
+            "topicColor": "#6366f1",
+            "summary": "ランピースキン病を家畜伝染病に格上げし、強制的蔓延防止措置の導入と吸血昆虫対策の拡充を検討",
+            "contextDescription": "牛・水牛に感染し吸血昆虫が媒介するランピースキン病が2024年に国内初発生。従来の届出伝染病では強制的な防疫措置が講じられなかった。",
+            "legislationName": "家畜伝染病予防法の一部を改正する法律案",
+            "speechOrders": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              99,
+              100
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            99,
+            100
+          ],
+          "input_hash": "sha256:d5417e2004826acd9c37de9f76f1ee0a046c0ba5dc0fc79004d91d674eb2f2be"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "豚熱対策の選択的殺処分制度導入",
+            "topicTag": "豚熱",
+            "topicColor": "#6366f1",
+            "summary": "豚熱ワクチン接種を前提とした選択的殺処分制度の導入により全頭殺処分から転換",
+            "contextDescription": "これまで豚熱発生時は農場の全頭殺処分が原則。ワクチン接種の普及により、免疫のある豚を殺処分対象から除外する制度に変更。",
+            "legislationName": "家畜伝染病予防法の一部を改正する法律案",
+            "speechOrders": [
+              11,
+              12,
+              13,
+              31,
+              32,
+              33,
+              34,
+              35,
+              70,
+              71,
+              100,
+              101,
+              102,
+              103,
+              104,
+              106,
+              107,
+              108,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              137,
+              138,
+              139,
+              140,
+              141,
+              147,
+              148
+            ]
+          },
+          "speechOrders": [
+            11,
+            12,
+            13,
+            31,
+            32,
+            33,
+            34,
+            35,
+            70,
+            71,
+            100,
+            101,
+            102,
+            103,
+            104,
+            106,
+            107,
+            108,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            137,
+            138,
+            139,
+            140,
+            141,
+            147,
+            148
+          ],
+          "input_hash": "sha256:a6013e8befa1a162432c88e537996c8601786059ae1befbd884497a964a37983"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "飼養衛生管理者によるワクチン接種権限",
+            "topicTag": "接種権",
+            "topicColor": "#6366f1",
+            "summary": "家畜防疫員不足解消のため、研修を受けた飼養衛生管理者にワクチン接種権限を付与",
+            "contextDescription": "獣医師資格を持つ家畜防疫員が全国的に不足。豚熱ワクチン接種業務の一部を農場の飼養衛生管理者が実施可能とする特例措置。",
+            "legislationName": "家畜伝染病予防法の一部を改正する法律案",
+            "speechOrders": [
+              33,
+              34,
+              109,
+              110,
+              111,
+              137,
+              138,
+              139,
+              140,
+              141
+            ]
+          },
+          "speechOrders": [
+            33,
+            34,
+            109,
+            110,
+            111,
+            137,
+            138,
+            139,
+            140,
+            141
+          ],
+          "input_hash": "sha256:34cca216bee5864f700ba3ee94c385ac96b423443a15f76553a9157e80d17e32"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "水際検疫体制強化と立入検査権限",
+            "topicTag": "水際",
+            "topicColor": "#ef4444",
+            "summary": "外国食材店等への立入検査権限付与により違法畜産物の国内流通を阻止",
+            "contextDescription": "海外からの違法な肉類等の持ち込みが増加し、一部が国内で販売されている実態が判明。動物検疫を受けずに持ち込まれた畜産物の取締りを強化。",
+            "legislationName": "家畜伝染病予防法の一部を改正する法律案",
+            "speechOrders": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              37,
+              38,
+              39,
+              40,
+              41,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              116,
+              117,
+              131,
+              132,
+              141,
+              142,
+              143,
+              144,
+              145
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            37,
+            38,
+            39,
+            40,
+            41,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            116,
+            117,
+            131,
+            132,
+            141,
+            142,
+            143,
+            144,
+            145
+          ],
+          "input_hash": "sha256:56a3db315f40c253d7a310ad592d75ee513e9194ef092bf9359b241fbd54be77"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "家畜防疫員・獣医師の人材確保",
+            "topicTag": "人材確保",
+            "topicColor": "#8b5cf6",
+            "summary": "家畜防疫員や産業動物獣医師の深刻な人手不足に対する確保・育成策の強化",
+            "contextDescription": "全国33道県で家畜防疫員が不足。産業動物獣医師も地域的偏在が課題。修学資金制度やインターンシップ等により人材確保を図っている。",
+            "legislationName": null,
+            "speechOrders": [
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              130
+            ]
+          },
+          "speechOrders": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            130
+          ],
+          "input_hash": "sha256:ab60168b195c8773e6cadb94781df4f4e13769787f52055dbee016841065296b"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "鳥インフルエンザ対策とワクチン検討",
+            "topicTag": "鳥インフル",
+            "topicColor": "#dc2626",
+            "summary": "高病原性鳥インフルエンザの世界的流行を受けたワクチン接種の技術的検討",
+            "contextDescription": "世界的に高病原性鳥インフルエンザが流行し、従来の飼養衛生管理だけでは侵入防止が困難。欧米でワクチン接種検討が進む中、日本でも技術検討会を設置。",
+            "legislationName": null,
+            "speechOrders": [
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95
+            ]
+          },
+          "speechOrders": [
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95
+          ],
+          "input_hash": "sha256:a45e3ae46d5b2cb4e3dc2cb1cbfd2e97c02e58d7cb05c1e5c7c250a832623500"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "採卵鶏の飼養方式とアニマルウェルフェア",
+            "topicTag": "AW",
+            "topicColor": "#f59e0b",
+            "summary": "ケージ飼いから平飼いへの移行とアニマルウェルフェア向上の課題",
+            "contextDescription": "日本の採卵鶏の90%超がケージ飼いだが、EU等では動物福祉の観点から平飼いへの移行が進む。コスト面や消費者理解が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              96,
+              97
+            ]
+          },
+          "speechOrders": [
+            96,
+            97
+          ],
+          "input_hash": "sha256:2a91360952eebb05a49713743bf5e04a6824fec9bc3001fd64b6fe4d70c36f6a"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "農場HACCPとデジタル化推進",
+            "topicTag": "HACCP",
+            "topicColor": "#3b82f6",
+            "summary": "農場HACCPの普及率0.8%という現状とデジタル技術活用による改善策",
+            "contextDescription": "農場HACCPは畜産業の衛生管理水準向上に重要だが、事務負担の重さから普及が進まない。AI・画像認証等のデジタル技術で負担軽減を検討。",
+            "legislationName": null,
+            "speechOrders": [
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130
+            ]
+          },
+          "speechOrders": [
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130
+          ],
+          "input_hash": "sha256:c8adc99a86ca96980b6aa0a30eb557b23ac4076fbeb0065e1fa859a140995010"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "畜産農家への経済的支援と補償制度",
+            "topicTag": "補償",
+            "topicColor": "#8b5cf6",
+            "summary": "家畜伝染病発生時の手当金制度とEU等との補償水準の差異",
+            "contextDescription": "日本では患畜3分の1、疑似患畜5分の4の手当金だが、EUでは市場価格全額補償。畜産農家の経営安定のため補償制度の充実が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              134,
+              135,
+              136,
+              137
+            ]
+          },
+          "speechOrders": [
+            134,
+            135,
+            136,
+            137
+          ],
+          "input_hash": "sha256:426b44769cb10e634bd7fd73d8643a1263a68ab3279588e29d9c587599380d97"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "飼料用米の需給ギャップと政策転換",
+            "topicTag": "飼料米",
+            "topicColor": "#3b82f6",
+            "summary": "飼料用米の生産不足6-16万トンに対する緊急対策と新たな支援策検討",
+            "contextDescription": "2026年度の飼料用米需要30-40万トンに対し作付け意向24万トン程度で大幅不足。田植え後の呼びかけに農家から批判の声。新支援策を検討中。",
+            "legislationName": null,
+            "speechOrders": [
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156,
+              157,
+              158,
+              159,
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166,
+              167,
+              168
+            ]
+          },
+          "speechOrders": [
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168
+          ],
+          "input_hash": "sha256:92ee9d704101dbf1b0892a821056e6e34235e7cbd7b762f9daac6f74c68aecef"
+        },
+        {
+          "custom_id": "s_712d404cb5bb_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "岩手県大槌町林野火災への対応",
+            "topicTag": "林野火災",
+            "topicColor": "#dc2626",
+            "summary": "1633ヘクタールが焼失した大規模林野火災への農水省の対策本部設置と復旧支援",
+            "contextDescription": "2024年4月22日発災の岩手県大槌町林野火災。東京ドーム350個分に相当する面積が焼失。土砂災害等二次災害防止と林野再生が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              42,
+              43,
+              44,
+              45,
+              46,
+              47
+            ]
+          },
+          "speechOrders": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "input_hash": "sha256:580e91ff2c26a56f938a0b2d60b2e5442d348f1cb00f7829604c4fc182deb4df"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_地域活性化・こども政策・デジタル社会形成に関する特別委員会_2026-05-14_第7号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_6d688840d6d7_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "参考人意見陳述",
+            "topicTag": "意見陳述",
+            "topicColor": "#6b7280",
+            "summary": "4名の参考人がデジタル行政推進法改正案と個人情報保護法改正案について専門的見解を表明",
+            "contextDescription": "法案審査のため、学識経験者・実務者・労働団体代表が参考人として出席し、それぞれの立場から意見を述べる手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              2,
+              4,
+              6,
+              8
+            ]
+          },
+          "speechOrders": [
+            2,
+            4,
+            6,
+            8
+          ],
+          "input_hash": "sha256:5f807358050959ea9769385876440be72846cf68e5717c83edfa557928b62427"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "自動車産業のAI開発とデータ活用",
+            "topicTag": "自動運転",
+            "topicColor": "#3b82f6",
+            "summary": "自動運転AI開発における事故データ活用の必要性と現行法の限界について議論",
+            "contextDescription": "日本の自動車産業の競争力向上のため、損保会社等が保有する事故データを自動運転AI開発に活用する方策を検討。",
+            "legislationName": "情報通信技術を活用した行政の推進等に関する法律及び情報処理の促進に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ]
+          },
+          "speechOrders": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "input_hash": "sha256:c0287561c9c7f34b999eaf785ef2a554f7b59644adbf0ef1d4bd91b4dc1c5e00"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "医療分野でのデータ利活用",
+            "topicTag": "医療DX",
+            "topicColor": "#22c55e",
+            "summary": "国民皆保険制度下の医療データを創薬・医学研究に活用する日本の潜在力と課題を検討",
+            "contextDescription": "日本の国民皆保険制度により蓄積された良質な医療データを、新薬開発や医学研究に活用する可能性を議論。",
+            "legislationName": "情報通信技術を活用した行政の推進等に関する法律及び情報処理の促進に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              23,
+              24,
+              25
+            ]
+          },
+          "speechOrders": [
+            23,
+            24,
+            25
+          ],
+          "input_hash": "sha256:a6d2cce3987965b62ed64f8d3055610aa13623eef1d3051bd02bb884013be961"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "個人情報保護とデータ利活用のバランス",
+            "topicTag": "保護VS活用",
+            "topicColor": "#8b5cf6",
+            "summary": "PETs技術活用による個人情報保護と国際競争力維持の両立について専門的議論",
+            "contextDescription": "プライバシー保護技術（PETs）により個人を特定不可能にしつつ、AI開発等でのデータ活用を促進する技術的解決策。",
+            "legislationName": "個人情報の保護に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              27,
+              28,
+              29,
+              30,
+              31
+            ]
+          },
+          "speechOrders": [
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "input_hash": "sha256:bf33f85f8111127925aabcb97b0f56395b6abbabb57509089704873e722a8d6f"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "団体訴訟制度の見送り",
+            "topicTag": "団体訴訟",
+            "topicColor": "#6366f1",
+            "summary": "個人情報侵害に対する団体訴訟制度が法案から除外された経緯とその是非を議論",
+            "contextDescription": "個人情報が不適切利用された際、消費者団体等が個人に代わって差止請求等を行う制度。当初検討されたが最終的に見送られた。",
+            "legislationName": "個人情報の保護に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              32,
+              33
+            ]
+          },
+          "speechOrders": [
+            32,
+            33
+          ],
+          "input_hash": "sha256:5a9979aef595c0e9c041ca8deef0125a5a071a2ee6dfeaa94f02d6f3e698506e"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "課徴金制度の設計",
+            "topicTag": "課徴金",
+            "topicColor": "#6366f1",
+            "summary": "違法行為による利益剥奪型の課徴金額設定と海外制度との比較検討",
+            "contextDescription": "個人情報保護法違反に対する金銭制裁。EU・米国と比較して日本の制裁額が低く、抑止力不足が指摘されている。",
+            "legislationName": "個人情報の保護に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              34,
+              35
+            ]
+          },
+          "speechOrders": [
+            34,
+            35
+          ],
+          "input_hash": "sha256:3c4b6894b57c13362ad2829e2a1c95be3e1d56d321f6fcda9dd763cdfc3f5702"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "子どもの個人情報保護",
+            "topicTag": "子供保護",
+            "topicColor": "#f59e0b",
+            "summary": "16歳未満の利用停止請求権の例外規定と子どもの最善の利益の実現について議論",
+            "contextDescription": "子どもの個人情報は特に慎重な保護が必要とされるが、利用停止請求権に多くの例外規定が設けられ、実効性が懸念されている。",
+            "legislationName": "個人情報の保護に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:163eb800719a2309f6d951f194e56ca4cd1ae14cb92eb1e1f2af1d5c0640ee25"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "統計作成特例制度の評価",
+            "topicTag": "統計特例",
+            "topicColor": "#3b82f6",
+            "summary": "本人同意なしでの個人情報提供を認める統計作成特例の制度設計と運用上の課題",
+            "contextDescription": "AI開発・統計作成目的で一定条件下において本人同意を不要とする新制度。データ活用促進と個人情報保護の両立が課題。",
+            "legislationName": "個人情報の保護に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45
+            ]
+          },
+          "speechOrders": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ],
+          "input_hash": "sha256:3b7d1dd22dd4bbb7b7581d8063fa39edddb633c25fff3a2af08f2f7609073b38"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "デジタル行政の基盤整備",
+            "topicTag": "行政DX",
+            "topicColor": "#f97316",
+            "summary": "クラウド活用・ベースレジストリー整備による行政デジタル化の評価と自治体支援策",
+            "contextDescription": "政府が保有する基礎的データを民間も含め広く活用可能にし、行政手続きの簡素化やサービス向上を図る制度改正。",
+            "legislationName": "情報通信技術を活用した行政の推進等に関する法律及び情報処理の促進に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:bed578717fdcebe53d13e238486a6e5cc9cfbcfc720fb2b9f43754cdf4173bfb"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "安全保障上のデータ利用リスク",
+            "topicTag": "安全保障",
+            "topicColor": "#ef4444",
+            "summary": "外国事業者によるデータアクセスの安全保障リスクと技術的対策の必要性について議論",
+            "contextDescription": "データ利活用促進により外国の情報機関等が日本の行政・個人データにアクセスする可能性があり、国家安全保障上の懸念が指摘されている。",
+            "legislationName": null,
+            "speechOrders": [
+              56,
+              57,
+              58,
+              59,
+              60
+            ]
+          },
+          "speechOrders": [
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "input_hash": "sha256:83c322a9ffc700729484881f0d82044894b9c35709cdd27c9d379453b0e6fe6b"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "子どものデジタル権利保護",
+            "topicTag": "子供権利",
+            "topicColor": "#f59e0b",
+            "summary": "SNS普及下での子どもの顔写真等個人情報の将来的な悪用リスクと保護策",
+            "contextDescription": "子ども時代にSNS等で公開された写真・情報が将来的に本人の意思に反して利用される問題。成人後の削除権等が議論されている。",
+            "legislationName": "個人情報の保護に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              61,
+              62,
+              63,
+              64,
+              65
+            ]
+          },
+          "speechOrders": [
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "input_hash": "sha256:023cd5dbc396808aee88ed92e5e4a726174420ea98e12353ef4fc058029dce1b"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "AI規制の国際比較",
+            "topicTag": "AI規制",
+            "topicColor": "#6366f1",
+            "summary": "EU・米国との比較における日本のAI規制強度と産業振興との関係について議論",
+            "contextDescription": "EUは厳格なAI規制、米国は規制が少ない中で、日本がとるべきAI規制のアプローチ。規制強化と産業競争力の関係が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              66,
+              67,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "speechOrders": [
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "input_hash": "sha256:f596aee2ec2dfcd1cf56c3336c2913e03b757cf26029c81321ae647ae6028c69"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "データ匿名化の技術的課題",
+            "topicTag": "匿名化",
+            "topicColor": "#22c55e",
+            "summary": "AI・ビッグデータによる個人再識別リスクとPETs技術による対策の攻防について議論",
+            "contextDescription": "一度匿名化されたデータでも他のデータと照合することで個人特定が可能になる技術的リスクと、それを防ぐプライバシー保護技術の現状。",
+            "legislationName": null,
+            "speechOrders": [
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93
+            ]
+          },
+          "speechOrders": [
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93
+          ],
+          "input_hash": "sha256:ac2511c3016808d2d3efae1cd25578a3d4788aedfa93fd62822aadb5cf8d7eee"
+        },
+        {
+          "custom_id": "s_6d688840d6d7_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "データ利活用制度の総合評価",
+            "topicTag": "制度評価",
+            "topicColor": "#6b7280",
+            "summary": "法改正による本人同意不要のデータ活用拡大と入口規制から出口規制への転換を評価",
+            "contextDescription": "データ取得時の同意原則からアクセス管理による個人保護へと制度転換を図る改正の意義と今後の課題について総合的に検討。",
+            "legislationName": null,
+            "speechOrders": [
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              102,
+              103,
+              104,
+              105
+            ]
+          },
+          "speechOrders": [
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            102,
+            103,
+            104,
+            105
+          ],
+          "input_hash": "sha256:72895624d7a8e196ecacf11bf64ce8ca305e6289b4e8d13d55712f5fdfcd7a05"
+        }
+      ]
+    }
+  ]
+}
