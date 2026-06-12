@@ -13,7 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-from typing import Optional
+from typing import Any, Optional
 
 PENDING_DIR = os.path.join("data", "pending-batches")
 SCHEMA_VERSION = 1
@@ -26,7 +26,7 @@ def sidecar_path(date_str: str, pending_dir: str = PENDING_DIR) -> str:
     return os.path.join(pending_dir, f"{date_str}.json")
 
 
-def canonical_json(obj) -> str:
+def canonical_json(obj: Any) -> str:
     """Deterministic JSON: sorted keys, compact separators, no ASCII escaping."""
     return json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
 
@@ -54,14 +54,17 @@ def new_sidecar(date_str: str, model: str) -> dict:
 
 
 def load_sidecar(path: str) -> Optional[dict]:
-    if not os.path.exists(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
         return None
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
 
 
 def save_sidecar(path: str, sidecar: dict) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    dirpart = os.path.dirname(path)
+    if dirpart:
+        os.makedirs(dirpart, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(sidecar, f, ensure_ascii=False, indent=2)
 
