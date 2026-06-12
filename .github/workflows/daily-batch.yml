@@ -286,3 +286,36 @@ jobs:
             gh issue create --title "Daily Batch failed" \
               --label pipeline-failure --body "$BODY"
           fi
+
+  notify-stuck-batch:
+    name: Notify on stuck batch
+    needs: fetch-and-summarize
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Comment if any sidecar is older than 2 days
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          STUCK=$(python scripts/check_stuck_batches.py || true)
+          if [ -n "$STUCK" ]; then
+            gh label create pipeline-failure --color B60205 \
+              --description "Daily batch pipeline failure" 2>/dev/null || true
+            EXISTING=$(gh issue list --state open --label pipeline-failure \
+              --json number --jq '.[0].number' 2>/dev/null || true)
+            BODY=$(printf 'Stuck summary batch(es) detected (in-flight > 2 days):\n\n%s' "$STUCK")
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --body "$BODY"
+            else
+              gh issue create --title "Stuck summary batch" \
+                --label pipeline-failure --body "$BODY"
+            fi
+          fi
