@@ -16,6 +16,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: daily-batch
+  cancel-in-progress: false
+
 jobs:
   fetch-and-summarize:
     name: Fetch & Summarize
@@ -82,13 +86,28 @@ jobs:
           echo "Found raw data for dates: $DATES"
           echo "list=$DATES" >> "$GITHUB_OUTPUT"
 
+      # ----- Resume in-flight batches from prior runs FIRST -----
+      # Collects any committed sidecars (data/pending-batches/) within a shared
+      # budget. Exits non-zero only when a batch has failed too many times.
+      - name: Collect pending batches
+        id: collect
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/summarize.py --collect-pending --batch-budget 1800 --ci-commit
+          if ls data/pending-batches/*.json >/dev/null 2>&1; then
+            echo "has_pending=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_pending=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # ----- Summarize (auto-resume per date) -----
       # --batch routes the per-thread summary calls through the Message
       # Batches API for a 50% input/output token discount, stackable with
       # the prompt-caching prefix. Grouping and outcome extraction remain
       # synchronous (one small call per meeting; not worth batching).
       - name: Summarize new content with Claude API
-        if: steps.dates.outputs.list != ''
+        if: steps.dates.outputs.list != '' && steps.collect.outputs.has_pending != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DATES_LIST: ${{ steps.dates.outputs.list }}
@@ -96,8 +115,14 @@ jobs:
           set -e
           for d in $DATES_LIST; do
             echo "::group::Summarize $d"
-            python scripts/summarize.py --date "$d" --batch
+            python scripts/summarize.py --date "$d" --batch --batch-budget 1200 --ci-commit
             echo "::endgroup::"
+            # Once a date leaves a pending sidecar, stop submitting new batches
+            # so we never pile up multiple in-flight batches in one run.
+            if [ -f "data/pending-batches/$d.json" ]; then
+              echo "Batch for $d is pending — stopping further submits this run"
+              break
+            fi
           done
 
       # ----- Enrich threads with news articles (Bing News RSS) -----
@@ -161,7 +186,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # public/sitemap*.xml covers sitemap.xml, sitemap-*.xml and sitemap_index.xml
           # — all variants emitted by generate-sitemap.mjs.
-          git add data/threads/ data/members.json data/status.json \
+          mkdir -p data/pending-batches
+          git add data/threads/ data/pending-batches/ data/members.json data/status.json \
             public/sitemap.xml public/sitemap-*.xml public/sitemap_index.xml \
             public/feed.xml
           if git diff --cached --quiet; then
