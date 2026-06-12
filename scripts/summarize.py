@@ -16,9 +16,10 @@ import hashlib
 import json
 import logging
 import os
+import subprocess
 import sys
 import time
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from typing import Dict, List, Optional
 
 import anthropic
@@ -39,10 +40,30 @@ from pipeline.summarizer import (
 )
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
+from pipeline import batch_state as bs
 
 log = logging.getLogger("summarize")
 
 DEFAULT_MODEL = "claude-sonnet-4-20250514"
+
+
+def _utcnow_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _git_commit_sidecar(path: str, date_str: str) -> None:
+    """Commit + push just the sidecar (CI only) so the in-flight batch survives
+    a later kill or set -e failure before the run's final commit."""
+    try:
+        subprocess.run(["git", "add", path], check=True)
+        subprocess.run(
+            ["git", "commit", "-m", f"chore(pipeline): persist pending batch {date_str}"],
+            check=True,
+        )
+        subprocess.run(["git", "push"], check=True)
+        log.info("Early-committed sidecar %s", path)
+    except subprocess.CalledProcessError as e:
+        log.warning("Early sidecar commit failed (%s) — relying on final commit", e)
 
 
 # ---------------------------------------------------------------------------
@@ -346,6 +367,263 @@ def make_batch_custom_id(meeting_id: str, thread_idx: int) -> str:
     return f"s_{h}_{thread_idx:02d}"
 
 
+def build_manifest_meetings(prepared_meetings: list, model: str) -> list:
+    """Build sidecar ``meetings[]`` from prepared meetings.
+
+    Captures the FULL thread_info (assemble_thread needs topicTag/topicColor/
+    summary/etc.) plus a per-thread input_hash so a resumed batch result can be
+    verified against re-fetched raw before being assembled.
+    """
+    meetings = []
+    for prep in prepared_meetings:
+        threads = []
+        for idx, p in enumerate(prep["pending"]):
+            request = build_summary_request(
+                p["meeting"], p["thread_info"], p["thread_speeches"],
+                p["custom_id"], model,
+            )
+            threads.append({
+                "custom_id": p["custom_id"],
+                "thread_idx": idx,
+                "thread_info": p["thread_info"],
+                "speechOrders": p["thread_info"].get("speechOrders", []),
+                "input_hash": bs.compute_input_hash(request["params"]),
+            })
+        meetings.append({
+            "meeting_id": prep["meeting_id"],
+            "outcome": prep["outcome"],
+            "threads": threads,
+        })
+    return meetings
+
+
+def assemble_from_manifest(
+    sidecar: dict,
+    meetings_by_id: Dict[str, dict],
+    results: Dict[str, Optional[dict]],
+    members: Dict[str, dict],
+    thread_counter: int,
+) -> tuple:
+    """Assemble threads from a sidecar manifest + a completed batch's results.
+
+    Does NOT re-group. Verifies each thread's input_hash against re-fetched raw
+    and requires every custom_id to have a parsed result. Returns
+    ``(threads, ok)`` where ok is False if ANY thread fails verification or is
+    missing — in that case the caller keeps the sidecar for retry.
+    """
+    model = sidecar["model"]
+    date_str = sidecar["date"]
+    threads: list = []
+
+    for m in sidecar["meetings"]:
+        meeting_id = m["meeting_id"]
+        meeting = meetings_by_id.get(meeting_id)
+        if meeting is None:
+            log.error("Resume: raw missing for %s — cannot assemble", meeting_id)
+            return [], False
+        raw_lookup = build_speech_lookup(meeting.get("speeches", []))
+        outcome = m["outcome"]
+        manifest_threads = m["threads"]
+
+        for mt in manifest_threads:
+            custom_id = mt["custom_id"]
+            thread_info = mt["thread_info"]
+            orders = mt["speechOrders"]
+            thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+            if len(thread_speeches) != len(orders):
+                log.error("Resume: speechOrder gap in %s/%s", meeting_id, custom_id)
+                return [], False
+
+            request = build_summary_request(
+                meeting, thread_info, thread_speeches, custom_id, model,
+            )
+            if bs.compute_input_hash(request["params"]) != mt["input_hash"]:
+                log.error("Resume: input_hash mismatch for %s — raw/prompt changed",
+                          custom_id)
+                return [], False
+
+            result = results.get(custom_id)
+            if not result:
+                log.error("Resume: missing result for %s", custom_id)
+                return [], False
+
+            thread_counter += 1
+            thread_id = make_thread_id(date_str, meeting_id, thread_counter)
+            thread = assemble_thread(
+                meeting, thread_info, result["speeches"], raw_lookup, members,
+                thread_id,
+            )
+            if not thread:
+                log.error("Resume: assemble_thread returned None for %s", custom_id)
+                return [], False
+
+            is_last = (mt is manifest_threads[-1])
+            thread["outcome"] = {
+                "result": outcome.get("result") if is_last else None,
+                "resolution": outcome.get("resolution") if is_last else None,
+                "commitments": result["commitments"] or [],
+                "status": outcome.get("status", "ongoing"),
+            }
+            threads.append(thread)
+
+    return threads, True
+
+
+def _load_meetings_for_date(date_str: str, raw_dir: str) -> Dict[str, dict]:
+    """Re-load all meetings for a date from raw files, keyed by meetingId.
+
+    Mirrors run_pipeline's candidate-file scan so resume sees the same raw.
+    """
+    import glob as _glob
+    candidates = [
+        os.path.join(raw_dir, f"ndl-{date_str}.json"),
+        os.path.join(raw_dir, f"kantei-{date_str}.json"),
+        os.path.join(raw_dir, f"council-{date_str}.json"),
+        *sorted(_glob.glob(os.path.join(raw_dir, f"council-*-{date_str}.json"))),
+        os.path.join(raw_dir, f"{date_str}.json"),
+    ]
+    by_id: Dict[str, dict] = {}
+    for c in candidates:
+        if os.path.exists(c):
+            with open(c, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for m in data.get("meetings", []):
+                by_id[m.get("meetingId", "unknown")] = m
+    return by_id
+
+
+def _append_threads_to_date_file(threads: list, threads_dir: str, date_str: str) -> None:
+    os.makedirs(threads_dir, exist_ok=True)
+    path = os.path.join(threads_dir, f"{date_str}.json")
+    existing = []
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+    existing.extend(threads)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(existing, f, ensure_ascii=False, indent=2)
+
+
+def _rebuild_requests_from_manifest(sidecar: dict, meetings_by_id: Dict[str, dict],
+                                    model: str) -> Optional[list]:
+    """Rebuild batch requests from a sidecar manifest for resubmission.
+
+    Reuses the persisted custom_ids and thread_info (NO re-grouping), so a
+    resubmitted batch's results still match the manifest's input_hash. Returns
+    None if raw is missing or a speechOrder gap prevents a faithful rebuild.
+    """
+    requests: list = []
+    for m in sidecar["meetings"]:
+        meeting = meetings_by_id.get(m["meeting_id"])
+        if meeting is None:
+            return None
+        raw_lookup = build_speech_lookup(meeting.get("speeches", []))
+        for mt in m["threads"]:
+            orders = mt["speechOrders"]
+            thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+            if len(thread_speeches) != len(orders):
+                return None
+            requests.append(build_summary_request(
+                meeting, mt["thread_info"], thread_speeches, mt["custom_id"], model,
+            ))
+    return requests
+
+
+def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
+                       raw_dir: str, model: str, ci_commit: bool) -> bool:
+    """Count a non-collectable batch failure, then either hard-fail (>=3 retries)
+    or resubmit a fresh batch from the manifest (new attempt). Returns True on
+    hard-fail (caller should exit non-zero)."""
+    bs.record_terminal(sidecar, reason, _utcnow_iso())
+    if bs.should_hard_fail(sidecar):
+        bs.save_sidecar(path, sidecar)
+        log.error("Sidecar %s hit retry threshold (%d, last=%s) — hard fail",
+                  path, sidecar["retry_count"], reason)
+        return True
+    meetings_by_id = _load_meetings_for_date(sidecar["date"], raw_dir)
+    requests = _rebuild_requests_from_manifest(sidecar, meetings_by_id, model)
+    if requests is None:
+        bs.save_sidecar(path, sidecar)
+        log.error("Resume: cannot rebuild %s for resubmit (raw missing/gap) — keeping sidecar",
+                  sidecar["date"])
+        return False
+    new_batch_id = submit_summary_batch(client, requests)
+    bs.add_attempt(sidecar, new_batch_id, _utcnow_iso())
+    bs.save_sidecar(path, sidecar)
+    if ci_commit:
+        _git_commit_sidecar(path, sidecar["date"])
+    log.warning("Resubmitted %s as %s after %s (retry %d)",
+                sidecar["date"], new_batch_id, reason, sidecar["retry_count"])
+    return False
+
+
+def collect_pending_batches(
+    client,
+    members: Dict[str, dict],
+    model: str,
+    pending_dir: str = bs.PENDING_DIR,
+    threads_dir: str = "data/threads",
+    raw_dir: str = "data/raw",
+    budget_seconds: int = 1800,
+    poll_seconds: int = 30,
+    ci_commit: bool = False,
+) -> bool:
+    """Resume all in-flight batches. Returns True if any sidecar hit the
+    hard-fail retry threshold (caller should exit non-zero)."""
+    import glob as _glob
+    hard_fail = False
+    paths = sorted(_glob.glob(os.path.join(pending_dir, "*.json")))
+    deadline = time.time() + budget_seconds
+
+    for path in paths:
+        sidecar = bs.load_sidecar(path)
+        if sidecar is None:
+            continue
+        if bs.should_hard_fail(sidecar):
+            log.error("Sidecar %s exceeded retry threshold (%d) — hard fail",
+                      path, sidecar["retry_count"])
+            hard_fail = True
+            continue
+
+        date_str = sidecar["date"]
+        batch_id = bs.current_batch_id(sidecar)
+        remaining = max(0, int(deadline - time.time()))
+        batch = poll_summary_batch(client, batch_id,
+                                   timeout_seconds=remaining, poll_interval_seconds=poll_seconds)
+
+        if batch.processing_status != "ended":
+            if batch.processing_status in bs.TERMINAL_FAILURES:
+                if _retry_or_hardfail(client, sidecar, path, batch.processing_status,
+                                      raw_dir, model, ci_commit):
+                    hard_fail = True
+            else:
+                log.info("Batch %s still %s — leaving for next run", batch_id,
+                         batch.processing_status)
+            continue
+
+        results = fetch_summary_results(client, batch_id)
+        meetings_by_id = _load_meetings_for_date(date_str, raw_dir)
+        if not meetings_by_id:
+            log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
+                      date_str)
+            continue
+        threads, ok = assemble_from_manifest(
+            sidecar, meetings_by_id, results, members, thread_counter=0,
+        )
+        if not ok:
+            log.error("Resume: assembly incomplete for %s", date_str)
+            if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
+                                  raw_dir, model, ci_commit):
+                hard_fail = True
+            continue
+
+        _append_threads_to_date_file(threads, threads_dir, date_str)
+        bs.delete_sidecar(path)
+        log.info("Resume: collected %d threads for %s", len(threads), date_str)
+
+    return hard_fail
+
+
 def prepare_meeting_for_batch(
     client,
     meeting: dict,
@@ -399,14 +677,16 @@ def run_batch_phase(
     model: str,
     date_str: str,
     thread_counter: int,
-    batch_timeout_seconds: int = 5400,  # 90 min
+    batch_timeout_seconds: int = 1800,  # 30 min default budget
     batch_poll_seconds: int = 30,
+    pending_dir: str = bs.PENDING_DIR,
+    ci_commit: bool = False,
 ) -> tuple:
-    """Process meetings via Batches API for the summary phase.
+    """Process meetings via Batches API. Persists a sidecar so a batch that
+    does not finish within the budget resumes on a later run.
 
-    Returns ``(new_threads, updated_thread_counter, completed_meeting_ids)``.
+    Returns ``(new_threads, thread_counter, completed_meeting_ids, pending)``.
     """
-    # Phase 1: synchronously group + extract outcome for every new meeting.
     prepared_meetings: list[dict] = []
     all_pending: list[dict] = []
 
@@ -415,7 +695,6 @@ def run_batch_phase(
         if meeting_id in progress["completed"]:
             log.info("Skipping already completed: %s", meeting_id)
             continue
-
         log.info("Preparing for batch: %s", meeting_id)
         try:
             prep = prepare_meeting_for_batch(client, meeting, model)
@@ -423,15 +702,13 @@ def run_batch_phase(
             log.error("Failed to prepare %s: %s", meeting_id, e)
             progress["failed"].append(meeting_id)
             continue
-
         prepared_meetings.append(prep)
         all_pending.extend(prep["pending"])
 
     if not all_pending:
         log.info("Batch phase: nothing to summarize")
-        return [], thread_counter, []
+        return [], thread_counter, [], False
 
-    # Phase 2: submit + poll + fetch.
     requests = [
         build_summary_request(
             p["meeting"], p["thread_info"], p["thread_speeches"],
@@ -441,55 +718,39 @@ def run_batch_phase(
     ]
     log.info("Submitting %d summary requests via Batches API", len(requests))
     batch_id = submit_summary_batch(client, requests)
-    poll_summary_batch(
+
+    # Persist the sidecar BEFORE the long poll so a kill mid-poll still resumes.
+    submitted_at = _utcnow_iso()
+    sidecar = bs.new_sidecar(date_str, model)
+    sidecar["meetings"] = build_manifest_meetings(prepared_meetings, model)
+    bs.add_attempt(sidecar, batch_id, submitted_at)
+    path = bs.sidecar_path(date_str, pending_dir)
+    bs.save_sidecar(path, sidecar)
+    if ci_commit:
+        _git_commit_sidecar(path, date_str)
+
+    batch = poll_summary_batch(
         client, batch_id,
         timeout_seconds=batch_timeout_seconds,
         poll_interval_seconds=batch_poll_seconds,
     )
+    if batch.processing_status != "ended":
+        log.info("Batch %s not ended within budget — sidecar kept for resume", batch_id)
+        return [], thread_counter, [], True
+
     results = fetch_summary_results(client, batch_id)
+    meetings_by_id = {m.get("meetingId", "unknown"): m for m in meetings}
+    new_threads, ok = assemble_from_manifest(
+        sidecar, meetings_by_id, results, members, thread_counter,
+    )
+    if not ok:
+        log.error("Batch %s ended but assembly incomplete — keeping sidecar", batch_id)
+        return [], thread_counter, [], True
 
-    # Phase 3: assemble threads in deterministic order (matches sync mode).
-    new_threads: list = []
-    completed_meeting_ids: list = []
-
-    for prep in prepared_meetings:
-        meeting_id = prep["meeting_id"]
-        outcome = prep["outcome"]
-        thread_infos = prep["thread_infos"]
-
-        for p in prep["pending"]:
-            result = results.get(p["custom_id"])
-            if not result:
-                log.warning(
-                    "No result for %s (thread '%s'); skipping",
-                    p["custom_id"], p["thread_info"].get("topic"),
-                )
-                continue
-
-            thread_counter += 1
-            thread_id = make_thread_id(date_str, meeting_id, thread_counter)
-            thread = assemble_thread(
-                p["meeting"], p["thread_info"], result["speeches"],
-                p["raw_lookup"], members, thread_id,
-            )
-            if not thread:
-                continue
-
-            is_last = (p["thread_info"] is thread_infos[-1])
-            thread["outcome"] = {
-                "result": outcome.get("result") if is_last else None,
-                "resolution": outcome.get("resolution") if is_last else None,
-                "commitments": result["commitments"] or [],
-                "status": outcome.get("status", "ongoing"),
-            }
-            new_threads.append(thread)
-
-        # Mark the meeting as completed even if some of its threads failed —
-        # matches the sync path, which catches per-thread exceptions inside
-        # the meeting loop and still records the meeting as done.
-        completed_meeting_ids.append(meeting_id)
-
-    return new_threads, thread_counter, completed_meeting_ids
+    thread_counter += len(new_threads)
+    completed_meeting_ids = [m["meeting_id"] for m in sidecar["meetings"]]
+    bs.delete_sidecar(path)
+    return new_threads, thread_counter, completed_meeting_ids, False
 
 
 def collect_processed_meeting_ids(threads_path: str) -> set[str]:
@@ -535,6 +796,8 @@ def run_pipeline(
     batch: bool = False,
     batch_timeout_seconds: int = 5400,
     batch_poll_seconds: int = 30,
+    pending_dir: str = bs.PENDING_DIR,
+    ci_commit: bool = False,
 ) -> None:
     """Run the full summarization pipeline for a given date."""
     # Load raw data — collect meetings from all source files for this date
@@ -627,26 +890,24 @@ def run_pipeline(
             len(all_threads),
         )
 
+    pending = False
     if batch:
-        try:
-            new_threads, thread_counter, completed_ids = run_batch_phase(
-                client, meetings, progress, members, model, date_str,
-                thread_counter,
-                batch_timeout_seconds=batch_timeout_seconds,
-                batch_poll_seconds=batch_poll_seconds,
-            )
-            all_threads.extend(new_threads)
-            for mid in completed_ids:
-                if mid not in progress["completed"]:
-                    progress["completed"].append(mid)
-            save_progress(progress, progress_path)
-            log.info("Batch phase: +%d threads from %d meeting(s)",
-                     len(new_threads), len(completed_ids))
-        except Exception as e:
-            log.error("Batch phase failed: %s", e)
-            # Don't mark any meetings completed on a batch-level failure —
-            # they'll be retried on the next run.
-            raise
+        new_threads, thread_counter, completed_ids, pending = run_batch_phase(
+            client, meetings, progress, members, model, date_str,
+            thread_counter,
+            batch_timeout_seconds=batch_timeout_seconds,
+            batch_poll_seconds=batch_poll_seconds,
+            pending_dir=pending_dir,
+            ci_commit=ci_commit,
+        )
+        all_threads.extend(new_threads)
+        for mid in completed_ids:
+            if mid not in progress["completed"]:
+                progress["completed"].append(mid)
+        save_progress(progress, progress_path)
+        log.info("Batch phase: +%d threads from %d meeting(s)%s",
+                 len(new_threads), len(completed_ids),
+                 " (batch pending — will resume)" if pending else "")
     else:
         for meeting in meetings:
             meeting_id = meeting.get("meetingId", "unknown")
@@ -751,12 +1012,29 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
              "stackable with prompt caching). Polls until results are ready.",
     )
     parser.add_argument(
-        "--batch-timeout", type=int, default=5400,
-        help="Max seconds to wait for batch completion (default: 5400 = 90min)",
+        "--batch-timeout", type=int, default=1800,
+        help="Max seconds to wait for batch completion (default: 1800 = 30min)",
     )
     parser.add_argument(
         "--batch-poll", type=int, default=30,
         help="Seconds between batch status polls (default: 30)",
+    )
+    parser.add_argument(
+        "--collect-pending", action="store_true",
+        help="Resume in-flight batches from data/pending-batches/ and exit. "
+             "Non-zero exit if a sidecar exceeds the retry threshold.",
+    )
+    parser.add_argument(
+        "--pending-dir", default="data/pending-batches",
+        help="Directory for in-flight batch sidecars",
+    )
+    parser.add_argument(
+        "--batch-budget", type=int, default=1800,
+        help="Per-run poll budget in seconds (default 1800 = 30min)",
+    )
+    parser.add_argument(
+        "--ci-commit", action="store_true",
+        help="Early-commit+push the sidecar after submit (CI only)",
     )
 
     return parser.parse_args(argv)
@@ -770,6 +1048,20 @@ def main(argv: Optional[List[str]] = None) -> None:
         format="%(levelname)s %(message)s",
     )
 
+    if args.collect_pending:
+        client = anthropic.Anthropic()
+        members = load_members(args.members_path)
+        hard_fail = collect_pending_batches(
+            client, members, args.model,
+            pending_dir=args.pending_dir, threads_dir=args.output_dir,
+            raw_dir=args.raw_dir, budget_seconds=args.batch_budget,
+            poll_seconds=args.batch_poll, ci_commit=args.ci_commit,
+        )
+        save_members(members, args.members_path)
+        if hard_fail:
+            sys.exit(1)
+        return
+
     run_pipeline(
         date_str=args.date,
         meeting_filter=args.meeting,
@@ -781,8 +1073,10 @@ def main(argv: Optional[List[str]] = None) -> None:
         dry_run=args.dry_run,
         verbose=args.verbose,
         batch=args.batch,
-        batch_timeout_seconds=args.batch_timeout,
+        batch_timeout_seconds=args.batch_budget,
         batch_poll_seconds=args.batch_poll,
+        pending_dir=args.pending_dir,
+        ci_commit=args.ci_commit,
     )
 
 
