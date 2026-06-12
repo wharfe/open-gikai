@@ -469,6 +469,110 @@ def assemble_from_manifest(
     return threads, True
 
 
+def _load_meetings_for_date(date_str: str, raw_dir: str) -> Dict[str, dict]:
+    """Re-load all meetings for a date from raw files, keyed by meetingId.
+
+    Mirrors run_pipeline's candidate-file scan so resume sees the same raw.
+    """
+    import glob as _glob
+    candidates = [
+        os.path.join(raw_dir, f"ndl-{date_str}.json"),
+        os.path.join(raw_dir, f"kantei-{date_str}.json"),
+        os.path.join(raw_dir, f"council-{date_str}.json"),
+        *sorted(_glob.glob(os.path.join(raw_dir, f"council-*-{date_str}.json"))),
+        os.path.join(raw_dir, f"{date_str}.json"),
+    ]
+    by_id: Dict[str, dict] = {}
+    for c in candidates:
+        if os.path.exists(c):
+            with open(c, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for m in data.get("meetings", []):
+                by_id[m.get("meetingId", "unknown")] = m
+    return by_id
+
+
+def _append_threads_to_date_file(threads: list, threads_dir: str, date_str: str) -> None:
+    os.makedirs(threads_dir, exist_ok=True)
+    path = os.path.join(threads_dir, f"{date_str}.json")
+    existing = []
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+    existing.extend(threads)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(existing, f, ensure_ascii=False, indent=2)
+
+
+def collect_pending_batches(
+    client,
+    members: Dict[str, dict],
+    model: str,
+    pending_dir: str = bs.PENDING_DIR,
+    threads_dir: str = "data/threads",
+    raw_dir: str = "data/raw",
+    budget_seconds: int = 1800,
+    poll_seconds: int = 30,
+    ci_commit: bool = False,
+) -> bool:
+    """Resume all in-flight batches. Returns True if any sidecar hit the
+    hard-fail retry threshold (caller should exit non-zero)."""
+    import glob as _glob
+    hard_fail = False
+    paths = sorted(_glob.glob(os.path.join(pending_dir, "*.json")))
+    deadline = time.time() + budget_seconds
+
+    for path in paths:
+        sidecar = bs.load_sidecar(path)
+        if sidecar is None:
+            continue
+        if bs.should_hard_fail(sidecar):
+            log.error("Sidecar %s exceeded retry threshold (%d) — hard fail",
+                      path, sidecar["retry_count"])
+            hard_fail = True
+            continue
+
+        date_str = sidecar["date"]
+        batch_id = bs.current_batch_id(sidecar)
+        remaining = max(0, int(deadline - time.time()))
+        batch = poll_summary_batch(client, batch_id,
+                                   timeout_seconds=remaining, poll_interval_seconds=poll_seconds)
+
+        if batch.processing_status != "ended":
+            if batch.processing_status in bs.TERMINAL_FAILURES:
+                if bs.record_terminal(sidecar, batch.processing_status, _utcnow_iso()):
+                    bs.save_sidecar(path, sidecar)
+                    if ci_commit:
+                        _git_commit_sidecar(path, date_str)
+                log.warning("Batch %s %s — will re-submit next run", batch_id,
+                            batch.processing_status)
+            else:
+                log.info("Batch %s still %s — leaving for next run", batch_id,
+                         batch.processing_status)
+            continue
+
+        results = fetch_summary_results(client, batch_id)
+        meetings_by_id = _load_meetings_for_date(date_str, raw_dir)
+        if not meetings_by_id:
+            log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
+                      date_str)
+            continue
+        threads, ok = assemble_from_manifest(
+            sidecar, meetings_by_id, results, members, thread_counter=0,
+        )
+        if not ok:
+            if bs.record_terminal(sidecar, "assemble_failed", _utcnow_iso()):
+                bs.save_sidecar(path, sidecar)
+            log.error("Resume: assembly incomplete for %s — keeping sidecar", date_str)
+            continue
+
+        _append_threads_to_date_file(threads, threads_dir, date_str)
+        bs.delete_sidecar(path)
+        log.info("Resume: collected %d threads for %s", len(threads), date_str)
+
+    return hard_fail
+
+
 def prepare_meeting_for_batch(
     client,
     meeting: dict,

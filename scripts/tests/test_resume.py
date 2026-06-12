@@ -132,3 +132,47 @@ def test_run_batch_phase_persists_sidecar_when_pending(fake_client, tmp_path, mo
     assert sc is not None
     assert bs.current_batch_id(sc) == "msgbatch_fake_0001"
     assert sc["meetings"][0]["threads"][0]["input_hash"].startswith("sha256:")
+
+
+def test_collect_assembles_ended_and_deletes_sidecar(fake_client, tmp_path, monkeypatch):
+    pending_dir = str(tmp_path / "pending")
+    threads_dir = str(tmp_path / "threads")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    # Write raw for the date so collect can re-fetch from disk.
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    # Sidecar with a correct hash, batch now ended with a result.
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    from tests.conftest import _ResultEntry  # type: ignore
+    import json as J
+    b.results_by_id["b1"] = [_ResultEntry("s_abc_00", "succeeded",
+        text=J.dumps({"speeches": [{"speechOrder": 1, "tension": "確認",
+        "summaries": {"easy": "e", "teen": "t", "adult": "a"}}], "commitments": []}))]
+
+    hard_fail = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert hard_fail is False
+    assert not os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
+    assert os.path.exists(os.path.join(threads_dir, "2026-05-14.json"))
+
+
+def test_collect_hard_fails_at_retry_threshold(fake_client, tmp_path):
+    pending_dir = str(tmp_path / "pending")
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["retry_count"] = 3
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    hard_fail = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"),
+        raw_dir=str(tmp_path / "r"),
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert hard_fail is True
