@@ -2,11 +2,17 @@
   "schema_version": 1,
   "date": "2026-05-14",
   "model": "claude-sonnet-4-20250514",
-  "retry_count": 0,
+  "retry_count": 1,
   "attempts": [
     {
       "batch_id": "msgbatch_01ASRnUJjdPLShgAAErqZ8nr",
       "submitted_at": "2026-06-12T21:46:00Z",
+      "terminal_status": "assemble_failed",
+      "terminal_at": "2026-06-13T21:35:21Z"
+    },
+    {
+      "batch_id": "msgbatch_01VkKXTNNp6PyjQmNjBDoNZ4",
+      "submitted_at": "2026-06-13T21:35:21Z",
       "terminal_status": null,
       "terminal_at": null
     }
