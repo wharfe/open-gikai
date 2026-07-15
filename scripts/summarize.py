@@ -601,12 +601,53 @@ def collect_pending_batches(
                          batch.processing_status)
             continue
 
-        results = fetch_summary_results(client, batch_id)
+        # Load raw BEFORE fetching results: raw is needed to both assemble and
+        # resubmit, and checking it first means we never call .results() on a
+        # batch we cannot use anyway (which would crash if results have expired).
         meetings_by_id = _load_meetings_for_date(date_str, raw_dir)
         if not meetings_by_id:
-            log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
-                      date_str)
+            # Raw is gone. If the sidecar is old enough that raw has aged out of
+            # the fetch window for good (and results have expired too), it can
+            # never be collected — abandon it. Otherwise the miss may be
+            # transient (raw not fetched this run), so keep it for next time.
+            now_iso = _utcnow_iso()
+            if bs.is_abandonable(sidecar, now_iso):
+                age = bs.age_days(sidecar, now_iso)
+                log.error(
+                    "Resume: %s unrecoverable (raw out of window, age %.1fd) "
+                    "— abandoning sidecar", date_str, age,
+                )
+                # Abandon = permanent loss of this date's uncollected threads.
+                # Surface it as a GitHub Actions annotation so it isn't buried in
+                # the step log (the stuck-batch alert can't fire once we delete).
+                print(f"::warning::Abandoned uncollectable summary batch for "
+                      f"{date_str} (age {age:.1f}d) — threads for that date "
+                      f"were not collected")
+                bs.delete_sidecar(path)
+            else:
+                log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
+                          date_str)
             continue
+
+        # Results are retained ~29 days after an "ended" batch; past that the SDK
+        # raises because results_url is null. Treat that like a terminal failure
+        # and resubmit from the manifest (raw is available at this point).
+        try:
+            results = fetch_summary_results(client, batch_id)
+        except anthropic.AnthropicError as e:
+            # Only the expiry case (null results_url on an ended batch) is a bare
+            # AnthropicError. Network/HTTP failures are APIError subclasses and
+            # are transient — let those propagate so the run retries next time
+            # rather than burning a resubmit.
+            if isinstance(e, anthropic.APIError):
+                raise
+            log.error("Resume: results unavailable for %s (%s) — resubmitting",
+                      date_str, e)
+            if _retry_or_hardfail(client, sidecar, path, "results_expired",
+                                  raw_dir, model, ci_commit):
+                hard_fail = True
+            continue
+
         threads, ok = assemble_from_manifest(
             sidecar, meetings_by_id, results, members, thread_counter=0,
         )

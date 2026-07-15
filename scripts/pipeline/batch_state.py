@@ -77,6 +77,15 @@ def delete_sidecar(path: str) -> None:
 
 HARD_FAIL_RETRIES = 3
 STUCK_AGE_DAYS = 2.0
+# Past this age a sidecar's raw input has aged out of the daily fetch window
+# (default 30-day lookback; data/raw/ is gitignored so CI cannot re-fetch it)
+# AND its batch results have expired (~29-day retention). Such a sidecar can
+# never be assembled or resubmitted, so it is abandoned rather than kept.
+# INVARIANT: this MUST stay strictly greater than the daily-batch LOOKBACK_DAYS
+# window — while raw is still within that window a later run can re-fetch it and
+# collect the batch, so abandoning earlier would discard recoverable threads.
+# Bump this if that default lookback is ever raised above 30.
+ABANDON_AGE_DAYS = 31.0
 
 
 def add_attempt(sidecar: dict, batch_id: str, submitted_at: str) -> None:
@@ -131,3 +140,13 @@ def age_days(sidecar: dict, now_iso: str) -> float:
 
 def is_stuck(sidecar: dict, now_iso: str, threshold_days: float = STUCK_AGE_DAYS) -> bool:
     return age_days(sidecar, now_iso) > threshold_days
+
+
+def is_abandonable(sidecar: dict, now_iso: str,
+                   threshold_days: float = ABANDON_AGE_DAYS) -> bool:
+    """A sidecar past the abandon age is structurally unrecoverable (raw gone
+    from the fetch window, batch results expired) and should be deleted.
+
+    Same age test as ``is_stuck`` but a much longer threshold: stuck is a
+    2-day *alert*, abandon is a 31-day *give-up*."""
+    return is_stuck(sidecar, now_iso, threshold_days)

@@ -178,6 +178,82 @@ def test_collect_hard_fails_at_retry_threshold(fake_client, tmp_path):
     assert hard_fail is True
 
 
+def test_collect_survives_expired_results_and_resubmits(fake_client, tmp_path):
+    """An 'ended' batch whose results have expired (results_url gone) must not
+    crash the run. With raw still available, it resubmits from the manifest."""
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    sidecar = _sidecar_with_one_thread(_correct_hash())  # current batch id "b1"
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    b.expired_results.add("b1")          # results_url is gone -> .results() raises
+    b.next_id = "msgbatch_resub_1"
+    b.statuses["msgbatch_resub_1"] = "in_progress"
+
+    hard = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert hard is False
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc is not None                       # kept — resubmitted, not abandoned
+    assert sc["retry_count"] == 1
+    assert bs.current_batch_id(sc) == "msgbatch_resub_1"
+
+
+def test_collect_abandons_uncollectable_old_sidecar(fake_client, tmp_path, monkeypatch):
+    """Raw has aged out of the fetch window (no raw on disk) and the sidecar is
+    older than the abandon threshold -> it is structurally unrecoverable and must
+    be deleted, not kept forever nor crash on expired results."""
+    monkeypatch.setattr(summarize, "_utcnow_iso", lambda: "2026-07-15T00:00:00Z")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)                          # empty — no raw for the date
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    # Last attempt submitted 2026-06-13 -> ~32 days old at the pinned "now".
+    sidecar["attempts"][-1]["submitted_at"] = "2026-06-13T21:35:21Z"
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    b.expired_results.add("b1")                   # results also expired
+
+    hard = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert hard is False
+    assert not os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))  # abandoned
+
+
+def test_collect_keeps_young_sidecar_when_raw_missing(fake_client, tmp_path, monkeypatch):
+    """Raw missing but the sidecar is still young (within the fetch window) — the
+    miss may be transient (raw not fetched this run), so keep it for next time."""
+    monkeypatch.setattr(summarize, "_utcnow_iso", lambda: "2026-07-15T00:00:00Z")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)                          # empty — no raw for the date
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["attempts"][-1]["submitted_at"] = "2026-07-14T00:00:00Z"  # ~1 day old
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+
+    hard = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert hard is False
+    assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))  # kept
+
+
 def test_collect_resubmits_on_expired(fake_client, tmp_path):
     pending_dir = str(tmp_path / "pending")
     raw_dir = str(tmp_path / "raw")

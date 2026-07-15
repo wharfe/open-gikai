@@ -41,6 +41,7 @@ class FakeBatches:
         self.next_id = "msgbatch_fake_0001"
         self.statuses = {}          # batch_id -> processing_status to return
         self.results_by_id = {}     # batch_id -> list[_ResultEntry]
+        self.expired_results = set()  # batch_ids whose results have expired
         self.cancelled = []
 
     def create(self, requests):
@@ -54,6 +55,13 @@ class FakeBatches:
                       counts={"succeeded": len(self.results_by_id.get(batch_id, []))})
 
     def results(self, batch_id):
+        # Mirror the SDK: an "ended" batch whose results_url has expired (results
+        # are only retained ~29 days) raises rather than returning an empty list.
+        if batch_id in self.expired_results:
+            import anthropic
+            raise anthropic.AnthropicError(
+                "No `results_url` for the given batch; Has it finished processing? ended"
+            )
         return list(self.results_by_id.get(batch_id, []))
 
     def cancel(self, batch_id):
