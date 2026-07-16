@@ -116,7 +116,7 @@ def fetch_and_split(date_from: str, date_until: str) -> list[str]:
     return new_dates
 
 
-def process_dates(dates: list[str], model: str = "claude-sonnet-4-20250514") -> None:
+def process_dates(dates: list[str], model: str = "claude-sonnet-5") -> None:
     """Run batch.py for each date."""
     from batch import run as batch_run
 
@@ -144,7 +144,7 @@ def main():
                         help="Only fetch, don't process with Claude API")
     parser.add_argument("--process-only", action="store_true",
                         help="Only process existing raw files, don't fetch")
-    parser.add_argument("--model", default="claude-sonnet-4-20250514")
+    parser.add_argument("--model", default="claude-sonnet-5")
     parser.add_argument("--verbose", "-v", action="store_true")
     args = parser.parse_args()
 

@@ -44,7 +44,14 @@ from pipeline import batch_state as bs
 
 log = logging.getLogger("summarize")
 
-DEFAULT_MODEL = "claude-sonnet-4-20250514"
+# claude-sonnet-4-20250514 (Sonnet 4) retired 2026-06-15 → API 404. Migrated to
+# Sonnet 5, the official drop-in replacement. Summary/grouping calls set
+# thinking=disabled explicitly: Sonnet 5 turns adaptive thinking ON when the
+# field is omitted (unlike Sonnet 4), which would share the max_tokens budget
+# with the JSON output and risk truncation, and add nondeterminism the summary
+# invariants forbid. Keep this in sync with the per-function model defaults in
+# pipeline/grouper.py and pipeline/summarizer.py.
+DEFAULT_MODEL = "claude-sonnet-5"
 
 
 def _utcnow_iso() -> str:

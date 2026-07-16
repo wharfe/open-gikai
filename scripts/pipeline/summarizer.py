@@ -61,7 +61,7 @@ def summarize_thread(
     meeting: dict,
     thread_info: dict,
     speeches: List[dict],
-    model: str = "claude-sonnet-4-20250514",
+    model: str = "claude-sonnet-5",
 ) -> dict:
     """Summarize all speeches in a thread.
 
@@ -109,6 +109,10 @@ def summarize_thread(
     response = client.messages.create(
         model=model,
         max_tokens=8192,
+        # Sonnet 5 enables adaptive thinking when omitted; disable it to keep the
+        # full max_tokens budget for JSON output and preserve deterministic,
+        # thinking-free behavior (matches the retired Sonnet 4).
+        thinking={"type": "disabled"},
         system=SUMMARY_SYSTEM,
         messages=messages,
     )
@@ -142,7 +146,7 @@ def build_summary_request(
     thread_info: dict,
     speeches: List[dict],
     custom_id: str,
-    model: str = "claude-sonnet-4-20250514",
+    model: str = "claude-sonnet-5",
 ) -> dict:
     """Build a single Message Batches API request for one thread's summary.
 
@@ -162,6 +166,9 @@ def build_summary_request(
         "params": {
             "model": model,
             "max_tokens": 8192,
+            # See summarize_thread: disable Sonnet 5 adaptive thinking so the
+            # batch output isn't truncated and stays deterministic.
+            "thinking": {"type": "disabled"},
             "system": SUMMARY_SYSTEM,
             "messages": [{
                 "role": "user",

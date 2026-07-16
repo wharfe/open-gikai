@@ -48,7 +48,10 @@ from batch import (
 
 log = logging.getLogger("bulk_batch")
 
-DEFAULT_MODEL = "claude-sonnet-4-20250514"
+# Sonnet 4 retired 2026-06-15 (API 404) → Sonnet 5. thinking=disabled on every
+# request: Sonnet 5 enables adaptive thinking when omitted, which would eat the
+# max_tokens budget and add nondeterminism. See scripts/summarize.py.
+DEFAULT_MODEL = "claude-sonnet-5"
 RAW_DIR = "data/raw"
 THREADS_DIR = "data/threads"
 MEMBERS_PATH = "data/members.json"
@@ -142,6 +145,7 @@ def build_mega_phase1(dates: list[str], model: str) -> Tuple[list[dict], dict]:
                     "params": {
                         "model": model,
                         "max_tokens": 8192,
+                        "thinking": {"type": "disabled"},
                         "system": GROUPING_SYSTEM,
                         "messages": [{"role": "user", "content": prompt}],
                     },
@@ -173,6 +177,7 @@ def build_mega_phase1(dates: list[str], model: str) -> Tuple[list[dict], dict]:
                         "params": {
                             "model": model,
                             "max_tokens": 1024,
+                            "thinking": {"type": "disabled"},
                             "system": OUTCOME_SYSTEM,
                             "messages": [{"role": "user", "content": prompt}],
                         },
@@ -219,6 +224,7 @@ def build_mega_phase2(
                     "params": {
                         "model": model,
                         "max_tokens": 8192,
+                        "thinking": {"type": "disabled"},
                         "system": SUMMARY_SYSTEM,
                         "messages": [{"role": "user", "content": prompt}],
                     },

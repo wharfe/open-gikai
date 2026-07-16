@@ -44,7 +44,10 @@ from pipeline.linker import link_threads
 
 log = logging.getLogger("batch")
 
-DEFAULT_MODEL = "claude-sonnet-4-20250514"
+# Sonnet 4 retired 2026-06-15 (API 404) → Sonnet 5. thinking=disabled on every
+# request: Sonnet 5 enables adaptive thinking when omitted, which would eat the
+# max_tokens budget and add nondeterminism. See scripts/summarize.py.
+DEFAULT_MODEL = "claude-sonnet-5"
 BATCH_DIR = "data/batch"
 
 
@@ -135,6 +138,7 @@ def build_phase1_requests(
                 "params": {
                     "model": model,
                     "max_tokens": 8192,
+                    "thinking": {"type": "disabled"},
                     "system": GROUPING_SYSTEM,
                     "messages": [{"role": "user", "content": prompt}],
                 },
@@ -165,6 +169,7 @@ def build_phase1_requests(
                     "params": {
                         "model": model,
                         "max_tokens": 1024,
+                        "thinking": {"type": "disabled"},
                         "system": OUTCOME_SYSTEM,
                         "messages": [{"role": "user", "content": prompt}],
                     },
@@ -210,6 +215,7 @@ def build_phase2_requests(
                 "params": {
                     "model": model,
                     "max_tokens": 8192,
+                    "thinking": {"type": "disabled"},
                     "system": SUMMARY_SYSTEM,
                     "messages": [{"role": "user", "content": prompt}],
                 },

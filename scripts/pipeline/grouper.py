@@ -84,7 +84,7 @@ def _parse_json_response(text: str) -> dict:
 def group_meeting(
     client,
     meeting: dict,
-    model: str = "claude-sonnet-4-20250514",
+    model: str = "claude-sonnet-5",
 ) -> List[dict]:
     """Group a meeting's speeches into thematic threads.
 
@@ -136,6 +136,9 @@ def group_meeting(
     response = client.messages.create(
         model=model,
         max_tokens=8192,
+        # Disable Sonnet 5 adaptive thinking (ON when omitted) so the JSON output
+        # keeps the full token budget and stays deterministic. See summarize.py.
+        thinking={"type": "disabled"},
         system=GROUPING_SYSTEM,
         messages=messages,
     )
@@ -147,6 +150,7 @@ def group_meeting(
         response = client.messages.create(
             model=model,
             max_tokens=16384,
+            thinking={"type": "disabled"},
             system=GROUPING_SYSTEM,
             messages=messages,
         )
@@ -227,7 +231,7 @@ def _extract_outcome_by_pattern(speeches: List[dict]) -> Optional[dict]:
 def extract_meeting_outcome(
     client,
     meeting: dict,
-    model: str = "claude-sonnet-4-20250514",
+    model: str = "claude-sonnet-5",
 ) -> dict:
     """Extract meeting-level outcome (votes, resolutions) from procedural speeches.
 
@@ -263,6 +267,7 @@ def extract_meeting_outcome(
                 response = client.messages.create(
                     model=model,
                     max_tokens=1024,
+                    thinking={"type": "disabled"},
                     system=OUTCOME_SYSTEM,
                     messages=[{"role": "user", "content": prompt}],
                 )
