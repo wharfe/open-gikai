@@ -131,3 +131,16 @@ Anything requiring a runtime belongs under `apps/`.
 - kantei.go.jp press conferences are scraped from the PM's official website
 - Council adapter uses PyMuPDF for PDF text extraction and BeautifulSoup for HTML scraping
 - Rate limiting: be respectful of NDL API, kantei.go.jp, and cao.go.jp usage
+
+## 品質ゲート（Gate3 — 実装完了時の標準フロー）
+
+- 非自明な変更（複数ファイル・設計判断・データ取得アダプタ / ビルドパイプラインに触れる変更）の
+  完了時は `/code-gate` を実行し **critical 0 まで**ループする。標準起動は headless `/goal` 経由:
+  ```bash
+  timeout 3600 claude -p "/goal /code-gate を実行し critical 0 を達成する。5回で打ち切り" \
+    --permission-mode acceptEdits
+  ```
+- 受け入れ基準（機械判定）: `npm run lint && npm run validate`（ユニットテスト無し。
+  表示に影響する変更は `npm run test:e2e` を追加実行）
+- 単発の小修正（数十行以下）は Gate 省略可。ただしスクレイパーのレート制御・公開データの
+  生成ロジックに触れる diff はサイズによらず Gate 対象。
