@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 03 Aug 2026 21:30:14 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 14:49:43 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W25 国会まとめ — 90件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W25</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W25</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>90件のスレッド、7委員会の議論をまとめました。外交防衛委員会、文教科学委員会、財政金融委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W23 国会まとめ — 7件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W23</link>
@@ -32,412 +40,404 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W20 国会まとめ — 177件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W20</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W20</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>177件のスレッド、11委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、国家基本政策委員会、議院運営委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>日韓犯罪人引渡条約と海賊版サイト対策 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_01</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>日本コンテンツ海賊版サイト運営者への国際的対応と公訴時効の把握不足を追及（国会会議録・2026.06.16・12発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>令和8年度補正予算緊急上程・採決手続き — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260604_f08a36_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260604_f08a36_01</guid>
-      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
-      <description>令和8年度一般会計・特別会計補正予算の緊急上程と討論・採決の手続きを決定（国会会議録・2026.06.04・3発言）</description>
-      <category>議院運営委員会</category>
+      <title>ODAとJICA海外協力隊の意義・支援拡充 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_02</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>ODAと海外協力隊の外交的意義、応募減少や処遇改善、帰国後支援策を議論（国会会議録・2026.06.16・27発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>令和8年度補正予算の趣旨説明 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260603_3929e5_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260603_3929e5_01</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-      <description>財務大臣が令和8年度補正予算案の内容と重点支援地方交付金について説明（国会会議録・2026.06.03・1発言）</description>
-      <category>予算委員会</category>
+      <title>漁業監督官の処遇・装備と尖閣警備体制 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_03</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>尖閣周辺の警備実態と漁業監督官の俸給格差・武器不携帯・訓練不足の改善を要求（国会会議録・2026.06.16・31発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>本会議の議事運営・質疑時間配分 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260603_e1c34f_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260603_e1c34f_02</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-      <description>財政演説に対する6名の質疑時間配分と要求大臣について決定（国会会議録・2026.06.03・3発言）</description>
-      <category>議院運営委員会</category>
+      <title>現代戦の変化とLAWS（自律型致死兵器）規制 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_04</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>AI兵器の国際規制論議の停滞と国際人道法軽視、北朝鮮への対欧州連携強化を議論（国会会議録・2026.06.16・15発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>衆議院懲罰委員会の委員長選任と理事指名 — 懲罰委員会</title>
-      <link>https://open-gikai.net/t/t_20260602_02ea15_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260602_02ea15_01</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>斉藤鉄夫委員長の就任挨拶と理事5名の指名を行った（国会会議録・2026.06.02・1発言）</description>
-      <category>懲罰委員会</category>
+      <title>安保三文書改定と非核三原則・拡大抑止 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_05</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>非核三原則「持ち込ませず」の是非と米国拡大抑止の実効性を巡る論戦（国会会議録・2026.06.16・13発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>ポーランド下院議員団の国会傍聴 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260602_a29b2a_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260602_a29b2a_02</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>ポーランド下院議員団の本会議傍聴に関する手続きと紹介（国会会議録・2026.06.02・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>歴史認識ナラティブ戦と沖縄先住民論への対応 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_06</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>中国発の歴史ナラティブや沖縄先住民論への日本政府の反論・情報発信強化を求める（国会会議録・2026.06.16・13発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>本会議日程と各委員会報告 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260602_a29b2a_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260602_a29b2a_03</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>総務・環境・内閣各委員会からの報告と採決見通し（国会会議録・2026.06.02・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>米軍ミサイルシステムの国内展開と自衛隊医療体制強化 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_07</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>鹿屋基地への米軍ミサイル展開と防衛費GDP比目標、自衛隊病院機能強化の是非を追及（国会会議録・2026.06.16・21発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>イラン大統領との電話会談と中東情勢への対応 — ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260601_d16f01_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260601_d16f01_01</guid>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
-      <description>ペゼシュキアン・イラン大統領との3回目電話会談で話し合いによる事態沈静化を要請（首相記者会見・2026.06.01・2発言）</description>
-      <category>ペゼシュキアン・イラン・イスラム共和国大統領及びイェッテン・オランダ王国首相との電話会談についての会見</category>
+      <title>MDA協定と防衛装備移転（カタール向け武器輸出） — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_08</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>カタールへの武器輸出でMDA協定の事前同意規定を外為法運用基準で回避する解釈を批判（国会会議録・2026.06.16・9発言）</description>
+      <category>外交防衛委員会</category>
     </item>
     <item>
-      <title>消費者行政担当大臣・副大臣・政務官の所信表明 — 消費者問題に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260528_7931a7_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_7931a7_01</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>黄川田消費者担当大臣が地方消費者行政強化等の施策方針を表明し、津島副大臣と古川政務官が協力姿勢を示した（国会会議録・2026.05.28・3発言）</description>
+      <title>自衛隊駐屯地での安全祈願祭と政教分離・信教の自由 — 外交防衛委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_3a23f2_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_3a23f2_09</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>陸自駐屯地での神式安全祈願祭への隊員参加が事実上の強制で政教分離違反ではと追及（国会会議録・2026.06.16・8発言）</description>
+      <category>外交防衛委員会</category>
+    </item>
+    <item>
+      <title>レコード演奏・伝達権の徴収方法と利用者負担 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_10</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>新設される二次使用料の徴収方法、小規模事業者の負担軽減策、簡便な徴収手段を議論（国会会議録・2026.06.16・11発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>二次使用料の分配の透明性と実演家への還元 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_11</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>指定団体による使用料分配の公平性・透明性確保とサポートミュージシャン等への配慮を議論（国会会議録・2026.06.16・13発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>次期学習指導要領の検討状況 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_12</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>次期学習指導要領の教育課程弾力化、調整授業時数制度、評価見直しの方向性を質疑（国会会議録・2026.06.16・12発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>保護者対応による教員のストレス — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_13</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>保護者対応に起因する教員のメンタルヘルス問題への対応状況を確認（国会会議録・2026.06.16・2発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>非営利上演等の解釈基準の明確化（第38条） — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_14</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>著作権法38条の非営利・無料・無報酬の判断基準が曖昧で現場が混乱している問題を追及（国会会議録・2026.06.16・8発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>権利者登録のハードルと分配の公平性 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_15</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>インディーズ等の権利者登録が困難な現状と、指定団体による包摂的な権利行使の仕組みを確認（国会会議録・2026.06.16・4発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>利用実績把握のデジタル化と分配の透明性確保 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_16</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>サンプリング調査に代わるデジタル技術活用と、徴収・分配の情報公開の必要性を議論（国会会議録・2026.06.16・4発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>コンテンツ産業政策と法改正の効果検証 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_17</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>コンテンツ産業の海外展開目標と、施行後の制度検証・見直しの必要性を議論（国会会議録・2026.06.16・7発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>海外展開と利用者負担・事務負担の軽減 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_18</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>海外での対価還元のための各国団体連携と、利用者の経済的・事務的負担軽減策を議論（国会会議録・2026.06.16・8発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>生成AIと著作権・知財教育 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_19</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>生成AI普及に伴うクリエーター保護の課題と、学校での知財教育強化の必要性を議論（国会会議録・2026.06.16・4発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>クリエーター支援とスポーツ放映権への言及 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_20</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_20</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>若手クリエーター支援策と、スポーツ放映権を巡る国民の視聴機会確保について質疑（国会会議録・2026.06.16・5発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>制度周知と実演家への確実な分配・契約上の課題 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_21</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_21</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>制度の丁寧な周知、分配の正確性確保、事務所との契約上の力関係の課題を議論（国会会議録・2026.06.16・9発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>二次使用料規程の決定プロセスと分配の課題 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_22</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_22</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>使用料規程の協議プロセス、ロングテール作品への配慮、私的録音録画補償金の教訓を検討（国会会議録・2026.06.16・6発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>戦時加算問題 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_23</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_23</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>サンフランシスコ講和条約に基づく著作権の戦時加算義務の解消に向けた課題を確認（国会会議録・2026.06.16・3発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>使用料徴収の店舗負担と報酬請求権の性質 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_24</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_24</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>報酬請求権としての法的性質確認と、物価高騰下での店舗負担・免除措置の必要性を議論（国会会議録・2026.06.16・8発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>実演家の契約環境改善とワンチャンス主義の問題 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_25</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_25</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>実演家の契約書面化の遅れと、映画のワンチャンス主義による二次利用料未払い問題を追及（国会会議録・2026.06.16・7発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>著作権法改正案の附帯決議 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_65bb43_26</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_65bb43_26</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>法案可決に伴い、施行にあたっての特段の配慮事項を定めた附帯決議を提出・採択（国会会議録・2026.06.16・2発言）</description>
+      <category>文教科学委員会</category>
+    </item>
+    <item>
+      <title>税関行政のスマート化と入国旅客対応 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_27</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_27</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>2030年の訪日客増加を見据え税関のデジタル化・電子化を推進する方針を確認（国会会議録・2026.06.16・5発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>地域医療を支える基幹病院の経営支援 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_28</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_28</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>設置主体を問わず地域の基幹病院を支える必要性と経営支援策を議論（国会会議録・2026.06.16・3発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>高齢者の財産管理と金融サービス利用者保護 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_29</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_29</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>認知機能低下高齢者への金融取引対応や資産形成環境の整備の必要性を確認（国会会議録・2026.06.16・3発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>スルガ銀行不正融資問題と処分行員リスト開示 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_30</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_30</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>被害者救済のため処分行員リストの開示を金融庁に求めるも拒否され対立が継続（国会会議録・2026.06.16・9発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>サナエトークン無登録販売問題への対応 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_31</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_31</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>無登録暗号資産の交換・補償行為の違法性や被害実態把握の不十分さを追及（国会会議録・2026.06.16・17発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>変額保険販売問題と金融庁の監督責任 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_32</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_32</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>バブル期融資一体型変額保険の被害拡大を招いた金融機関の対応と行政処分の不備を追及（国会会議録・2026.06.16・14発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>為替介入の効果と外貨準備高の適正水準 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_33</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_33</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>行き過ぎた円安への為替介入効果と莫大な外貨準備高の必要性を検証（国会会議録・2026.06.16・9発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>食料品消費税減税と給付付き税額控除の実現性 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_34</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_34</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>総理公約の食料品消費税減税実現に向けた財務省の姿勢と実行力を問う（国会会議録・2026.06.16・10発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>予算編成改革と補正予算依存からの脱却 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_35</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_35</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>補正予算常態化を脱し当初予算に計画的計上する改革の実効性と財源確保策を議論（国会会議録・2026.06.16・6発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>租税特別措置・基金の見直しと財源確保 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_36</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_36</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>租特・基金の自己点検見直しでどれだけ財源を生み出せるか進捗と実効性を追及（国会会議録・2026.06.16・10発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>日銀金融政策決定と住宅ローン負担への影響 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_37</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_37</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>政策金利1%への利上げ観測と住宅ローン負担・金融政策独立性への影響を議論（国会会議録・2026.06.16・3発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>相続税負担と事業承継・在留資格の関係 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_38</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_38</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>相続税の再分配機能と負担実態、事業承継税制・経営管理在留資格の運用を議論（国会会議録・2026.06.16・10発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>スルガ銀行処分行員リスト開示への再要求 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_39</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_39</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>被害者救済目的での処分行員リスト開示を改めて求め検討継続を要請（国会会議録・2026.06.16・5発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>インボイス制度による個人タクシー事業者への影響 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_40</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_40</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>インボイス未登録の個人タクシーが配車アプリから排除される実態と独禁法上の問題を追及（国会会議録・2026.06.16・6発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>消費税減税の進め方と金融所得課税の見直し — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_41</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_41</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>消費税減税を法案化せず国民会議で議論する手法と金融所得課税強化の是非を問う（国会会議録・2026.06.16・4発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>プライマリーバランス目標と財政運営の考え方 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_42</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_42</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>利払い費を含めないPB目標の妥当性と消費税減税の進め方の遅さを批判（国会会議録・2026.06.16・6発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>スルガ銀行被害者救済スキームとサービサー売却の懸念 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_43</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_43</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>被害者提案の救済スキームにおけるサービサー売却後の返済条件変更や信用情報回復の課題（国会会議録・2026.06.16・13発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>金融商品取引法・資金決済法改正案の提案理由 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_00bb99_44</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_00bb99_44</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>成長資金供給拡大と市場公正性・投資者保護確保を目的とする改正法案の趣旨説明（国会会議録・2026.06.16・1発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
+      <title>企業・団体献金の在り方をめぐる各党意見表明 — 政治改革に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_4feea4_45</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_4feea4_45</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>企業・団体献金の禁止や規制強化について各党が意見表明し、賛否や制度設計を議論（国会会議録・2026.06.16・7発言）</description>
+      <category>政治改革に関する特別委員会</category>
+    </item>
+    <item>
+      <title>令和7年度消費者事故等の情報集約・分析結果報告 — 消費者問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_74d892_46</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_74d892_46</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>消費者安全法に基づく重大事故等・消費者事故等の年間通知件数を政府が報告（国会会議録・2026.06.16・2発言）</description>
       <category>消費者問題に関する特別委員会</category>
     </item>
     <item>
-      <title>緊急事態条項の議論総括と今後の方向性 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_02</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>これまで4年間議論してきた緊急事態条項について、議員任期延長等のピン留めできる部分の仕上げと具体化作業への移行を検討（国会会議録・2026.05.28・6発言）</description>
-      <category>憲法審査会</category>
+      <title>障害者・高齢者等配慮を要する消費者への対応 — 消費者問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_74d892_47</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_74d892_47</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>障害者・高齢者の相談実態把握や見守りネットワーク、アクセシビリティ向上策を議論（国会会議録・2026.06.16・6発言）</description>
+      <category>消費者問題に関する特別委員会</category>
     </item>
     <item>
-      <title>憲法全面改正・創憲の提起 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_03</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>現行憲法はGHQ草案に基づく占領下制定であり、国民の手で憲法を一から作り直す創憲が必要（国会会議録・2026.05.28・1発言）</description>
-      <category>憲法審査会</category>
+      <title>ダークパターン・解約手続の複雑化問題 — 消費者問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_74d892_48</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_74d892_48</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>解約妨害等のダークパターン規制と本人確認手段のデジタル化を議論（国会会議録・2026.06.16・4発言）</description>
+      <category>消費者問題に関する特別委員会</category>
     </item>
     <item>
-      <title>憲法審査会の議論手法と合意可能論点の優先 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_04</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>緊急事態条項と並行して合意形成が可能な論点を取り上げ、審査会の議論を効率的に前進させることを提案（国会会議録・2026.05.28・1発言）</description>
-      <category>憲法審査会</category>
+      <title>子どものデジタル消費（オンラインゲーム等） — 消費者問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_74d892_49</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_74d892_49</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>子供のオンラインゲーム課金等デジタル消費に関する教育・啓発の在り方を議論（国会会議録・2026.06.16・1発言）</description>
+      <category>消費者問題に関する特別委員会</category>
     </item>
     <item>
-      <title>憲法尊重擁護義務と改憲議論への批判 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_05</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>憲法99条の尊重擁護義務に基づき、国民が改憲を求めていない中での国会主導の改憲議論を批判（国会会議録・2026.05.28・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>憲法9条・自衛隊明記の論点整理 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_06</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>憲法9条への自衛隊明記について各会派の意見が示される中、論点整理など具体作業への進展を提案（国会会議録・2026.05.28・2発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>臨時会召集期限と解散権制限 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_07</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>憲法53条の臨時会召集に期限設定することと、衆議院解散権の制限について合意形成の可能性を提起（国会会議録・2026.05.28・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>国民投票法の課題と整備 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_08</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>CM規制等の課題解決を待たずに国民投票法整備を進めることと、投票環境整備や投票の質に関する議論の推進（国会会議録・2026.05.28・3発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>衆参連携と審査会運営の危機感 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_09</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>今国会残り6回という時間的制約の中、衆参両院の連携不足と審査会での議論停滞に対する強い危機感を表明（国会会議録・2026.05.28・2発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>合区解消・地方自治に関する憲法改正 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260528_8c76f9_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260528_8c76f9_10</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>参議院選挙の合区により地域の民意反映が損なわれる問題を解決するため、一票の格差のみに注目しない憲法改正を検討（国会会議録・2026.05.28・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>国家情報会議設置法の成立と意義 — 国家情報会議設置法の成立についての会見</title>
-      <link>https://open-gikai.net/t/t_20260527_0b9a6f_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260527_0b9a6f_01</guid>
-      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>インテリジェンス司令塔機能強化を目指す法案が成立、総理が意義を説明（首相記者会見・2026.05.27・2発言）</description>
-      <category>国家情報会議設置法の成立についての会見</category>
-    </item>
-    <item>
-      <title>委員会の運営組織決定 — 決算行政監視委員会</title>
-      <link>https://open-gikai.net/t/t_20260527_c27676_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260527_c27676_02</guid>
-      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>決算行政監視委員会の理事指名と国政調査承認要求について手続き決定（国会会議録・2026.05.27・2発言）</description>
-      <category>決算行政監視委員会</category>
-    </item>
-    <item>
-      <title>令和6年度予備費使用の事後承諾 — 決算行政監視委員会</title>
-      <link>https://open-gikai.net/t/t_20260527_c27676_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260527_c27676_03</guid>
-      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>原油価格・物価高騰対策及び賃上げ促進対応予備費約9891億円使用の承諾審議（国会会議録・2026.05.27・2発言）</description>
-      <category>決算行政監視委員会</category>
-    </item>
-    <item>
-      <title>国会議員の期末手当支給割合の改正 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260526_db6b83_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260526_db6b83_01</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-      <description>議長・副議長・議員の期末手当を令和6年改正前の特別職給与法水準に一時的に戻す措置（国会会議録・2026.05.26・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>刑事訴訟法改正案の本会議審議 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260526_db6b83_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260526_db6b83_02</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-      <description>内閣提出と議員提出の刑事訴訟法改正案2本の趣旨説明と質疑の議事進行（国会会議録・2026.05.26・3発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>特別委員長報告と採決の進行 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260526_db6b83_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260526_db6b83_03</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-      <description>丹羽特別委員長報告後、討論を経て日程第一・第二の2回の採決を実施（国会会議録・2026.05.26・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>中東情勢を受けた令和８年度補正予算案の概要 — 中東情勢を踏まえた令和８年度補正予算等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260525_985bfd_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260525_985bfd_01</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
-      <description>中東情勢による燃料価格上昇に対応する電気・ガス料金支援等の補正予算案を説明（首相記者会見・2026.05.25・1発言）</description>
-      <category>中東情勢を踏まえた令和８年度補正予算等についての会見</category>
-    </item>
-    <item>
-      <title>補正予算の財政規律と市場信認への懸念 — 中東情勢を踏まえた令和８年度補正予算等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260525_985bfd_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260525_985bfd_02</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
-      <description>長期金利上昇下での補正予算案の市場信認と多額予備費の説明責任を質問（首相記者会見・2026.05.25・2発言）</description>
-      <category>中東情勢を踏まえた令和８年度補正予算等についての会見</category>
-    </item>
-    <item>
-      <title>拉致問題の現状と政府の取組方針 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260522_b1bd41_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260522_b1bd41_01</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <description>拉致問題担当大臣と外務大臣が拉致問題解決への政府方針と現状を報告（国会会議録・2026.05.22・2発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>緊急事態条項のイメージ案全般についての各会派の基本見解 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260521_82699f_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_01</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>緊急事態条項のイメージ案について各会派が基本的な立場と見解を表明（国会会議録・2026.05.21・7発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>オンライン国会の必要性と制度設計 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260521_82699f_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_02</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>緊急時における国会のオンライン開催について過去の議論経過を踏まえた意見（国会会議録・2026.05.21・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>憲法議論の進め方と権力濫用防止への懸念 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260521_82699f_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_03</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>改憲議論の手法への批判と個人の尊厳・自由を守る立場からの基本姿勢（国会会議録・2026.05.21・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>内閣による国家機能維持の具体的制度設計 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260521_82699f_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_04</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>緊急事態における内閣の権限拡大と国家機能維持に関する制度設計の議論（国会会議録・2026.05.21・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>参議院緊急集会の射程と議員任期延長の関係 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260521_82699f_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_05</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>参議院緊急集会の期間・範囲と衆議院議員任期延長のすみ分けの具体論（国会会議録・2026.05.21・2発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>選挙困難事態認定時の内閣解散権と不信任決議の扱い — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260521_82699f_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260521_82699f_06</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>選挙困難事態での内閣の解散権行使と国会の不信任決議権の制限の是非（国会会議録・2026.05.21・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>補正予算編成と緊急経済対策 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_01</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>イラン情勢を受けた燃料・原材料価格高騰への対応として補正予算編成と緊急支援策を議論（国会会議録・2026.05.20・17発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>税制改革と給付金制度 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_02</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>中低所得者支援の税制改革、給付金のデジタル化、消費税軽減税率の簡素化を提案・議論（国会会議録・2026.05.20・4発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>日韓外交関係とアジア戦略 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_03</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>高市総理の韓国首脳会談成果を評価し、パワー・アジア構想による地域連携を確認（国会会議録・2026.05.20・5発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>米中関係と日本外交 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_04</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>トランプ大統領の訪中と米中経済交渉に対する日本の立場とジャパンパッシング懸念を議論（国会会議録・2026.05.20・4発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>平和外交と軍事費問題 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_05</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>世界的な軍事費増大の中で日本の平和外交の役割と専守防衛の基本方針を確認（国会会議録・2026.05.20・3発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>言論封殺と民主主義の危機 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_06</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>東大講演妨害事件を例に言論活動への有形力行使と選挙妨害の法規制強化を提案（国会会議録・2026.05.20・3発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>外国人受入政策と移民問題 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_07</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>外国人労働者受入れ制度の上限設定と国民の不安解消に向けた政策検討を要求（国会会議録・2026.05.20・3発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>外国勢力による影響工作対策 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_08</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>外国系政治家の帰化歴公開と外国勢力の政治工作防止策について議論（国会会議録・2026.05.20・3発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>AI規制政策と社会実装 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260520_4127e4_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_4127e4_09</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>AIの急速な進化に対する規制とリスク管理、社会実装促進のバランスを議論（国会会議録・2026.05.20・2発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>理事の補欠選任 — 国家基本政策委員会</title>
-      <link>https://open-gikai.net/t/t_20260520_b31a9c_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260520_b31a9c_10</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>委員異動に伴う理事3名欠員の補欠選任を委員長指名で実施（国会会議録・2026.05.20・2発言）</description>
-      <category>国家基本政策委員会</category>
-    </item>
-    <item>
-      <title>韓国訪問と日韓首脳会談 — 記者の質問に答える高市総理</title>
-      <link>https://open-gikai.net/t/t_20260519_d35e4e_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260519_d35e4e_01</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>高市総理の韓国訪問と李在明大統領との首脳会談の意義や期待する成果について（首相記者会見・2026.05.19・2発言）</description>
-      <category>記者の質問に答える高市総理</category>
-    </item>
-    <item>
-      <title>週刊誌報道と中傷動画投稿疑惑 — 記者の質問に答える高市総理</title>
-      <link>https://open-gikai.net/t/t_20260519_d35e4e_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260519_d35e4e_02</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>選挙期間中の他候補中傷動画投稿に関する週刊誌報道と総理答弁の整合性について（首相記者会見・2026.05.19・5発言）</description>
-      <category>記者の質問に答える高市総理</category>
-    </item>
-    <item>
-      <title>本会議日程と各委員会採決結果の報告 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260519_b65258_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260519_b65258_03</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>災害対策、安全保障、内閣委員会の各議案について採決結果と反対会派を報告（国会会議録・2026.05.19・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>トランプ米大統領との電話会談内容 — トランプ米国大統領との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260515_29b669_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260515_29b669_01</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>トランプ大統領の中国訪問直後に電話会談を実施、中国関連課題とイラン情勢について意見交換（首相記者会見・2026.05.15・4発言）</description>
-      <category>トランプ米国大統領との電話会談についての会見</category>
-    </item>
-    <item>
-      <title>国家基本政策委員会の設立と運営体制整備 — 国家基本政策委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_c3bc51_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_c3bc51_01</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>委員長就任挨拶、理事選任、国政調査承認要求などの委員会設立手続き（国会会議録・2026.05.14・3発言）</description>
-      <category>国家基本政策委員会</category>
-    </item>
-    <item>
-      <title>本会議日程の委員長報告と各党の賛否状況 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260514_4ca55f_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_4ca55f_02</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>総務・財務金融・国土交通・経済産業委員長からの報告と各党の反対表明（国会会議録・2026.05.14・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>緊急事態条項のイメージ案についての説明 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260514_cc7cd0_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_cc7cd0_03</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>衆議院法制局が作成した緊急事態条項のイメージ案について詳細な説明を実施（国会会議録・2026.05.14・1発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>緊急事態条項イメージ案への各党討議 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260514_cc7cd0_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260514_cc7cd0_04</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <description>自民・公明・維新・国民・参政・みらい・共産各党が緊急事態条項案に対する見解を表明（国会会議録・2026.05.14・7発言）</description>
-      <category>憲法審査会</category>
+      <title>消費者概念の広がりと行政の縦割り問題 — 消費者問題に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260616_74d892_50</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260616_74d892_50</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description>消費者の定義の広さと省庁間の縦割り行政の問題点を指摘（国会会議録・2026.06.16・3発言）</description>
+      <category>消費者問題に関する特別委員会</category>
     </item>
   </channel>
 </rss>

@@ -14808,5 +14808,181 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_d53cdb8a": {
+    "id": "m_d53cdb8a",
+    "name": "山戸義勝",
+    "party": null,
+    "role": "海上保安庁警備救難部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_6a99dd67": {
+    "id": "m_6a99dd67",
+    "name": "堀本善雄",
+    "party": null,
+    "role": "金融庁総合政策局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_c345851e": {
+    "id": "m_c345851e",
+    "name": "山本和徳",
+    "party": null,
+    "role": "中小企業庁次長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_ac775c98": {
+    "id": "m_ac775c98",
+    "name": "原田修吾",
+    "party": null,
+    "role": "国土交通省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "uranoyasuto": {
+    "id": "uranoyasuto",
+    "name": "浦野靖人",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "ryuuhirofumi": {
+    "id": "ryuuhirofumi",
+    "name": "笠浩史",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "saitourie": {
+    "id": "saitourie",
+    "name": "斉藤りえ",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_e164b4a7": {
+    "id": "m_e164b4a7",
+    "name": "日下部英紀",
+    "party": null,
+    "role": "消費者庁次長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "kawamatsushinichirou": {
+    "id": "kawamatsushinichirou",
+    "name": "川松真一朗",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "kawanoyoshihiro": {
+    "id": "kawanoyoshihiro",
+    "name": "河野義博",
+    "party": "中道改革連合・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_bfd007bf": {
+    "id": "m_bfd007bf",
+    "name": "八幡道典",
+    "party": null,
+    "role": "金融庁総合政策局審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "wakasakiyoshi": {
+    "id": "wakasakiyoshi",
+    "name": "若狹清史",
+    "party": "日本維新の会",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "idomasae": {
+    "id": "idomasae",
+    "name": "井戸まさえ",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "nakayamegu": {
+    "id": "nakayamegu",
+    "name": "なかやめぐ",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "tawaradayuuji": {
+    "id": "tawaradayuuji",
+    "name": "俵田祐児",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_ac188775": {
+    "id": "m_ac188775",
+    "name": "千葉一裕",
+    "party": null,
+    "role": "国立研究開発法人農業・食品産業技術総合研究機構理事長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
