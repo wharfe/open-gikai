@@ -131,29 +131,7 @@ def summarize_thread(
     if not speeches:
         return {"speeches": [], "commitments": []}
 
-    formatted = "\n\n---\n\n".join(_format_speech_for_summary(s) for s in speeches)
-
-    user_input = SUMMARY_INPUT_TEMPLATE.format(
-        house=meeting.get("house", ""),
-        meeting=meeting.get("meeting", ""),
-        topic=thread_info.get("topic", ""),
-        speeches=formatted,
-    )
-
-    # Static rules / NG-OK examples / output format are sent as a separate
-    # content block with cache_control. Per-thread variable content (committee
-    # + topic + speeches) lives in the second block.
-    messages = [{
-        "role": "user",
-        "content": [
-            {
-                "type": "text",
-                "text": SUMMARY_INSTRUCTIONS,
-                "cache_control": {"type": "ephemeral"},
-            },
-            {"type": "text", "text": user_input},
-        ],
-    }]
+    messages = build_summary_messages(meeting, thread_info, speeches)
 
     log.info(
         "Summarizing thread '%s' (%d speeches)",
@@ -164,6 +142,10 @@ def summarize_thread(
         return client.messages.create(
             model=model,
             max_tokens=max_tokens,
+            # The summary layer's determinism invariant is temperature=0, and it
+            # has to be sent: omitted, the request runs at the API default and
+            # an identical re-request measurably produced different output.
+            temperature=0,
             # Sonnet 5 enables adaptive thinking when omitted; disable it to keep
             # the full max_tokens budget for JSON output and preserve
             # deterministic, thinking-free behavior (matches the retired
@@ -217,6 +199,39 @@ def _log_cache_usage(response) -> None:
 # Batch API: build, submit, poll, fetch
 # ---------------------------------------------------------------------------
 
+def build_summary_messages(
+    meeting: dict,
+    thread_info: dict,
+    speeches: List[dict],
+) -> List[dict]:
+    """Messages for one thread's summary, shared by the sync and batch paths.
+
+    Same speech, same bytes, whether it went through the daily run, ``--batch``,
+    or an operator's recovery run — see the note above the builders in
+    grouper.py for why that matters and how it was lost before.
+    """
+    user_input = SUMMARY_INPUT_TEMPLATE.format(
+        house=meeting.get("house", ""),
+        meeting=meeting.get("meeting", ""),
+        topic=thread_info.get("topic", ""),
+        speeches="\n\n---\n\n".join(_format_speech_for_summary(s) for s in speeches),
+    )
+    # Static rules / NG-OK examples / output format are sent as a separate
+    # content block with cache_control. Per-thread variable content (committee
+    # + topic + speeches) lives in the second block.
+    return [{
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": SUMMARY_INSTRUCTIONS,
+                "cache_control": {"type": "ephemeral"},
+            },
+            {"type": "text", "text": user_input},
+        ],
+    }]
+
+
 def build_summary_request(
     meeting: dict,
     thread_info: dict,
@@ -228,35 +243,20 @@ def build_summary_request(
 
     Returns the request dict shape expected by client.messages.batches.create().
     """
-    formatted = "\n\n---\n\n".join(_format_speech_for_summary(s) for s in speeches)
-
-    user_input = SUMMARY_INPUT_TEMPLATE.format(
-        house=meeting.get("house", ""),
-        meeting=meeting.get("meeting", ""),
-        topic=thread_info.get("topic", ""),
-        speeches=formatted,
-    )
-
     return {
         "custom_id": custom_id,
         "params": {
             "model": model,
             "max_tokens": SUMMARY_MAX_TOKENS,
+            # See summarize_thread. temperature is inside compute_input_hash, so
+            # adding it here invalidated every pre-existing sidecar's hashes —
+            # that is why batch_state.SCHEMA_VERSION was bumped alongside.
+            "temperature": 0,
             # See summarize_thread: disable Sonnet 5 adaptive thinking so the
             # batch output isn't truncated and stays deterministic.
             "thinking": {"type": "disabled"},
             "system": SUMMARY_SYSTEM,
-            "messages": [{
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": SUMMARY_INSTRUCTIONS,
-                        "cache_control": {"type": "ephemeral"},
-                    },
-                    {"type": "text", "text": user_input},
-                ],
-            }],
+            "messages": build_summary_messages(meeting, thread_info, speeches),
         },
     }
 

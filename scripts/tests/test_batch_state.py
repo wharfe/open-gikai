@@ -49,12 +49,15 @@ def test_hash_excluded_params_stays_narrow():
 def test_is_current_schema_rejects_older_and_missing_versions():
     assert bs.is_current_schema(bs.new_sidecar("2026-05-14", "claude-x")) is True
     assert bs.is_current_schema({"schema_version": 1}) is False
+    # v2 predates temperature=0 on summary requests, so its hashes cover a
+    # smaller param set than ours and mismatch just like v1's.
+    assert bs.is_current_schema({"schema_version": 2}) is False
     assert bs.is_current_schema({}) is False
 
 
 def test_new_sidecar_shape():
     sc = bs.new_sidecar("2026-05-14", "claude-x")
-    assert sc["schema_version"] == 2
+    assert sc["schema_version"] == bs.SCHEMA_VERSION
     assert sc["date"] == "2026-05-14"
     assert sc["model"] == "claude-x"
     assert sc["retry_count"] == 0

@@ -18,10 +18,13 @@ from typing import Any, Optional
 
 PENDING_DIR = os.path.join("data", "pending-batches")
 # v2 narrowed compute_input_hash to the content-determining params, so v1 hashes
-# are not comparable with ours. Bumping alone would be inert — the guard that
-# gives this number teeth is is_current_schema(), which callers must consult
-# before trusting a sidecar's input_hashes.
-SCHEMA_VERSION = 2
+# are not comparable with ours. v3 pinned temperature=0 on summary requests: the
+# hash *function* is unchanged, but every request now hashes a param v2 requests
+# did not carry, so v2 hashes mismatch just as surely. Bumping alone would be
+# inert — the guard that gives this number teeth is is_current_schema(), which
+# callers must consult before trusting a sidecar's input_hashes.
+# Bump this whenever compute_input_hash OR the set of params fed to it changes.
+SCHEMA_VERSION = 3
 
 # Params excluded from the input hash. The bar is deliberately narrow: a param
 # belongs here ONLY if it cannot change a single token the model emits before the
@@ -29,8 +32,8 @@ SCHEMA_VERSION = 2
 # temperature is 0, so a response that fit is byte-identical at a higher one) and
 # excluding it is what lets a truncated request be re-issued at a higher ceiling
 # without invalidating the whole manifest.
-# Anything that steers generation — model, system, messages, thinking, and any
-# future temperature/top_p/top_k/stop_sequences — MUST stay hashed, or a resume
+# Anything that steers generation — model, system, messages, thinking, temperature,
+# and any future top_p/top_k/stop_sequences — MUST stay hashed, or a resume
 # could assemble a result that a re-run would not reproduce. Enforced by
 # test_hash_excluded_params_stays_narrow.
 HASH_EXCLUDED_PARAMS = frozenset({"max_tokens"})

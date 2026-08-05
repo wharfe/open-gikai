@@ -14,8 +14,141 @@ from .prompts import (
     OUTCOME_SYSTEM,
     OUTCOME_PROMPT,
 )
+# Not summary-specific despite living there: it is the rule for every
+# synchronous messages.create() in this package. See the comment above its
+# definition for why omitting a timeout is a ValueError, not a slow request.
+# summarizer imports only .prompts, so this direction adds no cycle.
+from .summarizer import sync_call_kwargs
 
 log = logging.getLogger("pipeline.grouper")
+
+# Ceiling for a grouping response. The synchronous path can detect truncation
+# and retry at GROUPING_RETRY_MAX_TOKENS; the Batches API cannot (a truncated
+# result is only visible once the whole batch is back), so batch-mode callers
+# must submit at the retry ceiling from the start.
+GROUPING_MAX_TOKENS = 8192
+GROUPING_RETRY_MAX_TOKENS = 16384
+# Outcome extraction emits a handful of short fields, not a per-speech list, so
+# it does not share the growth-with-speech-count problem that truncated summaries.
+OUTCOME_MAX_TOKENS = 1024
+
+
+# ---------------------------------------------------------------------------
+# Shared request construction
+#
+# The synchronous path (group_meeting / extract_meeting_outcome) and the
+# Batches API path (scripts/batch.py, scripts/bulk_batch.py) MUST build byte
+# -identical prompts: the same speech has to summarize to the same text whether
+# it went through the daily run or an operator's recovery run, or the
+# determinism invariant in CLAUDE.md is only true of one of them. They used to
+# assemble their own prompts side by side, and drifted — batch.py was still
+# importing prompt constants that prompts.py stopped exporting when grouping
+# moved to cached instruction blocks, so both recovery scripts had been dead on
+# import for months while looking maintained. One builder each, used by both.
+# ---------------------------------------------------------------------------
+
+def build_grouping_messages(meeting: dict) -> Optional[List[dict]]:
+    """Messages for one meeting's grouping call, or None if nothing to group."""
+    substantive = [s for s in meeting.get("speeches", []) if not _is_procedural(s)]
+    if not substantive:
+        return None
+
+    user_input = GROUPING_INPUT_TEMPLATE.format(
+        house=meeting.get("house", ""),
+        meeting=meeting.get("meeting", ""),
+        date=meeting.get("date", ""),
+        speeches="\n\n".join(_format_speech_for_grouping(s) for s in substantive),
+    )
+    # Static rules + format spec are sent as a separate content block with
+    # cache_control so subsequent calls within ~5min only pay ~10% of input
+    # tokens for this prefix. See pipeline/prompts.py for details.
+    return [{
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": GROUPING_INSTRUCTIONS,
+                "cache_control": {"type": "ephemeral"},
+            },
+            {"type": "text", "text": user_input},
+        ],
+    }]
+
+
+def build_outcome_messages(meeting: dict) -> Optional[List[dict]]:
+    """Messages for one meeting's outcome call, or None if it needs no API call.
+
+    Returns None both when the pattern matcher finds no resolution and when it
+    finds one but no procedural speech is long enough to summarize — the two
+    conditions callers previously re-implemented around this prompt.
+    """
+    speeches = meeting.get("speeches", [])
+    if not _extract_outcome_by_pattern(speeches).get("resolution"):
+        return None
+
+    procedural = []
+    for s in speeches:
+        combined = (s.get("speakerRole", "") or "") + (s.get("speakerPosition", "") or "")
+        text = s.get("speech", "").strip()
+        is_chair = (
+            any(kw in combined for kw in ("委員長", "会長", "議長", "主査"))
+            or any(kw in text[:30] for kw in ("委員長", "会長", "議長", "主査"))
+        )
+        if (is_chair or "附帯決議" in text) and len(text) > 50:
+            procedural.append(f"[{s.get('speaker', '')}] {text}")
+    if not procedural:
+        return None
+
+    prompt = OUTCOME_PROMPT.format(
+        house=meeting.get("house", ""),
+        meeting=meeting.get("meeting", ""),
+        date=meeting.get("date", ""),
+        # Last 10 to avoid token overflow.
+        procedural_speeches="\n\n".join(procedural[-10:]),
+    )
+    return [{"role": "user", "content": prompt}]
+
+
+def build_grouping_request(meeting: dict, custom_id: str, model: str) -> Optional[dict]:
+    """Batches API request for one meeting's grouping, or None if nothing to group.
+
+    Submits at GROUPING_RETRY_MAX_TOKENS rather than GROUPING_MAX_TOKENS: the
+    synchronous path re-issues at that ceiling when it sees stop_reason ==
+    "max_tokens", and a batch request gets no such second chance — truncation is
+    only visible once the whole batch is back. A ceiling is not billed unused.
+    """
+    messages = build_grouping_messages(meeting)
+    if messages is None:
+        return None
+    return {
+        "custom_id": custom_id,
+        "params": {
+            "model": model,
+            "max_tokens": GROUPING_RETRY_MAX_TOKENS,
+            "temperature": 0,
+            "thinking": {"type": "disabled"},
+            "system": GROUPING_SYSTEM,
+            "messages": messages,
+        },
+    }
+
+
+def build_outcome_request(meeting: dict, custom_id: str, model: str) -> Optional[dict]:
+    """Batches API request for one meeting's outcome, or None if not needed."""
+    messages = build_outcome_messages(meeting)
+    if messages is None:
+        return None
+    return {
+        "custom_id": custom_id,
+        "params": {
+            "model": model,
+            "max_tokens": OUTCOME_MAX_TOKENS,
+            "temperature": 0,
+            "thinking": {"type": "disabled"},
+            "system": OUTCOME_SYSTEM,
+            "messages": messages,
+        },
+    }
 
 
 def _is_procedural(speech: dict) -> bool:
@@ -96,51 +229,26 @@ def group_meeting(
     Returns:
         List of thread dicts with keys: topic, topicTag, topicColor, summary, speechOrders
     """
-    speeches = meeting.get("speeches", [])
-
-    # Filter out procedural speeches and format for prompt
-    substantive = [s for s in speeches if not _is_procedural(s)]
-    if not substantive:
+    messages = build_grouping_messages(meeting)
+    if messages is None:
         log.info("No substantive speeches in %s", meeting.get("meetingId", "?"))
         return []
 
-    formatted = "\n\n".join(_format_speech_for_grouping(s) for s in substantive)
-
-    user_input = GROUPING_INPUT_TEMPLATE.format(
-        house=meeting.get("house", ""),
-        meeting=meeting.get("meeting", ""),
-        date=meeting.get("date", ""),
-        speeches=formatted,
-    )
-
-    # Static rules + format spec are sent as a separate content block with
-    # cache_control so subsequent calls within ~5min only pay ~10% of input
-    # tokens for this prefix. See pipeline/prompts.py for details.
-    messages = [{
-        "role": "user",
-        "content": [
-            {
-                "type": "text",
-                "text": GROUPING_INSTRUCTIONS,
-                "cache_control": {"type": "ephemeral"},
-            },
-            {"type": "text", "text": user_input},
-        ],
-    }]
-
-    log.info(
-        "Grouping %s (%d substantive speeches)",
-        meeting.get("meetingId", "?"), len(substantive),
-    )
+    log.info("Grouping %s", meeting.get("meetingId", "?"))
 
     response = client.messages.create(
         model=model,
-        max_tokens=8192,
+        max_tokens=GROUPING_MAX_TOKENS,
+        # temperature=0 is the summary layer's determinism invariant, not a
+        # default we can rely on: omitting it runs at the API default (1.0) and
+        # an identical re-request measurably produced different output.
+        temperature=0,
         # Disable Sonnet 5 adaptive thinking (ON when omitted) so the JSON output
         # keeps the full token budget and stays deterministic. See summarize.py.
         thinking={"type": "disabled"},
         system=GROUPING_SYSTEM,
         messages=messages,
+        **sync_call_kwargs(GROUPING_MAX_TOKENS),
     )
 
     # Check if response was truncated
@@ -149,10 +257,16 @@ def group_meeting(
                      meeting.get("meetingId", "?"))
         response = client.messages.create(
             model=model,
-            max_tokens=16384,
+            max_tokens=GROUPING_RETRY_MAX_TOKENS,
+            temperature=0,
             thinking={"type": "disabled"},
             system=GROUPING_SYSTEM,
             messages=messages,
+            # Without this the SDK refuses this call outright under an opus-4.x
+            # model id (per-model non-streaming cap is 8192) — a bare ValueError
+            # before any request is sent, on the retry path that exists to
+            # rescue a truncated response.
+            **sync_call_kwargs(GROUPING_RETRY_MAX_TOKENS),
         )
 
     _log_cache_usage(response, "grouping")
@@ -179,10 +293,12 @@ def _log_cache_usage(response, phase: str) -> None:
 # Meeting-level outcome extraction
 # ---------------------------------------------------------------------------
 
-def _extract_outcome_by_pattern(speeches: List[dict]) -> Optional[dict]:
+def _extract_outcome_by_pattern(speeches: List[dict]) -> dict:
     """Try to extract vote result from procedural text using regex patterns.
 
-    Returns outcome dict if found, None if API call is needed.
+    Always returns the outcome dict; ``result``/``resolution`` are None when no
+    pattern matched. (It never returns None — callers guarding on falsiness are
+    guarding against a case that cannot happen.)
     """
     import re
 
@@ -237,39 +353,22 @@ def extract_meeting_outcome(
 
     Uses pattern matching first, falls back to API for resolution details.
     """
-    speeches = meeting.get("speeches", [])
-    outcome = _extract_outcome_by_pattern(speeches)
+    outcome = _extract_outcome_by_pattern(meeting.get("speeches", []))
 
-    if not outcome:
-        return {"result": None, "resolution": None, "status": "ongoing"}
-
-    # If there's a resolution, use API to summarize it
-    if outcome.get("resolution") and client:
-        procedural = []
-        for s in speeches:
-            role = s.get("speakerRole", "") or ""
-            position = s.get("speakerPosition", "") or ""
-            text = s.get("speech", "").strip()
-            combined = role + position
-            is_chair = any(kw in combined for kw in ("委員長", "会長", "議長", "主査")) or any(kw in text[:30] for kw in ("委員長", "会長", "議長", "主査"))
-            if (is_chair or "附帯決議" in text) and len(text) > 50:
-                procedural.append(f"[{s.get('speaker', '')}] {text}")
-
-        if procedural:
-            prompt = OUTCOME_PROMPT.format(
-                house=meeting.get("house", ""),
-                meeting=meeting.get("meeting", ""),
-                date=meeting.get("date", ""),
-                procedural_speeches="\n\n".join(procedural[-10:]),  # last 10 to avoid token overflow
-            )
-
+    # If there's a resolution, use API to summarize it. build_outcome_messages
+    # re-checks that condition, and returns None when there is nothing to ask.
+    if client:
+        messages = build_outcome_messages(meeting)
+        if messages is not None:
             try:
                 response = client.messages.create(
                     model=model,
-                    max_tokens=1024,
+                    max_tokens=OUTCOME_MAX_TOKENS,
+                    temperature=0,
                     thinking={"type": "disabled"},
                     system=OUTCOME_SYSTEM,
-                    messages=[{"role": "user", "content": prompt}],
+                    messages=messages,
+                    **sync_call_kwargs(OUTCOME_MAX_TOKENS),
                 )
                 api_result = _parse_json_response(response.content[0].text)
                 # Merge: keep pattern-match result but use API resolution text

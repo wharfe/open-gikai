@@ -35,9 +35,16 @@ The summary pipeline (`scripts/summarize.py` + `scripts/pipeline/grouper.py` + `
 
 1. **Stateless**: No Memory tool, no carrying state across runs. A speech summarized today must produce the same output if re-summarized tomorrow on the same model.
 2. **Deterministic**: temperature=0, no agent loops, no tool calls that branch on intermediate results. Same input → same output.
-   ⚠️ **Currently violated — see #47.** The summary and grouping calls never pass `temperature`, so they
-   run at the API default. Measured proof: an identical re-request produced 8,527 then 9,603 output tokens.
-   This is a statement of intent the code must be brought up to, not a description of today's behavior.
+   `temperature=0` must be **sent explicitly** on every summary/grouping/outcome request — omitting it runs at
+   the API default (this was #47: an identical re-request produced 8,527 then 9,603 output tokens).
+   Every request goes through one of three builders — `grouper.build_grouping_request` /
+   `build_outcome_request` and `summarizer.build_summary_request` — and the synchronous paths reuse the same
+   message builders, so the daily run and a manual recovery run send byte-identical prompts. Build a request
+   by hand and that guarantee is gone. `scripts/tests/test_determinism.py` guards both halves: it calls the
+   builders for real values, and separately AST-sweeps every summary-layer module for a hand-rolled request
+   that bypassed them. The recurring failure is a sibling script drifting from the rule, so it also *imports*
+   `batch.py` / `bulk_batch.py` — they had been dead on import for months while a source-reading test
+   reported them compliant.
 3. **Prompt-only behavior**: All summarization rules live in `prompts.py` and are open-source. No retrieval-augmented prompts, no examples sourced from prior runs.
 4. **No conversational UI inside OpenGIKAI's domain**: Chat answers are non-deterministic and break the "Claude AI summary" transparency label. External MCP server (separate Vercel project) is fine because clients bring their own LLM and we expose only deterministic JSON.
 
@@ -46,7 +53,9 @@ Auxiliary information layers (news enrichment, members extraction, sitemap gener
 
 `src/lib/ministry.mjs` is a related auxiliary module: it deterministically maps a government-witness (政府参考人) member to a ministry from their `role` string (no LLM), powering the `/gov` hub pages, member-page breadcrumbs, sitemap-gov, and IndexNow. It is **plain ESM (+ `ministry.d.mts`)** rather than TS so the node-run build scripts (`scripts/generate-sitemap.mjs`, `scripts/notify-indexnow.mjs`) can import it — the repo has no tsx/ts-node. Politicians are excluded inside its API (m_-prefixed IDs only + political-title blocklist; `rank` is NOT used — it misclassifies bureaucrats). `data/lexdiff-mapping.json` (outbound law cross-links, consumed by `summarize.py`) is similarly auxiliary.
 
-`scripts/pipeline/batch_state.py` is auxiliary persistence, not summary logic: it records an in-flight summary batch's id + grouping manifest (with per-thread `input_hash`) to a committed sidecar (`data/pending-batches/{date}.json`) so a timed-out batch resumes on a later run and assembles **without re-grouping** — same input → same output, so it upholds the invariants above rather than affecting them. The hash covers the content params only (`max_tokens` is excluded via `HASH_EXCLUDED_PARAMS`): a ceiling cannot change a response that fit, and hashing it made re-issuing a truncated request impossible. Anything that steers generation must stay hashed.
+`scripts/pipeline/batch_state.py` is auxiliary persistence, not summary logic: it records an in-flight summary batch's id + grouping manifest (with per-thread `input_hash`) to a committed sidecar (`data/pending-batches/{date}.json`) so a timed-out batch resumes on a later run and assembles **without re-grouping** — same input → same output, so it upholds the invariants above rather than affecting them. The hash covers the content params only (`max_tokens` is excluded via `HASH_EXCLUDED_PARAMS`): a ceiling cannot change a response that fit, and hashing it made re-issuing a truncated request impossible. Anything that steers generation must stay hashed. **Bump `SCHEMA_VERSION` whenever `compute_input_hash` or the set of params fed to it changes** — pinning `temperature` took it to v3, since v2 hashes cover a param set ours no longer matches. `test_summary_request_param_set_is_pinned` fails when the param set moves, because forgetting the bump does not surface as a version error: it surfaces as per-thread `input_hash mismatch — raw/prompt changed`, which sends the investigator to the raw data while the retry budget burns down to permanent loss.
+
+`is_current_schema` compares for equality, so a version change is a refusal in **both** directions: merging one while a sidecar is in flight, or reverting one after a sidecar was written, hard-fails `--collect-pending` and therefore skips the whole Summarize step every day until someone removes the file by hand — and the batch's results expire in ~29 days. **Land a `SCHEMA_VERSION` change only when `git ls-files data/pending-batches/` is empty.**
 
 When adding any new Claude-using script, ask yourself: **does this change what a speech is summarized to say?** If yes → must obey the invariants above. If no → reasonable freedom (still keep it deterministic where practical).
 

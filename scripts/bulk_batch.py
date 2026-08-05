@@ -29,16 +29,11 @@ load_dotenv()
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from pipeline.prompts import (
-    GROUPING_SYSTEM, GROUPING_PROMPT,
-    OUTCOME_SYSTEM, OUTCOME_PROMPT,
-    SUMMARY_SYSTEM, SUMMARY_PROMPT,
-)
 from pipeline.grouper import (
-    _is_procedural, _truncate_speech, _format_speech_for_grouping,
     _parse_json_response, _extract_outcome_by_pattern,
+    build_grouping_request, build_outcome_request,
 )
-from pipeline.summarizer import _format_speech_for_summary
+from pipeline.summarizer import build_summary_request
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
 from batch import (
@@ -128,60 +123,14 @@ def build_mega_phase1(dates: list[str], model: str) -> Tuple[list[dict], dict]:
 
         for meeting in meetings:
             meeting_id = meeting.get("meetingId", "unknown")
-            speeches = meeting.get("speeches", [])
-
-            # Grouping request
-            substantive = [s for s in speeches if not _is_procedural(s)]
-            if substantive:
-                formatted = "\n\n".join(_format_speech_for_grouping(s) for s in substantive)
-                prompt = GROUPING_PROMPT.format(
-                    house=meeting.get("house", ""),
-                    meeting=meeting.get("meeting", ""),
-                    date=meeting.get("date", ""),
-                    speeches=formatted,
-                )
-                all_requests.append({
-                    "custom_id": f"group_{_safe_id(meeting_id)}",
-                    "params": {
-                        "model": model,
-                        "max_tokens": 8192,
-                        "thinking": {"type": "disabled"},
-                        "system": GROUPING_SYSTEM,
-                        "messages": [{"role": "user", "content": prompt}],
-                    },
-                })
-
-            # Outcome request
-            outcome = _extract_outcome_by_pattern(speeches)
-            if outcome and outcome.get("resolution"):
-                procedural = []
-                for s in speeches:
-                    role = s.get("speakerRole", "") or ""
-                    position = s.get("speakerPosition", "") or ""
-                    text = s.get("speech", "").strip()
-                    combined = role + position
-                    is_chair = any(kw in combined for kw in ("委員長", "会長", "議長", "主査")) or \
-                               any(kw in text[:30] for kw in ("委員長", "会長", "議長", "主査"))
-                    if (is_chair or "附帯決議" in text) and len(text) > 50:
-                        procedural.append(f"[{s.get('speaker', '')}] {text}")
-
-                if procedural:
-                    prompt = OUTCOME_PROMPT.format(
-                        house=meeting.get("house", ""),
-                        meeting=meeting.get("meeting", ""),
-                        date=meeting.get("date", ""),
-                        procedural_speeches="\n\n".join(procedural[-10:]),
-                    )
-                    all_requests.append({
-                        "custom_id": f"outcome_{_safe_id(meeting_id)}",
-                        "params": {
-                            "model": model,
-                            "max_tokens": 1024,
-                            "thinking": {"type": "disabled"},
-                            "system": OUTCOME_SYSTEM,
-                            "messages": [{"role": "user", "content": prompt}],
-                        },
-                    })
+            # Same builders as the daily pipeline — see build_phase1_requests.
+            for build, prefix in (
+                (build_grouping_request, "group"),
+                (build_outcome_request, "outcome"),
+            ):
+                request = build(meeting, f"{prefix}_{_safe_id(meeting_id)}", model)
+                if request is not None:
+                    all_requests.append(request)
 
     return all_requests, date_meetings
 
@@ -210,25 +159,10 @@ def build_mega_phase2(
                 if not thread_speeches:
                     continue
 
-                formatted = "\n\n---\n\n".join(
-                    _format_speech_for_summary(s) for s in thread_speeches
-                )
-                prompt = SUMMARY_PROMPT.format(
-                    house=meeting.get("house", ""),
-                    meeting=meeting.get("meeting", ""),
-                    topic=thread_info.get("topic", ""),
-                    speeches=formatted,
-                )
-                all_requests.append({
-                    "custom_id": f"summary_{_safe_id(meeting_id)}_{i:03d}",
-                    "params": {
-                        "model": model,
-                        "max_tokens": 8192,
-                        "thinking": {"type": "disabled"},
-                        "system": SUMMARY_SYSTEM,
-                        "messages": [{"role": "user", "content": prompt}],
-                    },
-                })
+                all_requests.append(build_summary_request(
+                    meeting, thread_info, thread_speeches,
+                    f"summary_{_safe_id(meeting_id)}_{i:03d}", model,
+                ))
 
     return all_requests
 
