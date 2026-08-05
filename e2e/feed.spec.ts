@@ -7,8 +7,21 @@ test.describe("Feed page", () => {
     const cards = page.locator('a[href^="/t/"]');
     await expect(cards.first()).toBeVisible();
 
-    // Check for a committee name in thread cards
-    await expect(page.getByText("委員会", { exact: false }).first()).toBeVisible();
+    // Assert the card's shape, not a specific meeting name. The feed renders
+    // whatever is newest in data/threads/, and that is not always a 委員会: a
+    // run of kantei press conferences pushed every committee off the first
+    // screen and turned this into a red CI on an unrelated commit.
+    //
+    // Still content assertions, not just "an element exists": toHaveText(/\S/)
+    // rather than not.toBeEmpty() so a card rendering only whitespace or nested
+    // empty wrappers fails, and the summary check keeps the original test's
+    // real point — that Japanese body text reaches the page at all.
+    const firstCard = cards.first();
+    await expect(firstCard.locator("div").first()).toHaveText(/\S/);
+    await expect(
+      firstCard.getByText(/^\d{4}[./-]\d{2}[./-]\d{2}$/).first()
+    ).toBeVisible();
+    await expect(firstCard.locator("p").first()).toHaveText(/[ぁ-んァ-ン一-龯]/);
   });
 
   test("displays header with OpenGIKAI branding", async ({ page }) => {
