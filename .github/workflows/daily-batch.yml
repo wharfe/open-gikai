@@ -31,6 +31,24 @@ jobs:
       LOOKBACK_DAYS: ${{ inputs.lookback_days || '30' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The stalled-pipeline check below counts consecutive zero-thread runs
+          # in `git log -n 10`. The default shallow clone (depth 1) leaves at
+          # most this run's own commits reachable, so that counter could never
+          # pass 1 and its `>= 7` warning has never once fired. Enough depth to
+          # see the 40-commit window it scans (data commits are interleaved with
+          # chore ones, so 10 data commits need well over 10 of history).
+          fetch-depth: 60
+
+      # Must run before ANY step that commits. summarize.py early-commits the
+      # pending-batch sidecar mid-poll (its safety net against the job being
+      # killed with a batch in flight); with the identity set later, in the
+      # commit step, that git commit exited 128 on every date and the net was
+      # never actually armed in CI.
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - uses: actions/setup-python@v5
         with:
@@ -183,8 +201,7 @@ jobs:
         env:
           NEW_THREADS: ${{ steps.metrics.outputs.new_threads }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Identity is configured once at the top of the job (see above).
           # public/sitemap*.xml covers sitemap.xml, sitemap-*.xml and sitemap_index.xml
           # — all variants emitted by generate-sitemap.mjs.
           mkdir -p data/pending-batches
@@ -197,8 +214,28 @@ jobs:
           else
             DATE_TAG=$(date -u +%Y-%m-%d)
             git commit -m "data: daily-batch run ${DATE_TAG} (+${NEW_THREADS} threads)"
-            git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+          # Push on "branch is ahead", NOT on "we just committed". summarize.py
+          # early-commits the pending-batch sidecar and pushes it itself; when
+          # that push loses a race the commit is left local, and gating the push
+          # on a staged diff would discard it with the runner — orphaning a
+          # batch that is already submitted and paid for, which is the exact
+          # outcome the sidecar exists to prevent.
+          # origin/<branch> rather than @{u}: actions/checkout's `-B` does not
+          # reliably leave an upstream configured. Capture into a variable and
+          # fail loudly if the ref cannot be resolved — inlining this in `if`
+          # would make the count empty, `[ "" -gt 0 ]` return 2, the condition
+          # read as false (conditions are exempt from `bash -e`), and the day's
+          # commit die with the runner while the step reported success.
+          if ! AHEAD=$(git rev-list --count "origin/${GITHUB_REF_NAME}..HEAD"); then
+            echo "::error::cannot resolve origin/${GITHUB_REF_NAME} — refusing to skip the push"
+            exit 1
+          fi
+          if [ "$AHEAD" -gt 0 ]; then
+            git push
+          else
+            echo "Nothing to push"
           fi
 
       - name: Notify IndexNow
@@ -219,6 +256,18 @@ jobs:
       - name: Detect stalled pipeline
         id: stall
         run: |
+          # Only this workflow's data commits count as "runs". summarize.py also
+          # commits `chore(pipeline): persist pending batch <date>` mid-poll, and
+          # that commit appears precisely when a batch is stuck — i.e. in the
+          # regime this check exists to catch. Left in the stream, one such
+          # commit breaks the loop on its first iteration and pins STALLED at 0.
+          #
+          # Filtered with `grep` on `%s`, NOT with `git log --grep`: --grep
+          # matches anywhere in the commit message, so a commit merely quoting
+          # "data: daily-batch run" in its body would be selected and its
+          # unrelated subject printed. `tformat` (not `format`) terminates the
+          # last line, which `while read` would otherwise drop — that alone cost
+          # this counter one run of every window.
           STALLED=0
           while read -r line; do
             if echo "$line" | grep -q '(+0 threads)'; then
@@ -226,7 +275,8 @@ jobs:
             else
               break
             fi
-          done < <(git log --pretty=format:"%s" -n 10)
+          done < <(git log -n 40 --pretty=tformat:"%s" \
+                     | grep '^data: daily-batch run ' | head -n 10)
           echo "consecutive_zero_runs=$STALLED" >> "$GITHUB_OUTPUT"
           if [ "$STALLED" -ge 7 ]; then
             echo "::warning::Pipeline has produced 0 new threads for $STALLED consecutive runs — investigate fetchers"

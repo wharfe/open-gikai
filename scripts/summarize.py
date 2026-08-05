@@ -61,19 +61,75 @@ def _utcnow_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _annotate(level: str, message: str) -> None:
+    """Emit a GitHub Actions annotation alongside the log line.
+
+    A plain log call is invisible in a green run's summary, which is how a dead
+    safety net went unnoticed for months. ``level`` is "error" or "warning" and
+    should match the log level, so the two never disagree about severity.
+    """
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print(f"::{level}::{message}", flush=True)
+
+
 def _git_commit_sidecar(path: str, date_str: str) -> None:
     """Commit + push just the sidecar (CI only) so the in-flight batch survives
-    a later kill or set -e failure before the run's final commit."""
+    a later kill or set -e failure before the run's final commit.
+
+    The three git steps fail for genuinely different reasons, so they are
+    reported separately rather than as one "commit failed":
+
+    * ``add``/``commit`` failing means the net is not armed at all. The batch is
+      already submitted and paid for, so if the job is then killed its results
+      are unrecoverable — ``::error::``, matching the severity the stale-schema
+      guard in collect_pending_batches already uses for an operator-must-act
+      condition.
+    * ``push`` failing (typically losing a race to a concurrent push) leaves the
+      sidecar committed locally, and the workflow's final step pushes on "branch
+      is ahead" rather than on "we just committed", so that commit still leaves
+      the runner. Warning, not error.
+
+    Deliberately non-fatal in every branch. The batch is already submitted, and
+    the overwhelmingly likely outcome is that this same run polls it to
+    completion and writes the threads; aborting here to force a red run would
+    turn "the net is not armed" into a guaranteed loss of a day that would
+    otherwise have succeeded. The ``::error::`` annotation is what makes it
+    impossible to miss in an otherwise-green run.
+    """
     try:
         subprocess.run(["git", "add", path], check=True)
+    except subprocess.CalledProcessError as e:
+        _report_dead_net("stage", date_str, e)
+        return
+
+    try:
         subprocess.run(
             ["git", "commit", "-m", f"chore(pipeline): persist pending batch {date_str}"],
             check=True,
         )
-        subprocess.run(["git", "push"], check=True)
-        log.info("Early-committed sidecar %s", path)
     except subprocess.CalledProcessError as e:
-        log.warning("Early sidecar commit failed (%s) — relying on final commit", e)
+        _report_dead_net("commit", date_str, e)
+        return
+
+    try:
+        subprocess.run(["git", "push"], check=True)
+    except subprocess.CalledProcessError as e:
+        log.warning("Early sidecar push failed for %s (%s) — committed locally, "
+                    "relying on the final push", date_str, e)
+        _annotate("warning", f"Early sidecar push failed for {date_str} (committed locally)")
+        return
+
+    log.info("Early-committed sidecar %s", path)
+
+
+def _report_dead_net(step: str, date_str: str, e: Exception) -> None:
+    log.error("Early sidecar %s FAILED for %s (%s) — the in-flight batch is NOT "
+              "protected against this job being killed", step, date_str, e)
+    _annotate(
+        "error",
+        f"Early sidecar {step} failed for {date_str}: the submitted summary "
+        f"batch will be orphaned if this job dies before the final commit",
+    )
 
 
 # ---------------------------------------------------------------------------
