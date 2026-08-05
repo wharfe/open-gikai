@@ -25,9 +25,36 @@ def test_compute_input_hash_changes_with_prompt():
     assert bs.compute_input_hash(p1) != bs.compute_input_hash(p2)
 
 
+def test_compute_input_hash_ignores_max_tokens():
+    """A truncated request must be re-issuable at a higher ceiling without
+    invalidating the manifest it belongs to."""
+    base = {"model": "m", "system": "S", "messages": [{"role": "user", "content": "x"}]}
+    small = bs.compute_input_hash({**base, "max_tokens": 8192})
+    large = bs.compute_input_hash({**base, "max_tokens": 32768})
+    absent = bs.compute_input_hash(base)
+    assert small == large == absent
+
+
+def test_hash_excluded_params_stays_narrow():
+    """The exclusion set is a hole in what input_hash certifies. Only params that
+    cannot change a token the model emits belong in it — anything that steers
+    generation must stay hashed, or a resume could assemble a result a re-run
+    would not reproduce (the determinism invariant in CLAUDE.md)."""
+    steering = {"model", "system", "messages", "thinking",
+                "temperature", "top_p", "top_k", "stop_sequences"}
+    assert bs.HASH_EXCLUDED_PARAMS & steering == frozenset()
+    assert bs.HASH_EXCLUDED_PARAMS == frozenset({"max_tokens"})
+
+
+def test_is_current_schema_rejects_older_and_missing_versions():
+    assert bs.is_current_schema(bs.new_sidecar("2026-05-14", "claude-x")) is True
+    assert bs.is_current_schema({"schema_version": 1}) is False
+    assert bs.is_current_schema({}) is False
+
+
 def test_new_sidecar_shape():
     sc = bs.new_sidecar("2026-05-14", "claude-x")
-    assert sc["schema_version"] == 1
+    assert sc["schema_version"] == 2
     assert sc["date"] == "2026-05-14"
     assert sc["model"] == "claude-x"
     assert sc["retry_count"] == 0

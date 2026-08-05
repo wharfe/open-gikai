@@ -18,6 +18,47 @@ from .prompts import SUMMARY_SYSTEM, SUMMARY_INSTRUCTIONS, SUMMARY_INPUT_TEMPLAT
 
 log = logging.getLogger("pipeline.summarizer")
 
+# A thread's summary JSON grows with its speech count. 8192 truncated real
+# threads (a 31-speech thread needed ~9.6k output tokens), and a truncated
+# response is unparseable, which used to discard the entire batch it belonged
+# to. max_tokens is a ceiling, not a sampling parameter: raising it cannot
+# change a response that already fit, and unused budget is not billed.
+SUMMARY_MAX_TOKENS = 16384
+# Ceiling for re-issuing a request that hit SUMMARY_MAX_TOKENS anyway.
+SUMMARY_RETRY_MAX_TOKENS = 32768
+
+# The SDK refuses a NON-streaming messages.create() it thinks could outlast its
+# 10-minute default read timeout, raising a bare ValueError *before sending
+# anything*. In anthropic 0.72 the test has two branches (_base_client.py,
+# _calculate_nonstreaming_timeout):
+#   1. 3600 * max_tokens / 128_000 > 600     -> i.e. max_tokens > 21333
+#   2. a per-model cap, MODEL_NONSTREAMING_TOKENS -> 8192 for the opus-4.x ids
+# Branch 2 means even SUMMARY_MAX_TOKENS (16384) is refused under `--model
+# claude-opus-4-1-*`, which a manual rescue run could plausibly pass. Both
+# branches are skipped entirely when the call supplies its own timeout, so the
+# robust rule is to ALWAYS supply one rather than to predict the thresholds.
+# ValueError is not an AnthropicError; in the repair path it lands in a generic
+# `except Exception`, which quietly downgrades every re-issue to "failed" and
+# resubmits the whole batch — the #46 deadlock, re-entered.
+# The Batches API has no such guard (it is async), so batch requests are exempt.
+SDK_NONSTREAMING_TOKENS_PER_HOUR = 128_000
+SDK_DEFAULT_READ_TIMEOUT = 600.0
+
+
+def sync_call_kwargs(max_tokens: int) -> dict:
+    """Extra kwargs every *synchronous* summary messages.create() must splat in.
+
+    Sizes the read timeout by the SDK's own worst-case model rather than a magic
+    number, and floors it at the SDK default so the ordinary ceiling keeps its
+    current behavior. ``connect`` is pinned to the SDK's 5s: passing a bare float
+    would replace all four httpx timeouts, turning a DNS/TCP hang into a
+    multi-minute stall instead of a fast failure.
+    """
+    import httpx
+    read = max(SDK_DEFAULT_READ_TIMEOUT,
+               3600.0 * max_tokens / SDK_NONSTREAMING_TOKENS_PER_HOUR)
+    return {"timeout": httpx.Timeout(read, connect=5.0)}
+
 
 def _parse_json_response(text: str) -> dict:
     """Extract JSON from Claude's response, handling markdown fences."""
@@ -40,6 +81,19 @@ def _parse_json_response(text: str) -> dict:
         except json.JSONDecodeError:
             pass
     raise ValueError(f"Could not parse JSON from response: {text[:200]}...")
+
+
+def parse_summary_text(text: str) -> dict:
+    """Parse one summary response body into the shape callers store.
+
+    Shared by the batch collector and the repair path so a re-issued request is
+    normalized exactly like a batched one.
+    """
+    parsed = _parse_json_response(text)
+    return {
+        "speeches": parsed.get("speeches", []),
+        "commitments": parsed.get("commitments", []),
+    }
 
 
 def _format_speech_for_summary(speech: dict) -> str:
@@ -106,16 +160,38 @@ def summarize_thread(
         thread_info.get("topic", "?"), len(speeches),
     )
 
-    response = client.messages.create(
-        model=model,
-        max_tokens=8192,
-        # Sonnet 5 enables adaptive thinking when omitted; disable it to keep the
-        # full max_tokens budget for JSON output and preserve deterministic,
-        # thinking-free behavior (matches the retired Sonnet 4).
-        thinking={"type": "disabled"},
-        system=SUMMARY_SYSTEM,
-        messages=messages,
-    )
+    def _call(max_tokens: int):
+        return client.messages.create(
+            model=model,
+            max_tokens=max_tokens,
+            # Sonnet 5 enables adaptive thinking when omitted; disable it to keep
+            # the full max_tokens budget for JSON output and preserve
+            # deterministic, thinking-free behavior (matches the retired
+            # Sonnet 4).
+            thinking={"type": "disabled"},
+            system=SUMMARY_SYSTEM,
+            messages=messages,
+            **sync_call_kwargs(max_tokens),
+        )
+
+    response = _call(SUMMARY_MAX_TOKENS)
+    if response.stop_reason == "max_tokens":
+        # Same escape hatch grouper.group_meeting uses: a truncated response is
+        # unparseable, so retry once with a larger ceiling before failing.
+        log.warning(
+            "Summary for '%s' truncated at %d tokens — retrying at %d",
+            thread_info.get("topic", "?"), SUMMARY_MAX_TOKENS,
+            SUMMARY_RETRY_MAX_TOKENS,
+        )
+        response = _call(SUMMARY_RETRY_MAX_TOKENS)
+        if response.stop_reason == "max_tokens":
+            # Name the cause here rather than letting _parse_json_response fail
+            # with a generic "could not parse JSON" — that message is what sent
+            # the 2026-06-16 investigation looking at the prompt instead.
+            log.error(
+                "Summary for '%s' truncated again at %d tokens — dropping thread",
+                thread_info.get("topic", "?"), SUMMARY_RETRY_MAX_TOKENS,
+            )
 
     _log_cache_usage(response)
 
@@ -165,7 +241,7 @@ def build_summary_request(
         "custom_id": custom_id,
         "params": {
             "model": model,
-            "max_tokens": 8192,
+            "max_tokens": SUMMARY_MAX_TOKENS,
             # See summarize_thread: disable Sonnet 5 adaptive thinking so the
             # batch output isn't truncated and stays deterministic.
             "thinking": {"type": "disabled"},
@@ -263,14 +339,20 @@ def fetch_summary_results(client, batch_id: str) -> Dict[str, Optional[dict]]:
         message = result.message
         text = message.content[0].text if message.content else ""
         try:
-            parsed = _parse_json_response(text)
-            results[custom_id] = {
-                "speeches": parsed.get("speeches", []),
-                "commitments": parsed.get("commitments", []),
-            }
+            results[custom_id] = parse_summary_text(text)
             succeeded += 1
         except Exception as e:
-            log.error("Failed to parse batch result %s: %s", custom_id, e)
+            # Name truncation explicitly: it is the one unparseable cause that a
+            # re-issue at a higher ceiling actually fixes, and "could not parse
+            # JSON" alone sent past investigations looking at the prompt.
+            if getattr(message, "stop_reason", None) == "max_tokens":
+                log.error(
+                    "Batch result %s truncated at max_tokens (%d output tokens) "
+                    "— needs re-issue at a higher ceiling",
+                    custom_id, getattr(message.usage, "output_tokens", -1),
+                )
+            else:
+                log.error("Failed to parse batch result %s: %s", custom_id, e)
             results[custom_id] = None
             failed += 1
 

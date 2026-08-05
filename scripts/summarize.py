@@ -37,6 +37,9 @@ from pipeline.summarizer import (
     submit_summary_batch,
     poll_summary_batch,
     fetch_summary_results,
+    parse_summary_text,
+    sync_call_kwargs,
+    SUMMARY_RETRY_MAX_TOKENS,
 )
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
@@ -536,6 +539,183 @@ def _rebuild_requests_from_manifest(sidecar: dict, meetings_by_id: Dict[str, dic
     return requests
 
 
+# Above this many unusable results, the failure is systemic (bad prompt, bad
+# model, quota) rather than a handful of oversized threads — fall through to the
+# existing resubmit path instead of hammering the sync API.
+REPAIR_LIMIT = 10
+# Pacing between synchronous re-issues, matching the other synchronous loops in
+# this file (prepare_meeting_for_batch, process_meeting).
+REPAIR_PACING_SECONDS = 1
+# Wall-clock allowance for one date's re-issues. Deliberately its OWN budget and
+# not the caller's poll deadline: polling is time spent *waiting*, and by the time
+# repair runs the batch has already ended and its results are in hand, so a spent
+# poll budget must not disable recovery. Bounded anyway, because the CI job has a
+# hard timeout and being killed mid-repair wastes everything spent so far.
+REPAIR_BUDGET_SECONDS = 900
+# Transient failures whose right answer is "try again next run for free". Letting
+# them read as a repair failure is actively expensive: assembly then fails, which
+# resubmits the whole batch and spends one of the three retry slots that stand
+# between a stuck date and permanent loss. Deliberately narrower than the
+# APIError test used for the results fetch below — a 4xx is deterministic, and
+# aborting the run on one would skip every later sidecar.
+TRANSIENT_API_ERRORS = (
+    anthropic.RateLimitError,
+    anthropic.APIConnectionError,     # includes APITimeoutError
+    anthropic.InternalServerError,    # 500 / 529 overloaded
+)
+
+
+def _repair_unusable_results(
+    client,
+    sidecar: dict,
+    meetings_by_id: Dict[str, dict],
+    results: Dict[str, Optional[dict]],
+    model: str,
+    budget_seconds: int = REPAIR_BUDGET_SECONDS,
+) -> int:
+    """Re-issue the requests whose batch output was unusable, synchronously.
+
+    Assembly is all-or-nothing, so without this one bad result out of N throws
+    away every good one and resubmits the whole batch — which costs a second
+    batch and, for a response that was simply too long, fails the same way. The
+    re-issue uses a larger ceiling; ``max_tokens`` is outside the input hash, so
+    the repaired result still verifies against the stored manifest.
+
+    ``budget_seconds`` gates whether a *new* re-issue is started, so the real
+    worst case is the budget plus one in-flight call. That only bounds anything
+    because the client is taken with ``max_retries=0``: at the SDK default of 2,
+    one stalled call could burn three read timeouts and take the CI job down with
+    it. Deferring a transient failure to the next run is this path's policy anyway
+    (see TRANSIENT_API_ERRORS), so in-SDK retries buy nothing here.
+    Stopping mid-way wastes what was already spent (assembly is all-or-nothing),
+    so it is logged as an error, not shrugged off.
+
+    Mutates ``results`` in place. Returns the number of entries repaired.
+    """
+    # Index the manifest BEFORE consulting results: which custom_ids exist is a
+    # property of the manifest, not of whichever raw happens to be loaded. Doing
+    # it the other way round made a missing meeting log "not in the manifest",
+    # blaming the wrong thing — the same misdiagnosis that cost 2026-06-16.
+    manifest_order: list = []
+    by_custom_id = {}
+    for m in sidecar["meetings"]:
+        meeting = meetings_by_id.get(m["meeting_id"])
+        raw_lookup = (build_speech_lookup(meeting.get("speeches", []))
+                      if meeting is not None else None)
+        for mt in m["threads"]:
+            manifest_order.append(mt["custom_id"])
+            by_custom_id[mt["custom_id"]] = (m["meeting_id"], meeting, mt, raw_lookup)
+
+    # A result that parsed but carries no speeches is just as unusable: assembly
+    # calls it truthy, assemble_thread then returns None, and the date takes the
+    # full-resubmit path that fails identically every run. Repairing it is strictly
+    # better than letting it deadlock.
+    def _usable(val: Optional[dict]) -> bool:
+        return bool(val) and bool(val.get("speeches"))
+
+    unusable = [cid for cid in manifest_order if not _usable(results.get(cid))]
+    if not unusable:
+        return 0
+    if len(unusable) > REPAIR_LIMIT:
+        log.error(
+            "Repair: %d/%d results unusable for %s — above repair limit (%d), "
+            "treating as a systemic failure",
+            len(unusable), len(manifest_order), sidecar["date"], REPAIR_LIMIT,
+        )
+        return 0
+
+    repaired = 0
+    deadline = time.time() + budget_seconds
+    repair_client = client.with_options(max_retries=0)
+    for idx, custom_id in enumerate(unusable):
+        if time.time() >= deadline:
+            log.error(
+                "Repair: out of budget (%ds) after %d/%d re-issue(s) for %s — "
+                "the spend so far is wasted, assembly needs all of them",
+                budget_seconds, idx, len(unusable), sidecar["date"],
+            )
+            break
+        meeting_id, meeting, mt, raw_lookup = by_custom_id[custom_id]
+        if meeting is None:
+            log.error("Repair: raw missing for %s (%s) — cannot re-issue",
+                      meeting_id, custom_id)
+            continue
+        orders = mt["speechOrders"]
+        speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+        if len(speeches) != len(orders):
+            log.error("Repair: speechOrder gap for %s — cannot re-issue", custom_id)
+            continue
+
+        request = build_summary_request(
+            meeting, mt["thread_info"], speeches, custom_id, model,
+        )
+        if bs.compute_input_hash(request["params"]) != mt["input_hash"]:
+            # Raw or prompt changed since submission. Re-issuing would produce a
+            # summary of different text than the manifest describes, so leave it
+            # for the hash check in assemble_from_manifest to reject.
+            log.error("Repair: input_hash mismatch for %s — not re-issuing", custom_id)
+            continue
+
+        params = dict(request["params"])
+        params["max_tokens"] = SUMMARY_RETRY_MAX_TOKENS
+        params.update(sync_call_kwargs(SUMMARY_RETRY_MAX_TOKENS))
+        log.warning(
+            "Repair: re-issuing %s ('%s') at max_tokens=%d",
+            custom_id, mt["thread_info"].get("topic", "?"), SUMMARY_RETRY_MAX_TOKENS,
+        )
+        if idx:
+            time.sleep(REPAIR_PACING_SECONDS)
+        try:
+            response = repair_client.messages.create(**params)
+        except TRANSIENT_API_ERRORS:
+            # Propagate: the next run collects the same ended batch for free,
+            # whereas continuing here fails assembly and burns a resubmit.
+            log.error("Repair: transient API failure on %s — deferring to next run",
+                      custom_id)
+            raise
+        except Exception as e:
+            log.error("Repair: re-issue failed for %s: %s", custom_id, e)
+            continue
+        if response.stop_reason == "max_tokens":
+            log.error("Repair: %s truncated again at %d tokens", custom_id,
+                      SUMMARY_RETRY_MAX_TOKENS)
+            continue
+        try:
+            parsed = parse_summary_text(
+                response.content[0].text if response.content else ""
+            )
+        except Exception as e:
+            log.error("Repair: could not parse re-issued %s: %s", custom_id, e)
+            continue
+        # A re-issue is by construction a response that was already at a ceiling,
+        # i.e. the population where a model under output pressure drops items to
+        # fit — and assemble_thread iterates the AI's list, so a short result would
+        # be published without a word. Report it rather than reject it: the prompt
+        # never promises one entry per input speech, batch results are held to no
+        # such bar, and rejecting a legitimately-partial response would resubmit
+        # all N and deterministically fail — #46's deadlock, re-entered. Losing a
+        # whole date is worse than a thread that is short and says so.
+        covered = {s.get("speechOrder") for s in parsed["speeches"]}
+        if not covered & set(orders):
+            # Zero overlap is not a judgement call — assemble_thread would return
+            # None and fail the date anyway, so treat it as a failed re-issue.
+            log.error("Repair: re-issued %s covers none of its %d speeches",
+                      custom_id, len(orders))
+            continue
+        if covered != set(orders):
+            log.warning(
+                "Repair: re-issued %s covers %d/%d manifest speeches",
+                custom_id, len(covered & set(orders)), len(orders),
+            )
+        results[custom_id] = parsed
+        repaired += 1
+
+    if repaired:
+        log.warning("Repair: recovered %d/%d unusable result(s) for %s",
+                    repaired, len(unusable), sidecar["date"])
+    return repaired
+
+
 def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
                        raw_dir: str, model: str, ci_commit: bool) -> bool:
     """Count a non-collectable batch failure, then either hard-fail (>=3 retries)
@@ -585,6 +765,28 @@ def collect_pending_batches(
     for path in paths:
         sidecar = bs.load_sidecar(path)
         if sidecar is None:
+            continue
+        if not bs.is_current_schema(sidecar):
+            # Written by an older revision, so its input_hashes are not
+            # comparable to ours (see bs.is_current_schema). Refuse loudly and
+            # leave it untouched: resubmitting would fail verification every run
+            # and burn the retry budget down to permanent loss, whereas an
+            # operator can still rescue this by hand while the batch results and
+            # raw are inside their retention windows.
+            # hard_fail (i.e. exit non-zero) is deliberate even though it costs
+            # this run's other dates their commit: daily-batch.yml skips the whole
+            # Summarize step while any sidecar remains, so exiting 0 here would
+            # produce a green run that silently processes nothing — this repo's
+            # most expensive failure mode. Red is the honest signal.
+            log.error(
+                "Sidecar %s has schema_version %r (expected %d) — refusing to "
+                "collect; its input_hashes were computed by an older revision",
+                path, sidecar.get("schema_version"), bs.SCHEMA_VERSION,
+            )
+            print(f"::error::Pending summary batch for {sidecar.get('date')} was "
+                  f"written by an older schema (v{sidecar.get('schema_version')}); "
+                  f"it needs manual collection or deletion")
+            hard_fail = True
             continue
         if bs.should_hard_fail(sidecar):
             log.error("Sidecar %s exceeded retry threshold (%d) — hard fail",
@@ -654,6 +856,8 @@ def collect_pending_batches(
                                   raw_dir, model, ci_commit):
                 hard_fail = True
             continue
+
+        _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
 
         threads, ok = assemble_from_manifest(
             sidecar, meetings_by_id, results, members, thread_counter=0,
@@ -788,6 +992,7 @@ def run_batch_phase(
 
     results = fetch_summary_results(client, batch_id)
     meetings_by_id = {m.get("meetingId", "unknown"): m for m in meetings}
+    _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
     new_threads, ok = assemble_from_manifest(
         sidecar, meetings_by_id, results, members, thread_counter,
     )

@@ -17,7 +17,23 @@ from datetime import datetime, timezone
 from typing import Any, Optional
 
 PENDING_DIR = os.path.join("data", "pending-batches")
-SCHEMA_VERSION = 1
+# v2 narrowed compute_input_hash to the content-determining params, so v1 hashes
+# are not comparable with ours. Bumping alone would be inert — the guard that
+# gives this number teeth is is_current_schema(), which callers must consult
+# before trusting a sidecar's input_hashes.
+SCHEMA_VERSION = 2
+
+# Params excluded from the input hash. The bar is deliberately narrow: a param
+# belongs here ONLY if it cannot change a single token the model emits before the
+# cap is reached. ``max_tokens`` qualifies (the model is not told the ceiling, and
+# temperature is 0, so a response that fit is byte-identical at a higher one) and
+# excluding it is what lets a truncated request be re-issued at a higher ceiling
+# without invalidating the whole manifest.
+# Anything that steers generation — model, system, messages, thinking, and any
+# future temperature/top_p/top_k/stop_sequences — MUST stay hashed, or a resume
+# could assemble a result that a re-run would not reproduce. Enforced by
+# test_hash_excluded_params_stays_narrow.
+HASH_EXCLUDED_PARAMS = frozenset({"max_tokens"})
 
 # Terminal Anthropic batch statuses that are NOT a successful collection.
 TERMINAL_FAILURES = {"canceled", "expired"}
@@ -33,13 +49,19 @@ def canonical_json(obj: Any) -> str:
 
 
 def compute_input_hash(params: dict) -> str:
-    """SHA256 of the canonical JSON of a batch request's ``params`` block.
+    """SHA256 of the canonical JSON of a batch request's content params.
 
-    Hashing the whole params (model, max_tokens, system, messages) ties a stored
-    result to the exact input + prompt that produced it, so a resume cannot
-    assemble a stale result against changed raw data or a changed prompt.
+    Hashing model + thinking + system + messages ties a stored result to the
+    exact input + prompt that produced it, so a resume cannot assemble a stale
+    result against changed raw data or a changed prompt.
+
+    ``max_tokens`` is deliberately excluded (see HASH_EXCLUDED_PARAMS): it caps
+    the response but does not change what the model is asked, and coupling it to
+    the hash meant a truncated request could never be re-issued at a higher
+    ceiling without invalidating the whole manifest.
     """
-    digest = hashlib.sha256(canonical_json(params).encode("utf-8")).hexdigest()
+    hashable = {k: v for k, v in params.items() if k not in HASH_EXCLUDED_PARAMS}
+    digest = hashlib.sha256(canonical_json(hashable).encode("utf-8")).hexdigest()
     return f"sha256:{digest}"
 
 
@@ -60,6 +82,19 @@ def load_sidecar(path: str) -> Optional[dict]:
             return json.load(f)
     except FileNotFoundError:
         return None
+
+
+def is_current_schema(sidecar: dict) -> bool:
+    """Whether this sidecar's stored input_hashes are comparable to ours.
+
+    A sidecar written by an older revision carries hashes computed under a
+    different ``compute_input_hash`` definition, so every thread would fail
+    verification. Without this check that surfaces as ``input_hash mismatch —
+    raw/prompt changed``, which points an investigator at the wrong cause and
+    (worse) burns a resubmit + a retry-budget slot per run until the date hard
+    fails. Callers must refuse such a sidecar loudly instead.
+    """
+    return sidecar.get("schema_version") == SCHEMA_VERSION
 
 
 def save_sidecar(path: str, sidecar: dict) -> None:

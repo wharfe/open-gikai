@@ -25,11 +25,12 @@ class _Batch:
 
 
 class _ResultEntry:
-    def __init__(self, custom_id, result_type, text=None):
+    def __init__(self, custom_id, result_type, text=None, stop_reason="end_turn"):
         self.custom_id = custom_id
         message = types.SimpleNamespace(
             content=[types.SimpleNamespace(text=text)] if text is not None else [],
             usage=None,
+            stop_reason=stop_reason,
         )
         self.result = types.SimpleNamespace(type=result_type, message=message)
 
@@ -68,9 +69,59 @@ class FakeBatches:
         self.cancelled.append(batch_id)
 
 
+class FakeMessages:
+    """``client.messages``: the batches surface plus the synchronous ``create``
+    the repair path uses to re-issue a single unusable request."""
+
+    def __init__(self):
+        self.batches = FakeBatches()
+        # Tests set these to script synchronous responses.
+        self.create_calls = []          # list of params dicts, in call order
+        self.create_text = None         # body returned by create()
+        self.create_stop_reason = "end_turn"
+
+    def create(self, **params):
+        # Reproduce the SDK's client-side guard, both branches: a non-streaming
+        # create() that supplies no timeout raises a bare ValueError before
+        # sending anything when max_tokens implies a worst case over the default
+        # read timeout, OR when it exceeds the per-model non-streaming cap. A stub
+        # that accepted any params let a ceiling that can never reach the network
+        # ship as "30 tests passed".
+        from anthropic._constants import MODEL_NONSTREAMING_TOKENS
+        from pipeline.summarizer import (
+            SDK_DEFAULT_READ_TIMEOUT, SDK_NONSTREAMING_TOKENS_PER_HOUR,
+        )
+        max_tokens = params.get("max_tokens", 0)
+        cap = MODEL_NONSTREAMING_TOKENS.get(params.get("model"))
+        if "timeout" not in params and not params.get("stream") and (
+            3600.0 * max_tokens / SDK_NONSTREAMING_TOKENS_PER_HOUR
+            > SDK_DEFAULT_READ_TIMEOUT
+            or (cap is not None and max_tokens > cap)
+        ):
+            raise ValueError(
+                "Streaming is required for operations that may take longer than "
+                "10 minutes."
+            )
+        self.create_calls.append(params)
+        return types.SimpleNamespace(
+            content=[types.SimpleNamespace(text=self.create_text)]
+            if self.create_text is not None else [],
+            usage=types.SimpleNamespace(output_tokens=0,
+                                        cache_read_input_tokens=0,
+                                        cache_creation_input_tokens=0),
+            stop_reason=self.create_stop_reason,
+        )
+
+
 class FakeClient:
     def __init__(self):
-        self.messages = types.SimpleNamespace(batches=FakeBatches())
+        self.messages = FakeMessages()
+
+    def with_options(self, **_kwargs):
+        """The SDK returns a reconfigured copy sharing the transport; the repair
+        path uses it to disable in-SDK retries. Tests only care that the same
+        recording surface is reached, so hand back self."""
+        return self
 
 
 @pytest.fixture

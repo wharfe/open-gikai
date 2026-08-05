@@ -140,7 +140,8 @@ Anything requiring a runtime belongs under `apps/`.
   timeout 3600 claude -p "/goal /code-gate を実行し critical 0 を達成する。5回で打ち切り" \
     --permission-mode acceptEdits
   ```
-- 受け入れ基準（機械判定）: `npm run lint && npm run validate`（ユニットテスト無し。
-  表示に影響する変更は `npm run test:e2e` を追加実行）
+- 受け入れ基準（機械判定）: `npm run lint && npm run validate`。
+  `scripts/` の Python を触ったら `python -m pytest scripts/tests`（resume/batch_state の
+  ユニットテストがある — フロントには無い）。表示に影響する変更は `npm run test:e2e` を追加実行。
 - 単発の小修正（数十行以下）は Gate 省略可。ただしスクレイパーのレート制御・公開データの
   生成ロジックに触れる diff はサイズによらず Gate 対象。
