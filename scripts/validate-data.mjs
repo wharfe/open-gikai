@@ -32,6 +32,17 @@ function warn(msg) {
 
 function error(msg) {
   console.error(`  ✗  ${msg}`);
+  // In --fix mode (how CI and `npm run build` invoke this) errors do not set a
+  // non-zero exit — deliberately, so one bad file cannot block the whole
+  // publish the way #52 did. That makes the message the ONLY signal, and a line
+  // in a green job's log is not a signal. Emit a workflow command so GitHub
+  // surfaces it as an annotation on the run.
+  // Workflow commands take the message on one line, so % and newlines have to
+  // be escaped or the annotation is silently truncated at the first newline.
+  if (process.env.GITHUB_ACTIONS) {
+    const escaped = msg.replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
+    console.log(`::error::${escaped}`);
+  }
   errors++;
 }
 
@@ -45,11 +56,37 @@ function fix(msg) {
 }
 
 // --- Load all threads ---
+// summarize.py writes a resume sidecar to data/threads/{date}.progress.json and
+// only deletes it when the date completes with no failures. It is an object, not
+// a thread array, so on any failed run it used to crash this script — taking
+// feeds, sitemap, the commit and IndexNow down with it and turning "some
+// meetings failed" into "nothing was published at all" (#52).
+function isThreadFile(file) {
+  return file.endsWith(".json") && !file.endsWith(".progress.json");
+}
+
 function loadAllThreads() {
   const threads = [];
   for (const file of readdirSync(THREADS_DIR)) {
-    if (!file.endsWith(".json")) continue;
-    const data = JSON.parse(readFileSync(join(THREADS_DIR, file), "utf-8"));
+    if (!isThreadFile(file)) continue;
+    const path = join(THREADS_DIR, file);
+    // Name the offending file, and cover the whole failure class rather than
+    // the one filename we know about. The bare read+spread died with a
+    // TypeError from deep inside this function and no filename, which is what
+    // sent the #52 investigation to the CI log rather than to the file — and
+    // summarize.py writes {date}.json non-atomically, so a killed run leaves
+    // truncated JSON that fails here the same way, one line earlier.
+    let data;
+    try {
+      data = JSON.parse(readFileSync(path, "utf-8"));
+    } catch (e) {
+      error(`${path} could not be read as JSON: ${e.message}`);
+      continue;
+    }
+    if (!Array.isArray(data)) {
+      error(`${path} is not a thread array (got ${typeof data}) — non-thread files do not belong in ${THREADS_DIR}`);
+      continue;
+    }
     threads.push(...data);
   }
   return threads;
@@ -223,7 +260,9 @@ function checkStatus() {
       ? JSON.parse(readFileSync("data/status.json", "utf-8"))
       : {};
     const summary = status._summary || {};
-    const threadFiles = readdirSync(THREADS_DIR).filter((f) => f.endsWith(".json"));
+    // Same sidecar exclusion as loadAllThreads: counting a .progress.json here
+    // would report a spurious "status.json has N dates but N+1 thread files".
+    const threadFiles = readdirSync(THREADS_DIR).filter(isThreadFile);
     const statusDates = Object.keys(status).filter((k) => k !== "_summary").length;
 
     if (statusDates < threadFiles.length) {

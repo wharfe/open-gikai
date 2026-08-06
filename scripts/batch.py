@@ -115,7 +115,9 @@ def build_phase1_requests(
 
     Delegates to pipeline.grouper's builders so a recovery run submits exactly
     what the daily synchronous run would — same prompt, same ceilings, same
-    temperature. Re-implementing the prompts here is what let this script rot.
+    param set (which no longer includes temperature: claude-sonnet-5 answers it
+    with a 400, #51). Re-implementing the prompts here is what let this script
+    rot.
     """
     requests = []
 

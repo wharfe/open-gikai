@@ -53,6 +53,17 @@ __pycache__/
 data/raw/
 data/batch/
 
+# summarize.py's resume sidecar. It lives inside the committed threads dir but
+# is not thread data, and it only survives a date that finished with failures —
+# exactly when `git add data/threads/` runs. Committed once, it is permanent
+# until that same date next completes cleanly, and every consumer that reads the
+# directory would have to keep filtering it (#52).
+# Resume is unaffected: summarize.py rebuilds `completed` from the threads file
+# when the sidecar is absent. One cost — a meeting that completed but produced
+# no thread leaves no trace to rebuild from, so it is re-grouped on later runs
+# within the lookback window. Wasted grouping calls, never duplicate threads.
+data/threads/*.progress.json
+
 # Pipeline output (committed for SSG deployment)
 # data/threads/   — thread JSON files
 # data/members.json — member data

@@ -49,9 +49,11 @@ def test_hash_excluded_params_stays_narrow():
 def test_is_current_schema_rejects_older_and_missing_versions():
     assert bs.is_current_schema(bs.new_sidecar("2026-05-14", "claude-x")) is True
     assert bs.is_current_schema({"schema_version": 1}) is False
-    # v2 predates temperature=0 on summary requests, so its hashes cover a
-    # smaller param set than ours and mismatch just like v1's.
+    # v2 and v3 each hash a different param set than ours — v2 predates
+    # temperature=0 on summary requests, v3 carries it (removed in #51) — so
+    # their hashes mismatch just like v1's.
     assert bs.is_current_schema({"schema_version": 2}) is False
+    assert bs.is_current_schema({"schema_version": 3}) is False
     assert bs.is_current_schema({}) is False
 
 

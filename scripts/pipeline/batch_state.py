@@ -18,24 +18,27 @@ from typing import Any, Optional
 
 PENDING_DIR = os.path.join("data", "pending-batches")
 # v2 narrowed compute_input_hash to the content-determining params, so v1 hashes
-# are not comparable with ours. v3 pinned temperature=0 on summary requests: the
-# hash *function* is unchanged, but every request now hashes a param v2 requests
-# did not carry, so v2 hashes mismatch just as surely. Bumping alone would be
-# inert — the guard that gives this number teeth is is_current_schema(), which
-# callers must consult before trusting a sidecar's input_hashes.
+# are not comparable with ours. v3 pinned temperature=0 on summary requests, and
+# v4 removed it again (#51: claude-sonnet-5 rejects it with a 400). The hash
+# *function* is unchanged across all of these, but each changed the set of params
+# fed to it, so an older sidecar's hashes mismatch just as surely as if the
+# function had changed. Bumping alone would be inert — the guard that gives this
+# number teeth is is_current_schema(), which callers must consult before trusting
+# a sidecar's input_hashes.
 # Bump this whenever compute_input_hash OR the set of params fed to it changes.
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 # Params excluded from the input hash. The bar is deliberately narrow: a param
 # belongs here ONLY if it cannot change a single token the model emits before the
-# cap is reached. ``max_tokens`` qualifies (the model is not told the ceiling, and
-# temperature is 0, so a response that fit is byte-identical at a higher one) and
+# cap is reached. ``max_tokens`` qualifies (the model is not told the ceiling) and
 # excluding it is what lets a truncated request be re-issued at a higher ceiling
 # without invalidating the whole manifest.
-# Anything that steers generation — model, system, messages, thinking, temperature,
-# and any future top_p/top_k/stop_sequences — MUST stay hashed, or a resume
-# could assemble a result that a re-run would not reproduce. Enforced by
-# test_hash_excluded_params_stays_narrow.
+# Anything that steers generation — model, system, messages, thinking, and any
+# future stop_sequences — MUST stay hashed, or a resume could assemble a result
+# that a re-run would not reproduce. Enforced by
+# test_hash_excluded_params_stays_narrow. (Sampling params are not listed as
+# hashed-or-excluded because the summary layer must not send them at all — see
+# summarizer.build_summary_request.)
 HASH_EXCLUDED_PARAMS = frozenset({"max_tokens"})
 
 # Terminal Anthropic batch statuses that are NOT a successful collection.

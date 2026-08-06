@@ -18,9 +18,18 @@ function loadAllThreads() {
   const threads = [];
   for (const f of fs.readdirSync(THREADS_DIR)) {
     if (!f.endsWith(".json") || f.endsWith(".progress.json")) continue;
-    const data = JSON.parse(
-      fs.readFileSync(path.join(THREADS_DIR, f), "utf-8")
-    );
+    const p = path.join(THREADS_DIR, f);
+    // summarize.py writes {date}.json non-atomically, so a killed run leaves
+    // truncated JSON. validate-data.mjs names such a file and carries on; this
+    // script runs in the same `bash -e` CI block, so throwing here would fail
+    // the step and take the commit and IndexNow down anyway (#52's shape).
+    let data;
+    try {
+      data = JSON.parse(fs.readFileSync(p, "utf-8"));
+    } catch (e) {
+      console.error(`skipping ${p}: could not be read as JSON: ${e.message}`);
+      continue;
+    }
     if (Array.isArray(data)) threads.push(...data);
   }
   // Sort newest first

@@ -256,7 +256,10 @@ def main():
         files = sorted(
             os.path.join(THREADS_DIR, f)
             for f in os.listdir(THREADS_DIR)
-            if f.endswith(".json")
+            # Skip summarize.py's resume sidecar: it is a dict, not a thread
+            # array, and --all is what an operator runs to re-enrich after a
+            # partial failure — i.e. exactly when the sidecar exists (#52).
+            if f.endswith(".json") and not f.endswith(".progress.json")
         )
     elif args.date:
         files = [os.path.join(THREADS_DIR, f"{args.date}.json")]

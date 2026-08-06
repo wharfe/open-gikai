@@ -11,10 +11,31 @@ import sys
 import os
 import types
 
+import httpx
 import pytest
 
 # Make `pipeline` importable exactly as summarize.py does.
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+
+# Sampling params. claude-sonnet-5 answers any of these with a 400
+# (`temperature` is deprecated for this model) — #51, which took a whole daily
+# run to zero threads. Defined here rather than in test_determinism.py so the
+# fake below and the guards there cannot drift apart.
+SAMPLING_PARAMS = frozenset({"temperature", "top_p", "top_k"})
+
+
+def _bad_request(param: str):
+    """The 400 the real API answers a sampling param with."""
+    import anthropic
+    return anthropic.BadRequestError(
+        message=f"`{param}` is deprecated for this model.",
+        response=httpx.Response(
+            400,
+            request=httpx.Request("POST", "https://api.anthropic.com/v1/messages"),
+        ),
+        body=None,
+    )
 
 
 class _Batch:
@@ -46,6 +67,14 @@ class FakeBatches:
         self.cancelled = []
 
     def create(self, requests):
+        # Same 400 the synchronous fake raises, applied per request. The batch
+        # path is the DAILY production path, so leaving it unchecked would mean
+        # the fake only fails closed on the half of the layer an operator uses
+        # by hand.
+        for req in requests:
+            sampling = SAMPLING_PARAMS & set(req.get("params", {}))
+            if sampling:
+                raise _bad_request(sorted(sampling)[0])
         self.created_requests.append(requests)
         bid = self.next_id
         self.statuses.setdefault(bid, "in_progress")
@@ -81,6 +110,15 @@ class FakeMessages:
         self.create_stop_reason = "end_turn"
 
     def create(self, **params):
+        # Reproduce the 400 that caused #51. Every synchronous call in the
+        # summary layer lands here, including the repair path's
+        # `messages.create(**params)` — the one site where a sampling param can
+        # arrive through a splat, which no AST sweep can see. Raising here is
+        # what makes that whole class fail closed instead of requiring each test
+        # to remember an assertion.
+        sampling = SAMPLING_PARAMS & set(params)
+        if sampling:
+            raise _bad_request(sorted(sampling)[0])
         # Reproduce the SDK's client-side guard, both branches: a non-streaming
         # create() that supplies no timeout raises a bare ValueError before
         # sending anything when max_tokens implies a worst case over the default

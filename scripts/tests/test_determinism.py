@@ -7,6 +7,9 @@ site quietly did the other thing.
   #47 — no call passed ``temperature``, so the "temperature=0, same input →
         same output" invariant ran at the API default. Measured: an identical
         re-request produced 8,527 then 9,603 output tokens.
+  #51 — the fix for #47 was itself the outage: claude-sonnet-5 rejects a
+        non-default ``temperature`` with a 400, so pinning it took every
+        grouping, outcome and summary call in the 2026-08-05 run to zero.
   #48 — ``summarizer.py`` was raised off the truncating 8192 ceiling, but
         ``batch.py`` / ``bulk_batch.py`` — the scripts an operator reaches for
         when recovering from exactly that failure — kept it.
@@ -26,6 +29,8 @@ import pathlib
 
 import pytest
 
+from .conftest import SAMPLING_PARAMS
+from pipeline import batch_state as bs
 from pipeline.grouper import (
     GROUPING_MAX_TOKENS, GROUPING_RETRY_MAX_TOKENS, OUTCOME_MAX_TOKENS,
     build_grouping_request, build_outcome_request,
@@ -56,6 +61,42 @@ RECOVERY_MODULES = ["batch", "bulk_batch"]
 # output tokens, and a truncated response is unparseable.
 TRUNCATING_CEILING = 8192
 
+# Sampling params. claude-sonnet-5 rejects any of these with a 400 (#51), so on
+# the summary layer they are forbidden outright rather than pinned to a value.
+# The check is presence-based on purpose: "temperature must equal 0" was the
+# previous guard, and it certified the request that produced the outage.
+# Imported from conftest, where the fake client raises the same 400, so the AST
+# guard and the on-the-wire guard cannot drift apart.
+FORBIDDEN_PARAMS = set(SAMPLING_PARAMS)
+
+# What the summary layer can still control, now that sampling is not pinnable:
+# thinking is switched off explicitly, because Sonnet 5 turns adaptive thinking
+# ON when the param is omitted. Checked by VALUE everywhere, including in the
+# AST sweep: presence alone would pass {"type": "enabled"}, which is the exact
+# mistake the old temperature guard made in reverse.
+REQUIRED_THINKING = {"type": "disabled"}
+
+# The summary request's param set, per schema version. compute_input_hash covers
+# every one of these except max_tokens, so a sidecar written under one version's
+# set cannot be verified under another's — which is why the set and the version
+# have to move together. See test_summary_request_param_set_is_pinned.
+#
+# History is kept, not just the current row, so the table shows what a bump was
+# FOR. Note v2 and v4 carry the same set: v3 added temperature and v4 took it
+# back out. So "an older version's hashes always cover a different param set" is
+# not true of v2 — v4 rejects a v2 sidecar out of caution, not necessity.
+PARAM_SET_BY_SCHEMA_VERSION = {
+    2: ["max_tokens", "messages", "model", "system", "thinking"],
+    3: ["max_tokens", "messages", "model", "system", "temperature", "thinking"],
+    4: ["max_tokens", "messages", "model", "system", "thinking"],
+}
+
+# The grouping/outcome builders' param set. Not schema-versioned — their output
+# is not hashed into a sidecar — but pinned for the same reason: an allowlist
+# catches the *next* param Claude 5 starts rejecting, which a denylist of the
+# three known-bad names cannot.
+BUILDER_PARAM_SET = ["max_tokens", "messages", "model", "system", "thinking"]
+
 # Resolved from the modules under test, so an AST site written as a Name is
 # checked by VALUE. Checking only for the literal 8192 is what made the original
 # version of this test unfailable: after the constants landed, not one request
@@ -78,6 +119,14 @@ LOCAL_CEILING = "<local>"
 # batch.py, bulk_batch.py and summarize.py appear with NO entries on purpose:
 # they must not build requests at all any more, only call the builders. Adding
 # a key here is a deliberate act — that is the point of the table.
+#
+# Be honest about one limit: summarize.py's repair path DOES reach the wire, at
+# summarize.py's `messages.create(**params)`. It has no literal `model=` kwarg
+# and no dict literal, so _request_sites cannot see it and an empty entry here
+# is not proof it is clean. What covers it is behavioral, not syntactic: the
+# params start as a copy of build_summary_request's output, and the fake client
+# in conftest raises the real 400 on any sampling param, so the test_resume
+# repair tests fail closed if one is ever added there.
 EXPECTED_SITES = {
     "batch.py": {},
     "bulk_batch.py": {},
@@ -137,32 +186,28 @@ def _dict_items(node: ast.Dict) -> dict:
     }
 
 
-def _module_ints(tree: ast.Module) -> dict:
-    """Module-level ``NAME = <int>`` assignments, for resolving Name nodes."""
-    out = {}
-    for node in tree.body:
-        if isinstance(node, ast.Assign) and isinstance(node.value, ast.Constant):
-            value = node.value.value
-            if isinstance(value, int) and not isinstance(value, bool):
-                for target in node.targets:
-                    if isinstance(target, ast.Name):
-                        out[target.id] = value
-    return out
+def _literal(node):
+    """Python value of a literal AST node, or a unique sentinel if it is not one.
 
-
-def _resolve_int(node, consts):
-    """Resolved int for a node, or None if it is not a resolvable integer.
-
-    Bools are excluded: ``False == 0`` in Python but serializes to JSON
-    ``false``, which the API rejects — accepting it as "zero" would let a
-    guaranteed-400 request pass the temperature check.
+    The sentinel matters: returning None for "not a literal" would make a site
+    that omits the param and a site that writes ``thinking=None`` look the same
+    as each other, and both would compare unequal to REQUIRED_THINKING only by
+    luck. Anything unresolvable must FAIL the comparison, not pass it.
     """
-    if isinstance(node, ast.Constant):
-        value = node.value
-        return None if isinstance(value, bool) or not isinstance(value, (int, float)) else value
-    if isinstance(node, ast.Name):
-        return consts.get(node.id)
-    return None
+    if node is None:
+        return _UNRESOLVED
+    try:
+        return ast.literal_eval(node)
+    except (ValueError, SyntaxError, TypeError):
+        return _UNRESOLVED
+
+
+class _Unresolved:
+    def __repr__(self):
+        return "<unresolved>"
+
+
+_UNRESOLVED = _Unresolved()
 
 
 def _enclosing_functions(tree: ast.Module) -> dict:
@@ -223,9 +268,12 @@ def test_build_summary_request_carries_the_invariants():
         model="claude-x",
     )["params"]
 
-    assert params["temperature"] == 0
+    assert not FORBIDDEN_PARAMS & set(params), (
+        "summary requests must send no sampling params — claude-sonnet-5 "
+        "answers one with a 400 (#51)"
+    )
     assert params["max_tokens"] == SUMMARY_MAX_TOKENS
-    assert params["thinking"] == {"type": "disabled"}
+    assert params["thinking"] == REQUIRED_THINKING
 
 
 def test_summary_request_param_set_is_pinned():
@@ -234,7 +282,16 @@ def test_summary_request_param_set_is_pinned():
     does not surface as a version error — is_current_schema still passes — it
     surfaces as a per-thread "input_hash mismatch — raw/prompt changed", which
     reads like corrupted raw data and burns the retry budget to permanent loss.
-    Update this list and bump batch_state.SCHEMA_VERSION in the same commit.
+
+    Keyed off SCHEMA_VERSION so the version is in front of whoever edits the
+    expected set, and so a bump with no recorded set fails outright.
+
+    Be honest about the limit rather than overclaiming, because overclaiming a
+    guard is how this file got here: a developer who changes the param set AND
+    edits this table's current row still ships green. No local test can force a
+    human to increment a constant. What it does buy is that the change cannot be
+    made without reading the word SCHEMA_VERSION and the history below, and that
+    the two halves of the bump cannot be done by halves.
     """
     params = build_summary_request(
         meeting=MEETING,
@@ -244,9 +301,16 @@ def test_summary_request_param_set_is_pinned():
         model="claude-x",
     )["params"]
 
-    assert sorted(params) == [
-        "max_tokens", "messages", "model", "system", "temperature", "thinking",
-    ], "summary request param set changed — bump batch_state.SCHEMA_VERSION"
+    assert bs.SCHEMA_VERSION in PARAM_SET_BY_SCHEMA_VERSION, (
+        f"batch_state.SCHEMA_VERSION is {bs.SCHEMA_VERSION} but no param set is "
+        f"recorded for it — add the current set to PARAM_SET_BY_SCHEMA_VERSION"
+    )
+    assert sorted(params) == PARAM_SET_BY_SCHEMA_VERSION[bs.SCHEMA_VERSION], (
+        "summary request param set changed — bump batch_state.SCHEMA_VERSION "
+        "and record the new set in PARAM_SET_BY_SCHEMA_VERSION as a NEW row. "
+        "Editing the current row in place is the one way to defeat this check, "
+        "and it is exactly what leaves in-flight sidecars unverifiable."
+    )
 
 
 def test_summary_ceilings_clear_the_truncating_one():
@@ -275,13 +339,26 @@ def test_batch_builders_pin_the_right_ceiling_to_the_right_request():
         "batch mode has no in-band truncation retry, so it must submit at the "
         "ceiling the synchronous path would retry at"
     )
-    assert grouping["temperature"] == 0
+    assert not FORBIDDEN_PARAMS & set(grouping)
+    assert grouping["thinking"] == REQUIRED_THINKING
+    # Allowlist, not just the sampling denylist. FORBIDDEN_PARAMS names the
+    # three params known to 400 today; an allowlist also catches the next one
+    # the API starts rejecting, and the summary builder already had this
+    # protection while grouping and outcome did not.
+    assert sorted(grouping) == BUILDER_PARAM_SET, (
+        "grouping request param set changed — every param here is sent to a "
+        "Claude 5 model, so adding one is a whole-run risk, not a tweak"
+    )
 
     voted = _voted_meeting()
     outcome = build_outcome_request(voted, "outcome_x", "claude-x")
     assert outcome is not None, "fixture no longer trips the vote pattern matcher"
     assert outcome["params"]["max_tokens"] == OUTCOME_MAX_TOKENS
-    assert outcome["params"]["temperature"] == 0
+    assert not FORBIDDEN_PARAMS & set(outcome["params"])
+    assert outcome["params"]["thinking"] == REQUIRED_THINKING
+    assert sorted(outcome["params"]) == BUILDER_PARAM_SET, (
+        "outcome request param set changed — see the grouping assertion above"
+    )
 
 
 def test_batch_and_sync_grouping_send_identical_prompts():
@@ -316,7 +393,14 @@ def test_batch_and_sync_summary_send_identical_prompts(fake_client):
 
     assert sent["messages"] == batch["params"]["messages"]
     assert sent["system"] == batch["params"]["system"]
-    assert sent["temperature"] == batch["params"]["temperature"] == 0
+    assert sent["thinking"] == batch["params"]["thinking"] == REQUIRED_THINKING
+    # Checked against what the sync path actually put on the wire, which is the
+    # only view that includes the **sync_call_kwargs() splat — an AST sweep
+    # cannot see a sampling param that arrives through a helper's return value.
+    assert not FORBIDDEN_PARAMS & set(sent), (
+        f"sync summary call sends {sorted(FORBIDDEN_PARAMS & set(sent))} — "
+        f"claude-sonnet-5 answers that with a 400 (#51)"
+    )
 
 
 def test_builders_return_none_when_there_is_nothing_to_ask():
@@ -381,16 +465,25 @@ def test_every_summary_layer_request_is_a_declared_site(path):
     found = {}
 
     for lineno, func, what, params in _request_sites(tree):
-        found.setdefault(func, 0)
-        found[func] += 1
+        found.setdefault(func, set())
         where = f"{path.name}:{lineno} in {func}() ({what})"
         assert func in declared, (
             f"undeclared summary-layer request site {where} — build it with "
             f"grouper.build_grouping_request / build_outcome_request / "
             f"summarizer.build_summary_request, or declare it in EXPECTED_SITES"
         )
-        assert _resolve_int(params.get("temperature"), {}) == 0, (
-            f"{where} does not pin temperature=0 (#47: the API default is 1.0)"
+        sampling = FORBIDDEN_PARAMS & set(params)
+        assert not sampling, (
+            f"{where} sends {sorted(sampling)} — claude-sonnet-5 rejects a "
+            f"non-default sampling param with a 400, which is a whole-run "
+            f"outage, not a degraded day (#51)"
+        )
+        assert _literal(params.get("thinking")) == REQUIRED_THINKING, (
+            f"{where} does not pin thinking={REQUIRED_THINKING} — Sonnet 5 turns "
+            f"adaptive thinking ON when the param is omitted, which both eats "
+            f"the max_tokens budget and reintroduces run-to-run variation. "
+            f"Checked by value, not presence: {{'type': 'enabled'}} is exactly "
+            f"the state this is here to prevent"
         )
         ceiling, allowed = params.get("max_tokens"), declared[func]
         assert isinstance(ceiling, ast.Name), (
@@ -406,6 +499,7 @@ def test_every_summary_layer_request_is_a_declared_site(path):
                 f"{where} uses {ceiling.id}, expected one of {sorted(allowed)} — "
                 f"a grouping request at the outcome ceiling truncates every thread"
             )
+        found[func].add(ceiling.id)
 
     missing = set(declared) - set(found)
     assert not missing, (
@@ -413,3 +507,16 @@ def test_every_summary_layer_request_is_a_declared_site(path):
         f"stopped seeing sites it used to check, so it is no longer guarding "
         f"anything there"
     )
+    # Per-CEILING, not just per-function. group_meeting declares two sites (the
+    # first call and the truncation retry); with only a per-function check,
+    # rewriting the retry into a shape the sweep cannot see left it unguarded
+    # while the test stayed green — the same fail-open this file exists to stop.
+    for func, allowed in declared.items():
+        if allowed is LOCAL_CEILING:
+            continue
+        unseen = set(allowed) - found[func]
+        assert not unseen, (
+            f"{path.name}: {func}() declares {sorted(allowed)} but the sweep only "
+            f"saw {sorted(found[func])} — the site(s) using {sorted(unseen)} are "
+            f"no longer recognized, so nothing checks their params any more"
+        )

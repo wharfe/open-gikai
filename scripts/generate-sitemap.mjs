@@ -91,8 +91,29 @@ function collectAll() {
   let globalLatest = "";
 
   for (const file of readdirSync(threadsDir)) {
-    if (!file.endsWith(".json")) continue;
-    const parsed = JSON.parse(readFileSync(join(threadsDir, file), "utf-8"));
+    // Same sidecar exclusion as validate-data.mjs / generate-feeds.js /
+    // src/lib/data.ts / gen_status.py. This was the fifth independent copy of
+    // the predicate and the only one that lacked the filter, so #52's crash
+    // simply moved here: the workflow runs validate, feeds and sitemap in one
+    // `run:` block, and `npm run build` runs this script too — a sidecar left
+    // by a failed date took down the commit, IndexNow and the Vercel deploy
+    // just the same.
+    if (!file.endsWith(".json") || file.endsWith(".progress.json")) continue;
+    const p = join(threadsDir, file);
+    // Name the file rather than dying with a bare "parsed is not iterable", and
+    // cover the parse too: summarize.py writes {date}.json non-atomically, so a
+    // killed run leaves truncated JSON that fails one line earlier.
+    let parsed;
+    try {
+      parsed = JSON.parse(readFileSync(p, "utf-8"));
+    } catch (e) {
+      console.error(`skipping ${p}: could not be read as JSON: ${e.message}`);
+      continue;
+    }
+    if (!Array.isArray(parsed)) {
+      console.error(`skipping ${p}: not a thread array (got ${typeof parsed})`);
+      continue;
+    }
     for (const t of parsed) {
       const iso = t.date?.replace(/\./g, "-");
       if (!iso) continue;

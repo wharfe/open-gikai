@@ -125,7 +125,7 @@ def build_grouping_request(meeting: dict, custom_id: str, model: str) -> Optiona
         "params": {
             "model": model,
             "max_tokens": GROUPING_RETRY_MAX_TOKENS,
-            "temperature": 0,
+            # No sampling params — see summarizer.build_summary_request.
             "thinking": {"type": "disabled"},
             "system": GROUPING_SYSTEM,
             "messages": messages,
@@ -143,7 +143,7 @@ def build_outcome_request(meeting: dict, custom_id: str, model: str) -> Optional
         "params": {
             "model": model,
             "max_tokens": OUTCOME_MAX_TOKENS,
-            "temperature": 0,
+            # No sampling params — see summarizer.build_summary_request.
             "thinking": {"type": "disabled"},
             "system": OUTCOME_SYSTEM,
             "messages": messages,
@@ -239,10 +239,7 @@ def group_meeting(
     response = client.messages.create(
         model=model,
         max_tokens=GROUPING_MAX_TOKENS,
-        # temperature=0 is the summary layer's determinism invariant, not a
-        # default we can rely on: omitting it runs at the API default (1.0) and
-        # an identical re-request measurably produced different output.
-        temperature=0,
+        # No sampling params — see summarizer.build_summary_request.
         # Disable Sonnet 5 adaptive thinking (ON when omitted) so the JSON output
         # keeps the full token budget and stays deterministic. See summarize.py.
         thinking={"type": "disabled"},
@@ -258,7 +255,6 @@ def group_meeting(
         response = client.messages.create(
             model=model,
             max_tokens=GROUPING_RETRY_MAX_TOKENS,
-            temperature=0,
             thinking={"type": "disabled"},
             system=GROUPING_SYSTEM,
             messages=messages,
@@ -364,7 +360,6 @@ def extract_meeting_outcome(
                 response = client.messages.create(
                     model=model,
                     max_tokens=OUTCOME_MAX_TOKENS,
-                    temperature=0,
                     thinking={"type": "disabled"},
                     system=OUTCOME_SYSTEM,
                     messages=messages,

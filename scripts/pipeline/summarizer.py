@@ -142,10 +142,7 @@ def summarize_thread(
         return client.messages.create(
             model=model,
             max_tokens=max_tokens,
-            # The summary layer's determinism invariant is temperature=0, and it
-            # has to be sent: omitted, the request runs at the API default and
-            # an identical re-request measurably produced different output.
-            temperature=0,
+            # No sampling params — see build_summary_request.
             # Sonnet 5 enables adaptive thinking when omitted; disable it to keep
             # the full max_tokens budget for JSON output and preserve
             # deterministic, thinking-free behavior (matches the retired
@@ -242,16 +239,30 @@ def build_summary_request(
     """Build a single Message Batches API request for one thread's summary.
 
     Returns the request dict shape expected by client.messages.batches.create().
+
+    NO SAMPLING PARAMS. This is the summary layer's determinism rule and it is a
+    prohibition, not a setting: claude-sonnet-5 rejects a non-default
+    ``temperature`` / ``top_p`` / ``top_k`` with a 400, and every request in this
+    layer goes through one of three builders, so one added param is a total
+    outage rather than a degraded day. #47 added ``temperature=0`` here to pin
+    determinism and took the whole 2026-08-05 run to zero threads; #51 removed
+    it. Sampling is not pinnable on Claude 5 — what this layer can control, and
+    does, is: no state across runs, one prompt builder per request kind, and
+    thinking explicitly disabled below.
+
+    Every param in this dict is hashed into the sidecar's per-thread input_hash
+    (except max_tokens), so changing the set requires a batch_state.SCHEMA_VERSION
+    bump in the same commit. test_summary_request_param_set_is_pinned keys the
+    expected set off SCHEMA_VERSION so the two are edited together, and fails if
+    the version moves with no set recorded for it. It cannot stop someone who
+    edits both — no local test can — so the rule still has to be read, not just
+    relied on.
     """
     return {
         "custom_id": custom_id,
         "params": {
             "model": model,
             "max_tokens": SUMMARY_MAX_TOKENS,
-            # See summarize_thread. temperature is inside compute_input_hash, so
-            # adding it here invalidated every pre-existing sidecar's hashes —
-            # that is why batch_state.SCHEMA_VERSION was bumped alongside.
-            "temperature": 0,
             # See summarize_thread: disable Sonnet 5 adaptive thinking so the
             # batch output isn't truncated and stays deterministic.
             "thinking": {"type": "disabled"},
