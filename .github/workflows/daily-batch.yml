@@ -126,15 +126,55 @@ jobs:
       # the prompt-caching prefix. Grouping and outcome extraction remain
       # synchronous (one small call per meeting; not worth batching).
       - name: Summarize new content with Claude API
+        id: summarize
         if: steps.dates.outputs.list != '' && steps.collect.outputs.has_pending != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DATES_LIST: ${{ steps.dates.outputs.list }}
         run: |
           set -e
+          # Dates that produced no usable summary. Collected rather than raised
+          # here: the run must still publish what it has, so the job is failed
+          # at the very end instead (see "Fail the run" below).
+          #   exit 3 = systemic     — enough evidence on its own
+          #   exit 4 = suspect      — one meeting failed on an already-published
+          #                           date. Alone that is ordinary breakage; the
+          #                           30-day lookback re-visits published dates
+          #                           daily, so failing on one would fail most
+          #                           mornings. Several in ONE run is different:
+          #                           a total outage can present as nothing but
+          #                           1-of-1 failures. This loop is the only
+          #                           place that sees every date, so the
+          #                           threshold lives here.
+          SYSTEMIC=""
+          SUSPECT=""
+          SUSPECT_N=0
           for d in $DATES_LIST; do
             echo "::group::Summarize $d"
-            python scripts/summarize.py --date "$d" --batch --batch-budget 1200 --ci-commit
+            # `|| rc=$?` keeps `set -e` from aborting the loop on exit 3 and 4,
+            # while any OTHER non-zero code still aborts it as before — a crash
+            # and an outage need different handling, and swallowing both would
+            # put us back where 2026-08-05 started.
+            rc=0
+            python scripts/summarize.py --date "$d" --batch --batch-budget 1200 --ci-commit || rc=$?
+            if [ "$rc" -eq 3 ]; then
+              SYSTEMIC="$SYSTEMIC $d"
+            elif [ "$rc" -eq 4 ]; then
+              SUSPECT="$SUSPECT $d"
+              SUSPECT_N=$((SUSPECT_N + 1))
+            elif [ "$rc" -ne 0 ]; then
+              echo "::endgroup::"
+              # Say it before dying: a crash on a LATER date must not erase the
+              # fact that an earlier one hit a systemic failure. Writing to
+              # GITHUB_OUTPUT here would be pointless — every step below has an
+              # implicit success() and is skipped once this one fails, so both
+              # the run summary and the final diagnostic step never run. An
+              # annotation is the one channel that survives a failed step.
+              if [ -n "$SYSTEMIC$SUSPECT" ]; then
+                echo "::error::No usable summary produced on:$SYSTEMIC$SUSPECT (before this crash)"
+              fi
+              exit "$rc"
+            fi
             echo "::endgroup::"
             # Once a date leaves a pending sidecar, stop submitting new batches
             # so we never pile up multiple in-flight batches in one run.
@@ -143,6 +183,19 @@ jobs:
               break
             fi
           done
+          # The policy, applied here rather than in the final step's `if:`,
+          # because a GitHub expression cannot compare a string output as a
+          # number without fromJSON gymnastics — and this threshold is the one
+          # thing a future reader must be able to find and change.
+          FAIL_DATES="$SYSTEMIC"
+          if [ "$SUSPECT_N" -ge 2 ]; then
+            FAIL_DATES="$FAIL_DATES$SUSPECT"
+          fi
+          echo "systemic_dates=$FAIL_DATES" >> "$GITHUB_OUTPUT"
+          # Always published, failing or not: one suspect date is not worth a red
+          # run, but it must still be visible in the run summary. A signal nobody
+          # can see is the state this whole change exists to leave behind.
+          echo "suspect_dates=$SUSPECT" >> "$GITHUB_OUTPUT"
 
       # ----- Enrich threads with news articles (Bing News RSS) -----
       # --rank-with-claude filters Bing candidates through a Haiku 4.5 call
@@ -289,6 +342,8 @@ jobs:
           NEW_DATES: ${{ steps.metrics.outputs.new_dates }}
           COMMITTED: ${{ steps.commit.outputs.committed }}
           STALLED: ${{ steps.stall.outputs.consecutive_zero_runs }}
+          SYSTEMIC_DATES: ${{ steps.summarize.outputs.systemic_dates }}
+          SUSPECT_DATES: ${{ steps.summarize.outputs.suspect_dates }}
         run: |
           {
             echo "## Daily Batch Summary"
@@ -300,7 +355,37 @@ jobs:
             fi
             echo "- **Committed**: ${COMMITTED}"
             echo "- **Consecutive zero-thread runs**: ${STALLED}"
+            if [ -n "${SYSTEMIC_DATES}" ]; then
+              echo "- **No usable summary produced on**:${SYSTEMIC_DATES}"
+            fi
+            if [ -n "${SUSPECT_DATES}" ]; then
+              echo "- **One meeting failed on an already-published date**:${SUSPECT_DATES}"
+              echo "  (not a failure on its own — watch for several of these in one run)"
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
+
+      # LAST step on purpose. Everything above has already run: the day's
+      # threads are written, committed and pushed, and IndexNow has been
+      # notified. Failing here turns an outage into a red run (and, via the
+      # notify-on-failure job, a GitHub issue) WITHOUT blocking the publish —
+      # the amplification #52 was about. Placing it any earlier would skip the
+      # steps below it.
+      - name: Fail the run on a systemic summary failure
+        if: steps.summarize.outputs.systemic_dates != ''
+        env:
+          # Through env, not an inline expression, per the same rule as
+          # LOOKBACK_DAYS above.
+          SYSTEMIC_DATES: ${{ steps.summarize.outputs.systemic_dates }}
+        run: |
+          echo "::error::No usable summary was produced for any meeting asked about on:${SYSTEMIC_DATES}"
+          echo "This is an alert, not a publish failure — data already committed above is intact,"
+          echo "and these dates may still hold threads from earlier runs. Nothing is lost."
+          echo "Look in the Summarize step's log for which of the two it was:"
+          echo "  * requests REJECTED (a 400 means the request shape no longer matches the"
+          echo "    model's contract — that was #51; 429/529 means the API was overloaded)"
+          echo "  * requests ANSWERED but the answer could not be assembled into a thread"
+          echo "    (raw/manifest mismatch — a different problem with a different fix)"
+          exit 1
 
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, etc.) as a
   # GitHub Issue so they don't sit silently until someone runs `gh run list`.
@@ -323,7 +408,12 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           DATE_TAG=$(date -u +%Y-%m-%d)
-          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), or a fetcher schema change.' "$DATE_TAG" "$RUN_URL")
+          # This issue dedups onto one long-lived thread, so the body is the only
+          # place a reader gets a hypothesis before opening the log. A systemic
+          # summary failure now reds the job too, and it is the one cause here
+          # whose data is already committed — say so, or the first reaction is to
+          # go looking for lost threads that are not lost.
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced no usable summary — check the run summary for "No usable summary produced on". That last one covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts.' "$DATE_TAG" "$RUN_URL")
           # Ensure the dedup label exists (no-op if already present).
           gh label create pipeline-failure \
             --color B60205 \

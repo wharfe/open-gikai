@@ -33,17 +33,28 @@ Summaries must express the **content of the speech itself**, not report on it.
 
 The summary pipeline (`scripts/summarize.py` + `scripts/pipeline/grouper.py` + `scripts/pipeline/summarizer.py` + `scripts/pipeline/prompts.py`) is the core of OpenGIKAI's political-neutrality guarantee. The following are **non-negotiable**:
 
-1. **Stateless**: No Memory tool, no carrying state across runs. A speech summarized today must produce the same *request* if re-summarized tomorrow on the same model — nothing about a previous run may reach the prompt. (This used to read "the same output". It no longer can: see invariant 2 on why identical output is not something the API lets us pin. Do not resolve the wording back the other way — reading "same output" as a promise is what produced the #47 → #51 loop.)
-2. **Deterministic**: no agent loops, no tool calls that branch on intermediate results, and a fixed request
-   shape. Same input → same request, byte for byte.
-   **Send no sampling parameters.** `temperature` / `top_p` / `top_k` were removed from the Claude 5 API:
-   `claude-sonnet-5` answers a non-default value with a 400, so one added param is not a degraded day, it is a
-   zero-thread run (#51 — the fix for #47 caused exactly that on 2026-08-05). Sampling is therefore *not* a lever
-   this project has. What it does control, and must keep controlling, is: statelessness (1 above), one prompt
-   builder per request kind (below), and **`thinking: {"type": "disabled"}` on every summary/grouping/outcome
-   request** — Sonnet 5 turns adaptive thinking ON when the param is omitted, which both eats the `max_tokens`
-   budget and reintroduces run-to-run variation. Be honest about the residual: run-to-run identity is the
-   model's behavior under a fixed prompt, not something the API lets us pin any more.
+1. **Stateless**: No Memory tool, no carrying state across runs. A speech summarized today must produce the same *prompt* if re-summarized tomorrow on the same model — nothing about a previous run may reach it. (This used to read "the same output". It no longer can: see invariant 2 on why identical output is not something the API lets us pin. Do not resolve the wording back the other way — reading "same output" as a promise is what produced the #47 → #51 loop.)
+2. **Deterministic**: no agent loops, no tool calls that branch on intermediate results, and **a fixed
+   request shape** — the *set* of params a summary-layer request may carry is pinned, and adding one is a
+   deliberate, tested act (`test_determinism.py`'s param allowlist; #58 tracks extending it to the
+   synchronous call sites). Do not read anything below as loosening that.
+   **Same input → same prompt.** That is the content claim, and it is deliberately narrower than it looks:
+   the `system` block and the `messages` built from a given meeting are identical every time, because every
+   request kind has exactly one message builder (below). It is *not* a claim that two runs put byte-identical
+   HTTP bodies on the wire — `max_tokens` differs between the synchronous path and the batch path, and the
+   synchronous paths issue a second request at a higher ceiling when the first is truncated. `max_tokens` is
+   excluded from `compute_input_hash` for exactly that reason: it cannot change a response that already fit.
+   The shape is fixed; one param's *value* varies, and only that one.
+   **Send no sampling parameters.** The API rejects a *non-default* `temperature` / `top_p` / `top_k` on
+   `claude-sonnet-5` with a 400 (omitting them, or passing the default, is accepted). This project forbids
+   them outright anyway, because the failure is not a degraded day but a zero-thread run: #51 — the fix for
+   #47 pinned `temperature=0` and took every request on 2026-08-05 to a 400. **Pinning sampling is therefore
+   not a lever this project has.** What it does control, and must keep controlling, is: statelessness
+   (1 above), one prompt builder per request kind (below), and **`thinking: {"type": "disabled"}` on every
+   summary/grouping/outcome request** — Sonnet 5 turns adaptive thinking ON when the param is omitted, which
+   both eats the `max_tokens` budget and reintroduces run-to-run variation. Be honest about the residual:
+   given the same prompt, run-to-run identity of the *output* is the model's behavior, not something the API
+   lets us pin any more.
    Every request goes through one of three builders — `grouper.build_grouping_request` /
    `build_outcome_request` and `summarizer.build_summary_request` — and the synchronous paths reuse the same
    message builders, so the daily run and a manual recovery run send byte-identical prompts. Build a request
@@ -87,6 +98,35 @@ python scripts/fetch_ndl.py --lookback-days 30
 python scripts/summarize.py --date YYYY-MM-DD --batch
 python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
 ```
+
+### `summarize.py` exit codes (a contract split across two files)
+
+| code | meaning | what the daily workflow does |
+|---|---|---|
+| 0 | ran; may legitimately have produced nothing | continue |
+| 1 | crash / usage error / `--collect-pending` hard-fail | abort the date loop (`set -e`) |
+| 3 | **no usable summary**: every meeting asked about this run produced nothing that became a thread | record the date, keep going, publish everything, fail the job in the last step |
+| 4 | **suspect**: the same thing, but only one meeting was asked about and the date already has threads | record separately; fail the job only if **2+ dates** in one run report it |
+
+"Produced nothing that became a thread" covers both a rejected request *and* an answer that could not be
+assembled — the outcome that matters is a speech that never reaches the site. It does **not** mean the date is
+empty. Report it that way; an operator sent to hunt a 400 that never happened, or to look for threads that
+were never lost, has had their morning taken.
+
+**Why 4 exists.** A single meeting failing on an already-published date is ordinary breakage, and the 30-day
+lookback re-visits published dates every morning — failing on one would fail most mornings, and an alarm that
+cries daily gets switched off. But a *total* outage can present as nothing else: NDL adds one late meeting
+each to three old dates, every request fails, and every date reports 1-of-1. So the evidence is kept (exit 4)
+instead of discarded, and the **workflow** applies the threshold, because it is the only layer that sees every
+date in the run. Change the threshold in `daily-batch.yml`'s `SUSPECT_N -ge 2`, not in Python.
+
+3 exists only because 1 cannot carry this meaning: under the workflow's `set -e` loop a bare 1 is
+indistinguishable from a crash, aborts the loop, and skips commit/push — the amplification #52 was about.
+An outage must be loud without blocking the publish. **Both halves have to move together**: change
+`EXIT_SYSTEMIC_FAILURE` / `EXIT_SUSPECT_FAILURE` in `scripts/summarize.py` and the matching `-eq` tests in
+`.github/workflows/daily-batch.yml` in the same commit.
+`test_systemic_failure.py::test_the_workflow_tolerates_exactly_these_exit_codes` parses the YAML and fails if
+they drift.
 
 ## Project Structure
 

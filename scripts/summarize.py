@@ -30,7 +30,9 @@ load_dotenv()
 # Add scripts/ to path for pipeline imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from pipeline.grouper import group_meeting, extract_meeting_outcome
+from pipeline.grouper import (
+    build_grouping_messages, group_meeting, extract_meeting_outcome,
+)
 from pipeline.summarizer import (
     summarize_thread,
     build_summary_request,
@@ -55,6 +57,19 @@ log = logging.getLogger("summarize")
 # invariants forbid. Keep this in sync with the per-function model defaults in
 # pipeline/grouper.py and pipeline/summarizer.py.
 DEFAULT_MODEL = "claude-sonnet-5"
+
+# Exit code for "nothing this date asked about produced a usable summary" (see
+# systemic_failure). Kept distinct from 1 so the daily workflow can tell an
+# outage from a crash and still publish the dates that did work.
+EXIT_SYSTEMIC_FAILURE = 3
+# Exit code for the same thing seen through too little evidence to act on
+# alone: exactly one meeting was attempted, it failed, and the date already has
+# threads (see suspect_failure). One of these is ordinary breakage. Several in
+# one run is an outage wearing a disguise — a 30-day lookback re-visits already
+# published dates every morning, so a total outage can present as nothing but
+# 1-of-1 failures and never trip the systemic rule. The workflow, which is the
+# only thing that sees every date, applies that threshold.
+EXIT_SUSPECT_FAILURE = 4
 
 
 def _utcnow_iso() -> str:
@@ -142,6 +157,99 @@ def load_progress(progress_path: str) -> dict:
         with open(progress_path, "r", encoding="utf-8") as f:
             return json.load(f)
     return {"completed": [], "failed": []}
+
+
+def new_api_stats() -> dict:
+    """Per-run counters for meetings that actually reached the API.
+
+    A meeting counts as ``failed`` when it reached the API and came back with
+    nothing usable — whether that surfaced as a raised exception (grouping or
+    outcome) or as error entries in a batch's results (summary). Counting only
+    exceptions was the first version of this signal and it was blind to the
+    summary phase, which is both the bulk of the spend and where the #47/#51
+    regression lived.
+    """
+    return {"attempted": 0, "failed": 0}
+
+
+def systemic_failure(api_stats: dict, published_threads: int) -> bool:
+    """True when every meeting this date asked about came back with nothing usable.
+
+    "Nothing usable" is wider than "the API said no": a summary that parses but
+    cannot be assembled into a thread is counted too, because the outcome that
+    matters is a speech that never reaches the site. Say that, not "rejected",
+    wherever this verdict is reported — sending an operator to hunt an API
+    contract change that did not happen costs a morning.
+
+    This is the difference between a quiet Diet day and an outage, and nothing
+    else in the pipeline can tell them apart. On 2026-08-05 every grouping,
+    outcome and summary request was rejected with a 400 (#51) and the Summarize
+    step still exited 0 — the job only went red because a *second*, unrelated
+    bug crashed the validate step (#52). Fixing that bug removed the only thing
+    making the outage visible, so the signal has to come from here.
+
+    ``published_threads`` is how many threads the date ends up with, existing
+    ones included, and it buys exactly one thing: **a single failed meeting is
+    not enough evidence to call a date that already published a failure.**
+    ``attempted`` only counts meetings this run tried, and auto-resume seeds
+    ``progress["completed"]`` from the committed threads file, so a date whose
+    other four meetings succeeded *yesterday* arrives here as ``attempted=1``.
+    Without the ``attempted == 1`` carve-out, one stubborn late-added meeting on
+    an already-published date reads as "every meeting failed" and reds the job
+    every morning — ordinary per-meeting breakage, which is what this must not
+    fire on. 34% of dates in ``data/raw/`` hold a single meeting, so this is not
+    a corner.
+
+    The carve-out is deliberately limited to ``attempted == 1``. Suppressing on
+    published threads generally would be a fail-open hole in its own right: a
+    real outage that happens to land on dates with prior output would go
+    unreported forever, which is the very failure this exists to end. Two or
+    more meetings failing together is evidence about the layer, not about a
+    meeting, whatever is already on disk.
+
+    It does NOT fire when:
+      * nothing was attempted (every meeting already summarized, or procedural)
+      * some meetings failed and others succeeded this run
+      * exactly one meeting was attempted, it failed, and the date already has
+        threads — ``suspect_failure`` picks that case up instead, so the
+        evidence is kept rather than discarded.
+
+    It DOES fire when a date's only askable meeting fails and the date is left
+    empty. That is the accepted false-positive shape: a red run costs a GitHub
+    issue and blocks nothing (the workflow tolerates this exit code per date and
+    publishes first), while the opposite error costs weeks of silence, which is
+    this pipeline's documented history.
+    """
+    if not _everything_asked_for_failed(api_stats):
+        return False
+    return api_stats["attempted"] >= 2 or published_threads == 0
+
+
+def suspect_failure(api_stats: dict, published_threads: int) -> bool:
+    """The one shape ``systemic_failure`` deliberately lets past, kept not dropped.
+
+    Exactly one meeting attempted, it failed, and the date already has threads.
+    On its own that is ordinary per-meeting breakage and must not red the run —
+    55% of the dates currently published hold a single meeting (78 of 142,
+    counting distinct house+committee pairs in data/threads/) and the 30-day
+    lookback re-visits published dates every morning, so failing on it means
+    failing daily.
+
+    But a *total* outage can present as nothing else. NDL adds one late meeting
+    each to three already-published dates; the API is down; every date reports
+    1-of-1 failed and the systemic rule stays silent on all three. Answering
+    "no" and forgetting is what let that run go green. So this is reported as
+    its own exit code and the **workflow** — the only layer that sees every date
+    in the run — decides: one is noise, several at once is the outage.
+    """
+    if not _everything_asked_for_failed(api_stats):
+        return False
+    return api_stats["attempted"] == 1 and published_threads > 0
+
+
+def _everything_asked_for_failed(api_stats: dict) -> bool:
+    return (api_stats["attempted"] > 0
+            and api_stats["failed"] == api_stats["attempted"])
 
 
 def save_progress(progress: dict, progress_path: str) -> None:
@@ -352,11 +460,23 @@ def process_meeting(
     model: str,
     date_str: str,
     thread_counter: int,
+    summary_stats: Optional[dict] = None,
 ) -> tuple:
     """Process a single meeting through grouping + summarization + outcome.
 
     Returns (threads_list, updated_thread_counter).
+
+    ``summary_stats`` is an optional out-parameter (``{"attempted", "failed"}``)
+    counting this meeting's *summary* requests. Without it the caller cannot
+    tell "grouping found nothing to summarize" from "every summary request was
+    rejected": both return an empty thread list and neither raises, because the
+    per-thread ``except`` below has always swallowed summary failures. That gap
+    let a total summary-layer outage on the synchronous path — the path an
+    operator's manual recovery run uses — finish green with zero threads, the
+    exact 2026-08-05 shape. See ``systemic_failure``.
     """
+    if summary_stats is None:
+        summary_stats = new_api_stats()
     meeting_id = meeting.get("meetingId", "unknown")
     speeches = meeting.get("speeches", [])
     raw_lookup = build_speech_lookup(speeches)
@@ -379,10 +499,19 @@ def process_meeting(
         thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
 
         if not thread_speeches:
-            log.warning("No speeches found for thread '%s'", thread_info.get("topic"))
+            # Grouping named speechOrders that are not in the raw record. No
+            # summary request goes out, so counting this as "nothing attempted"
+            # would file a meeting that produced zero threads as completed and
+            # drop it forever, while still paying for grouping and outcome every
+            # run. It is a failed answer, not an absent question.
+            log.error("Thread '%s' in %s names no speech that exists in raw",
+                      thread_info.get("topic"), meeting_id)
+            summary_stats["attempted"] += 1
+            summary_stats["failed"] += 1
             continue
 
         # Phase C: Summarize speeches in this thread
+        summary_stats["attempted"] += 1
         try:
             summary_result = summarize_thread(
                 client, meeting, thread_info, thread_speeches, model=model,
@@ -392,6 +521,7 @@ def process_meeting(
             time.sleep(1)
         except Exception as e:
             log.error("Failed to summarize thread '%s': %s", thread_info.get("topic"), e)
+            summary_stats["failed"] += 1
             continue
 
         thread = assemble_thread(
@@ -409,6 +539,16 @@ def process_meeting(
                 "status": meeting_outcome.get("status", "ongoing"),
             }
             threads.append(thread)
+        else:
+            # A summary that came back fine but could not be assembled is still
+            # a thread that will never exist. Counting only the raised exception
+            # left this branch silent: the meeting was filed as completed with
+            # zero threads and auto-resume never looked at it again — a
+            # permanent hole in the published record, which is the same class of
+            # loss the exit code exists to surface.
+            log.error("Could not assemble thread '%s' in %s",
+                      thread_info.get("topic"), meeting_id)
+            summary_stats["failed"] += 1
 
     return threads, thread_counter
 
@@ -595,6 +735,20 @@ def _rebuild_requests_from_manifest(sidecar: dict, meetings_by_id: Dict[str, dic
     return requests
 
 
+def usable_result(val: Optional[dict]) -> bool:
+    """Whether a parsed batch result can actually become a thread.
+
+    A result that parsed but carries no speeches is just as unusable as a
+    missing one: assembly calls it truthy, ``assemble_thread`` then returns
+    None, and the date takes the full-resubmit path that fails identically
+    every run. Module level rather than nested in ``_repair_unusable_results``
+    because the systemic-failure counter has to ask the same question, and two
+    spellings of "unusable" would eventually disagree — the same reason
+    ``has_question_for_the_api`` delegates to the grouping builder.
+    """
+    return bool(val) and bool(val.get("speeches"))
+
+
 # Above this many unusable results, the failure is systemic (bad prompt, bad
 # model, quota) rather than a handful of oversized threads — fall through to the
 # existing resubmit path instead of hammering the sync API.
@@ -662,14 +816,7 @@ def _repair_unusable_results(
             manifest_order.append(mt["custom_id"])
             by_custom_id[mt["custom_id"]] = (m["meeting_id"], meeting, mt, raw_lookup)
 
-    # A result that parsed but carries no speeches is just as unusable: assembly
-    # calls it truthy, assemble_thread then returns None, and the date takes the
-    # full-resubmit path that fails identically every run. Repairing it is strictly
-    # better than letting it deadlock.
-    def _usable(val: Optional[dict]) -> bool:
-        return bool(val) and bool(val.get("speeches"))
-
-    unusable = [cid for cid in manifest_order if not _usable(results.get(cid))]
+    unusable = [cid for cid in manifest_order if not usable_result(results.get(cid))]
     if not unusable:
         return 0
     if len(unusable) > REPAIR_LIMIT:
@@ -932,6 +1079,84 @@ def collect_pending_batches(
     return hard_fail
 
 
+def has_question_for_the_api(meeting: dict) -> bool:
+    """Whether this meeting sends a *grouping* request, i.e. one we can observe.
+
+    A meeting whose speeches are all procedural is short-circuited by
+    ``grouper.build_grouping_messages`` before any request is sent, so its
+    "0 threads" is not evidence that the API works — and counting it as a
+    success is what would let a total API outage look like a quiet day
+    (2026-07-24 had both kinds on the same date). Delegates to the very
+    function group_meeting uses, so the two cannot disagree about what
+    "nothing to ask" means.
+
+    Deliberately *not* "would reach the API at all": a procedural-only meeting
+    carrying a 附帯決議 still sends an outcome request
+    (``grouper.build_outcome_messages``), but ``extract_meeting_outcome``
+    swallows that request's exceptions, so its failure is unobservable from
+    here. Widening this to include outcome requests would make such a meeting
+    ``attempted`` while it can never become ``failed`` — which would *mask*
+    real outages rather than catch more of them. The swallow is tracked
+    separately; until it is fixed, "askable" means "grouping".
+
+    Never raises: malformed raw (NDL can emit ``"speech": null``) used to fail
+    inside the per-meeting ``try``, and must keep doing so. Answering True lets
+    the very next call re-raise it there, where it lands in ``failed`` and the
+    run keeps going.
+    """
+    try:
+        return build_grouping_messages(meeting) is not None
+    except Exception as e:  # noqa: BLE001 — see docstring
+        log.warning(
+            "Could not pre-check %s (%s); assuming it reaches the API",
+            meeting.get("meetingId", "?"), e,
+        )
+        return True
+
+
+def count_meetings_with_no_usable_result(
+    prepared_meetings: list,
+    results: Dict[str, Optional[dict]],
+    api_stats: dict,
+) -> int:
+    """Charge ``api_stats["failed"]`` for meetings whose whole batch came back empty.
+
+    The summary phase does not fail by raising. ``fetch_summary_results`` turns
+    every errored entry into ``None``, repair swallows a deterministic 4xx, and
+    ``assemble_from_manifest`` answers ``ok=False`` — which the caller reports
+    as ``pending=True`` and the run exits 0 with the sidecar kept. So a date on
+    which *every* summary request was rejected looked exactly like a date whose
+    batch merely needs another day, and the counters actively asserted the API
+    was healthy (``failed`` stayed 0). That is the same fail-open shape as
+    2026-08-05, relocated to the phase that carries the bulk of the spend and
+    the #47/#51 regression surface — see ``systemic_failure``.
+
+    Per meeting, not per request: one oversized thread out of twenty is
+    ordinary breakage. A meeting counts as failed only when it asked at least
+    one question and not one answer was usable. A meeting whose grouping
+    legitimately produced no threads asked nothing here and is left alone.
+
+    Called before assembly so the count is taken whether or not assembly then
+    succeeds. Returns the number newly charged (for logging/tests).
+    """
+    newly_failed = 0
+    for prep in prepared_meetings:
+        if not prep.get("askable"):
+            continue
+        custom_ids = [p["custom_id"] for p in prep["pending"]]
+        if not custom_ids:
+            continue
+        if any(usable_result(results.get(cid)) for cid in custom_ids):
+            continue
+        api_stats["failed"] += 1
+        newly_failed += 1
+        log.error(
+            "All %d summary request(s) for %s came back unusable",
+            len(custom_ids), prep["meeting_id"],
+        )
+    return newly_failed
+
+
 def prepare_meeting_for_batch(
     client,
     meeting: dict,
@@ -989,12 +1214,22 @@ def run_batch_phase(
     batch_poll_seconds: int = 30,
     pending_dir: str = bs.PENDING_DIR,
     ci_commit: bool = False,
+    api_stats: Optional[dict] = None,
 ) -> tuple:
     """Process meetings via Batches API. Persists a sidecar so a batch that
     does not finish within the budget resumes on a later run.
 
     Returns ``(new_threads, thread_counter, completed_meeting_ids, pending)``.
+
+    ``api_stats`` is an out-parameter (``{"attempted", "failed"}``) counting only
+    meetings that would actually reach the API, so run_pipeline can tell "there
+    was nothing to summarize" from "every request failed" — see
+    ``systemic_failure``. It is deliberately NOT part of ``progress``: that dict
+    is persisted and re-read on resume, and a stale count would answer the
+    question for a run that never happened.
     """
+    if api_stats is None:
+        api_stats = new_api_stats()
     prepared_meetings: list[dict] = []
     all_pending: list[dict] = []
 
@@ -1003,13 +1238,29 @@ def run_batch_phase(
         if meeting_id in progress["completed"]:
             log.info("Skipping already completed: %s", meeting_id)
             continue
+        askable = has_question_for_the_api(meeting)
+        if askable:
+            api_stats["attempted"] += 1
         log.info("Preparing for batch: %s", meeting_id)
         try:
             prep = prepare_meeting_for_batch(client, meeting, model)
         except Exception as e:
             log.error("Failed to prepare %s: %s", meeting_id, e)
             progress["failed"].append(meeting_id)
+            if askable:
+                api_stats["failed"] += 1
             continue
+        if askable and prep["thread_infos"] and not prep["pending"]:
+            # Grouping answered with threads, and not one of them names a speech
+            # that exists in the raw record. Nothing goes into the batch, so
+            # without this the meeting lands in neither list: never completed,
+            # never failed, re-charged for grouping and outcome every morning
+            # while the date publishes nothing and the run exits 0.
+            log.error("Grouping for %s named no speech that exists in raw", meeting_id)
+            progress["failed"].append(meeting_id)
+            api_stats["failed"] += 1
+            continue
+        prep["askable"] = askable
         prepared_meetings.append(prep)
         all_pending.extend(prep["pending"])
 
@@ -1025,7 +1276,36 @@ def run_batch_phase(
         for p in all_pending
     ]
     log.info("Submitting %d summary requests via Batches API", len(requests))
-    batch_id = submit_summary_batch(client, requests)
+    try:
+        batch_id = submit_summary_batch(client, requests)
+    except anthropic.APIError as e:
+        # An outage must not take the run down with it. Submission is the one
+        # API call here with nothing persisted behind it — no sidecar exists
+        # yet, so there is nothing to resume and the meetings simply stay
+        # uncompleted for the next run. Charging them and returning lets
+        # systemic_failure make it loud (exit 3) while the workflow still
+        # publishes, commits and pushes. Letting it propagate instead means
+        # exit 1, which aborts the date loop and skips every step below —
+        # the #52 amplification this whole change exists to end, reached
+        # through a 429/529 instead of a 400.
+        #
+        # anthropic.APIError, NOT Exception. The workflow's contract is "3 and 4
+        # mean an outage and the loop continues; anything else is a crash and
+        # aborts it" — catching Exception here would quietly reclassify a
+        # TypeError in our own request-building as an outage and keep going,
+        # which is how a code bug would come to look like a bad API day.
+        log.error("Batch submission failed for %s: %s", date_str, e)
+        # Only meetings that actually had a request in this batch. A meeting
+        # whose grouping legitimately returned nothing never reached the
+        # submission, so charging it here would push a partial failure over the
+        # "everything failed" line and report a false systemic outage.
+        api_stats["failed"] += sum(
+            1 for p in prepared_meetings if p.get("askable") and p.get("pending")
+        )
+        for prep in prepared_meetings:
+            if prep["meeting_id"] not in progress["failed"]:
+                progress["failed"].append(prep["meeting_id"])
+        return [], thread_counter, [], False
 
     # Persist the sidecar BEFORE the long poll so a kill mid-poll still resumes.
     submitted_at = _utcnow_iso()
@@ -1037,18 +1317,34 @@ def run_batch_phase(
     if ci_commit:
         _git_commit_sidecar(path, date_str)
 
-    batch = poll_summary_batch(
-        client, batch_id,
-        timeout_seconds=batch_timeout_seconds,
-        poll_interval_seconds=batch_poll_seconds,
-    )
-    if batch.processing_status != "ended":
-        log.info("Batch %s not ended within budget — sidecar kept for resume", batch_id)
-        return [], thread_counter, [], True
+    try:
+        batch = poll_summary_batch(
+            client, batch_id,
+            timeout_seconds=batch_timeout_seconds,
+            poll_interval_seconds=batch_poll_seconds,
+        )
+        if batch.processing_status != "ended":
+            log.info("Batch %s not ended within budget — sidecar kept for resume", batch_id)
+            return [], thread_counter, [], True
 
-    results = fetch_summary_results(client, batch_id)
-    meetings_by_id = {m.get("meetingId", "unknown"): m for m in meetings}
-    _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
+        results = fetch_summary_results(client, batch_id)
+        meetings_by_id = {m.get("meetingId", "unknown"): m for m in meetings}
+        _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
+    except anthropic.APIError as e:
+        # Past this point the sidecar is on disk, so the honest answer to any
+        # API-side failure is "pending" — the batch is real, its results are
+        # retained for ~29 days, and the next run resumes it for free. Notably
+        # _repair_unusable_results deliberately re-raises RateLimitError /
+        # APIConnectionError / 529 rather than treating them as repair
+        # failures; unwrapped, those escalated an overloaded API into a run
+        # that publishes nothing at all.
+        log.error("Batch %s could not be collected this run (%s) — sidecar kept",
+                  batch_id, e)
+        return [], thread_counter, [], True
+    # Before assembly: assembly is all-or-nothing and reports its failure as
+    # "pending", which is indistinguishable from a slow batch. The counters have
+    # to be taken from the results themselves.
+    count_meetings_with_no_usable_result(prepared_meetings, results, api_stats)
     new_threads, ok = assemble_from_manifest(
         sidecar, meetings_by_id, results, members, thread_counter,
     )
@@ -1107,8 +1403,14 @@ def run_pipeline(
     batch_poll_seconds: int = 30,
     pending_dir: str = bs.PENDING_DIR,
     ci_commit: bool = False,
-) -> None:
-    """Run the full summarization pipeline for a given date."""
+) -> int:
+    """Run the full summarization pipeline for a given date.
+
+    Returns the exit code this date warrants: 0, ``EXIT_SYSTEMIC_FAILURE`` or
+    ``EXIT_SUSPECT_FAILURE``. A code rather than a bool because there are three
+    answers, not two, and the third one only means something once the workflow
+    has seen every date — see ``suspect_failure``.
+    """
     # Load raw data — collect meetings from all source files for this date
     import glob as _glob
     candidates = [
@@ -1142,7 +1444,7 @@ def run_pipeline(
             speech_count = len(m.get("speeches", []))
             log.info("  %s — %d speeches", m.get("meetingId", "?"), speech_count)
         log.info("Dry run complete. No API calls made.")
-        return
+        return 0
 
     # Progress tracking
     output_path = os.path.join(output_dir, f"{date_str}.json")
@@ -1200,6 +1502,7 @@ def run_pipeline(
         )
 
     pending = False
+    api_stats = new_api_stats()
     if batch:
         new_threads, thread_counter, completed_ids, pending = run_batch_phase(
             client, meetings, progress, members, model, date_str,
@@ -1208,6 +1511,7 @@ def run_pipeline(
             batch_poll_seconds=batch_poll_seconds,
             pending_dir=pending_dir,
             ci_commit=ci_commit,
+            api_stats=api_stats,
         )
         all_threads.extend(new_threads)
         for mid in completed_ids:
@@ -1226,20 +1530,49 @@ def run_pipeline(
                 continue
 
             log.info("Processing: %s", meeting_id)
+            askable = has_question_for_the_api(meeting)
+            if askable:
+                api_stats["attempted"] += 1
 
+            summary_stats = new_api_stats()
             try:
                 threads, thread_counter = process_meeting(
                     client, meeting, members, model, date_str, thread_counter,
+                    summary_stats=summary_stats,
                 )
                 all_threads.extend(threads)
-                progress["completed"].append(meeting_id)
+                # Its own predicate, deliberately NOT systemic_failure(): that
+                # one carries a date-scope carve-out ("one failing meeting does
+                # not overturn a published date") whose threshold is tuned to
+                # meetings, while here the unit is threads. Reusing it works
+                # today only by accident, and would silently stop protecting
+                # small meetings the moment that threshold is retuned for
+                # date-scope reasons.
+                if (summary_stats["attempted"] > 0
+                        and summary_stats["failed"] == summary_stats["attempted"]):
+                    # Grouping worked, so the meeting has substance — yet not one
+                    # summary became a thread. process_meeting swallows those per
+                    # thread and returns cleanly, so without this the meeting is
+                    # filed as completed and never retried, and the run exits 0
+                    # having published nothing for it.
+                    log.error(
+                        "None of the %d summary request(s) for %s produced a thread",
+                        summary_stats["attempted"], meeting_id,
+                    )
+                    progress["failed"].append(meeting_id)
+                    if askable:
+                        api_stats["failed"] += 1
+                else:
+                    progress["completed"].append(meeting_id)
+                    log.info(
+                        "Completed %s — %d threads", meeting_id, len(threads),
+                    )
                 save_progress(progress, progress_path)
-                log.info(
-                    "Completed %s — %d threads", meeting_id, len(threads),
-                )
             except Exception as e:
                 log.error("Failed to process %s: %s", meeting_id, e)
                 progress["failed"].append(meeting_id)
+                if askable:
+                    api_stats["failed"] += 1
                 save_progress(progress, progress_path)
                 continue
 
@@ -1289,6 +1622,38 @@ def run_pipeline(
             "Re-run with --resume to retry.",
             len(progress["failed"]),
         )
+
+    if systemic_failure(api_stats, len(all_threads)):
+        # An annotation as well as a log line: this has to survive being read as
+        # one line in an otherwise-green job's log, which is how the 2026-08-05
+        # outage stayed invisible for a full run. Worded as what was measured,
+        # not as a diagnosis. Two things it must not claim: that the API
+        # rejected anything (an unassemblable answer counts too), and that the
+        # date is empty (with two or more failures it fires whatever is already
+        # published). Either overclaim sends the reader hunting the wrong thing.
+        _annotate(
+            "error",
+            f"{date_str}: all {api_stats['attempted']} meeting(s) asked about "
+            f"this run produced no usable summary "
+            f"({len(all_threads)} thread(s) on the date in total) — failing the "
+            f"run so this is not read as a quiet day",
+        )
+        return EXIT_SYSTEMIC_FAILURE
+
+    if suspect_failure(api_stats, len(all_threads)):
+        # A warning, not an error: on its own this is ordinary breakage, and
+        # annotating it red every morning is how an alarm gets switched off.
+        # The exit code still carries it to the workflow, which fails the job
+        # only if several dates report it in the same run.
+        _annotate(
+            "warning",
+            f"{date_str}: the one meeting asked about this run produced no "
+            f"usable summary (the date keeps its {len(all_threads)} existing "
+            f"thread(s)) — on its own this is one bad meeting, but several in "
+            f"one run is an outage",
+        )
+        return EXIT_SUSPECT_FAILURE
+    return 0
 
 
 # ---------------------------------------------------------------------------
@@ -1371,7 +1736,7 @@ def main(argv: Optional[List[str]] = None) -> None:
             sys.exit(1)
         return
 
-    run_pipeline(
+    exit_code = run_pipeline(
         date_str=args.date,
         meeting_filter=args.meeting,
         model=args.model,
@@ -1387,6 +1752,14 @@ def main(argv: Optional[List[str]] = None) -> None:
         pending_dir=args.pending_dir,
         ci_commit=args.ci_commit,
     )
+    if exit_code:
+        # DISTINCT codes, never 1. The caller has to keep going — publishing
+        # what already exists must not be blocked by this date failing (that
+        # amplification is #52) — so the workflow tolerates 3 and 4 per date,
+        # finishes the run, commits, and only then decides whether to fail the
+        # job. A bare 1 is indistinguishable from a crash and would abort the
+        # loop under `set -e`.
+        sys.exit(exit_code)
 
 
 if __name__ == "__main__":
