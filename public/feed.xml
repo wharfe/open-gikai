@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 04 Aug 2026 22:56:07 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 05:36:12 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W32 国会まとめ — 2件の議論</title>
+      <title>2026-W32 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W32</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W32</guid>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。令和８年熊本地震による被災状況視察のための熊本県訪問についての会見ほか。</description>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、2委員会の議論をまとめました。「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見、令和８年熊本地震による被災状況視察のための熊本県訪問についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +32,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W29 国会まとめ — 130件の議論</title>
+      <title>2026-W29 国会まとめ — 140件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W29</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W29</guid>
       <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>130件のスレッド、11委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
+      <description>140件のスレッド、12委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>食料品消費税減税と給付付き税額控除の制度設計 — 「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見</title>
+      <link>https://open-gikai.net/t/t_20260805_3bb5e5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260805_3bb5e5_01</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+      <description>食料品消費税減税を給付付き税額控除移行までの「つなぎ」と位置づけ制度設計を進める（首相記者会見・2026.08.05・2発言）</description>
+      <category>「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見</category>
     </item>
     <item>
       <title>熊本地震視察の目的と災害関連死防止対策 — 令和８年熊本地震による被災状況視察のための熊本県訪問についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260715_6f4e52_04</guid>
       <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
       <description>皇族数確保のための養子制度導入や皇位継承の在り方を巡る改正手続きを議論（国会会議録・2026.07.15・11発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>連立合意と副首都法案・定数削減の進め方 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260715_6f4e52_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260715_6f4e52_05</guid>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
-      <description>自民・維新連立合意に基づく副首都法案や定数削減の拙速な進め方を批判（国会会議録・2026.07.15・3発言）</description>
       <category>国家基本政策委員会合同審査会</category>
     </item>
   </channel>
