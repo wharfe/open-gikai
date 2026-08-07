@@ -1,0 +1,47 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-22",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01PVgyV9PiEx7zcW95usSHg9",
+      "submitted_at": "2026-08-07T01:13:45Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会_2026-07-22_第38号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_1b3f4a802ded_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "元議長河野洋平氏逝去に伴う弔詞贈呈",
+            "topicTag": "弔詞",
+            "topicColor": "#6b7280",
+            "summary": "元衆議院議長河野洋平氏の逝去に際し弔詞贈呈を決定",
+            "contextDescription": "元衆議院議長・自民党総裁を務めた河野洋平氏が逝去し、本会議での弔詞贈呈を決める手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:cb973ab90c636762e7fc32dc6a54ab7670671e26ed1d1e09970b45e3f46ae1e5"
+        }
+      ]
+    }
+  ]
+}
