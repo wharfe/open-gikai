@@ -774,16 +774,13 @@ def test_the_workflow_tolerates_exactly_these_exit_codes():
         "the suspect exit code is no longer recorded — the evidence is discarded "
         "again, which is the hole this second code exists to close"
     )
-    assert "SUSPECT_N=$((SUSPECT_N + 1))" in run
-    # Several suspect dates in one run IS the outage. Without this the second
-    # code is collected and then ignored, which is indistinguishable from not
-    # having it.
-    assert '[ "$SUSPECT_N" -ge 2 ]' in run, (
-        "suspect dates are collected but never escalate"
-    )
-    assert 'FAIL_DATES="$FAIL_DATES$SUSPECT"' in run
-    assert 'systemic_dates=$FAIL_DATES' in run, (
-        "the escalation never reaches GITHUB_OUTPUT"
+    # The threshold itself (SUSPECT_N >= 2, FAIL_DATES escalation) no longer
+    # lives here — it moved to the last step, which is the only place that
+    # sees both the Summarize and Collect paths (test_the_threshold_lives_
+    # in_the_final_step_and_dedupes and test_the_summarize_step_no_longer_
+    # applies_the_threshold cover that).
+    assert 'systemic_dates=$SYSTEMIC' in run, (
+        "the systemic dates never reach GITHUB_OUTPUT"
     )
     assert 'suspect_dates=$SUSPECT' in run, (
         "suspect dates are invisible in the run summary"
@@ -793,8 +790,70 @@ def test_the_workflow_tolerates_exactly_these_exit_codes():
     assert "::error::" in run
 
     # And the job must still be failed, after everything else has run.
-    assert steps[-1]["if"] == "steps.summarize.outputs.systemic_dates != ''"
+    # No `if:` any more — the last step always runs and decides inside, because
+    # a GitHub expression can neither union two lists nor compare a count. Note
+    # this still leaves the step an implicit success(), so a Collect hard-fail
+    # skips it — acceptable, since that already failed the job and the
+    # annotations survive. `if: always()` is deliberately NOT the answer.
+    assert "if" not in steps[-1]
     assert "exit 1" in steps[-1]["run"]
+
+
+def _workflow_steps():
+    import yaml
+    wf = yaml.safe_load(Path(".github/workflows/daily-batch.yml").read_text())
+    return wf["jobs"]["fetch-and-summarize"]["steps"]
+
+
+def test_the_collect_step_does_not_block_the_publish():
+    """Collect exits 0 on a soft verdict, so it needs no rc capture — but it
+    must also not have grown one that swallows a hard fail."""
+    steps = _workflow_steps()
+    collect = next(s for s in steps if s.get("id") == "collect")
+    assert "|| rc=" not in collect["run"], (
+        "Collect answers with outputs, not an exit code — an rc capture here "
+        "would be a second transport and could swallow a hard fail"
+    )
+    assert "set -e" in collect["run"]
+
+
+def test_the_final_step_reads_both_paths():
+    """#59's acceptance condition: Summarize is SKIPPED on a pending morning,
+    so a verdict that only travels through its outputs can never fail the job."""
+    steps = _workflow_steps()
+    final = steps[-1]
+    run = final["run"]
+    for ref in ("steps.summarize.outputs.systemic_dates",
+                "steps.summarize.outputs.suspect_dates",
+                "steps.collect.outputs.systemic_dates",
+                "steps.collect.outputs.suspect_dates"):
+        assert ref in str(final.get("env", {})), f"{ref} never reaches the final step"
+    assert "exit 1" in run
+
+
+def test_the_threshold_lives_in_the_final_step_and_dedupes():
+    """The threshold counts DATES, so the union has to be a set. Concatenating
+    two lists that name the same date would cross the threshold on its own."""
+    steps = _workflow_steps()
+    run = steps[-1]["run"]
+    assert "-ge 2" in run, "the suspect threshold must be findable in one place"
+    assert "sort -u" in run, "the union must deduplicate dates"
+    # Moved here from the Summarize-step test, which used to be the only thing
+    # asserting that a suspect date can EVER be escalated. Without this line the
+    # whole suite stays green while suspect dates are collected, reported, and
+    # then silently never fail the job — which is the exact shape of failure
+    # this repo keeps paying for.
+    assert 'FAIL_DATES="$FAIL_DATES$SUSPECT"' in run, (
+        "suspect dates are collected but never escalate"
+    )
+
+
+def test_the_summarize_step_no_longer_applies_the_threshold():
+    """It cannot: on a pending morning it does not run at all, and it never
+    sees Collect's dates."""
+    steps = _workflow_steps()
+    summarize_step = next(s for s in steps if s.get("id") == "summarize")
+    assert "-ge 2" not in summarize_step["run"]
 
 
 # ---------------------------------------------------------------------------
