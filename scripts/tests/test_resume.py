@@ -83,7 +83,7 @@ def test_assemble_from_manifest_success():
     results = {"s_abc_00": {"speeches": [{"speechOrder": 1, "tension": "確認",
                "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
                "commitments": []}}
-    threads, ok = summarize.assemble_from_manifest(
+    threads, ok, _ = summarize.assemble_from_manifest(
         sidecar, {"M1": _meeting()}, results, members={}, thread_counter=0,
     )
     assert ok is True
@@ -94,7 +94,7 @@ def test_assemble_from_manifest_success():
 def test_assemble_fails_on_hash_mismatch():
     sidecar = _sidecar_with_one_thread("sha256:deadbeef")  # wrong
     results = {"s_abc_00": {"speeches": [{"speechOrder": 1}], "commitments": []}}
-    threads, ok = summarize.assemble_from_manifest(
+    threads, ok, _ = summarize.assemble_from_manifest(
         sidecar, {"M1": _meeting()}, results, members={}, thread_counter=0,
     )
     assert ok is False
@@ -102,10 +102,65 @@ def test_assemble_fails_on_hash_mismatch():
 
 def test_assemble_fails_on_missing_result():
     sidecar = _sidecar_with_one_thread(_correct_hash())
-    threads, ok = summarize.assemble_from_manifest(
+    threads, ok, _ = summarize.assemble_from_manifest(
         sidecar, {"M1": _meeting()}, results={}, members={}, thread_counter=0,
     )
     assert ok is False
+
+
+def test_assembly_reports_a_missing_result_as_a_thread_scoped_diagnostic():
+    sidecar = _sidecar_with_one_thread(_correct_hash())   # correct hash: we want
+                                                          # to reach the result check
+    threads, ok, diagnostic = summarize.assemble_from_manifest(
+        sidecar, {"M1": _meeting()}, results={}, members={}, thread_counter=0,
+    )
+    assert (threads, ok) == ([], False)
+    assert diagnostic["reason"] == "missing_result"
+    assert diagnostic["scope"] == "thread"
+    assert diagnostic["meeting_id"] == "M1"
+    assert diagnostic["custom_id"] == "s_abc_00"
+
+
+def test_assembly_reports_a_hash_mismatch_before_it_looks_for_results():
+    """Order matters: the hash is checked first, so a stale sidecar reports
+    hash_mismatch even when the results are also absent. An annotation that
+    said missing_result here would send the reader to the API instead of raw."""
+    sidecar = _sidecar_with_one_thread("sha256:deadbeef")
+    threads, ok, diagnostic = summarize.assemble_from_manifest(
+        sidecar, {"M1": _meeting()}, results={}, members={}, thread_counter=0,
+    )
+    assert diagnostic["reason"] == "hash_mismatch"
+    assert diagnostic["scope"] == "thread"
+
+
+def test_assembly_reports_a_missing_meeting_without_a_custom_id():
+    """raw_missing happens before the thread loop, so there is no custom_id.
+
+    Filling one in would point an annotation at a thread that was never
+    examined — the same fiction this design refuses to put in the tally.
+    """
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    threads, ok, diagnostic = summarize.assemble_from_manifest(
+        sidecar, meetings_by_id={}, results={}, members={}, thread_counter=0,
+    )
+    assert (threads, ok) == ([], False)
+    assert diagnostic["reason"] == "raw_missing"
+    assert diagnostic["scope"] == "meeting"
+    assert diagnostic["meeting_id"] == "M1"
+    assert diagnostic["custom_id"] is None
+
+
+def test_assembly_returns_no_diagnostic_when_it_succeeds():
+    """The diagnostic must be None on success, not an empty dict."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    results = {"s_abc_00": {"speeches": [{"speechOrder": 1, "tension": "確認",
+               "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+               "commitments": []}}
+    threads, ok, diagnostic = summarize.assemble_from_manifest(
+        sidecar, {"M1": _meeting()}, results, members={}, thread_counter=0,
+    )
+    assert ok is True
+    assert diagnostic is None
 
 
 import os
@@ -124,14 +179,14 @@ def test_run_batch_phase_persists_sidecar_when_pending(fake_client, tmp_path, mo
     meeting = _meeting()
     fake_client.messages.batches.statuses["msgbatch_fake_0001"] = "in_progress"
 
-    new_threads, _, completed, pending = summarize.run_batch_phase(
+    phase = summarize.run_batch_phase(
         fake_client, [meeting], {"completed": [], "failed": []},
         members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
         batch_timeout_seconds=0, batch_poll_seconds=0,
         pending_dir=pending_dir, ci_commit=False,
     )
-    assert pending is True
-    assert new_threads == []
+    assert phase["pending"] is True
+    assert phase["threads"] == []
     sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
     assert sc is not None
     assert bs.current_batch_id(sc) == "msgbatch_fake_0001"

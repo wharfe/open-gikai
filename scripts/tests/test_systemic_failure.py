@@ -127,6 +127,41 @@ def test_the_two_verdicts_never_overlap():
                             and summarize.suspect_failure(stats, published))
 
 
+@pytest.mark.parametrize("summary_attempted,published,expected", [
+    # Nothing was asked of the summary phase — assembly failure is not our story.
+    (0, 0, 0),
+    (0, 5, 0),
+    # A date that published nothing and had requests in flight: systemic.
+    (1, 0, summarize.EXIT_SYSTEMIC_FAILURE),
+    (4, 0, summarize.EXIT_SYSTEMIC_FAILURE),
+    # Two or more meetings blocked is evidence about the layer, whatever is
+    # already on disk — the same rule trigger 1 uses.
+    (2, 9, summarize.EXIT_SYSTEMIC_FAILURE),
+    # Exactly one meeting blocked on an already-published date is weak evidence.
+    (1, 9, summarize.EXIT_SUSPECT_FAILURE),
+])
+def test_publication_blocked_verdict_boundaries(summary_attempted, published, expected):
+    assert summarize.publication_blocked_verdict(summary_attempted, published) == expected
+
+
+def test_worst_verdict_ranks_systemic_above_suspect():
+    S = summarize.EXIT_SYSTEMIC_FAILURE
+    P = summarize.EXIT_SUSPECT_FAILURE
+    assert summarize.worst_verdict(0, 0) == 0
+    assert summarize.worst_verdict(0, P) == P
+    assert summarize.worst_verdict(P, S) == S
+    assert summarize.worst_verdict(S, 0) == S
+
+
+def test_rejection_verdict_reuses_the_existing_predicates():
+    """The new wrapper must not invent a third opinion about trigger 1."""
+    stats = {"attempted": 2, "failed": 2}
+    assert summarize.rejection_verdict(stats, 0) == summarize.EXIT_SYSTEMIC_FAILURE
+    assert summarize.rejection_verdict({"attempted": 1, "failed": 1}, 9) == \
+        summarize.EXIT_SUSPECT_FAILURE
+    assert summarize.rejection_verdict({"attempted": 2, "failed": 1}, 0) == 0
+
+
 def test_malformed_raw_does_not_abort_the_pre_check():
     """NDL can emit ``"speech": null``. That used to fail inside the per-meeting
     try; the pre-check runs OUTSIDE it, so a raise here would kill the whole run
@@ -257,7 +292,7 @@ def test_batch_phase_counts_results_that_all_came_back_errored(
     ]
 
     stats = summarize.new_api_stats()
-    new_threads, _, _, pending = summarize.run_batch_phase(
+    phase = summarize.run_batch_phase(
         fake_client, [_meeting("M1")], {"completed": [], "failed": []},
         members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
         batch_timeout_seconds=0, batch_poll_seconds=0,
@@ -265,10 +300,93 @@ def test_batch_phase_counts_results_that_all_came_back_errored(
         api_stats=stats,
     )
 
-    assert new_threads == []
-    assert pending is True          # sidecar kept, as before — that part is right
+    assert phase["threads"] == []
+    assert phase["pending"] is True  # sidecar kept, as before — that part is right
     assert stats == {"attempted": 1, "failed": 1}
     assert summarize.systemic_failure(stats, 0) is True
+
+
+def _run_batch_phase_returning_dict(fake_client, tmp_path, monkeypatch,
+                                    meetings, assembly_fails_with=None):
+    """Drive run_batch_phase end to end and return its dict result (#61).
+
+    Grouping is stubbed to mirror the real short-circuit: an askable meeting
+    gets one real thread (so a summary request is actually sent), a procedural
+    one gets none — using a fixed thread_infos=[dict(_THREAD_INFO)] regardless
+    of input, as ``_stub_grouping`` does, would put a thread under a procedural
+    meeting too (its raw still has speechOrder 1) and make
+    ``summary_attempted`` wrong for that case.
+
+    The batch is set to "ended" with a usable succeeded result for every
+    meeting that gets a thread. ``assembly_fails_with``, when given,
+    monkeypatches ``assemble_from_manifest`` (module-global, so the patch
+    reaches the call at summarize.py:1348) to fail with that diagnostic —
+    the shape a real speechOrder/hash/result mismatch would produce.
+    """
+    def _group(client, meeting, model):
+        return [dict(_THREAD_INFO)] if summarize.has_question_for_the_api(meeting) else []
+
+    monkeypatch.setattr(summarize, "group_meeting", _group)
+    monkeypatch.setattr(summarize, "extract_meeting_outcome",
+                        lambda c, m, model: {"result": None, "resolution": None,
+                                             "status": "ongoing"})
+
+    b = fake_client.messages.batches
+    b.statuses["msgbatch_fake_0001"] = "ended"
+    from tests.conftest import _ResultEntry  # type: ignore
+    import json as J
+    entries = [
+        _ResultEntry(summarize.make_batch_custom_id(m["meetingId"], 0), "succeeded",
+                    text=J.dumps({
+                        "speeches": [{"speechOrder": 1, "tension": "確認",
+                                     "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+                        "commitments": [],
+                    }))
+        for m in meetings if summarize.has_question_for_the_api(m)
+    ]
+    b.results_by_id["msgbatch_fake_0001"] = entries
+
+    if assembly_fails_with is not None:
+        monkeypatch.setattr(
+            summarize, "assemble_from_manifest",
+            lambda *a, **k: ([], False, assembly_fails_with),
+        )
+
+    return summarize.run_batch_phase(
+        fake_client, meetings, {"completed": [], "failed": []},
+        members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
+        batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=str(tmp_path / "pending"), ci_commit=False,
+    )
+
+
+def test_batch_phase_reports_publication_blocked_with_a_diagnostic(
+        fake_client, tmp_path, monkeypatch):
+    """A batch that answers usably but cannot be assembled must say so.
+
+    This is #61: usable_result() only asks 'did it parse and carry speeches',
+    while assembly also demands the speechOrders still exist in raw. Before this
+    change the counter called such a meeting a success and the run exited 0.
+    """
+    result = _run_batch_phase_returning_dict(
+        fake_client, tmp_path, monkeypatch,
+        meetings=[_meeting("M1")],
+        assembly_fails_with=summarize._diagnostic("speech_gap", "M1", "s_x_00"),
+    )
+    assert result["publication_blocked"] is True
+    assert result["summary_attempted"] == 1
+    assert result["diagnostic"]["reason"] == "speech_gap"
+
+
+def test_batch_phase_does_not_report_blocked_when_nothing_was_summarized(
+        fake_client, tmp_path, monkeypatch):
+    """A quiet date must not be reported as blocked."""
+    result = _run_batch_phase_returning_dict(
+        fake_client, tmp_path, monkeypatch,
+        meetings=[_procedural_meeting("P1")],
+    )
+    assert result["publication_blocked"] is False
+    assert result["summary_attempted"] == 0
 
 
 def _overloaded():
@@ -307,7 +425,7 @@ def test_a_rejected_batch_submission_does_not_abort_the_run(
 
     stats = summarize.new_api_stats()
     progress = {"completed": [], "failed": []}
-    new_threads, _, completed, pending = summarize.run_batch_phase(
+    phase = summarize.run_batch_phase(
         fake_client, [_meeting("M1")], progress,
         members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
         batch_timeout_seconds=0, batch_poll_seconds=0,
@@ -315,7 +433,7 @@ def test_a_rejected_batch_submission_does_not_abort_the_run(
         api_stats=stats,
     )
 
-    assert (new_threads, completed, pending) == ([], [], False)
+    assert (phase["threads"], phase["completed_meeting_ids"], phase["pending"]) == ([], [], False)
     assert stats == {"attempted": 1, "failed": 1}
     assert progress["failed"] == ["M1"]        # retryable, not silently dropped
     assert summarize.systemic_failure(stats, 0) is True
@@ -332,7 +450,7 @@ def test_an_overloaded_api_after_submission_keeps_the_sidecar(
     monkeypatch.setattr(summarize, "fetch_summary_results", _raise(_overloaded()))
 
     stats = summarize.new_api_stats()
-    new_threads, _, completed, pending = summarize.run_batch_phase(
+    phase = summarize.run_batch_phase(
         fake_client, [_meeting("M1")], {"completed": [], "failed": []},
         members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
         batch_timeout_seconds=0, batch_poll_seconds=0,
@@ -340,7 +458,7 @@ def test_an_overloaded_api_after_submission_keeps_the_sidecar(
         api_stats=stats,
     )
 
-    assert (new_threads, completed, pending) == ([], [], True)
+    assert (phase["threads"], phase["completed_meeting_ids"], phase["pending"]) == ([], [], True)
     assert stats == {"attempted": 1, "failed": 0}
     assert os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
 
@@ -400,6 +518,48 @@ def test_run_pipeline_returns_the_verdict_on_a_total_batch_failure(
     _stub_grouping(monkeypatch, raises=True)
     assert _run_pipeline(tmp_path, fake_client, monkeypatch,
                          [_meeting("M1"), _meeting("M2")], batch=True) == summarize.EXIT_SYSTEMIC_FAILURE
+
+
+def _run_pipeline_with_all_results_errored(fake_client, tmp_path, monkeypatch, meetings):
+    """Every summary request in the batch comes back errored — #51's shape.
+
+    Grouping is stubbed normally (default: one real thread per meeting) so
+    each meeting actually sends a summary request, then the batch answers
+    every one of them with an errored result entry — so trigger 1 (nothing
+    usable came back) and trigger 2 (assembly can't find those results
+    either) both fire from the same underlying cause.
+    """
+    _stub_grouping(monkeypatch)
+    b = fake_client.messages.batches
+    b.statuses["msgbatch_fake_0001"] = "ended"
+    b.results_by_id["msgbatch_fake_0001"] = [
+        _errored_entry(summarize.make_batch_custom_id(m["meetingId"], 0))
+        for m in meetings
+    ]
+    return _run_pipeline(tmp_path, fake_client, monkeypatch, meetings, batch=True)
+
+
+def test_a_fully_rejected_batch_fires_both_triggers_and_says_so(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """#51's shape: every summary request errors.
+
+    Trigger 1 fires (nothing usable came back) and trigger 2 fires too, because
+    assembly then cannot find those results. The date must be counted ONCE, and
+    the annotation must not claim the answers arrived.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    exit_code = _run_pipeline_with_all_results_errored(
+        fake_client, tmp_path, monkeypatch, meetings=[_meeting("M1"), _meeting("M2")],
+    )
+    assert exit_code == summarize.EXIT_SYSTEMIC_FAILURE
+    out = capsys.readouterr().out
+    annotations = [ln for ln in out.splitlines() if ln.startswith("::error::")]
+    assert len(annotations) == 1, "the date must be annotated once, not per trigger"
+    assert "produced no usable summary" in annotations[0]
+    assert "assembly failed: missing_result" in annotations[0]
+    assert "answered" not in annotations[0].lower(), (
+        "must not claim the answers arrived while the API was rejecting everything"
+    )
 
 
 def test_run_pipeline_stays_green_on_a_quiet_date(fake_client, tmp_path, monkeypatch):
