@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 06 Aug 2026 05:36:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 01:27:28 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W32 国会まとめ — 3件の議論</title>
+      <title>2026-W32 国会まとめ — 7件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W32</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W32</guid>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、2委員会の議論をまとめました。「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見、令和８年熊本地震による被災状況視察のための熊本県訪問についての会見ほか。</description>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <description>7件のスレッド、3委員会の議論をまとめました。広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見、「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見、令和８年熊本地震による被災状況視察のための熊本県訪問についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -24,11 +24,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W30 国会まとめ — 6件の議論</title>
+      <title>2026-W30 国会まとめ — 8件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W30</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W30</guid>
       <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>6件のスレッド、2委員会の議論をまとめました。外交防衛委員会、議院運営委員会ほか。</description>
+      <description>8件のスレッド、3委員会の議論をまとめました。外交防衛委員会、議院運営委員会、財務金融委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,38 @@
       <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
       <description>140件のスレッド、12委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>非核三原則の堅持と見直し論議 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260806_c91b34_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_01</guid>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <description>与党内の見直し論に対し、総理は非核三原則の堅持を明言（首相記者会見・2026.08.06・2発言）</description>
+      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
+    </item>
+    <item>
+      <title>核兵器禁止条約への対応と再検討会議参加 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260806_c91b34_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_02</guid>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <description>11月の再検討会議への対応を安全保障情勢を見極めつつ検討する姿勢（首相記者会見・2026.08.06・2発言）</description>
+      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
+    </item>
+    <item>
+      <title>広島訪問の所感とNPT体制の信頼回復 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260806_c91b34_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_03</guid>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <description>資料館視察で核の惨禍を再認識、NPT体制の信頼回復への取組を表明（首相記者会見・2026.08.06・2発言）</description>
+      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
+    </item>
+    <item>
+      <title>食料品消費税減税をめぐる与党プロセス — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260806_c91b34_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_04</guid>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <description>党内手続きを経て閣議決定したと反論し、批判の受け止めを説明（首相記者会見・2026.08.06・2発言）</description>
+      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
     </item>
     <item>
       <title>食料品消費税減税と給付付き税額控除の制度設計 — 「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見</title>
@@ -256,6 +288,22 @@
       <category>議院運営委員会</category>
     </item>
     <item>
+      <title>閉会中審査に関する手続き — 財務金融委員会</title>
+      <link>https://open-gikai.net/t/t_20260724_76ad09_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_76ad09_07</guid>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+      <description>閉会中審査の対象案件や参考人・委員派遣の手続きを決定した（国会会議録・2026.07.24・3発言）</description>
+      <category>財務金融委員会</category>
+    </item>
+    <item>
+      <title>元議長河野洋平氏逝去に伴う弔詞贈呈 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_1b3f4a_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_1b3f4a_01</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>元衆議院議長河野洋平氏の逝去に際し弔詞贈呈を決定（国会会議録・2026.07.22・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
       <title>会期延長の件 — 議院運営委員会</title>
       <link>https://open-gikai.net/t/t_20260717_db4467_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260717_db4467_01</guid>
@@ -390,54 +438,6 @@
       <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
       <description>非核三原則を将来にわたり堅持するか政府の明言を求める攻防（国会会議録・2026.07.16・21発言）</description>
       <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>自衛艦への原子力推進導入の可否 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_14</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>船舶推進力としての原子力利用「一般化」の解釈をめぐる歴代答弁の整合性（国会会議録・2026.07.16・10発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>憲法審査会の総括的討議（各党の憲法観・改憲論点） — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20260716_4b7250_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_4b7250_15</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>各党代表が今国会の憲法審査会を振り返り、改憲の必要性や論点整理について総括討議（国会会議録・2026.07.16・7発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>飲食料品消費税ゼロ政策と給付付き税額控除 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260715_6f4e52_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260715_6f4e52_01</guid>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
-      <description>食料品消費税ゼロの負担軽減効果や2029年の税率復帰、国民会議での議論状況を議論（国会会議録・2026.07.15・7発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>骨太ショックと財政・為替市場への影響 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260715_6f4e52_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260715_6f4e52_02</guid>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
-      <description>積極財政方針が招いた市場の反応と国債の安定消化策を議論（国会会議録・2026.07.15・3発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>国会運営と暮らし優先の政治姿勢 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260715_6f4e52_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260715_6f4e52_03</guid>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
-      <description>定数削減や補正予算予備費の執行状況を通じ、政権の生活重視姿勢を追及（国会会議録・2026.07.15・11発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
-    </item>
-    <item>
-      <title>皇室典範改正の手続きと養子制度 — 国家基本政策委員会合同審査会</title>
-      <link>https://open-gikai.net/t/t_20260715_6f4e52_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260715_6f4e52_04</guid>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
-      <description>皇族数確保のための養子制度導入や皇位継承の在り方を巡る改正手続きを議論（国会会議録・2026.07.15・11発言）</description>
-      <category>国家基本政策委員会合同審査会</category>
     </item>
   </channel>
 </rss>

@@ -15336,5 +15336,38 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "tanabumasayo": {
+    "id": "tanabumasayo",
+    "name": "田名部匡代",
+    "party": "立憲民主・無所属",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_a90d5803": {
+    "id": "m_a90d5803",
+    "name": "小坂善太郎",
+    "party": null,
+    "role": "林野庁長官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister"
+  },
+  "m_b942155a": {
+    "id": "m_b942155a",
+    "name": "高城亮",
+    "party": null,
+    "role": "環境省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }

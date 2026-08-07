@@ -1,0 +1,76 @@
+[
+  {
+    "id": "t_20260722_1b3f4a_01",
+    "date": "2026.07.22",
+    "committee": "議院運営委員会",
+    "house": "衆議院",
+    "topic": "元議長河野洋平氏逝去に伴う弔詞贈呈",
+    "topicTag": "弔詞",
+    "topicColor": "#6b7280",
+    "summary": "元衆議院議長河野洋平氏の逝去に際し弔詞贈呈を決定",
+    "source": "ndl",
+    "sourceLabel": "国会会議録",
+    "context": {
+      "description": "元衆議院議長・自民党総裁を務めた河野洋平氏が逝去し、本会議での弔詞贈呈を決める手続き。",
+      "links": [
+        {
+          "label": "会議録全文（NDL）",
+          "url": "https://kokkai.ndl.go.jp/txt/122104024X03820260722"
+        }
+      ],
+      "news": [
+        {
+          "title": "河野洋平元衆院議長に弔詞 「議会政治の発展貢献」",
+          "url": "https://www.nikkei.com/article/DGXZQOUA22ATT0S6A720C2000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 22 Jul 2026 15:00:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO3345738022072026000000-1.jpg?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;fp-x=0.54&amp;fp-y=0.41&amp;h=630&amp;w=1200&amp;s=8b61ccecc534bb6c2bd37b25254fe882"
+        },
+        {
+          "title": "【速報】「憲政のために尽力」河野洋平元衆院議長に本会議で弔詞 自民総裁など歴任「終始、議会政治の発展に貢献」",
+          "url": "https://www.msn.com/ja-jp/news/national/%E9%80%9F%E5%A0%B1-%E6%86%B2%E6%94%BF%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E5%B0%BD%E5%8A%9B-%E6%B2%B3%E9%87%8E%E6%B4%8B%E5%B9%B3%E5%85%83%E8%A1%86%E9%99%A2%E8%AD%B0%E9%95%B7%E3%81%AB%E6%9C%AC%E4%BC%9A%E8%AD%B0%E3%81%A7%E5%BC%94%E8%A9%9E-%E8%87%AA%E6%B0%91%E7%B7%8F%E8%A3%81%E3%81%AA%E3%81%A9%E6%AD%B4%E4%BB%BB-%E7%B5%82%E5%A7%8B-%E8%AD%B0%E4%BC%9A%E6%94%BF%E6%B2%BB%E3%81%AE%E7%99%BA%E5%B1%95%E3%81%AB%E8%B2%A2%E7%8C%AE/ar-AA28pSXA",
+          "source": "MSN",
+          "pubDate": "Tue, 21 Jul 2026 21:07:00 GMT"
+        }
+      ]
+    },
+    "speeches": [
+      {
+        "memberId": "yamaguchishunichi",
+        "tension": "確認",
+        "keywords": [
+          "弔詞贈呈"
+        ],
+        "quote": "去る六月八日、元議長河野洋平君が逝去されました。",
+        "raw": "○山口委員長　これより会議を開きます。\r\n　まず、元議長河野洋平君逝去につき弔詞贈呈の件についてでありますが、先般の当委員会で御報告いたしましたとおり、去る六月八日、元議長河野洋平君が逝去されました。\r\n　弔詞につきましては、お手元の資料一のとおりとし、本日の本会議においてその贈呈を決定するに御異議ありませんか。\r\n　　　　〔「異議なし」と呼ぶ者あり〕",
+        "sourceUrl": "https://kokkai.ndl.go.jp/txt/122104024X03820260722/1",
+        "summaries": {
+          "easy": "元衆議院議長の河野洋平さんが亡くなり、お悔やみの言葉を本会議で贈ることを決める。",
+          "teen": "元衆議院議長・河野洋平氏が6月8日に逝去したことを受け、弔詞（お悔やみの言葉）を本会議で贈ることを提案し、異議なく決定された。",
+          "adult": "元衆議院議長・河野洋平氏の逝去に伴い、本会議での弔詞贈呈を提案、異議なく決定。"
+        }
+      },
+      {
+        "memberId": "yamaguchishunichi",
+        "tension": "確認",
+        "keywords": [
+          "弔詞贈呈"
+        ],
+        "quote": "衆議院は　多年憲政のために尽力し　特に院議をもってその功労を表彰され",
+        "raw": "○山口委員長　御異議なしと認めます。よって、そのように決定いたしました。\r\n　　　　―――――――――――――\r\n資料一\r\n　衆議院は　多年憲政のために尽力し　特に院議をもってその功労を表彰され　さきに再度本院議長の要職につき　自由民主党総裁をつとめられ　またしばしば国務大臣の重任にあたり終始議会政治の発展に貢献された従二位桐花大綬章　河野洋平君の長逝を哀悼し　つつしんで弔詞をささげます\r\n　　　　―――――――――――――",
+        "sourceUrl": "https://kokkai.ndl.go.jp/txt/122104024X03820260722/2",
+        "summaries": {
+          "easy": "全員が賛成し、河野洋平さんへのお悔やみの言葉が正式に決まった。憲政への貢献をたたえる内容だ。",
+          "teen": "弔詞贈呈が全会一致で決定。長年の憲政（議会政治）への貢献や議長・国務大臣としての功績をたたえる文言が読み上げられた。",
+          "adult": "弔詞贈呈を決定。憲政への尽力、議長・国務大臣歴任の功績を讃える内容。"
+        }
+      }
+    ],
+    "outcome": {
+      "result": null,
+      "resolution": null,
+      "commitments": [],
+      "status": "ongoing"
+    }
+  }
+]
