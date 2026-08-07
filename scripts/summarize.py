@@ -1362,19 +1362,20 @@ def run_batch_phase(
         prepared_meetings.append(prep)
         all_pending.extend(prep["pending"])
 
-    if not all_pending:
-        log.info("Batch phase: nothing to summarize")
-        return _batch_phase_result([], thread_counter, [], False)
-
     # The denominator for trigger 2 — meetings that actually put a summary
     # request in this batch. Deliberately NOT api_stats["attempted"], which also
     # counts a meeting whose grouping legitimately produced zero threads; see
     # publication_blocked_verdict. Spelled identically to the submission-failure
-    # counter below (:1302) on purpose: the two answer the same question, and
-    # two spellings of it would eventually disagree.
+    # counter in the ``except anthropic.APIError`` branch below on purpose: the
+    # two answer the same question, and two spellings of it would eventually
+    # disagree.
     summary_attempted = sum(
         1 for p in prepared_meetings if p.get("askable") and p.get("pending")
     )
+
+    if not all_pending:
+        log.info("Batch phase: nothing to summarize")
+        return _batch_phase_result([], thread_counter, [], False)
 
     requests = [
         build_summary_request(
