@@ -175,7 +175,7 @@ jobs:
               # the run summary and the final diagnostic step never run. An
               # annotation is the one channel that survives a failed step.
               if [ -n "$SYSTEMIC$SUSPECT" ]; then
-                echo "::error::No usable summary produced on:$SYSTEMIC$SUSPECT (before this crash)"
+                echo "::error::Nothing reached the site on:$SYSTEMIC$SUSPECT (before this crash)"
               fi
               exit "$rc"
             fi
@@ -428,6 +428,9 @@ jobs:
           echo "  * 'assembly failed: <reason>' — the answers came back but could not be"
           echo "    turned into threads. The reason names the observation:"
           echo "    hash_mismatch/speech_gap/raw_missing point at raw, missing_result does not."
+          echo "    hash_mismatch will NOT fix itself — it recurs every morning until the"
+          echo "    retry threshold hard-fails and the date is lost. Fix: remove the sidecar"
+          echo "    (data/pending-batches/<date>.json) so it re-groups fresh (tracked: #65)."
           exit 1
 
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, etc.) as a

@@ -572,6 +572,45 @@ def test_run_pipeline_returns_the_verdict_on_a_total_batch_failure(
                          [_meeting("M1"), _meeting("M2")], batch=True) == summarize.EXIT_SYSTEMIC_FAILURE
 
 
+def test_run_pipeline_returns_the_verdict_on_a_pure_assembly_failure(
+    fake_client, tmp_path, monkeypatch,
+):
+    """Trigger 2's own wiring guard.
+
+    In test_a_fully_rejected_batch_fires_both_triggers_and_says_so, trigger 1
+    (nothing usable came back) ALSO fires and independently produces
+    EXIT_SYSTEMIC_FAILURE — so mutating the `blocked = (...)` wiring at
+    summarize.py's publication_blocked_verdict call site to `blocked = 0`
+    leaves that test green. This test drives the shape where trigger 1 stays
+    silent: the batch reaches "ended" and every request comes back succeeded
+    and usable (so rejection_verdict is 0), but assemble_from_manifest still
+    fails, and the date has no existing threads. Only here does the exit code
+    depend entirely on the `blocked` wiring — verified by hand (see the task
+    report for the mutation transcript).
+    """
+    meetings = [_meeting("M1")]
+    _stub_grouping(monkeypatch)
+    b = fake_client.messages.batches
+    b.statuses["msgbatch_fake_0001"] = "ended"
+    from tests.conftest import _ResultEntry  # type: ignore
+    import json as J
+    b.results_by_id["msgbatch_fake_0001"] = [
+        _ResultEntry(summarize.make_batch_custom_id("M1", 0), "succeeded",
+                    text=J.dumps({
+                        "speeches": [{"speechOrder": 1, "tension": "確認",
+                                     "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+                        "commitments": [],
+                    })),
+    ]
+    monkeypatch.setattr(
+        summarize, "assemble_from_manifest",
+        lambda *a, **k: ([], False, summarize._diagnostic("speech_gap", "M1", "s_x_00")),
+    )
+
+    assert _run_pipeline(tmp_path, fake_client, monkeypatch, meetings, batch=True) == \
+        summarize.EXIT_SYSTEMIC_FAILURE
+
+
 def _run_pipeline_with_all_results_errored(fake_client, tmp_path, monkeypatch, meetings):
     """Every summary request in the batch comes back errored — #51's shape.
 
@@ -889,6 +928,10 @@ def test_collect_pending_exits_zero_on_a_soft_verdict(monkeypatch, tmp_path):
     code cannot carry the verdicts; the date lists do. Returning 3 here would
     only add a second transport and, under the workflow's set -e, would block
     the publish — the amplification #52 was about."""
+    # Tests must not write to CI state: without this, running inside GitHub
+    # Actions makes _write_github_output append to the harness's real
+    # GITHUB_OUTPUT file.
+    monkeypatch.delenv("GITHUB_OUTPUT", raising=False)
     _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": False, "systemic_dates": ["2026-05-14"],
@@ -900,6 +943,7 @@ def test_collect_pending_exits_zero_on_a_soft_verdict(monkeypatch, tmp_path):
 
 
 def test_collect_pending_exits_one_on_a_hard_fail(monkeypatch, tmp_path):
+    monkeypatch.delenv("GITHUB_OUTPUT", raising=False)
     _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": True, "systemic_dates": [], "suspect_dates": [], "diagnostics": [],
