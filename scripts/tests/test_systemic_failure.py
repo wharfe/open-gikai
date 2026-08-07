@@ -800,8 +800,9 @@ def test_the_workflow_tolerates_exactly_these_exit_codes():
 
 
 def _workflow_steps():
-    import yaml
-    wf = yaml.safe_load(Path(".github/workflows/daily-batch.yml").read_text())
+    yaml = pytest.importorskip("yaml")
+    path = REPO_ROOT / ".github" / "workflows" / "daily-batch.yml"
+    wf = yaml.safe_load(path.read_text(encoding="utf-8"))
     return wf["jobs"]["fetch-and-summarize"]["steps"]
 
 
