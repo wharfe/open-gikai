@@ -1,0 +1,130 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-10",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01WkDbH5uxRK7yRF9eiDwVsU",
+      "submitted_at": "2026-08-07T01:09:18Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_皇室典範等の一部を改正する法律案特別委員会_2026-07-10_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_議院運営委員会_2026-07-10_第29号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_a9034a94463f_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "皇室典範等一部改正法律案特別委員会の設置",
+            "topicTag": "特別委設置",
+            "topicColor": "#6b7280",
+            "summary": "皇室典範等改正法案審議のための特別委員会設置を全会一致で決定",
+            "contextDescription": "皇室典範等の一部を改正する法律案を審議するための特別委員会を新設するかどうかの手続き。",
+            "legislationName": "皇室典範等の一部を改正する法律案",
+            "speechOrders": [
+              1
+            ]
+          },
+          "speechOrders": [
+            1
+          ],
+          "input_hash": "sha256:d099dee7142718f95da8630c4f1306b96ba44384cb3819bce03b24e7779870f2"
+        },
+        {
+          "custom_id": "s_a9034a94463f_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "行政監視委員会の中間報告",
+            "topicTag": "行政監視",
+            "topicColor": "#f97316",
+            "summary": "行政監視・評価・苦情に関する調査の中間報告を本会議で聴取することを決定",
+            "contextDescription": "行政監視委員会が進めている行政の監視・評価・苦情対応に関する調査の途中経過を本会議で報告する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              3
+            ]
+          },
+          "speechOrders": [
+            3
+          ],
+          "input_hash": "sha256:35f98d41ee0df27f947a3f2f24b381f4f8132f2980ce8a54cec33660148a560d"
+        },
+        {
+          "custom_id": "s_a9034a94463f_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "各調査会の中間報告",
+            "topicTag": "調査会報告",
+            "topicColor": "#6b7280",
+            "summary": "国際問題・国民生活経済・資源エネルギーの各調査会中間報告を本会議で聴取",
+            "contextDescription": "参議院の各調査会が行っている国際問題、国民生活・経済、資源エネルギーに関する調査の中間報告を行う手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              5
+            ]
+          },
+          "speechOrders": [
+            5
+          ],
+          "input_hash": "sha256:2f008f6f1e0c153242fe0bfcac411241033096e8f12e88b37c045b0c8493bd61"
+        },
+        {
+          "custom_id": "s_a9034a94463f_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "情報監視審査会の年次報告",
+            "topicTag": "情報監視",
+            "topicColor": "#ef4444",
+            "summary": "情報監視審査会の年次報告を本会議で聴取することを決定",
+            "contextDescription": "特定秘密の指定・解除等を監視する情報監視審査会が行う年次活動報告を本会議で聴取する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              7
+            ]
+          },
+          "speechOrders": [
+            7
+          ],
+          "input_hash": "sha256:99b30a28a722f726eb9867baf6f0d9cb79ac6337184034ba5aedfcb13caaa9bd"
+        },
+        {
+          "custom_id": "s_a9034a94463f_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "本会議の議事日程説明",
+            "topicTag": "議事日程",
+            "topicColor": "#6b7280",
+            "summary": "事務総長が特別委員会設置や法案審議など本会議当日の議事進行を説明",
+            "contextDescription": "参議院事務総長が本会議で扱う議案や採決の順序、進行方法について事前に説明する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              10
+            ]
+          },
+          "speechOrders": [
+            10
+          ],
+          "input_hash": "sha256:1b746062e05d2be7e17d324903b130ceb6db850af7519ac66f933a9d5998b960"
+        }
+      ]
+    }
+  ]
+}
