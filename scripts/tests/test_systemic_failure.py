@@ -314,14 +314,18 @@ def _run_batch_phase_returning_dict(fake_client, tmp_path, monkeypatch,
     gets one real thread (so a summary request is actually sent), a procedural
     one gets none — using a fixed thread_infos=[dict(_THREAD_INFO)] regardless
     of input, as ``_stub_grouping`` does, would put a thread under a procedural
-    meeting too (its raw still has speechOrder 1) and make
-    ``summary_attempted`` wrong for that case.
+    meeting too (its raw still has speechOrder 1). That would not make
+    ``summary_attempted`` wrong (the filter already excludes non-askable
+    meetings) but it WOULD flip ``publication_blocked`` for a date that never
+    sent a real request — the has-question-aware stub keeps that scenario
+    honest.
 
     The batch is set to "ended" with a usable succeeded result for every
     meeting that gets a thread. ``assembly_fails_with``, when given,
     monkeypatches ``assemble_from_manifest`` (module-global, so the patch
-    reaches the call at summarize.py:1348) to fail with that diagnostic —
-    the shape a real speechOrder/hash/result mismatch would produce.
+    reaches the call inside ``run_batch_phase``) to fail with that
+    diagnostic — the shape a real speechOrder/hash/result mismatch would
+    produce.
     """
     def _group(client, meeting, model):
         return [dict(_THREAD_INFO)] if summarize.has_question_for_the_api(meeting) else []
@@ -387,6 +391,54 @@ def test_batch_phase_does_not_report_blocked_when_nothing_was_summarized(
     )
     assert result["publication_blocked"] is False
     assert result["summary_attempted"] == 0
+
+
+def test_summary_attempted_excludes_a_meeting_whose_grouping_asked_nothing(
+        fake_client, tmp_path, monkeypatch):
+    """The denominator's defining property (review round 1, Important 1).
+
+    Two meetings are ASKABLE (both substantive, both charged to
+    api_stats["attempted"]) — but only one of them actually gets a summary
+    request in this batch; the other's grouping legitimately finds nothing,
+    the same shape a meeting with no debate content produces. Charging that
+    quiet meeting to summary_attempted anyway would let a real outage on the
+    OTHER meeting hide behind it, which is exactly what
+    publication_blocked_verdict's docstring warns about.
+
+    This must fail if the "askable and pending" filter in run_batch_phase is
+    replaced with a raw ``len(prepared_meetings)`` — verified by hand: making
+    that edit temporarily turns summary_attempted from 1 into 2 and this test
+    goes red (see the task-1-report.md fix-round entry for the transcript).
+    """
+    m1, m2 = _meeting("M1"), _meeting("M2")
+
+    def _group(client, meeting, model):
+        # M1 gets a real thread; M2 is equally askable but its grouping
+        # legitimately produces zero threads, so it sends no request.
+        return [dict(_THREAD_INFO)] if meeting["meetingId"] == "M1" else []
+
+    monkeypatch.setattr(summarize, "group_meeting", _group)
+    monkeypatch.setattr(summarize, "extract_meeting_outcome",
+                        lambda c, m, model: {"result": None, "resolution": None,
+                                             "status": "ongoing"})
+    fake_client.messages.batches.statuses["msgbatch_fake_0001"] = "ended"
+    monkeypatch.setattr(
+        summarize, "assemble_from_manifest",
+        lambda *a, **k: ([], False,
+                         summarize._diagnostic("missing_result", "M1", "s_x_00")),
+    )
+
+    stats = summarize.new_api_stats()
+    phase = summarize.run_batch_phase(
+        fake_client, [m1, m2], {"completed": [], "failed": []},
+        members={}, model="claude-x", date_str="2026-05-14", thread_counter=0,
+        batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=str(tmp_path / "pending"), ci_commit=False,
+        api_stats=stats,
+    )
+
+    assert phase["summary_attempted"] == 1
+    assert stats["attempted"] == 2
 
 
 def _overloaded():
