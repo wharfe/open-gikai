@@ -47,9 +47,20 @@ OUTCOME_MAX_TOKENS = 1024
 # import for months while looking maintained. One builder each, used by both.
 # ---------------------------------------------------------------------------
 
+def substantive_speeches(meeting: dict) -> List[dict]:
+    """The speeches grouping actually asks about — everything non-procedural.
+
+    Exposed so the grouping log can report the count without a second copy of
+    the predicate. "Found 0 threads" means two unrelated things (a meeting with
+    one real speech, or grouping returning nothing at all) and this count is the
+    only thing that tells them apart in a single log line.
+    """
+    return [s for s in meeting.get("speeches", []) if not _is_procedural(s)]
+
+
 def build_grouping_messages(meeting: dict) -> Optional[List[dict]]:
     """Messages for one meeting's grouping call, or None if nothing to group."""
-    substantive = [s for s in meeting.get("speeches", []) if not _is_procedural(s)]
+    substantive = substantive_speeches(meeting)
     if not substantive:
         return None
 
@@ -234,7 +245,8 @@ def group_meeting(
         log.info("No substantive speeches in %s", meeting.get("meetingId", "?"))
         return []
 
-    log.info("Grouping %s", meeting.get("meetingId", "?"))
+    log.info("Grouping %s (%d substantive speeches)",
+             meeting.get("meetingId", "?"), len(substantive_speeches(meeting)))
 
     response = client.messages.create(
         model=model,
