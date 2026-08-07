@@ -50,7 +50,7 @@ all-or-nothing なので会議に配分できない）。原因は `assemble_fro
 
 ### `test_resume.py` を無視できない理由（Gate2 で最初に出た指摘）
 
-このプランの初版は `test_systemic_failure.py` しか見ておらず、**`test_resume.py` の 23 箇所の
+このプランの初版は `test_systemic_failure.py` しか見ておらず、**`test_resume.py` の 21 箇所の
 呼び出し**を丸ごと落としていた。戻り値の形を変える3関数はすべてここから呼ばれている:
 
 | 関数 | `test_resume.py` の行 | 壊れ方 |
@@ -574,9 +574,9 @@ Expected: PASS。**Step 10 の dict 化で壊れるのは、`run_batch_phase` �
 
 | ファイル:行 | 直し方 |
 |---|---|
-| `test_systemic_failure.py:260` + 268/270 の assert | `phase = summarize.run_batch_phase(...)` にし、`phase["threads"]` / `phase["pending"]` で assert |
-| `test_systemic_failure.py:310` + 318/319 | 同上 |
-| `test_systemic_failure.py:335` + 343/344 | 同上 |
+| `test_systemic_failure.py:260` + 268/269 の assert | `phase = summarize.run_batch_phase(...)` にし、`phase["threads"]` / `phase["pending"]` で assert |
+| `test_systemic_failure.py:310` + 318 | 同上 |
+| `test_systemic_failure.py:335` + 343 | 同上 |
 | `test_resume.py:127` | `phase = summarize.run_batch_phase(...)`、`assert phase["pending"] is True` |
 
 **壊れないもの**（触らないこと）:
@@ -660,8 +660,9 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"
   **`collect_pending_batches` の既存 13 箇所**（161, 176, 202, 230, 252, 275, 330, 450, 478,
   508, 549, 612, 637）を dict 受けに直す。`hard = summarize.collect_pending_batches(...)` →
   `result = summarize.collect_pending_batches(...)`、`assert hard is False` →
-  `assert result["hard_fail"] is False`。**dict は常に truthy なので、直さないと
-  `assert hard is True` 系が偶然通って回帰ガードが死ぬ**（fail-open）。
+  `assert result["hard_fail"] is False`。13 箇所とも `is` 比較なので、直さなければ
+  **両方向とも大声で落ちる**（fail-open にはならない）。放置してよいという意味ではなく、
+  Task 2 Step 3 の直後にスイートが赤くなるという意味。
   戻り値を捨てている 367 / 396 / 664 / 715 行は変更不要。
 - Test: `scripts/tests/test_systemic_failure.py` — `main()` の契約テスト（Step 8）
 
@@ -731,12 +732,31 @@ def test_resume_denominator_ignores_meetings_with_no_summary_request():
     sidecar = _sidecar_with_one_thread(_correct_hash())
     sidecar["meetings"].append({"meeting_id": "M2", "outcome": {}, "threads": []})
     assert summarize._resume_summary_attempted(sidecar) == 1
+
+
+def test_resume_annotates_the_verdict_as_it_is_reached(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The annotation is the POINT of _record_resume_verdict, not a nicety.
+
+    _annotate is a no-op unless GITHUB_ACTIONS is set, so without this test the
+    entire annotate call could be deleted and every other test would still pass
+    — while the one channel that survives a later sidecar's hard fail goes away.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _run_collect(fake_client, tmp_path, monkeypatch,
+                 sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                 results={}, existing_threads=0)
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "2026-05-14" in errors[0]
+    assert "missing_result" in errors[0]
 ```
 
 - [ ] **Step 2: 失敗を確認する**
 
 ```bash
-python -m pytest scripts/tests/test_systemic_failure.py -k "resume_reports or resume_keeps or resume_says_nothing or resume_denominator" -v
+python -m pytest scripts/tests/test_resume.py -k "resume_reports or resume_keeps or resume_says_nothing or resume_denominator" -v
 ```
 
 Expected: FAIL — `TypeError: 'bool' object is not subscriptable`（`collect_pending_batches`
@@ -744,7 +764,16 @@ Expected: FAIL — `TypeError: 'bool' object is not subscriptable`（`collect_pe
 
 - [ ] **Step 3: `collect_pending_batches` を `CollectResult` に変える**
 
-`scripts/summarize.py:950` のシグネチャは変えず、戻り値だけ変える。docstring も更新する。
+`scripts/summarize.py:950` の**引数**は変えず、戻り値だけ変える。
+**型注釈と docstring も必ず更新すること** — 放置すると嘘になる箇所:
+
+- `:960` の `-> bool` → `-> dict`
+- `:612` の `assemble_from_manifest(...) -> tuple` の docstring
+  「Returns ``(threads, ok)``」→ 3-tuple の説明（Task 1 でやる）
+- `:1218` の `run_batch_phase(...) -> tuple` → `-> dict`、docstring の
+  「Returns ``(new_threads, thread_counter, completed_meeting_ids, pending)``」も（Task 1）
+- `:1126` 付近 `count_meetings_with_no_usable_result` の docstring が
+  `assemble_from_manifest` の `ok=False` に言及している — 記述が古くなっていないか確認する
 
 母数のヘルパを関数の直前に置く:
 
@@ -849,7 +878,7 @@ def _record_resume_verdict(date_str: str, summary_attempted: int,
 - [ ] **Step 4: テストを通す**
 
 ```bash
-python -m pytest scripts/tests/test_systemic_failure.py -k "resume_" -v
+python -m pytest scripts/tests/test_resume.py -k "resume_" -v
 ```
 
 Expected: PASS
@@ -886,7 +915,7 @@ def test_resume_stays_quiet_when_the_raw_is_legitimately_out_of_window(
 - [ ] **Step 6: 失敗を確認してから raw 不在分岐を実装する**
 
 ```bash
-python -m pytest scripts/tests/test_systemic_failure.py -k "lost_its_raw or out_of_window" -v
+python -m pytest scripts/tests/test_resume.py -k "lost_its_raw or out_of_window" -v
 ```
 
 Expected: FAIL — `systemic_dates` が空
@@ -921,28 +950,50 @@ Expected: PASS
 - [ ] **Step 8: `main()` の契約のテストを書く**
 
 ```python
+def _isolated_collect_argv(tmp_path):
+    """argv that keeps main() away from the repo's committed data files.
+
+    The defaults are data/members.json and data/threads: main() calls
+    save_members() unconditionally, so a test that omits these REWRITES
+    committed data as a side effect of asserting on an exit code.
+    """
+    return [
+        "--collect-pending",
+        "--members-path", str(tmp_path / "members.json"),
+        "--output-dir", str(tmp_path / "threads"),
+        "--pending-dir", str(tmp_path / "pending"),
+        "--raw-dir", str(tmp_path / "raw"),
+    ]
+
+
+def _stub_client(monkeypatch):
+    """anthropic.Anthropic() is constructed for real otherwise, and load_dotenv
+    means it can pick up a live key."""
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: object())
+
+
 def test_collect_pending_exits_zero_on_a_soft_verdict(monkeypatch, tmp_path):
     """--collect-pending handles MANY dates in one process, so a single exit
     code cannot carry the verdicts; the date lists do. Returning 3 here would
     only add a second transport and, under the workflow's set -e, would block
     the publish — the amplification #52 was about."""
+    _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": False, "systemic_dates": ["2026-05-14"],
         "suspect_dates": [], "diagnostics": [],
     })
-    ...  # stub anthropic.Anthropic / load_members / save_members
     with pytest.raises(SystemExit) as e:
-        summarize.main(["--collect-pending"])
-    assert e.value.code in (0, None)
+        summarize.main(_isolated_collect_argv(tmp_path))
+    assert e.value.code == 0
 
 
 def test_collect_pending_exits_one_on_a_hard_fail(monkeypatch, tmp_path):
+    _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": True, "systemic_dates": [], "suspect_dates": [], "diagnostics": [],
     })
-    ...
     with pytest.raises(SystemExit) as e:
-        summarize.main(["--collect-pending"])
+        summarize.main(_isolated_collect_argv(tmp_path))
     assert e.value.code == 1
 
 
@@ -952,14 +1003,14 @@ def test_collect_pending_writes_deduplicated_dates_to_github_output(
     threshold and could cross it on their own."""
     out = tmp_path / "gh_output"
     monkeypatch.setenv("GITHUB_OUTPUT", str(out))
+    _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": False, "systemic_dates": [],
         "suspect_dates": ["2026-05-14", "2026-05-14", "2026-05-15"],
         "diagnostics": [],
     })
-    ...
     with pytest.raises(SystemExit):
-        summarize.main(["--collect-pending"])
+        summarize.main(_isolated_collect_argv(tmp_path))
     written = out.read_text()
     assert "systemic_dates=\n" in written
     assert "suspect_dates=2026-05-14 2026-05-15\n" in written
@@ -1115,6 +1166,14 @@ def test_the_threshold_lives_in_the_final_step_and_dedupes():
     run = steps[-1]["run"]
     assert "-ge 2" in run, "the suspect threshold must be findable in one place"
     assert "sort -u" in run, "the union must deduplicate dates"
+    # Moved here from the Summarize-step test, which used to be the only thing
+    # asserting that a suspect date can EVER be escalated. Without this line the
+    # whole suite stays green while suspect dates are collected, reported, and
+    # then silently never fail the job — which is the exact shape of failure
+    # this repo keeps paying for.
+    assert 'FAIL_DATES="$FAIL_DATES$SUSPECT"' in run, (
+        "suspect dates are collected but never escalate"
+    )
 
 
 def test_the_summarize_step_no_longer_applies_the_threshold():
@@ -1154,9 +1213,10 @@ Expected: FAIL（4件とも）
 - `daily-batch.yml:136-148` — 「This loop is the only place that sees every date, so the
   threshold lives here.」→ 閾値は最終ステップへ移ったので、「この loop は date ごとの
   verdict を集めるだけ。閾値は最終ステップ（Collect の日付も見える唯一の場所）」に書き換える。
-- `daily-batch.yml:416` 付近（`notify-on-failure` の本文）— Summarize ステップのログを
-  見ろと書いてあるが、pending の朝は Summarize が走っていない。Collect の annotation も
-  指すように直す。
+- `daily-batch.yml:416` 付近（`notify-on-failure` の本文）— run summary の
+  **"No usable summary produced on"** という文字列を引用しているが、Step 6 でその見出しを
+  "Nothing reached the site on" に変えるため一致しなくなる。引用文字列を新しい見出しに直し、
+  あわせて Collect の annotation も見るよう追記する（pending の朝は Summarize が走っていない）。
 
 - [ ] **Step 4: Collect ステップにコメントを足す（rc 捕捉は足さない）**
 
@@ -1257,7 +1317,7 @@ Expected: FAIL（4件とも）
 |---|---|---|
 | 565 | `assert "SUSPECT_N=$((SUSPECT_N + 1))" in run` | **削除**（Summarize から閾値が外れた。新テスト `test_the_threshold_lives_in_the_final_step_and_dedupes` が最終ステップ側で見る） |
 | 569 | `assert '[ "$SUSPECT_N" -ge 2 ]' in run` | **削除**（同上） |
-| 572 | `assert 'FAIL_DATES="$FAIL_DATES$SUSPECT"' in run` | **削除**（`FAIL_DATES` は最終ステップへ移った） |
+| 572 | `assert 'FAIL_DATES="$FAIL_DATES$SUSPECT"' in run` | **最終ステップ側の新テストへ移す**（Step 1 の `test_the_threshold_lives_in_the_final_step_and_dedupes` に既に入れてある）。ここから消すだけにすると、**suspect が永久に昇格しなくなってもスイートは緑**という穴が空く |
 | 573 | `assert 'systemic_dates=$FAIL_DATES' in run` | `assert 'systemic_dates=$SYSTEMIC' in run` |
 | 584 | `assert steps[-1]["if"] == "steps.summarize.outputs.systemic_dates != ''"` | 下記に置換 |
 
@@ -1273,7 +1333,12 @@ Expected: FAIL（4件とも）
 ```
 
 565 / 569 / 572 を消したあと、このテストが**まだ何かを守っているか**を確認すること。
-`rc -eq 3` / `rc -eq 4` の許容と `suspect_dates=$SUSPECT` の出力が残っていれば目的は果たす。
+`rc -eq 3` / `rc -eq 4` の許容、`SYSTEMIC="$SYSTEMIC $d"` / `SUSPECT="$SUSPECT $d"` の収集、
+`suspect_dates=$SUSPECT` の出力、`::error::` が残っていれば目的は果たす。
+
+**確認はこのテスト単体でなく、スイート全体で行うこと。** ある assert を消してよいのは
+「同じ性質を別のテストが守っている」ときだけで、それを確かめずに消すと、緑のまま安全網が
+外れる。572 行がまさにそれで、Step 1 の新テストへ移してから消す。
 
 - [ ] **Step 8: テストを通す**
 
@@ -1391,7 +1456,7 @@ Task 1 Step 9 のヘルパ（`assembly_fails_with`）でカバーされる形に
 
 初版のプランには、そのまま実行すると壊れる欠陥が 6 件あった。記録として残す:
 
-1. **`test_resume.py` を丸ごと見落としていた**（23 呼び出し）。最大の抜け。
+1. **`test_resume.py` を丸ごと見落としていた**（21 呼び出し）。最大の抜け。
 2. 壊れるテストの予測が誤り。`_run_batch_phase` ヘルパは戻り値を展開しないので壊れず、
    実際に壊れるのは直接展開している 4 箇所だった。
 3. 自作 sidecar フィクスチャの `input_hash` がダミーだったため、`missing_result` を
