@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 07 Aug 2026 01:27:28 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 22:11:51 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W32 国会まとめ — 7件の議論</title>
@@ -24,19 +24,19 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W30 国会まとめ — 8件の議論</title>
+      <title>2026-W30 国会まとめ — 15件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W30</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W30</guid>
       <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>8件のスレッド、3委員会の議論をまとめました。外交防衛委員会、議院運営委員会、財務金融委員会ほか。</description>
+      <description>15件のスレッド、5委員会の議論をまとめました。外交防衛委員会、議院運営委員会、財務金融委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W29 国会まとめ — 140件の議論</title>
+      <title>2026-W29 国会まとめ — 143件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W29</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W29</guid>
       <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>140件のスレッド、12委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
+      <description>143件のスレッド、12委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -296,12 +296,68 @@
       <category>財務金融委員会</category>
     </item>
     <item>
+      <title>金権腐敗政治一掃に関する請願の審査 — 政治改革に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260724_64c92a_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_64c92a_08</guid>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+      <description>金権腐敗政治一掃に関する請願外54件を審査し保留と決定した（国会会議録・2026.07.24・1発言）</description>
+      <category>政治改革に関する特別委員会</category>
+    </item>
+    <item>
       <title>元議長河野洋平氏逝去に伴う弔詞贈呈 — 議院運営委員会</title>
       <link>https://open-gikai.net/t/t_20260722_1b3f4a_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_1b3f4a_01</guid>
       <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
       <description>元衆議院議長河野洋平氏の逝去に際し弔詞贈呈を決定（国会会議録・2026.07.22・2発言）</description>
       <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>医療的ケア児支援法改正案の趣旨説明 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_238938_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_02</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>医療的ケア児支援法改正案について提出者が支援対象拡大などの提案趣旨を説明（国会会議録・2026.07.22・2発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>医療的ケア児の成人後の住まい・受皿確保 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_238938_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_03</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>成人した医療的ケア児のグループホームや施設など地域生活の受皿不足が課題（国会会議録・2026.07.22・11発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>支援対象拡大と支援センターの地域格差是正 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_238938_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_04</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>強度行動障害者への支援拡大や医療的ケア児等支援センターの地域格差解消策を議論（国会会議録・2026.07.22・7発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>家族の負担軽減と人材確保 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_238938_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_05</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>在宅ケアを担う家族の夜間負担軽減とケア人材確保の必要性を議論（国会会議録・2026.07.22・2発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>教育現場での医療的ケア児受入れ体制 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_238938_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_06</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>学校・保育所での医療的ケア児受入れ拡大と看護師配置の予算確保が課題（国会会議録・2026.07.22・8発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>医療的ケア児支援法改正案の採決・附帯決議 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20260722_238938_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_07</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description>改正法案が可決され、支援体制強化を求める附帯決議が採択された（国会会議録・2026.07.22・2発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
     </item>
     <item>
       <title>会期延長の件 — 議院運営委員会</title>
@@ -381,62 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_06</guid>
       <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
       <description>偽情報による認知戦への対応強化とNATO首脳会談参加の外交的成果（国会会議録・2026.07.16・6発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>ベネズエラ大地震への緊急援助 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_07</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>ベネズエラ大地震に対する日本の緊急援助物資・医療チーム派遣状況（国会会議録・2026.07.16・2発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>防衛産業サイバーセキュリティとGCAP — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_08</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>防衛産業サプライチェーンのサイバー対策と日英伊GCAP開発での安全対策（国会会議録・2026.07.16・4発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>中国の民族団結進歩促進法と邦人への影響 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_09</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>中国新法により日本国内発言が処罰対象となるリスクと邦人保護対策（国会会議録・2026.07.16・11発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>防衛分野におけるAI活用戦略 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_10</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>AIを活用した指揮統制の主体的意思決定確保と産官学連携の推進（国会会議録・2026.07.16・9発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>ガザ情勢とICC解体問題 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_11</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>ガザでの人道危機継続と米国によるICC解体方針への日本の対応姿勢（国会会議録・2026.07.16・13発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>ウクライナへの武器技術移転と輸出指針 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_12</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>紛争当事国ウクライナへの防衛装備・技術移転が輸出運用指針に反すると批判（国会会議録・2026.07.16・6発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>非核三原則の国是としての堅持 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_13</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>非核三原則を将来にわたり堅持するか政府の明言を求める攻防（国会会議録・2026.07.16・21発言）</description>
       <category>外交防衛委員会</category>
     </item>
   </channel>

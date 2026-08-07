@@ -15369,5 +15369,16 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "okadanaoki": {
+    "id": "okadanaoki",
+    "name": "岡田直樹",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
