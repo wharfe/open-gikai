@@ -795,3 +795,74 @@ def test_the_workflow_tolerates_exactly_these_exit_codes():
     # And the job must still be failed, after everything else has run.
     assert steps[-1]["if"] == "steps.summarize.outputs.systemic_dates != ''"
     assert "exit 1" in steps[-1]["run"]
+
+
+# ---------------------------------------------------------------------------
+# The --collect-pending contract (#59): a bare exit code cannot carry many
+# dates' verdicts, so this path writes GITHUB_OUTPUT instead of exiting 3/4.
+# ---------------------------------------------------------------------------
+
+def _isolated_collect_argv(tmp_path):
+    """argv that keeps main() away from the repo's committed data files.
+
+    The defaults are data/members.json and data/threads: main() calls
+    save_members() unconditionally, so a test that omits these REWRITES
+    committed data as a side effect of asserting on an exit code.
+    """
+    return [
+        "--collect-pending",
+        "--members-path", str(tmp_path / "members.json"),
+        "--output-dir", str(tmp_path / "threads"),
+        "--pending-dir", str(tmp_path / "pending"),
+        "--raw-dir", str(tmp_path / "raw"),
+    ]
+
+
+def _stub_client(monkeypatch):
+    """anthropic.Anthropic() is constructed for real otherwise, and load_dotenv
+    means it can pick up a live key."""
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: object())
+
+
+def test_collect_pending_exits_zero_on_a_soft_verdict(monkeypatch, tmp_path):
+    """--collect-pending handles MANY dates in one process, so a single exit
+    code cannot carry the verdicts; the date lists do. Returning 3 here would
+    only add a second transport and, under the workflow's set -e, would block
+    the publish — the amplification #52 was about."""
+    _stub_client(monkeypatch)
+    monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
+        "hard_fail": False, "systemic_dates": ["2026-05-14"],
+        "suspect_dates": [], "diagnostics": [],
+    })
+    with pytest.raises(SystemExit) as e:
+        summarize.main(_isolated_collect_argv(tmp_path))
+    assert e.value.code == 0
+
+
+def test_collect_pending_exits_one_on_a_hard_fail(monkeypatch, tmp_path):
+    _stub_client(monkeypatch)
+    monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
+        "hard_fail": True, "systemic_dates": [], "suspect_dates": [], "diagnostics": [],
+    })
+    with pytest.raises(SystemExit) as e:
+        summarize.main(_isolated_collect_argv(tmp_path))
+    assert e.value.code == 1
+
+
+def test_collect_pending_writes_deduplicated_dates_to_github_output(
+        monkeypatch, tmp_path):
+    """Duplicated dates would be counted twice by the workflow's SUSPECT_N
+    threshold and could cross it on their own."""
+    out = tmp_path / "gh_output"
+    monkeypatch.setenv("GITHUB_OUTPUT", str(out))
+    _stub_client(monkeypatch)
+    monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
+        "hard_fail": False, "systemic_dates": [],
+        "suspect_dates": ["2026-05-14", "2026-05-14", "2026-05-15"],
+        "diagnostics": [],
+    })
+    with pytest.raises(SystemExit):
+        summarize.main(_isolated_collect_argv(tmp_path))
+    written = out.read_text()
+    assert "systemic_dates=\n" in written
+    assert "suspect_dates=2026-05-14 2026-05-15\n" in written

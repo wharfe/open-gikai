@@ -213,12 +213,12 @@ def test_collect_assembles_ended_and_deletes_sidecar(fake_client, tmp_path, monk
         text=J.dumps({"speeches": [{"speechOrder": 1, "tension": "確認",
         "summaries": {"easy": "e", "teen": "t", "adult": "a"}}], "commitments": []}))]
 
-    hard_fail = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert hard_fail is False
+    assert result["hard_fail"] is False
     assert not os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
     assert os.path.exists(os.path.join(threads_dir, "2026-05-14.json"))
 
@@ -228,13 +228,13 @@ def test_collect_hard_fails_at_retry_threshold(fake_client, tmp_path):
     sidecar = _sidecar_with_one_thread(_correct_hash())
     sidecar["retry_count"] = 3
     bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
-    hard_fail = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"),
         raw_dir=str(tmp_path / "r"),
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert hard_fail is True
+    assert result["hard_fail"] is True
 
 
 def test_collect_survives_expired_results_and_resubmits(fake_client, tmp_path):
@@ -254,12 +254,12 @@ def test_collect_survives_expired_results_and_resubmits(fake_client, tmp_path):
     b.next_id = "msgbatch_resub_1"
     b.statuses["msgbatch_resub_1"] = "in_progress"
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert hard is False
+    assert result["hard_fail"] is False
     sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
     assert sc is not None                       # kept — resubmitted, not abandoned
     assert sc["retry_count"] == 1
@@ -282,12 +282,12 @@ def test_collect_abandons_uncollectable_old_sidecar(fake_client, tmp_path, monke
     b.statuses["b1"] = "ended"
     b.expired_results.add("b1")                   # results also expired
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert hard is False
+    assert result["hard_fail"] is False
     assert not os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))  # abandoned
 
 
@@ -304,12 +304,12 @@ def test_collect_keeps_young_sidecar_when_raw_missing(fake_client, tmp_path, mon
     b = fake_client.messages.batches
     b.statuses["b1"] = "ended"
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert hard is False
+    assert result["hard_fail"] is False
     assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))  # kept
 
 
@@ -327,12 +327,12 @@ def test_collect_resubmits_on_expired(fake_client, tmp_path):
     b.next_id = "msgbatch_resub_1"
     b.statuses["msgbatch_resub_1"] = "in_progress"
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert hard is False
+    assert result["hard_fail"] is False
     sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
     assert sc is not None                       # kept — resubmitted, not abandoned
     assert sc["retry_count"] == 1               # the expired batch counted once
@@ -382,13 +382,13 @@ def test_collect_repairs_truncated_result_instead_of_resubmitting(fake_client, t
     threads_dir = str(tmp_path / "threads")
     fake_client.messages.create_text = J.dumps(_GOOD_BODY)
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert hard is False
+    assert result["hard_fail"] is False
     # Repaired and assembled: sidecar gone, threads written, no resubmit.
     assert not os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
     assert os.path.exists(os.path.join(threads_dir, "2026-05-14.json"))
@@ -502,13 +502,13 @@ def test_repair_accepts_a_partially_covering_reissue(fake_client, tmp_path, capl
     })
 
     with caplog.at_level(logging.WARNING):
-        hard = summarize.collect_pending_batches(
+        result = summarize.collect_pending_batches(
             fake_client, members={}, model="claude-x",
             pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
             budget_seconds=0, poll_seconds=0, ci_commit=False,
         )
 
-    assert hard is False
+    assert result["hard_fail"] is False
     assert os.path.exists(os.path.join(threads_dir, "2026-05-14.json"))   # accepted
     assert b.created_requests == []                                       # no resubmit
     assert "covers 1/2 manifest speeches" in caplog.text                  # and reported
@@ -530,13 +530,13 @@ def test_repair_targets_a_result_that_parsed_but_has_no_speeches(fake_client, tm
     )]
     fake_client.messages.create_text = J.dumps(_GOOD_BODY)
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert hard is False
+    assert result["hard_fail"] is False
     assert len(fake_client.messages.create_calls) == 1        # it WAS repaired
     assert os.path.exists(os.path.join(threads_dir, "2026-05-14.json"))
     assert b.created_requests == []
@@ -560,13 +560,13 @@ def test_repair_swallows_a_deterministic_api_error_and_keeps_going(fake_client, 
     b.next_id = "msgbatch_resub_1"
     b.statuses["msgbatch_resub_1"] = "in_progress"
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert hard is False                       # no crash, loop completed
+    assert result["hard_fail"] is False                       # no crash, loop completed
     sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
     assert sc["retry_count"] == 1              # fell through to the resubmit path
 
@@ -601,13 +601,13 @@ def test_collect_refuses_sidecar_from_an_older_schema(fake_client, tmp_path):
     sc["schema_version"] = 1
     bs.save_sidecar(path, sc)
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert hard is True                                          # surfaced, not buried
+    assert result["hard_fail"] is True                                          # surfaced, not buried
     kept = bs.load_sidecar(path)
     assert kept is not None and kept["retry_count"] == 0          # nothing burned
     assert fake_client.messages.batches.created_requests == []    # no resubmit
@@ -664,13 +664,13 @@ def test_repair_preserves_the_good_results_alongside_the_bad(fake_client, tmp_pa
     ]
     fake_client.messages.create_text = _body(2, "REPAIRED")
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert hard is False
+    assert result["hard_fail"] is False
     assert b.created_requests == []                       # no full resubmit
     # Only the bad one was re-issued.
     assert len(fake_client.messages.create_calls) == 1
@@ -689,13 +689,13 @@ def test_repair_falls_back_to_resubmit_when_reissue_also_truncates(fake_client, 
     b.next_id = "msgbatch_resub_1"
     b.statuses["msgbatch_resub_1"] = "in_progress"
 
-    hard = summarize.collect_pending_batches(
+    result = summarize.collect_pending_batches(
         fake_client, members={}, model="claude-x",
         pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert hard is False
+    assert result["hard_fail"] is False
     sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
     assert sc is not None                 # kept for another attempt
     assert sc["retry_count"] == 1
@@ -775,3 +775,161 @@ def test_repair_skipped_when_too_many_results_unusable(fake_client, tmp_path):
 
     assert fake_client.messages.create_calls == []          # no per-request repair
     assert b.created_requests                                # fell back to resubmit
+
+
+# --- Resume-path verdict (#59) -----------------------------------------------
+#
+# A pending sidecar makes the daily workflow skip the whole Summarize step, so
+# on those mornings collect_pending_batches() IS the run. It used to answer
+# with a bare bool and never asked systemic_failure()'s question at all — a
+# resumed batch that came back fully rejected resubmitted quietly for days.
+
+def _run_collect(fake_client, tmp_path, monkeypatch, sidecars,
+                 results=None, batch_status="ended", existing_threads=0,
+                 raw_present=True, sidecar_age_days=None):
+    """Write sidecars + raw + existing threads, then run collect_pending_batches.
+
+    ``results``: {custom_id: parsed_body_dict} for the batch's ONE result set
+    (all sidecars here share date "2026-05-14" / batch "b1"). ``None`` means
+    "don't touch results_by_id" (used for a still-running batch); ``{}`` means
+    the batch ended but answered nothing usable for any custom_id.
+    ``sidecar_age_days``: pins ``_utcnow_iso`` and backdates the sidecar's last
+    ``submitted_at`` by this many days, mirroring the existing abandon-age tests.
+    """
+    from tests.conftest import _ResultEntry  # type: ignore
+    import json as _json
+
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    threads_dir = str(tmp_path / "threads")
+    os.makedirs(raw_dir, exist_ok=True)
+    os.makedirs(threads_dir, exist_ok=True)
+
+    submitted_iso = None
+    if sidecar_age_days is not None:
+        now_iso = "2026-07-15T00:00:00Z"
+        monkeypatch.setattr(summarize, "_utcnow_iso", lambda: now_iso)
+        from datetime import datetime, timedelta, timezone
+        now_dt = datetime(2026, 7, 15, tzinfo=timezone.utc)
+        submitted_iso = (now_dt - timedelta(days=sidecar_age_days)).strftime(
+            "%Y-%m-%dT%H:%M:%SZ")
+
+    b = fake_client.messages.batches
+    for sidecar in sidecars:
+        if submitted_iso is not None:
+            sidecar["attempts"][-1]["submitted_at"] = submitted_iso
+        bs.save_sidecar(os.path.join(pending_dir, f"{sidecar['date']}.json"), sidecar)
+        batch_id = bs.current_batch_id(sidecar)
+        b.statuses[batch_id] = batch_status
+        if batch_status == "ended" and results is not None:
+            b.results_by_id[batch_id] = [
+                _ResultEntry(cid, "succeeded", text=_json.dumps(body))
+                for cid, body in results.items()
+            ]
+
+    if raw_present and batch_status == "ended":
+        with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w",
+                  encoding="utf-8") as f:
+            _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+
+    if existing_threads:
+        placeholder = [{"id": f"t{i}"} for i in range(existing_threads)]
+        with open(os.path.join(threads_dir, "2026-05-14.json"), "w",
+                  encoding="utf-8") as f:
+            _json.dump(placeholder, f, ensure_ascii=False)
+
+    return summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=threads_dir, raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+
+
+def test_resume_reports_a_fully_rejected_batch_as_systemic(
+        fake_client, tmp_path, monkeypatch):
+    """#59: with a sidecar present the workflow skips Summarize entirely, so a
+    resumed batch that comes back fully rejected published nothing and said
+    nothing. Several consecutive mornings could go green that way."""
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          results={}, existing_threads=0)
+    assert result["systemic_dates"] == ["2026-05-14"]
+    assert result["suspect_dates"] == []
+    assert result["hard_fail"] is False
+    assert result["diagnostics"][0]["reason"] == "missing_result"
+
+
+def test_resume_keeps_a_lone_failure_on_a_published_date_as_suspect(
+        fake_client, tmp_path, monkeypatch):
+    """The softener applies here too. A sidecar is created by any batch that
+    outruns the poll budget, so it is routine — treating resume as exceptional
+    would promote the same failure from suspect to systemic purely because the
+    batch took longer than one run."""
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          results={}, existing_threads=3)
+    assert result["systemic_dates"] == []
+    assert result["suspect_dates"] == ["2026-05-14"]
+
+
+def test_resume_says_nothing_while_the_batch_is_still_running(
+        fake_client, tmp_path, monkeypatch):
+    """An unfinished batch has answered nothing yet. Counting it would make the
+    alarm fire on every slow morning."""
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          batch_status="in_progress", existing_threads=0)
+    assert result["systemic_dates"] == []
+    assert result["suspect_dates"] == []
+
+
+def test_resume_denominator_ignores_meetings_with_no_summary_request():
+    """A manifest meeting with threads: [] asked nothing of this run."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["meetings"].append({"meeting_id": "M2", "outcome": {}, "threads": []})
+    assert summarize._resume_summary_attempted(sidecar) == 1
+
+
+def test_resume_annotates_the_verdict_as_it_is_reached(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The annotation is the POINT of _record_resume_verdict, not a nicety.
+
+    _annotate is a no-op unless GITHUB_ACTIONS is set, so without this test the
+    entire annotate call could be deleted and every other test would still pass
+    — while the one channel that survives a later sidecar's hard fail goes away.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _run_collect(fake_client, tmp_path, monkeypatch,
+                 sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                 results={}, existing_threads=0)
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "2026-05-14" in errors[0]
+    assert "missing_result" in errors[0]
+
+
+def test_resume_flags_a_finished_batch_whose_date_lost_its_raw(
+        fake_client, tmp_path, monkeypatch):
+    """The batch finished; the date's raw is gone but not yet old enough to be
+    written off. Nothing can be assembled and the sidecar blocks Summarize for
+    every date, so this stalls green for up to ABANDON_AGE_DAYS. That is the
+    same failure #59 is about, arriving by a different door."""
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          raw_present=False, sidecar_age_days=2, existing_threads=0)
+    assert result["systemic_dates"] == ["2026-05-14"]
+    assert result["diagnostics"][0]["reason"] == "raw_date_missing"
+    assert result["diagnostics"][0]["scope"] == "date"
+
+
+def test_resume_stays_quiet_when_the_raw_is_legitimately_out_of_window(
+        fake_client, tmp_path, monkeypatch):
+    """Past the abandon age the raw is SUPPOSED to be gone. That path already
+    warns and deletes the sidecar, so adding a second alarm would red the run
+    for a date nobody can act on."""
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          raw_present=False, sidecar_age_days=40, existing_threads=0)
+    assert result["systemic_dates"] == []
+    assert result["suspect_dates"] == []
