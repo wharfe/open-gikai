@@ -357,11 +357,22 @@ jobs:
             fi
             echo "- **Committed**: ${COMMITTED}"
             echo "- **Consecutive zero-thread runs**: ${STALLED}"
-            if [ -n "${SYSTEMIC_DATES}${COLLECT_SYSTEMIC_DATES}" ]; then
-              echo "- **Nothing reached the site on**:${SYSTEMIC_DATES}${COLLECT_SYSTEMIC_DATES}"
+            # Normalised the same way the final step does: SYSTEMIC_DATES carries
+            # a LEADING space per entry (Summarize's `SYSTEMIC="$SYSTEMIC $d"`)
+            # and COLLECT_SYSTEMIC_DATES carries none — concatenating the raw
+            # strings fuses the last date of one list with the first of the
+            # other into a single bogus token. Route both through the same
+            # split/dedupe/rejoin so this text can never disagree with the
+            # final step's failure text.
+            SYSTEMIC_ALL=$(echo "$SYSTEMIC_DATES $COLLECT_SYSTEMIC_DATES" | tr ' ' '\n' \
+                             | grep -v '^$' | sort -u | tr '\n' ' ')
+            SUSPECT_ALL=$(echo "$SUSPECT_DATES $COLLECT_SUSPECT_DATES" | tr ' ' '\n' \
+                            | grep -v '^$' | sort -u | tr '\n' ' ')
+            if [ -n "${SYSTEMIC_ALL}" ]; then
+              echo "- **Nothing reached the site on**: ${SYSTEMIC_ALL}"
             fi
-            if [ -n "${SUSPECT_DATES}${COLLECT_SUSPECT_DATES}" ]; then
-              echo "- **One meeting failed on an already-published date**:${SUSPECT_DATES}${COLLECT_SUSPECT_DATES}"
+            if [ -n "${SUSPECT_ALL}" ]; then
+              echo "- **One meeting failed on an already-published date**: ${SUSPECT_ALL}"
               echo "  (not a failure on its own — watch for several of these in one run)"
             fi
           } >> "$GITHUB_STEP_SUMMARY"
@@ -385,11 +396,11 @@ jobs:
         run: |
           # Deduplicate: the threshold below counts DATES, and the same date
           # arriving from both paths must not cross it on its own.
-          SYSTEMIC=$(echo $SUMMARIZE_SYSTEMIC $COLLECT_SYSTEMIC | tr ' ' '\n' \
+          SYSTEMIC=$(echo "$SUMMARIZE_SYSTEMIC $COLLECT_SYSTEMIC" | tr ' ' '\n' \
                        | grep -v '^$' | sort -u | tr '\n' ' ')
-          SUSPECT=$(echo $SUMMARIZE_SUSPECT $COLLECT_SUSPECT | tr ' ' '\n' \
+          SUSPECT=$(echo "$SUMMARIZE_SUSPECT $COLLECT_SUSPECT" | tr ' ' '\n' \
                       | grep -v '^$' | sort -u | tr '\n' ' ')
-          SUSPECT_N=$(echo $SUSPECT | wc -w)
+          SUSPECT_N=$(echo "$SUSPECT" | wc -w)
 
           # THE policy, in one findable place. A suspect date is one meeting
           # failing on an already-published date: the 30-day lookback re-visits
@@ -402,11 +413,11 @@ jobs:
             FAIL_DATES="$FAIL_DATES$SUSPECT"
           fi
 
-          if [ -z "$(echo $FAIL_DATES | tr -d ' ')" ]; then
+          if [ -z "$(echo "$FAIL_DATES" | tr -d ' ')" ]; then
             echo "No systemic summary failure this run."
             exit 0
           fi
-          echo "::error::Nothing this run produced reached the site on:${FAIL_DATES}"
+          echo "::error::Nothing this run produced reached the site on: ${FAIL_DATES}"
           echo "This is an alert, not a publish failure — data already committed above is"
           echo "intact, and these dates may still hold threads from earlier runs."
           echo "The Summarize and Collect step annotations name which of these happened"
