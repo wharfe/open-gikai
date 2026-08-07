@@ -1,0 +1,192 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-22",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01D6a6owm7n7RqxTrHFSavPr",
+      "submitted_at": "2026-08-07T22:02:35Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_こども・子育て・若者活躍に関する特別委員会_2026-07-22_第5号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "医療的ケア児等・重症心身障害者と家族への支援充実、人材確保、通学・通勤支援、地域格差是正、強度行動障害者支援体制整備等を求める決議",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_238938b77368_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "医療的ケア児支援法改正案の趣旨説明",
+            "topicTag": "趣旨説明",
+            "topicColor": "#8b5cf6",
+            "summary": "医療的ケア児支援法改正案について提出者が支援対象拡大などの提案趣旨を説明",
+            "contextDescription": "医療的ケア児及びその家族への支援を定める法律の改正案。成人後の支援や重症心身障害者への対応拡大を目的とする。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              4,
+              5
+            ]
+          },
+          "speechOrders": [
+            4,
+            5
+          ],
+          "input_hash": "sha256:ed6aa8a13b65e8cce708846070675ddf6f6f7a99da15b51f09a33accf72b4153"
+        },
+        {
+          "custom_id": "s_238938b77368_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "医療的ケア児の成人後の住まい・受皿確保",
+            "topicTag": "住まい支援",
+            "topicColor": "#8b5cf6",
+            "summary": "成人した医療的ケア児のグループホームや施設など地域生活の受皿不足が課題",
+            "contextDescription": "医療的ケア児が成人した後、地域で暮らし続けるための住まいや施設整備の不足が指摘されている。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          "speechOrders": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "input_hash": "sha256:78c55520be2b0d8c788a79a3d3ac99751944c38383ee859de933f5fcc990bad9"
+        },
+        {
+          "custom_id": "s_238938b77368_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "支援対象拡大と支援センターの地域格差是正",
+            "topicTag": "地域格差",
+            "topicColor": "#8b5cf6",
+            "summary": "強度行動障害者への支援拡大や医療的ケア児等支援センターの地域格差解消策を議論",
+            "contextDescription": "医療的ケア児等支援センターの設置状況に地域差があり、支援体制の均一化が課題となっている。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ]
+          },
+          "speechOrders": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "input_hash": "sha256:57d91d33d4b6e05b35141eada328a4519518c18a0a3c1d2d8f4ecca031c10bdd"
+        },
+        {
+          "custom_id": "s_238938b77368_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "家族の負担軽減と人材確保",
+            "topicTag": "家族負担",
+            "topicColor": "#8b5cf6",
+            "summary": "在宅ケアを担う家族の夜間負担軽減とケア人材確保の必要性を議論",
+            "contextDescription": "医療的ケア児を在宅で支える家族の負担が大きく、睡眠不足などの問題や人材確保が課題となっている。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              25,
+              26
+            ]
+          },
+          "speechOrders": [
+            25,
+            26
+          ],
+          "input_hash": "sha256:d761e3321afa53f25bc622c50c953a7264319fd303413cfd9bd1c0364c353852"
+        },
+        {
+          "custom_id": "s_238938b77368_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "教育現場での医療的ケア児受入れ体制",
+            "topicTag": "教育受入",
+            "topicColor": "#f59e0b",
+            "summary": "学校・保育所での医療的ケア児受入れ拡大と看護師配置の予算確保が課題",
+            "contextDescription": "学校や保育所での医療的ケア児の通学・通園支援体制整備状況とガイドライン整備の進捗が問われている。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34
+            ]
+          },
+          "speechOrders": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "input_hash": "sha256:9940074f9006740512a8797ec8716813ac54272ade64c2c2c6b9c925fd6329ff"
+        },
+        {
+          "custom_id": "s_238938b77368_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "医療的ケア児支援法改正案の採決・附帯決議",
+            "topicTag": "採決",
+            "topicColor": "#8b5cf6",
+            "summary": "改正法案が可決され、支援体制強化を求める附帯決議が採択された",
+            "contextDescription": "医療的ケア児支援法改正案の審議終了後の採決と、今後の施策実施を求める附帯決議の提出。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              37,
+              40
+            ]
+          },
+          "speechOrders": [
+            37,
+            40
+          ],
+          "input_hash": "sha256:11359a94ee4a930d2d77ab0865607378320548dc2f970dd35b94fd43950528d5"
+        }
+      ]
+    }
+  ]
+}
