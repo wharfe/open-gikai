@@ -87,6 +87,22 @@ def _annotate(level: str, message: str) -> None:
         print(f"::{level}::{message}", flush=True)
 
 
+def _write_github_output(**values: list) -> None:
+    """Publish date lists as step outputs, deduplicated and sorted.
+
+    Only the resume path writes these: it handles many dates in one process, so
+    its verdicts cannot ride on an exit code the way a single-date run's do.
+    Deduplicated because the workflow thresholds on how many DATES reported a
+    suspect verdict, and the same date listed twice would cross that on its own.
+    """
+    path = os.environ.get("GITHUB_OUTPUT")
+    if not path:
+        return
+    with open(path, "a", encoding="utf-8") as f:
+        for key, dates in values.items():
+            f.write(f"{key}={' '.join(sorted(set(dates)))}\n")
+
+
 def _git_commit_sidecar(path: str, date_str: str) -> None:
     """Commit + push just the sidecar (CI only) so the in-flight batch survives
     a later kill or set -e failure before the run's final commit.
@@ -995,6 +1011,63 @@ def _repair_unusable_results(
     return repaired
 
 
+def _resume_summary_attempted(sidecar: dict) -> int:
+    """Meetings this resume run actually has summary requests for.
+
+    The manifest does not persist ``askable``, and it does not need to: by the
+    time a sidecar exists, grouping and outcome are already done and the only
+    question left for the API is the summary. So "asked about this run" is
+    exactly "has a non-empty threads list" — no schema change, and therefore
+    none of the SCHEMA_VERSION landing constraints (see CLAUDE.md).
+    """
+    return sum(1 for m in sidecar.get("meetings", []) if m.get("threads"))
+
+
+def _existing_thread_count(threads_dir: str, date_str: str) -> int:
+    """Threads already on disk for this date — the evidence the softener needs."""
+    path = os.path.join(threads_dir, f"{date_str}.json")
+    if not os.path.exists(path):
+        return 0
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return 0
+    return len(existing) if isinstance(existing, list) else 0
+
+
+def _record_resume_verdict(date_str: str, summary_attempted: int,
+                           published_threads: int, diagnostic: Optional[dict],
+                           systemic_dates: list, suspect_dates: list,
+                           diagnostics: list) -> None:
+    """Record one date's verdict and annotate it immediately.
+
+    Annotated here, as the verdict is reached, rather than accumulated for a
+    single write at the end: if a LATER sidecar hard-fails, the step fails and
+    every step below it is skipped, so nothing that reached GITHUB_OUTPUT is
+    ever read. An annotation is the one channel that survives a failed step —
+    the same reason the Summarize loop annotates before it dies.
+    """
+    verdict = publication_blocked_verdict(summary_attempted, published_threads)
+    if not verdict:
+        return
+    if diagnostic:
+        diagnostics.append({**diagnostic, "date": date_str})
+    d = diagnostic or {}
+    detail = (f"assembly failed: {d.get('reason', 'unknown')} "
+              f"(scope={d.get('scope')}, meeting={d.get('meeting_id')}, "
+              f"custom_id={d.get('custom_id')})")
+    if verdict == EXIT_SYSTEMIC_FAILURE:
+        systemic_dates.append(date_str)
+        _annotate("error", f"{date_str}: resumed batch published nothing "
+                           f"({published_threads} thread(s) on the date) — {detail}")
+    else:
+        suspect_dates.append(date_str)
+        _annotate("warning", f"{date_str}: the one meeting in the resumed batch "
+                             f"published nothing (the date keeps its "
+                             f"{published_threads} thread(s)) — {detail}")
+
+
 def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
                        raw_dir: str, model: str, ci_commit: bool) -> bool:
     """Count a non-collectable batch failure, then either hard-fail (>=3 retries)
@@ -1033,11 +1106,29 @@ def collect_pending_batches(
     budget_seconds: int = 1800,
     poll_seconds: int = 30,
     ci_commit: bool = False,
-) -> bool:
-    """Resume all in-flight batches. Returns True if any sidecar hit the
-    hard-fail retry threshold (caller should exit non-zero)."""
+) -> dict:
+    """Resume all in-flight batches.
+
+    Returns a dict (informally ``CollectResult``) with:
+
+    * ``hard_fail`` — True if any sidecar hit the hard-fail retry threshold or
+      carries an unrecoverable older schema (caller should exit non-zero).
+    * ``systemic_dates`` / ``suspect_dates`` — dates whose resumed batch
+      published nothing, at the two evidence strengths ``publication_blocked_
+      verdict`` distinguishes (see that function). A pending sidecar makes the
+      daily workflow skip the whole Summarize step, so on those mornings this
+      function IS the run and has to carry the same failure signal
+      ``run_pipeline``'s exit code carries for a normal run — a bare bool
+      couldn't say which date failed, and callers that resume many dates in
+      one process need to.
+    * ``diagnostics`` — structured observations (see ``_diagnostic``), one per
+      date that reported a non-clean verdict.
+    """
     import glob as _glob
     hard_fail = False
+    systemic_dates: list = []
+    suspect_dates: list = []
+    diagnostics: list = []
     paths = sorted(_glob.glob(os.path.join(pending_dir, "*.json")))
     deadline = time.time() + budget_seconds
 
@@ -1115,6 +1206,16 @@ def collect_pending_batches(
             else:
                 log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
                           date_str)
+                # Alarm, but no resubmit and no retry spent: the batch is fine
+                # and re-fetching raw may still rescue it. What must not happen
+                # is another silent morning — the sidecar keeps Summarize
+                # skipped for EVERY date while this sits here.
+                _record_resume_verdict(
+                    date_str, _resume_summary_attempted(sidecar),
+                    _existing_thread_count(threads_dir, date_str),
+                    _diagnostic("raw_date_missing"),
+                    systemic_dates, suspect_dates, diagnostics,
+                )
             continue
 
         # Results are retained ~29 days after an "ended" batch; past that the SDK
@@ -1142,7 +1243,13 @@ def collect_pending_batches(
             sidecar, meetings_by_id, results, members, thread_counter=0,
         )
         if not ok:
-            log.error("Resume: assembly incomplete for %s", date_str)
+            log.error("Resume: assembly incomplete for %s (%s)", date_str,
+                      (diagnostic or {}).get("reason", "unknown"))
+            _record_resume_verdict(
+                date_str, _resume_summary_attempted(sidecar),
+                _existing_thread_count(threads_dir, date_str),
+                diagnostic, systemic_dates, suspect_dates, diagnostics,
+            )
             if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
                                   raw_dir, model, ci_commit):
                 hard_fail = True
@@ -1152,7 +1259,12 @@ def collect_pending_batches(
         bs.delete_sidecar(path)
         log.info("Resume: collected %d threads for %s", len(threads), date_str)
 
-    return hard_fail
+    return {
+        "hard_fail": hard_fail,
+        "systemic_dates": systemic_dates,
+        "suspect_dates": suspect_dates,
+        "diagnostics": diagnostics,
+    }
 
 
 def has_question_for_the_api(meeting: dict) -> bool:
@@ -1847,16 +1959,28 @@ def main(argv: Optional[List[str]] = None) -> None:
     if args.collect_pending:
         client = anthropic.Anthropic()
         members = load_members(args.members_path)
-        hard_fail = collect_pending_batches(
+        result = collect_pending_batches(
             client, members, args.model,
             pending_dir=args.pending_dir, threads_dir=args.output_dir,
             raw_dir=args.raw_dir, budget_seconds=args.batch_budget,
             poll_seconds=args.batch_poll, ci_commit=args.ci_commit,
         )
         save_members(members, args.members_path)
-        if hard_fail:
-            sys.exit(1)
-        return
+        # NOT wrapped in try/finally. A SystemExit raised from a finally block
+        # REPLACES the exception that sent us there, so an unwritable
+        # GITHUB_OUTPUT would exit 0 with no verdict transported and no
+        # traceback — a fail-open in the one transport #59 depends on. Let it
+        # raise: the annotations are already out, and a crash here is honest.
+        _write_github_output(
+            systemic_dates=result["systemic_dates"],
+            suspect_dates=result["suspect_dates"],
+        )
+        # 1, never 3 or 4. This process speaks for many dates, so its exit code
+        # cannot say WHICH date failed — the outputs above do that, and the
+        # annotations already emitted survive even a failed step. What the code
+        # still has to carry is "stop, a human is needed": a sidecar past its
+        # retry threshold or written by an older schema.
+        sys.exit(1 if result["hard_fail"] else 0)
 
     exit_code = run_pipeline(
         date_str=args.date,
