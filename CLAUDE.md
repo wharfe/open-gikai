@@ -105,8 +105,12 @@ python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
 |---|---|---|
 | 0 | ran; may legitimately have produced nothing | continue |
 | 1 | crash / usage error / `--collect-pending` hard-fail | abort the date loop (`set -e`) |
-| 3 | **no usable summary**: every meeting asked about this run produced nothing that became a thread | record the date, keep going, publish everything, fail the job in the last step |
+| 3 | **nothing reached the site**: every meeting asked about this run produced nothing that became a thread, OR summary requests went out and the date assembled nothing. The two are not exclusive — a fully rejected batch reports both. | record the date, keep going, publish everything, fail the job in the last step |
 | 4 | **suspect**: the same thing, but only one meeting was asked about and the date already has threads | record separately; fail the job only if **2+ dates** in one run report it |
+
+`--collect-pending` is the exception: it speaks for many dates in one process, so a single exit
+code cannot say which one failed. It reports through `systemic_dates` / `suspect_dates` step
+outputs plus annotations, and still exits 1 only for a hard fail (retry threshold, older schema).
 
 "Produced nothing that became a thread" covers both a rejected request *and* an answer that could not be
 assembled — the outcome that matters is a speech that never reaches the site. It does **not** mean the date is
@@ -119,6 +123,9 @@ cries daily gets switched off. But a *total* outage can present as nothing else:
 each to three old dates, every request fails, and every date reports 1-of-1. So the evidence is kept (exit 4)
 instead of discarded, and the **workflow** applies the threshold, because it is the only layer that sees every
 date in the run. Change the threshold in `daily-batch.yml`'s `SUSPECT_N -ge 2`, not in Python.
+That line now lives in the **last** step, not the Summarize step: on a morning with a pending
+sidecar Summarize does not run at all, so a policy applied there would be blind to every date
+the resume path reported.
 
 3 exists only because 1 cannot carry this meaning: under the workflow's `set -e` loop a bare 1 is
 indistinguishable from a crash, aborts the loop, and skips commit/push — the amplification #52 was about.

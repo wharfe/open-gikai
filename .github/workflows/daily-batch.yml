@@ -113,6 +113,11 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           set -e
+          # No rc capture on purpose. This process speaks for MANY dates, so it
+          # answers with systemic_dates/suspect_dates outputs (written from
+          # Python) and exits 0 on a soft verdict. A non-zero code from here
+          # still means "stop, a human is needed" — retry threshold reached, or
+          # a sidecar from an older schema — and must still abort under set -e.
           python scripts/summarize.py --collect-pending --batch-budget 1800 --ci-commit
           if ls data/pending-batches/*.json >/dev/null 2>&1; then
             echo "has_pending=true" >> "$GITHUB_OUTPUT"
@@ -143,12 +148,12 @@ jobs:
           #                           daily, so failing on one would fail most
           #                           mornings. Several in ONE run is different:
           #                           a total outage can present as nothing but
-          #                           1-of-1 failures. This loop is the only
-          #                           place that sees every date, so the
-          #                           threshold lives here.
+          #                           1-of-1 failures. This loop only collects
+          #                           the per-date verdicts; the threshold lives
+          #                           in the final step, which is the only place
+          #                           that also sees Collect's dates.
           SYSTEMIC=""
           SUSPECT=""
-          SUSPECT_N=0
           for d in $DATES_LIST; do
             echo "::group::Summarize $d"
             # `|| rc=$?` keeps `set -e` from aborting the loop on exit 3 and 4,
@@ -161,7 +166,6 @@ jobs:
               SYSTEMIC="$SYSTEMIC $d"
             elif [ "$rc" -eq 4 ]; then
               SUSPECT="$SUSPECT $d"
-              SUSPECT_N=$((SUSPECT_N + 1))
             elif [ "$rc" -ne 0 ]; then
               echo "::endgroup::"
               # Say it before dying: a crash on a LATER date must not erase the
@@ -183,15 +187,11 @@ jobs:
               break
             fi
           done
-          # The policy, applied here rather than in the final step's `if:`,
-          # because a GitHub expression cannot compare a string output as a
-          # number without fromJSON gymnastics — and this threshold is the one
-          # thing a future reader must be able to find and change.
-          FAIL_DATES="$SYSTEMIC"
-          if [ "$SUSPECT_N" -ge 2 ]; then
-            FAIL_DATES="$FAIL_DATES$SUSPECT"
-          fi
-          echo "systemic_dates=$FAIL_DATES" >> "$GITHUB_OUTPUT"
+          # The threshold is NOT applied here any more. This step does not run
+          # at all on a morning with a pending sidecar, and it never sees the
+          # dates Collect reported — so a policy applied here would be blind to
+          # half its input. It moved to the last step, which sees both.
+          echo "systemic_dates=$SYSTEMIC" >> "$GITHUB_OUTPUT"
           # Always published, failing or not: one suspect date is not worth a red
           # run, but it must still be visible in the run summary. A signal nobody
           # can see is the state this whole change exists to leave behind.
@@ -344,6 +344,8 @@ jobs:
           STALLED: ${{ steps.stall.outputs.consecutive_zero_runs }}
           SYSTEMIC_DATES: ${{ steps.summarize.outputs.systemic_dates }}
           SUSPECT_DATES: ${{ steps.summarize.outputs.suspect_dates }}
+          COLLECT_SYSTEMIC_DATES: ${{ steps.collect.outputs.systemic_dates }}
+          COLLECT_SUSPECT_DATES: ${{ steps.collect.outputs.suspect_dates }}
         run: |
           {
             echo "## Daily Batch Summary"
@@ -355,11 +357,11 @@ jobs:
             fi
             echo "- **Committed**: ${COMMITTED}"
             echo "- **Consecutive zero-thread runs**: ${STALLED}"
-            if [ -n "${SYSTEMIC_DATES}" ]; then
-              echo "- **No usable summary produced on**:${SYSTEMIC_DATES}"
+            if [ -n "${SYSTEMIC_DATES}${COLLECT_SYSTEMIC_DATES}" ]; then
+              echo "- **Nothing reached the site on**:${SYSTEMIC_DATES}${COLLECT_SYSTEMIC_DATES}"
             fi
-            if [ -n "${SUSPECT_DATES}" ]; then
-              echo "- **One meeting failed on an already-published date**:${SUSPECT_DATES}"
+            if [ -n "${SUSPECT_DATES}${COLLECT_SUSPECT_DATES}" ]; then
+              echo "- **One meeting failed on an already-published date**:${SUSPECT_DATES}${COLLECT_SUSPECT_DATES}"
               echo "  (not a failure on its own — watch for several of these in one run)"
             fi
           } >> "$GITHUB_STEP_SUMMARY"
@@ -371,20 +373,50 @@ jobs:
       # the amplification #52 was about. Placing it any earlier would skip the
       # steps below it.
       - name: Fail the run on a systemic summary failure
-        if: steps.summarize.outputs.systemic_dates != ''
         env:
-          # Through env, not an inline expression, per the same rule as
-          # LOOKBACK_DAYS above.
-          SYSTEMIC_DATES: ${{ steps.summarize.outputs.systemic_dates }}
+          # Through env, not inline expressions, per the same rule as
+          # LOOKBACK_DAYS above. Four inputs, not two: on a morning with a
+          # pending sidecar the Summarize step is skipped entirely and Collect
+          # is the only one with anything to say (#59).
+          SUMMARIZE_SYSTEMIC: ${{ steps.summarize.outputs.systemic_dates }}
+          SUMMARIZE_SUSPECT: ${{ steps.summarize.outputs.suspect_dates }}
+          COLLECT_SYSTEMIC: ${{ steps.collect.outputs.systemic_dates }}
+          COLLECT_SUSPECT: ${{ steps.collect.outputs.suspect_dates }}
         run: |
-          echo "::error::No usable summary was produced for any meeting asked about on:${SYSTEMIC_DATES}"
-          echo "This is an alert, not a publish failure — data already committed above is intact,"
-          echo "and these dates may still hold threads from earlier runs. Nothing is lost."
-          echo "Look in the Summarize step's log for which of the two it was:"
-          echo "  * requests REJECTED (a 400 means the request shape no longer matches the"
-          echo "    model's contract — that was #51; 429/529 means the API was overloaded)"
-          echo "  * requests ANSWERED but the answer could not be assembled into a thread"
-          echo "    (raw/manifest mismatch — a different problem with a different fix)"
+          # Deduplicate: the threshold below counts DATES, and the same date
+          # arriving from both paths must not cross it on its own.
+          SYSTEMIC=$(echo $SUMMARIZE_SYSTEMIC $COLLECT_SYSTEMIC | tr ' ' '\n' \
+                       | grep -v '^$' | sort -u | tr '\n' ' ')
+          SUSPECT=$(echo $SUMMARIZE_SUSPECT $COLLECT_SUSPECT | tr ' ' '\n' \
+                      | grep -v '^$' | sort -u | tr '\n' ' ')
+          SUSPECT_N=$(echo $SUSPECT | wc -w)
+
+          # THE policy, in one findable place. A suspect date is one meeting
+          # failing on an already-published date: the 30-day lookback re-visits
+          # published dates every morning, so failing on one would fail most
+          # mornings and the alarm would get switched off. Several in ONE run is
+          # different — a total outage can present as nothing but 1-of-1
+          # failures. Change the threshold HERE, not in Python.
+          FAIL_DATES="$SYSTEMIC"
+          if [ "$SUSPECT_N" -ge 2 ]; then
+            FAIL_DATES="$FAIL_DATES$SUSPECT"
+          fi
+
+          if [ -z "$(echo $FAIL_DATES | tr -d ' ')" ]; then
+            echo "No systemic summary failure this run."
+            exit 0
+          fi
+          echo "::error::Nothing this run produced reached the site on:${FAIL_DATES}"
+          echo "This is an alert, not a publish failure — data already committed above is"
+          echo "intact, and these dates may still hold threads from earlier runs."
+          echo "The Summarize and Collect step annotations name which of these happened"
+          echo "(they are not exclusive — a fully rejected batch reports both):"
+          echo "  * 'produced no usable summary' — the requests were REJECTED. A 400 means"
+          echo "    the request shape no longer matches the model's contract (#51);"
+          echo "    429/529 means the API was overloaded."
+          echo "  * 'assembly failed: <reason>' — the answers came back but could not be"
+          echo "    turned into threads. The reason names the observation:"
+          echo "    hash_mismatch/speech_gap/raw_missing point at raw, missing_result does not."
           exit 1
 
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, etc.) as a
@@ -413,7 +445,7 @@ jobs:
           # summary failure now reds the job too, and it is the one cause here
           # whose data is already committed — say so, or the first reaction is to
           # go looking for lost threads that are not lost.
-          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced no usable summary — check the run summary for "No usable summary produced on". That last one covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts.' "$DATE_TAG" "$RUN_URL")
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. On a morning with a pending sidecar the Summarize step does not run at all — check the Collect step annotations too.' "$DATE_TAG" "$RUN_URL")
           # Ensure the dedup label exists (no-op if already present).
           gh label create pipeline-failure \
             --color B60205 \
