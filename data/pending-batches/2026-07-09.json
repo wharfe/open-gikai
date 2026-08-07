@@ -1,0 +1,886 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-09",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01YQirdMrjAyao7qRa6j1zcC",
+      "submitted_at": "2026-08-07T21:50:23Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_厚生労働委員会_2026-07-09_第17号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "遺族補償年金要件の見直し、消滅時効延長の周知、暫定任意適用事業廃止への対応、特別加入団体の承認要件厳格化、労災かくし対策等、労災保険法改正の施行に関する14項目の措置を政府に求める。",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_a0578c5d800a_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "労災保険給付情報の事業主への提供と労災隠しの懸念",
+            "topicTag": "情報提供",
+            "topicColor": "#8b5cf6",
+            "summary": "労災給付情報の事業主提供は再発防止に必要だが労災隠しや不利益取扱いを助長する懸念があり実態調査へ",
+            "contextDescription": "労災保険法改正で事業主への支給決定情報提供が検討されているが、労働者側の不利益取扱いを懸念する声がある。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "input_hash": "sha256:a4bed5665dadfe8a84509ac03ffdc28971e0f0e58b6756ccdc705f8adc920bda"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "訪問系サービス従事者の安全確保",
+            "topicTag": "訪問安全",
+            "topicColor": "#8b5cf6",
+            "summary": "訪問介護・ケアマネジャーの単独訪問リスクへの予算措置と複数名訪問支援の拡充を求める",
+            "contextDescription": "訪問介護・看護やケアマネジャーが単独で利用者宅を訪問する際の安全確保が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          "speechOrders": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "input_hash": "sha256:b81439903e173ec0e7335cfeb4c5546a4f115a7e5fb94200b3f8ef3b17061a58"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "労働災害の発生状況と高年齢・外国人労働者対策",
+            "topicTag": "労災対策",
+            "topicColor": "#8b5cf6",
+            "summary": "休業4日以上の死傷災害増加が続く中、高年齢・外国人労働者向けの防止策強化を議論",
+            "contextDescription": "労働災害のうち死亡は減少傾向だが死傷災害は増加傾向。高年齢化や外国人労働者増加が要因とされる。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          "speechOrders": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "input_hash": "sha256:d3f4e996a2cac9190a2c2556e656184941a17b727157f4a7fc36b664160cc4a5"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "労災隠しとメリット制の見直し",
+            "topicTag": "メリット制",
+            "topicColor": "#8b5cf6",
+            "summary": "労災隠しや報復行為の実態調査を実施し、メリット制の廃止も含めた抜本的見直しを求める",
+            "contextDescription": "労災保険料を事業場の災害発生実績で増減するメリット制が労災隠しの誘因となっているとの指摘がある。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "input_hash": "sha256:d4964b36d598797fad983805d2ad9b20e13dd4868e69521ff4f41c862da0a9b2"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "農林水産業暫定任意適用事業の全面適用化",
+            "topicTag": "農林適用",
+            "topicColor": "#8b5cf6",
+            "summary": "農林水産業の小規模事業を労災保険の全面適用対象とするが施行まで5年の猶予に懸念",
+            "contextDescription": "農林水産業の小規模個人経営事業は労災保険が任意適用だったが、今回改正で強制適用への移行が定められた。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              42,
+              43,
+              44,
+              45,
+              46
+            ]
+          },
+          "speechOrders": [
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "input_hash": "sha256:4cd70d4dc977e4cf9d63094a5eabb4140633090149b36da0777d74362d61cddf"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "労災保険給付の消滅時効期間延長",
+            "topicTag": "時効延長",
+            "topicColor": "#8b5cf6",
+            "summary": "脳・心臓疾患等の消滅時効を5年に延長するが介護補償給付など対象外の疾病の救済が課題",
+            "contextDescription": "労災保険給付の請求権消滅時効は原則2年だが、因果関係の判断が難しい疾病について延長が検討されている。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          "speechOrders": [
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53
+          ],
+          "input_hash": "sha256:39c571829165e944d84f017f7e3f0fa79d48eda40ddca4b587551302e773efb1"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "フリーランス・偽装請負における労働者性の判断",
+            "topicTag": "労働者性",
+            "topicColor": "#8b5cf6",
+            "summary": "偽装請負やフリーランス契約により労災保険から漏れる労働者の保護と労働者性判断基準の検討が遅れている",
+            "contextDescription": "働き方の多様化で契約形態にかかわらず実態が労働者に該当する場合の労災保険適用が論点となっている。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63
+            ]
+          },
+          "speechOrders": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "input_hash": "sha256:8d0796349911ce0f70005aff6f0647c0d0aaae77591adb5542a1d4fe43df85f6"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "高額療養費制度（長期高額特定疾病）見直しの財政審建議",
+            "topicTag": "高額療養費",
+            "topicColor": "#8b5cf6",
+            "summary": "財政審が人工透析患者等の高額療養費見直しを建議、厚労省との事前調整の有無や制度存続への懸念",
+            "contextDescription": "人工透析患者等の長期高額特定疾病の高額療養費負担を財政制度等審議会が見直すべきと建議したことが問題視された。",
+            "legislationName": null,
+            "speechOrders": [
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78
+            ]
+          },
+          "speechOrders": [
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78
+          ],
+          "input_hash": "sha256:e0984cb51a5cd2a0f1b78c576d2d08b7cae38607a68b37625b71026a3a2b4d76"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "特別加入団体の要件法定化と業務改善命令",
+            "topicTag": "特別加入",
+            "topicColor": "#8b5cf6",
+            "summary": "特別加入団体の承認要件を法定化し業務改善命令制度を設けるが特別加入者保護との両立が課題",
+            "contextDescription": "一人親方やフリーランス等が加入する特別加入制度の窓口団体の要件が通達のみで法的根拠がなかった問題への対応。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              79,
+              80,
+              81,
+              82,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92
+            ]
+          },
+          "speechOrders": [
+            79,
+            80,
+            81,
+            82,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92
+          ],
+          "input_hash": "sha256:8568d234fb6dcf83b66bc7fb3c25186dcd9a1ec141cac6b725eeae7ef821a8af"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "メリット制の実態調査手法",
+            "topicTag": "実態調査",
+            "topicColor": "#8b5cf6",
+            "summary": "メリット制が労災隠しにつながっているかの実態調査の具体的手法について確認",
+            "contextDescription": "メリット制と労災隠しの関係を検証するための実態調査の実施方法が論点となっている。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              94,
+              96
+            ]
+          },
+          "speechOrders": [
+            94,
+            96
+          ],
+          "input_hash": "sha256:1419c5e42bee3653978820a62846fd52c5df8b9e14dd09d00503b6be99a9a52e"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "農業分野の労働災害と新規適用対象者",
+            "topicTag": "農業労災",
+            "topicColor": "#8b5cf6",
+            "summary": "農業の死亡事故は建設業より多く、高所転落事故も増加、新規加入対象者数と実態把握が課題",
+            "contextDescription": "農業就業者の死亡事故率は上昇傾向にあり、労災保険の適用拡大に伴う対象者数や実態把握が求められている。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103
+            ]
+          },
+          "speechOrders": [
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          "input_hash": "sha256:0c455ffcf536313f22a487f11b80a0a76a2f72db672941d8a0045c4efe21af16"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "労働基準監督官の人員体制強化",
+            "topicTag": "監督官増員",
+            "topicColor": "#8b5cf6",
+            "summary": "フリーランス法施行で労働者性判断業務が増加する中、労働基準監督官の増員が求められる",
+            "contextDescription": "フリーランス新法の施行に伴い労働基準監督署の業務量が増加しており、人員確保が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              104,
+              105
+            ]
+          },
+          "speechOrders": [
+            104,
+            105
+          ],
+          "input_hash": "sha256:83737168cd9b5f57d9be4966113c3cbeecac26fa3c221f2db837bf913aca5cd1"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "化学物質規制と安全データシート未添付問題",
+            "topicTag": "化学物質",
+            "topicColor": "#8b5cf6",
+            "summary": "ナフサ不足により一般消費者用製品を労働現場で使用する際の安全データシート欠如への対応",
+            "contextDescription": "ナフサ不足で業務用塗料等が入手困難になり、労働現場で安全データシートのない一般消費者用製品が使われる実態。",
+            "legislationName": null,
+            "speechOrders": [
+              106,
+              107
+            ]
+          },
+          "speechOrders": [
+            106,
+            107
+          ],
+          "input_hash": "sha256:19404c3723b99aefb30f8670d28c0e0a1a08feab65ef963310c6e7319d5561ce"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "騒音性難聴の消滅時効・保護具・健診対象化",
+            "topicTag": "騒音性難聴",
+            "topicColor": "#8b5cf6",
+            "summary": "騒音性難聴を消滅時効延長・二次健診の対象に加えるよう労政審での議論を求める",
+            "contextDescription": "騒音性難聴は加齢との区別が難しい疾病だが、今回の消滅時効延長の対象に含まれていないことが問題視された。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131,
+              132
+            ]
+          },
+          "speechOrders": [
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132
+          ],
+          "input_hash": "sha256:e891a41d7fa9f6291c67d52b9b49edc5f1b86526f47532709367e77bde8f4475"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "遺族補償年金の男女差別撤廃と対象者数",
+            "topicTag": "遺族年金",
+            "topicColor": "#8b5cf6",
+            "summary": "夫のみに課されていた遺族補償年金の年齢要件を撤廃、新規対象者は数十人規模と推計",
+            "contextDescription": "遺族補償年金は夫が受給する場合のみ年齢等の要件が課され男女差があったが、今回撤廃される。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              133,
+              134,
+              135,
+              136,
+              137
+            ]
+          },
+          "speechOrders": [
+            133,
+            134,
+            135,
+            136,
+            137
+          ],
+          "input_hash": "sha256:bb936d12cb58b748596314913d958b62a3c4915481252a2f85d0694ddbb31fa3"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "高次脳機能障害・職業性がんと労災病院の役割",
+            "topicTag": "労災病院",
+            "topicColor": "#8b5cf6",
+            "summary": "高次脳機能障害の労災認定継続性と労災病院の病職歴調査による職業性がん知見の活用",
+            "contextDescription": "労災病院は職業と疾病の関連を調べる病職歴調査を行い、高次脳機能障害や職業性がんの研究に貢献している。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145
+            ]
+          },
+          "speechOrders": [
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145
+          ],
+          "input_hash": "sha256:54b4bd8c958c35024204044113c9250bb5d49ef76c589ad25564b225b359e8f6"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "労災保険財投運用益と天下り団体の役員報酬",
+            "topicTag": "天下り",
+            "topicColor": "#f97316",
+            "summary": "労災保険財投運用益から天下り団体へ資金が流れ役員が高額報酬を得ている実態を批判",
+            "contextDescription": "労災保険の積立金運用益が社会復帰促進事業を通じ労働災害防止関連団体に配分され、役員に厚労省OBが就任している。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156,
+              157,
+              158,
+              159,
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166
+            ]
+          },
+          "speechOrders": [
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166
+          ],
+          "input_hash": "sha256:0af519ddaf2cc0c1c7c448266412f2bc020d9834388419c088c004e8ff1ffaa8"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "消滅時効対象疾病の将来的な追加見直し",
+            "topicTag": "対象疾病",
+            "topicColor": "#8b5cf6",
+            "summary": "脳・心臓疾患等3疾病以外の消滅時効延長対象は施行状況を見て労災保険部会で検討",
+            "contextDescription": "消滅時効延長の対象疾病は3種に限定されており、他の疾病を将来的に追加するかが論点となった。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              167,
+              168,
+              169,
+              170
+            ]
+          },
+          "speechOrders": [
+            167,
+            168,
+            169,
+            170
+          ],
+          "input_hash": "sha256:19e7fe571c6bd8ba073f9c9704014a0e645446343887fc6c63ddc167569461bf"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "農林水産業暫定任意適用事業とスポットワーク・労働者性判断",
+            "topicTag": "暫定廃止",
+            "topicColor": "#8b5cf6",
+            "summary": "農林業暫定任意適用事業の廃止に伴いスポットワーク利用時の労災適用や労働者性判断の周知が必要",
+            "contextDescription": "農林水産業の暫定任意適用事業廃止に際し、スポットワーク等新しい働き方での適用範囲の明確化が求められている。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              171,
+              172,
+              173,
+              174
+            ]
+          },
+          "speechOrders": [
+            171,
+            172,
+            173,
+            174
+          ],
+          "input_hash": "sha256:c683c44ae775893245937517ea422feb98398863296bbcef22d1f2b0e30d2845"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "特別加入団体要件法定化と高年齢労働者対策（参政党質疑）",
+            "topicTag": "特別加入2",
+            "topicColor": "#8b5cf6",
+            "summary": "特別加入団体要件の法定化の実効性と高齢労働者向け労働安全衛生対策の進捗を確認",
+            "contextDescription": "特別加入団体の適正化と、高齢化に伴う労働災害防止対策の両立が論点となった。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              175,
+              176,
+              177,
+              178
+            ]
+          },
+          "speechOrders": [
+            175,
+            176,
+            177,
+            178
+          ],
+          "input_hash": "sha256:d7d56d315205c2b3d7342343582851e103238b9a94e3cb2e147a69889df36274"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "精神障害の労災認定増加とハラスメント・医療福祉業界の課題",
+            "topicTag": "精神労災",
+            "topicColor": "#8b5cf6",
+            "summary": "精神障害の労災認定が6年連続最多、パワハラ・カスハラが医療福祉分野で突出",
+            "contextDescription": "精神障害の労災請求・認定件数は増加を続け、特に医療・福祉分野でハラスメントを要因とする事案が多い。",
+            "legislationName": null,
+            "speechOrders": [
+              179,
+              180,
+              181,
+              182,
+              183
+            ]
+          },
+          "speechOrders": [
+            179,
+            180,
+            181,
+            182,
+            183
+          ],
+          "input_hash": "sha256:3014ebd52095fcb39e7396c6dbf96ff3991787d73bc639059d0663c7d2bd98af"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "農林水産業の労働者性判断とプラットフォーム事業者の責任",
+            "topicTag": "労働者性2",
+            "topicColor": "#8b5cf6",
+            "summary": "農業の担い手減少と労働者性判断の課題、プラットフォーム事業者の使用者責任推定を求める",
+            "contextDescription": "農業分野での雇用形態の多様化に伴い労働者性の判断基準やプラットフォーム事業者の責任範囲が議論された。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              184,
+              185,
+              186,
+              187,
+              188,
+              189,
+              190,
+              191,
+              192,
+              193,
+              194
+            ]
+          },
+          "speechOrders": [
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194
+          ],
+          "input_hash": "sha256:7f2fd800ace3a9e3640ba0c8d338d929027a5fde62bea08636620443fd9cf049"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "フリーランス・アーティストの特別加入と保険料負担・ハラスメント実態",
+            "topicTag": "フリーランス",
+            "topicColor": "#8b5cf6",
+            "summary": "フリーランス・アーティストの特別加入保険料の発注者負担化とハラスメント実態調査の必要性",
+            "contextDescription": "文化芸術分野等のフリーランスは労災保険の特別加入対象だが保険料負担やハラスメント実態の把握が不十分。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              195,
+              196,
+              197,
+              198,
+              200,
+              201,
+              202,
+              203,
+              205,
+              206,
+              208,
+              209,
+              210
+            ]
+          },
+          "speechOrders": [
+            195,
+            196,
+            197,
+            198,
+            200,
+            201,
+            202,
+            203,
+            205,
+            206,
+            208,
+            209,
+            210
+          ],
+          "input_hash": "sha256:ddbaa0990e71b2c4973149f7dcf2d5e5a5d30880aced826c7f9a885dfb5a9625"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "フリーランスの優越的地位濫用と公正取引委員会の対応",
+            "topicTag": "優越濫用",
+            "topicColor": "#6366f1",
+            "summary": "プラットフォーム事業者によるフリーランスへの優越的地位濫用に対する独禁法上の対応を確認",
+            "contextDescription": "フリーランスと発注者間の取引で優越的地位の濫用が問題となり、独占禁止法の適用が論点となった。",
+            "legislationName": null,
+            "speechOrders": [
+              211,
+              212
+            ]
+          },
+          "speechOrders": [
+            211,
+            212
+          ],
+          "input_hash": "sha256:b81d8d4cdccd9f3b97c7e0c276dce8fd9b29edd1d3e8b18ca0d18ce3d261c8da"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "年金の併給調整と消滅時効撤廃の是非",
+            "topicTag": "併給調整",
+            "topicColor": "#8b5cf6",
+            "summary": "老齢・障害年金等の併給調整の是非と労災消滅時効の完全撤廃を求めるも困難との回答",
+            "contextDescription": "複数の年金受給権が生じた場合の併給調整制度と、労災保険消滅時効の撤廃の可否が議論された。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              213,
+              214,
+              215,
+              216,
+              217
+            ]
+          },
+          "speechOrders": [
+            213,
+            214,
+            215,
+            216,
+            217
+          ],
+          "input_hash": "sha256:e6d5914c17c779de940b69baaabe8d21d4295c19af4e983ab71131664c91cd40"
+        },
+        {
+          "custom_id": "s_a0578c5d800a_25",
+          "thread_idx": 25,
+          "thread_info": {
+            "topic": "法案への反対討論と附帯決議",
+            "topicTag": "討論決議",
+            "topicColor": "#8b5cf6",
+            "summary": "れいわ新選組が反対討論を行い、全会派共同提案の附帯決議が採択された",
+            "contextDescription": "労災保険法改正案の採決に際し反対討論と、施行に向けた各党共同の附帯決議が行われた。",
+            "legislationName": "労働者災害補償保険法等の一部を改正する法律案",
+            "speechOrders": [
+              219,
+              222,
+              225
+            ]
+          },
+          "speechOrders": [
+            219,
+            222,
+            225
+          ],
+          "input_hash": "sha256:9223dfe68688c62b45c3db55410ea154e6bb89debe3ef497727f65a5fc3101a1"
+        }
+      ]
+    }
+  ]
+}
