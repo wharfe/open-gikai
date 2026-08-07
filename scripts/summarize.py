@@ -252,6 +252,63 @@ def _everything_asked_for_failed(api_stats: dict) -> bool:
             and api_stats["failed"] == api_stats["attempted"])
 
 
+def rejection_verdict(api_stats: dict, published_threads: int) -> int:
+    """Trigger 1 as an exit code: the API answered nothing usable.
+
+    A thin wrapper over the two existing predicates so callers can combine this
+    with trigger 2 below without re-deriving the ranking. Deliberately does not
+    re-implement the boundaries: they carry hard-won carve-outs (see
+    ``systemic_failure``) and a second copy would drift from them.
+    """
+    if systemic_failure(api_stats, published_threads):
+        return EXIT_SYSTEMIC_FAILURE
+    if suspect_failure(api_stats, published_threads):
+        return EXIT_SUSPECT_FAILURE
+    return 0
+
+
+def publication_blocked_verdict(summary_attempted: int, published_threads: int) -> int:
+    """Trigger 2: summary requests went out, and the date published nothing.
+
+    Assembly is all-or-nothing — one bad speechOrder discards the whole date —
+    so this is a fact about the DATE, not about the meetings it swept up. That
+    is why it takes a count and not an ``api_stats``: charging the meetings
+    would report meetings that were never even examined as having failed, and
+    the cause diagnosis would be fiction. The cause travels separately, as the
+    diagnostic ``assemble_from_manifest`` returns.
+
+    ``summary_attempted`` is NOT ``api_stats["attempted"]``. That one counts
+    every meeting that reached the API at all, including one whose grouping
+    legitimately produced zero threads and therefore sent no summary request.
+    Using it here lets a real outage hide behind a quiet meeting: with A quiet
+    and B blocked, "everything asked for failed" is false and nothing fires.
+
+    Same evidence rule as trigger 1: one meeting blocked on an already-published
+    date is weak evidence and is kept as ``suspect`` for the workflow to
+    threshold; anything else is systemic.
+    """
+    if summary_attempted <= 0:
+        return 0
+    if summary_attempted == 1 and published_threads > 0:
+        return EXIT_SUSPECT_FAILURE
+    return EXIT_SYSTEMIC_FAILURE
+
+
+def worst_verdict(*verdicts: int) -> int:
+    """The loudest verdict among several. systemic > suspect > clean.
+
+    The two triggers are NOT exclusive: a fully rejected batch fires trigger 1
+    (nothing usable came back) AND trigger 2 (assembly then failed on the very
+    same missing results). Both are true and both get reported; this only picks
+    the exit code.
+    """
+    if EXIT_SYSTEMIC_FAILURE in verdicts:
+        return EXIT_SYSTEMIC_FAILURE
+    if EXIT_SUSPECT_FAILURE in verdicts:
+        return EXIT_SUSPECT_FAILURE
+    return 0
+
+
 def save_progress(progress: dict, progress_path: str) -> None:
     """Save progress file."""
     os.makedirs(os.path.dirname(progress_path), exist_ok=True)
@@ -603,6 +660,24 @@ def build_manifest_meetings(prepared_meetings: list, model: str) -> list:
     return meetings
 
 
+def _diagnostic(reason: str, meeting_id: Optional[str] = None,
+                custom_id: Optional[str] = None) -> dict:
+    """One structured observation of why assembly stopped.
+
+    Observation only, never a diagnosis. ``missing_result`` in particular is
+    NOT evidence the API rejected anything: a result also goes missing on a
+    fetch/parse/custom_id-mapping defect of ours. Naming a cause here would send
+    the reader hunting a 400 that may never have happened.
+
+    ``scope`` says which of the three levels the observation is about, so an
+    annotation never points at a thread that was not examined. date-scope
+    observations are raised by the caller, not by assembly.
+    """
+    scope = "thread" if custom_id else ("meeting" if meeting_id else "date")
+    return {"scope": scope, "meeting_id": meeting_id,
+            "custom_id": custom_id, "reason": reason}
+
+
 def assemble_from_manifest(
     sidecar: dict,
     meetings_by_id: Dict[str, dict],
@@ -614,8 +689,9 @@ def assemble_from_manifest(
 
     Does NOT re-group. Verifies each thread's input_hash against re-fetched raw
     and requires every custom_id to have a parsed result. Returns
-    ``(threads, ok)`` where ok is False if ANY thread fails verification or is
-    missing — in that case the caller keeps the sidecar for retry.
+    ``(threads, ok, diagnostic)`` where ok is False if ANY thread fails
+    verification or is missing — in that case the caller keeps the sidecar for
+    retry, and diagnostic is a structured observation of why (None on success).
     """
     model = sidecar["model"]
     date_str = sidecar["date"]
@@ -626,7 +702,7 @@ def assemble_from_manifest(
         meeting = meetings_by_id.get(meeting_id)
         if meeting is None:
             log.error("Resume: raw missing for %s — cannot assemble", meeting_id)
-            return [], False
+            return [], False, _diagnostic("raw_missing", meeting_id)
         raw_lookup = build_speech_lookup(meeting.get("speeches", []))
         outcome = m["outcome"]
         manifest_threads = m["threads"]
@@ -638,7 +714,7 @@ def assemble_from_manifest(
             thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
             if len(thread_speeches) != len(orders):
                 log.error("Resume: speechOrder gap in %s/%s", meeting_id, custom_id)
-                return [], False
+                return [], False, _diagnostic("speech_gap", meeting_id, custom_id)
 
             request = build_summary_request(
                 meeting, thread_info, thread_speeches, custom_id, model,
@@ -646,12 +722,12 @@ def assemble_from_manifest(
             if bs.compute_input_hash(request["params"]) != mt["input_hash"]:
                 log.error("Resume: input_hash mismatch for %s — raw/prompt changed",
                           custom_id)
-                return [], False
+                return [], False, _diagnostic("hash_mismatch", meeting_id, custom_id)
 
             result = results.get(custom_id)
             if not result:
                 log.error("Resume: missing result for %s", custom_id)
-                return [], False
+                return [], False, _diagnostic("missing_result", meeting_id, custom_id)
 
             thread_counter += 1
             thread_id = make_thread_id(date_str, meeting_id, thread_counter)
@@ -661,7 +737,7 @@ def assemble_from_manifest(
             )
             if not thread:
                 log.error("Resume: assemble_thread returned None for %s", custom_id)
-                return [], False
+                return [], False, _diagnostic("thread_build_failed", meeting_id, custom_id)
 
             is_last = (mt is manifest_threads[-1])
             thread["outcome"] = {
@@ -672,7 +748,7 @@ def assemble_from_manifest(
             }
             threads.append(thread)
 
-    return threads, True
+    return threads, True, None
 
 
 def _load_meetings_for_date(date_str: str, raw_dir: str) -> Dict[str, dict]:
@@ -1062,7 +1138,7 @@ def collect_pending_batches(
 
         _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
 
-        threads, ok = assemble_from_manifest(
+        threads, ok, diagnostic = assemble_from_manifest(
             sidecar, meetings_by_id, results, members, thread_counter=0,
         )
         if not ok:
@@ -1202,6 +1278,28 @@ def prepare_meeting_for_batch(
     }
 
 
+def _batch_phase_result(threads: list, thread_counter: int,
+                        completed_meeting_ids: list, pending: bool,
+                        summary_attempted: int = 0,
+                        publication_blocked: bool = False,
+                        diagnostic: Optional[dict] = None) -> dict:
+    """The shape run_batch_phase answers with.
+
+    A dict rather than a longer tuple: this function already carries an
+    out-parameter (api_stats), and a 7-tuple unpacked positionally at the call
+    site is the kind of thing that breaks silently when a field is inserted.
+    """
+    return {
+        "threads": threads,
+        "thread_counter": thread_counter,
+        "completed_meeting_ids": completed_meeting_ids,
+        "pending": pending,
+        "summary_attempted": summary_attempted,
+        "publication_blocked": publication_blocked,
+        "diagnostic": diagnostic,
+    }
+
+
 def run_batch_phase(
     client,
     meetings: List[dict],
@@ -1215,11 +1313,11 @@ def run_batch_phase(
     pending_dir: str = bs.PENDING_DIR,
     ci_commit: bool = False,
     api_stats: Optional[dict] = None,
-) -> tuple:
+) -> dict:
     """Process meetings via Batches API. Persists a sidecar so a batch that
     does not finish within the budget resumes on a later run.
 
-    Returns ``(new_threads, thread_counter, completed_meeting_ids, pending)``.
+    Returns a dict — see ``_batch_phase_result`` for the keys.
 
     ``api_stats`` is an out-parameter (``{"attempted", "failed"}``) counting only
     meetings that would actually reach the API, so run_pipeline can tell "there
@@ -1266,7 +1364,17 @@ def run_batch_phase(
 
     if not all_pending:
         log.info("Batch phase: nothing to summarize")
-        return [], thread_counter, [], False
+        return _batch_phase_result([], thread_counter, [], False)
+
+    # The denominator for trigger 2 — meetings that actually put a summary
+    # request in this batch. Deliberately NOT api_stats["attempted"], which also
+    # counts a meeting whose grouping legitimately produced zero threads; see
+    # publication_blocked_verdict. Spelled identically to the submission-failure
+    # counter below (:1302) on purpose: the two answer the same question, and
+    # two spellings of it would eventually disagree.
+    summary_attempted = sum(
+        1 for p in prepared_meetings if p.get("askable") and p.get("pending")
+    )
 
     requests = [
         build_summary_request(
@@ -1305,7 +1413,7 @@ def run_batch_phase(
         for prep in prepared_meetings:
             if prep["meeting_id"] not in progress["failed"]:
                 progress["failed"].append(prep["meeting_id"])
-        return [], thread_counter, [], False
+        return _batch_phase_result([], thread_counter, [], False, summary_attempted)
 
     # Persist the sidecar BEFORE the long poll so a kill mid-poll still resumes.
     submitted_at = _utcnow_iso()
@@ -1325,7 +1433,7 @@ def run_batch_phase(
         )
         if batch.processing_status != "ended":
             log.info("Batch %s not ended within budget — sidecar kept for resume", batch_id)
-            return [], thread_counter, [], True
+            return _batch_phase_result([], thread_counter, [], True, summary_attempted)
 
         results = fetch_summary_results(client, batch_id)
         meetings_by_id = {m.get("meetingId", "unknown"): m for m in meetings}
@@ -1340,22 +1448,26 @@ def run_batch_phase(
         # that publishes nothing at all.
         log.error("Batch %s could not be collected this run (%s) — sidecar kept",
                   batch_id, e)
-        return [], thread_counter, [], True
+        return _batch_phase_result([], thread_counter, [], True, summary_attempted)
     # Before assembly: assembly is all-or-nothing and reports its failure as
     # "pending", which is indistinguishable from a slow batch. The counters have
     # to be taken from the results themselves.
     count_meetings_with_no_usable_result(prepared_meetings, results, api_stats)
-    new_threads, ok = assemble_from_manifest(
+    new_threads, ok, diagnostic = assemble_from_manifest(
         sidecar, meetings_by_id, results, members, thread_counter,
     )
     if not ok:
         log.error("Batch %s ended but assembly incomplete — keeping sidecar", batch_id)
-        return [], thread_counter, [], True
+        return _batch_phase_result(
+            [], thread_counter, [], True, summary_attempted,
+            publication_blocked=True, diagnostic=diagnostic,
+        )
 
     thread_counter += len(new_threads)
     completed_meeting_ids = [m["meeting_id"] for m in sidecar["meetings"]]
     bs.delete_sidecar(path)
-    return new_threads, thread_counter, completed_meeting_ids, False
+    return _batch_phase_result(new_threads, thread_counter,
+                               completed_meeting_ids, False, summary_attempted)
 
 
 def collect_processed_meeting_ids(threads_path: str) -> set[str]:
@@ -1502,9 +1614,12 @@ def run_pipeline(
         )
 
     pending = False
+    publication_blocked = False
+    summary_attempted = 0
+    assembly_diagnostic = None
     api_stats = new_api_stats()
     if batch:
-        new_threads, thread_counter, completed_ids, pending = run_batch_phase(
+        phase = run_batch_phase(
             client, meetings, progress, members, model, date_str,
             thread_counter,
             batch_timeout_seconds=batch_timeout_seconds,
@@ -1513,6 +1628,13 @@ def run_pipeline(
             ci_commit=ci_commit,
             api_stats=api_stats,
         )
+        new_threads = phase["threads"]
+        thread_counter = phase["thread_counter"]
+        completed_ids = phase["completed_meeting_ids"]
+        pending = phase["pending"]
+        publication_blocked = phase["publication_blocked"]
+        summary_attempted = phase["summary_attempted"]
+        assembly_diagnostic = phase["diagnostic"]
         all_threads.extend(new_threads)
         for mid in completed_ids:
             if mid not in progress["completed"]:
@@ -1623,36 +1745,35 @@ def run_pipeline(
             len(progress["failed"]),
         )
 
-    if systemic_failure(api_stats, len(all_threads)):
-        # An annotation as well as a log line: this has to survive being read as
-        # one line in an otherwise-green job's log, which is how the 2026-08-05
-        # outage stayed invisible for a full run. Worded as what was measured,
-        # not as a diagnosis. Two things it must not claim: that the API
-        # rejected anything (an unassemblable answer counts too), and that the
-        # date is empty (with two or more failures it fires whatever is already
-        # published). Either overclaim sends the reader hunting the wrong thing.
-        _annotate(
-            "error",
-            f"{date_str}: all {api_stats['attempted']} meeting(s) asked about "
-            f"this run produced no usable summary "
-            f"({len(all_threads)} thread(s) on the date in total) — failing the "
-            f"run so this is not read as a quiet day",
-        )
-        return EXIT_SYSTEMIC_FAILURE
+    # The two triggers are not exclusive. A fully rejected batch fires BOTH:
+    # nothing usable came back (trigger 1), and assembly then failed on those
+    # very same missing results (trigger 2). Report both observations — calling
+    # it "answered but not assemblable" while the API was in fact rejecting
+    # everything sends the reader away from the 400 that is actually there.
+    rejection = rejection_verdict(api_stats, len(all_threads))
+    blocked = (publication_blocked_verdict(summary_attempted, len(all_threads))
+               if publication_blocked else 0)
+    verdict = worst_verdict(rejection, blocked)
 
-    if suspect_failure(api_stats, len(all_threads)):
-        # A warning, not an error: on its own this is ordinary breakage, and
-        # annotating it red every morning is how an alarm gets switched off.
-        # The exit code still carries it to the workflow, which fails the job
-        # only if several dates report it in the same run.
-        _annotate(
-            "warning",
-            f"{date_str}: the one meeting asked about this run produced no "
-            f"usable summary (the date keeps its {len(all_threads)} existing "
-            f"thread(s)) — on its own this is one bad meeting, but several in "
-            f"one run is an outage",
-        )
-        return EXIT_SUSPECT_FAILURE
+    if verdict:
+        level = "error" if verdict == EXIT_SYSTEMIC_FAILURE else "warning"
+        lines = [f"{date_str}: nothing this run produced reached the site "
+                 f"({len(all_threads)} thread(s) on the date in total)"]
+        if rejection:
+            lines.append(
+                f"all {api_stats['attempted']} meeting(s) asked about this run "
+                f"produced no usable summary")
+        if blocked:
+            d = assembly_diagnostic or {}
+            lines.append(
+                f"assembly failed: {d.get('reason', 'unknown')} "
+                f"(scope={d.get('scope')}, meeting={d.get('meeting_id')}, "
+                f"custom_id={d.get('custom_id')})")
+        if verdict == EXIT_SUSPECT_FAILURE:
+            lines.append("on its own this is one bad meeting, but several in "
+                         "one run is an outage")
+        _annotate(level, " — ".join(lines))
+        return verdict
     return 0
 
 
