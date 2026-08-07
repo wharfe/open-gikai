@@ -932,4 +932,51 @@ def test_resume_stays_quiet_when_the_raw_is_legitimately_out_of_window(
                           sidecars=[_sidecar_with_one_thread(_correct_hash())],
                           raw_present=False, sidecar_age_days=40, existing_threads=0)
     assert result["systemic_dates"] == []
+
+
+def test_resume_reports_both_observations_when_fully_rejected(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """#59 finding 1: a resumed batch that comes back fully rejected must say
+    BOTH "the API answered nothing usable" (trigger 1) AND "assembly failed"
+    (trigger 2) — they are not exclusive (design §3.1 / §3.8), and reporting
+    only the assembly side points an operator at the sidecar/raw instead of
+    the 400 that actually happened. The date must still land in
+    ``systemic_dates`` exactly once, not once per trigger.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          results={}, existing_threads=0)
+    assert result["systemic_dates"] == ["2026-05-14"]
+    assert result["suspect_dates"] == []
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "produced no usable summary" in errors[0]
+    assert "assembly failed: missing_result" in errors[0]
+
+
+def test_resume_omits_rejection_line_when_results_are_usable_but_hash_mismatches(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The negative case for the test above: when the batch actually answered
+    with a usable result and assembly fails for a RAW reason (hash_mismatch —
+    the raw or prompt changed since submission, nothing to do with the API),
+    only the assembly observation may appear. If this test were to see the
+    rejection line too, it would prove the fix always prints both instead of
+    reporting what actually happened.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    sidecar = _sidecar_with_one_thread("sha256:deadbeef")  # wrong: forces hash_mismatch
+    usable_results = {"s_abc_00": {"speeches": [{"speechOrder": 1, "tension": "確認",
+                      "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+                      "commitments": []}}
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[sidecar],
+                          results=usable_results, existing_threads=0)
+    assert result["systemic_dates"] == ["2026-05-14"]
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "assembly failed: hash_mismatch" in errors[0]
+    assert "produced no usable summary" not in errors[0]
     assert result["suspect_dates"] == []
