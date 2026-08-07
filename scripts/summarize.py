@@ -1023,6 +1023,34 @@ def _resume_summary_attempted(sidecar: dict) -> int:
     return sum(1 for m in sidecar.get("meetings", []) if m.get("threads"))
 
 
+def _resume_meetings_with_no_usable_result(
+    sidecar: dict, results: Dict[str, Optional[dict]],
+) -> int:
+    """Trigger 1's failed count for the resume path.
+
+    Mirrors ``count_meetings_with_no_usable_result``'s question — a manifest
+    meeting counts as failed only if not one of its ``custom_id``s has a
+    usable result — but works off the manifest's own shape (``sidecar
+    ["meetings"]``) instead of ``prepared_meetings``, which does not exist on
+    this path (see ``_resume_summary_attempted``). Reuses ``usable_result``
+    rather than re-deriving "unusable"; see that function's docstring for why
+    a second spelling would drift.
+
+    Must be called AFTER ``_repair_unusable_results`` mutates ``results`` in
+    place — a result repair recovers reads as usable here too, exactly as it
+    would on the new-batch path.
+    """
+    failed = 0
+    for m in sidecar.get("meetings", []):
+        custom_ids = [t["custom_id"] for t in m.get("threads", [])]
+        if not custom_ids:
+            continue
+        if any(usable_result(results.get(cid)) for cid in custom_ids):
+            continue
+        failed += 1
+    return failed
+
+
 def _existing_thread_count(threads_dir: str, date_str: str) -> int:
     """Threads already on disk for this date — the evidence the softener needs."""
     path = os.path.join(threads_dir, f"{date_str}.json")
@@ -1039,7 +1067,8 @@ def _existing_thread_count(threads_dir: str, date_str: str) -> int:
 def _record_resume_verdict(date_str: str, summary_attempted: int,
                            published_threads: int, diagnostic: Optional[dict],
                            systemic_dates: list, suspect_dates: list,
-                           diagnostics: list) -> None:
+                           diagnostics: list,
+                           api_stats: Optional[dict] = None) -> None:
     """Record one date's verdict and annotate it immediately.
 
     Annotated here, as the verdict is reached, rather than accumulated for a
@@ -1047,25 +1076,44 @@ def _record_resume_verdict(date_str: str, summary_attempted: int,
     every step below it is skipped, so nothing that reached GITHUB_OUTPUT is
     ever read. An annotation is the one channel that survives a failed step —
     the same reason the Summarize loop annotates before it dies.
+
+    ``api_stats`` carries trigger 1's evidence (see ``rejection_verdict``) for
+    call sites that have it — i.e. after this run fetched and repaired batch
+    results. The raw-missing call site never fetches results this run (raw
+    isn't even loaded), so it has no rejection evidence to offer and passes
+    None; only trigger 2 applies there.
+
+    The two triggers are NOT exclusive (see ``run_pipeline`` / design §3.8):
+    a fully rejected batch fires both, and both get reported as separate
+    lines under ONE ``worst_verdict``-picked severity, so the date is
+    recorded exactly once — appending it to both lists would inflate the
+    workflow's ``SUSPECT_N -ge 2`` count on a single failing date.
     """
-    verdict = publication_blocked_verdict(summary_attempted, published_threads)
+    rejection = rejection_verdict(api_stats, published_threads) if api_stats else 0
+    blocked = publication_blocked_verdict(summary_attempted, published_threads)
+    verdict = worst_verdict(rejection, blocked)
     if not verdict:
         return
     if diagnostic:
         diagnostics.append({**diagnostic, "date": date_str})
-    d = diagnostic or {}
-    detail = (f"assembly failed: {d.get('reason', 'unknown')} "
-              f"(scope={d.get('scope')}, meeting={d.get('meeting_id')}, "
-              f"custom_id={d.get('custom_id')})")
+    lines = [f"{date_str}: resumed batch published nothing "
+             f"({published_threads} thread(s) on the date)"]
+    if rejection:
+        lines.append(f"all {api_stats['attempted']} meeting(s) asked about "
+                     f"this resume produced no usable summary")
+    if blocked:
+        d = diagnostic or {}
+        lines.append(f"assembly failed: {d.get('reason', 'unknown')} "
+                     f"(scope={d.get('scope')}, meeting={d.get('meeting_id')}, "
+                     f"custom_id={d.get('custom_id')})")
     if verdict == EXIT_SYSTEMIC_FAILURE:
         systemic_dates.append(date_str)
-        _annotate("error", f"{date_str}: resumed batch published nothing "
-                           f"({published_threads} thread(s) on the date) — {detail}")
+        _annotate("error", " — ".join(lines))
     else:
         suspect_dates.append(date_str)
-        _annotate("warning", f"{date_str}: the one meeting in the resumed batch "
-                             f"published nothing (the date keeps its "
-                             f"{published_threads} thread(s)) — {detail}")
+        lines.append("on its own this is one bad meeting, but several in "
+                     "one run is an outage")
+        _annotate("warning", " — ".join(lines))
 
 
 def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
@@ -1239,6 +1287,14 @@ def collect_pending_batches(
 
         _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
 
+        # Trigger 1's evidence for this resume, taken here (after repair, before
+        # assembly) so a recovered result reads as usable and a genuinely
+        # rejected one is counted whether or not assembly then succeeds.
+        api_stats = {
+            "attempted": _resume_summary_attempted(sidecar),
+            "failed": _resume_meetings_with_no_usable_result(sidecar, results),
+        }
+
         threads, ok, diagnostic = assemble_from_manifest(
             sidecar, meetings_by_id, results, members, thread_counter=0,
         )
@@ -1246,9 +1302,10 @@ def collect_pending_batches(
             log.error("Resume: assembly incomplete for %s (%s)", date_str,
                       (diagnostic or {}).get("reason", "unknown"))
             _record_resume_verdict(
-                date_str, _resume_summary_attempted(sidecar),
+                date_str, api_stats["attempted"],
                 _existing_thread_count(threads_dir, date_str),
                 diagnostic, systemic_dates, suspect_dates, diagnostics,
+                api_stats=api_stats,
             )
             if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
                                   raw_dir, model, ci_commit):
