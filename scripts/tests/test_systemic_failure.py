@@ -858,8 +858,9 @@ def test_the_collect_step_does_not_block_the_publish():
 
 
 def test_the_final_step_reads_both_paths():
-    """#59's acceptance condition: Summarize is SKIPPED on a pending morning,
-    so a verdict that only travels through its outputs can never fail the job."""
+    """#59's acceptance condition: a sidecar-owned date is SKIPPED within
+    Summarize (per-date, since #65), so a verdict that only travels through
+    Summarize's outputs can never fail the job for the dates Collect owns."""
     steps = _workflow_steps()
     final = steps[-1]
     run = final["run"]
@@ -889,8 +890,8 @@ def test_the_threshold_lives_in_the_final_step_and_dedupes():
 
 
 def test_the_summarize_step_no_longer_applies_the_threshold():
-    """It cannot: on a pending morning it does not run at all, and it never
-    sees Collect's dates."""
+    """It cannot: it never sees the dates Collect reported (only Collect
+    owns those), so a policy applied here would be blind to half its input."""
     steps = _workflow_steps()
     summarize_step = next(s for s in steps if s.get("id") == "summarize")
     assert "-ge 2" not in summarize_step["run"]
