@@ -1002,3 +1002,64 @@ def test_a_morning_of_only_held_and_abandoned_dates_exits_zero(monkeypatch, tmp_
     assert "abandoned_dates=2026-01-03\n" in written
     assert "systemic_dates=\n" in written
     assert "suspect_dates=\n" in written
+
+
+def test_the_pending_gate_is_per_date_not_per_run():
+    """T4 / #44. One uncollectable sidecar used to skip Summarize for EVERY date
+    — the amplifier that turned a single stuck batch into a two-month outage.
+    Asserting only that the string is gone is not enough: the skip has to happen
+    before the python call (or the date is summarized twice) and the run-internal
+    break has to stay after it (or one run piles up several in-flight batches).
+    """
+    steps = _workflow_steps()
+    summarize_step = next(s for s in steps if s.get("id") == "summarize")
+    cond = summarize_step.get("if", "")
+    assert "has_pending" not in cond, (
+        "the global gate is what #44 is about; it must not gate the whole step"
+    )
+    assert "steps.dates.outputs.list" in cond
+
+    run = summarize_step["run"]
+    assert "has_pending" not in run
+
+    skip_at = run.find('if [ -f "data/pending-batches/$d.json" ]')
+    call_at = run.find("python scripts/summarize.py --date")
+    break_at = run.rfind('if [ -f "data/pending-batches/$d.json" ]')
+    assert skip_at != -1 and call_at != -1, "the loop no longer looks like itself"
+    assert skip_at < call_at, "the per-date skip must precede the summarize call"
+    assert break_at > call_at, "the run-internal single-batch break must remain"
+    assert "continue" in run[skip_at:call_at], "the skip must continue, not break"
+    assert "break" in run[break_at:], "the post-call guard must break"
+
+    collect_step = next(s for s in steps if s.get("id") == "collect")
+    assert "has_pending" not in collect_step["run"], (
+        "an output nothing reads is a trap: a later reader assumes it still gates"
+    )
+
+
+def test_held_and_abandoned_dates_fail_the_run_without_a_threshold():
+    """T5. Both are unconditional: a held sidecar is a request for a decision and
+    an abandoned one is a permanent loss. Neither is 'weak evidence' that a
+    threshold should soften, and neither may be folded into SUSPECT."""
+    steps = _workflow_steps()
+    final = next(s for s in steps
+                 if s.get("name", "").startswith("Fail the run"))
+    env, run = final.get("env", {}), final["run"]
+    assert "steps.collect.outputs.held_dates" in str(env.values())
+    assert "steps.collect.outputs.abandoned_dates" in str(env.values())
+    # The existing suspect escalation must survive verbatim — it is pinned
+    # elsewhere in this file for a reason.
+    assert 'FAIL_DATES="$FAIL_DATES$SUSPECT"' in run
+    # ...and held/abandoned must NOT be folded into it. Check the whole region
+    # where FAIL_DATES is assembled, not one line: an earlier draft of this test
+    # looked only at the SUSPECT_N= line, so `FAIL_DATES="$FAIL_DATES$SUSPECT$HELD"`
+    # would have passed it.
+    build = run[run.find("FAIL_DATES="):run.find('if [ -z')]
+    assert "$HELD" not in build and "$ABANDONED" not in build, (
+        "held and abandoned are unconditional; routing them through the suspect "
+        "threshold would soften a permanent loss into 'needs a second occurrence'"
+    )
+    # Held or abandoned alone must be able to fail the run.
+    assert 'if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED"' in run
+    assert "Permanently lost" in run
+    assert "held for a human decision" in run

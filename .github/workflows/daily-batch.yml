@@ -114,16 +114,11 @@ jobs:
         run: |
           set -e
           # No rc capture on purpose. This process speaks for MANY dates, so it
-          # answers with systemic_dates/suspect_dates outputs (written from
-          # Python) and exits 0 on a soft verdict. A non-zero code from here
-          # still means "stop, a human is needed" — retry threshold reached, or
-          # a sidecar from an older schema — and must still abort under set -e.
+          # answers with systemic/suspect/held/abandoned_dates outputs (written
+          # from Python) and exits 0 for every sidecar state — including the ones
+          # that need a human. Since #65 a non-zero code from here means a crash,
+          # and must still abort under set -e.
           python scripts/summarize.py --collect-pending --batch-budget 1800 --ci-commit
-          if ls data/pending-batches/*.json >/dev/null 2>&1; then
-            echo "has_pending=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_pending=false" >> "$GITHUB_OUTPUT"
-          fi
 
       # ----- Summarize (auto-resume per date) -----
       # --batch routes the per-thread summary calls through the Message
@@ -132,7 +127,7 @@ jobs:
       # synchronous (one small call per meeting; not worth batching).
       - name: Summarize new content with Claude API
         id: summarize
-        if: steps.dates.outputs.list != '' && steps.collect.outputs.has_pending != 'true'
+        if: steps.dates.outputs.list != ''
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DATES_LIST: ${{ steps.dates.outputs.list }}
@@ -155,6 +150,15 @@ jobs:
           SYSTEMIC=""
           SUSPECT=""
           for d in $DATES_LIST; do
+            # Per-date, not per-run. A sidecar means THIS date already has a batch
+            # in flight (or held for a human), so re-summarizing it would submit a
+            # second one. It says nothing about the other dates — gating all of
+            # them on one stuck sidecar is what turned a single uncollectable
+            # batch into a two-month outage (#43/#44).
+            if [ -f "data/pending-batches/$d.json" ]; then
+              echo "Sidecar present for $d — Collect owns this date; skipping"
+              continue
+            fi
             echo "::group::Summarize $d"
             # `|| rc=$?` keeps `set -e` from aborting the loop on exit 3 and 4,
             # while any OTHER non-zero code still aborts it as before — a crash
@@ -182,6 +186,9 @@ jobs:
             echo "::endgroup::"
             # Once a date leaves a pending sidecar, stop submitting new batches
             # so we never pile up multiple in-flight batches in one run.
+            # Distinct from the per-date skip at the top: that one is cross-run
+            # (Collect owns the date), this one is within-run (at most one NEW
+            # in-flight batch per run).
             if [ -f "data/pending-batches/$d.json" ]; then
               echo "Batch for $d is pending — stopping further submits this run"
               break
@@ -393,6 +400,8 @@ jobs:
           SUMMARIZE_SUSPECT: ${{ steps.summarize.outputs.suspect_dates }}
           COLLECT_SYSTEMIC: ${{ steps.collect.outputs.systemic_dates }}
           COLLECT_SUSPECT: ${{ steps.collect.outputs.suspect_dates }}
+          COLLECT_HELD: ${{ steps.collect.outputs.held_dates }}
+          COLLECT_ABANDONED: ${{ steps.collect.outputs.abandoned_dates }}
         run: |
           # Deduplicate: the threshold below counts DATES, and the same date
           # arriving from both paths must not cross it on its own.
@@ -413,27 +422,54 @@ jobs:
             FAIL_DATES="$FAIL_DATES$SUSPECT"
           fi
 
-          if [ -z "$(echo "$FAIL_DATES" | tr -d ' ')" ]; then
+          # Neither of these is graded. A held sidecar is a request for a
+          # decision and an abandoned one is a permanent loss; a threshold that
+          # softens either would be answering a question nobody asked. They also
+          # get their OWN lines: "Nothing reached the site" is a claim about
+          # today's work, and neither of these is that.
+          HELD=$(echo "$COLLECT_HELD" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
+          ABANDONED=$(echo "$COLLECT_ABANDONED" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
+
+          if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED" | tr -d ' ')" ]; then
             echo "No systemic summary failure this run."
             exit 0
           fi
-          echo "::error::Nothing this run produced reached the site on: ${FAIL_DATES}"
-          echo "This is an alert, not a publish failure — data already committed above is"
-          echo "intact, and these dates may still hold threads from earlier runs."
-          echo "The Summarize and Collect step annotations name which of these happened"
-          echo "(they are not exclusive — a fully rejected batch reports both):"
-          echo "  * 'produced no usable summary' — every meeting asked about this run came"
-          echo "    back with nothing usable. That covers an API rejection (400/429/529) but"
-          echo "    also an unparsable or empty response and a synchronous exception; check"
-          echo "    this run's step log for the per-meeting error to see which it was."
-          echo "  * 'assembly failed: <reason>' — the reason names what assembly observed,"
-          echo "    not why: hash_mismatch/speech_gap/raw_missing point at raw, missing_result"
-          echo "    does not point anywhere on its own — it also fires when every request for"
-          echo "    that date was rejected, in which case 'produced no usable summary' fires"
-          echo "    alongside it for the same date; read both lines together."
-          echo "    hash_mismatch will NOT fix itself — it recurs every morning until the"
-          echo "    retry threshold hard-fails and the date is lost. Fix: remove the sidecar"
-          echo "    (data/pending-batches/<date>.json) so it re-groups fresh (tracked: #65)."
+
+          if [ -n "$(echo "$ABANDONED" | tr -d ' ')" ]; then
+            echo "::error::Permanently lost uncollected threads on:${ABANDONED}"
+            echo "Those batches can never be assembled: the raw aged out of the fetch"
+            echo "window and the results expired. Nothing recovers them — this is on the"
+            echo "record, not a request for action. Threads published for those dates by"
+            echo "earlier runs are unaffected."
+          fi
+
+          if [ -n "$(echo "$HELD" | tr -d ' ')" ]; then
+            echo "::error::Pending batches held for a human decision on:${HELD}"
+            echo "Nothing was resubmitted and no retry was spent — rebuilding from today's"
+            echo "raw would fail the same way. The Collect step annotation for each date"
+            echo "names the reason and the choices. Publishing continued for every other"
+            echo "date; these sidecars stay until someone decides."
+          fi
+
+          if [ -n "$(echo "$FAIL_DATES" | tr -d ' ')" ]; then
+            echo "::error::Nothing this run produced reached the site on: ${FAIL_DATES}"
+            echo "This is an alert, not a publish failure — data already committed above is"
+            echo "intact, and these dates may still hold threads from earlier runs."
+            echo "The Summarize and Collect step annotations name which of these happened"
+            echo "(they are not exclusive — a fully rejected batch reports both):"
+            echo "  * 'produced no usable summary' — every meeting asked about this run came"
+            echo "    back with nothing usable. That covers an API rejection (400/429/529) but"
+            echo "    also an unparsable or empty response and a synchronous exception; check"
+            echo "    this run's step log for the per-meeting error to see which it was."
+            echo "  * 'assembly failed: <reason>' — the reason names what assembly observed,"
+            echo "    not why: hash_mismatch/speech_gap/raw_missing point at raw, missing_result"
+            echo "    does not point anywhere on its own — it also fires when every request for"
+            echo "    that date was rejected, in which case 'produced no usable summary' fires"
+            echo "    alongside it for the same date; read both lines together."
+            echo "    hash_mismatch/speech_gap/raw_missing point at raw and are NOT"
+            echo "    resubmitted: they appear under 'held for a human decision' above,"
+            echo "    with no retry spent. missing_result is retryable and does appear here."
+          fi
           exit 1
 
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, etc.) as a
@@ -462,7 +498,7 @@ jobs:
           # summary failure now reds the job too, and it is the one cause here
           # whose data is already committed — say so, or the first reaction is to
           # go looking for lost threads that are not lost.
-          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. On a morning with a pending sidecar the Summarize step does not run at all — check the Collect step annotations too.' "$DATE_TAG" "$RUN_URL")
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCommon causes: NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on", "held for a human decision", or "Permanently lost". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. A held or abandoned sidecar can red the run with the Summarize step never running at all — check the Collect step annotations too.' "$DATE_TAG" "$RUN_URL")
           # Ensure the dedup label exists (no-op if already present).
           gh label create pipeline-failure \
             --color B60205 \
