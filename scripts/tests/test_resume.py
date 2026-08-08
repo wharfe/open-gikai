@@ -669,6 +669,33 @@ def test_collect_holds_a_sidecar_from_an_older_schema(fake_client, tmp_path):
     assert kept["blocked"]["reason"] == "stale_schema"   # new
 
 
+def test_collect_holds_a_schema_stale_sidecar_missing_its_date_field(fake_client, tmp_path):
+    """is_current_schema() being False means the sidecar's shape is not
+    guaranteed — that is exactly why it is held rather than trusted. A sidecar
+    missing "date" entirely (not just an old schema_version) used to raise
+    KeyError on ``sidecar["date"]``, which crashes Collect under ``set -e`` and
+    takes the whole morning's publish down with it — the failure mode #65
+    removed. The date must be recovered from the sidecar's filename instead.
+    """
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(pending_dir)
+    os.makedirs(raw_dir)
+    path = os.path.join(pending_dir, "2026-05-14.json")
+    bs.save_sidecar(path, {"schema_version": 1, "meetings": [], "attempts": []})
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+
+    assert result["hard_fail"] is False
+    assert result["held_dates"] == ["2026-05-14"]      # recovered from filename
+    kept = bs.load_sidecar(path)
+    assert kept is not None and kept["blocked"]["reason"] == "stale_schema"
+
+
 def test_repair_preserves_the_good_results_alongside_the_bad(fake_client, tmp_path):
     """The heart of #46: on 2026-06-16, 2 bad results out of 90 threw away the 88
     good ones. Two threads here, one good and one truncated — the good body must
@@ -840,10 +867,12 @@ def test_repair_skipped_when_too_many_results_unusable(fake_client, tmp_path):
 
 # --- Resume-path verdict (#59) -----------------------------------------------
 #
-# A pending sidecar makes the daily workflow skip the whole Summarize step, so
-# on those mornings collect_pending_batches() IS the run. It used to answer
-# with a bare bool and never asked systemic_failure()'s question at all — a
-# resumed batch that came back fully rejected resubmitted quietly for days.
+# A pending sidecar makes the daily workflow skip Summarize for that specific
+# date (since #65, the skip is per-date, not per-run), so for that date
+# collect_pending_batches() IS the run and is the only reporter for it. It used
+# to answer with a bare bool and never asked systemic_failure()'s question at
+# all — a resumed batch that came back fully rejected resubmitted quietly for
+# days.
 
 def _run_collect(fake_client, tmp_path, monkeypatch, sidecars,
                  results=None, batch_status="ended", existing_threads=0,

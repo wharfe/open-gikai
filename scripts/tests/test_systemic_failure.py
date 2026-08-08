@@ -1018,7 +1018,15 @@ def test_the_pending_gate_is_per_date_not_per_run():
     assert "has_pending" not in cond, (
         "the global gate is what #44 is about; it must not gate the whole step"
     )
-    assert "steps.dates.outputs.list" in cond
+    # Exact match, not substring: a run-wide gate by another name (e.g.
+    # "steps.collect.outputs.stuck != 'true'") would still contain
+    # "steps.dates.outputs.list" as a substring and pass the check above.
+    # This is the condition that turned a single stuck batch into a
+    # two-month outage (#44), so the test must fail closed on any addition.
+    assert cond.strip() == "steps.dates.outputs.list != ''", (
+        "any additional condition here is a run-wide gate by another name — "
+        "that is what #44 was about"
+    )
 
     run = summarize_step["run"]
     assert "has_pending" not in run
