@@ -1231,11 +1231,29 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
             "sidecar is not re-summarised. Reverting the change that moved the "
             "hash lets the next run collect normally")
     elif reason in ("raw_missing", "raw_date_missing", "speech_gap"):
+        # Only true while the date is still inside the fetch lookback window
+        # (30 days). ABANDON_AGE_DAYS is 31, so a date aged 30-31 days is
+        # already outside that window but not yet abandoned: no later run
+        # will re-fetch it, and reading this as "tomorrow it self-heals" leads
+        # an operator to wait it out instead of acting — the date lands in
+        # abandoned_dates on the next run regardless.
         parts.append(
-            "the batch is fine; this date's raw is not on disk this run. A later "
-            "run that re-fetches it collects normally")
+            "the batch is fine; this date's raw is not on disk this run. If "
+            "the date is still within the fetch lookback window (30 days), a "
+            "later run that re-fetches it collects normally — otherwise it "
+            "will not be re-fetched and this sidecar is heading for "
+            "abandonment (see abandoned_dates) once it ages past 31 days")
     log.error("Resume held: %s (%s)", date_str, reason)
     _annotate("error", " — ".join(parts))
+
+
+def _date_from_sidecar_path(path: str) -> str:
+    """Fall back to the filename's date when a sidecar's own "date" field is
+    missing or unreliable — sidecars are always saved as "{date}.json"
+    (see bs.sidecar_path), so the filename is a safe date even when the
+    sidecar's shape is not guaranteed (e.g. a stale-schema sidecar, which is
+    held precisely because its shape may not match what this code expects)."""
+    return os.path.splitext(os.path.basename(path))[0]
 
 
 def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
@@ -1271,7 +1289,12 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
         if changed:
             bs.save_sidecar(path, sidecar)
             if ci_commit:
-                _git_commit_sidecar(path, sidecar["date"])
+                # A stale-schema sidecar's shape is not guaranteed (that is
+                # exactly why it is being held), so fall back to the filename
+                # — sidecars are always named "{date}.json" — rather than
+                # index a "date" key that may not exist.
+                _git_commit_sidecar(
+                    path, sidecar.get("date") or _date_from_sidecar_path(path))
         return "blocked", diagnostic
 
     if policy == bs.HOLD:
@@ -1333,8 +1356,13 @@ def collect_pending_batches(
 
     Returns a dict (informally ``CollectResult``) with:
 
-    * ``hard_fail`` — reserved for a genuine crash path; retry-threshold and
-      older-schema sidecars are held (see ``held_dates``), not hard-failed.
+    * ``hard_fail`` — no branch in this function sets it True today: since #65,
+      every sidecar state this function can see (retry-threshold, older-schema,
+      raw-missing, ...) is reported as held or abandoned (see ``held_dates`` /
+      ``abandoned_dates``), and this function returns 0. A genuine crash does
+      not go through this flag at all — it raises and the process exits
+      non-zero on the exception. The field and its test are kept for a future
+      hard-fail path, not because one exists now.
     * ``systemic_dates`` / ``suspect_dates`` — dates whose resumed batch
       published nothing, at the two evidence strengths ``publication_blocked_
       verdict`` distinguishes (see that function). A pending sidecar makes the
@@ -1385,8 +1413,14 @@ def collect_pending_batches(
             # different param set, so every thread would fail verification.
             _apply_failure_policy(client, sidecar, path, "stale_schema", None,
                                   raw_dir, model, ci_commit)
-            _record_held_sidecar(sidecar["date"], sidecar,
-                                 _diagnostic("stale_schema"), held_dates, diagnostics)
+            # is_current_schema() being False means this sidecar's shape is
+            # not guaranteed, so do not assume "date" is present — fall back
+            # to the filename (see _date_from_sidecar_path). A KeyError here
+            # would crash Collect under set -e and take the whole morning's
+            # publish down with it — exactly the failure mode #65 removed.
+            _record_held_sidecar(sidecar.get("date") or _date_from_sidecar_path(path),
+                                 sidecar, _diagnostic("stale_schema"), held_dates,
+                                 diagnostics)
             continue
         if bs.should_hard_fail(sidecar):
             # The SECOND hard-fail site. _apply_failure_policy converts the

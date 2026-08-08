@@ -21,9 +21,27 @@ def main() -> None:
                 # Without this, a held sidecar reads as "retries 0" — an untried,
                 # transient jam — when it is the opposite: deliberately not
                 # retried, waiting on a person. #65/#66.
+                #
+                # The HOLD regime deliberately does not rewrite the sidecar
+                # (that is the point of not touching it), so `blocked.reason`
+                # here is whatever last wrote it — possibly a BLOCKED verdict
+                # from a previous week, no longer the current cause (e.g.
+                # hash_mismatch last week, raw_date_missing today). Label the
+                # reason with its own timestamp so a stale one reads as stale
+                # instead of as today's diagnosis; mirrors the same guard in
+                # _record_held_sidecar (summarize.py), which only prints
+                # "held since" when the stored reason still matches.
+                since = blocked.get("since")
+                age_note = ""
+                if since:
+                    held_age_days = (
+                        bs._parse_iso(now) - bs._parse_iso(since)
+                    ).total_seconds() / 86400.0
+                    age_note = f", {held_age_days:.1f}d ago"
                 state = (f"HELD for a human decision "
-                         f"(reason {blocked.get('reason')}, since "
-                         f"{blocked.get('since')}; not retried by design)")
+                         f"(reason as of last write: {blocked.get('reason')}, "
+                         f"since {since}{age_note} — may be stale if the cause "
+                         f"has since changed; not retried by design)")
             else:
                 state = f"in flight, retries {sc['retry_count']}"
             print(f"- {sc['date']}: {bs.current_batch_id(sc)} "
