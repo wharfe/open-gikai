@@ -1233,16 +1233,23 @@ def test_retry_exhaustion_is_reported_as_itself_not_as_a_raw_problem(
 
 def test_a_canceled_batch_with_no_raw_holds_without_spending_a_retry(
         fake_client, tmp_path, monkeypatch):
-    """Review round 1, [Important] 2. The only path where a RESUBMIT reason
-    ends up held: the rebuild found no raw. The HOLD reasons (speech_gap,
-    raw_missing, raw_date_missing) never reach this code — they return "held"
-    at the policy check before rebuild is even attempted — so no existing test
-    pinned the order of record_terminal against the rebuild. Put
-    record_terminal back in front of the rebuild (the pre-#65 order) and this
-    is the only test in the suite that would catch it: a canceled batch with no
-    raw on disk would burn a retry slot per raw-less morning instead of holding
-    for free, reaching retry_exhausted in three mornings having resubmitted
-    nothing.
+    """Review round 1, [Important] 2. canceled is policy RESUBMIT, so this is
+    the path that reaches the rebuild code (unlike speech_gap/raw_missing/
+    raw_date_missing, which are policy HOLD and return before ever touching
+    it).
+
+    This does NOT pin the order of record_terminal against the rebuild by
+    itself: the rebuild-None branch never calls save_sidecar, so whatever
+    record_terminal does lives only in the in-memory dict this test cannot see
+    — reordering it here leaves no trace in the file this test reads back, and
+    the assertion below stays green either way. See
+    test_apply_failure_policy_does_not_count_a_retry_it_never_sent for the
+    in-memory assertion that actually pins the order.
+
+    What THIS test does pin: a held morning must not persist a bumped
+    retry_count. If someone reintroduces the pre-#65 `save_sidecar` call
+    inside the rebuild-None branch, this test catches that regression even
+    though it can't see the order.
     """
     pending_dir = str(tmp_path / "pending")
     raw_dir = str(tmp_path / "raw")
@@ -1259,3 +1266,30 @@ def test_a_canceled_batch_with_no_raw_holds_without_spending_a_retry(
     assert fake_client.messages.batches.created_requests == []
     sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
     assert sc["retry_count"] == 0
+
+
+def test_apply_failure_policy_does_not_count_a_retry_it_never_sent(
+        fake_client, tmp_path):
+    """Pins the ORDER inside the RESUBMIT branch, which no end-to-end test can
+    see: the held path deliberately does not save, so moving record_terminal
+    back in front of the rebuild leaves no trace on disk. Assert the in-memory
+    sidecar instead — record_terminal mutates the dict this test still holds.
+
+    Why it matters: the terminal-status branch runs before raw is loaded, so a
+    canceled batch on a morning with no raw takes this path. Counting first
+    means three such mornings retire a healthy batch to retry_exhausted having
+    submitted nothing.
+    """
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)                      # empty: rebuild will fail
+    outcome, _diag = summarize._apply_failure_policy(
+        fake_client, sidecar, str(tmp_path / "sc.json"), "canceled", None,
+        raw_dir, "claude-x", ci_commit=False,
+    )
+    assert outcome == "held"
+    assert sidecar["retry_count"] == 0, (
+        "record_terminal ran before the rebuild was known to be possible"
+    )
+    assert sidecar["attempts"][-1]["terminal_status"] is None
+    assert fake_client.messages.batches.created_requests == []
