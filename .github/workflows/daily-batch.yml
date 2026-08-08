@@ -106,7 +106,8 @@ jobs:
 
       # ----- Resume in-flight batches from prior runs FIRST -----
       # Collects any committed sidecars (data/pending-batches/) within a shared
-      # budget. Exits non-zero only when a batch has failed too many times.
+      # budget. Every sidecar state (RESUBMIT/HOLD/BLOCKED/LOST) exits 0 — see
+      # the comment below. Non-zero here means a crash, not a batch outcome.
       - name: Collect pending batches
         id: collect
         env:
@@ -456,9 +457,11 @@ jobs:
 
           if [ -n "$(echo "$HELD" | tr -d ' ')" ]; then
             echo "::error::Pending batches held for a human decision on:${HELD}"
-            echo "Nothing was resubmitted and no retry was spent — rebuilding from today's"
-            echo "raw would fail the same way. The Collect step annotation for each date"
-            echo "names the reason and the choices. Publishing continued for every other"
+            echo "This aggregates several regimes (hash_mismatch/BLOCKED,"
+            echo "raw_missing or raw_date_missing/HOLD, retry_exhausted/BLOCKED) that do"
+            echo "NOT all mean the same thing — do not assume any one of them here. The"
+            echo "Collect step annotation for EACH date names its actual reason and"
+            echo "choices; read that before acting. Publishing continued for every other"
             echo "date; these sidecars stay until someone decides."
           fi
 
