@@ -778,8 +778,6 @@ def assemble_from_manifest(
         for mt in manifest_threads:
             custom_id = mt["custom_id"]
             thread_info = mt["thread_info"]
-            orders = mt["speechOrders"]
-            thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
 
             result = results.get(custom_id)
             if not result:
