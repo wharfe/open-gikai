@@ -990,15 +990,31 @@ def test_resume_flags_a_finished_batch_whose_date_lost_its_raw(
     assert result["diagnostics"][0]["scope"] == "date"
 
 
-def test_resume_stays_quiet_when_the_raw_is_legitimately_out_of_window(
-        fake_client, tmp_path, monkeypatch):
-    """Past the abandon age the raw is SUPPOSED to be gone. That path already
-    warns and deletes the sidecar, so adding a second alarm would red the run
-    for a date nobody can act on."""
+def test_an_abandoned_sidecar_reds_the_run_without_blocking_the_publish(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """T3 / #66. Past the abandon age the threads in that batch are gone for good
+    — the one thing in this pipeline that cannot be undone. It used to be the ONE
+    outcome that left the run green: days 1-30, while it was still fixable, were
+    red; day 31, when it stopped being fixable, was a warning. The severity was
+    upside down.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
     result = _run_collect(fake_client, tmp_path, monkeypatch,
                           sidecars=[_sidecar_with_one_thread(_correct_hash())],
                           raw_present=False, sidecar_age_days=40, existing_threads=0)
-    assert result["systemic_dates"] == []
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    assert result["systemic_dates"] == []      # a different claim, different text
+    assert result["held_dates"] == []
+    assert result["hard_fail"] is False        # loud, but the publish continues
+    assert not os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "2026-05-14" in errors[0]
+    # It must not overclaim: a sidecar can belong to a late meeting on a date
+    # that already has published threads.
+    assert "never be published" not in errors[0]
+    assert "uncollected" in errors[0]
 
 
 def test_resume_reports_both_observations_when_fully_rejected(

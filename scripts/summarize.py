@@ -1350,12 +1350,20 @@ def collect_pending_batches(
       ``_record_held_sidecar``. Disjoint from ``systemic_dates`` /
       ``suspect_dates``: a held date is neither a publication verdict nor weak
       evidence, it is a decision request, and must not be diluted into either.
+    * ``abandoned_dates`` — dates whose sidecar passed the abandon age with raw
+      out of the fetch window: that sidecar's uncollected threads can never be
+      assembled and the sidecar is deleted. The only permanently irreversible
+      outcome in this function, and disjoint from ``systemic_dates`` /
+      ``suspect_dates`` / ``held_dates`` for the same reason those are disjoint
+      from each other — it is a distinct claim ("this batch's threads are gone
+      for good"), not "nothing published this run" or "waiting on a human".
     """
     import glob as _glob
     hard_fail = False
     systemic_dates: list = []
     suspect_dates: list = []
     held_dates: list = []
+    abandoned_dates: list = []
     diagnostics: list = []
     paths = sorted(_glob.glob(os.path.join(pending_dir, "*.json")))
     deadline = time.time() + budget_seconds
@@ -1424,16 +1432,30 @@ def collect_pending_batches(
             now_iso = _utcnow_iso()
             if bs.is_abandonable(sidecar, now_iso):
                 age = bs.age_days(sidecar, now_iso)
+                batch_id = bs.current_batch_id(sidecar)
                 log.error(
                     "Resume: %s unrecoverable (raw out of window, age %.1fd) "
                     "— abandoning sidecar", date_str, age,
                 )
-                # Abandon = permanent loss of this date's uncollected threads.
-                # Surface it as a GitHub Actions annotation so it isn't buried in
-                # the step log (the stuck-batch alert can't fire once we delete).
-                print(f"::warning::Abandoned uncollectable summary batch for "
-                      f"{date_str} (age {age:.1f}d) — threads for that date "
-                      f"were not collected")
+                # The only permanently irreversible event in this pipeline, and
+                # until #66 the only one that left the run green. Red, but not
+                # hard_fail: nothing about a loss that already happened is a
+                # reason to withhold today's other dates.
+                #
+                # Say only what is provable. This sidecar's UNCOLLECTED threads
+                # are gone; the date itself may well have published threads from
+                # earlier runs, and telling an operator the date is empty sends
+                # them hunting for threads that were never lost.
+                abandoned_dates.append(date_str)
+                _annotate(
+                    "error",
+                    f"{date_str}: permanently lost — the uncollected threads from "
+                    f"batch {batch_id} (age {age:.1f}d) can never be assembled: "
+                    f"the raw aged out of the fetch window and the batch results "
+                    f"have expired. No action recovers them; this is recorded so "
+                    f"the loss is on the record. Threads published for this date "
+                    f"by earlier runs are unaffected, and this is not an API "
+                    f"rejection")
                 bs.delete_sidecar(path)
             else:
                 log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
@@ -1523,6 +1545,7 @@ def collect_pending_batches(
         "systemic_dates": systemic_dates,
         "suspect_dates": suspect_dates,
         "held_dates": held_dates,
+        "abandoned_dates": abandoned_dates,
         "diagnostics": diagnostics,
     }
 
@@ -2234,6 +2257,8 @@ def main(argv: Optional[List[str]] = None) -> None:
         _write_github_output(
             systemic_dates=result["systemic_dates"],
             suspect_dates=result["suspect_dates"],
+            held_dates=result["held_dates"],
+            abandoned_dates=result["abandoned_dates"],
         )
         # 1, never 3 or 4 — and since #65, effectively never at all. This process
         # speaks for many dates, so its exit code cannot say WHICH one failed: the

@@ -935,7 +935,9 @@ def test_collect_pending_exits_zero_on_a_soft_verdict(monkeypatch, tmp_path):
     _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": False, "systemic_dates": ["2026-05-14"],
-        "suspect_dates": [], "diagnostics": [],
+        "suspect_dates": [],
+        "held_dates": [], "abandoned_dates": [],
+        "diagnostics": [],
     })
     with pytest.raises(SystemExit) as e:
         summarize.main(_isolated_collect_argv(tmp_path))
@@ -946,7 +948,9 @@ def test_collect_pending_exits_one_on_a_hard_fail(monkeypatch, tmp_path):
     monkeypatch.delenv("GITHUB_OUTPUT", raising=False)
     _stub_client(monkeypatch)
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
-        "hard_fail": True, "systemic_dates": [], "suspect_dates": [], "diagnostics": [],
+        "hard_fail": True, "systemic_dates": [], "suspect_dates": [],
+        "held_dates": [], "abandoned_dates": [],
+        "diagnostics": [],
     })
     with pytest.raises(SystemExit) as e:
         summarize.main(_isolated_collect_argv(tmp_path))
@@ -963,6 +967,7 @@ def test_collect_pending_writes_deduplicated_dates_to_github_output(
     monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
         "hard_fail": False, "systemic_dates": [],
         "suspect_dates": ["2026-05-14", "2026-05-14", "2026-05-15"],
+        "held_dates": [], "abandoned_dates": [],
         "diagnostics": [],
     })
     with pytest.raises(SystemExit):
@@ -970,3 +975,30 @@ def test_collect_pending_writes_deduplicated_dates_to_github_output(
     written = out.read_text()
     assert "systemic_dates=\n" in written
     assert "suspect_dates=2026-05-14 2026-05-15\n" in written
+
+
+def test_a_morning_of_only_held_and_abandoned_dates_exits_zero(monkeypatch, tmp_path):
+    """T8 — through main(), not around it.
+
+    Two things have to hold together and only main() sees both: the four lists
+    reach GITHUB_OUTPUT (a verdict that never gets there cannot red the final
+    step, which is the only layer that sees every date), AND the process exits 0
+    (exit 1 aborts Collect under `set -e`, skipping summarize/commit/push for
+    every other date — what #65 removed).
+    """
+    out = tmp_path / "gh_output"
+    monkeypatch.setenv("GITHUB_OUTPUT", str(out))
+    _stub_client(monkeypatch)
+    monkeypatch.setattr(summarize, "collect_pending_batches", lambda *a, **k: {
+        "hard_fail": False, "systemic_dates": [], "suspect_dates": [],
+        "held_dates": ["2026-01-02"], "abandoned_dates": ["2026-01-03"],
+        "diagnostics": [],
+    })
+    with pytest.raises(SystemExit) as e:
+        summarize.main(_isolated_collect_argv(tmp_path))
+    assert e.value.code == 0
+    written = out.read_text(encoding="utf-8")
+    assert "held_dates=2026-01-02\n" in written
+    assert "abandoned_dates=2026-01-03\n" in written
+    assert "systemic_dates=\n" in written
+    assert "suspect_dates=\n" in written
