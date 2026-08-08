@@ -1338,8 +1338,8 @@ def collect_pending_batches(
     * ``systemic_dates`` / ``suspect_dates`` — dates whose resumed batch
       published nothing, at the two evidence strengths ``publication_blocked_
       verdict`` distinguishes (see that function). A pending sidecar makes the
-      daily workflow skip the whole Summarize step, so on those mornings this
-      function IS the run and has to carry the same failure signal
+      daily workflow skip Summarize for that specific date, so for that date
+      this function IS the run and has to carry the same failure signal
       ``run_pipeline``'s exit code carries for a normal run — a bare bool
       couldn't say which date failed, and callers that resume many dates in
       one process need to.
