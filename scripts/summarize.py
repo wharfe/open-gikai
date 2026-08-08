@@ -694,6 +694,48 @@ def _diagnostic(reason: str, meeting_id: Optional[str] = None,
             "custom_id": custom_id, "reason": reason}
 
 
+def verify_manifest_against_raw(sidecar: dict,
+                                meetings_by_id: Dict[str, dict]) -> Optional[dict]:
+    """The free half of assembly: does the manifest still describe requests we
+    can rebuild from today's raw? Returns the first problem as a ``_diagnostic``,
+    or None if every thread verifies.
+
+    Hoisted out of assemble_from_manifest so the caller can run it BEFORE
+    fetching the batch's results. That ordering is not a micro-optimisation, it
+    is what makes "never resubmit a doomed batch" hold over time: results expire
+    ~29 days after submission, and once ``fetch_summary_results`` raises first,
+    the very same broken sidecar reports ``results_expired`` — a retryable
+    reason — instead of ``hash_mismatch``. See #65.
+
+    Costs nothing but CPU: no network, no tokens. Uses build_summary_request,
+    the one summary-request builder, so the hash it computes is the hash a real
+    resume would compute (CLAUDE.md "Summary Layer Invariants" #2).
+    """
+    model = sidecar["model"]
+    for m in sidecar["meetings"]:
+        meeting_id = m["meeting_id"]
+        meeting = meetings_by_id.get(meeting_id)
+        if meeting is None:
+            log.error("Resume: raw missing for %s — cannot assemble", meeting_id)
+            return _diagnostic("raw_missing", meeting_id)
+        raw_lookup = build_speech_lookup(meeting.get("speeches", []))
+        for mt in m["threads"]:
+            custom_id = mt["custom_id"]
+            orders = mt["speechOrders"]
+            thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
+            if len(thread_speeches) != len(orders):
+                log.error("Resume: speechOrder gap in %s/%s", meeting_id, custom_id)
+                return _diagnostic("speech_gap", meeting_id, custom_id)
+            request = build_summary_request(
+                meeting, mt["thread_info"], thread_speeches, custom_id, model,
+            )
+            if bs.compute_input_hash(request["params"]) != mt["input_hash"]:
+                log.error("Resume: input_hash mismatch for %s — raw/prompt changed",
+                          custom_id)
+                return _diagnostic("hash_mismatch", meeting_id, custom_id)
+    return None
+
+
 def assemble_from_manifest(
     sidecar: dict,
     meetings_by_id: Dict[str, dict],
@@ -709,16 +751,26 @@ def assemble_from_manifest(
     verification or is missing — in that case the caller keeps the sidecar for
     retry, and diagnostic is a structured observation of why (None on success).
     """
-    model = sidecar["model"]
     date_str = sidecar["date"]
     threads: list = []
 
+    # Verification first, for the whole manifest. The caller has normally run
+    # this already (before fetching results — see verify_manifest_against_raw);
+    # repeating it costs a few milliseconds of hashing and keeps this function
+    # correct when called directly, e.g. from tests.
+    #
+    # NOTE this changes which problem is reported when a manifest has more than
+    # one: a verification failure on thread 2 now wins over a missing result on
+    # thread 1. That is deliberate — the deterministic problem is the one an
+    # operator must act on, and reporting the retryable one first is what sent
+    # 2026-06-16's investigation to the wrong place.
+    verify_diag = verify_manifest_against_raw(sidecar, meetings_by_id)
+    if verify_diag is not None:
+        return [], False, verify_diag
+
     for m in sidecar["meetings"]:
         meeting_id = m["meeting_id"]
-        meeting = meetings_by_id.get(meeting_id)
-        if meeting is None:
-            log.error("Resume: raw missing for %s — cannot assemble", meeting_id)
-            return [], False, _diagnostic("raw_missing", meeting_id)
+        meeting = meetings_by_id[meeting_id]      # verified present above
         raw_lookup = build_speech_lookup(meeting.get("speeches", []))
         outcome = m["outcome"]
         manifest_threads = m["threads"]
@@ -728,17 +780,6 @@ def assemble_from_manifest(
             thread_info = mt["thread_info"]
             orders = mt["speechOrders"]
             thread_speeches = [raw_lookup[o] for o in orders if o in raw_lookup]
-            if len(thread_speeches) != len(orders):
-                log.error("Resume: speechOrder gap in %s/%s", meeting_id, custom_id)
-                return [], False, _diagnostic("speech_gap", meeting_id, custom_id)
-
-            request = build_summary_request(
-                meeting, thread_info, thread_speeches, custom_id, model,
-            )
-            if bs.compute_input_hash(request["params"]) != mt["input_hash"]:
-                log.error("Resume: input_hash mismatch for %s — raw/prompt changed",
-                          custom_id)
-                return [], False, _diagnostic("hash_mismatch", meeting_id, custom_id)
 
             result = results.get(custom_id)
             if not result:
@@ -1264,6 +1305,26 @@ def collect_pending_batches(
                     _diagnostic("raw_date_missing"),
                     systemic_dates, suspect_dates, diagnostics,
                 )
+            continue
+
+        # Verify BEFORE touching results. Both are needed to assemble, but only
+        # one of them is free and only one of them changes meaning with age: the
+        # batch's results expire ~29 days after submission, and if the fetch
+        # raises first, a sidecar whose raw has changed reports the retryable
+        # ``results_expired`` instead of the deterministic ``hash_mismatch`` —
+        # and gets resubmitted for a rebuild that cannot verify. #65.
+        verify_diag = verify_manifest_against_raw(sidecar, meetings_by_id)
+        if verify_diag is not None:
+            log.error("Resume: manifest does not verify for %s (%s)", date_str,
+                      verify_diag["reason"])
+            _record_resume_verdict(
+                date_str, _resume_summary_attempted(sidecar),
+                _existing_thread_count(threads_dir, date_str),
+                verify_diag, systemic_dates, suspect_dates, diagnostics,
+            )
+            if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
+                                  raw_dir, model, ci_commit):
+                hard_fail = True
             continue
 
         # Results are retained ~29 days after an "ended" batch; past that the SDK

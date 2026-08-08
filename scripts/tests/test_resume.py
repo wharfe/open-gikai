@@ -703,8 +703,14 @@ def test_repair_falls_back_to_resubmit_when_reissue_also_truncates(fake_client, 
 
 
 def test_repair_refuses_to_reissue_on_hash_mismatch(fake_client, tmp_path):
-    """Raw revised since submission: re-issuing would summarize different text
-    than the manifest describes, so the repair pass must decline."""
+    """Raw revised since submission: nothing may be re-issued.
+
+    Since #65 the collect path never even reaches repair in this state —
+    verify_manifest_against_raw rejects the manifest before the results are
+    fetched. The hash check inside _repair_unusable_results is kept as defence in
+    depth (it guards direct callers), and this test now pins the outer guarantee:
+    a revised raw costs zero synchronous calls.
+    """
     import json as J
     pending_dir, raw_dir = _pending_with_truncated_result(fake_client, tmp_path)
     path = os.path.join(pending_dir, "2026-05-14.json")
@@ -980,3 +986,69 @@ def test_resume_omits_rejection_line_when_results_are_usable_but_hash_mismatches
     assert "assembly failed: hash_mismatch" in errors[0]
     assert "produced no usable summary" not in errors[0]
     assert result["suspect_dates"] == []
+
+
+def test_verification_happens_before_results_are_fetched(fake_client, tmp_path):
+    """#65 の時限爆弾。
+
+    Batch results expire ~29 days after submission. If the hash check runs after
+    the fetch, then on the morning the results expire the observed reason stops
+    being ``hash_mismatch`` and becomes ``results_expired`` — which is legitimately
+    retryable — so a full batch is resubmitted and billed, fails identically the
+    next morning, and the cycle repeats until the retry threshold. #65 would go
+    from "dies in three days" to "dies in ninety", which is worse: it arrives
+    after everyone has forgotten.
+
+    Both conditions hold here: raw changed AND results expired. What this task
+    can pin is the OBSERVATION — the reason recorded must be hash_mismatch, not
+    results_expired, which is only possible if verification ran first. The
+    consequence ("...and therefore nothing is submitted") arrives with the policy
+    in Task 3 and is pinned by test_hash_mismatch_is_held_and_costs_nothing;
+    until then the old _retry_or_hardfail still resubmits here, by design.
+    """
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+
+    sidecar = _sidecar_with_one_thread("sha256:stale")   # raw/prompt changed
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    b.expired_results.add("b1")          # ...and the results are gone too
+    b.next_id = "msgbatch_resub_1"
+    b.statuses["msgbatch_resub_1"] = "in_progress"
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+
+    assert result["diagnostics"][0]["reason"] == "hash_mismatch", (
+        "a hash mismatch must be observed BEFORE the expired results are; once "
+        "the fetch raises first, the same broken sidecar reports the retryable "
+        "results_expired instead and gets billed for a doomed resubmit"
+    )
+
+
+def test_verify_manifest_against_raw_returns_none_when_everything_matches():
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    assert summarize.verify_manifest_against_raw(sidecar, {"M1": _meeting()}) is None
+
+
+def test_verify_manifest_against_raw_names_the_first_problem():
+    sidecar = _sidecar_with_one_thread("sha256:stale")
+    diag = summarize.verify_manifest_against_raw(sidecar, {"M1": _meeting()})
+    assert diag["reason"] == "hash_mismatch"
+    assert diag["meeting_id"] == "M1"
+    assert diag["custom_id"] == "s_abc_00"
+
+
+def test_verify_manifest_against_raw_reports_a_missing_meeting():
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    diag = summarize.verify_manifest_against_raw(sidecar, {})
+    assert diag["reason"] == "raw_missing"
+    assert diag["scope"] == "meeting"
