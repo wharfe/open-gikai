@@ -845,9 +845,15 @@ def _rebuild_requests_from_manifest(sidecar: dict, meetings_by_id: Dict[str, dic
                                     model: str) -> Optional[list]:
     """Rebuild batch requests from a sidecar manifest for resubmission.
 
-    Reuses the persisted custom_ids and thread_info (NO re-grouping), so a
-    resubmitted batch's results still match the manifest's input_hash. Returns
+    Reuses the persisted custom_ids and thread_info (NO re-grouping). Returns
     None if raw is missing or a speechOrder gap prevents a faithful rebuild.
+
+    This function does NOT check that the rebuilt request's input_hash still
+    matches the manifest's stored hash — it only detects a missing meeting or a
+    speechOrder gap. Callers that need "the resubmitted batch's results still
+    match the manifest's input_hash" must run ``verify_manifest_against_raw``
+    themselves before calling this (as ``_apply_failure_policy`` does): that is
+    what actually confirms the raw/prompt has not changed since submission.
     """
     requests: list = []
     for m in sidecar["meetings"]:
@@ -1309,6 +1315,22 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
     # absent because the terminal-status check runs before raw is even loaded.
     # record_terminal is idempotent per attempt, so deferring it is safe.
     meetings_by_id = _load_meetings_for_date(sidecar["date"], raw_dir)
+
+    # Verify BEFORE rebuilding. The ended-batch path (assemble_from_manifest)
+    # already runs this check, but a terminal-status batch (canceled/expired)
+    # never reaches that path — it comes straight here. Without this call,
+    # "canceled + the raw/prompt changed since submission" skipped verification
+    # entirely: _rebuild_requests_from_manifest only checks for missing raw and
+    # speechOrder gaps, so it would happily rebuild and resubmit a batch that is
+    # guaranteed to fail the same hash check the next morning, spending a retry
+    # and a batch's charge on a doomed request. Routing the verify diagnostic
+    # back through _apply_failure_policy makes this door collapse onto the same
+    # BLOCKED/HOLD/RESUBMIT decision the ended-batch path already makes.
+    verify_diag = verify_manifest_against_raw(sidecar, meetings_by_id)
+    if verify_diag is not None:
+        return _apply_failure_policy(client, sidecar, path, verify_diag["reason"],
+                                     verify_diag, raw_dir, model, ci_commit)
+
     requests = _rebuild_requests_from_manifest(sidecar, meetings_by_id, model)
     if requests is None:
         log.error("Resume: cannot rebuild %s for resubmit (raw missing/gap) — holding",

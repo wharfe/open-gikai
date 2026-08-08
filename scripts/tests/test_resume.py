@@ -385,6 +385,42 @@ def test_collect_resubmits_on_expired(fake_client, tmp_path):
     assert len(sc["attempts"]) == 2
 
 
+def test_a_canceled_batch_whose_raw_changed_is_blocked_not_resubmitted(
+        fake_client, tmp_path):
+    """The terminal-status door into the resubmit path.
+
+    Verification lives on the ended path, so a canceled batch used to reach
+    _rebuild_requests_from_manifest without anyone checking the hash — and that
+    function only looks for missing raw and speechOrder gaps. "canceled + the raw
+    changed" therefore spent a retry and paid for a batch that the next morning's
+    verification was guaranteed to reject. Found by a cross-family review after
+    seven same-family passes missed it; the ended-path tests cannot see it.
+    """
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"),
+                    _sidecar_with_one_thread("sha256:stale"))
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "canceled"
+    b.next_id = "msgbatch_resub_1"
+    b.statuses["msgbatch_resub_1"] = "in_progress"
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert b.created_requests == []
+    assert result["held_dates"] == ["2026-05-14"]
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc["retry_count"] == 0
+    assert sc["blocked"]["reason"] == "hash_mismatch"
+
+
 # --- Truncated batch results (regression: 2026-06-16 deadlock) ---------------
 #
 # Two of that date's 90 requests hit max_tokens and returned unparseable JSON.
