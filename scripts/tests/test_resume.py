@@ -920,11 +920,17 @@ def test_resume_flags_a_finished_batch_whose_date_lost_its_raw(
     """The batch finished; the date's raw is gone but not yet old enough to be
     written off. Nothing can be assembled and the sidecar blocks Summarize for
     every date, so this stalls green for up to ABANDON_AGE_DAYS. That is the
-    same failure #59 is about, arriving by a different door."""
+    same failure #59 is about, arriving by a different door.
+
+    Reported through held_dates since #65: nothing is wrong with the batch and
+    nothing was resubmitted, so calling it a publication verdict would charge
+    meetings that were never examined.
+    """
     result = _run_collect(fake_client, tmp_path, monkeypatch,
                           sidecars=[_sidecar_with_one_thread(_correct_hash())],
                           raw_present=False, sidecar_age_days=2, existing_threads=0)
-    assert result["systemic_dates"] == ["2026-05-14"]
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["systemic_dates"] == []
     assert result["diagnostics"][0]["reason"] == "raw_date_missing"
     assert result["diagnostics"][0]["scope"] == "date"
 
@@ -962,30 +968,27 @@ def test_resume_reports_both_observations_when_fully_rejected(
     assert "assembly failed: missing_result" in errors[0]
 
 
-def test_resume_omits_rejection_line_when_results_are_usable_but_hash_mismatches(
+def test_a_hash_mismatch_is_reported_as_held_not_as_a_publication_verdict(
         fake_client, tmp_path, monkeypatch, capsys):
-    """The negative case for the test above: when the batch actually answered
-    with a usable result and assembly fails for a RAW reason (hash_mismatch —
-    the raw or prompt changed since submission, nothing to do with the API),
-    only the assembly observation may appear. If this test were to see the
-    rejection line too, it would prove the fix always prints both instead of
-    reporting what actually happened.
+    """Was: "omits the rejection line when results are usable but the hash
+    mismatches". The distinction it protected still matters — a raw-side problem
+    must not be reported as an API rejection — but since #65 the whole date
+    leaves through held_dates instead of systemic_dates, and the results are
+    never fetched, so there is no rejection evidence to omit in the first place.
     """
     monkeypatch.setenv("GITHUB_ACTIONS", "true")
-    sidecar = _sidecar_with_one_thread("sha256:deadbeef")  # wrong: forces hash_mismatch
-    usable_results = {"s_abc_00": {"speeches": [{"speechOrder": 1, "tension": "確認",
-                      "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
-                      "commitments": []}}
     result = _run_collect(fake_client, tmp_path, monkeypatch,
-                          sidecars=[sidecar],
-                          results=usable_results, existing_threads=0)
-    assert result["systemic_dates"] == ["2026-05-14"]
+                          sidecars=[_sidecar_with_one_thread("sha256:deadbeef")],
+                          results={"s_abc_00": {"speeches": [], "commitments": []}},
+                          existing_threads=0)
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["systemic_dates"] == []
+    assert result["suspect_dates"] == []
     errors = [ln for ln in capsys.readouterr().out.splitlines()
               if ln.startswith("::error::")]
     assert len(errors) == 1
-    assert "assembly failed: hash_mismatch" in errors[0]
+    assert "hash_mismatch" in errors[0]
     assert "produced no usable summary" not in errors[0]
-    assert result["suspect_dates"] == []
 
 
 def test_verification_happens_before_results_are_fetched(fake_client, tmp_path):
@@ -1052,3 +1055,148 @@ def test_verify_manifest_against_raw_reports_a_missing_meeting():
     diag = summarize.verify_manifest_against_raw(sidecar, {})
     assert diag["reason"] == "raw_missing"
     assert diag["scope"] == "meeting"
+
+
+def test_hash_mismatch_is_held_and_costs_nothing(fake_client, tmp_path, monkeypatch, capsys):
+    """T1 — the whole point of #65. A resubmit built from the same raw that just
+    failed verification fails identically, so it must not happen at all: no
+    batch, no retry slot, no repair call. The date still reds the run, through
+    held_dates rather than systemic_dates."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    sidecar = _sidecar_with_one_thread("sha256:stale")
+    usable = {"s_abc_00": {"speeches": [{"speechOrder": 1, "tension": "確認",
+              "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+              "commitments": []}}
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[sidecar], results=usable, existing_threads=3)
+
+    assert fake_client.messages.batches.created_requests == []   # no resubmit
+    assert fake_client.messages.create_calls == []               # no repair
+    assert result["held_dates"] == ["2026-05-14"]
+    # Held is its own axis. Reusing the systemic/suspect verdict would drop a
+    # 1-of-1 failure on an already-published date to a WARNING (see
+    # publication_blocked_verdict), i.e. exactly not-red, and would also let two
+    # held dates trip the workflow's SUSPECT_N >= 2 threshold with the wrong text.
+    assert result["systemic_dates"] == []
+    assert result["suspect_dates"] == []
+    assert result["hard_fail"] is False
+
+    kept = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert kept is not None
+    assert kept["retry_count"] == 0
+    assert len(kept["attempts"]) == 1
+    assert kept["blocked"]["reason"] == "hash_mismatch"
+    assert kept["blocked"]["custom_id"] == "s_abc_00"
+
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "hash_mismatch" in errors[0]
+    assert "not resubmitted" in errors[0].lower()
+
+
+def test_missing_result_still_resubmits(fake_client, tmp_path, monkeypatch):
+    """T2 — the other side of T1. If this ever goes green while T1 does too, the
+    policy has collapsed into "never resubmit", which loses recoverable dates."""
+    b = fake_client.messages.batches
+    b.next_id = "msgbatch_resub_1"
+    b.statuses["msgbatch_resub_1"] = "in_progress"
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          results={}, existing_threads=0)
+    assert len(b.created_requests) == 1
+    assert result["held_dates"] == []
+    sc = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert sc["retry_count"] == 1
+
+
+def test_an_expired_batch_whose_raw_also_changed_submits_nothing(fake_client, tmp_path):
+    """T1b's consequence half, now that the policy exists. This is the exact
+    2-condition state that made #65 survive its own fix: on day 29 the fetch
+    would raise first, the reason would become results_expired, and a doomed
+    rebuild would be billed. Verification runs first (Task 2) AND the reason is
+    BLOCKED (Task 3) — either one alone leaves the hole open."""
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"),
+                    _sidecar_with_one_thread("sha256:stale"))
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    b.expired_results.add("b1")
+    b.next_id = "msgbatch_resub_1"
+    b.statuses["msgbatch_resub_1"] = "in_progress"
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert b.created_requests == []
+    assert result["held_dates"] == ["2026-05-14"]
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc["retry_count"] == 0
+
+
+def test_a_manifest_meeting_absent_from_raw_holds(fake_client, tmp_path, monkeypatch):
+    """T2b, meeting scope. raw_missing is the only meeting-scoped HOLD that
+    reaches the policy, and neither the speech_gap nor the raw_date_missing test
+    exercises it — wire it to RESUBMIT by mistake and both of those stay green."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["meetings"][0]["meeting_id"] = "M2"      # raw on disk only has M1
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[sidecar], results={}, existing_threads=0)
+    assert fake_client.messages.batches.created_requests == []
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["diagnostics"][0]["reason"] == "raw_missing"
+    sc = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert sc["retry_count"] == 0
+
+
+def test_a_speech_order_gap_holds_without_spending_a_retry(fake_client, tmp_path, monkeypatch):
+    """T2b — the defect that came out of the same root: _retry_or_hardfail called
+    record_terminal BEFORE discovering it could not rebuild, so three raw-less
+    mornings pushed a perfectly good batch to the hard-fail threshold having
+    resubmitted nothing."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["meetings"][0]["threads"][0]["speechOrders"] = [1, 99]   # 99 not in raw
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[sidecar], results={}, existing_threads=0)
+    assert fake_client.messages.batches.created_requests == []
+    assert result["held_dates"] == ["2026-05-14"]
+    sc = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert sc["retry_count"] == 0
+    # HOLD does not mark the sidecar: nothing is wrong with it, the raw is just
+    # not here yet.
+    assert "blocked" not in sc
+
+
+def test_a_second_blocked_morning_does_not_commit_an_unchanged_sidecar(
+        fake_client, tmp_path, monkeypatch):
+    """T9 — _git_commit_sidecar turns a no-op `git commit` (exit 1) into
+    "::error:: the in-flight batch will be orphaned". Committing an unchanged
+    file every morning would fire that false alarm forever."""
+    commits = []
+    monkeypatch.setattr(summarize, "_git_commit_sidecar",
+                        lambda path, date_str: commits.append(date_str))
+    sidecar = _sidecar_with_one_thread("sha256:stale")
+    sidecar["blocked"] = {"reason": "hash_mismatch", "since": "2026-08-01T00:00:00Z",
+                          "meeting_id": "M1", "custom_id": "s_abc_00"}
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    fake_client.messages.batches.statuses["b1"] = "ended"
+
+    summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=True,
+    )
+    assert commits == []

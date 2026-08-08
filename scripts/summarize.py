@@ -1155,24 +1155,143 @@ def _record_resume_verdict(date_str: str, summary_attempted: int,
         _annotate("warning", " — ".join(lines))
 
 
-def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
-                       raw_dir: str, model: str, ci_commit: bool) -> bool:
-    """Count a non-collectable batch failure, then either hard-fail (>=3 retries)
-    or resubmit a fresh batch from the manifest (new attempt). Returns True on
-    hard-fail (caller should exit non-zero)."""
-    bs.record_terminal(sidecar, reason, _utcnow_iso())
-    if bs.should_hard_fail(sidecar):
-        bs.save_sidecar(path, sidecar)
-        log.error("Sidecar %s hit retry threshold (%d, last=%s) — hard fail",
-                  path, sidecar["retry_count"], reason)
-        return True
+def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
+                         held_dates: list, diagnostics: list) -> None:
+    """Report a sidecar that is waiting on a human or on restored local state.
+
+    Deliberately NOT ``_record_resume_verdict``. That one grades how far a
+    failure spread — one meeting on an already-published date is weak evidence
+    and comes out as a *warning* — which is the right question for "did today's
+    work reach the site" and the wrong one here. A held sidecar is not weak
+    evidence of anything: it is a request for a decision, and it is red at one
+    date. Mixing the two also double-counted a date into ``suspect_dates``,
+    where two of them would trip the workflow's SUSPECT_N >= 2 threshold under a
+    message that does not describe what happened.
+
+    The text must survive being read half-awake, so it says what was NOT done
+    (no resubmit, no retry spent) as loudly as what was observed, and it offers
+    causes in likelihood order without asserting one. It must never print a bare
+    `git rm`: raw lives only on the runner, and past the lookback window a
+    removed sidecar is not re-summarised — it is a permanent loss dressed up as
+    a fix.
+    """
+    held_dates.append(date_str)
+    diagnostics.append({**diagnostic, "date": date_str})
+
+    reason = diagnostic.get("reason", "unknown")
+    attempt = (sidecar.get("attempts") or [{}])[-1]
+    submitted = attempt.get("submitted_at", "unknown")
+    blocked = sidecar.get("blocked") or {}
+    parts = [
+        f"{date_str}: resume held — {reason}",
+        f"meeting={diagnostic.get('meeting_id')} custom_id={diagnostic.get('custom_id')}",
+        f"batch={attempt.get('batch_id')} submitted={submitted}",
+        f"sidecar=data/pending-batches/{date_str}.json",
+    ]
+    if reason == "retry_exhausted":
+        parts.append(
+            f"three resubmits have failed ({sidecar.get('retry_count')} retries "
+            f"spent); no further batch will be sent")
+    elif bs.failure_policy(reason) == bs.RESUBMIT:
+        # A retryable reason that still ended up here can only mean the rebuild
+        # found no usable raw. Saying "rebuilding reproduces this exactly" would
+        # be false — the batch is retryable and the next fetch may unblock it.
+        parts.append(
+            "NOT resubmitted and no retry spent: this reason IS retryable, but "
+            "the requests could not be rebuilt from the raw on disk this run")
+    else:
+        parts.append(
+            "NOT resubmitted and no retry spent: rebuilding from today's raw "
+            "reproduces this failure exactly")
+    # Only claim a history that belongs to THIS finding. A sidecar blocked last
+    # week on hash_mismatch, whose raw then vanished, is reported today as
+    # raw_date_missing — printing the old `since` next to the new reason invents
+    # a story and sends the reader to look at raw revisions that are not the
+    # problem.
+    if blocked.get("since") and blocked.get("reason") == reason:
+        parts.append(f"held since {blocked['since']}")
+    # Every BLOCKED sidecar needs the clock, not just the hash ones: the results
+    # expire on the same schedule regardless of why it is stuck, and deferring
+    # the decision is how a held date becomes a lost one.
+    if sidecar.get("attempts"):
+        age = bs.age_days(sidecar, _utcnow_iso())
+        parts.append(
+            f"submitted about {age:.0f} day(s) ago; batch results are retained "
+            f"roughly 29 days, so this decision has an expiry")
+    if reason == "hash_mismatch":
+        parts.append(
+            "the request rebuilt from today's raw is not the one this batch was "
+            "submitted with. Likely causes, in order: (1) compute_input_hash's "
+            "param set changed without a SCHEMA_VERSION bump; (2) the raw was "
+            "re-fetched and differs. This is not an API rejection")
+        parts.append(
+            "to act: confirm the date's raw is still re-fetchable inside the "
+            "lookback window and secure it BEFORE removing "
+            f"data/pending-batches/{date_str}.json — outside the window a removed "
+            "sidecar is not re-summarised. Reverting the change that moved the "
+            "hash lets the next run collect normally")
+    elif reason in ("raw_missing", "raw_date_missing", "speech_gap"):
+        parts.append(
+            "the batch is fine; this date's raw is not on disk this run. A later "
+            "run that re-fetches it collects normally")
+    log.error("Resume held: %s (%s)", date_str, reason)
+    _annotate("error", " — ".join(parts))
+
+
+def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
+                          diagnostic: Optional[dict], raw_dir: str, model: str,
+                          ci_commit: bool) -> str:
+    """Apply the regime this failure falls into. Returns "resubmitted" | "held"
+    | "blocked".
+
+    Replaces _retry_or_hardfail, which applied ONE regime to every reason: it
+    resubmitted a hash_mismatch three times — each a full batch's charge for a
+    rebuild that cannot verify — and it called record_terminal BEFORE finding out
+    whether it could rebuild at all, so a missing raw file burned a retry slot
+    without sending anything (#65).
+
+    The order below is the fix, not a style choice: the policy is consulted
+    first, and only the RESUBMIT branch is allowed to touch retry_count.
+    """
+    policy = bs.failure_policy(reason)
+    diagnostic = diagnostic or _diagnostic(reason)
+
+    if policy == bs.BLOCKED:
+        changed = bs.mark_blocked(sidecar, reason, _utcnow_iso(),
+                                  diagnostic.get("meeting_id"),
+                                  diagnostic.get("custom_id"))
+        if changed:
+            bs.save_sidecar(path, sidecar)
+            if ci_commit:
+                _git_commit_sidecar(path, sidecar["date"])
+        return "blocked"
+
+    if policy == bs.HOLD:
+        # No write, no retry spent, nothing submitted. The state this needed may
+        # simply not have been fetched yet, and the batch is untouched.
+        return "held"
+
+    # Rebuild BEFORE counting. The old order counted first and discovered it
+    # could not rebuild afterwards, so a morning with no raw on disk spent a
+    # retry slot having submitted nothing — three of those and a healthy batch
+    # is a permanent human-decision case. This branch is reachable with raw
+    # absent because the terminal-status check runs before raw is even loaded.
+    # record_terminal is idempotent per attempt, so deferring it is safe.
     meetings_by_id = _load_meetings_for_date(sidecar["date"], raw_dir)
     requests = _rebuild_requests_from_manifest(sidecar, meetings_by_id, model)
     if requests is None:
-        bs.save_sidecar(path, sidecar)
-        log.error("Resume: cannot rebuild %s for resubmit (raw missing/gap) — keeping sidecar",
+        log.error("Resume: cannot rebuild %s for resubmit (raw missing/gap) — holding",
                   sidecar["date"])
-        return False
+        return "held"
+
+    bs.record_terminal(sidecar, reason, _utcnow_iso())
+    if bs.should_hard_fail(sidecar):
+        # Three genuine resubmits have failed. Stop paying — but do NOT take the
+        # publish down: since the pending gate is per-date, other dates can
+        # still reach the site (#44/#52).
+        return _apply_failure_policy(client, sidecar, path, "retry_exhausted",
+                                     diagnostic, raw_dir, model, ci_commit)
+    bs.clear_blocked(sidecar)
     new_batch_id = submit_summary_batch(client, requests)
     bs.add_attempt(sidecar, new_batch_id, _utcnow_iso())
     bs.save_sidecar(path, sidecar)
@@ -1180,7 +1299,7 @@ def _retry_or_hardfail(client, sidecar: dict, path: str, reason: str,
         _git_commit_sidecar(path, sidecar["date"])
     log.warning("Resubmitted %s as %s after %s (retry %d)",
                 sidecar["date"], new_batch_id, reason, sidecar["retry_count"])
-    return False
+    return "resubmitted"
 
 
 def collect_pending_batches(
@@ -1210,11 +1329,17 @@ def collect_pending_batches(
       one process need to.
     * ``diagnostics`` — structured observations (see ``_diagnostic``), one per
       date that reported a non-clean verdict.
+    * ``held_dates`` — dates whose sidecar is waiting on a human (BLOCKED) or on
+      restored local state (HOLD); see ``_apply_failure_policy`` /
+      ``_record_held_sidecar``. Disjoint from ``systemic_dates`` /
+      ``suspect_dates``: a held date is neither a publication verdict nor weak
+      evidence, it is a decision request, and must not be diluted into either.
     """
     import glob as _glob
     hard_fail = False
     systemic_dates: list = []
     suspect_dates: list = []
+    held_dates: list = []
     diagnostics: list = []
     paths = sorted(_glob.glob(os.path.join(pending_dir, "*.json")))
     deadline = time.time() + budget_seconds
@@ -1259,9 +1384,13 @@ def collect_pending_batches(
 
         if batch.processing_status != "ended":
             if batch.processing_status in bs.TERMINAL_FAILURES:
-                if _retry_or_hardfail(client, sidecar, path, batch.processing_status,
-                                      raw_dir, model, ci_commit):
-                    hard_fail = True
+                outcome = _apply_failure_policy(
+                    client, sidecar, path, batch.processing_status, None,
+                    raw_dir, model, ci_commit)
+                if outcome in ("held", "blocked"):
+                    _record_held_sidecar(
+                        date_str, sidecar,
+                        _diagnostic(batch.processing_status), held_dates, diagnostics)
             else:
                 log.info("Batch %s still %s — leaving for next run", batch_id,
                          batch.processing_status)
@@ -1293,16 +1422,9 @@ def collect_pending_batches(
             else:
                 log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
                           date_str)
-                # Alarm, but no resubmit and no retry spent: the batch is fine
-                # and re-fetching raw may still rescue it. What must not happen
-                # is another silent morning — the sidecar keeps Summarize
-                # skipped for EVERY date while this sits here.
-                _record_resume_verdict(
-                    date_str, _resume_summary_attempted(sidecar),
-                    _existing_thread_count(threads_dir, date_str),
-                    _diagnostic("raw_date_missing"),
-                    systemic_dates, suspect_dates, diagnostics,
-                )
+                _record_held_sidecar(date_str, sidecar,
+                                     _diagnostic("raw_date_missing"),
+                                     held_dates, diagnostics)
             continue
 
         # Verify BEFORE touching results. Both are needed to assemble, but only
@@ -1313,16 +1435,12 @@ def collect_pending_batches(
         # and gets resubmitted for a rebuild that cannot verify. #65.
         verify_diag = verify_manifest_against_raw(sidecar, meetings_by_id)
         if verify_diag is not None:
-            log.error("Resume: manifest does not verify for %s (%s)", date_str,
-                      verify_diag["reason"])
-            _record_resume_verdict(
-                date_str, _resume_summary_attempted(sidecar),
-                _existing_thread_count(threads_dir, date_str),
-                verify_diag, systemic_dates, suspect_dates, diagnostics,
-            )
-            if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
-                                  raw_dir, model, ci_commit):
-                hard_fail = True
+            outcome = _apply_failure_policy(
+                client, sidecar, path, verify_diag["reason"], verify_diag,
+                raw_dir, model, ci_commit)
+            if outcome in ("held", "blocked"):
+                _record_held_sidecar(date_str, sidecar, verify_diag,
+                                     held_dates, diagnostics)
             continue
 
         # Results are retained ~29 days after an "ended" batch; past that the SDK
@@ -1339,9 +1457,13 @@ def collect_pending_batches(
                 raise
             log.error("Resume: results unavailable for %s (%s) — resubmitting",
                       date_str, e)
-            if _retry_or_hardfail(client, sidecar, path, "results_expired",
-                                  raw_dir, model, ci_commit):
-                hard_fail = True
+            outcome = _apply_failure_policy(
+                client, sidecar, path, "results_expired", None,
+                raw_dir, model, ci_commit)
+            if outcome in ("held", "blocked"):
+                _record_held_sidecar(date_str, sidecar,
+                                     _diagnostic("results_expired"),
+                                     held_dates, diagnostics)
             continue
 
         _repair_unusable_results(client, sidecar, meetings_by_id, results, model)
@@ -1358,17 +1480,23 @@ def collect_pending_batches(
             sidecar, meetings_by_id, results, members, thread_counter=0,
         )
         if not ok:
-            log.error("Resume: assembly incomplete for %s (%s)", date_str,
-                      (diagnostic or {}).get("reason", "unknown"))
-            _record_resume_verdict(
-                date_str, api_stats["attempted"],
-                _existing_thread_count(threads_dir, date_str),
-                diagnostic, systemic_dates, suspect_dates, diagnostics,
-                api_stats=api_stats,
-            )
-            if _retry_or_hardfail(client, sidecar, path, "assemble_failed",
-                                  raw_dir, model, ci_commit):
-                hard_fail = True
+            reason = (diagnostic or {}).get("reason", "unknown")
+            log.error("Resume: assembly incomplete for %s (%s)", date_str, reason)
+            outcome = _apply_failure_policy(
+                client, sidecar, path, reason, diagnostic,
+                raw_dir, model, ci_commit)
+            if outcome in ("held", "blocked"):
+                _record_held_sidecar(date_str, sidecar, diagnostic or _diagnostic(reason),
+                                     held_dates, diagnostics)
+            else:
+                # Still a publication outcome: summary requests went out for this
+                # date and nothing reached the site.
+                _record_resume_verdict(
+                    date_str, api_stats["attempted"],
+                    _existing_thread_count(threads_dir, date_str),
+                    diagnostic, systemic_dates, suspect_dates, diagnostics,
+                    api_stats=api_stats,
+                )
             continue
 
         _append_threads_to_date_file(threads, threads_dir, date_str)
@@ -1379,6 +1507,7 @@ def collect_pending_batches(
         "hard_fail": hard_fail,
         "systemic_dates": systemic_dates,
         "suspect_dates": suspect_dates,
+        "held_dates": held_dates,
         "diagnostics": diagnostics,
     }
 
