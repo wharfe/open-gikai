@@ -194,10 +194,10 @@ jobs:
               break
             fi
           done
-          # The threshold is NOT applied here any more. This step does not run
-          # at all on a morning with a pending sidecar, and it never sees the
-          # dates Collect reported — so a policy applied here would be blind to
-          # half its input. It moved to the last step, which sees both.
+          # The threshold is NOT applied here any more: this step never sees
+          # the dates Collect reported (only Collect owns those), so a policy
+          # applied here would be blind to half its input. It moved to the
+          # last step, which sees both.
           echo "systemic_dates=$SYSTEMIC" >> "$GITHUB_OUTPUT"
           # Always published, failing or not: one suspect date is not worth a red
           # run, but it must still be visible in the run summary. A signal nobody
@@ -353,6 +353,8 @@ jobs:
           SUSPECT_DATES: ${{ steps.summarize.outputs.suspect_dates }}
           COLLECT_SYSTEMIC_DATES: ${{ steps.collect.outputs.systemic_dates }}
           COLLECT_SUSPECT_DATES: ${{ steps.collect.outputs.suspect_dates }}
+          HELD_DATES: ${{ steps.collect.outputs.held_dates }}
+          ABANDONED_DATES: ${{ steps.collect.outputs.abandoned_dates }}
         run: |
           {
             echo "## Daily Batch Summary"
@@ -382,6 +384,14 @@ jobs:
               echo "- **One meeting failed on an already-published date**: ${SUSPECT_ALL}"
               echo "  (not a failure on its own — watch for several of these in one run)"
             fi
+            HELD_ALL=$(echo "$HELD_DATES" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
+            ABANDONED_ALL=$(echo "$ABANDONED_DATES" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
+            if [ -n "${HELD_ALL}" ]; then
+              echo "- **held for a human decision**: ${HELD_ALL}"
+            fi
+            if [ -n "${ABANDONED_ALL}" ]; then
+              echo "- **Permanently lost**: ${ABANDONED_ALL}"
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
       # LAST step on purpose. Everything above has already run: the day's
@@ -393,9 +403,10 @@ jobs:
       - name: Fail the run on a systemic summary failure
         env:
           # Through env, not inline expressions, per the same rule as
-          # LOOKBACK_DAYS above. Four inputs, not two: on a morning with a
-          # pending sidecar the Summarize step is skipped entirely and Collect
-          # is the only one with anything to say (#59).
+          # LOOKBACK_DAYS above. Six inputs, not two: Summarize now only skips
+          # the specific dates a sidecar already owns, so both it and Collect
+          # can have something to say about the same run (#59, #65) — read
+          # all four kinds of output from both.
           SUMMARIZE_SYSTEMIC: ${{ steps.summarize.outputs.systemic_dates }}
           SUMMARIZE_SUSPECT: ${{ steps.summarize.outputs.suspect_dates }}
           COLLECT_SYSTEMIC: ${{ steps.collect.outputs.systemic_dates }}
