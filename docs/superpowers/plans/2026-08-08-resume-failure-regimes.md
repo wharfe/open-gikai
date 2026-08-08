@@ -557,7 +557,22 @@ git commit -m "fix: verify the manifest before fetching results so a doomed resu
 - Consumes: `bs.failure_policy` / `bs.mark_blocked` / `bs.clear_blocked`（Task 1）、`verify_manifest_against_raw`（Task 2）
 - Produces:
   - `summarize._record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict, held_dates: list, diagnostics: list) -> None`
-  - `summarize._apply_failure_policy(client, sidecar: dict, path: str, reason: str, diagnostic: Optional[dict], raw_dir: str, model: str, ci_commit: bool) -> str` — `"resubmitted" | "held" | "blocked"`
+  - `summarize._apply_failure_policy(client, sidecar: dict, path: str, reason: str, diagnostic: Optional[dict], raw_dir: str, model: str, ci_commit: bool) -> tuple[str, dict]` — `(outcome, effective_diagnostic)`。outcome は `"resubmitted" | "held" | "blocked"`
+
+    > **訂正（Task 3 のレビューで判明）**: 当初この戻りを `str` だけにしていたが、
+    > **retry 閾値を跨いだ当日の annotation が3点とも嘘になる**。閾値超過時に
+    > `_apply_failure_policy` は自分を `"retry_exhausted"` で再帰呼び出しするが、
+    > 呼び出し元にはエスカレートが伝わらないので、元の reason（例 `missing_result`）で
+    > `_record_held_sidecar` が呼ばれる。結果、`retry_exhausted` 分岐は collect 経路から
+    > **到達不能**になり、代わりに「この reason は再送可能だが raw から組み直せなかった」という
+    > **事実と違う説明**が出る（実際には raw は正常で rebuild も成功しており、
+    > 起きているのはリトライ枯渇）。`held since` も reason 不一致で抑制される。
+    > 運用者は存在しない raw の問題を追うことになる。
+    > **戻り値を `(outcome, effective_diagnostic)` にし、再帰時に
+    > `_diagnostic("retry_exhausted", meeting_id, custom_id)` を作って返すこと。**
+    > 呼び出し元は受け取った diagnostic をそのまま `_record_held_sidecar` に渡す。
+    > `_record_held_sidecar` 側で `sidecar["blocked"]["reason"]` を優先するのは **NG** ——
+    > HOLD 経路は古い blocked マーカーを残すので、`raw_date_missing` を `hash_mismatch` と誤報する。
   - `collect_pending_batches` の返却 dict に `"held_dates": list` が加わる
 
 - [ ] **Step 1: 失敗するテストを書く（T1 / T2 / T2b / T9）**
