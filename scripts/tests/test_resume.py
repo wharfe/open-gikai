@@ -1005,9 +1005,9 @@ def test_verification_happens_before_results_are_fetched(fake_client, tmp_path):
     Both conditions hold here: raw changed AND results expired. What this task
     can pin is the OBSERVATION — the reason recorded must be hash_mismatch, not
     results_expired, which is only possible if verification ran first. The
-    consequence ("...and therefore nothing is submitted") arrives with the policy
-    in Task 3 and is pinned by test_hash_mismatch_is_held_and_costs_nothing;
-    until then the old _retry_or_hardfail still resubmits here, by design.
+    consequence ("...and therefore nothing is submitted") is now in place and is
+    pinned by test_an_expired_batch_whose_raw_also_changed_submits_nothing,
+    which exercises this exact two-condition state end to end.
     """
     pending_dir = str(tmp_path / "pending")
     raw_dir = str(tmp_path / "raw")
@@ -1157,10 +1157,11 @@ def test_a_manifest_meeting_absent_from_raw_holds(fake_client, tmp_path, monkeyp
 
 
 def test_a_speech_order_gap_holds_without_spending_a_retry(fake_client, tmp_path, monkeypatch):
-    """T2b — the defect that came out of the same root: _retry_or_hardfail called
-    record_terminal BEFORE discovering it could not rebuild, so three raw-less
-    mornings pushed a perfectly good batch to the hard-fail threshold having
-    resubmitted nothing."""
+    """T2b — speech_gap is policy HOLD, so _apply_failure_policy returns "held"
+    at the policy check and never reaches the rebuild-then-count code below it.
+    This does NOT exercise the record_terminal/rebuild ordering — see
+    test_a_canceled_batch_with_no_raw_holds_without_spending_a_retry for the
+    RESUBMIT-reason path that actually reaches that code and pins the order."""
     sidecar = _sidecar_with_one_thread(_correct_hash())
     sidecar["meetings"][0]["threads"][0]["speechOrders"] = [1, 99]   # 99 not in raw
     result = _run_collect(fake_client, tmp_path, monkeypatch,
@@ -1200,3 +1201,61 @@ def test_a_second_blocked_morning_does_not_commit_an_unchanged_sidecar(
         budget_seconds=0, poll_seconds=0, ci_commit=True,
     )
     assert commits == []
+
+
+def test_retry_exhaustion_is_reported_as_itself_not_as_a_raw_problem(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """Review round 1, [Critical] 1. The recursive escalation inside
+    _apply_failure_policy changes the reason to retry_exhausted, but the
+    original call had already passed the OLD diagnostic (e.g. missing_result)
+    down to it. If the caller reports that stale diagnostic instead of the
+    escalated one, _record_held_sidecar's RESUBMIT-policy branch fires and
+    claims "the requests could not be rebuilt from the raw on disk this run" —
+    which is false: raw was present and the rebuild succeeded three times. What
+    actually happened is the retry budget ran out, and that must be the text
+    an operator reads.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["retry_count"] = 2   # one more failed resubmit hits the threshold
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[sidecar], results={}, existing_threads=0)
+    assert result["held_dates"] == ["2026-05-14"]
+    sc = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert sc["blocked"]["reason"] == "retry_exhausted"
+
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "three resubmits have failed" in errors[0]
+    assert "could not be rebuilt from the raw" not in errors[0]
+
+
+def test_a_canceled_batch_with_no_raw_holds_without_spending_a_retry(
+        fake_client, tmp_path, monkeypatch):
+    """Review round 1, [Important] 2. The only path where a RESUBMIT reason
+    ends up held: the rebuild found no raw. The HOLD reasons (speech_gap,
+    raw_missing, raw_date_missing) never reach this code — they return "held"
+    at the policy check before rebuild is even attempted — so no existing test
+    pinned the order of record_terminal against the rebuild. Put
+    record_terminal back in front of the rebuild (the pre-#65 order) and this
+    is the only test in the suite that would catch it: a canceled batch with no
+    raw on disk would burn a retry slot per raw-less morning instead of holding
+    for free, reaching retry_exhausted in three mornings having resubmitted
+    nothing.
+    """
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)   # empty: no ndl-2026-05-14.json
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"),
+                    _sidecar_with_one_thread(_correct_hash()))
+    fake_client.messages.batches.statuses["b1"] = "canceled"
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["held_dates"] == ["2026-05-14"]
+    assert fake_client.messages.batches.created_requests == []
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc["retry_count"] == 0
