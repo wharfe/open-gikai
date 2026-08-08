@@ -464,8 +464,15 @@ def verify_manifest_against_raw(sidecar: dict,
 
 続いて本体のループから、いま重複している検証3つを取り除く。`for mt in manifest_threads:` の中の
 `if len(thread_speeches) != len(orders): ...` ブロックと、`request = build_summary_request(...)` +
-`if bs.compute_input_hash(...) != mt["input_hash"]: ...` ブロックを削除する
-（`thread_speeches` の算出自体は assemble に必要なので残す）。
+`if bs.compute_input_hash(...) != mt["input_hash"]: ...` ブロックを削除する。
+
+> **訂正（Gate3 のタスクレビューで判明）**: この行はもともと
+> 「`thread_speeches` の算出自体は assemble に必要なので残す」と書いていたが、**事実誤認**だった。
+> `assemble_thread` のシグネチャは `(meeting, thread_info, ai_speeches, raw_lookup, members,
+> thread_id)`（`summarize.py:448-455`）で、`thread_speeches` を受け取らない。検証専用だったので、
+> `orders = mt["speechOrders"]` と `thread_speeches = [...]` の**両方を削除する**。
+> 残すと「assemble に必要だから残っている」と誤読される死んだ計算になる。
+
 外側ループの `if meeting is None:` ブロックも削除する（検証済み）。ただし `meeting` の取得は残す:
 
 ```python
