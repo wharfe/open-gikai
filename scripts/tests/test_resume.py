@@ -223,7 +223,11 @@ def test_collect_assembles_ended_and_deletes_sidecar(fake_client, tmp_path, monk
     assert os.path.exists(os.path.join(threads_dir, "2026-05-14.json"))
 
 
-def test_collect_hard_fails_at_retry_threshold(fake_client, tmp_path):
+def test_a_retry_exhausted_sidecar_is_held_not_a_hard_fail(fake_client, tmp_path):
+    """T2d, entry path. Three genuine resubmits have failed and a human is needed
+    — but Collect exits 1 under `set -e`, which skips summarize/commit/push for
+    every OTHER date too. That was tolerable while one sidecar skipped Summarize
+    anyway; with the per-date gate it is the #52 amplification again."""
     pending_dir = str(tmp_path / "pending")
     sidecar = _sidecar_with_one_thread(_correct_hash())
     sidecar["retry_count"] = 3
@@ -234,7 +238,48 @@ def test_collect_hard_fails_at_retry_threshold(fake_client, tmp_path):
         raw_dir=str(tmp_path / "r"),
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
-    assert result["hard_fail"] is True
+    assert result["hard_fail"] is False
+    assert result["held_dates"] == ["2026-05-14"]
+    assert fake_client.messages.batches.created_requests == []
+    kept = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert kept["blocked"]["reason"] == "retry_exhausted"
+
+
+def test_the_third_failed_resubmit_becomes_held_in_the_same_run(fake_client, tmp_path, monkeypatch):
+    """T2d, threshold path. The count reaches 3 inside _apply_failure_policy; it
+    must convert to retry_exhausted there and not submit a fourth batch."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["retry_count"] = 2
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[sidecar], results={}, existing_threads=0)
+    assert result["hard_fail"] is False
+    assert result["held_dates"] == ["2026-05-14"]
+    assert fake_client.messages.batches.created_requests == []
+    kept = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert kept["retry_count"] == 3
+    assert kept["blocked"]["reason"] == "retry_exhausted"
+
+
+def test_a_held_sidecar_does_not_stop_the_next_one(fake_client, tmp_path, monkeypatch):
+    """T2c's real point. `hard_fail = True; continue` returned exit 1 at the end,
+    so every later sidecar's work was thrown away with the run. Holding must be
+    per-sidecar."""
+    stale = _sidecar_with_one_thread(_correct_hash())
+    stale["schema_version"] = 1
+    stale["date"] = "2026-05-13"
+    stale["attempts"][-1]["batch_id"] = "b0"
+    good = _sidecar_with_one_thread(_correct_hash())
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[stale, good],
+                          results={"s_abc_00": {"speeches": [{"speechOrder": 1,
+                                   "tension": "確認",
+                                   "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+                                   "commitments": []}},
+                          existing_threads=0)
+    assert result["hard_fail"] is False
+    assert result["held_dates"] == ["2026-05-13"]
+    # The good sidecar was collected and removed despite the held one above it.
+    assert not os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
 
 
 def test_collect_survives_expired_results_and_resubmits(fake_client, tmp_path):
@@ -591,10 +636,13 @@ def test_repair_stops_when_its_own_budget_is_gone(fake_client, tmp_path):
     assert results["s_abc_00"] is None
 
 
-def test_collect_refuses_sidecar_from_an_older_schema(fake_client, tmp_path):
+def test_collect_holds_a_sidecar_from_an_older_schema(fake_client, tmp_path):
     """v1 hashes were computed over a different param set, so every thread would
     fail verification. Silently resubmitting burns a retry slot per run until the
-    date is permanently lost, so refuse loudly and leave it rescuable by hand."""
+    date is permanently lost, so refuse loudly and leave it rescuable by hand.
+    Loudly now means held + red, not exit 1: since #44 the per-date gate lets the
+    other dates publish, so stopping the job buys nothing and costs a morning.
+    """
     pending_dir, raw_dir = _pending_with_truncated_result(fake_client, tmp_path)
     path = os.path.join(pending_dir, "2026-05-14.json")
     sc = bs.load_sidecar(path)
@@ -607,11 +655,18 @@ def test_collect_refuses_sidecar_from_an_older_schema(fake_client, tmp_path):
         budget_seconds=0, poll_seconds=0, ci_commit=False,
     )
 
-    assert result["hard_fail"] is True                                          # surfaced, not buried
+    assert result["hard_fail"] is False              # was: is True
+    assert result["held_dates"] == ["2026-05-14"]    # new
     kept = bs.load_sidecar(path)
-    assert kept is not None and kept["retry_count"] == 0          # nothing burned
-    assert fake_client.messages.batches.created_requests == []    # no resubmit
-    assert fake_client.messages.create_calls == []                # no repair either
+    # KEEP these three verbatim. BLOCKED writes the `blocked` marker, so the
+    # sidecar file does change — but retry_count must still be untouched and
+    # neither the batch API nor the sync API may be called. Deleting them
+    # because "the sidecar is written now" would drop the guarantees the test
+    # exists for.
+    assert kept is not None and kept["retry_count"] == 0
+    assert fake_client.messages.batches.created_requests == []
+    assert fake_client.messages.create_calls == []
+    assert kept["blocked"]["reason"] == "stale_schema"   # new
 
 
 def test_repair_preserves_the_good_results_alongside_the_bad(fake_client, tmp_path):

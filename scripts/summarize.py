@@ -1333,8 +1333,8 @@ def collect_pending_batches(
 
     Returns a dict (informally ``CollectResult``) with:
 
-    * ``hard_fail`` — True if any sidecar hit the hard-fail retry threshold or
-      carries an unrecoverable older schema (caller should exit non-zero).
+    * ``hard_fail`` — reserved for a genuine crash path; retry-threshold and
+      older-schema sidecars are held (see ``held_dates``), not hard-failed.
     * ``systemic_dates`` / ``suspect_dates`` — dates whose resumed batch
       published nothing, at the two evidence strengths ``publication_blocked_
       verdict`` distinguishes (see that function). A pending sidecar makes the
@@ -1365,31 +1365,32 @@ def collect_pending_batches(
         if sidecar is None:
             continue
         if not bs.is_current_schema(sidecar):
-            # Written by an older revision, so its input_hashes are not
-            # comparable to ours (see bs.is_current_schema). Refuse loudly and
-            # leave it untouched: resubmitting would fail verification every run
-            # and burn the retry budget down to permanent loss, whereas an
-            # operator can still rescue this by hand while the batch results and
-            # raw are inside their retention windows.
-            # hard_fail (i.e. exit non-zero) is deliberate even though it costs
-            # this run's other dates their commit: daily-batch.yml skips the whole
-            # Summarize step while any sidecar remains, so exiting 0 here would
-            # produce a green run that silently processes nothing — this repo's
-            # most expensive failure mode. Red is the honest signal.
             log.error(
-                "Sidecar %s has schema_version %r (expected %d) — refusing to "
-                "collect; its input_hashes were computed by an older revision",
+                "Sidecar %s has schema_version %r (expected %d) — holding; "
+                "its input_hashes were computed by an older revision",
                 path, sidecar.get("schema_version"), bs.SCHEMA_VERSION,
             )
-            print(f"::error::Pending summary batch for {sidecar.get('date')} was "
-                  f"written by an older schema (v{sidecar.get('schema_version')}); "
-                  f"it needs manual collection or deletion")
-            hard_fail = True
+            # Held, not hard-failed. The old comment justified exit 1 with "any
+            # sidecar skips Summarize entirely, so exiting 0 would be a green run
+            # that processes nothing" — the per-date gate (#44) removed that
+            # premise. Resubmitting is still unsafe: the stored hashes come from a
+            # different param set, so every thread would fail verification.
+            _apply_failure_policy(client, sidecar, path, "stale_schema", None,
+                                  raw_dir, model, ci_commit)
+            _record_held_sidecar(sidecar["date"], sidecar,
+                                 _diagnostic("stale_schema"), held_dates, diagnostics)
             continue
         if bs.should_hard_fail(sidecar):
-            log.error("Sidecar %s exceeded retry threshold (%d) — hard fail",
+            # The SECOND hard-fail site. _apply_failure_policy converts the
+            # threshold when it is crossed; this one catches a sidecar that
+            # crossed it on an earlier run. Fixing only one puts the date back on
+            # exit 1 the following morning.
+            log.error("Sidecar %s exceeded retry threshold (%d) — holding",
                       path, sidecar["retry_count"])
-            hard_fail = True
+            _apply_failure_policy(client, sidecar, path, "retry_exhausted", None,
+                                  raw_dir, model, ci_commit)
+            _record_held_sidecar(sidecar["date"], sidecar,
+                                 _diagnostic("retry_exhausted"), held_dates, diagnostics)
             continue
 
         date_str = sidecar["date"]
@@ -2234,11 +2235,13 @@ def main(argv: Optional[List[str]] = None) -> None:
             systemic_dates=result["systemic_dates"],
             suspect_dates=result["suspect_dates"],
         )
-        # 1, never 3 or 4. This process speaks for many dates, so its exit code
-        # cannot say WHICH date failed — the outputs above do that, and the
-        # annotations already emitted survive even a failed step. What the code
-        # still has to carry is "stop, a human is needed": a sidecar past its
-        # retry threshold or written by an older schema.
+        # 1, never 3 or 4 — and since #65, effectively never at all. This process
+        # speaks for many dates, so its exit code cannot say WHICH one failed: the
+        # outputs above do that, and the annotations survive even a failed step.
+        # A sidecar that needs a human (stale schema, exhausted retries, a hash
+        # that no longer verifies) is reported through held_dates and reds the job
+        # in the final step, WITHOUT taking this morning's publish down with it.
+        # hard_fail remains for a genuine crash path.
         sys.exit(1 if result["hard_fail"] else 0)
 
     exit_code = run_pipeline(
