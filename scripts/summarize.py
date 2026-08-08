@@ -1240,9 +1240,10 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
 
 def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
                           diagnostic: Optional[dict], raw_dir: str, model: str,
-                          ci_commit: bool) -> str:
-    """Apply the regime this failure falls into. Returns "resubmitted" | "held"
-    | "blocked".
+                          ci_commit: bool) -> tuple:
+    """Apply the regime this failure falls into. Returns
+    ``(outcome, effective_diagnostic)`` where outcome is
+    "resubmitted" | "held" | "blocked".
 
     Replaces _retry_or_hardfail, which applied ONE regime to every reason: it
     resubmitted a hash_mismatch three times — each a full batch's charge for a
@@ -1252,6 +1253,13 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
 
     The order below is the fix, not a style choice: the policy is consulted
     first, and only the RESUBMIT branch is allowed to touch retry_count.
+
+    ``effective_diagnostic`` exists because the retry-exhaustion escalation
+    below changes the reason (e.g. a run of ``missing_result`` resubmits
+    becomes ``retry_exhausted``), and the caller needs that changed reason to
+    report the failure honestly — reporting the original diagnostic would have
+    ``_record_held_sidecar`` claim raw could not be rebuilt when the batch was
+    never even retried this run; the truth is the retry budget ran out.
     """
     policy = bs.failure_policy(reason)
     diagnostic = diagnostic or _diagnostic(reason)
@@ -1264,12 +1272,12 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
             bs.save_sidecar(path, sidecar)
             if ci_commit:
                 _git_commit_sidecar(path, sidecar["date"])
-        return "blocked"
+        return "blocked", diagnostic
 
     if policy == bs.HOLD:
         # No write, no retry spent, nothing submitted. The state this needed may
         # simply not have been fetched yet, and the batch is untouched.
-        return "held"
+        return "held", diagnostic
 
     # Rebuild BEFORE counting. The old order counted first and discovered it
     # could not rebuild afterwards, so a morning with no raw on disk spent a
@@ -1282,15 +1290,23 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
     if requests is None:
         log.error("Resume: cannot rebuild %s for resubmit (raw missing/gap) — holding",
                   sidecar["date"])
-        return "held"
+        return "held", diagnostic
 
     bs.record_terminal(sidecar, reason, _utcnow_iso())
     if bs.should_hard_fail(sidecar):
         # Three genuine resubmits have failed. Stop paying — but do NOT take the
         # publish down: since the pending gate is per-date, other dates can
         # still reach the site (#44/#52).
+        #
+        # The reason changes to retry_exhausted here, and so must the
+        # diagnostic: the original reason (e.g. missing_result) is now stale —
+        # what happened THIS run is retry exhaustion, not another instance of
+        # the original failure, and _record_held_sidecar's text branches on
+        # `reason == "retry_exhausted"` to say so.
+        exhausted_diag = _diagnostic("retry_exhausted", diagnostic.get("meeting_id"),
+                                     diagnostic.get("custom_id"))
         return _apply_failure_policy(client, sidecar, path, "retry_exhausted",
-                                     diagnostic, raw_dir, model, ci_commit)
+                                     exhausted_diag, raw_dir, model, ci_commit)
     bs.clear_blocked(sidecar)
     new_batch_id = submit_summary_batch(client, requests)
     bs.add_attempt(sidecar, new_batch_id, _utcnow_iso())
@@ -1299,7 +1315,7 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
         _git_commit_sidecar(path, sidecar["date"])
     log.warning("Resubmitted %s as %s after %s (retry %d)",
                 sidecar["date"], new_batch_id, reason, sidecar["retry_count"])
-    return "resubmitted"
+    return "resubmitted", diagnostic
 
 
 def collect_pending_batches(
@@ -1384,13 +1400,12 @@ def collect_pending_batches(
 
         if batch.processing_status != "ended":
             if batch.processing_status in bs.TERMINAL_FAILURES:
-                outcome = _apply_failure_policy(
+                outcome, eff_diag = _apply_failure_policy(
                     client, sidecar, path, batch.processing_status, None,
                     raw_dir, model, ci_commit)
                 if outcome in ("held", "blocked"):
                     _record_held_sidecar(
-                        date_str, sidecar,
-                        _diagnostic(batch.processing_status), held_dates, diagnostics)
+                        date_str, sidecar, eff_diag, held_dates, diagnostics)
             else:
                 log.info("Batch %s still %s — leaving for next run", batch_id,
                          batch.processing_status)
@@ -1435,11 +1450,11 @@ def collect_pending_batches(
         # and gets resubmitted for a rebuild that cannot verify. #65.
         verify_diag = verify_manifest_against_raw(sidecar, meetings_by_id)
         if verify_diag is not None:
-            outcome = _apply_failure_policy(
+            outcome, eff_diag = _apply_failure_policy(
                 client, sidecar, path, verify_diag["reason"], verify_diag,
                 raw_dir, model, ci_commit)
             if outcome in ("held", "blocked"):
-                _record_held_sidecar(date_str, sidecar, verify_diag,
+                _record_held_sidecar(date_str, sidecar, eff_diag,
                                      held_dates, diagnostics)
             continue
 
@@ -1457,12 +1472,11 @@ def collect_pending_batches(
                 raise
             log.error("Resume: results unavailable for %s (%s) — resubmitting",
                       date_str, e)
-            outcome = _apply_failure_policy(
+            outcome, eff_diag = _apply_failure_policy(
                 client, sidecar, path, "results_expired", None,
                 raw_dir, model, ci_commit)
             if outcome in ("held", "blocked"):
-                _record_held_sidecar(date_str, sidecar,
-                                     _diagnostic("results_expired"),
+                _record_held_sidecar(date_str, sidecar, eff_diag,
                                      held_dates, diagnostics)
             continue
 
@@ -1482,11 +1496,11 @@ def collect_pending_batches(
         if not ok:
             reason = (diagnostic or {}).get("reason", "unknown")
             log.error("Resume: assembly incomplete for %s (%s)", date_str, reason)
-            outcome = _apply_failure_policy(
+            outcome, eff_diag = _apply_failure_policy(
                 client, sidecar, path, reason, diagnostic,
                 raw_dir, model, ci_commit)
             if outcome in ("held", "blocked"):
-                _record_held_sidecar(date_str, sidecar, diagnostic or _diagnostic(reason),
+                _record_held_sidecar(date_str, sidecar, eff_diag,
                                      held_dates, diagnostics)
             else:
                 # Still a publication outcome: summary requests went out for this
