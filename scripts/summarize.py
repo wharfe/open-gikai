@@ -1117,10 +1117,12 @@ def _record_resume_verdict(date_str: str, summary_attempted: int,
     """Record one date's verdict and annotate it immediately.
 
     Annotated here, as the verdict is reached, rather than accumulated for a
-    single write at the end: if a LATER sidecar hard-fails, the step fails and
-    every step below it is skipped, so nothing that reached GITHUB_OUTPUT is
+    single write at the end: if processing a LATER sidecar raises, the step dies
+    and every step below it is skipped, so nothing that reached GITHUB_OUTPUT is
     ever read. An annotation is the one channel that survives a failed step —
-    the same reason the Summarize loop annotates before it dies.
+    the same reason the Summarize loop annotates before it dies. (Since #65 a
+    sidecar's *state* never fails the step — every regime exits 0 — so the case
+    this guards against is a genuine crash, not a held or abandoned date.)
 
     ``api_stats`` carries trigger 1's evidence (see ``rejection_verdict``) for
     call sites that have it — i.e. after this run fetched and repaired batch

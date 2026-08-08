@@ -831,9 +831,10 @@ def test_the_workflow_tolerates_exactly_these_exit_codes():
     # And the job must still be failed, after everything else has run.
     # No `if:` any more — the last step always runs and decides inside, because
     # a GitHub expression can neither union two lists nor compare a count. Note
-    # this still leaves the step an implicit success(), so a Collect hard-fail
-    # skips it — acceptable, since that already failed the job and the
-    # annotations survive. `if: always()` is deliberately NOT the answer.
+    # this still leaves the step an implicit success(), so anything that fails an
+    # earlier step skips it. Since #65 that is no longer a sidecar's state —
+    # every regime exits 0 — it is a genuine crash, which already failed the job
+    # and whose annotations survive. `if: always()` is deliberately NOT the answer.
     assert "if" not in steps[-1]
     assert "exit 1" in steps[-1]["run"]
 
