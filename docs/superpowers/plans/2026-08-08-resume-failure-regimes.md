@@ -750,6 +750,13 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
         parts.append(
             f"three resubmits have failed ({sidecar.get('retry_count')} retries "
             f"spent); no further batch will be sent")
+    elif bs.failure_policy(reason) == bs.RESUBMIT:
+        # A retryable reason that still ended up here can only mean the rebuild
+        # found no usable raw. Saying "rebuilding reproduces this exactly" would
+        # be false — the batch is retryable and the next fetch may unblock it.
+        parts.append(
+            "NOT resubmitted and no retry spent: this reason IS retryable, but "
+            "the requests could not be rebuilt from the raw on disk this run")
     else:
         parts.append(
             "NOT resubmitted and no retry spent: rebuilding from today's raw "
