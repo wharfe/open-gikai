@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 08 Aug 2026 21:44:35 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2026 21:49:56 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W32 国会まとめ — 7件の議論</title>
+      <title>2026-W32 国会まとめ — 9件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W32</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W32</guid>
-      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
-      <description>7件のスレッド、3委員会の議論をまとめました。広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見、「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見、令和８年熊本地震による被災状況視察のための熊本県訪問についての会見ほか。</description>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <description>9件のスレッド、4委員会の議論をまとめました。長崎原爆犠牲者慰霊平和祈念式典参列等についての会見、広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見、「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,22 @@
       <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
       <description>143件のスレッド、12委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>非核三原則の堅持と核兵器禁止条約への対応 — 長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260809_c2fb54_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260809_c2fb54_01</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <description>核議論への被爆者反発を受け非核三原則の堅持と核禁条約対応の姿勢を確認（首相記者会見・2026.08.09・2発言）</description>
+      <category>長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</category>
+    </item>
+    <item>
+      <title>被爆体験者救済策と組閣・党役員人事 — 長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260809_c2fb54_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260809_c2fb54_02</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <description>被爆者未認定者への医療費助成継続方針と内閣改造・党役員人事への言及（首相記者会見・2026.08.09・2発言）</description>
+      <category>長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</category>
     </item>
     <item>
       <title>非核三原則の堅持と見直し論議 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_04</guid>
       <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
       <description>中国海洋観測船の活動と異常気象・海水温上昇への対応を議論（国会会議録・2026.07.16・5発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>ホルムズ海峡情勢と機雷除去への備え — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_05</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>米イラン緊張とホルムズ海峡封鎖リスクへの日本の対応・機雷除去準備（国会会議録・2026.07.16・13発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>認知戦・偽情報対策とNATO首脳会談の意義 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_06</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>偽情報による認知戦への対応強化とNATO首脳会談参加の外交的成果（国会会議録・2026.07.16・6発言）</description>
       <category>外交防衛委員会</category>
     </item>
   </channel>
