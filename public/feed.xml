@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 09 Aug 2026 21:49:56 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 21:56:25 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W33 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W33</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W33</guid>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。ハイサム・オマーン国王との電話会談についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W32 国会まとめ — 9件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W32</link>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W29 国会まとめ — 143件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W29</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W29</guid>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>143件のスレッド、12委員会の議論をまとめました。議院運営委員会、皇室典範改正の法案成立等についての会見、外交防衛委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>オマーン国王との電話会談と中東情勢 — ハイサム・オマーン国王との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260810_307d71_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260810_307d71_01</guid>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
+      <description>高市首相がオマーン国王と電話会談し、米イラン間の緊張緩和と外交努力継続を確認（首相記者会見・2026.08.10・2発言）</description>
+      <category>ハイサム・オマーン国王との電話会談についての会見</category>
     </item>
     <item>
       <title>非核三原則の堅持と核兵器禁止条約への対応 — 長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_03</guid>
       <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
       <description>点字版母子手帳など日本のODAによる母子保健分野の国際貢献の意義（国会会議録・2026.07.16・5発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>海洋観測船と気象・海洋環境の変化 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_04</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>中国海洋観測船の活動と異常気象・海水温上昇への対応を議論（国会会議録・2026.07.16・5発言）</description>
       <category>外交防衛委員会</category>
     </item>
   </channel>
