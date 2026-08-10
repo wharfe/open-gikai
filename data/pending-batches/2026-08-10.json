@@ -1,0 +1,47 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-10",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01XDSUE7kmui1ocjfA9v8cjb",
+      "submitted_at": "2026-08-10T21:54:43Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-08-10",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_307d71346e27_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "オマーン国王との電話会談と中東情勢",
+            "topicTag": "中東外交",
+            "topicColor": "#06b6d4",
+            "summary": "高市首相がオマーン国王と電話会談し、米イラン間の緊張緩和と外交努力継続を確認",
+            "contextDescription": "中東情勢の緊張を背景に、日本がオマーンを通じて米イラン間の対話促進に関与する外交動向。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:9fa8a0eb3099e79a6f826ec6316afe669160bbca39c7f24f57077e7118e11912"
+        }
+      ]
+    }
+  ]
+}
