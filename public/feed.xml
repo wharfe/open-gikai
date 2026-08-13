@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 12 Aug 2026 22:02:51 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 22:14:45 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W33 国会まとめ — 2件の議論</title>
+      <title>2026-W33 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W33</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W33</guid>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、2委員会の議論をまとめました。ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見、ハイサム・オマーン国王との電話会談についての会見ほか。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、3委員会の議論をまとめました。プーチン・ロシア大統領による択捉島訪問についての会見、ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見、ハイサム・オマーン国王との電話会談についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,14 @@
       <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
       <description>15件のスレッド、5委員会の議論をまとめました。外交防衛委員会、議院運営委員会、財務金融委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>プーチン大統領の択捉島訪問への抗議と対応 — プーチン・ロシア大統領による択捉島訪問についての会見</title>
+      <link>https://open-gikai.net/t/t_20260813_21aa8a_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260813_21aa8a_01</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 GMT</pubDate>
+      <description>プーチン氏の択捉島訪問に首相が強く抗議、事実確認の経緯と今後の対露対応を説明（首相記者会見・2026.08.13・6発言）</description>
+      <category>プーチン・ロシア大統領による択捉島訪問についての会見</category>
     </item>
     <item>
       <title>ペゼシュキアン・イラン大統領との電話会談 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_01</guid>
       <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
       <description>米軍データ提供遅延による在日米軍基地従業員の給与遅配を防衛大臣に改善要求（国会会議録・2026.07.16・21発言）</description>
-      <category>外交防衛委員会</category>
-    </item>
-    <item>
-      <title>在留許可手数料の大幅引き上げ — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_02</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>永住許可手数料が1万円から20万円に急騰する改正案の是非を追及（国会会議録・2026.07.16・11発言）</description>
       <category>外交防衛委員会</category>
     </item>
   </channel>

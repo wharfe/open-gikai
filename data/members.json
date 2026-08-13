@@ -15380,5 +15380,60 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "m_5ea83551": {
+    "id": "m_5ea83551",
+    "name": "伊藤俊幸",
+    "party": null,
+    "role": "金沢工業大学大学院教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_b93224b1": {
+    "id": "m_b93224b1",
+    "name": "木下昌彦",
+    "party": null,
+    "role": "神戸大学大学院法学研究科教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_aec7f3ef": {
+    "id": "m_aec7f3ef",
+    "name": "橋本基弘",
+    "party": null,
+    "role": "中央大学法学部教授",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_f68e7804": {
+    "id": "m_f68e7804",
+    "name": "宇田幸生",
+    "party": null,
+    "role": "弁護士",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_00991ba0": {
+    "id": "m_00991ba0",
+    "name": "大橋宏子",
+    "party": null,
+    "role": "福井女子中学生殺人事件被害者の実の姉",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }
