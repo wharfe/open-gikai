@@ -94,9 +94,13 @@ def clear_blocked(sidecar) -> None: ...
 ended バッチの処理順を**固定する**:
 
 ```
+0. abandon ゲート（#69 で追加。regime 判定より前・poll より前）
+     age（最新 attempt 起点）> ABANDON_AGE_DAYS かつ「rebuild の材料が無い」→ abandon(LOST)
+     それ以外（判定できない場合を含む）→ 消さずに下の regime へ落とす（後述）
 1. poll → ended
 2. load raw
-3. raw が空 → abandon(LOST) / HOLD(raw_date_missing)      ← results に触らない（現状どおり）
+3. raw が空 → HOLD(raw_date_missing)                      ← results に触らない（現状どおり）
+                                                             abandon は step 0 が持つ
 4. verify_manifest_against_raw()                          ← 無料。builder 経由のみ
      失敗 → policy 適用して continue（fetch も repair も呼ばない）
 5. fetch_summary_results()                                ← ここで初めて results に触る
@@ -104,6 +108,35 @@ ended バッチの処理順を**固定する**:
 6. _repair_unusable_results()
 7. assemble_from_manifest()                               ← 内部で verify を再利用（二重定義禁止）
 ```
+
+**step 0 が raw の有無を「推測せず観測する」理由。** age が閾値を超えていれば「既定の lookback
+（30日）では raw は窓の外」は正しい。しかし `lookback_days` は workflow_dispatch 入力で365まで
+受け付け、**held sidecar を人間が救出する手順そのものが窓を広げて raw を取り直すこと**である。
+年齢から raw 不在を導出すると、その救出ランは raw を復元した同じ job で sidecar を削除する
+（次の定時ランは lookback 30 に戻るので、回収可能だった batch が恒久ロストになる）。
+よって削除する側は disk を見る。逆に「age 超 + 材料有り」は results は失効済みなので
+そのまま回収はできず、regime 判定に落として held（人間の判断）として報告する。
+
+「材料が無い」の判定は `_reason_not_to_abandon` に1箇所だけ置き、**確立できないことは全部
+「消さない」に倒す**（この pipeline で唯一の不可逆操作なので）。具体的に消さない条件:
+- sidecar の `date` が filename と食い違う / `date` が文字列でない / filename が日付でない
+  → どの日付の raw を見るべきかが不明。**filename は命名規約であって証拠ではない**（rename・
+    merge 解決・コピーで容易にズレる）ので、単独では削除を許可しない。逆に `date` を無条件に
+    信じるのも不可（raw が disk にあるのに別日付を見て「無い」と判定して消す）。両者が一致した
+    ときだけ「その日付の raw」を見る。
+- `date` フィールドが無い → filename を日付に**昇格させない**。代わりに日付を必要としない問い
+  （manifest の meeting_id が raw のどこかに1件でもあるか）で判定する。残す場合は下流へ流さず
+  `sidecar_has_no_date` として held にする（poll / rebuild / assemble / retry 閾値の各分岐が
+  `sidecar["date"]` を参照するため、通すとクラッシュ位置が数行ずれるだけになる）。
+  abandon する場合、記録する日付は filename 由来なので annotation に UNVERIFIED と明記する。
+- raw が読めない（JSON 壊れ等）→ 「読めない」は「無い」ではない。例外を上げると `set -e` で
+  Collect が落ちてその朝の publish が止まる（#65）ので握って hold。
+- raw はあるが manifest が読めない → rebuild に何が必要かが不明。
+- raw に manifest の meeting_id が1つ以上ある → rebuild の余地がある。
+
+逆に「その日付の raw はあるが manifest の meeting が1つも無い」（例: NDL の batch に対して
+kantei の raw だけがある）は abandon する。そこを held にすると #69 の無期限 hold が別の
+入口から復活する。
 
 **なぜ「repair の前」では足りないか。** `fetch_summary_results` は現状 assembly より前にあり
 （`summarize.py:1272-1286`）、batch results は約29日で失効する。検証が fetch の後だと、
@@ -324,6 +357,17 @@ retry を消費しないので、出力は毎日「retries 0」= 「まだ何も
 `held for human decision (reason=…, since=…)` と明示する。
 issue dedup の強化・acknowledgement 状態機械は非目標（連日コメントは、静かな放置より良い）。
 
+**#71 での追記（上の「最低限」は残すが、それだけでは足りなかった）。** ラベル付けは
+重大度の誤読を防ぐが、**同じ日付が2つの通知経路から毎朝コメントされる**という重複は消えない
+（held は run を赤くするので `notify-on-failure` が既に報告している）。加えて HOLD レジームは
+意図的に sidecar を書き換えないので `blocked` マーカーが無いことがあり、ラベル付けだけでは
+held を判別しきれない。したがって dedup は**日付**で行う: `fetch-and-summarize` の
+`held_dates` / `abandoned_dates` を job outputs として公開し、`check_stuck_batches.py`
+`--exclude-dates` に渡す。
+`if: always()` は維持する。この job 固有のシグナル「2日以上 in-flight」は run を赤くしないので、
+「緑の朝だけ喋る」方式にすると**他が壊れている間ずっと0回**になる — results が約29日で失効し
+31日で abandon される、まさにその窓で警告が消える。`if: success()` は採らない。
+
 ---
 
 ## 4. 受け入れ基準とテスト
@@ -360,6 +404,20 @@ CLAUDE.md の教訓「a passing test may reach its assertion by another path —
 
 1. **held が最大約31日毎朝赤い。** 意図的（人間案件を静かにしない）だがアラーム疲れの種。
    緩和: annotation に経過日数と results の推定残日数を出す。#44 第1項で窓が短くなれば軽減。
+   **この「最大約31日」は #69 まで成立していなかった**（見積もりの前提が誤っていた）。abandon 判定は
+   raw 不在の分岐の中にしかなく、`retry_exhausted` / `stale_schema` / terminal+rebuild 失敗の3つは
+   poll より前に return するのでそこへ到達せず、held が無期限に赤かった。#69 で判定を
+   `collect_pending_batches` のループ先頭1箇所へ移し、レジームに依らず判定するようにして
+   初めて上界が実在するようになった。年齢は**最新 attempt 起点**なので、再送され続けている sidecar は
+   このゲートに掛からない（それが1箇所で全レジームを見て安全な理由）。
+   ただし上界は**条件付き**である（§3.2 step 0）。成立するのは「既定 lookback（30日）運用」かつ
+   「gate が判定できる sidecar」に限る:
+   - 削除の条件は age 超**かつ manifest の meeting が raw に無い**。`lookback_days` を広げた
+     救出ランでは raw が戻るので held が続く（年齢だけで削除すると救出そのものを壊す）。
+   - gate が判定できない sidecar — raw / manifest が読めない、`date` が filename と食い違う、
+     `date` が非文字列、age が計算できない — は raw が二度と戻らなくても**無期限に held** になる。
+     これは意図的なトレードで、fail-closed の代償は「赤が終わらない」、逆側の代償は「データ消失」。
+     人が直すまで終わらない、と明記しておく。
 2. **in-flight の総数に上限がない。** 保持 N + 新規1/run。Anthropic 側の長期障害時、共有 1800秒
    budget（`summarize.py:1181`、`paths` は日付昇順）を古い sidecar から消費するので回収が偏る。
    容量 policy は非目標。
@@ -369,6 +427,12 @@ CLAUDE.md の教訓「a passing test may reach its assertion by another path —
    後続ステップの crash で skip されうる。`if: always()` は既存テストが意図的に拒否しているので
    触らない。tombstone ファイル / 専用 `gh issue create` は本スコープで採用しない。
 5. **notify-stuck と held の毎日コメント。** ラベル付けはするが dedup 強化は別設計。
+   #71 で重複だけ解消した: `notify-stuck-batch` は `if: always()` のまま、
+   `held_dates` / `abandoned_dates`（job outputs）を `--exclude-dates` で渡して
+   **日付単位で**重複を落とす（§3.14 の追記）。`if: success()` は検討して棄却した —
+   「2日以上 in-flight」は run を赤くしないシグナルなので、緑限定にすると他が壊れている間
+   ずっと0回になり、results 失効（約29日）〜abandon（31日）の窓で警告が消える。
+   acknowledgement 機構は依然として本スコープ外。
 6. **results の期限は推定のみ。** sidecar に正確な expiry を持っていない。
 7. **`continue` した日付の遅着 meeting は要約されない。** 既存のグローバルゲートでも同じ
    （もっと悪い）性質なので後退ではないが、解消はしない。
