@@ -15435,5 +15435,49 @@
     "bio": "",
     "stance": [],
     "rank": "member"
+  },
+  "toyotamayuko": {
+    "id": "toyotamayuko",
+    "name": "豊田真由子",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "m_35db1a0d": {
+    "id": "m_35db1a0d",
+    "name": "堤良行",
+    "party": null,
+    "role": "法務省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "watanabetakeyuki": {
+    "id": "watanabetakeyuki",
+    "name": "渡辺猛之",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
+  },
+  "shiozakiakihisa": {
+    "id": "shiozakiakihisa",
+    "name": "塩崎彰久",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member"
   }
 }

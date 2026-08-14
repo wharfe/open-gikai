@@ -58,6 +58,34 @@
         "date": "2026.07.27"
       },
       {
+        "threadId": "t_20251105_a63f9d_07",
+        "relationship": "関連議論",
+        "topic": "消費税廃止と物価高対策",
+        "committee": "本会議",
+        "date": "2025.11.05"
+      },
+      {
+        "threadId": "t_20251118_d914ad_01",
+        "relationship": "関連議論",
+        "topic": "各大臣・副大臣・政務官による所信表明と担当分野説明",
+        "committee": "内閣委員会",
+        "date": "2025.11.18"
+      },
+      {
+        "threadId": "t_20251120_cc5fee_194",
+        "relationship": "関連議論",
+        "topic": "経済財政運営の基本方針と市場対話",
+        "committee": "財政金融委員会",
+        "date": "2025.11.20"
+      },
+      {
+        "threadId": "t_20251121_6e8960_128",
+        "relationship": "関連議論",
+        "topic": "マクロ経済政策と財政規律",
+        "committee": "財務金融委員会",
+        "date": "2025.11.21"
+      },
+      {
         "threadId": "t_20251208_c26020_06",
         "relationship": "関連議論",
         "topic": "行政改革と租税特別措置見直し",
@@ -72,46 +100,18 @@
         "date": "2025.12.08"
       },
       {
-        "threadId": "t_20251211_d14d6f_16",
-        "relationship": "関連議論",
-        "topic": "医療制度持続と外国人共生・財政運営",
-        "committee": "予算委員会",
-        "date": "2025.12.11"
-      },
-      {
-        "threadId": "t_20251120_cc5fee_194",
-        "relationship": "関連議論",
-        "topic": "経済財政運営の基本方針と市場対話",
-        "committee": "財政金融委員会",
-        "date": "2025.11.20"
-      },
-      {
-        "threadId": "t_20251118_d914ad_01",
-        "relationship": "関連議論",
-        "topic": "各大臣・副大臣・政務官による所信表明と担当分野説明",
-        "committee": "内閣委員会",
-        "date": "2025.11.18"
-      },
-      {
-        "threadId": "t_20251121_6e8960_128",
-        "relationship": "関連議論",
-        "topic": "マクロ経済政策と財政規律",
-        "committee": "財務金融委員会",
-        "date": "2025.11.21"
-      },
-      {
-        "threadId": "t_20251105_a63f9d_07",
-        "relationship": "関連議論",
-        "topic": "消費税廃止と物価高対策",
-        "committee": "本会議",
-        "date": "2025.11.05"
-      },
-      {
         "threadId": "t_20251209_36ec3b_01",
         "relationship": "関連議論",
         "topic": "北海道・三陸沖地震の被災対応",
         "committee": "予算委員会",
         "date": "2025.12.09"
+      },
+      {
+        "threadId": "t_20251211_d14d6f_16",
+        "relationship": "関連議論",
+        "topic": "医療制度持続と外国人共生・財政運営",
+        "committee": "予算委員会",
+        "date": "2025.12.11"
       }
     ]
   },
@@ -287,11 +287,46 @@
     },
     "relatedThreads": [
       {
+        "threadId": "t_20250804_623a41_05",
+        "relationship": "関連議論",
+        "topic": "物価高対策と給付金・減税政策",
+        "committee": "予算委員会",
+        "date": "2025.08.04"
+      },
+      {
+        "threadId": "t_20251105_a63f9d_07",
+        "relationship": "関連議論",
+        "topic": "消費税廃止と物価高対策",
+        "committee": "本会議",
+        "date": "2025.11.05"
+      },
+      {
+        "threadId": "t_20251120_88ee6c_223",
+        "relationship": "関連議論",
+        "topic": "お米券など物価高対策",
+        "committee": "農林水産委員会",
+        "date": "2025.11.20"
+      },
+      {
         "threadId": "t_20251208_91ea8e_12",
         "relationship": "関連議論",
         "topic": "令和7年度補正予算案",
         "committee": "本会議",
         "date": "2025.12.08"
+      },
+      {
+        "threadId": "t_20251209_36ec3b_27",
+        "relationship": "関連議論",
+        "topic": "物価高対策の拡充要求",
+        "committee": "予算委員会",
+        "date": "2025.12.09"
+      },
+      {
+        "threadId": "t_20251210_ea9f95_04",
+        "relationship": "関連議論",
+        "topic": "医療機関への物価高支援",
+        "committee": "予算委員会",
+        "date": "2025.12.10"
       },
       {
         "threadId": "t_20251211_d14d6f_05",
@@ -315,46 +350,11 @@
         "date": "2025.12.11"
       },
       {
-        "threadId": "t_20251120_88ee6c_223",
-        "relationship": "関連議論",
-        "topic": "お米券など物価高対策",
-        "committee": "農林水産委員会",
-        "date": "2025.11.20"
-      },
-      {
         "threadId": "t_20260715_6f4e52_03",
         "relationship": "関連議論",
         "topic": "国会運営と暮らし優先の政治姿勢",
         "committee": "国家基本政策委員会合同審査会",
         "date": "2026.07.15"
-      },
-      {
-        "threadId": "t_20251105_a63f9d_07",
-        "relationship": "関連議論",
-        "topic": "消費税廃止と物価高対策",
-        "committee": "本会議",
-        "date": "2025.11.05"
-      },
-      {
-        "threadId": "t_20251210_ea9f95_04",
-        "relationship": "関連議論",
-        "topic": "医療機関への物価高支援",
-        "committee": "予算委員会",
-        "date": "2025.12.10"
-      },
-      {
-        "threadId": "t_20251209_36ec3b_27",
-        "relationship": "関連議論",
-        "topic": "物価高対策の拡充要求",
-        "committee": "予算委員会",
-        "date": "2025.12.09"
-      },
-      {
-        "threadId": "t_20250804_623a41_05",
-        "relationship": "関連議論",
-        "topic": "物価高対策と給付金・減税政策",
-        "committee": "予算委員会",
-        "date": "2025.08.04"
       }
     ]
   },
@@ -774,32 +774,11 @@
         "date": "2025.11.04"
       },
       {
-        "threadId": "t_20251208_c26020_06",
+        "threadId": "t_20251105_a63f9d_07",
         "relationship": "関連議論",
-        "topic": "行政改革と租税特別措置見直し",
+        "topic": "消費税廃止と物価高対策",
         "committee": "本会議",
-        "date": "2025.12.08"
-      },
-      {
-        "threadId": "t_20251208_91ea8e_12",
-        "relationship": "関連議論",
-        "topic": "令和7年度補正予算案",
-        "committee": "本会議",
-        "date": "2025.12.08"
-      },
-      {
-        "threadId": "t_20251203_289620_34",
-        "relationship": "関連議論",
-        "topic": "日本経済30年停滞の原因分析",
-        "committee": "本会議",
-        "date": "2025.12.03"
-      },
-      {
-        "threadId": "t_20251211_d14d6f_16",
-        "relationship": "関連議論",
-        "topic": "医療制度持続と外国人共生・財政運営",
-        "committee": "予算委員会",
-        "date": "2025.12.11"
+        "date": "2025.11.05"
       },
       {
         "threadId": "t_20251120_cc5fee_194",
@@ -823,11 +802,25 @@
         "date": "2025.11.21"
       },
       {
-        "threadId": "t_20251105_a63f9d_07",
+        "threadId": "t_20251203_289620_34",
         "relationship": "関連議論",
-        "topic": "消費税廃止と物価高対策",
+        "topic": "日本経済30年停滞の原因分析",
         "committee": "本会議",
-        "date": "2025.11.05"
+        "date": "2025.12.03"
+      },
+      {
+        "threadId": "t_20251208_c26020_06",
+        "relationship": "関連議論",
+        "topic": "行政改革と租税特別措置見直し",
+        "committee": "本会議",
+        "date": "2025.12.08"
+      },
+      {
+        "threadId": "t_20251208_91ea8e_12",
+        "relationship": "関連議論",
+        "topic": "令和7年度補正予算案",
+        "committee": "本会議",
+        "date": "2025.12.08"
       },
       {
         "threadId": "t_20251209_36ec3b_01",
@@ -835,6 +828,13 @@
         "topic": "北海道・三陸沖地震の被災対応",
         "committee": "予算委員会",
         "date": "2025.12.09"
+      },
+      {
+        "threadId": "t_20251211_d14d6f_16",
+        "relationship": "関連議論",
+        "topic": "医療制度持続と外国人共生・財政運営",
+        "committee": "予算委員会",
+        "date": "2025.12.11"
       }
     ]
   },
@@ -1096,11 +1096,11 @@
     },
     "relatedThreads": [
       {
-        "threadId": "t_20260304_cf2e13_12",
+        "threadId": "t_20251128_9cdc9a_110",
         "relationship": "関連議論",
-        "topic": "日朝首脳会談と拉致問題",
-        "committee": "国際問題に関する調査会",
-        "date": "2026.03.04"
+        "topic": "映画共同製作協定と文化外交",
+        "committee": "外務委員会",
+        "date": "2025.11.28"
       },
       {
         "threadId": "t_20251202_3bbe09_89",
@@ -1110,11 +1110,11 @@
         "date": "2025.12.02"
       },
       {
-        "threadId": "t_20251128_9cdc9a_110",
+        "threadId": "t_20260304_cf2e13_12",
         "relationship": "関連議論",
-        "topic": "映画共同製作協定と文化外交",
-        "committee": "外務委員会",
-        "date": "2025.11.28"
+        "topic": "日朝首脳会談と拉致問題",
+        "committee": "国際問題に関する調査会",
+        "date": "2026.03.04"
       }
     ]
   },

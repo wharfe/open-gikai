@@ -89,18 +89,18 @@
     },
     "relatedThreads": [
       {
-        "threadId": "t_20260728_82f0b8_01",
-        "relationship": "関連議論",
-        "topic": "熊本地震への政府対応",
-        "committee": "熊本県熊本地方を震源とする地震についての会見",
-        "date": "2026.07.28"
-      },
-      {
         "threadId": "t_20251209_36ec3b_33",
         "relationship": "関連議論",
         "topic": "災害対応予備費の大幅増額",
         "committee": "予算委員会",
         "date": "2025.12.09"
+      },
+      {
+        "threadId": "t_20260728_82f0b8_01",
+        "relationship": "関連議論",
+        "topic": "熊本地震への政府対応",
+        "committee": "熊本県熊本地方を震源とする地震についての会見",
+        "date": "2026.07.28"
       }
     ]
   }
