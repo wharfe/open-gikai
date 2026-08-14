@@ -31,7 +31,8 @@ load_dotenv()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from pipeline.grouper import (
-    build_grouping_messages, group_meeting, extract_meeting_outcome,
+    build_grouping_messages, build_outcome_messages, group_meeting,
+    extract_meeting_outcome,
 )
 from pipeline.summarizer import (
     summarize_thread,
@@ -602,6 +603,7 @@ def process_meeting(
     date_str: str,
     thread_counter: int,
     summary_stats: Optional[dict] = None,
+    outcome_stats: Optional[dict] = None,
 ) -> tuple:
     """Process a single meeting through grouping + summarization + outcome.
 
@@ -627,7 +629,8 @@ def process_meeting(
     time.sleep(1)
 
     # Phase D: Meeting-level outcome (votes, resolutions)
-    meeting_outcome = extract_meeting_outcome(client, meeting, model=model)
+    meeting_outcome = extract_meeting_outcome(client, meeting, model=model,
+                                              outcome_stats=outcome_stats)
     time.sleep(1)
 
     threads = []
@@ -1190,7 +1193,7 @@ def usable_result(val: Optional[dict]) -> bool:
     every run. Module level rather than nested in ``_repair_unusable_results``
     because the systemic-failure counter has to ask the same question, and two
     spellings of "unusable" would eventually disagree — the same reason
-    ``has_question_for_the_api`` delegates to the grouping builder.
+    ``askable_request_kinds`` delegates to the request builders themselves.
     """
     return bool(val) and bool(val.get("speeches"))
 
@@ -2307,39 +2310,97 @@ def collect_pending_batches(
     }
 
 
-def has_question_for_the_api(meeting: dict) -> bool:
-    """Whether this meeting sends a *grouping* request, i.e. one we can observe.
+def askable_request_kinds(meeting: dict) -> set:
+    """Which kinds of request this meeting sends: {"grouping"}, {"outcome"},
+    both, or neither.
 
-    A meeting whose speeches are all procedural is short-circuited by
-    ``grouper.build_grouping_messages`` before any request is sent, so its
-    "0 threads" is not evidence that the API works — and counting it as a
-    success is what would let a total API outage look like a quiet day
-    (2026-07-24 had both kinds on the same date). Delegates to the very
-    function group_meeting uses, so the two cannot disagree about what
-    "nothing to ask" means.
+    Callers need the *kinds*, not just a bool, because a failure means different
+    things per kind (#60). A meeting that sends a grouping request has its
+    attempted/failed decided by that request; the outcome request is an
+    enrichment and must not be able to fail a meeting whose speeches published.
+    But a meeting that sends ONLY an outcome request has nothing else to be
+    judged by, and before #60 that meeting was invisible: it was not counted as
+    attempted, and extract_meeting_outcome swallowed its failure silently, so a
+    date holding just such a meeting could have every request rejected all
+    morning and still exit 0.
 
-    Deliberately *not* "would reach the API at all": a procedural-only meeting
-    carrying a 附帯決議 still sends an outcome request
-    (``grouper.build_outcome_messages``), but ``extract_meeting_outcome``
-    swallows that request's exceptions, so its failure is unobservable from
-    here. Widening this to include outcome requests would make such a meeting
-    ``attempted`` while it can never become ``failed`` — which would *mask*
-    real outages rather than catch more of them. The swallow is tracked
-    separately; until it is fixed, "askable" means "grouping".
+    Delegates to the very builders the requests are made from, so this cannot
+    disagree with what actually goes on the wire.
 
     Never raises: malformed raw (NDL can emit ``"speech": null``) used to fail
-    inside the per-meeting ``try``, and must keep doing so. Answering True lets
-    the very next call re-raise it there, where it lands in ``failed`` and the
-    run keeps going.
+    inside the per-meeting ``try``, and must keep doing so. Claiming both kinds
+    lets the very next call re-raise it there, where it lands in ``failed`` and
+    the run keeps going.
     """
     try:
-        return build_grouping_messages(meeting) is not None
+        kinds = set()
+        if build_grouping_messages(meeting) is not None:
+            kinds.add("grouping")
+        if build_outcome_messages(meeting) is not None:
+            kinds.add("outcome")
+        return kinds
     except Exception as e:  # noqa: BLE001 — see docstring
         log.warning(
             "Could not pre-check %s (%s); assuming it reaches the API",
             meeting.get("meetingId", "?"), e,
         )
+        return {"grouping", "outcome"}
+
+
+def has_question_for_the_api(meeting: dict) -> bool:
+    """Whether this meeting reaches the API at all.
+
+    Since #60 this means what its name says. It used to mean "sends a *grouping*
+    request", with the narrower reading documented as a workaround: a
+    procedural-only meeting carrying a 附帯決議 sends an outcome request, but
+    ``extract_meeting_outcome`` swallowed that request's exceptions, so counting
+    the meeting as ``attempted`` would have made it one that can never become
+    ``failed`` — which MASKS an outage instead of catching it. Now that the
+    swallow is counted (``outcome_stats``), the pre-check can be honest.
+
+    A meeting whose speeches are all procedural and which passes no resolution
+    still answers False: nothing is sent, so its "0 threads" is not evidence the
+    API works, and counting it as a success is what would let a total outage look
+    like a quiet day (2026-07-24 had both kinds on the same date).
+    """
+    return bool(askable_request_kinds(meeting))
+
+
+def _count_outcome_only_failure(meeting_id: str, kinds: set,
+                                outcome_stats: dict, api_stats: dict,
+                                failed_ids: Optional[list] = None) -> bool:
+    """Fold a failed outcome request into ``api_stats`` — and ONLY when it is the
+    whole of what this meeting asked (#60). Answers whether it did, because a
+    meeting counted as failed must not then be filed as completed: it asked its
+    one question and got nothing, so a ``--resume`` has to retry it, the same as
+    every other meeting this function's callers charge to ``failed``.
+
+    ``api_stats`` counts MEETINGS, not requests: "this meeting reached the API
+    and came back with nothing usable". So the fold is conditional in both
+    directions, and both directions matter:
+
+    * ``kinds == {"outcome"}`` — the meeting asked one question and got nothing.
+      It is already counted as attempted, and without this it could never become
+      failed, which is worse than not counting it: an outage on a date of such
+      meetings would read as a quiet day.
+    * anything else — the grouping request already decided this meeting's verdict.
+      Adding a failure here would either double-count it or, worse, mark a
+      meeting whose speeches published as failed over a 附帯決議 blurb no reader
+      can see. On a date with two such meetings that alone reads as an outage.
+
+    ``failed_ids`` collects the meetings folded in this way, and it exists for
+    the operator rather than the verdict: the annotation's standing phrase is
+    "produced no usable summary", which for these meetings names a request that
+    was never sent. Sending someone to hunt a summary failure that did not
+    happen is the same cost as sending them to hunt a 400 that did not happen.
+    """
+    if kinds == {"outcome"} and outcome_stats["failed"]:
+        api_stats["failed"] += 1
+        if failed_ids is not None:
+            failed_ids.append(meeting_id)
+        log.error("%s asked only the outcome question and it failed", meeting_id)
         return True
+    return False
 
 
 def count_meetings_with_no_usable_result(
@@ -2389,6 +2450,7 @@ def prepare_meeting_for_batch(
     client,
     meeting: dict,
     model: str,
+    outcome_stats: Optional[dict] = None,
 ) -> dict:
     """Run grouping + outcome extraction for one meeting (synchronous).
 
@@ -2401,7 +2463,8 @@ def prepare_meeting_for_batch(
 
     thread_infos = group_meeting(client, meeting, model=model)
     time.sleep(1)
-    meeting_outcome = extract_meeting_outcome(client, meeting, model=model)
+    meeting_outcome = extract_meeting_outcome(client, meeting, model=model,
+                                              outcome_stats=outcome_stats)
     time.sleep(1)
 
     pending = []
@@ -2465,6 +2528,7 @@ def run_batch_phase(
     pending_dir: str = bs.PENDING_DIR,
     ci_commit: bool = False,
     api_stats: Optional[dict] = None,
+    outcome_only_failed: Optional[list] = None,
 ) -> dict:
     """Process meetings via Batches API. Persists a sidecar so a batch that
     does not finish within the budget resumes on a later run.
@@ -2477,6 +2541,13 @@ def run_batch_phase(
     ``systemic_failure``. It is deliberately NOT part of ``progress``: that dict
     is persisted and re-read on resume, and a stale count would answer the
     question for a run that never happened.
+
+    ``outcome_only_failed`` is a second out-parameter of the same kind, carrying
+    the ids charged to ``failed`` by ``_count_outcome_only_failure`` so the
+    annotation can avoid naming a summary request that was never sent. A list
+    rather than another key in ``api_stats``: that dict's two keys are compared
+    for equality all over the tests, and it answers the verdict's question, not
+    the operator's.
     """
     if api_stats is None:
         api_stats = new_api_stats()
@@ -2488,17 +2559,30 @@ def run_batch_phase(
         if meeting_id in progress["completed"]:
             log.info("Skipping already completed: %s", meeting_id)
             continue
-        askable = has_question_for_the_api(meeting)
+        kinds = askable_request_kinds(meeting)
+        askable = bool(kinds)
         if askable:
             api_stats["attempted"] += 1
+        outcome_stats = new_api_stats()
         log.info("Preparing for batch: %s", meeting_id)
         try:
-            prep = prepare_meeting_for_batch(client, meeting, model)
+            prep = prepare_meeting_for_batch(client, meeting, model,
+                                             outcome_stats=outcome_stats)
+            outcome_only_failure = _count_outcome_only_failure(
+                meeting_id, kinds, outcome_stats, api_stats,
+                failed_ids=outcome_only_failed)
         except Exception as e:
             log.error("Failed to prepare %s: %s", meeting_id, e)
             progress["failed"].append(meeting_id)
             if askable:
                 api_stats["failed"] += 1
+            continue
+        if outcome_only_failure:
+            # Charged to api_stats["failed"] above, so it must not also be filed
+            # as completed. Nothing is lost by dropping the prep: such a meeting
+            # groups to no threads and puts no request in the batch, so its
+            # `prep` would only carry an outcome that no thread can display.
+            progress["failed"].append(meeting_id)
             continue
         if askable and prep["thread_infos"] and not prep["pending"]:
             # Grouping answered with threads, and not one of them names a speech
@@ -2847,6 +2931,10 @@ def run_pipeline(
     summary_attempted = 0
     assembly_diagnostic = None
     api_stats = new_api_stats()
+    # Meetings charged to api_stats["failed"] over an outcome request that was
+    # the whole of what they asked. Kept next to api_stats, and read only by the
+    # annotation below — see _count_outcome_only_failure.
+    outcome_only_failed: list = []
     if batch:
         phase = run_batch_phase(
             client, meetings, progress, members, model, date_str,
@@ -2856,6 +2944,7 @@ def run_pipeline(
             pending_dir=pending_dir,
             ci_commit=ci_commit,
             api_stats=api_stats,
+            outcome_only_failed=outcome_only_failed,
         )
         new_threads = phase["threads"]
         thread_counter = phase["thread_counter"]
@@ -2881,16 +2970,21 @@ def run_pipeline(
                 continue
 
             log.info("Processing: %s", meeting_id)
-            askable = has_question_for_the_api(meeting)
+            kinds = askable_request_kinds(meeting)
+            askable = bool(kinds)
             if askable:
                 api_stats["attempted"] += 1
 
             summary_stats = new_api_stats()
+            outcome_stats = new_api_stats()
             try:
                 threads, thread_counter = process_meeting(
                     client, meeting, members, model, date_str, thread_counter,
-                    summary_stats=summary_stats,
+                    summary_stats=summary_stats, outcome_stats=outcome_stats,
                 )
+                outcome_only_failure = _count_outcome_only_failure(
+                    meeting_id, kinds, outcome_stats, api_stats,
+                    failed_ids=outcome_only_failed)
                 all_threads.extend(threads)
                 # Its own predicate, deliberately NOT systemic_failure(): that
                 # one carries a date-scope carve-out ("one failing meeting does
@@ -2913,6 +3007,11 @@ def run_pipeline(
                     progress["failed"].append(meeting_id)
                     if askable:
                         api_stats["failed"] += 1
+                elif outcome_only_failure:
+                    # Already charged to api_stats["failed"]; filing it as
+                    # completed would let a --resume skip the one question it
+                    # asked and drop the failure from the counters entirely.
+                    progress["failed"].append(meeting_id)
                 else:
                     progress["completed"].append(meeting_id)
                     log.info(
@@ -2985,6 +3084,15 @@ def run_pipeline(
             lines.append(
                 f"all {api_stats['attempted']} meeting(s) asked about this run "
                 f"produced no usable summary")
+            if outcome_only_failed:
+                # Without this the phrase above sends the reader to the summary
+                # phase for a request that was never sent: these meetings are
+                # procedural with a 附帯決議, so the outcome request is the only
+                # one they make and no thread was ever possible for them.
+                lines.append(
+                    f"{len(outcome_only_failed)} of those sent no summary "
+                    f"request at all — their only question was the 附帯決議 "
+                    f"outcome one ({', '.join(sorted(outcome_only_failed))})")
         if blocked:
             d = assembly_diagnostic or {}
             lines.append(

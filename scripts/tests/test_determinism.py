@@ -438,8 +438,11 @@ def test_sync_outcome_call_survives_a_low_per_model_cap(fake_client):
     extract_meeting_outcome(fake_client, voted, model="claude-opus-4-1-20250805")
 
     assert fake_client.messages.create_calls, (
-        "outcome API call was skipped — extract_meeting_outcome swallows every "
-        "exception, so a silent skip and a crash look identical from outside"
+        "outcome API call was skipped — extract_meeting_outcome still does not "
+        "re-raise (an outcome only enriches a pattern-matched result), so a "
+        "silent skip and a failed call look identical from outside unless "
+        "outcome_stats is passed; this test passes none, so it checks the call "
+        "happened at all"
     )
     assert all("timeout" in c for c in fake_client.messages.create_calls)
 

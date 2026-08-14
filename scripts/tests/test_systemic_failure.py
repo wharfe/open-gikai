@@ -65,9 +65,13 @@ def _stub_grouping(monkeypatch, raises=False, thread_infos=None):
         return [dict(_THREAD_INFO)] if thread_infos is None else thread_infos
 
     monkeypatch.setattr(summarize, "group_meeting", _group)
+    # **kwargs, not a fixed signature: extract_meeting_outcome takes
+    # outcome_stats since #60, and a stub that refuses it turns every caller into
+    # "Failed to prepare" — which those callers then count as a failed meeting,
+    # so the suite goes red somewhere far from the stub.
     monkeypatch.setattr(summarize, "extract_meeting_outcome",
-                        lambda c, m, model: {"result": None, "resolution": None,
-                                             "status": "ongoing"})
+                        lambda c, m, **kw: {"result": None, "resolution": None,
+                                            "status": "ongoing"})
 
 
 # ---------------------------------------------------------------------------
@@ -329,12 +333,18 @@ def _run_batch_phase_returning_dict(fake_client, tmp_path, monkeypatch,
     produce.
     """
     def _group(client, meeting, model):
-        return [dict(_THREAD_INFO)] if summarize.has_question_for_the_api(meeting) else []
+        # "grouping" specifically, NOT has_question_for_the_api: since #60 that
+        # one also answers True for a meeting whose only request is the outcome
+        # one, and such a meeting sends no grouping request in production. A
+        # stub keyed off it would hand that meeting a thread and quietly undo
+        # the honesty this helper exists to keep.
+        return ([dict(_THREAD_INFO)]
+                if "grouping" in summarize.askable_request_kinds(meeting) else [])
 
     monkeypatch.setattr(summarize, "group_meeting", _group)
     monkeypatch.setattr(summarize, "extract_meeting_outcome",
-                        lambda c, m, model: {"result": None, "resolution": None,
-                                             "status": "ongoing"})
+                        lambda c, m, **kw: {"result": None, "resolution": None,
+                                            "status": "ongoing"})
 
     b = fake_client.messages.batches
     b.statuses["msgbatch_fake_0001"] = "ended"
@@ -347,7 +357,8 @@ def _run_batch_phase_returning_dict(fake_client, tmp_path, monkeypatch,
                                      "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
                         "commitments": [],
                     }))
-        for m in meetings if summarize.has_question_for_the_api(m)
+        for m in meetings
+        if "grouping" in summarize.askable_request_kinds(m)  # mirrors _group
     ]
     b.results_by_id["msgbatch_fake_0001"] = entries
 
@@ -420,8 +431,8 @@ def test_summary_attempted_excludes_a_meeting_whose_grouping_asked_nothing(
 
     monkeypatch.setattr(summarize, "group_meeting", _group)
     monkeypatch.setattr(summarize, "extract_meeting_outcome",
-                        lambda c, m, model: {"result": None, "resolution": None,
-                                             "status": "ongoing"})
+                        lambda c, m, **kw: {"result": None, "resolution": None,
+                                            "status": "ongoing"})
     fake_client.messages.batches.statuses["msgbatch_fake_0001"] = "ended"
     monkeypatch.setattr(
         summarize, "assemble_from_manifest",
@@ -1654,3 +1665,243 @@ def test_the_held_regime_list_shown_to_operators_matches_the_real_policy():
         f"HOLD reason(s) {missing} never appear in any operator-facing message "
         f"in the workflow — a held sidecar can be reported with a reason the "
         f"person reading has no way to look up")
+
+
+# ---------------------------------------------------------------------------
+# Outcome requests are observable too (#60)
+#
+# has_question_for_the_api used to mean "sends a GROUPING request", and its
+# docstring said why: a procedural-only meeting carrying a 附帯決議 still sends an
+# outcome request, but extract_meeting_outcome swallowed that request's
+# exceptions, so counting the meeting as `attempted` would have made it one that
+# can never become `failed` — masking outages instead of catching them.
+#
+# So the hole was shaped like this: on a date whose only meeting is procedural
+# with a 附帯決議, every request can be rejected all morning and the run is green
+# with nothing attempted. Fixing the swallow is what lets the pre-check mean what
+# its name says.
+# ---------------------------------------------------------------------------
+
+def _procedural_meeting_with_a_resolution(meeting_id="R1"):
+    """Procedural-only, so no grouping request — but it DOES send an outcome one.
+
+    The chair's speech has to be long enough that build_outcome_messages keeps it
+    (>50 chars) and must contain a resolution keyword the pattern matcher finds,
+    or this meeting sends nothing at all and the test is vacuous —
+    test_the_fixture_really_only_asks_the_outcome_question pins both halves.
+    """
+    return _meeting(meeting_id, speeches=[
+        {"speechOrder": 1,
+         "speech": "本案に対する附帯決議案を議題といたします。案文はお手元に配付いた"
+                   "しましたとおりでございます。これより採決に入ります。本附帯決議案に"
+                   "賛成の諸君の起立を求めます。起立多数と認めます。よって、本附帯決議案は"
+                   "可決されました。",
+         "speaker": "委員長", "speakerRole": "委員長", "speakerGroup": "",
+         "speakerPosition": "委員長", "speechURL": "http://x"},
+    ])
+
+
+def test_the_fixture_really_only_asks_the_outcome_question():
+    """Guards the two tests below from going vacuous.
+
+    If the fixture stopped producing an outcome request they would pass while
+    testing nothing at all — the shape this file's own history is full of.
+    """
+    from pipeline.grouper import build_grouping_messages, build_outcome_messages
+    m = _procedural_meeting_with_a_resolution()
+    assert build_grouping_messages(m) is None, "it would send a grouping request"
+    assert build_outcome_messages(m) is not None, "it sends no outcome request"
+
+
+def test_a_meeting_that_only_asks_the_outcome_question_counts_as_attempted():
+    """The pre-check now means what its name says: does this reach the API."""
+    assert summarize.has_question_for_the_api(
+        _procedural_meeting_with_a_resolution()) is True
+    # Unchanged for the two cases that already worked.
+    assert summarize.has_question_for_the_api(_meeting()) is True
+    assert summarize.has_question_for_the_api(_procedural_meeting()) is False
+
+
+def test_a_rejected_outcome_request_is_the_only_failure_the_date_can_report(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The hole, end to end: one procedural meeting with a 附帯決議, its outcome
+    request rejected. No thread can exist, nothing else was asked, and before #60
+    the run was green with attempted=0.
+
+    The real extract_meeting_outcome runs here and the CLIENT is what fails —
+    stubbing the function to raise would test exception propagation instead, and
+    pass even with the swallow (and the silence) still in place.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.setattr(fake_client.messages, "create", _raise(_overloaded()))
+    verdict = _run_pipeline(tmp_path, fake_client, monkeypatch,
+                            [_procedural_meeting_with_a_resolution()], batch=True)
+    assert verdict == summarize.EXIT_SYSTEMIC_FAILURE
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert errors, "an outage on this date's only meeting said nothing"
+
+
+def test_a_failed_outcome_request_is_counted_without_being_raised():
+    """The unit. Counted, and still not raised — an outcome enriches a
+    pattern-matched result, so the meeting must keep the outcome it already has.
+    """
+    from pipeline.grouper import extract_meeting_outcome
+
+    class _Failing:
+        class messages:
+            @staticmethod
+            def create(**kwargs):
+                raise RuntimeError("400")
+
+    stats = summarize.new_api_stats()
+    meeting = _procedural_meeting_with_a_resolution()
+    outcome = extract_meeting_outcome(_Failing(), meeting, model="claude-x",
+                                      outcome_stats=stats)
+    assert stats == {"attempted": 1, "failed": 1}
+    # The pattern matcher already found the resolution; the API call was only
+    # ever going to summarise it.
+    assert outcome.get("resolution")
+
+
+def test_an_outcome_failure_does_not_fail_a_meeting_that_asked_anything_else():
+    """The other half, and the reason this is not just "count outcome too".
+
+    A 附帯決議 blurb is not required for a thread. A meeting whose grouping and
+    summaries worked has published its speeches; failing it over the missing
+    blurb reds the run over something no reader can see, and two such meetings on
+    one date would read as an outage.
+    """
+    api_stats = summarize.new_api_stats()
+    api_stats["attempted"] = 1
+    outcome_stats = {"attempted": 1, "failed": 1}
+
+    assert summarize._count_outcome_only_failure(
+        "M1", {"grouping", "outcome"}, outcome_stats, api_stats) is False
+    assert api_stats == {"attempted": 1, "failed": 0}
+
+    # ...and it IS folded in when the outcome request is the whole of what the
+    # meeting asked, which is the case that was invisible before #60.
+    assert summarize._count_outcome_only_failure(
+        "R1", {"outcome"}, outcome_stats, api_stats) is True
+    assert api_stats == {"attempted": 1, "failed": 1}
+
+
+@pytest.mark.parametrize("batch", [False, True])
+def test_a_counted_outcome_failure_is_not_also_filed_as_completed(
+        fake_client, tmp_path, monkeypatch, batch):
+    """A meeting charged to ``failed`` must be retried by ``--resume``.
+
+    Both paths reach the completed/failed bookkeeping by their own route (the
+    synchronous loop files per meeting, the batch path files from
+    ``completed_meeting_ids``), so both are driven here. Filing this meeting as
+    completed would let the next resume skip the one question it ever asks —
+    the failure would vanish from the counters, which is the same invisibility
+    #60 exists to end, just one layer further out.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.setattr(fake_client.messages, "create", _raise(_overloaded()))
+    _run_pipeline(tmp_path, fake_client, monkeypatch,
+                  [_procedural_meeting_with_a_resolution("R1")], batch=batch)
+
+    progress_path = tmp_path / "threads" / "2026-05-14.progress.json"
+    assert progress_path.exists(), (
+        "the progress file was deleted, i.e. the run considered itself fully "
+        "complete while it had just charged a meeting to api_stats['failed']")
+    progress = json.loads(progress_path.read_text(encoding="utf-8"))
+    assert progress["failed"] == ["R1"]
+    assert progress["completed"] == []
+
+
+def test_an_outcome_response_that_parses_but_answers_nothing_is_a_failure():
+    """Parsing is not answering.
+
+    An empty object satisfies every ``.get()`` in extract_meeting_outcome, so
+    without a shape check the request is filed as a success having contributed
+    nothing — the same fail-open shape as the swallow #60 removed, one step
+    later. The check is deliberately "none of the three keys", not "resolution
+    is set": build_outcome_messages passes only the last 10 chair speeches, so a
+    null resolution is a legitimate answer and failing on it would red the run
+    on a correct response — which this test pins as the second case.
+    """
+    from pipeline.grouper import extract_meeting_outcome
+
+    def _client_returning(text):
+        class _C:
+            class messages:
+                @staticmethod
+                def create(**kwargs):
+                    class _R:
+                        content = [type("B", (), {"text": text})()]
+                        stop_reason = "end_turn"
+                        usage = None
+                    return _R()
+        return _C()
+
+    meeting = _procedural_meeting_with_a_resolution()
+
+    def _stats_for(text):
+        stats = summarize.new_api_stats()
+        outcome = extract_meeting_outcome(_client_returning(text), meeting,
+                                          model="claude-x", outcome_stats=stats)
+        return stats, outcome
+
+    # Enumerated rather than one example each way: a single "{}" case is
+    # satisfied by an implementation that merely tests `api_result != {}`, which
+    # would let every partial shape below back through.
+    rejected = [
+        "{}",                                    # nothing at all
+        '{"foo": 1}',                            # no recognised key
+        '{"status": "ongoing"}',                 # a key, but nothing answered
+        '{"result": null}',                      # ditto
+        '{"result": null, "resolution": null}',  # two of three, both empty
+        '["result"]',                            # right words, wrong type
+        # Wrong type in the value, which is the case that does not stay inside
+        # this function: merged unchecked, a dict lands where the site and the
+        # MCP bundle expect a string.
+        '{"resolution": {"error": "overloaded"}}',
+        '{"result": null, "resolution": ["a"], "status": "ongoing"}',
+    ]
+    for text in rejected:
+        stats, _ = _stats_for(text)
+        assert stats == {"attempted": 1, "failed": 1}, (
+            f"{text} was accepted as an answer")
+
+    accepted = [
+        # The mandated shape. Legitimate even all-null: build_outcome_messages
+        # passes only the last 10 chair speeches, so the 附帯決議 may sit outside
+        # the window the model was shown.
+        '{"result": null, "resolution": null, "status": "ongoing"}',
+        # Off-shape, but it carries what the request was for — discarding this
+        # would lose a real answer.
+        '{"resolution": "附帯決議の要旨"}',
+        # A wording near-miss on the result enum is still a real answer.
+        # Rejecting it would discard it AND red the morning.
+        '{"result": "可決すべきもの", "resolution": "要旨", "status": "resolved"}',
+    ]
+    for text in accepted:
+        stats, outcome = _stats_for(text)
+        assert stats == {"attempted": 1, "failed": 0}, (
+            f"{text} was counted as a failure — that reds the run on a response "
+            f"the model was entitled to give")
+        # The pattern-matched resolution survives either way.
+        assert outcome.get("resolution")
+
+
+def test_the_annotation_does_not_send_an_operator_after_a_summary_request(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The standing phrase is "produced no usable summary". For a procedural
+    meeting with a 附帯決議 no summary request is ever sent, so on its own that
+    phrase names a failure that did not happen — the cost this repo measures in
+    mornings. The annotation has to say which meetings those were.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.setattr(fake_client.messages, "create", _raise(_overloaded()))
+    _run_pipeline(tmp_path, fake_client, monkeypatch,
+                  [_procedural_meeting_with_a_resolution("R1")], batch=True)
+
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert errors, "the outage said nothing at all"
+    assert "sent no summary request at all" in errors[0]
+    assert "R1" in errors[0], "the operator is not told which meeting"

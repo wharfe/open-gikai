@@ -222,6 +222,26 @@ assembled — the outcome that matters is a speech that never reaches the site. 
 empty. Report it that way; an operator sent to hunt a 400 that never happened, or to look for threads that
 were never lost, has had their morning taken.
 
+**What counts as a meeting the API was asked about.** The pre-check both paths actually gate on is
+`askable_request_kinds`, which answers with the *set* — `{"grouping"}`, `{"outcome"}`, both, or
+neither — by delegating to the real request builders. (`has_question_for_the_api` is `bool()` of it
+and survives as the readable predicate; edit the set-returning one.) A meeting counts as asked when
+it sends at least one request — grouping *or* outcome. Since #60 that is
+literal; before it, the pre-check looked at grouping only, as a workaround for
+`extract_meeting_outcome` swallowing its own failures silently. The hole that closed: a date whose
+only meeting is procedural-with-a-附帯決議 sends just an outcome request, so every request could be
+rejected all morning and the run exited 0 with `attempted == 0`.
+An outcome failure is still **not** raised — an outcome enriches a pattern-matched result, and a
+meeting whose speeches summarised fine must not be failed over a 附帯決議 blurb no reader can see.
+It is *counted* instead (`outcome_stats`), and folded into the per-meeting `api_stats` only when
+`kinds == {"outcome"}`, i.e. when it is the whole of what that meeting asked. Fold it
+unconditionally and a meeting that published threads reads as failed; two of those on one date read
+as an outage. `api_stats` counts **meetings**, not requests — keep any new counter honest about that.
+A meeting counted that way is also filed as **failed** rather than completed, on both the synchronous
+and the batch path: filing it as completed would let the next `--resume` skip the one question it
+ever asks, and the failure would drop out of the counters — the same invisibility this closed, one
+layer further out.
+
 **Why 4 exists.** A single meeting failing on an already-published date is ordinary breakage, and the 30-day
 lookback re-visits published dates every morning — failing on one would fail most mornings, and an alarm that
 cries daily gets switched off. But a *total* outage can present as nothing else: NDL adds one late meeting

@@ -188,9 +188,11 @@ def test_run_batch_phase_persists_sidecar_when_pending(fake_client, tmp_path, mo
                         lambda c, m, model: [{"topic": "T", "topicTag": "tag",
                                               "topicColor": "#111", "summary": "s",
                                               "speechOrders": [1]}])
+    # **kwargs: extract_meeting_outcome takes outcome_stats since #60, and a
+    # stub that refuses it makes the caller report "Failed to prepare" instead.
     monkeypatch.setattr(summarize, "extract_meeting_outcome",
-                        lambda c, m, model: {"result": None, "resolution": None,
-                                             "status": "ongoing"})
+                        lambda c, m, **kw: {"result": None, "resolution": None,
+                                            "status": "ongoing"})
     pending_dir = str(tmp_path / "pending")
     meeting = _meeting()
     fake_client.messages.batches.statuses["msgbatch_fake_0001"] = "in_progress"

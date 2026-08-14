@@ -144,6 +144,35 @@ def build_grouping_request(meeting: dict, custom_id: str, model: str) -> Optiona
     }
 
 
+# The shape OUTCOME_PROMPT mandates. Presence is the test, not value — see the
+# call site in extract_meeting_outcome for why that distinction is the whole
+# safety argument.
+_OUTCOME_KEYS = {"result", "resolution", "status"}
+
+
+def _is_outcome_shaped(api_result) -> bool:
+    """Whether an outcome response answered the question at all.
+
+    Types are checked, values are not. A ``{"resolution": {"error": ...}}`` is
+    not a near-miss answer — merged unchecked it puts a dict where the site and
+    the MCP bundle expect a string, so the failure would leave this function and
+    land in published data. Whereas an *enum* check (result must be 可決/否決,
+    status must be resolved/ongoing) is deliberately NOT done: the model
+    answering 「可決すべきもの」 is a wording near-miss on a real answer, and
+    rejecting it would both discard that answer and red the morning — the
+    trade this pipeline consistently refuses.
+    """
+    if not isinstance(api_result, dict):
+        return False
+    if any(v is not None and not isinstance(v, str)
+           for k, v in api_result.items() if k in _OUTCOME_KEYS):
+        return False
+    if _OUTCOME_KEYS <= set(api_result):
+        return True
+    # Off-shape, but it carries what the request was for.
+    return bool(api_result.get("resolution") or api_result.get("result"))
+
+
 def build_outcome_request(meeting: dict, custom_id: str, model: str) -> Optional[dict]:
     """Batches API request for one meeting's outcome, or None if not needed."""
     messages = build_outcome_messages(meeting)
@@ -356,10 +385,25 @@ def extract_meeting_outcome(
     client,
     meeting: dict,
     model: str = "claude-sonnet-5",
+    outcome_stats: Optional[dict] = None,
 ) -> dict:
     """Extract meeting-level outcome (votes, resolutions) from procedural speeches.
 
     Uses pattern matching first, falls back to API for resolution details.
+
+    ``outcome_stats`` is how the failure of that API call becomes observable
+    (#60). It is an ``{"attempted": int, "failed": int}`` dict, counting
+    OUTCOME requests only — never meetings — so a caller can decide what a
+    failure means for the meeting it belongs to.
+
+    The exception is still not re-raised, and that is deliberate rather than
+    leftover: an outcome is an enrichment of the pattern-matched result, so a
+    meeting whose speeches summarised fine must not be failed over a missing
+    附帯決議 blurb that no reader can see. What was wrong before was not the
+    swallow, it was that the swallow was *silent* — a date whose ONLY meeting is
+    procedural-with-a-resolution asks nothing else, so every request could be
+    rejected all morning and the run stayed green with nothing attempted. Its
+    caller now counts that case; see summarize.askable_request_kinds.
     """
     outcome = _extract_outcome_by_pattern(meeting.get("speeches", []))
 
@@ -368,6 +412,8 @@ def extract_meeting_outcome(
     if client:
         messages = build_outcome_messages(meeting)
         if messages is not None:
+            if outcome_stats is not None:
+                outcome_stats["attempted"] += 1
             try:
                 response = client.messages.create(
                     model=model,
@@ -378,6 +424,27 @@ def extract_meeting_outcome(
                     **sync_call_kwargs(OUTCOME_MAX_TOKENS),
                 )
                 api_result = _parse_json_response(response.content[0].text)
+                # Parsing is not the same as answering. An empty object parses,
+                # every .get() below succeeds, and the request would be filed as
+                # a success having contributed nothing — the same fail-open
+                # shape as the swallow this function just stopped doing, one
+                # step later.
+                #
+                # The line is drawn on key PRESENCE, never on value, and that is
+                # what makes it safe: OUTCOME_PROMPT mandates all three keys, and
+                # the one answer that looks empty but is legitimate — all three
+                # present and null — carries them. build_outcome_messages passes
+                # only the last 10 chair speeches, so the 附帯決議 the pattern
+                # matcher found may sit outside that window and a null resolution
+                # is a correct response; failing on it would red the run on one.
+                # The second clause is the escape valve for the opposite error:
+                # a reply that drops a key but does carry what we asked for is
+                # still an answer, and raising would discard it.
+                if not _is_outcome_shaped(api_result):
+                    raise ValueError(
+                        f"outcome response is not an answer "
+                        f"(needs {sorted(_OUTCOME_KEYS)}, or a non-null result/"
+                        f"resolution): {str(api_result)[:200]}")
                 # Merge: keep pattern-match result but use API resolution text
                 if api_result.get("resolution"):
                     outcome["resolution"] = api_result["resolution"]
@@ -386,6 +453,11 @@ def extract_meeting_outcome(
                     outcome["status"] = api_result.get("status", "resolved")
                 log.info("Extracted outcome: %s", outcome)
             except Exception as e:
-                log.warning("Failed to extract outcome via API: %s", e)
+                # Counted, not raised — see the docstring. Logged at error
+                # level because "we paid for a request and got nothing" is not
+                # a warning, and the level is what an operator greps for.
+                if outcome_stats is not None:
+                    outcome_stats["failed"] += 1
+                log.error("Failed to extract outcome via API: %s", e)
 
     return outcome
