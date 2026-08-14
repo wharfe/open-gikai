@@ -227,15 +227,48 @@ def extract_member(
     }
 
 
+class MembersUnreadable(Exception):
+    """``members.json`` is on disk but could not be read.
+
+    Deliberately still FATAL, unlike the readers guarded in ``summarize.py``
+    (#74): every thread written this run would otherwise publish with its
+    speakers unresolved, on every date at once, under a green build — the
+    data-loss-that-looks-like-success that ``src/lib/data.ts`` also refuses.
+    A whole morning not published is recoverable; a whole morning published
+    wrong is not.
+
+    What this class changes is only that the failure is legible. It used to
+    escape as a bare ``JSONDecodeError`` from ``main()`` — which runs BEFORE
+    ``collect_pending_batches``, so the Collect step died under ``set -e`` and
+    took the job down with no annotation naming the file.
+    """
+
+    def __init__(self, path: str, cause: BaseException):
+        super().__init__(f"{path} ({cause.__class__.__name__}: {cause})")
+        self.path = path
+        self.cause = cause
+
+
 def load_members(path: str) -> Dict[str, dict]:
-    """Load existing members.json if it exists."""
+    """Load existing members.json if it exists.
+
+    Raises ``MembersUnreadable`` naming the file. Callers decide the policy;
+    this only makes the failure sayable.
+    """
     if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        # Convert list to dict if needed
-        if isinstance(data, list):
-            return {m["id"]: m for m in data}
-        return data
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            # Convert list to dict if needed
+            if isinstance(data, list):
+                return {m["id"]: m for m in data}
+            if not isinstance(data, dict):
+                raise TypeError(f"expected an object or a list, found "
+                                f"{type(data).__name__}")
+            return data
+        except (OSError, ValueError, TypeError, AttributeError,
+                KeyError, RecursionError) as exc:
+            raise MembersUnreadable(path, exc) from exc
     return {}
 
 

@@ -17,6 +17,7 @@ pipeline left the whole feature inert with every test still green — the exact
 fail-open shape the feature exists to prevent.
 """
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -1194,3 +1195,462 @@ def test_one_unreadable_sidecar_does_not_erase_the_whole_stuck_report(
     assert "UNREADABLE sidecar" in out, "the broken sidecar went silent"
     assert "2026-05-14.json" in out             # named by file: nothing else parsed
     assert "b-good" in out, "a neighbour lost its only reporter"
+
+
+# ---------------------------------------------------------------------------
+# Corrupt files outside the resume path (#74)
+#
+# #57's atomic writer stopped the pipeline from CREATING these, so what is left
+# is a file that arrived broken by another route (a hand edit, a bad merge, a
+# failing disk). The question each of these pins is not "does it survive" but
+# "what does it do instead", and the answer differs per reader because what is
+# lost differs: cross-date links are decoration, a source's raw comes back on
+# the next fetch, and an existing threads file is the only copy of published
+# work.
+# ---------------------------------------------------------------------------
+
+def _corrupt(path):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write('{"meetings": [{"meetingId": "M1",')       # truncated mid-write
+
+
+def test_one_corrupt_raw_file_does_not_stop_the_other_sources_for_that_date(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """A date can have raw from four adapters. Losing one to a bad file must not
+    discard the three that parsed — and must not abort the date loop, which
+    under `set -e` takes every LATER date's publish with it."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _stub_grouping(monkeypatch)
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    _corrupt(os.path.join(raw_dir, "kantei-2026-05-14.json"))
+
+    meetings, unreadable = summarize.load_raw_meetings_for_date(
+        "2026-05-14", raw_dir)
+    assert [m["meetingId"] for m in meetings] == ["M1"]
+    assert len(unreadable) == 1 and "kantei-2026-05-14.json" in unreadable[0]
+
+
+def test_a_date_whose_every_raw_file_is_corrupt_is_reported_not_silently_empty(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """Zero meetings from unreadable files looks exactly like zero meetings from
+    a quiet day. One of those is fine and one is a broken runner, so the verdict
+    has to distinguish them — and the annotation must say the cause is a local
+    file, not an API rejection, or the operator goes hunting a 400."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _stub_grouping(monkeypatch)
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    _corrupt(os.path.join(raw_dir, "ndl-2026-05-14.json"))
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: fake_client)
+
+    verdict = summarize.run_pipeline(
+        date_str="2026-05-14", raw_dir=raw_dir,
+        output_dir=str(tmp_path / "threads"),
+        members_path=str(tmp_path / "members.json"),
+        batch=False, batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=str(tmp_path / "pending"),
+    )
+    assert verdict == summarize.EXIT_SYSTEMIC_FAILURE
+    out = capsys.readouterr().out
+    errors = [ln for ln in out.splitlines() if ln.startswith("::error::")]
+    assert any("ndl-2026-05-14.json" in ln for ln in errors), errors
+    assert any("not an API rejection" in ln for ln in errors), errors
+
+
+def test_a_corrupt_threads_file_is_never_overwritten_by_a_resumed_run(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The one file in this pipeline that is the ONLY copy of published work.
+
+    Reading it fails, so the resumed run cannot know what is already there —
+    and appending to `[]` would republish the date with just this run's threads,
+    silently dropping every thread the file still holds. Refuse the date
+    instead, leave the file untouched, and let the other dates publish.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _stub_grouping(monkeypatch)
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    existing = threads_dir / "2026-05-14.json"
+    _corrupt(str(existing))
+    before = existing.read_text(encoding="utf-8")
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: fake_client)
+
+    verdict = summarize.run_pipeline(
+        date_str="2026-05-14", raw_dir=raw_dir, output_dir=str(threads_dir),
+        members_path=str(tmp_path / "members.json"),
+        batch=False, batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=str(tmp_path / "pending"),
+    )
+    assert verdict == summarize.EXIT_SYSTEMIC_FAILURE
+    assert existing.read_text(encoding="utf-8") == before, "the only copy was rewritten"
+    # "The file was not rewritten" is NOT enough on its own, and finding that out
+    # is why this assertion exists: with the guard removed the run continues,
+    # produces no usable threads from the fakes, and writes nothing anyway — so
+    # the file check passed while the protection was gone (CLAUDE.md: a passing
+    # test may reach its assertion by another path). Pin the thing the guard
+    # actually controls: the date is refused BEFORE any API call is made.
+    assert fake_client.messages.create_calls == []
+    assert fake_client.messages.batches.created_requests == []
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert any("2026-05-14.json" in ln for ln in errors), errors
+
+
+def test_a_corrupt_file_from_another_date_only_costs_that_date_its_links(
+        tmp_path, capsys, monkeypatch):
+    """Blast radius. This reader walks EVERY date's threads file, so letting it
+    raise turns one bad file into a failure for every date in the run — the
+    largest reach of the three, and over the most disposable thing: cross-date
+    links are auxiliary and come back the moment the file does."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    with open(threads_dir / "2026-05-01.json", "w", encoding="utf-8") as f:
+        json.dump([{"id": "t_20260501_aaaaaa_01"}], f)
+    _corrupt(str(threads_dir / "2026-05-02.json"))
+
+    others = summarize.load_threads_from_other_dates(str(threads_dir), "2026-05-14")
+    assert [t["id"] for t in others] == ["t_20260501_aaaaaa_01"]
+    warnings = [ln for ln in capsys.readouterr().out.splitlines()
+                if ln.startswith("::warning::")]
+    assert any("2026-05-02.json" in ln for ln in warnings), warnings
+
+
+# ---------------------------------------------------------------------------
+# Parses fine, wrong shape (Gate3 on #74)
+#
+# The guards above all sit on `json.load` raising. A file that arrives from a
+# hand edit or a half-finished migration parses cleanly into the WRONG shape,
+# and every one of these readers then fails later and elsewhere: `.extend()` on
+# a string appends its characters, on a dict its KEYS, and the AttributeError
+# surfaces in link_threads or the grouper — outside the guard, as exit 1, which
+# is the publish-stopping outcome #74 exists to prevent. Same verdict as a
+# parse failure is the right answer: either way we cannot tell what the file
+# held.
+# ---------------------------------------------------------------------------
+
+def _write_shaped(path, payload):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False)
+
+
+def test_a_raw_file_whose_meetings_is_not_a_list_counts_as_unreadable(tmp_path):
+    """A `"meetings"` string parses. Left alone it extends the meeting list with
+    the characters n/o/n/e, and the run dies on `m.get` two functions later with
+    nothing naming the file."""
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    _write_shaped(os.path.join(raw_dir, "kantei-2026-05-14.json"),
+                  {"meetings": "none"})
+
+    meetings, unreadable = summarize.load_raw_meetings_for_date(
+        "2026-05-14", raw_dir)
+    assert [m["meetingId"] for m in meetings] == ["M1"], (
+        "a character from the string leaked in as a meeting")
+    assert len(unreadable) == 1 and "kantei-2026-05-14.json" in unreadable[0]
+
+
+def test_a_raw_file_holding_non_objects_counts_as_unreadable(tmp_path):
+    """The list-of-wrong-things variant: `["M1"]` survives a bare
+    isinstance(list) check and dies on the same `m.get` further down."""
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    _write_shaped(os.path.join(raw_dir, "kantei-2026-05-14.json"),
+                  {"meetings": ["M1"]})
+
+    meetings, unreadable = summarize.load_raw_meetings_for_date(
+        "2026-05-14", raw_dir)
+    assert [m["meetingId"] for m in meetings] == ["M1"]
+    assert len(unreadable) == 1
+
+
+def test_a_partly_unreadable_date_says_out_loud_what_it_published_without(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The only branch here that ends GREEN, which is exactly why it needs an
+    annotation: the date publishes, missing one source's meetings entirely, and
+    a `log.error` is invisible on a green run."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _stub_grouping(monkeypatch)
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    _corrupt(os.path.join(raw_dir, "kantei-2026-05-14.json"))
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: fake_client)
+
+    def _run(rd, out):
+        return summarize.run_pipeline(
+            date_str="2026-05-14", raw_dir=rd, output_dir=str(out),
+            members_path=str(tmp_path / "members.json"),
+            batch=False, batch_timeout_seconds=0, batch_poll_seconds=0,
+            pending_dir=str(tmp_path / "pending"),
+        )
+
+    verdict = _run(raw_dir, tmp_path / "threads")
+
+    # Compared against a control rather than asserted to be 0, because the
+    # claim is "the unreadable file did not change the verdict" — and asserting
+    # 0 outright would pin whatever the fake client happens to produce, which
+    # is a different fact and one that drifts.
+    clean_root = tmp_path / "clean"
+    clean_root.mkdir()
+    clean_dir = _write_raw(clean_root, [_meeting("M1")])
+    assert verdict == _run(clean_dir, tmp_path / "clean-threads"), (
+        "the skipped raw file changed this date's verdict; the whole point of "
+        "skipping is that the surviving sources decide it")
+    warnings = [ln for ln in capsys.readouterr().out.splitlines()
+                if ln.startswith("::warning::")]
+    assert any("kantei-2026-05-14.json" in ln for ln in warnings), warnings
+    assert any("not an API rejection" in ln for ln in warnings), warnings
+
+
+def test_a_threads_file_that_parsed_into_a_dict_never_leaks_its_keys(
+        tmp_path, capsys, monkeypatch):
+    """`threads.extend(some_dict)` appends the KEYS — strings, which reach
+    link_threads and raise there. Nothing about that failure names this file."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    _write_shaped(str(threads_dir / "2026-05-01.json"),
+                  [{"id": "t_20260501_aaaaaa_01"}])
+    _write_shaped(str(threads_dir / "2026-05-02.json"),
+                  {"threads": [{"id": "t_20260502_bbbbbb_01"}]})
+
+    others = summarize.load_threads_from_other_dates(str(threads_dir), "2026-05-14")
+    assert [t["id"] for t in others] == ["t_20260501_aaaaaa_01"]
+    warns = [ln for ln in capsys.readouterr().out.splitlines()
+             if ln.startswith("::warning::")]
+    assert any("2026-05-02.json" in ln for ln in warns), warns
+
+
+def test_many_broken_neighbours_still_produce_one_annotation(
+        tmp_path, capsys, monkeypatch):
+    """Every date in the run walks this directory, so per-file annotations
+    multiply by the number of dates. GitHub shows 10 per level per step, and
+    the eleventh is the one that mattered."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    for day in range(1, 7):
+        _corrupt(str(threads_dir / f"2026-05-0{day}.json"))
+
+    summarize.load_threads_from_other_dates(str(threads_dir), "2026-05-14")
+    warns = [ln for ln in capsys.readouterr().out.splitlines()
+             if ln.startswith("::warning::")]
+    assert len(warns) == 1, warns
+    assert "2026-05-01.json" in warns[0] and "2026-05-06.json" in warns[0]
+
+
+def test_a_wrongly_shaped_threads_file_is_refused_like_a_corrupt_one(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The resume read. A dict here has a `len()`, so `thread_counter` would be
+    set from its key count and the refusal never fire — the date then
+    republishes from an `all_threads` that no longer holds what the file did."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _stub_grouping(monkeypatch)
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    existing = threads_dir / "2026-05-14.json"
+    _write_shaped(str(existing), {"threads": [{"id": "t_20260514_aaaaaa_01"}]})
+    before = existing.read_text(encoding="utf-8")
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: fake_client)
+
+    verdict = summarize.run_pipeline(
+        date_str="2026-05-14", raw_dir=raw_dir, output_dir=str(threads_dir),
+        members_path=str(tmp_path / "members.json"),
+        batch=False, batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=str(tmp_path / "pending"),
+    )
+    assert verdict == summarize.EXIT_SYSTEMIC_FAILURE
+    assert existing.read_text(encoding="utf-8") == before
+    assert fake_client.messages.create_calls == []
+    assert fake_client.messages.batches.created_requests == []
+
+
+def test_an_empty_object_is_refused_and_not_read_as_an_empty_list(tmp_path):
+    """The case that makes the container check load-bearing rather than
+    decorative. Every other wrong shape trips the per-element check on its way
+    through — a dict yields its keys, a string its characters — but `{}` yields
+    nothing at all, so without the container check it returns as a perfectly
+    well-behaved empty result and the caller publishes over it.
+    """
+    with pytest.raises(TypeError):
+        summarize._as_list_of_dicts({}, "x.json")
+    with pytest.raises(TypeError):
+        summarize._as_list_of_dicts("", "x.json")
+    assert summarize._as_list_of_dicts([], "x.json") == []
+
+
+@pytest.mark.parametrize("payload", [
+    '{"completed": [',            # truncated
+    '["not-an-object"]',          # wrong container
+    '{}',                         # parses, but KeyError on progress["completed"]
+    '{"failed": []}',             # one key present, one missing
+    '{"completed": null}',        # present but None -> .append AttributeError
+    '{"completed": {"a": 1}}',    # present but a dict -> no .append
+])
+def test_an_unreadable_progress_file_falls_back_to_the_default(payload, tmp_path):
+    """Scratch bookkeeping, and the cheapest possible answer is the right one:
+    `*.progress.json` is gitignored, so it is never the only copy of anything —
+    resume re-derives it from the date's actual threads. Raising here cost the
+    entire morning's publish for a file nobody would miss.
+
+    The last four cases are the ones a container-only check misses. Every
+    caller does `progress["completed"].append(...)` outside any try, so each of
+    them is still exit 1 unless the guard looks at the CONTENTS.
+    """
+    progress = tmp_path / "2026-05-14.progress.json"
+    progress.write_text(payload, encoding="utf-8")
+    assert summarize.load_progress(str(progress)) == {"completed": [], "failed": []}
+
+
+def test_an_unreadable_progress_file_does_not_duplicate_published_threads(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The regression the guard itself created, and worse than what it fixed.
+
+    Treating an unreadable progress file as a missing one means `completed`
+    starts empty. On the EXPLICIT `--resume` path — the one a human reaches for
+    to unstick a date — nothing reseeded it, so every meeting was re-summarised
+    and APPENDED next to the copy already in the threads file. Exit 1 is loud;
+    duplicated published threads are not.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    _stub_grouping(monkeypatch)
+    raw_dir = _write_raw(tmp_path, [_meeting("M1")])
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    mid_hash = hashlib.sha256("M1".encode("utf-8")).hexdigest()[:6]
+    _write_shaped(str(threads_dir / "2026-05-14.json"),
+                  [{"id": f"t_20260514_{mid_hash}_00", "topic": "T"}])
+    (threads_dir / "2026-05-14.progress.json").write_text(
+        '{"completed": [', encoding="utf-8")
+    monkeypatch.setattr(summarize.anthropic, "Anthropic", lambda *a, **k: fake_client)
+
+    summarize.run_pipeline(
+        date_str="2026-05-14", raw_dir=raw_dir, output_dir=str(threads_dir),
+        members_path=str(tmp_path / "members.json"),
+        resume=True,
+        batch=False, batch_timeout_seconds=0, batch_poll_seconds=0,
+        pending_dir=str(tmp_path / "pending"),
+    )
+    # Pin what the reseed actually controls — whether the meeting is asked
+    # about at all. Checking only the file contents is not enough and finding
+    # that out is why this comment exists: with the reseed reverted the run DOES
+    # re-summarize M1, the fake produces nothing usable, nothing is appended,
+    # and the file check passes while the protection is gone (CLAUDE.md: a
+    # passing test may reach its assertion by another path).
+    assert fake_client.messages.create_calls == [], (
+        "M1 is already represented in the threads file, but the run asked "
+        "about it again — with a working model that is a duplicate thread")
+    after = json.loads((threads_dir / "2026-05-14.json").read_text(encoding="utf-8"))
+    assert [t["id"] for t in after] == [f"t_20260514_{mid_hash}_00"], (
+        "the meeting was re-summarized and appended alongside its own thread")
+
+
+def test_an_unreadable_lexdiff_map_costs_only_the_cross_links(
+        tmp_path, monkeypatch, capsys):
+    """Auxiliary by CLAUDE.md's own classification, so it must not be able to
+    take the summary layer with it — and it must not be SILENT either, because
+    the run that loses the links is green and the links are never back-filled.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.setattr(summarize, "_LEXDIFF_MAP", None)
+    broken = tmp_path / "lexdiff-mapping.json"
+    broken.write_text('{"a":', encoding="utf-8")
+    monkeypatch.setattr(summarize, "_LEXDIFF_PATH", str(broken))
+
+    assert summarize._get_lexdiff_map() == {}
+    warns = [ln for ln in capsys.readouterr().out.splitlines()
+             if ln.startswith("::warning::")]
+    assert any("lexdiff-mapping.json" in ln for ln in warns), (
+        "a green run lost every outbound law link and said so only in the log")
+
+
+def test_a_threads_file_without_ids_does_not_take_the_run_down(
+        tmp_path, capsys, monkeypatch):
+    """One level deeper than `list of dicts`, and reachable: a half-finished
+    field rename leaves `[{"topic": "T"}]`, which passes a dict check and then
+    raises `KeyError: 'id'` in the id set-comprehension — not in
+    _RAW_READ_ERRORS, so exit 1 and no publish, from the reader whose entire
+    justification is that one bad file only costs links."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    _write_shaped(str(threads_dir / "2026-05-01.json"), [{"topic": "T"}])
+    _write_shaped(str(threads_dir / "2026-05-03.json"),
+                  [{"id": 12345, "topic": "T"}])        # id present, not a str
+    _write_shaped(str(threads_dir / "2026-05-02.json"),
+                  [{"id": "t_20260502_bbbbbb_01"}])
+
+    others = summarize.load_threads_from_other_dates(str(threads_dir), "2026-05-14")
+    assert [t["id"] for t in others] == ["t_20260502_bbbbbb_01"]
+    warns = [ln for ln in capsys.readouterr().out.splitlines()
+             if ln.startswith("::warning::")]
+    assert any("2026-05-01.json" in ln and "2026-05-03.json" in ln
+               for ln in warns), warns
+
+
+def test_the_aggregated_warning_names_a_bounded_number_of_files(
+        tmp_path, capsys, monkeypatch):
+    """GitHub truncates a long annotation from the end, so an uncapped list of
+    150 filenames buries the actionable half in the part that gets cut."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    for day in range(1, 26):
+        _corrupt(str(threads_dir / f"2026-05-{day:02d}.json"))
+
+    summarize.load_threads_from_other_dates(str(threads_dir), "2026-06-14")
+    warns = [ln for ln in capsys.readouterr().out.splitlines()
+             if ln.startswith("::warning::")]
+    assert len(warns) == 1, warns
+    assert warns[0].count("2026-05-") == summarize._MAX_NAMED_FILES
+    assert f"and {25 - summarize._MAX_NAMED_FILES} more" in warns[0]
+    assert "25 unreadable" in warns[0], "the true count went missing"
+
+
+def test_the_metrics_step_cannot_kill_the_publish_over_a_corrupt_file():
+    """The other half of the same contract, and the half that made the Python
+    half pointless. summarize.py returns 3 instead of raising SO THAT the loop
+    survives and the commit step runs — but the metrics step in between reads
+    every date's threads file with a bare `python3 -c json.load` under `bash -e`,
+    where a failing command substitution in an assignment FAILS THE STEP. The
+    commit step is `success()`-gated, so one corrupt file skipped the publish
+    for every date, plus IndexNow, the summary, and the final diagnostic step
+    that would have said why.
+
+    Pinned here rather than left to review because the asymmetry is invisible
+    at a glance: the neighbouring `BEFORE=` assignment has always had `|| echo 0`
+    and `COUNT=` did not.
+    """
+    yaml = pytest.importorskip("yaml")
+    path = REPO_ROOT / ".github" / "workflows" / "daily-batch.yml"
+    spec = yaml.safe_load(path.read_text(encoding="utf-8"))
+    steps = spec["jobs"]["fetch-and-summarize"]["steps"]
+    run = next(s for s in steps if s.get("id") == "metrics")["run"]
+
+    for line in run.splitlines():
+        if "json.load" not in line:
+            continue
+        stripped = line.strip()
+        assert stripped.endswith("\\") or "|| echo 0" in run.split(stripped)[1][:60], (
+            f"a bare json.load in the metrics step: {stripped!r} — under "
+            f"`bash -e` this fails the step and skips the commit")
+    assert run.count("|| echo 0") >= 2, (
+        "both threads-file reads in this step must survive a corrupt file")
+
+
+def test_the_held_regime_list_shown_to_operators_matches_the_real_policy():
+    """A factual enumeration in an operator-facing message drifts every time a
+    HOLD reason is added — this diff added one and the message did not move.
+    The message hedges ('read the per-date annotation'), so a stale list only
+    misleads mildly, which is exactly why nothing catches it."""
+    yaml = pytest.importorskip("yaml")
+    from pipeline import batch_state as bs
+    path = REPO_ROOT / ".github" / "workflows" / "daily-batch.yml"
+    spec = yaml.safe_load(path.read_text(encoding="utf-8"))
+    steps = spec["jobs"]["fetch-and-summarize"]["steps"]
+    message = "\n".join(s["run"] for s in steps if "run" in s)
+
+    holds = [r for r, p in bs.FAILURE_POLICY.items() if p == bs.HOLD]
+    missing = [r for r in holds if r not in message]
+    assert not missing, (
+        f"HOLD reason(s) {missing} never appear in any operator-facing message "
+        f"in the workflow — a held sidecar can be reported with a reason the "
+        f"person reading has no way to look up")

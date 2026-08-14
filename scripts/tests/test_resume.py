@@ -1958,3 +1958,103 @@ def test_corrupt_raw_is_held_not_treated_as_absent_raw(
     assert result["abandoned_dates"] == []
     assert result["held_dates"] == ["2026-05-14"]
     assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
+
+
+# --- The last unguarded reader on the resume path (#74) -----------------------
+
+def test_a_corrupt_threads_file_holds_the_batch_instead_of_losing_it(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """Collect assembles threads, then appends them to the date's file — which
+    it must READ first, and which is the only copy of that date's published
+    work. Three ways to answer a read failure here, and only one keeps
+    everything:
+
+    * raise → Collect dies under `set -e`, every date's publish stops (#72's
+      failure mode, one function further along);
+    * append to `[]` → the date is republished without the threads it held;
+    * hold → the sidecar is not deleted, so the SAME results are re-collected on
+      a later run (they live ~29 days), and nothing is lost once a human
+      restores the file.
+
+    The order this depends on already existed: the delete comes after the
+    append, so failing the append keeps the batch. Do not "tidy" the delete
+    earlier.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    corrupt = threads_dir / "2026-05-14.json"
+    corrupt.write_text('[{"id": "t_20260514_abcdef_01",', encoding="utf-8")
+    before = corrupt.read_text(encoding="utf-8")
+
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    from tests.conftest import _ResultEntry  # type: ignore
+    b.results_by_id["b1"] = [_ResultEntry("s_abc_00", "succeeded", text=_json.dumps(
+        {"speeches": [{"speechOrder": 1, "tension": "確認",
+                       "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+         "commitments": []}))]
+
+    result = summarize.collect_pending_batches(   # must not raise
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(threads_dir), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["diagnostics"][0]["reason"] == "threads_file_unreadable"
+    assert corrupt.read_text(encoding="utf-8") == before, "the only copy was rewritten"
+    assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json")), (
+        "the sidecar was deleted, so the assembled threads can never be recovered")
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert any("2026-05-14.json" in ln for ln in errors), errors
+
+
+def test_a_threads_file_of_the_wrong_shape_is_held_like_an_unparseable_one(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The variant a parse guard alone misses, and the worse one to miss: a
+    dict parses, so `existing.extend(threads)` never raises — it appends the
+    KEYS of whatever that file held and writes the result back as this date's
+    published threads. Corrupting the only copy beats refusing to read it.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    threads_dir = tmp_path / "threads"
+    threads_dir.mkdir()
+    os.makedirs(raw_dir)
+    import json as _json
+    with open(os.path.join(raw_dir, "ndl-2026-05-14.json"), "w", encoding="utf-8") as f:
+        _json.dump({"meetings": [_meeting()]}, f, ensure_ascii=False)
+    wrong = threads_dir / "2026-05-14.json"
+    with open(wrong, "w", encoding="utf-8") as f:
+        _json.dump({"threads": [{"id": "t_20260514_abcdef_01"}]}, f)
+    before = wrong.read_text(encoding="utf-8")
+
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    b = fake_client.messages.batches
+    b.statuses["b1"] = "ended"
+    from tests.conftest import _ResultEntry  # type: ignore
+    b.results_by_id["b1"] = [_ResultEntry("s_abc_00", "succeeded", text=_json.dumps(
+        {"speeches": [{"speechOrder": 1, "tension": "確認",
+                       "summaries": {"easy": "e", "teen": "t", "adult": "a"}}],
+         "commitments": []}))]
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(threads_dir), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["diagnostics"][0]["reason"] == "threads_file_unreadable"
+    assert wrong.read_text(encoding="utf-8") == before, "the only copy was rewritten"
+    assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))

@@ -289,6 +289,11 @@ FAILURE_POLICY = {
     # and re-fetched every run, so the next run very likely replaces the broken
     # file — and no new batch would fix a local read failure anyway.
     "raw_unreadable":      HOLD,
+    # The date's existing threads file could not be read, so this run refused to
+    # rewrite it (#74). HOLD for the same reason: the batch is fine, a resubmit
+    # would not fix a local file, and keeping the sidecar is what lets the same
+    # results be collected once a human restores it.
+    "threads_file_unreadable": HOLD,
     "raw_date_missing":    HOLD,
     "speech_gap":          HOLD,
     # The request we would build today is not the request we submitted, so a

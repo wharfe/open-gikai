@@ -43,7 +43,8 @@ from pipeline.summarizer import (
     sync_call_kwargs,
     SUMMARY_RETRY_MAX_TOKENS,
 )
-from pipeline.members import extract_member, load_members, save_members
+from pipeline.members import (MembersUnreadable, extract_member, load_members,
+                              save_members)
 from pipeline.linker import link_threads
 from pipeline import batch_state as bs
 from pipeline.jsonio import write_json_atomic
@@ -169,10 +170,43 @@ def _report_dead_net(step: str, date_str: str, e: Exception) -> None:
 # ---------------------------------------------------------------------------
 
 def load_progress(progress_path: str) -> dict:
-    """Load progress file for resumability."""
+    """Load progress file for resumability.
+
+    An unreadable one is treated as a missing one (#74). That is the cheapest
+    answer available anywhere in this file, and it is cheap for a reason the
+    other readers do not have: ``*.progress.json`` is gitignored, so it is
+    local bookkeeping and never the only copy of anything — ``auto_resume``
+    re-derives ``completed`` from the date's actual threads via
+    ``collect_processed_meeting_ids`` whenever it comes back empty. The cost of
+    guessing wrong is at most re-summarising meetings that are already
+    published, which the reseed then prevents anyway.
+
+    What it must not do is what it used to: raise, which is exit 1, which under
+    the workflow's ``set -e`` date loop skips commit and push — the whole
+    morning's publish lost to a scratch file.
+    """
     if os.path.exists(progress_path):
-        with open(progress_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(progress_path, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+            # Both keys, and both lists. Checking only `isinstance(dict)` was
+            # the same mistake one level in: every caller does
+            # `progress["completed"].append(...)` unguarded, so `{}` raises
+            # KeyError and `{"completed": null}` raises AttributeError — both
+            # exit 1, which is what this guard exists to remove.
+            if not isinstance(loaded, dict):
+                raise TypeError(f"expected an object, found "
+                                f"{type(loaded).__name__}")
+            for key in ("completed", "failed"):
+                if not isinstance(loaded.get(key), list):
+                    raise TypeError(
+                        f"expected {key!r} to be a list, found "
+                        f"{type(loaded.get(key)).__name__}")
+            return loaded
+        except _RAW_READ_ERRORS as exc:
+            log.warning("Progress file %s is unreadable (%s) — starting this "
+                        "date from what its threads file already holds",
+                        progress_path, exc)
     return {"completed": [], "failed": []}
 
 
@@ -337,17 +371,52 @@ def save_progress(progress: dict, progress_path: str) -> None:
 
 _LEXDIFF_MAP: Optional[Dict[str, dict]] = None
 
+# Module-level so a test can point it somewhere else. The alternative was
+# monkeypatching os.path.join for the duration of a test, which replaces a
+# stdlib function globally with a non-equivalent one — a passing test today and
+# an order-dependent failure later.
+_LEXDIFF_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "data", "lexdiff-mapping.json")
+
 def _get_lexdiff_map() -> Dict[str, dict]:
     """Return the lex-diff mapping, loading lazily."""
     global _LEXDIFF_MAP
     if _LEXDIFF_MAP is None:
-        mapping_path = os.path.join(os.path.dirname(__file__), "..", "data", "lexdiff-mapping.json")
+        mapping_path = _LEXDIFF_PATH
+        _LEXDIFF_MAP = {}
         if os.path.exists(mapping_path):
-            with open(mapping_path, "r", encoding="utf-8") as f:
-                _LEXDIFF_MAP = json.load(f)
-                _LEXDIFF_MAP.pop("_comment", None)
-        else:
-            _LEXDIFF_MAP = {}
+            try:
+                with open(mapping_path, "r", encoding="utf-8") as f:
+                    loaded = json.load(f)
+                if not isinstance(loaded, dict):
+                    raise TypeError(f"expected an object, found "
+                                    f"{type(loaded).__name__}")
+                loaded.pop("_comment", None)
+                _LEXDIFF_MAP = loaded
+            except _RAW_READ_ERRORS as exc:
+                # Outbound law cross-links are auxiliary (CLAUDE.md), so their
+                # absence costs some links on a page that otherwise publishes
+                # normally. Raising costs the entire morning's publish: this is
+                # read while summarising, so exit 1 under `set -e` takes the
+                # date loop with it (#74). The mapping is committed, so a
+                # broken one is loud enough on its own.
+                log.warning("lex-diff mapping %s is unreadable (%s) — "
+                            "publishing without outbound law cross-links",
+                            mapping_path, exc)
+                # Annotated, not just logged, and the reason is the same one
+                # stated at the partial-raw branch: this run is GREEN, and a
+                # log line is invisible in a green run's summary. The loss is
+                # also permanent for these threads — links are baked in at
+                # creation and never back-filled — so "someone will notice"
+                # is not a plan. Once per process: the map is cached.
+                _annotate(
+                    "warning",
+                    f"lex-diff mapping {mapping_path} is unreadable "
+                    f"({exc.__class__.__name__}: {exc}) — every thread written "
+                    f"this run publishes WITHOUT outbound law cross-links, and "
+                    f"they are not back-filled later. The file is committed, so "
+                    f"`git checkout` recovers it; re-run the affected dates to "
+                    f"restore their links")
     return _LEXDIFF_MAP
 
 
@@ -872,13 +941,211 @@ def _load_meetings_for_date(date_str: str, raw_dir: str) -> Dict[str, dict]:
     return by_id
 
 
+def _raw_files_for_date(date_str: str, raw_dir: str) -> list:
+    """The candidate raw files that actually exist for this date."""
+    return [c for c in _raw_candidates_for_date(date_str, raw_dir) if os.path.exists(c)]
+
+
+# How many filenames an aggregated annotation names before saying "and N more".
+# GitHub truncates a long annotation from the END, so an uncapped list buries
+# the actionable part; ten is enough to see a pattern and short enough to read.
+_MAX_NAMED_FILES = 10
+
+
+def _as_list_of_dicts(value, what: str) -> list:
+    """``value`` if it is a list of dicts, else raise ``TypeError``.
+
+    A truncated file fails to parse; a hand-edited or half-migrated one parses
+    into the wrong shape, and THAT is the case the guards around this kept
+    missing. ``json.load`` succeeding says nothing about shape, and the two
+    wrong shapes fail late and quietly rather than here: ``[].extend("none")``
+    appends four characters, and ``list(some_dict)`` appends its KEYS — either
+    way the AttributeError lands in ``link_threads`` or the grouper, far from
+    the file that caused it and outside every guard.
+
+    Raising ``TypeError`` is what makes this composable: it is already in
+    ``_RAW_READ_ERRORS``, so every reader's existing ``except`` treats a shape
+    failure exactly like a parse failure — which is the answer they want, since
+    neither one tells you what the file was supposed to hold. The resume path's
+    ``_load_meetings_for_date`` gets the same coverage incidentally (its
+    ``m.get`` raises AttributeError on a non-dict); this makes it deliberate on
+    the paths that had no such accident.
+    """
+    if not isinstance(value, list):
+        raise TypeError(f"expected {what} to be a list, found "
+                        f"{type(value).__name__}")
+    for i, item in enumerate(value):
+        if not isinstance(item, dict):
+            raise TypeError(f"expected {what}[{i}] to be an object, found "
+                            f"{type(item).__name__}")
+    return value
+
+
+def _as_thread_list(value, what: str) -> list:
+    """``_as_list_of_dicts`` plus the one field every thread consumer assumes.
+
+    Stopping at "list of dicts" left the guard one level too shallow, and the
+    gap was reachable: ``[{"topic": "T"}]`` — a half-finished field rename, the
+    same threat model as the rest of this — sails through, and then
+    ``{t["id"] for t in ...}`` raises ``KeyError``, which is NOT in
+    ``_RAW_READ_ERRORS`` and so is exit 1 and no publish. A non-string ``id``
+    reaches ``tid.split("_")`` the same way.
+
+    ``id`` earns the check where other fields do not: it is what identifies a
+    thread to every consumer (linking, dedup, the site), so a thread without a
+    usable one is not a thread, and there is nothing to fall back to. Deeper
+    field validation is deliberately NOT here — that is `validate-data.mjs`'s
+    job and a full schema check on every read would be a different feature. A
+    file that is a list of id-bearing objects with wrongly-shaped *inner*
+    fields can still fail downstream (#76).
+    """
+    for i, item in enumerate(_as_list_of_dicts(value, what)):
+        if not isinstance(item.get("id"), str) or not item["id"]:
+            raise TypeError(f"expected {what}[{i}] to carry a non-empty string "
+                            f"'id', found {item.get('id')!r}")
+    return value
+
+
+def load_raw_meetings_for_date(date_str: str, raw_dir: str) -> tuple:
+    """``(meetings, unreadable_files)`` for the first-run path (#74).
+
+    Skips a file it cannot read instead of raising, and reports which. Raising
+    here aborts summarize.py with a traceback, which is exit 1 — and under the
+    workflow's ``set -e`` date loop that skips commit and push, so ONE broken
+    file on ONE date silences the whole morning's publish (#52).
+
+    Skipping is safe here in a way it is not for the resume path: ``data/raw`` is
+    gitignored and re-fetched on every run, and the 30-day lookback re-visits the
+    date, so a file that is broken today is normally back tomorrow and the
+    meetings it held are summarized then. What must not happen is that the loss
+    passes unmentioned — hence the second return value, which the caller turns
+    into an annotation.
+
+    Deliberately NOT shared with the resume path's ``_load_meetings_for_date``,
+    which raises ``RawUnreadable`` instead. There, unreadable-vs-absent decides
+    whether a batch is written off as unrecoverable (#69/#72), so a skip that
+    silently produced "no meetings" would authorize a delete it never proved.
+    Same files, opposite correct answers.
+    """
+    meetings: list = []
+    unreadable: list = []
+    for candidate in _raw_files_for_date(date_str, raw_dir):
+        try:
+            with open(candidate, "r", encoding="utf-8") as f:
+                raw_data = json.load(f)
+            found = _as_list_of_dicts(raw_data.get("meetings", []),
+                                      f"{os.path.basename(candidate)}:meetings")
+            meetings.extend(found)
+        except _RAW_READ_ERRORS as exc:
+            # warning, not error: this function skips, it does not decide. How
+            # bad a skipped file is depends on what the date has LEFT, which
+            # only the caller knows — and _annotate's rule is that the log level
+            # and the annotation level must not disagree.
+            log.warning("Raw file %s is unreadable (%s) — skipping it",
+                        candidate, exc.__class__.__name__)
+            unreadable.append(f"{candidate} ({exc.__class__.__name__}: {exc})")
+            continue
+        log.info("Loaded %d meetings from %s", len(found), candidate)
+    return meetings, unreadable
+
+
+def load_threads_from_other_dates(output_dir: str, date_str: str) -> list:
+    """Every other date's threads, for cross-date linking (#74).
+
+    The widest blast radius of the readers this run touches: it walks EVERY
+    date's file, so one unparseable file used to fail the date being summarized —
+    and under `set -e`, every date after it. It is also the most disposable
+    thing being read: cross-date links are auxiliary (CLAUDE.md), and the link
+    comes back as soon as the file is fixed. Warn and carry on.
+
+    What the warning must NOT say is that the file is somebody else's problem.
+    It is only re-summarised if its date is still inside the lookback window
+    (the workflow builds its date list from ``data/raw/``), and ``src/lib/data.ts``
+    is deliberately fatal on the same file — so an old broken file is reported
+    HERE and nowhere else, while already breaking the site build. Losing the
+    links is the small half of what that file costs.
+    """
+    threads: list = []
+    skipped: list = []
+    if not os.path.exists(output_dir):
+        return threads
+    for fname in sorted(os.listdir(output_dir)):
+        if not _is_thread_file(fname) or fname == f"{date_str}.json":
+            continue
+        path = os.path.join(output_dir, fname)
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                threads.extend(_as_thread_list(json.load(f), path))
+        except _RAW_READ_ERRORS as exc:
+            log.warning("Skipping %s for cross-date linking (%s)", path, exc)
+            skipped.append(f"{path} ({exc.__class__.__name__}: {exc})")
+    if skipped:
+        # One annotation per date, not one per file, and capped. Summarize runs
+        # one PROCESS per date, so this cannot dedupe across dates — a single
+        # old broken file still costs one annotation per date, against GitHub's
+        # 10-per-level-per-step limit. Aggregating and capping is what keeps a
+        # directory of broken files from pushing every other warning off the
+        # page, including the partial-raw-loss one that means actual data is
+        # missing. Filenames come FIRST for the same reason: a long message is
+        # truncated from the end, and the filenames are the actionable half.
+        shown = "; ".join(skipped[:_MAX_NAMED_FILES])
+        if len(skipped) > _MAX_NAMED_FILES:
+            shown += f"; and {len(skipped) - _MAX_NAMED_FILES} more"
+        _annotate(
+            "warning",
+            f"{date_str}: {len(skipped)} unreadable threads file(s) [{shown}] — "
+            f"this date's threads have no cross-date links to them. The links "
+            f"are the SMALL loss: the site build (src/lib/data.ts) treats the "
+            f"same file as fatal, and the date owning it is only re-summarised "
+            f"while it is inside the lookback window, so fix the file rather "
+            f"than waiting for its own run to report it")
+    return threads
+
+
+def _is_thread_file(fname: str) -> bool:
+    """A published per-date threads file, not a sidecar of one.
+
+    ``.progress.json`` is resume bookkeeping that happens to live in the same
+    directory; treating it as threads yields a dict where a list is expected.
+    """
+    return fname.endswith(".json") and not fname.endswith(".progress.json")
+
+
+class ThreadsFileUnreadable(Exception):
+    """The date's existing threads file is on disk but could not be read.
+
+    Carries the path because that is the only actionable part — see
+    RawUnreadable, same reasoning.
+    """
+
+    def __init__(self, path: str, cause: BaseException):
+        super().__init__(f"{path} ({cause.__class__.__name__}: {cause})")
+        self.path = path
+        self.cause = cause
+
+
 def _append_threads_to_date_file(threads: list, threads_dir: str, date_str: str) -> None:
+    """Append to the date's threads file, or raise ThreadsFileUnreadable.
+
+    Reading first is not an optimization: this file is the only copy of the
+    date's published work, so appending to `[]` when the read fails republishes
+    the date without whatever it still held. The caller turns the raise into a
+    HOLD, which keeps the sidecar and lets a later run re-collect the very same
+    results (#74).
+    """
     os.makedirs(threads_dir, exist_ok=True)
     path = os.path.join(threads_dir, f"{date_str}.json")
     existing = []
     if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
-            existing = json.load(f)
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                # Shape inside the try, so a dict or a scalar gets the SAME
+                # answer as a parse failure: either way we cannot tell what is
+                # already published, and appending regardless would either raise
+                # or (for a dict) silently publish its KEYS as threads.
+                existing = _as_thread_list(json.load(f), path)
+        except _RAW_READ_ERRORS as exc:
+            raise ThreadsFileUnreadable(path, exc) from exc
     existing.extend(threads)
     write_json_atomic(path, existing)
 
@@ -1146,7 +1413,13 @@ def _existing_thread_count(threads_dir: str, date_str: str) -> int:
     try:
         with open(path, "r", encoding="utf-8") as f:
             existing = json.load(f)
-    except (OSError, json.JSONDecodeError):
+    except _RAW_READ_ERRORS:
+        # Widened from (OSError, JSONDecodeError) (#74): this is called from
+        # collect_pending_batches OUTSIDE any try, and a file with invalid
+        # UTF-8 raises UnicodeDecodeError at the io layer — a ValueError, but
+        # not a JSONDecodeError — which escaped, aborted Collect, and took the
+        # morning with it. Every other reader in this file uses _RAW_READ_ERRORS
+        # and would have caught it.
         return 0
     return len(existing) if isinstance(existing, list) else 0
 
@@ -1259,6 +1532,14 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
         parts.append(
             "NOT resubmitted and no retry spent: this reason IS retryable, but "
             "the requests could not be rebuilt from the raw on disk this run")
+    elif reason == "threads_file_unreadable":
+        # The generic line below would be false here in a way that matters: raw
+        # is fine and so is the batch, and sending the reader to look at raw
+        # revisions costs them the morning. This failure is downstream of
+        # assembly, in the file being written to.
+        parts.append(
+            "NOT resubmitted and no retry spent: nothing is wrong with the "
+            "batch or the raw, and no new batch would fix a local file")
     else:
         parts.append(
             "NOT resubmitted and no retry spent: rebuilding from today's raw "
@@ -1290,6 +1571,17 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
             f"data/pending-batches/{date_str}.json — outside the window a removed "
             "sidecar is not re-summarised. Reverting the change that moved the "
             "hash lets the next run collect normally")
+    elif reason == "threads_file_unreadable":
+        parts.append(
+            "the summaries were assembled successfully; what failed is reading "
+            "this date's EXISTING threads file, and continuing would have "
+            "republished the date without the threads it still holds. Nothing "
+            "was written and the sidecar was kept on purpose, so restoring the "
+            "file (it is committed — `git checkout` recovers it) lets the next "
+            "run collect these same results. They expire ~29 days after "
+            "submission, so this one has a deadline")
+        if detail:
+            parts.append(f"unreadable: {detail}")
     elif reason == "raw_unreadable":
         parts.append(
             "raw for this date IS on disk but could not be read, so nothing was "
@@ -1387,7 +1679,12 @@ def _manifest_meeting_ids(sidecar: dict) -> Optional[set]:
 # (top level a list, "meetings" not a list, an element not an object). All of
 # them mean the same thing here — "absence is not established" — and any of them
 # escaping aborts Collect under set -e and takes the morning's publish down.
-_RAW_READ_ERRORS = (OSError, ValueError, TypeError, AttributeError)
+# RecursionError is here for the same reason as the other three: `json.load` on
+# a deeply nested corrupt file raises it, and it inherits from RuntimeError, so
+# without it that one corrupt file is exit 1 and no publish. It is the only
+# member that is not obviously a read failure, which is why it is called out.
+_RAW_READ_ERRORS = (OSError, ValueError, TypeError, AttributeError,
+                    RecursionError)
 
 
 def _raw_read_failure_detail(date_str: str, raw_dir: str, exc: BaseException) -> str:
@@ -1986,7 +2283,17 @@ def collect_pending_batches(
                 )
             continue
 
-        _append_threads_to_date_file(threads, threads_dir, date_str)
+        try:
+            _append_threads_to_date_file(threads, threads_dir, date_str)
+        except ThreadsFileUnreadable as exc:
+            # Hold, and specifically hold BEFORE delete_sidecar below: the
+            # assembled threads only survive because the batch is still
+            # collectable, and its results live ~29 days. Nothing here is
+            # written, so a restored file makes the next run collect normally.
+            _record_held_sidecar(date_str, sidecar,
+                                 _diagnostic("threads_file_unreadable"),
+                                 held_dates, diagnostics, detail=str(exc))
+            continue
         bs.delete_sidecar(path)
         log.info("Resume: collected %d threads for %s", len(threads), date_str)
 
@@ -2332,8 +2639,15 @@ def collect_processed_meeting_ids(threads_path: str) -> set[str]:
         return set()
     try:
         with open(threads_path, "r", encoding="utf-8") as f:
-            threads = json.load(f)
-    except (OSError, json.JSONDecodeError) as e:
+            threads = _as_thread_list(json.load(f), threads_path)
+    except _RAW_READ_ERRORS as e:
+        # Widened from (OSError, JSONDecodeError), and the shape check moved
+        # inside, because this runs BEFORE run_pipeline's refusal guard on the
+        # same file — so a shape it did not catch used to escape as an
+        # AttributeError from `t.get` below, i.e. exit 1, front-running the very
+        # guard that exists to turn this file's unreadability into exit 3.
+        # Returning the empty set is still right: it only means "assume nothing
+        # is done yet", and the refusal downstream is what actually decides.
         log.warning("Could not read %s for resume: %s", threads_path, e)
         return set()
     # Thread IDs look like ``t_YYYYMMDD_<6hex>_<index>``. Extract the hash.
@@ -2373,21 +2687,49 @@ def run_pipeline(
     # Shared with the resume path on purpose: _raw_candidates_for_date's whole
     # justification is that resume must see the same raw this does, and a second
     # copy of the list here is exactly the drift it was extracted to prevent.
-    candidates = _raw_candidates_for_date(date_str, raw_dir)
-    meetings: list = []
-    found_any = False
-    for candidate in candidates:
-        if os.path.exists(candidate):
-            found_any = True
-            with open(candidate, "r", encoding="utf-8") as f:
-                raw_data = json.load(f)
-            meetings.extend(raw_data.get("meetings", []))
-            log.info("Loaded %d meetings from %s", len(raw_data.get("meetings", [])), candidate)
+    meetings, unreadable_raw = load_raw_meetings_for_date(date_str, raw_dir)
 
-    if not found_any:
+    if not meetings and not unreadable_raw and not _raw_files_for_date(date_str, raw_dir):
         log.error("Raw data not found for %s in %s", date_str, raw_dir)
         log.error("Run fetch_ndl.py or fetch_kantei.py first")
         sys.exit(1)
+    if unreadable_raw and not meetings:
+        # Zero meetings from unreadable files looks exactly like zero meetings
+        # from a quiet day, and one of those is a broken runner. Say which, and
+        # say what it is NOT: an operator sent to hunt a 400 that never happened
+        # has had their morning taken (#59).
+        log.error("Every raw file for %s is unreadable — refusing the date",
+                  date_str)
+        _annotate(
+            "error",
+            f"{date_str}: nothing could be summarized — no readable raw file "
+            f"for this date yielded a single meeting, so none was ever asked "
+            f"about. (Not necessarily 'every file is broken': a source that "
+            f"legitimately had nothing that day parses fine and contributes "
+            f"nothing. The broken ones are named below; the rest are intact.) "
+            f"This is a local file problem, not an API rejection. "
+            f"data/raw is re-fetched every run, so the next run most likely "
+            f"clears it; if it repeats, the file is arriving broken. "
+            f"Unreadable: {'; '.join(unreadable_raw)}")
+        return EXIT_SYSTEMIC_FAILURE
+    if unreadable_raw:
+        # Partial loss, and the only branch here that ends in a GREEN run: some
+        # source's meetings for this date were dropped and the date publishes
+        # without them. That is the whole reason skipping was allowed (the file
+        # is re-fetched, the lookback re-visits the date) — but "allowed" is not
+        # "unremarkable", and a log line is invisible on a green run, which is
+        # what _annotate exists for. Warning, not error: the date did publish.
+        _annotate(
+            "warning",  # log level below must agree — see _annotate
+            f"{date_str}: published WITHOUT the meetings from "
+            f"{len(unreadable_raw)} unreadable raw file(s) — every other source "
+            f"for this date summarized normally. This is a local file problem, "
+            f"not an API rejection. data/raw is re-fetched every run and the "
+            f"lookback re-visits this date, so the missing meetings normally "
+            f"arrive on the next run; if the same file repeats, it is arriving "
+            f"broken. Unreadable: {'; '.join(unreadable_raw)}")
+        log.warning("%s published without %d unreadable raw file(s)",
+                    date_str, len(unreadable_raw))
     if meeting_filter:
         meetings = [m for m in meetings if meeting_filter in m.get("meeting", "")]
 
@@ -2409,15 +2751,21 @@ def run_pipeline(
     # the daily window-fetch idempotent without requiring callers to pass --resume.
     auto_resume = not resume and os.path.exists(output_path)
 
-    if resume:
+    if resume or auto_resume:
         progress = load_progress(progress_path)
         progress["failed"] = []
-    elif auto_resume:
-        progress = load_progress(progress_path)
-        progress["failed"] = []
-        # Seed completed list from existing threads when the progress file is
-        # missing (it's deleted on clean completion).
-        if not progress["completed"]:
+        # Seed completed list from existing threads when the progress file does
+        # not say (it is deleted on clean completion).
+        #
+        # This used to run only under auto_resume, and moving it is part of
+        # #74's guard rather than a tidy-up: once load_progress answers an
+        # UNREADABLE file the same way it answers a missing one, the explicit
+        # `--resume` path — the one a human reaches for to unstick a date —
+        # would start from an empty `completed`, re-summarise meetings the
+        # threads file already holds, and APPEND them. Duplicate threads on a
+        # published date is a worse outcome than the exit 1 the guard removed,
+        # and unlike exit 1 it is silent.
+        if not progress["completed"] and os.path.exists(output_path):
             existing_hashes = collect_processed_meeting_ids(output_path)
             for m in meetings:
                 mid = m.get("meetingId", "")
@@ -2435,7 +2783,23 @@ def run_pipeline(
         progress = {"completed": [], "failed": []}
 
     # Load existing members (accumulative)
-    members = load_members(members_path)
+    try:
+        members = load_members(members_path)
+    except MembersUnreadable as exc:
+        # Fatal by design (see MembersUnreadable), so this is exit 1 and the
+        # date loop does stop — correctly: members.json is shared by every
+        # date, so the next date would hit the identical failure. Being loud
+        # about that beats 30 identical tracebacks. What changes is that the
+        # operator is told which file and that nothing was published.
+        log.error("members.json is unreadable: %s", exc)
+        _annotate(
+            "error",
+            f"members.json is unreadable ({exc}) — the run is stopped on "
+            f"purpose rather than publishing every date with its speakers "
+            f"unresolved under a green build. This file is shared by all "
+            f"dates, so no date could have succeeded. It is committed, so "
+            f"`git checkout data/members.json` recovers it")
+        sys.exit(1)
 
     # Initialize API client
     client = anthropic.Anthropic()
@@ -2446,8 +2810,31 @@ def run_pipeline(
     # On resume (explicit or auto), load previously generated threads so new
     # meetings get appended instead of overwriting the file.
     if (resume or auto_resume) and os.path.exists(output_path):
-        with open(output_path, "r", encoding="utf-8") as f:
-            all_threads = json.load(f)
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                all_threads = _as_thread_list(json.load(f), output_path)
+        except _RAW_READ_ERRORS as exc:
+            # The ONLY copy of this date's published work, and the one reader
+            # here where skipping is worse than stopping (#74): carrying on with
+            # `all_threads = []` republishes the date with just this run's
+            # threads and drops every thread the file still holds. Refuse the
+            # date, leave the file exactly as it is, and let every other date
+            # publish — a verdict, not a raise, because a raise is exit 1 and
+            # aborts the workflow's date loop.
+            log.error("Existing threads file %s is unreadable (%s) — refusing "
+                      "to overwrite it", output_path, exc.__class__.__name__)
+            _annotate(
+                "error",
+                f"{date_str}: skipped — its existing threads file "
+                f"{output_path} is on disk but unreadable "
+                f"({exc.__class__.__name__}: {exc}), and continuing would "
+                f"republish the date without the threads it still holds. "
+                f"NOTHING was changed: the file is untouched, no summary was "
+                f"attempted, and no other date is affected. This is a local "
+                f"file problem, not an API rejection — restore the file (it is "
+                f"committed, so `git checkout` recovers it) and the next run "
+                f"picks the date up normally")
+            return EXIT_SYSTEMIC_FAILURE
         thread_counter = len(all_threads)
         log.info(
             "%s with %d existing threads",
@@ -2543,12 +2930,7 @@ def run_pipeline(
     # Cross-thread linking
     if all_threads:
         # Also load existing threads from other dates for cross-date linking
-        existing_threads = []
-        if os.path.exists(output_dir):
-            for fname in os.listdir(output_dir):
-                if fname.endswith(".json") and not fname.endswith(".progress.json") and fname != f"{date_str}.json":
-                    with open(os.path.join(output_dir, fname), "r", encoding="utf-8") as f:
-                        existing_threads.extend(json.load(f))
+        existing_threads = load_threads_from_other_dates(output_dir, date_str)
 
         link_threads(all_threads + existing_threads)
 
@@ -2685,7 +3067,21 @@ def main(argv: Optional[List[str]] = None) -> None:
 
     if args.collect_pending:
         client = anthropic.Anthropic()
-        members = load_members(args.members_path)
+        try:
+            members = load_members(args.members_path)
+        except MembersUnreadable as exc:
+            # Still fatal (see MembersUnreadable) — but named. This runs before
+            # collect_pending_batches, so the bare version killed the Collect
+            # step, and with it the whole job, without saying which file.
+            _annotate(
+                "error",
+                f"members.json is unreadable ({exc}) — the whole run is stopped "
+                f"on purpose: every date would otherwise publish with its "
+                f"speakers unresolved, under a green build. The file is "
+                f"committed, so `git checkout data/members.json` recovers it. "
+                f"Nothing was written and no sidecar was touched")
+            log.error("members.json is unreadable: %s", exc)
+            sys.exit(1)
         result = collect_pending_batches(
             client, members, args.model,
             pending_dir=args.pending_dir, threads_dir=args.output_dir,

@@ -250,7 +250,16 @@ jobs:
           for d in $DATES_LIST; do
             FILE="data/threads/$d.json"
             [ -f "$FILE" ] || continue
-            COUNT=$(python3 -c "import json; print(len(json.load(open('$FILE'))))")
+            # `|| echo 0` is not cosmetic, and the asymmetry with BEFORE below
+            # was the bug: this step runs under `bash -e`, so an assignment
+            # whose command substitution fails FAILS THE STEP — and the very
+            # next step is the commit. A single corrupt data/threads/*.json
+            # therefore skipped the whole morning's publish, which is exactly
+            # what summarize.py's exit 3 exists to prevent (#74). Counting it
+            # as 0 is also the honest answer: a file we cannot read published
+            # no new threads.
+            COUNT=$(python3 -c "import json; print(len(json.load(open('$FILE'))))" \
+              2>/dev/null || echo 0)
             BEFORE=$(git show HEAD:"$FILE" 2>/dev/null \
               | python3 -c "import json,sys; print(len(json.load(sys.stdin)))" 2>/dev/null \
               || echo 0)
@@ -466,9 +475,10 @@ jobs:
 
           if [ -n "$(echo "$HELD" | tr -d ' ')" ]; then
             echo "::error::Pending batches held for a human decision on:${HELD}"
-            echo "This aggregates several regimes (hash_mismatch/BLOCKED,"
-            echo "raw_missing or raw_date_missing/HOLD, retry_exhausted/BLOCKED) that do"
-            echo "NOT all mean the same thing — do not assume any one of them here. The"
+            echo "This aggregates several regimes (hash_mismatch/BLOCKED, retry_exhausted/"
+            echo "BLOCKED, and the HOLDs: raw_missing, raw_date_missing, raw_unreadable,"
+            echo "threads_file_unreadable, speech_gap) that do NOT all mean the same"
+            echo "thing — do not assume any one of them here. The"
             echo "Collect step annotation for EACH date names its actual reason and"
             echo "choices; read that before acting. Publishing continued for every other"
             echo "date; these sidecars stay until someone decides."

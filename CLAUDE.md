@@ -103,11 +103,48 @@ carries the offending filename out with it (`RawUnreadable`) rather than being r
 second pass — a re-read cannot see a file that is valid JSON of the wrong shape, and misreports a
 transient error as a shape error. `src/lib/data.ts` and `apps/mcp/src/lib/data.ts` stay *fatal* on a
 corrupt file (skipping would drop a whole date from the site under a green build) but now name the
-file in the error. Guarding stops at the resume path on purpose-for-now: `run_pipeline`'s raw read
-and `_append_threads_to_date_file`'s read of an existing threads file are still bare, so a corrupt
-file there still aborts the run (#74). And #57's option (b) — keeping a corrupt file out of the
-commit in the first place — is **not** implemented (#75); (c), this writer, only stops the pipeline
-from *creating* one.
+file in the error.
+
+Since #74 every reader **in `summarize.py`** is guarded, and **each one answers differently on
+purpose** — the answer follows from what is lost, not from a house style, so do not "unify" them:
+
+| reader | corrupt file costs | answer |
+|---|---|---|
+| cross-date links (`load_threads_from_other_dates`) | *this date's* links only — but the same file is fatal to the site build, and its own date is re-summarised only while inside the lookback window | skip + one aggregated warning that says so |
+| first-run raw (`load_raw_meetings_for_date`) | one source's meetings, re-fetched next run (raw is gitignored, 30-day lookback) | skip + warning; **exit 3** only if the date then has no meetings at all |
+| existing threads file, first-run resume | the only copy of that date's published work | refuse the date (**exit 3**) before any API call; file untouched |
+| existing threads file, Collect's append (`ThreadsFileUnreadable`) | the same, plus the just-assembled threads | **hold** — the sidecar is kept, so a later run re-collects the same results |
+| resume seed (`collect_processed_meeting_ids`) | nothing — it only *reseeds* what the row above then re-reads | warn + assume nothing is done; the refusal above is what decides |
+| progress file (`load_progress`) | nothing durable: `*.progress.json` is gitignored and re-derived from the threads file | warn + treat as missing |
+| lex-diff mapping (`_get_lexdiff_map`) | outbound law cross-links, an auxiliary layer | log + publish without the links |
+
+The last three are the ones that make the sentence above true, and two of them were found only
+because a test for the row above them failed: `collect_processed_meeting_ids` runs *before*
+first-run resume reads the same file, so an unguarded shape there front-ran the refusal and turned
+its exit 3 into an exit 1. **A guard that a second reader can reach the file ahead of is not a
+guard** — when adding one, check what else opens the same path earlier in the call.
+
+The claim stops at `summarize.py` on purpose, because it is checkable there and not elsewhere:
+`scripts/validate-data.mjs` still reads `data/members.json` bare immediately before the commit step,
+and `scripts/enrich-news.py` reads bare too (harmless only because `daily-batch.yml` runs it with
+`|| true`). Both are outside this file and outside the Python AST fence.
+
+"Guarded" here means shape as well as parse: `_as_list_of_dicts` runs *inside* each reader's
+`try`, and raises `TypeError` precisely because that is already in `_RAW_READ_ERRORS`, so a
+hand-edited file that parses into the wrong shape gets the same verdict as a truncated one. Without
+it the failure escapes every guard and lands later — `[].extend("none")` appends four characters,
+`list(some_dict)` appends its KEYS — as an `AttributeError` in `link_threads` or the grouper, i.e.
+exit 1 and no publish, which is the outcome all of this exists to prevent.
+
+That last row depends on an ordering that already existed: `_append_threads_to_date_file` runs
+*before* `delete_sidecar`, which is why a failed append leaves the batch collectable. Do not move the
+delete earlier. And note the deliberate asymmetry with `_load_meetings_for_date`, which raises
+`RawUnreadable` for the same files the first-run path skips: on the resume path "no meetings" is
+evidence the abandon gate deletes on, so a skip there would authorize a delete it never proved.
+
+Still open: #57's option (b) — keeping a corrupt file out of the commit in the first place — is
+**not** implemented (#75); (c), this writer, only stops the pipeline from *creating* one. And
+`apps/mcp/scripts/copy-data.mjs` remains a gap (#73).
 
 `scripts/pipeline/batch_state.py` is auxiliary persistence, not summary logic: it records an in-flight summary batch's id + grouping manifest (with per-thread `input_hash`) to a committed sidecar (`data/pending-batches/{date}.json`) so a timed-out batch resumes on a later run and assembles **without re-grouping** — same input → same request, so it upholds the invariants above rather than affecting them. The hash covers the content params only (`max_tokens` is excluded via `HASH_EXCLUDED_PARAMS`): the model is not told the ceiling, and excluding it is what lets a truncated request be re-issued at a higher one. Be precise about what that costs now that sampling cannot be pinned — a re-issue at `SUMMARY_RETRY_MAX_TOKENS` is the same *request* minus the ceiling, not a guaranteed-identical response. Anything that steers generation must stay hashed. **Bump `SCHEMA_VERSION` whenever `compute_input_hash` or the set of params fed to it changes** — pinning `temperature` took it to v3 and removing it again (#51) took it to v4, since each older version's hashes cover a param set ours no longer matches. `test_summary_request_param_set_is_pinned` keys the expected param set off `SCHEMA_VERSION` and keeps the per-version history, so the two are edited in the same place — but it cannot stop someone who edits both rows, so treat it as a prompt, not a fence. That matters because forgetting the bump does not surface as a version error: it surfaces as per-thread `input_hash mismatch — raw/prompt changed`, which sends the investigator to the raw data. Since #59/#61 that mismatch reds the run on the **first** morning (the reason is named in the annotation). Since #65 it is also *held*: no resubmit, no retry spent, and the sidecar is kept so the batch stays rescuable. It is a decision to make, not one to defer: the results expire ~29 days after submission, and since #69 the hold itself ends — past `ABANDON_AGE_DAYS`, **on a run where none of its manifest's meetings are in the raw on disk**, the sidecar is written off as a permanent loss (`abandoned_dates`) and deleted, because by then it is provably uncollectable. So deferring does not preserve the option; it spends it, loudly. (That absence is observed, never inferred from the age: widening `lookback_days` is how a human rescues a held sidecar, and that run re-fetches the raw, so a rescue must not be the thing that triggers the delete. `_reason_not_to_abandon` holds the whole rule and fails closed to "keep".) The annotation names the choices; **do not simply `git rm` the sidecar** — outside the lookback window the date is not re-summarized, which converts a recoverable batch into the permanent loss the hold was preventing.
 
@@ -143,8 +180,15 @@ python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
 |---|---|---|
 | 0 | ran; may legitimately have produced nothing | continue |
 | 1 | crash / usage error | abort the date loop (`set -e`) |
-| 3 | **nothing reached the site**: every meeting asked about this run produced nothing that became a thread, OR summary requests went out and the date assembled nothing. The two are not exclusive — a fully rejected batch reports both. | record the date, keep going, publish everything, fail the job in the last step |
-| 4 | **suspect**: the same thing, but only one meeting was asked about and the date already has threads | record separately; fail the job only if **2+ dates** in one run report it |
+| 3 | **nothing reached the site for this date**, in any of three ways: (a) every meeting asked about produced nothing that became a thread; (b) summary requests went out and the date assembled nothing — (a) and (b) are not exclusive, a fully rejected batch reports both; (c) since #74, the date was **refused before anything was asked at all** — every raw file for it is unreadable, or its existing threads file is, so continuing would have published nothing or republished it short. | record the date, keep going, publish everything, fail the job in the last step |
+| 4 | **suspect**: as (a)/(b) above, but only one meeting was asked about and the date already has threads | record separately; fail the job only if **2+ dates** in one run report it |
+
+(c) is why the meaning is "nothing reached the site" and not "the API misbehaved". A refusal spends
+no quota and touches no file, so the annotation says so in as many words — the cost of getting this
+wrong is an operator hunting an API rejection that never happened, which is the same failure #59 was
+about. Note the asymmetry with a *partly* unreadable date: that one publishes what it has and stays
+**green**, carrying a warning naming what it went without. Data loss that repairs itself on the next
+fetch is not worth a red morning; data that never reaches the site at all is.
 
 `--collect-pending` is the exception: it speaks for many dates in one process, so a single exit
 code cannot say which one failed. It reports through `systemic_dates` / `suspect_dates` /
