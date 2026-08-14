@@ -282,9 +282,84 @@ jobs:
           # public/sitemap*.xml covers sitemap.xml, sitemap-*.xml and sitemap_index.xml
           # — all variants emitted by generate-sitemap.mjs.
           mkdir -p data/pending-batches
+          # #57's option (b) / #75. The atomic writer stops this pipeline from
+          # CREATING a corrupt data file; this keeps one that arrived another way
+          # out of the commit. src/lib/data.ts is deliberately fatal on a corrupt
+          # file, so a single one committed here kills the next production build
+          # — days later, with nothing pointing back at this run.
+          #
+          # Read the verdict before believing the exclusion: keeping a file out
+          # of the commit only RESCUES anything when the committed copy is
+          # readable (`head_ok`). For the causes #75 names — a hand edit, a bad
+          # merge — the corrupt file is already in HEAD when CI checks out, so
+          # excluding it leaves that same corrupt blob committed and the
+          # production build broken (`head_broken`). The checker reports which
+          # case each file is and the wording below follows it, because "the site
+          # stays up" is false in that one.
+          #
+          # The checker exits 0 by design, even having found something: failing
+          # this step publishes NOTHING, which is the amplification #52/#65/#72
+          # keep removing. Until #74 the metrics step did exactly that by
+          # accident.
+          #
+          # So a non-zero exit here means the CHECKER broke, not that the data
+          # did — an import error, a `data/` path that is a directory. `|| true`
+          # would swallow exactly that and stage everything under a green run
+          # with no annotation: the guard would vanish on the one morning it was
+          # the thing that mattered. Kept publishing (that rule does not bend),
+          # but said out loud and carried to the last step so the run goes red.
+          if BROKEN=$(python scripts/check_committable_json.py); then
+            :
+          else
+            CHECK_RC=$?
+            echo "::error::The committable-JSON check itself failed (exit ${CHECK_RC}) — NOTHING was excluded from this commit and no data file was inspected. If a corrupt one was committed, the next production build dies. This step's log has the traceback."
+            BROKEN=""
+            echo "broken_json_check_failed=true" >> "$GITHUB_OUTPUT"
+          fi
+          # Excluded from the `git add` itself, NOT unstaged afterwards. That is
+          # not a style choice: one of the reasons the checker reports a file is
+          # that it could not be OPENED (permissions, an I/O error), and
+          # `git add` on a directory containing one of those exits 128 having
+          # staged NOTHING — not even its healthy siblings — so under `bash -e`
+          # the add-then-reset order turns "one path is stale" into "nothing
+          # publishes" for exactly the input this check exists to survive.
+          # Verified: `error: unable to index file` / `fatal: adding files
+          # failed`, empty index.
+          ADD_EXCLUDES=()
+          if [ -n "$BROKEN" ]; then
+            while IFS= read -r f; do
+              [ -n "$f" ] && ADD_EXCLUDES+=(":(exclude)$f")
+            done <<< "$(echo "$BROKEN" | cut -f1)"
+          fi
           git add data/threads/ data/pending-batches/ data/members.json data/status.json \
             public/sitemap.xml public/sitemap-*.xml public/sitemap_index.xml \
-            public/feed.xml
+            public/feed.xml "${ADD_EXCLUDES[@]}"
+          if [ -n "$BROKEN" ]; then
+            echo "::error::Excluded from the commit — these data files could not be read, so committing them would break the production build:"
+            echo "$BROKEN" | while IFS=$'\t' read -r f verdict why; do
+              echo "::error::  $f [$verdict] — $why"
+            done
+            echo "Every OTHER file was committed as usual. What the verdict means:"
+            echo "  head_ok      — the repository's version is readable and is what"
+            echo "                 stays committed. The site is stale for that path"
+            echo "                 and nothing else; \`git checkout HEAD -- <file>\`"
+            echo "                 restores the working copy too."
+            echo "  head_broken  — the repository ALREADY holds an unreadable version,"
+            echo "                 so unstaging rescued nothing and the production"
+            echo "                 build keeps failing until a human commits a fix."
+            echo "                 Do NOT run \`git checkout HEAD -- <file>\`: it"
+            echo "                 restores the corruption."
+            echo "  not_in_head  — the file is new, so it simply does not reach the"
+            echo "                 site. That path is absent, not stale."
+            echo "  head_unknown — the committed copy could not be inspected. Assume"
+            echo "                 nothing; check it by hand."
+            echo "Note two things the exclusion does not cover, whatever the verdict:"
+            echo "data/status.json was regenerated by gen_status.py, which bare-reads"
+            echo "every thread file and dies on a corrupt one, so it is stale for the"
+            echo "WHOLE run; and the sitemap and feed were generated without the"
+            echo "excluded path's URLs (those pages stay served, just unlisted)."
+            echo "broken_json=$(echo "$BROKEN" | cut -f1 | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+          fi
           if git diff --cached --quiet; then
             echo "No changes to commit"
             echo "committed=false" >> "$GITHUB_OUTPUT"
@@ -430,6 +505,14 @@ jobs:
           COLLECT_SUSPECT: ${{ steps.collect.outputs.suspect_dates }}
           COLLECT_HELD: ${{ steps.collect.outputs.held_dates }}
           COLLECT_ABANDONED: ${{ steps.collect.outputs.abandoned_dates }}
+          # Not a date list and not a summary verdict: files the commit step
+          # refused to stage (#75). Kept separate because the threshold below
+          # counts dates, and this is neither weak evidence nor about one date.
+          BROKEN_JSON: ${{ steps.commit.outputs.broken_json }}
+          # Set when the checker itself died, i.e. when the line above is empty
+          # for a reason that is NOT "nothing was broken". Reds the run for the
+          # same reason a silent fail-open is worse than a loud one.
+          BROKEN_JSON_CHECK_FAILED: ${{ steps.commit.outputs.broken_json_check_failed }}
         run: |
           # Deduplicate: the threshold below counts DATES, and the same date
           # arriving from both paths must not cross it on its own.
@@ -458,9 +541,28 @@ jobs:
           HELD=$(echo "$COLLECT_HELD" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
           ABANDONED=$(echo "$COLLECT_ABANDONED" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
 
-          if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED" | tr -d ' ')" ]; then
+          if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED$BROKEN_JSON$BROKEN_JSON_CHECK_FAILED" | tr -d ' ')" ]; then
             echo "No systemic summary failure this run."
             exit 0
+          fi
+
+          if [ -n "$(echo "$BROKEN_JSON_CHECK_FAILED" | tr -d ' ')" ]; then
+            echo "::error::The corrupt-data-file check did not run to completion."
+            echo "This run committed whatever was on disk WITHOUT inspecting it, so"
+            echo "the guarantee that a corrupt data file stays out of the commit did"
+            echo "not hold today. Nothing here says one was committed — only that"
+            echo "nobody checked. The commit step's log has the traceback."
+          fi
+
+          if [ -n "$(echo "$BROKEN_JSON" | tr -d ' ')" ]; then
+            echo "::error::Left out of the commit because they could not be read:${BROKEN_JSON}"
+            echo "The commit step named each one, why, and — the part that decides what"
+            echo "to do — whether the repository's own copy is readable. Read that"
+            echo "before assuming the site is fine: a head_broken file means the"
+            echo "production build is already failing and unstaging rescued nothing."
+            echo "Unconditional, like held and abandoned: a data file this pipeline"
+            echo "cannot read is not weak evidence about one date, and src/lib/data.ts"
+            echo "is fatal on one. Everything else published normally."
           fi
 
           if [ -n "$(echo "$ABANDONED" | tr -d ' ')" ]; then

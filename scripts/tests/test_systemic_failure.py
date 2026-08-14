@@ -1081,8 +1081,18 @@ def test_held_and_abandoned_dates_fail_the_run_without_a_threshold():
         "held and abandoned are unconditional; routing them through the suspect "
         "threshold would soften a permanent loss into 'needs a second occurrence'"
     )
-    # Held or abandoned alone must be able to fail the run.
-    assert 'if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED"' in run
+    # Held or abandoned alone must be able to fail the run — and since #75 so
+    # must a data file the commit refused to stage, AND the checker having failed
+    # to run at all. All four are in the same early-exit guard for the same
+    # reason: none of them is weak evidence about one date, so none of them may
+    # be routed through the suspect threshold. The last one is not about a file
+    # either — it is "nobody looked", which a green run must not swallow.
+    assert ('if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED$BROKEN_JSON'
+            '$BROKEN_JSON_CHECK_FAILED"' in run)
+    assert "steps.commit.outputs.broken_json" in str(env.values())
+    assert "steps.commit.outputs.broken_json_check_failed" in str(env.values())
+    assert "$BROKEN_JSON" not in build, (
+        "a file that could not be read is not one date's worth of weak evidence")
     assert "Permanently lost" in run
     assert "held for a human decision" in run
 

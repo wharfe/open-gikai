@@ -196,8 +196,35 @@ delete earlier. And note the deliberate asymmetry with `_load_meetings_for_date`
 `RawUnreadable` for the same files the first-run path skips: on the resume path "no meetings" is
 evidence the abandon gate deletes on, so a skip there would authorize a delete it never proved.
 
-Still open: #57's option (b) — keeping a corrupt file out of the commit in the first place — is
-**not** implemented (#75); (c), this writer, only stops the pipeline from *creating* one.
+#57's option (b) — keeping a corrupt file out of the commit — is implemented as of #75, and it is
+worth knowing exactly how little that buys, because the obvious reading of it is wrong.
+`scripts/check_committable_json.py` prints one `path <TAB> verdict <TAB> reason` line per staged
+data file it cannot read (or that parses to the wrong top-level type), and the commit step keeps
+those paths out of its `git add` via `:(exclude)` pathspecs.
+
+**Excluded from the add, never unstaged after it.** One of the reasons a file is reported is that it
+could not be *opened*, and `git add` on a directory containing one of those exits 128 having staged
+**nothing** — not its healthy siblings either. Add-then-reset therefore dies under the workflow's
+`bash -e` before the commit, i.e. one bad file stops the morning, for precisely the input the check
+exists to survive. `test_committable_json.py` runs the step's own shell against a scratch repo to
+pin this; reverting the order fails it with the real `fatal: adding files failed`.
+
+**The verdict is the honest part.** Excluding a path only *rescues* anything when the committed copy
+is readable (`head_ok`). For the causes #75 names — a hand edit, a bad merge — the corrupt file is
+already in `HEAD` when CI checks out, so excluding it leaves that same blob committed and the
+production build broken (`head_broken`); `git checkout HEAD -- <file>` restores the corruption
+rather than fixing it. A new file is `not_in_head` (that path is absent, not stale), and anything
+the checker cannot establish is `head_unknown` and promises nothing. So the reach is narrow: the
+case it genuinely prevents is a file *this run* damaged, which (c) already makes unlikely. Do not
+restate it as "a corrupt file can no longer be committed".
+
+The checker exits 0 even having found something (a non-zero exit would abort the commit step and
+publish nothing). A non-zero exit therefore means the *checker* broke, which is reported as
+`broken_json_check_failed` and reds the run in the last step — publishing continues, but "nobody
+looked" never passes silently. Two of the four checked paths are unreachable for a syntax error
+today because an earlier step dies on them first (`data/members.json` — deliberately, and
+`data/pending-batches/*.json` — not deliberately, #76); they are kept because `HEAD`-side corruption
+is still theirs to see. Their presence is not a claim of protection.
 
 `scripts/pipeline/batch_state.py` is auxiliary persistence, not summary logic: it records an in-flight summary batch's id + grouping manifest (with per-thread `input_hash`) to a committed sidecar (`data/pending-batches/{date}.json`) so a timed-out batch resumes on a later run and assembles **without re-grouping** — same input → same request, so it upholds the invariants above rather than affecting them. The hash covers the content params only (`max_tokens` is excluded via `HASH_EXCLUDED_PARAMS`): the model is not told the ceiling, and excluding it is what lets a truncated request be re-issued at a higher one. Be precise about what that costs now that sampling cannot be pinned — a re-issue at `SUMMARY_RETRY_MAX_TOKENS` is the same *request* minus the ceiling, not a guaranteed-identical response. Anything that steers generation must stay hashed. **Bump `SCHEMA_VERSION` whenever `compute_input_hash` or the set of params fed to it changes** — pinning `temperature` took it to v3 and removing it again (#51) took it to v4, since each older version's hashes cover a param set ours no longer matches. `test_summary_request_param_set_is_pinned` keys the expected param set off `SCHEMA_VERSION` and keeps the per-version history, so the two are edited in the same place — but it cannot stop someone who edits both rows, so treat it as a prompt, not a fence. That matters because forgetting the bump does not surface as a version error: it surfaces as per-thread `input_hash mismatch — raw/prompt changed`, which sends the investigator to the raw data. Since #59/#61 that mismatch reds the run on the **first** morning (the reason is named in the annotation). Since #65 it is also *held*: no resubmit, no retry spent, and the sidecar is kept so the batch stays rescuable. It is a decision to make, not one to defer: the results expire ~29 days after submission, and since #69 the hold itself ends — past `ABANDON_AGE_DAYS`, **on a run where none of its manifest's meetings are in the raw on disk**, the sidecar is written off as a permanent loss (`abandoned_dates`) and deleted, because by then it is provably uncollectable. So deferring does not preserve the option; it spends it, loudly. (That absence is observed, never inferred from the age: widening `lookback_days` is how a human rescues a held sidecar, and that run re-fetches the raw, so a rescue must not be the thing that triggers the delete. `_reason_not_to_abandon` holds the whole rule and fails closed to "keep".) The annotation names the choices; **do not simply `git rm` the sidecar** — outside the lookback window the date is not re-summarized, which converts a recoverable batch into the permanent loss the hold was preventing.
 
