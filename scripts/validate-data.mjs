@@ -11,9 +11,58 @@
  *   --fix  Auto-fix issues where possible (default in build pipeline)
  */
 
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
-import { join } from "path";
+import {
+  readFileSync, writeFileSync, readdirSync, existsSync,
+  renameSync, unlinkSync, openSync, fsyncSync, closeSync,
+} from "fs";
+import { join, dirname, basename } from "path";
 import { execSync } from "child_process";
+
+// The JS half of scripts/pipeline/jsonio.py's rule (#57/#72): a writer of a
+// file this repo commits must never leave a half-written one behind. `--fix`
+// runs in daily-batch.yml immediately before `git add data/members.json`, so a
+// job killed mid-write here commits a truncated members.json — and src/lib
+// /data.ts is deliberately fatal on that, which is a red Vercel build.
+//
+// Same shape as the Python side, and that has to mean the same steps, not just
+// the same outline: temp file in the SAME directory (rename is only atomic
+// within one filesystem), fsync the file, rename, then fsync the directory so
+// the rename is durable and not merely the bytes it points at. The directory
+// fsync is best-effort — some filesystems refuse to open a directory, and
+// failing the whole write over a durability upgrade would be worse than the
+// crash window it closes.
+function fsyncDir(dir) {
+  let fd;
+  try {
+    fd = openSync(dir, "r");
+    fsyncSync(fd);
+  } catch { /* best-effort */ } finally {
+    if (fd !== undefined) { try { closeSync(fd); } catch { /* ignore */ } }
+  }
+}
+
+function writeJsonAtomic(path, text) {
+  const dir = dirname(path);
+  const tmp = join(dir, `.${basename(path)}.${process.pid}.tmp`);
+  try {
+    const fd = openSync(tmp, "w");
+    try {
+      // writeFileSync on the descriptor, not writeSync: writeSync returns a
+      // byte count and can short-write, which would silently truncate exactly
+      // the way this function exists to prevent. writeFileSync loops until the
+      // whole buffer is out.
+      writeFileSync(fd, text, "utf-8");
+      fsyncSync(fd);
+    } finally {
+      closeSync(fd);
+    }
+    renameSync(tmp, path);
+    fsyncDir(dir);
+  } catch (e) {
+    try { unlinkSync(tmp); } catch { /* already gone */ }
+    throw e;
+  }
+}
 
 const FIX = process.argv.includes("--fix");
 const DATA_DIR = "data";
@@ -144,7 +193,7 @@ function checkMembers(threads) {
       }
     }
 
-    writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2) + "\n", "utf-8");
+    writeJsonAtomic(MEMBERS_PATH, JSON.stringify(members, null, 2) + "\n");
     fix(`Added ${referenced.size} missing members, patched ${patched} incomplete entries`);
   } else {
     error(`${referenced.size} memberIds referenced in threads but missing from members.json`);

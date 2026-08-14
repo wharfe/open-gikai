@@ -33,6 +33,12 @@ from urllib.parse import quote, unquote
 from urllib.request import Request, urlopen
 from urllib.error import URLError
 
+# Module level, not inside --rank-with-claude: the writer below needs it on
+# every run, ranked or not.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from pipeline.jsonio import write_json_atomic  # noqa: E402
+
 log = logging.getLogger("enrich-news")
 
 THREADS_DIR = "data/threads"
@@ -219,9 +225,7 @@ def process_file(
             )
 
     if total_enriched > 0 and not dry_run:
-        with open(filepath, "w", encoding="utf-8") as f:
-            json.dump(threads, f, ensure_ascii=False, indent=2)
-            f.write("\n")
+        write_json_atomic(filepath, threads, trailing_newline=True)
 
     return total_enriched, total_articles
 
@@ -268,9 +272,8 @@ def main():
 
     rank_client = None
     if args.rank_with_claude:
-        # Add scripts/ to sys.path so `pipeline.news_ranker` resolves the
-        # same way the summarizer does.
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        # scripts/ is already on sys.path (see the module-level insert), so
+        # `pipeline.news_ranker` resolves the same way the summarizer does.
         try:
             import anthropic
             from dotenv import load_dotenv

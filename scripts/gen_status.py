@@ -5,7 +5,12 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from pipeline.jsonio import write_json_atomic  # noqa: E402
 
 THREADS_DIR = "data/threads"
 MEMBERS_PATH = "data/members.json"
@@ -65,9 +70,7 @@ def main() -> None:
         "generatedAt": datetime.utcnow().isoformat() + "Z",
     }
 
-    os.makedirs(os.path.dirname(STATUS_PATH), exist_ok=True)
-    with open(STATUS_PATH, "w", encoding="utf-8") as f:
-        json.dump(status, f, ensure_ascii=False, indent=2)
+    write_json_atomic(STATUS_PATH, status)
 
     print(f"Generated {STATUS_PATH}")
     print(f"  {len(status) - 1} dates, {total_threads} threads, {total_speeches} speeches, {members_count} members")

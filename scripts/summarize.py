@@ -46,6 +46,7 @@ from pipeline.summarizer import (
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
 from pipeline import batch_state as bs
+from pipeline.jsonio import write_json_atomic
 
 log = logging.getLogger("summarize")
 
@@ -327,9 +328,7 @@ def worst_verdict(*verdicts: int) -> int:
 
 def save_progress(progress: dict, progress_path: str) -> None:
     """Save progress file."""
-    os.makedirs(os.path.dirname(progress_path), exist_ok=True)
-    with open(progress_path, "w", encoding="utf-8") as f:
-        json.dump(progress, f, ensure_ascii=False, indent=2)
+    write_json_atomic(progress_path, progress)
 
 
 # ---------------------------------------------------------------------------
@@ -806,26 +805,70 @@ def assemble_from_manifest(
     return threads, True, None
 
 
-def _load_meetings_for_date(date_str: str, raw_dir: str) -> Dict[str, dict]:
-    """Re-load all meetings for a date from raw files, keyed by meetingId.
+def _raw_candidates_for_date(date_str: str, raw_dir: str) -> list:
+    """Every raw file that may hold this date's meetings, in read order.
 
-    Mirrors run_pipeline's candidate-file scan so resume sees the same raw.
+    One list, three readers: the loader below, the "which file is broken"
+    reporter (_raw_read_failure_detail), and run_pipeline's first-run scan. Two
+    copies would drift, and the consequence is specifically bad — the reporter
+    would name a file that is fine, or none at all, for a failure the loader did
+    hit, and resume would assemble from raw the first run never saw.
     """
     import glob as _glob
-    candidates = [
+    return [
         os.path.join(raw_dir, f"ndl-{date_str}.json"),
         os.path.join(raw_dir, f"kantei-{date_str}.json"),
         os.path.join(raw_dir, f"council-{date_str}.json"),
         *sorted(_glob.glob(os.path.join(raw_dir, f"council-*-{date_str}.json"))),
         os.path.join(raw_dir, f"{date_str}.json"),
     ]
+
+
+class RawUnreadable(ValueError):
+    """A specific raw file could not be read, and this says WHICH one.
+
+    Subclasses ValueError so it stays inside ``_RAW_READ_ERRORS`` — every
+    existing guard (the abandon gate included) keeps catching it unchanged, and
+    in particular the abandon gate keeps failing closed on it.
+
+    It exists because the alternative was reconstructing the answer afterwards:
+    re-read each candidate and see which one breaks. That is wrong in two ways
+    that both mislead the operator — a transient I/O error that does not
+    reproduce makes the second pass report "parses fine, wrong shape", and a
+    file that is valid JSON of the wrong shape is not caught by a re-parse at
+    all, so no filename is named. Carrying the path out of the failure itself
+    cannot drift from it.
+    """
+
+    def __init__(self, path: str, cause: BaseException):
+        super().__init__(f"{path} ({cause.__class__.__name__}: {cause})")
+        self.path = path
+        self.cause = cause
+
+
+def _load_meetings_for_date(date_str: str, raw_dir: str) -> Dict[str, dict]:
+    """Re-load all meetings for a date from raw files, keyed by meetingId.
+
+    Mirrors run_pipeline's candidate-file scan so resume sees the same raw.
+
+    Raises ``RawUnreadable`` naming the offending file. Callers decide the
+    policy (#72 holds the date); this only makes the failure legible.
+    """
     by_id: Dict[str, dict] = {}
-    for c in candidates:
+    for c in _raw_candidates_for_date(date_str, raw_dir):
         if os.path.exists(c):
-            with open(c, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            for m in data.get("meetings", []):
-                by_id[m.get("meetingId", "unknown")] = m
+            try:
+                with open(c, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                for m in data.get("meetings", []):
+                    by_id[m.get("meetingId", "unknown")] = m
+            except RawUnreadable:
+                raise
+            except _RAW_READ_ERRORS as exc:
+                # Covers the shape failures too, not just the parse: `data` may
+                # be a valid JSON scalar with no .get, and `meetings` may be a
+                # string. Those are the cases a re-parse cannot find.
+                raise RawUnreadable(c, exc) from exc
     return by_id
 
 
@@ -837,8 +880,7 @@ def _append_threads_to_date_file(threads: list, threads_dir: str, date_str: str)
         with open(path, "r", encoding="utf-8") as f:
             existing = json.load(f)
     existing.extend(threads)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(existing, f, ensure_ascii=False, indent=2)
+    write_json_atomic(path, existing)
 
 
 def _rebuild_requests_from_manifest(sidecar: dict, meetings_by_id: Dict[str, dict],
@@ -1164,7 +1206,8 @@ def _record_resume_verdict(date_str: str, summary_attempted: int,
 
 
 def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
-                         held_dates: list, diagnostics: list) -> None:
+                         held_dates: list, diagnostics: list,
+                         detail: Optional[str] = None) -> None:
     """Report a sidecar that is waiting on a human or on restored local state.
 
     Deliberately NOT ``_record_resume_verdict``. That one grades how far a
@@ -1182,11 +1225,20 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
     `git rm`: raw lives only on the runner, and past the lookback window a
     removed sidecar is not re-summarised — it is a permanent loss dressed up as
     a fix.
+
+    ``detail`` carries what the reason alone cannot: for ``raw_unreadable``,
+    WHICH file failed and how. The reason is the class of problem; the operator
+    needs the instance. Two call paths reach this with that reason (the ended
+    batch reads raw here, a terminal-status one reads it inside
+    ``_apply_failure_policy``), so the detail also travels ON the diagnostic —
+    a caller that only forwards ``eff_diag`` must not silently produce the
+    filename-less half of the annotation.
     """
     held_dates.append(date_str)
     diagnostics.append({**diagnostic, "date": date_str})
 
     reason = diagnostic.get("reason", "unknown")
+    detail = detail or diagnostic.get("detail")
     attempt = (sidecar.get("attempts") or [{}])[-1]
     submitted = attempt.get("submitted_at", "unknown")
     blocked = sidecar.get("blocked") or {}
@@ -1238,6 +1290,15 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
             f"data/pending-batches/{date_str}.json — outside the window a removed "
             "sidecar is not re-summarised. Reverting the change that moved the "
             "hash lets the next run collect normally")
+    elif reason == "raw_unreadable":
+        parts.append(
+            "raw for this date IS on disk but could not be read, so nothing was "
+            "assembled and nothing was resubmitted (the batch is fine; the local "
+            "file is not). data/raw is gitignored and re-fetched every run, so "
+            "the next run most likely replaces it — if this repeats, the file is "
+            "being written broken rather than arriving broken")
+        if detail:
+            parts.append(f"unreadable: {detail}")
     elif reason in ("raw_missing", "raw_date_missing", "speech_gap"):
         # Only true while the date is still inside the fetch lookback window
         # (30 days). ABANDON_AGE_DAYS is 31, so a date aged 30-31 days is
@@ -1327,6 +1388,25 @@ def _manifest_meeting_ids(sidecar: dict) -> Optional[set]:
 # them mean the same thing here — "absence is not established" — and any of them
 # escaping aborts Collect under set -e and takes the morning's publish down.
 _RAW_READ_ERRORS = (OSError, ValueError, TypeError, AttributeError)
+
+
+def _raw_read_failure_detail(date_str: str, raw_dir: str, exc: BaseException) -> str:
+    """Name the raw file that could not be read, for the operator.
+
+    "raw is unreadable" over a directory holding 30 days of files from four
+    adapters is not an instruction; a filename is. ``RawUnreadable`` carries the
+    filename out of the failure itself, so this is only formatting — it does not
+    re-read anything, and therefore cannot name a different file than the one
+    that actually broke.
+
+    The fallback exists because ``_RAW_READ_ERRORS`` is deliberately wider than
+    the raise site: a future reader that fails some other way still produces a
+    held date with an honest annotation rather than a confident wrong filename.
+    """
+    if isinstance(exc, RawUnreadable):
+        return str(exc)
+    return (f"raw for {date_str} in {raw_dir} could not be read and the failure "
+            f"did not identify a file ({exc.__class__.__name__}: {exc})")
 
 
 def _all_meeting_ids_in_raw(raw_dir: str) -> set:
@@ -1559,7 +1639,23 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
     # is a permanent human-decision case. This branch is reachable with raw
     # absent because the terminal-status check runs before raw is even loaded.
     # record_terminal is idempotent per attempt, so deferring it is safe.
-    meetings_by_id = _load_meetings_for_date(sidecar["date"], raw_dir)
+    try:
+        meetings_by_id = _load_meetings_for_date(sidecar["date"], raw_dir)
+    except _RAW_READ_ERRORS as exc:
+        # #72. Same guard as the abandon gate, for the same reason: letting this
+        # raise aborts Collect under `set -e` and takes the morning's publish
+        # down. Held rather than resubmitted — the batch is fine and the local
+        # file is what is broken, so paying for a new one would not fix it.
+        log.error("Resume: raw for %s is unreadable (%s) — holding",
+                  sidecar["date"], exc.__class__.__name__)
+        # Carried ON the diagnostic, not passed as an argument: this returns to
+        # four call sites that all forward `eff_diag` and nothing else, so a
+        # detail that only travelled by parameter would reach none of them and
+        # the terminal-status path would print "raw is unreadable" over a
+        # directory of 30 days' files without naming one.
+        return "held", {**_diagnostic("raw_unreadable"),
+                        "detail": _raw_read_failure_detail(
+                            sidecar["date"], raw_dir, exc)}
 
     # Verify BEFORE rebuilding. The ended-batch path (assemble_from_manifest)
     # already runs this check, but a terminal-status batch (canceled/expired)
@@ -1794,7 +1890,20 @@ def collect_pending_batches(
         # Load raw BEFORE fetching results: raw is needed to both assemble and
         # resubmit, and checking it first means we never call .results() on a
         # batch we cannot use anyway (which would crash if results have expired).
-        meetings_by_id = _load_meetings_for_date(date_str, raw_dir)
+        try:
+            meetings_by_id = _load_meetings_for_date(date_str, raw_dir)
+        except _RAW_READ_ERRORS as exc:
+            # #72. Unreadable raw is NOT absent raw, and the difference decides
+            # whether data survives: absence is what the abandon gate treats as
+            # "nothing left to rebuild from", so folding a truncated file into
+            # the branch below would let it authorize a delete it never proved.
+            log.error("Resume: raw for %s is unreadable (%s) — holding",
+                      date_str, exc.__class__.__name__)
+            _record_held_sidecar(date_str, sidecar,
+                                 _diagnostic("raw_unreadable"),
+                                 held_dates, diagnostics,
+                                 detail=_raw_read_failure_detail(date_str, raw_dir, exc))
+            continue
         if not meetings_by_id:
             # Raw is gone, and this sidecar is younger than the abandon age (the
             # top-of-loop gate already removed the ones that are not), so the miss
@@ -2260,15 +2369,11 @@ def run_pipeline(
     answers, not two, and the third one only means something once the workflow
     has seen every date — see ``suspect_failure``.
     """
-    # Load raw data — collect meetings from all source files for this date
-    import glob as _glob
-    candidates = [
-        os.path.join(raw_dir, f"ndl-{date_str}.json"),
-        os.path.join(raw_dir, f"kantei-{date_str}.json"),
-        os.path.join(raw_dir, f"council-{date_str}.json"),  # legacy
-        *sorted(_glob.glob(os.path.join(raw_dir, f"council-*-{date_str}.json"))),
-        os.path.join(raw_dir, f"{date_str}.json"),  # legacy
-    ]
+    # Load raw data — collect meetings from all source files for this date.
+    # Shared with the resume path on purpose: _raw_candidates_for_date's whole
+    # justification is that resume must see the same raw this does, and a second
+    # copy of the list here is exactly the drift it was extracted to prevent.
+    candidates = _raw_candidates_for_date(date_str, raw_dir)
     meetings: list = []
     found_any = False
     for candidate in candidates:
@@ -2460,10 +2565,8 @@ def run_pipeline(
 
     # Write output
     if all_threads:
-        os.makedirs(output_dir, exist_ok=True)
         output_path = os.path.join(output_dir, f"{date_str}.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(all_threads, f, ensure_ascii=False, indent=2)
+        write_json_atomic(output_path, all_threads)
         log.info("Wrote %d threads → %s", len(all_threads), output_path)
 
     # Save members

@@ -20,6 +20,27 @@ const MEMBERS_PATH = path.join(DATA_DIR, "members.json");
 let _threadsCache: Thread[] | null = null;
 let _membersCache: Record<string, Member> | null = null;
 
+// Parsing a data file must fail with the file's NAME (#57). A corrupt
+// `data/threads/{date}.json` used to reach the Vercel build as a bare
+// "Unexpected token ... in JSON", with nothing to say which of ~150 files it
+// came from — a build failure nobody can act on in one step.
+//
+// Deliberately still fatal. The publish chain (validate-data / generate-feeds /
+// generate-sitemap) names and SKIPS a broken file so the run can continue, and
+// that is right for those; silently skipping here would drop a whole date from
+// the site instead, which is a data loss that looks like a successful build.
+// Since #57 the pipeline writes these files atomically, so one that is corrupt
+// arrived by another route (a hand edit, a bad merge) and wants a person.
+function parseJsonFile(filePath: string): unknown {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    const detail = e instanceof Error ? e.message : String(e);
+    throw new Error(`Corrupt JSON data file: ${filePath} — ${detail}`);
+  }
+}
+
 function loadThreads(): Thread[] {
   if (_threadsCache) return _threadsCache;
   if (!fs.existsSync(THREADS_DIR)) {
@@ -34,8 +55,7 @@ function loadThreads(): Thread[] {
 
   const threads: Thread[] = [];
   for (const file of files) {
-    const raw = fs.readFileSync(path.join(THREADS_DIR, file), "utf-8");
-    const data = JSON.parse(raw);
+    const data = parseJsonFile(path.join(THREADS_DIR, file));
     if (Array.isArray(data)) threads.push(...data);
   }
   _threadsCache = threads;
@@ -48,11 +68,10 @@ function loadMembers(): Record<string, Member> {
     _membersCache = {};
     return _membersCache;
   }
-  const raw = fs.readFileSync(MEMBERS_PATH, "utf-8");
-  const data = JSON.parse(raw);
+  const data = parseJsonFile(MEMBERS_PATH);
   if (data && typeof data === "object" && !Array.isArray(data)) {
-    _membersCache = data;
-    return data;
+    _membersCache = data as Record<string, Member>;
+    return _membersCache;
   }
   _membersCache = {};
   return _membersCache;

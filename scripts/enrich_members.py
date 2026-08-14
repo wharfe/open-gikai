@@ -12,7 +12,12 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import urllib.parse
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from pipeline.jsonio import write_json_atomic  # noqa: E402
 
 MEMBERS_PATH = "data/members.json"
 
@@ -88,8 +93,7 @@ def main() -> None:
             member["links"] = links
             enriched += 1
 
-    with open(MEMBERS_PATH, "w", encoding="utf-8") as f:
-        json.dump(members, f, ensure_ascii=False, indent=2)
+    write_json_atomic(MEMBERS_PATH, members)
 
     elected = sum(1 for m in members.values() if is_elected_member(m))
     print(f"Enriched {enriched}/{len(members)} members ({elected} elected officials)")

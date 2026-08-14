@@ -1830,3 +1830,131 @@ def test_apply_failure_policy_does_not_count_a_retry_it_never_sent(
     )
     assert sidecar["attempts"][-1]["terminal_status"] is None
     assert fake_client.messages.batches.created_requests == []
+
+
+# --- Corrupt raw must not take the morning down (#72) -------------------------
+#
+# The abandon gate reads raw behind _RAW_READ_ERRORS because a read that decides
+# a DELETION must not raise. The two call sites on the main path never got the
+# same treatment: they call _load_meetings_for_date bare, and json.load on a
+# truncated data/raw file aborts Collect under `set -e` — the publish-stopping
+# amplification #65 removed, arriving through the reader instead of the regime.
+#
+# HOLD, not BLOCKED: data/raw is gitignored and re-fetched every run, so a
+# corrupt file there is very likely gone tomorrow. Nothing is resubmitted and no
+# retry is spent, and the sidecar stays rescuable.
+
+def _write_corrupt_raw(raw_dir, date_str="2026-05-14"):
+    os.makedirs(raw_dir, exist_ok=True)
+    with open(os.path.join(raw_dir, f"ndl-{date_str}.json"), "w",
+              encoding="utf-8") as f:
+        f.write('{"meetings": [{"meetingId": "M1",')      # truncated mid-write
+
+
+def test_corrupt_raw_holds_the_date_instead_of_crashing_collect(
+        fake_client, tmp_path, capsys, monkeypatch):
+    """The ended-batch path: raw is read before results are fetched."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    _write_corrupt_raw(raw_dir)
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"),
+                    _sidecar_with_one_thread(_correct_hash()))
+    fake_client.messages.batches.statuses["b1"] = "ended"
+
+    result = summarize.collect_pending_batches(   # must not raise
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["diagnostics"][0]["reason"] == "raw_unreadable"
+    assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
+    assert fake_client.messages.batches.created_requests == []   # no resubmit
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    # The file is what a human has to look at, so name it — "raw is unreadable"
+    # over a directory of 30 days' files is not an instruction.
+    assert any("ndl-2026-05-14.json" in ln for ln in errors), errors
+
+
+def test_corrupt_raw_on_the_rebuild_path_holds_without_spending_a_retry(
+        fake_client, tmp_path, monkeypatch):
+    """The terminal-status path reaches _load_meetings_for_date inside
+    _apply_failure_policy instead, before it can rebuild anything."""
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    _write_corrupt_raw(raw_dir)
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"),
+                    _sidecar_with_one_thread(_correct_hash()))
+    fake_client.messages.batches.statuses["b1"] = "canceled"
+
+    result = summarize.collect_pending_batches(   # must not raise
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["held_dates"] == ["2026-05-14"]
+    assert fake_client.messages.batches.created_requests == []
+    sc = bs.load_sidecar(os.path.join(pending_dir, "2026-05-14.json"))
+    assert sc["retry_count"] == 0, "a broken local file must not burn a retry"
+
+
+def test_the_rebuild_path_names_the_broken_file_too(
+        fake_client, tmp_path, capsys, monkeypatch):
+    """The asymmetry this guards against is invisible in the happy path.
+
+    The ended-batch call site passes the filename detail as an argument; the
+    terminal-status one returns through _apply_failure_policy, whose four
+    callers forward `eff_diag` and nothing else. Carry the detail only by
+    argument and this path prints "raw is unreadable" over a directory holding
+    30 days of files from four adapters — the same annotation, minus the only
+    part an operator can act on.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    _write_corrupt_raw(raw_dir)
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"),
+                    _sidecar_with_one_thread(_correct_hash()))
+    fake_client.messages.batches.statuses["b1"] = "expired"
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["held_dates"] == ["2026-05-14"]
+    assert result["diagnostics"][0]["reason"] == "raw_unreadable"
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert any("ndl-2026-05-14.json" in ln for ln in errors), errors
+
+
+def test_corrupt_raw_is_held_not_treated_as_absent_raw(
+        fake_client, tmp_path, monkeypatch):
+    """The distinction that decides whether data survives.
+
+    'No raw' and 'unreadable raw' both produce no meetings, so the cheap fix is
+    to let the corrupt file fall into the raw_date_missing branch. That branch
+    feeds the abandon gate's "nothing left to rebuild from" — so a truncated
+    file on an over-age sidecar would report absence that was never established
+    and delete a batch whose raw is sitting right there.
+    """
+    monkeypatch.setattr(summarize, "_utcnow_iso", lambda: "2026-07-15T00:00:00Z")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    _write_corrupt_raw(raw_dir)
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["attempts"][-1]["submitted_at"] = "2026-06-01T00:00:00Z"   # ~44d
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+    fake_client.messages.batches.statuses["b1"] = "ended"
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["abandoned_dates"] == []
+    assert result["held_dates"] == ["2026-05-14"]
+    assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))

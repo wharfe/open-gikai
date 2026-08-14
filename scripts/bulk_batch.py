@@ -36,6 +36,7 @@ from pipeline.grouper import (
 from pipeline.summarizer import build_summary_request
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
+from pipeline.jsonio import write_json_atomic
 from batch import (
     make_thread_id, build_thread_context, _safe_id,
     update_public_status, collect_batch_results,
@@ -60,15 +61,13 @@ STATE_PATH = "data/batch/bulk_state.json"
 
 def load_state() -> dict:
     if os.path.exists(STATE_PATH):
-        with open(STATE_PATH) as f:
+        with open(STATE_PATH, encoding="utf-8") as f:
             return json.load(f)
     return {"phase": "init"}
 
 
 def save_state(state: dict):
-    os.makedirs(os.path.dirname(STATE_PATH), exist_ok=True)
-    with open(STATE_PATH, "w") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+    write_json_atomic(STATE_PATH, state)
 
 
 # ---------------------------------------------------------------------------
@@ -97,7 +96,7 @@ def pending_dates() -> list[str]:
 def load_raw(date_str: str) -> list[dict]:
     """Load meetings from raw file."""
     path = os.path.join(RAW_DIR, f"{date_str}.json")
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
     return data.get("meetings", [])
 
@@ -360,10 +359,8 @@ def run_pipeline(
         log.info("Phase 1: %d requests across %d dates", len(requests), len(dates))
 
         # Save date_meetings for later
-        os.makedirs(os.path.dirname(STATE_PATH), exist_ok=True)
         dm_path = os.path.join(os.path.dirname(STATE_PATH), "date_meetings.json")
-        with open(dm_path, "w") as f:
-            json.dump(date_meetings, f, ensure_ascii=False)
+        write_json_atomic(dm_path, date_meetings, indent=None)
 
         batch_ids = submit_batch(client, requests, "Phase 1")
         state["phase"] = "phase1_submitted"
@@ -388,7 +385,7 @@ def run_pipeline(
 
             # Load date_meetings
             dm_path = os.path.join(os.path.dirname(STATE_PATH), "date_meetings.json")
-            with open(dm_path) as f:
+            with open(dm_path, encoding="utf-8") as f:
                 date_meetings = json.load(f)
 
             # Build id_map for all meetings
@@ -428,11 +425,10 @@ def run_pipeline(
 
             # Save intermediate
             inter_path = os.path.join(os.path.dirname(STATE_PATH), "phase1_results.json")
-            with open(inter_path, "w") as f:
-                json.dump({
-                    "grouping": grouping_results,
-                    "outcomes": outcome_results,
-                }, f, ensure_ascii=False)
+            write_json_atomic(inter_path, {
+                "grouping": grouping_results,
+                "outcomes": outcome_results,
+            }, indent=None)
 
             state["phase"] = "phase2_ready"
             save_state(state)
@@ -441,9 +437,9 @@ def run_pipeline(
     inter_path = os.path.join(os.path.dirname(STATE_PATH), "phase1_results.json")
     dm_path = os.path.join(os.path.dirname(STATE_PATH), "date_meetings.json")
 
-    with open(inter_path) as f:
+    with open(inter_path, encoding="utf-8") as f:
         intermediate = json.load(f)
-    with open(dm_path) as f:
+    with open(dm_path, encoding="utf-8") as f:
         date_meetings = json.load(f)
 
     grouping_results = intermediate["grouping"]
@@ -498,10 +494,8 @@ def run_pipeline(
 
             if threads:
                 link_threads(threads)
-                os.makedirs(THREADS_DIR, exist_ok=True)
                 out_path = os.path.join(THREADS_DIR, f"{date_str}.json")
-                with open(out_path, "w") as f:
-                    json.dump(threads, f, ensure_ascii=False, indent=2)
+                write_json_atomic(out_path, threads)
                 log.info("  %s: %d threads → %s", date_str, len(threads), out_path)
                 total_threads += len(threads)
 

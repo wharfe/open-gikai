@@ -71,6 +71,44 @@ Auxiliary information layers (news enrichment, members extraction, sitemap gener
 
 `src/lib/ministry.mjs` is a related auxiliary module: it deterministically maps a government-witness (政府参考人) member to a ministry from their `role` string (no LLM), powering the `/gov` hub pages, member-page breadcrumbs, sitemap-gov, and IndexNow. It is **plain ESM (+ `ministry.d.mts`)** rather than TS so the node-run build scripts (`scripts/generate-sitemap.mjs`, `scripts/notify-indexnow.mjs`) can import it — the repo has no tsx/ts-node. Politicians are excluded inside its API (m_-prefixed IDs only + political-title blocklist; `rank` is NOT used — it misclassifies bureaucrats). `data/lexdiff-mapping.json` (outbound law cross-links, consumed by `summarize.py`) is similarly auxiliary.
 
+`scripts/pipeline/jsonio.py` holds `write_json_atomic`, and **every Python writer of a JSON file
+this repo commits or re-reads goes through it** (#57/#72). `json.dump` serializes incrementally, so
+a job killed mid-write or a full disk leaves a truncated document that IS the file from then on.
+That one cause used to detonate in two unrelated places: a truncated `data/threads/{date}.json`
+was named-and-skipped by the publish chain (so the run stayed green and committed it) and then
+killed the Vercel build in `JSON.parse`; a truncated `data/raw/*.json` aborted `--collect-pending`
+under `set -e` and stopped the morning's publish. Writes go to a temp file **in the same
+directory** (`os.replace` is only atomic within one filesystem), fsync the file, rename, then fsync
+the directory — nothing is replaced until serialization has fully succeeded, and the rename itself
+is durable rather than just the bytes it points at. Its `indent=2` / `ensure_ascii=False` defaults
+match the writers it replaced on purpose: changing either rewrites every committed data file on
+the next run. Readers are guarded too, but that only decides how well the pipeline survives
+corruption — this decides whether it creates any.
+
+Read the scope of that rule literally, because two writers sit outside it and neither is an
+oversight you should "fix" by widening the sentence. **`scripts/validate-data.mjs`** rewrites the
+committed `data/members.json` under `--fix` — which `daily-batch.yml` runs immediately before
+`git add data/members.json` — so it carries its own copy of the same temp→fsync→rename→fsync-dir
+shape. It is a duplicate because the repo has no tsx/ts-node and node cannot import the Python one;
+`test_jsonio.py::test_the_js_half_of_the_rule_holds_too` pins it, since the AST fence walks only
+`scripts/**.py` and is structurally blind to it. **`apps/mcp/scripts/copy-data.mjs`** is a known
+gap (#73): it `rmSync`s `apps/mcp/data/` and `cpSync`s into it, so an interrupted prebuild can leave
+the MCP bundle short or truncated, and its own "already bundled, skip" check then accepts that. The
+fix there is a staging-directory swap, not this function.
+
+On the read side the rule is that **unreadable is not absent**: `raw_unreadable` is its own HOLD
+reason, because folding it into `raw_missing` would let a truncated file satisfy the abandon gate's
+"nothing left to rebuild from" and delete a batch whose raw is sitting right there. The failure
+carries the offending filename out with it (`RawUnreadable`) rather than being reconstructed by a
+second pass — a re-read cannot see a file that is valid JSON of the wrong shape, and misreports a
+transient error as a shape error. `src/lib/data.ts` and `apps/mcp/src/lib/data.ts` stay *fatal* on a
+corrupt file (skipping would drop a whole date from the site under a green build) but now name the
+file in the error. Guarding stops at the resume path on purpose-for-now: `run_pipeline`'s raw read
+and `_append_threads_to_date_file`'s read of an existing threads file are still bare, so a corrupt
+file there still aborts the run (#74). And #57's option (b) — keeping a corrupt file out of the
+commit in the first place — is **not** implemented (#75); (c), this writer, only stops the pipeline
+from *creating* one.
+
 `scripts/pipeline/batch_state.py` is auxiliary persistence, not summary logic: it records an in-flight summary batch's id + grouping manifest (with per-thread `input_hash`) to a committed sidecar (`data/pending-batches/{date}.json`) so a timed-out batch resumes on a later run and assembles **without re-grouping** — same input → same request, so it upholds the invariants above rather than affecting them. The hash covers the content params only (`max_tokens` is excluded via `HASH_EXCLUDED_PARAMS`): the model is not told the ceiling, and excluding it is what lets a truncated request be re-issued at a higher one. Be precise about what that costs now that sampling cannot be pinned — a re-issue at `SUMMARY_RETRY_MAX_TOKENS` is the same *request* minus the ceiling, not a guaranteed-identical response. Anything that steers generation must stay hashed. **Bump `SCHEMA_VERSION` whenever `compute_input_hash` or the set of params fed to it changes** — pinning `temperature` took it to v3 and removing it again (#51) took it to v4, since each older version's hashes cover a param set ours no longer matches. `test_summary_request_param_set_is_pinned` keys the expected param set off `SCHEMA_VERSION` and keeps the per-version history, so the two are edited in the same place — but it cannot stop someone who edits both rows, so treat it as a prompt, not a fence. That matters because forgetting the bump does not surface as a version error: it surfaces as per-thread `input_hash mismatch — raw/prompt changed`, which sends the investigator to the raw data. Since #59/#61 that mismatch reds the run on the **first** morning (the reason is named in the annotation). Since #65 it is also *held*: no resubmit, no retry spent, and the sidecar is kept so the batch stays rescuable. It is a decision to make, not one to defer: the results expire ~29 days after submission, and since #69 the hold itself ends — past `ABANDON_AGE_DAYS`, **on a run where none of its manifest's meetings are in the raw on disk**, the sidecar is written off as a permanent loss (`abandoned_dates`) and deleted, because by then it is provably uncollectable. So deferring does not preserve the option; it spends it, loudly. (That absence is observed, never inferred from the age: widening `lookback_days` is how a human rescues a held sidecar, and that run re-fetches the raw, so a rescue must not be the thing that triggers the delete. `_reason_not_to_abandon` holds the whole rule and fails closed to "keep".) The annotation names the choices; **do not simply `git rm` the sidecar** — outside the lookback window the date is not re-summarized, which converts a recoverable batch into the permanent loss the hold was preventing.
 
 `is_current_schema` compares for equality, so a version change is a refusal in **both** directions: merging one while a sidecar is in flight, or reverting one after a sidecar was written, refuses to collect that date's sidecar. Since #65 that refusal is a *hold*, not a hard fail — that date is skipped, its sidecar is left on disk, and every other date still publishes normally. **The landing condition is unchanged despite the softer failure mode**: a held sidecar's batch results still expire in ~29 days, so a version change landed on top of one still ends in permanent loss, just more quietly (no longer a broken `--collect-pending` run to notice it by — since #69 the loss is at least *recorded*, as an `abandoned_dates` error on the morning it becomes provable, but recording a loss is not preventing one). **Land a `SCHEMA_VERSION` change only when `git ls-files data/pending-batches/` is empty.**

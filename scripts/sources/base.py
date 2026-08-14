@@ -6,12 +6,18 @@ AI pipeline (summarize.py / batch.py) can consume without modification.
 
 from __future__ import annotations
 
-import json
 import os
+import sys
 from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from typing import Optional
+
+# `pipeline` is a sibling package of `sources`; add scripts/ so it resolves
+# however this adapter was imported (fetch_*.py at the top level, or a test).
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from pipeline.jsonio import write_json_atomic  # noqa: E402
 
 
 @dataclass
@@ -112,8 +118,7 @@ class SourceAdapter(ABC):
         }
 
         filepath = os.path.join(output_dir, filename)
-        with open(filepath, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
+        write_json_atomic(filepath, payload)
 
         return filepath
 

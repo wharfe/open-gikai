@@ -8,6 +8,8 @@ import os
 import re
 from typing import Dict, List, Optional
 
+from .jsonio import write_json_atomic
+
 
 # Party name normalization: NDL会派名 -> 正式政党名
 PARTY_NORMALIZE = {
@@ -239,6 +241,4 @@ def load_members(path: str) -> Dict[str, dict]:
 
 def save_members(members: Dict[str, dict], path: str) -> None:
     """Save members dict to JSON file."""
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(members, f, ensure_ascii=False, indent=2)
+    write_json_atomic(path, members)

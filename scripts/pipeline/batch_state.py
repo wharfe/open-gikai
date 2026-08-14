@@ -16,6 +16,8 @@ import os
 from datetime import datetime, timezone
 from typing import Any, Optional
 
+from .jsonio import write_json_atomic
+
 PENDING_DIR = os.path.join("data", "pending-batches")
 # v2 narrowed compute_input_hash to the content-determining params, so v1 hashes
 # are not comparable with ours. v3 pinned temperature=0 on summary requests, and
@@ -104,11 +106,7 @@ def is_current_schema(sidecar: dict) -> bool:
 
 
 def save_sidecar(path: str, sidecar: dict) -> None:
-    dirpart = os.path.dirname(path)
-    if dirpart:
-        os.makedirs(dirpart, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(sidecar, f, ensure_ascii=False, indent=2)
+    write_json_atomic(path, sidecar)
 
 
 def reporting_date(sidecar: dict, path: str) -> str:
@@ -287,6 +285,10 @@ FAILURE_POLICY = {
     # Raw is not on disk this run. Nothing to resubmit and nothing is wrong with
     # the batch; the next fetch may bring it back.
     "raw_missing":         HOLD,
+    # On disk but unreadable (#72). HOLD, not BLOCKED: data/raw is gitignored
+    # and re-fetched every run, so the next run very likely replaces the broken
+    # file — and no new batch would fix a local read failure anyway.
+    "raw_unreadable":      HOLD,
     "raw_date_missing":    HOLD,
     "speech_gap":          HOLD,
     # The request we would build today is not the request we submitted, so a

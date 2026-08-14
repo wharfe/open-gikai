@@ -13,7 +13,6 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import json
 import logging
 import os
 import sys
@@ -21,6 +20,8 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from pipeline.jsonio import write_json_atomic  # noqa: E402
 
 from sources.ndl import NDLAdapter
 from sources.base import _meeting_to_dict
@@ -105,8 +106,7 @@ def fetch_and_split(date_from: str, date_until: str) -> list[str]:
             },
             "meetings": [_meeting_to_dict(m) for m in meetings],
         }
-        with open(raw_path, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
+        write_json_atomic(raw_path, payload)
 
         log.info("  %s: %d meetings, %d speeches → %s",
                  meeting_date, len(meetings),

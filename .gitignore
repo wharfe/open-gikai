@@ -64,6 +64,13 @@ data/batch/
 # within the lookback window. Wasted grouping calls, never duplicate threads.
 data/threads/*.progress.json
 
+# write_json_atomic's in-flight temp file (scripts/pipeline/jsonio.py, and the
+# same shape in scripts/validate-data.mjs). It cleans up after itself on any
+# exception, but a SIGKILL — the workflow's 120-minute timeout, the OOM killer —
+# runs no cleanup at all, and `git add data/threads/` would then commit the
+# stray file permanently. No slash, so it matches at any depth.
+.*.tmp
+
 # Pipeline output (committed for SSG deployment)
 # data/threads/   — thread JSON files
 # data/members.json — member data

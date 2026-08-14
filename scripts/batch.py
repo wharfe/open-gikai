@@ -36,6 +36,7 @@ from pipeline.grouper import (
 from pipeline.summarizer import build_summary_request
 from pipeline.members import extract_member, load_members, save_members
 from pipeline.linker import link_threads
+from pipeline.jsonio import write_json_atomic
 
 log = logging.getLogger("batch")
 
@@ -63,10 +64,7 @@ def load_state(output_dir: str, date_str: str) -> dict:
 
 
 def save_state(output_dir: str, date_str: str, state: dict) -> None:
-    d = os.path.join(output_dir, date_str)
-    os.makedirs(d, exist_ok=True)
-    with open(state_path(output_dir, date_str), "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+    write_json_atomic(state_path(output_dir, date_str), state)
 
 
 # ---------------------------------------------------------------------------
@@ -92,9 +90,7 @@ def update_public_status(
         "committees": committees,
     }
 
-    os.makedirs(os.path.dirname(status_path), exist_ok=True)
-    with open(status_path, "w", encoding="utf-8") as f:
-        json.dump(status, f, ensure_ascii=False, indent=2)
+    write_json_atomic(status_path, status)
 
 
 # ---------------------------------------------------------------------------
@@ -447,8 +443,7 @@ def run(
         # Save intermediate results
         intermediate = {"grouping": grouping_results, "outcomes": outcome_results}
         inter_path = os.path.join(batch_dir, date_str, "phase1_results.json")
-        with open(inter_path, "w", encoding="utf-8") as f:
-            json.dump(intermediate, f, ensure_ascii=False, indent=2)
+        write_json_atomic(inter_path, intermediate)
 
         state["phase"] = "phase2_ready"
         save_state(batch_dir, date_str, state)
@@ -492,10 +487,8 @@ def run(
         link_threads(all_threads)
 
         # Write output
-        os.makedirs(output_dir, exist_ok=True)
         output_path = os.path.join(output_dir, f"{date_str}.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(all_threads, f, ensure_ascii=False, indent=2)
+        write_json_atomic(output_path, all_threads)
         log.info("Wrote %d threads → %s", len(all_threads), output_path)
 
         save_members(members, members_path)
