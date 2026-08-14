@@ -44,7 +44,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install anthropic python-dotenv pytest
+      # pyyaml is not optional: several tests parse daily-batch.yml to fence the
+      # summarize.py<->workflow contract (the exit codes, the held/abandoned
+      # failure step, the notify-stuck condition). They guard themselves with
+      # importorskip, so without it they SKIP here — a fail-open guard in the one
+      # place the regression would land.
+      - run: pip install anthropic python-dotenv pytest pyyaml
       - run: cd scripts && python -m pytest -q
 
   e2e:
