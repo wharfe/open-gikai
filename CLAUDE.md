@@ -415,5 +415,9 @@ Anything requiring a runtime belongs under `apps/`.
 - 受け入れ基準（機械判定）: `npm run lint && npm run validate`。
   `scripts/` の Python を触ったら `python -m pytest scripts/tests`（resume/batch_state の
   ユニットテストがある — フロントには無い）。表示に影響する変更は `npm run test:e2e` を追加実行。
+  **依存に `pyyaml` が要る**（`pip install anthropic python-dotenv pytest pyyaml`）。無いと
+  daily-batch.yml を読む契約テスト群が `importorskip` で**静かに skip** され、緑のまま
+  「exit コード契約・held/abandoned の扱い・action バージョンの下限」が検査されない。
+  ローカルで skip 数が出ていたら、それは合格ではなく計測していないという意味。
 - 単発の小修正（数十行以下）は Gate 省略可。ただしスクレイパーのレート制御・公開データの
   生成ロジックに触れる diff はサイズによらず Gate 対象。
