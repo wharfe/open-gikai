@@ -86,3 +86,13 @@ kokkai-v5.jsx
 # apps/mcp/data/ is a build-time copy of repo-root data/ (see apps/mcp/scripts/copy-data.mjs).
 # Not source, do not commit.
 apps/mcp/data/
+# The staged copy and the outgoing directory it swaps with (#73). A run
+# normally removes both, but a SIGKILL runs no cleanup at all, and a retired
+# copy is deliberately KEPT when a failed swap makes it the last complete
+# bundle. So one can outlive its run. Ignoring them only keeps them out of
+# commits — it does NOT keep them out of a Vercel CLI upload, which carries the
+# equally-ignored apps/mcp/data/ (that upload is the whole reason the
+# "already bundled" path exists). The sweep in copy-data.mjs, which skips live
+# pids and restores a mid-swap casualty, is what actually collects them.
+apps/mcp/.data-staging-*/
+apps/mcp/.data-retired-*/

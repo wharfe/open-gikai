@@ -13,9 +13,11 @@ POSTed JSON-RPC requests at runtime, so it ships as its own Next.js app
 under `apps/mcp/` and is deployed as a separate Vercel project pointing at
 the same GitHub repository.
 
-Both projects read the same `data/threads/*.json` and `data/members.json`
-from the repo root, so there is no data duplication and the daily-batch
-pipeline does not need to know the MCP server exists.
+Both projects serve the same `data/threads/*.json` and `data/members.json`,
+so the daily-batch pipeline does not need to know the MCP server exists. The
+frontend reads them from the repo root; this project gets a build-time copy
+under `apps/mcp/data/`, because a serverless function bundle cannot reach
+above its own project root (see Deployment below).
 
 ## Endpoint
 
@@ -74,9 +76,23 @@ GitHub repository, with these settings:
 - **Node.js Version**: 22 or higher
 - **Production Branch**: `main`
 
-The `outputFileTracingRoot` setting in `next.config.ts` ensures Vercel
-includes the repo-root `data/` directory when bundling the serverless
-function.
+Data reaches the function bundle through the `prebuild` script
+(`scripts/copy-data.mjs`), which copies `data/threads/` and `data/members.json`
+from the repo root into `apps/mcp/data/`. We deliberately do **not** use
+`outputFileTracingRoot` pointing above the project root: Vercel double-prefixes
+such absolute paths during deploy.
+
+Two consequences worth knowing before a deploy:
+
+- Running `vercel` from the CLI uploads `apps/mcp` alone, so the repo-root
+  `data/` is not there to copy from. The prebuild then reuses the
+  `apps/mcp/data/` in your upload — but only if it verifies against the
+  `.bundle-manifest.json` inside it (#73). **Run the prebuild locally, with the
+  repo-root `data/` present, before a CLI deploy.** A bundle that does not
+  verify fails the build rather than shipping short.
+- The same applies after any change to `MANIFEST_VERSION`: bundles written by
+  the older script are refused, so the next deploy has to be built where the
+  repo-root `data/` exists.
 
 After deployment, attach a domain like `mcp.open-gikai.net` (or
 `api.open-gikai.net` with a path mapping) to the new Vercel project.

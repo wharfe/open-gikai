@@ -91,10 +91,64 @@ committed `data/members.json` under `--fix` — which `daily-batch.yml` runs imm
 `git add data/members.json` — so it carries its own copy of the same temp→fsync→rename→fsync-dir
 shape. It is a duplicate because the repo has no tsx/ts-node and node cannot import the Python one;
 `test_jsonio.py::test_the_js_half_of_the_rule_holds_too` pins it, since the AST fence walks only
-`scripts/**.py` and is structurally blind to it. **`apps/mcp/scripts/copy-data.mjs`** is a known
-gap (#73): it `rmSync`s `apps/mcp/data/` and `cpSync`s into it, so an interrupted prebuild can leave
-the MCP bundle short or truncated, and its own "already bundled, skip" check then accepts that. The
-fix there is a staging-directory swap, not this function.
+`scripts/**.py` and is structurally blind to it. **`apps/mcp/scripts/copy-data.mjs`** solves the same
+problem with a different mechanism, because it copies a directory rather than writing a file (#73):
+it stages into `apps/mcp/.data-staging-<pid>/`, verifies the staged copy, and only then swaps — old
+aside into `.data-retired-<pid>/`, staged in, old removed. It also writes a `.bundle-manifest.json`
+**inside** the bundle recording every file's size, and the "already bundled, skip the copy" path
+(the CLI-deploy case, where there is no source to copy from) verifies against it instead of testing
+that the entries exist. Existence was the whole check before, and a wrecked directory passes it.
+
+The verification is four checks, and **which one catches what is the whole design** — none of them
+subsumes another, so do not collapse them:
+
+- **per-file sizes** see a copy that was cut short, which a count or a total cannot. Not hashes: the
+  copy either arrives or does not, so hashing buys nothing here.
+- **`JSON.parse` of every file, plus its top-level shape** sees a file that was *already* malformed
+  when it was bundled. Sizes structurally cannot: the manifest is generated **from the copy**, so a
+  short source file is recorded as short and matches itself forever after. Shape is checked for the
+  same reason `_as_list_of_dicts` exists on the Python side — a thread file that parses to `{}` does
+  not throw at request time, `loadThreads` just skips it, so it is zero threads under a green build
+  rather than a loud failure. ~60MB parses in well under a second.
+- **coverage against `INCLUDE`** sees an entry that never arrived at all — `threads/` missing
+  outright. This is the one that must not be dropped when the manifest looks sufficient: a
+  self-describing record agrees with itself about a bundle that never held `threads/`, so both the
+  required set and each entry's expected shape (`ENTRY_KIND`) have to come from *outside* the thing
+  being verified. The old `INCLUDE.every(existsSync)` had that property and a manifest alone does
+  not; losing it silently is a green deploy serving zero threads.
+- **unrecorded files the runtime would open** are a *failure*, not a warning: one the manifest never
+  described is either content nothing vouched for or a fatal parse at request time. "Would open" is
+  the load-bearing part, and the predicate is copied from `loadThreads` deliberately — `.json` and
+  not `.progress.json`, inside an INCLUDE entry. Widen it and a stray `.DS_Store` breaks every CLI
+  deploy; narrow it and the check stops covering what the runtime reads. Everything else is weight,
+  and failing over it would turn a harmless leftover into a broken deploy. (A symlink **at any
+  depth** is rejected for the neighbouring reason: it resolves, and sizes and parses fine, on the
+  machine that built it — and contains nothing on Vercel.)
+
+The same `verifyBundle` runs on both the staged copy (before the swap) and a reused bundle (the
+CLI-deploy path), so the two cannot drift.
+
+The swap's failure modes are handled in the order that keeps a complete copy existing at all times.
+`.data-retired-<pid>/` is removed **only after** the replacement is actually in place — an
+unconditional cleanup deletes the last good bundle in the one case that matters, where the install
+rename fails *and* the rollback fails too, and that error names the directory the data is sitting
+in. A SIGKILL in the one-rename-wide window between "old moved aside" and "new moved in" leaves the
+previous bundle whole but not where anything looks for it, so the **next run restores it** from a
+retired copy that verifies, before it decides anything else. That restore is why the sweep of
+leftovers runs above the source check rather than at the top of the copy path — the source-less
+path exits early, and it is the path where the rescue is the only thing standing between a mid-swap
+kill and a failed deploy. Two retired copies that both verify is the one case it **refuses** rather
+than guesses: a manifest records what a bundle holds, not when, so picking by directory order ships
+the older one under a green build. A staging area is never rescued however complete it looks —
+nothing ever decided it was good. Leftovers are swept **only for pids that are no longer running**:
+a concurrent prebuild in the same working directory owns its staging area, and one of the moments
+to delete it is right after it moved the good bundle aside. (That reads pids in our own namespace;
+a shared bind mount written from two containers would need a different ownership marker.) `.gitignore` keeps these out of commits
+but **not** out of a Vercel CLI upload, which carries the equally-ignored `apps/mcp/data/` — the
+sweep, not the ignore rule, is what collects them.
+
+`scripts/tests/test_mcp_bundle.py` drives the real script in a fake repo tree, including the
+double-rename failure (injected by patching `fs.renameSync`).
 
 On the read side the rule is that **unreadable is not absent**: `raw_unreadable` is its own HOLD
 reason, because folding it into `raw_missing` would let a truncated file satisfy the abandon gate's
@@ -143,8 +197,7 @@ delete earlier. And note the deliberate asymmetry with `_load_meetings_for_date`
 evidence the abandon gate deletes on, so a skip there would authorize a delete it never proved.
 
 Still open: #57's option (b) — keeping a corrupt file out of the commit in the first place — is
-**not** implemented (#75); (c), this writer, only stops the pipeline from *creating* one. And
-`apps/mcp/scripts/copy-data.mjs` remains a gap (#73).
+**not** implemented (#75); (c), this writer, only stops the pipeline from *creating* one.
 
 `scripts/pipeline/batch_state.py` is auxiliary persistence, not summary logic: it records an in-flight summary batch's id + grouping manifest (with per-thread `input_hash`) to a committed sidecar (`data/pending-batches/{date}.json`) so a timed-out batch resumes on a later run and assembles **without re-grouping** — same input → same request, so it upholds the invariants above rather than affecting them. The hash covers the content params only (`max_tokens` is excluded via `HASH_EXCLUDED_PARAMS`): the model is not told the ceiling, and excluding it is what lets a truncated request be re-issued at a higher one. Be precise about what that costs now that sampling cannot be pinned — a re-issue at `SUMMARY_RETRY_MAX_TOKENS` is the same *request* minus the ceiling, not a guaranteed-identical response. Anything that steers generation must stay hashed. **Bump `SCHEMA_VERSION` whenever `compute_input_hash` or the set of params fed to it changes** — pinning `temperature` took it to v3 and removing it again (#51) took it to v4, since each older version's hashes cover a param set ours no longer matches. `test_summary_request_param_set_is_pinned` keys the expected param set off `SCHEMA_VERSION` and keeps the per-version history, so the two are edited in the same place — but it cannot stop someone who edits both rows, so treat it as a prompt, not a fence. That matters because forgetting the bump does not surface as a version error: it surfaces as per-thread `input_hash mismatch — raw/prompt changed`, which sends the investigator to the raw data. Since #59/#61 that mismatch reds the run on the **first** morning (the reason is named in the annotation). Since #65 it is also *held*: no resubmit, no retry spent, and the sidecar is kept so the batch stays rescuable. It is a decision to make, not one to defer: the results expire ~29 days after submission, and since #69 the hold itself ends — past `ABANDON_AGE_DAYS`, **on a run where none of its manifest's meetings are in the raw on disk**, the sidecar is written off as a permanent loss (`abandoned_dates`) and deleted, because by then it is provably uncollectable. So deferring does not preserve the option; it spends it, loudly. (That absence is observed, never inferred from the age: widening `lookback_days` is how a human rescues a held sidecar, and that run re-fetches the raw, so a rescue must not be the thing that triggers the delete. `_reason_not_to_abandon` holds the whole rule and fails closed to "keep".) The annotation names the choices; **do not simply `git rm` the sidecar** — outside the lookback window the date is not re-summarized, which converts a recoverable batch into the permanent loss the hold was preventing.
 
