@@ -111,6 +111,29 @@ def save_sidecar(path: str, sidecar: dict) -> None:
         json.dump(sidecar, f, ensure_ascii=False, indent=2)
 
 
+def reporting_date(sidecar: dict, path: str) -> str:
+    """The date string to REPORT a sidecar under. Always a str.
+
+    THE rule, in one place, because two consumers have to agree on it: Collect
+    reports held/abandoned dates with it, and check_stuck_batches.py excludes
+    those same dates with it. A second rule means the exclusion silently misses
+    exactly the malformed sidecars most likely to be held, and #71's duplicate
+    comment comes back for them.
+
+    Truthiness is not the test. A hand-edited ``date`` holding a list or an int
+    is truthy: passing it through lands a non-string in the step outputs, where
+    sorting and joining them raises TypeError and aborts the run — and on the
+    notifier side it either raises on set membership or silently fails to match
+    the excluded date. Sidecars are always written to "{date}.json", so the
+    filename is the fallback identifier (a naming convention, not evidence —
+    never use it to authorize a delete).
+    """
+    own = sidecar.get("date")
+    if isinstance(own, str) and own:
+        return own
+    return os.path.splitext(os.path.basename(path))[0]
+
+
 def delete_sidecar(path: str) -> None:
     if os.path.exists(path):
         os.remove(path)
@@ -179,14 +202,53 @@ def age_days(sidecar: dict, now_iso: str) -> float:
     return delta.total_seconds() / 86400.0
 
 
+def age_days_or_none(sidecar: dict, now_iso: str) -> Optional[float]:
+    """``age_days`` for callers that must not raise. None = not computable.
+
+    Since #69 the abandon gate consults the age of EVERY sidecar before the
+    schema check runs, i.e. of shapes this module does not control (a sidecar
+    from an older revision, or one a human edited by hand). Two reasons this
+    returns None instead of raising:
+
+    * A raise inside Collect aborts it under ``set -e`` and takes the whole
+      morning's publish down — the amplification #65 removed.
+    * Abandoning deletes data. "I cannot tell how old this is" must not read as
+      "old enough to write off", so every caller that can destroy or silence
+      something has to be able to distinguish unknown from young.
+    """
+    try:
+        return age_days(sidecar, now_iso)
+    except (KeyError, IndexError, TypeError, ValueError):
+        return None
+
+
 def is_stuck(sidecar: dict, now_iso: str, threshold_days: float = STUCK_AGE_DAYS) -> bool:
-    return age_days(sidecar, now_iso) > threshold_days
+    age = age_days_or_none(sidecar, now_iso)
+    return age is not None and age > threshold_days
 
 
 def is_abandonable(sidecar: dict, now_iso: str,
                    threshold_days: float = ABANDON_AGE_DAYS) -> bool:
-    """A sidecar past the abandon age is structurally unrecoverable (raw gone
-    from the fetch window, batch results expired) and should be deleted.
+    """Whether this sidecar's batch results are old enough to be gone — ONE HALF
+    of the proof that it is beyond collection, whatever the reason it stopped
+    moving (#66/#69).
+
+    What this answers: the batch's results are expired (retained ~29 days, and
+    this threshold is longer), so nothing can be assembled from the batch.
+
+    What it does NOT answer: whether the raw could be rebuilt and resubmitted.
+    The age makes that *likely* — under the default lookback a date this old is
+    outside the fetch window, and a sidecar's date is never later than its
+    submission (see the INVARIANT on ABANDON_AGE_DAYS) — but `lookback_days` is
+    a workflow input, and widening it to rescue a held sidecar is exactly the
+    case where the likely answer is wrong. **Callers that delete must observe
+    raw's absence, not derive it from this.** The abandon gate in
+    ``summarize.py::collect_pending_batches`` does.
+
+    This half depends on neither the batch's reported status nor the reason the
+    sidecar is held, so it may be consulted before polling. A resubmit pushes a
+    new attempt and resets the clock, so a sidecar still being retried never
+    qualifies.
 
     Same age test as ``is_stuck`` but a much longer threshold: stuck is a
     2-day *alert*, abandon is a 31-day *give-up*."""
@@ -232,6 +294,11 @@ FAILURE_POLICY = {
     "hash_mismatch":       BLOCKED,
     # An older revision's hashes: same shape, different cause.
     "stale_schema":        BLOCKED,
+    # No "date" field. Everything downstream of the gate — poll, rebuild,
+    # assemble, the retry-threshold branch — indexes sidecar["date"], so such a
+    # sidecar is not a state this code can process, only one it can report.
+    # BLOCKED, not HOLD: no later run restores a field, a person does.
+    "sidecar_has_no_date": BLOCKED,
     # Three genuine resubmits have failed. Stop paying; a human decides.
     "retry_exhausted":     BLOCKED,
 }

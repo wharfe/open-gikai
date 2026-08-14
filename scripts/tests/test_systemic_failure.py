@@ -1073,3 +1073,124 @@ def test_held_and_abandoned_dates_fail_the_run_without_a_threshold():
     assert 'if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED"' in run
     assert "Permanently lost" in run
     assert "held for a human decision" in run
+
+
+def test_the_stuck_notifier_dedups_by_date_and_not_by_muting_itself():
+    """#71. The two notifiers must not restate the same date, and must not do it
+    by trading away a signal.
+
+    The duplicate was real: a held sidecar reds the run, so notify-on-failure
+    comments, and this job commented a SECOND time on the same deduped issue
+    every morning for the weeks a human decision can take.
+
+    But `if: success()` is the wrong dedup. The signal only this job has — a
+    batch in flight for over two days — does NOT red the run, so muting on red
+    mornings reports it zero times for as long as anything else is broken, which
+    is exactly the window in which it matters (results expire ~29d, the abandon
+    gate writes the batch off at 31d). So: still `always()`, and the overlap is
+    removed by excluding the DATES the failure path already reported.
+    """
+    yaml = pytest.importorskip("yaml")
+    path = REPO_ROOT / ".github" / "workflows" / "daily-batch.yml"
+    text = path.read_text(encoding="utf-8")
+    wf = yaml.safe_load(text)
+    stuck = wf["jobs"]["notify-stuck-batch"]
+    assert stuck["if"] == "always()", (
+        "success() mutes the one signal only this job carries on exactly the "
+        "mornings it matters; dedup by date instead"
+    )
+    assert stuck["needs"] == "fetch-and-summarize"
+    # The failure path must still exist — this change is about removing a
+    # duplicate, never about going quiet on a red morning (#66).
+    assert wf["jobs"]["notify-on-failure"]["if"] == "failure()"
+
+    # The dedup has to actually be wired: exported by the job that computes the
+    # dates, and consumed by the notifier. Asserting always() alone would pass
+    # with the duplicate fully restored.
+    produced = wf["jobs"]["fetch-and-summarize"]["outputs"]
+    assert "held_dates" in produced and "abandoned_dates" in produced
+    for key in ("held_dates", "abandoned_dates"):
+        assert "steps.collect.outputs." + key in produced[key]
+    step = [s for s in stuck["steps"] if "--exclude-dates" in str(s.get("run", ""))]
+    assert len(step) == 1, "the stuck notifier must pass --exclude-dates"
+    reported = step[0]["env"]["ALREADY_REPORTED"]
+    for key in ("held_dates", "abandoned_dates"):
+        assert "needs.fetch-and-summarize.outputs." + key in reported
+
+    # CI must be able to run this file at all: these YAML guards importorskip,
+    # so a missing pyyaml turns every one of them into a silent skip.
+    ci = yaml.safe_load(
+        (REPO_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"))
+    installs = [s.get("run", "") for j in ci["jobs"].values()
+                for s in j.get("steps", []) if "pip install" in str(s.get("run", ""))]
+    assert any("pyyaml" in s for s in installs), (
+        "without pyyaml in CI every workflow-contract test skips there")
+
+
+def test_the_stuck_report_skips_reported_dates_and_keeps_the_rest(
+        tmp_path, monkeypatch, capsys):
+    """The other half of #71's dedup, exercised for real.
+
+    Asserting the workflow wiring alone would pass with the flag ignored. Two
+    stuck sidecars, one of them already in the failure path's held list: the
+    reported one must vanish from this report and the other must survive, because
+    an in-flight stuck batch is a signal nothing else in the run carries.
+    """
+    import check_stuck_batches as csb
+    from pipeline import batch_state as bs
+
+    pending = tmp_path / "pending"
+    monkeypatch.setattr(bs, "PENDING_DIR", str(pending))
+    old = "2026-01-01T00:00:00Z"          # far past STUCK_AGE_DAYS in any real now
+    for date in ("2026-05-14", "2026-05-15"):
+        sc = bs.new_sidecar(date, "claude-x")
+        bs.add_attempt(sc, f"b-{date}", old)
+        bs.save_sidecar(str(pending / f"{date}.json"), sc)
+
+    monkeypatch.setattr("sys.argv",
+                        ["check_stuck_batches.py", "--exclude-dates",
+                         " 2026-05-14 "])   # workflow passes a padded string
+    csb.main()
+    out = capsys.readouterr().out
+    assert "2026-05-14" not in out, "a date the failure path reported was restated"
+    assert "2026-05-15" in out, "the un-reported stuck batch lost its only reporter"
+
+    # No exclusions -> both, so the filter cannot be silently over-broad.
+    monkeypatch.setattr("sys.argv", ["check_stuck_batches.py"])
+    csb.main()
+    out = capsys.readouterr().out
+    assert "2026-05-14" in out and "2026-05-15" in out
+
+
+def test_one_unreadable_sidecar_does_not_erase_the_whole_stuck_report(
+        tmp_path, monkeypatch, capsys):
+    """The step runs this as `... || true`, so an exception produces EMPTY output
+    — which reads as "nothing is stuck" and hides every other stuck batch too.
+    That is the silent-failure shape this notifier exists to prevent, so a
+    sidecar it cannot parse must degrade into a visible line, not a raise.
+    """
+    import check_stuck_batches as csb
+    from pipeline import batch_state as bs
+
+    pending = tmp_path / "pending"
+    monkeypatch.setattr(bs, "PENDING_DIR", str(pending))
+    good = bs.new_sidecar("2026-05-15", "claude-x")
+    bs.add_attempt(good, "b-good", "2026-01-01T00:00:00Z")
+    bs.save_sidecar(str(pending / "2026-05-15.json"), good)
+
+    # Truncated JSON — load_sidecar only catches FileNotFoundError, so this
+    # raises JSONDecodeError from the first line of _line_for. Chosen over a
+    # wrong-typed "date" field on purpose: bs.reporting_date now rejects a
+    # non-string date at the source, so that input no longer reaches a raise and
+    # a test built on it would assert the degraded line while never producing
+    # one. An unparseable file is the case that survives, and it is real —
+    # sidecars are committed by a job that can be killed mid-write (#57).
+    (pending / "2026-05-14.json").write_text('{"date": "2026-05-14",',
+                                             encoding="utf-8")
+
+    monkeypatch.setattr("sys.argv", ["check_stuck_batches.py"])
+    csb.main()                                  # must not raise
+    out = capsys.readouterr().out
+    assert "UNREADABLE sidecar" in out, "the broken sidecar went silent"
+    assert "2026-05-14.json" in out             # named by file: nothing else parsed
+    assert "b-good" in out, "a neighbour lost its only reporter"

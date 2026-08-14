@@ -25,6 +25,13 @@ jobs:
     name: Fetch & Summarize
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    # Exported so notify-stuck-batch can skip the dates this run's failure path
+    # already commented about (#71) instead of muting itself on every red
+    # morning. Empty when the job died before Collect — correct: nothing
+    # reported them either, so nothing should be suppressed.
+    outputs:
+      held_dates: ${{ steps.collect.outputs.held_dates }}
+      abandoned_dates: ${{ steps.collect.outputs.abandoned_dates }}
     env:
       # Route untrusted input through env so it never lands in a run: string
       # as a literal expression interpolation.
@@ -449,10 +456,12 @@ jobs:
 
           if [ -n "$(echo "$ABANDONED" | tr -d ' ')" ]; then
             echo "::error::Permanently lost uncollected threads on:${ABANDONED}"
-            echo "Those batches can never be assembled: the raw aged out of the fetch"
-            echo "window and the results expired. Nothing recovers them — this is on the"
-            echo "record, not a request for action. Threads published for those dates by"
-            echo "earlier runs are unaffected."
+            echo "Those BATCHES can never be assembled: their raw is off disk and the"
+            echo "results expired. Nothing recovers those results — this is on the record,"
+            echo "not a request for action. Two things it does NOT mean: those dates are"
+            echo "not necessarily empty (threads published by earlier runs are unaffected),"
+            echo "and the dates themselves can still be re-summarized from scratch by a"
+            echo "manual run with a wide enough lookback_days, at the cost of a new batch."
           fi
 
           if [ -n "$(echo "$HELD" | tr -d ' ')" ]; then
@@ -529,6 +538,20 @@ jobs:
   notify-stuck-batch:
     name: Notify on stuck batch
     needs: fetch-and-summarize
+    # always(), and the dedup #71 asked for is done by DATE instead (see the
+    # --exclude-dates step below). The duplicate was real: a held sidecar reds
+    # the run, so notify-on-failure comments about it, and this job commented a
+    # SECOND time on the same deduped pipeline-failure issue every morning for
+    # the weeks a human decision can take, burying other failures' comments.
+    #
+    # But `if: success()` would have paid for that with the one signal only this
+    # job has — "a batch has been in flight for over two days" does NOT red the
+    # run, so muting the job on red mornings reports it ZERO times for as long
+    # as anything else is broken. That is the whole window in which it matters:
+    # results expire at ~29 days and the abandon gate writes the batch off at
+    # 31, so the warning would vanish exactly when a second failure is most
+    # likely and reappear only after the loss. "Broken but green" is the cost
+    # this pipeline keeps paying (#66); do not trade a warning for quiet.
     if: always()
     runs-on: ubuntu-latest
     permissions:
@@ -543,8 +566,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          # Through env, not an inline expression, per the LOOKBACK_DAYS rule.
+          ALREADY_REPORTED: >-
+            ${{ needs.fetch-and-summarize.outputs.held_dates }}
+            ${{ needs.fetch-and-summarize.outputs.abandoned_dates }}
         run: |
-          STUCK=$(python scripts/check_stuck_batches.py || true)
+          STUCK=$(python scripts/check_stuck_batches.py \
+                    --exclude-dates "$ALREADY_REPORTED" || true)
           if [ -n "$STUCK" ]; then
             gh label create pipeline-failure --color B60205 \
               --description "Daily batch pipeline failure" 2>/dev/null || true

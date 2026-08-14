@@ -39,6 +39,22 @@ def test_build_manifest_meetings_captures_full_thread_info_and_hash():
     assert t["input_hash"].startswith("sha256:")
 
 
+def _recently_submitted():
+    """An hour ago, relative to the real clock.
+
+    Not a fixed timestamp. Since #69 every sidecar's age is checked at the top of
+    collect_pending_batches, so a hardcoded ``submitted_at`` is a time bomb: it
+    ages past ABANDON_AGE_DAYS as real time passes and every test that does not
+    pin ``_utcnow_iso`` silently starts exercising the abandon path instead of
+    the one it was written for. That is not hypothetical — the previous constant
+    (2026-06-11) crossed the threshold in July 2026. Tests that need an old
+    sidecar pin both the clock and this field.
+    """
+    from datetime import datetime, timedelta, timezone
+    return (datetime.now(timezone.utc) - timedelta(hours=1)).strftime(
+        "%Y-%m-%dT%H:%M:%SZ")
+
+
 def _sidecar_with_one_thread(input_hash):
     return {
         # Must track bs.SCHEMA_VERSION: a sidecar labelled with an older schema is
@@ -47,7 +63,7 @@ def _sidecar_with_one_thread(input_hash):
         "schema_version": bs.SCHEMA_VERSION,
         "date": "2026-05-14", "model": "claude-x",
         "retry_count": 0,
-        "attempts": [{"batch_id": "b1", "submitted_at": "2026-06-11T21:50:00Z",
+        "attempts": [{"batch_id": "b1", "submitted_at": _recently_submitted(),
                       "terminal_status": None, "terminal_at": None}],
         "meetings": [{
             "meeting_id": "M1",
@@ -1080,6 +1096,391 @@ def test_an_abandoned_sidecar_reds_the_run_without_blocking_the_publish(
     # that already has published threads.
     assert "never be published" not in errors[0]
     assert "uncollected" in errors[0]
+
+
+# --- Held sidecars must also expire (#69) ------------------------------------
+#
+# #66 established the principle: once a batch is provably unrecoverable, record
+# the loss and clear the sidecar. The check that applied it lived inside the
+# raw-missing branch, which three held regimes never reach — they return before
+# the poll. A sidecar held for one of those reasons therefore never entered
+# abandoned_dates, never got deleted, and reded every morning forever while the
+# thing it was protecting had already expired.
+#
+# The age is measured from the LAST attempt, so a sidecar that is still being
+# resubmitted keeps resetting it (test_a_resubmitted_sidecar_is_not_abandoned...
+# below pins that). Only a sidecar that stopped moving can age into this gate,
+# which is exactly the held population.
+
+def test_a_retry_exhausted_sidecar_is_abandoned_once_it_is_provably_unrecoverable(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """#69 path 1. retry_count == 3 returns before the poll, so is_abandonable
+    was never consulted for the population most likely to sit there for months.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["retry_count"] = bs.HARD_FAIL_RETRIES
+    result = _run_collect(fake_client, tmp_path, monkeypatch, sidecars=[sidecar],
+                          raw_present=False, sidecar_age_days=40)
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    assert result["held_dates"] == []          # no longer a decision request
+    assert not os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1                    # ...and exactly one, not two
+    assert "retry_exhausted" in errors[0]      # why it stopped moving is on the record
+
+
+def test_a_stale_schema_sidecar_is_abandoned_once_it_is_provably_unrecoverable(
+        fake_client, tmp_path, monkeypatch):
+    """#69 path 2. The schema check runs first and returns, so the same hole.
+
+    The gate must therefore not depend on any field a stale-schema sidecar is
+    not guaranteed to carry — only on the attempt timestamp.
+    """
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["schema_version"] = bs.SCHEMA_VERSION - 1
+    result = _run_collect(fake_client, tmp_path, monkeypatch, sidecars=[sidecar],
+                          raw_present=False, sidecar_age_days=40)
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    assert result["held_dates"] == []
+    assert not os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_a_terminally_failed_sidecar_that_cannot_rebuild_is_abandoned_when_old(
+        fake_client, tmp_path, monkeypatch):
+    """#69 path 3. canceled/expired + no raw to rebuild from returns held before
+    raw is ever loaded, so it too never reached the abandon check."""
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          batch_status="canceled", raw_present=False,
+                          sidecar_age_days=40)
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    assert result["held_dates"] == []
+    assert not os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_a_resubmitted_sidecar_is_not_abandoned_however_old_its_first_attempt_is(
+        fake_client, tmp_path, monkeypatch):
+    """The gate must key off the CURRENT attempt, not the sidecar's birthday.
+
+    A batch resubmitted yesterday has fresh results and a date that was inside
+    the fetch window when it was rebuilt, so nothing about it is unrecoverable —
+    abandoning it would delete a live batch. This is what makes a single
+    top-of-loop age gate safe for every regime.
+    """
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["attempts"].insert(0, {"batch_id": "b0",
+                                   "submitted_at": "2026-01-01T00:00:00Z",
+                                   "terminal_status": "expired",
+                                   "terminal_at": "2026-01-02T00:00:00Z"})
+    result = _run_collect(fake_client, tmp_path, monkeypatch, sidecars=[sidecar],
+                          raw_present=False, sidecar_age_days=1)
+    assert result["abandoned_dates"] == []
+    assert result["held_dates"] == ["2026-05-14"]
+    assert os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_a_sidecar_whose_age_cannot_be_computed_is_held_not_abandoned(
+        fake_client, tmp_path, monkeypatch):
+    """Fail closed on the one input the gate needs.
+
+    The gate now runs before the schema check, i.e. on sidecars whose shape is
+    explicitly not guaranteed. Abandoning deletes data, so an unreadable
+    timestamp must mean "cannot prove it is unrecoverable" — hold. Raising
+    instead would abort Collect under set -e and take the whole morning's
+    publish down, which is the failure mode #65 removed.
+    """
+    monkeypatch.setattr(summarize, "_utcnow_iso", lambda: "2026-07-15T00:00:00Z")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)                          # empty — no raw for any date
+
+    unparseable = _sidecar_with_one_thread(_correct_hash())
+    unparseable["attempts"][-1]["submitted_at"] = "not-a-timestamp"
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), unparseable)
+    fake_client.messages.batches.statuses["b1"] = "ended"
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["abandoned_dates"] == []
+    assert result["held_dates"] == ["2026-05-14"]
+    assert os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
+
+
+def test_an_over_age_sidecar_whose_raw_is_back_on_disk_is_not_abandoned(
+        fake_client, tmp_path, monkeypatch):
+    """The abandon gate must OBSERVE raw's absence, never infer it from age.
+
+    Widening ``lookback_days`` (a workflow_dispatch input accepting up to 365) is
+    precisely how a human rescues a held sidecar: that run re-fetches the raw and
+    then runs Collect in the SAME job. Deriving "raw is out of the window" from
+    the age alone deletes the sidecar the rescue was for, moments after restoring
+    what it needed — turning a recoverable batch into the permanent loss the hold
+    was preventing, since the next scheduled run is back to lookback 30.
+
+    Being past the abandon age still means the results are gone, so this is not
+    collectable as it stands — it is a human decision, i.e. held.
+    """
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["retry_count"] = bs.HARD_FAIL_RETRIES
+    result = _run_collect(fake_client, tmp_path, monkeypatch, sidecars=[sidecar],
+                          raw_present=True, sidecar_age_days=40)
+    assert result["abandoned_dates"] == []
+    assert result["held_dates"] == ["2026-05-14"]
+    assert os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_abandoning_survives_a_sidecar_whose_attempt_has_no_batch_id(
+        fake_client, tmp_path, monkeypatch):
+    """The gate runs before the schema check, so the abandon record is built from
+    fields that are not guaranteed. Only the timestamp is required (age_days_or_
+    none proves it); a missing ``batch_id`` must degrade the annotation, not
+    raise — a crash here aborts Collect under set -e and takes the morning's
+    publish down over a string nothing branches on."""
+    monkeypatch.setattr(summarize, "_utcnow_iso", lambda: "2026-07-15T00:00:00Z")
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir)                          # empty — no raw for any date
+
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["attempts"][-1] = {"submitted_at": "2026-06-01T00:00:00Z"}
+    bs.save_sidecar(os.path.join(pending_dir, "2026-05-14.json"), sidecar)
+
+    result = summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    assert not os.path.exists(os.path.join(pending_dir, "2026-05-14.json"))
+
+
+def _collect_over_age(fake_client, tmp_path, monkeypatch, sidecar,
+                      raw_files=None, filename="2026-05-14.json"):
+    """Run Collect with the clock pinned 40 days past the sidecar's attempt.
+
+    Takes raw as {filename: payload} so a test can put raw on disk for a
+    DIFFERENT date or source than the manifest's — the cases the abandon gate
+    has to tell apart from "no raw at all".
+    """
+    import json as _json
+    pending_dir = str(tmp_path / "pending")
+    raw_dir = str(tmp_path / "raw")
+    os.makedirs(raw_dir, exist_ok=True)
+    monkeypatch.setattr(summarize, "_utcnow_iso", lambda: "2026-07-15T00:00:00Z")
+    sidecar["attempts"][-1]["submitted_at"] = "2026-06-05T00:00:00Z"   # 40d
+    bs.save_sidecar(os.path.join(pending_dir, filename), sidecar)
+    for name, payload in (raw_files or {}).items():
+        with open(os.path.join(raw_dir, name), "w", encoding="utf-8") as f:
+            f.write(payload if isinstance(payload, str)
+                    else _json.dumps(payload, ensure_ascii=False))
+    return summarize.collect_pending_batches(
+        fake_client, members={}, model="claude-x",
+        pending_dir=pending_dir, threads_dir=str(tmp_path / "t"), raw_dir=raw_dir,
+        budget_seconds=0, poll_seconds=0, ci_commit=False,
+    )
+
+
+def test_the_abandon_gate_locates_raw_by_filename_not_by_a_corrupted_date_field(
+        fake_client, tmp_path, monkeypatch):
+    """A ``date`` field that disagrees with the filename is corruption, not a
+    second opinion. Trusting it looks for raw under the wrong date, finds none,
+    and deletes a sidecar whose raw is on disk — the exact loss the raw check
+    exists to prevent. Sidecars are always written to "{date}.json", so the
+    filename is authoritative and a disagreement means hold."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["date"] = "2020-01-01"                       # wrong, but non-empty
+    result = _collect_over_age(
+        fake_client, tmp_path, monkeypatch, sidecar,
+        raw_files={"ndl-2026-05-14.json": {"meetings": [_meeting()]}})
+    assert result["abandoned_dates"] == []
+    assert os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_unreadable_raw_is_not_treated_as_absent_raw_and_never_crashes_collect(
+        fake_client, tmp_path, monkeypatch, caplog):
+    """The gate now parses raw BEFORE the schema and retry checks, so a corrupt
+    raw file reaches code paths that used to return first. It must neither raise
+    (a raise aborts Collect under set -e and takes the publish down, #65) nor
+    read as "no raw" — an unparseable file does not establish absence.
+
+    Scope note: this pins the GATE only. The post-poll ``_load_meetings_for_date``
+    call has always been unguarded, so an ended batch plus corrupt raw can still
+    crash Collect; that is pre-existing and tracked separately (#72), not
+    something the gate should paper over from the top of the loop.
+
+    Three shapes, because only one of them is a syntax error: valid JSON whose
+    top level is a list, or whose ``meetings`` hold non-objects, reaches
+    ``.get()``/iteration and raises AttributeError/TypeError instead. Asserting
+    "not deleted" alone would pass even if the gate never ran, so each case also
+    asserts the keep-REASON the gate logged.
+    """
+    for name, payload in (
+            ("syntax", "{not json at all"),
+            ("top-level-list", "[1, 2, 3]"),
+            ("meetings-not-objects", '{"meetings": ["nope"]}'),
+    ):
+        sub = tmp_path / name
+        os.makedirs(str(sub))
+        caplog.clear()
+        result = _collect_over_age(
+            fake_client, sub, monkeypatch,
+            _sidecar_with_one_thread(_correct_hash()),
+            raw_files={"ndl-2026-05-14.json": payload})
+        assert result["abandoned_dates"] == [], name
+        assert os.path.exists(str(sub / "pending" / "2026-05-14.json")), name
+        assert "unreadable" in caplog.text, name   # the gate ran and kept it
+
+
+def test_a_dateless_sidecar_is_judged_by_where_its_meetings_are_not_by_its_name(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """With no ``date`` field the filename is a convention, not evidence — a
+    rename or a stray copy makes it a guess, and a guess must not authorize a
+    delete. Ask the question that needs no date instead: is any of this batch's
+    raw on disk anywhere? Both directions are pinned, because answering only the
+    safe one would reopen #69's unbounded hold for this shape.
+
+    A kept one is HELD, never passed downstream: the poll, the rebuild, the
+    assembly and the retry-threshold branch all index sidecar["date"], so
+    letting it through would only move the crash a few lines down.
+    """
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    kept = _sidecar_with_one_thread(_correct_hash())
+    del kept["date"]
+    result = _collect_over_age(
+        fake_client, tmp_path / "kept", monkeypatch, kept,
+        # Raw under a DIFFERENT date, i.e. exactly where the filename says not
+        # to look, but holding this batch's meeting.
+        raw_files={"ndl-2026-05-20.json": {"meetings": [_meeting()]}},
+        filename="2026-05-14.json")
+    assert result["abandoned_dates"] == []
+    assert result["held_dates"] == ["2026-05-14"]
+    assert os.path.exists(str(tmp_path / "kept" / "pending" / "2026-05-14.json"))
+    capsys.readouterr()
+
+    lost = _sidecar_with_one_thread(_correct_hash())
+    del lost["date"]
+    result = _collect_over_age(
+        fake_client, tmp_path / "lost", monkeypatch, lost,
+        raw_files={"ndl-2026-05-20.json": {
+            "meetings": [dict(_meeting(), meetingId="SOMETHING-ELSE")]}},
+        filename="2026-05-14.json")
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    # ...and the date it reports must be labelled as the guess it is, or an
+    # operator re-summarizes a date this batch may never have covered.
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "UNVERIFIED" in errors[0]
+
+
+def test_a_non_string_date_never_reaches_the_step_outputs(
+        fake_client, tmp_path, monkeypatch):
+    """Truthiness is not a type check, and this is where that bites.
+
+    A hand-edited ``date`` holding a list is truthy, so an "own date, else the
+    filename" fallback written with ``or`` passes it straight through into
+    held_dates — where _set_outputs sorts and joins the list and raises
+    TypeError, aborting Collect under set -e and taking the publish down. Both
+    branches that report a not-guaranteed shape are pinned: stale-schema (which
+    runs first, so the no-date guard never sees it) and the guard itself.
+    """
+    for label, mutate in (
+            ("stale-schema", lambda sc: sc.update(
+                {"schema_version": bs.SCHEMA_VERSION - 1, "date": ["nope"]})),
+            ("current-schema", lambda sc: sc.update({"date": ["nope"]})),
+    ):
+        sub = tmp_path / label
+        os.makedirs(str(sub))
+        sidecar = _sidecar_with_one_thread(_correct_hash())
+        mutate(sidecar)
+        result = _collect_over_age(fake_client, sub, monkeypatch, sidecar)
+        assert result["held_dates"] == ["2026-05-14"], label
+        # The consumer that actually breaks on a non-string: it sorts and joins.
+        monkeypatch.setenv("GITHUB_OUTPUT", str(sub / "out.txt"))
+        summarize._write_github_output(held_dates=result["held_dates"])
+
+
+def test_a_dateless_sidecar_records_the_state_it_declares(
+        fake_client, tmp_path, monkeypatch):
+    """`sidecar_has_no_date` is BLOCKED, so the marker has to be written.
+
+    Declaring a regime without persisting it means check_stuck_batches.py reads
+    the sidecar as "in flight, retries 0" — an untried, transient jam, i.e. the
+    opposite of the truth — and a later abandon record says no reason was ever
+    recorded for a sidecar whose reason is precisely known.
+    """
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    del sidecar["date"]
+    _collect_over_age(fake_client, tmp_path, monkeypatch, sidecar,
+                      raw_files={"ndl-2026-05-14.json": {"meetings": [_meeting()]}})
+    kept = bs.load_sidecar(str(tmp_path / "pending" / "2026-05-14.json"))
+    assert kept["blocked"]["reason"] == "sidecar_has_no_date"
+    assert summarize._why_a_sidecar_stopped_moving(kept) == "sidecar_has_no_date"
+
+
+def test_an_unhashable_manifest_meeting_id_does_not_crash_the_gate(
+        fake_client, tmp_path, monkeypatch):
+    """The gate reads the manifest before the schema check, so a hand-edited
+    ``meeting_id`` of the wrong type reaches it. ``set.add`` on a list raises
+    TypeError, which under set -e would take the morning's publish down."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["meetings"][0]["meeting_id"] = ["M1"]
+    result = _collect_over_age(
+        fake_client, tmp_path, monkeypatch, sidecar,
+        raw_files={"ndl-2026-05-14.json": {"meetings": [_meeting()]}})
+    assert result["abandoned_dates"] == []
+    assert os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_raw_from_another_source_for_the_same_date_is_not_a_rebuild(
+        fake_client, tmp_path, monkeypatch):
+    """Raw for the DATE is not raw for this batch. A kantei file for a date whose
+    manifest covers NDL meetings leaves nothing to rebuild, so keeping the
+    sidecar would reopen #69's unbounded hold through a new door."""
+    result = _collect_over_age(
+        fake_client, tmp_path, monkeypatch,
+        _sidecar_with_one_thread(_correct_hash()),
+        raw_files={"kantei-2026-05-14.json": {
+            "meetings": [dict(_meeting(), meetingId="OTHER")]}})
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    assert not os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_an_unreadable_manifest_with_raw_present_is_held_not_deleted(
+        fake_client, tmp_path, monkeypatch):
+    """With raw on disk and no readable manifest, what a rebuild needs is unknown
+    — and unknown must never authorize the one irreversible act here."""
+    sidecar = _sidecar_with_one_thread(_correct_hash())
+    sidecar["meetings"] = "not-a-list"
+    result = _collect_over_age(
+        fake_client, tmp_path, monkeypatch, sidecar,
+        raw_files={"ndl-2026-05-14.json": {"meetings": [_meeting()]}})
+    assert result["abandoned_dates"] == []
+    assert os.path.exists(str(tmp_path / "pending" / "2026-05-14.json"))
+
+
+def test_a_hold_held_sidecar_does_not_get_a_made_up_abandon_reason(
+        fake_client, tmp_path, monkeypatch, capsys):
+    """The HOLD regimes deliberately leave no ``blocked`` marker, so they are the
+    largest population reaching the reason fallback. It must not assert a cause
+    it never observed ("never collected" told an operator Collect had not run)."""
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    result = _run_collect(fake_client, tmp_path, monkeypatch,
+                          sidecars=[_sidecar_with_one_thread(_correct_hash())],
+                          raw_present=False, sidecar_age_days=40)
+    assert result["abandoned_dates"] == ["2026-05-14"]
+    errors = [ln for ln in capsys.readouterr().out.splitlines()
+              if ln.startswith("::error::")]
+    assert len(errors) == 1
+    assert "no reason was recorded" in errors[0]
+    assert "never collected" not in errors[0]
+    # And the raw half is now stated as observed, not as an inference.
+    assert "checked this run" in errors[0]
 
 
 def test_resume_reports_both_observations_when_fully_rejected(

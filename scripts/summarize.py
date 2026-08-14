@@ -1221,8 +1221,8 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
     # Every BLOCKED sidecar needs the clock, not just the hash ones: the results
     # expire on the same schedule regardless of why it is stuck, and deferring
     # the decision is how a held date becomes a lost one.
-    if sidecar.get("attempts"):
-        age = bs.age_days(sidecar, _utcnow_iso())
+    age = bs.age_days_or_none(sidecar, _utcnow_iso())
+    if age is not None:
         parts.append(
             f"submitted about {age:.0f} day(s) ago; batch results are retained "
             f"roughly 29 days, so this decision has an expiry")
@@ -1255,13 +1255,257 @@ def _record_held_sidecar(date_str: str, sidecar: dict, diagnostic: dict,
     _annotate("error", " — ".join(parts))
 
 
+def _why_a_sidecar_stopped_moving(sidecar: dict) -> str:
+    """Best available account of why nothing was resubmitted for this sidecar.
+
+    Only for the abandon record: a loss is worth nothing to a postmortem if it
+    does not say what the sidecar was waiting on. Order matters — the ``blocked``
+    marker is what the failure policy actually wrote, so it wins over anything
+    re-derived here.
+
+    Deliberately not control flow. Nothing decides whether to abandon from this
+    string; that follows from the age and the raw check (see the gate in
+    ``collect_pending_batches``), which is what lets it run on sidecars whose
+    shape is not guaranteed.
+
+    It is best-effort by construction and must read that way. The HOLD regimes
+    (``raw_missing`` / ``raw_date_missing``) deliberately do NOT rewrite the
+    sidecar — not touching it is the point — so the largest held population
+    leaves no ``blocked`` marker at all and lands in the last branch. Do not let
+    that branch grow into an assertion about what happened.
+    """
+    blocked = sidecar.get("blocked")
+    if not isinstance(blocked, dict):   # a hand-edited sidecar may carry anything
+        blocked = {}
+    if blocked.get("reason"):
+        return str(blocked["reason"])
+    if not bs.is_current_schema(sidecar):
+        return "stale_schema"
+    try:
+        if bs.should_hard_fail(sidecar):
+            return "retry_exhausted"
+    except (KeyError, TypeError):
+        pass
+    attempts = sidecar.get("attempts") or []
+    last = attempts[-1] if attempts and isinstance(attempts[-1], dict) else {}
+    if last.get("terminal_status"):
+        return (f"the batch ended {last['terminal_status']} and was never "
+                f"rebuilt")
+    # No regime left a marker and no terminal status was ever recorded. This is
+    # where a HOLD-held sidecar lands, so it must not claim a cause: the batch
+    # may have stayed in flight, or Collect may not have run for weeks.
+    return "no reason was recorded (a HOLD leaves no marker)"
+
+
+def _manifest_meeting_ids(sidecar: dict) -> Optional[set]:
+    """The meeting ids this sidecar's manifest needs to be rebuildable, or None
+    if the manifest cannot be read at all.
+
+    None is not "no meetings" — the two must not collapse, because the caller
+    deletes on one of them. Read defensively: this runs before the schema check.
+    """
+    meetings = sidecar.get("meetings")
+    if not isinstance(meetings, list):
+        return None
+    ids = set()
+    for m in meetings:
+        if not isinstance(m, dict):
+            return None
+        mid = m.get("meeting_id")
+        # isinstance, not truthiness: a hand-edited list/dict id would raise
+        # TypeError on set.add and crash Collect before the schema check.
+        if not isinstance(mid, str) or not mid:
+            return None
+        ids.add(mid)
+    return ids
+
+
+# Reading raw to decide a DELETION must not be able to raise. json.load gives
+# ValueError on bad syntax, but structurally odd-but-valid JSON reaches
+# _load_meetings_for_date's .get()/iteration and gives AttributeError/TypeError
+# (top level a list, "meetings" not a list, an element not an object). All of
+# them mean the same thing here — "absence is not established" — and any of them
+# escaping aborts Collect under set -e and takes the morning's publish down.
+_RAW_READ_ERRORS = (OSError, ValueError, TypeError, AttributeError)
+
+
+def _all_meeting_ids_in_raw(raw_dir: str) -> set:
+    """Every meetingId present anywhere in raw_dir, regardless of date.
+
+    Only for the abandon gate's dateless case, where the date a sidecar's raw
+    would live under is exactly what is unknown.
+    """
+    import glob as _glob
+    ids = set()
+    for c in sorted(_glob.glob(os.path.join(raw_dir, "*.json"))):
+        with open(c, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for m in data.get("meetings", []):
+            mid = m.get("meetingId")
+            if isinstance(mid, str):
+                ids.add(mid)
+    return ids
+
+
+def _reason_not_to_abandon(sidecar: dict, path: str,
+                           raw_dir: str) -> Optional[str]:
+    """None if this over-age sidecar is provably unrecoverable and may be
+    deleted; otherwise the reason to keep it, for the log.
+
+    The caller has already established the results-expired half (the age).
+    This establishes the other half — that there is nothing left to rebuild
+    from — and it is the only place in this pipeline where a "yes" destroys
+    data, so **everything it cannot establish is a no**:
+
+    * the date is taken from the FILENAME and must be CONFIRMED by the sidecar's
+      own ``date``. The filename is the convention (sidecars are written to
+      "{date}.json") but a rename, a merge resolution or a stray copy makes it a
+      guess, and a guess must not authorize a delete: looking under the wrong
+      date finds no raw and deletes a sidecar whose raw is sitting on disk. A
+      disagreement is a keep; a MISSING ``date`` falls back to asking whether
+      the manifest's meetings exist anywhere in raw at all, which needs no date.
+    * raw that cannot be read is not raw that is absent — and "cannot be read"
+      includes structurally odd JSON, not just bad syntax. Letting the read
+      raise here would abort Collect under ``set -e`` and take the morning's
+      publish down (#65) — over a file we only wanted to count.
+    * raw for the date is not enough on its own: the manifest's meetings are
+      what a rebuild needs, and a date can have raw from another source adapter
+      (kantei/council) while the batch's NDL meetings are gone for good.
+    """
+    stem = _date_from_sidecar_path(path)
+    own = sidecar.get("date")
+    if own is not None and not isinstance(own, str):
+        return (f"its date field is not a string "
+                f"({type(own).__name__}), so it cannot be trusted or compared")
+    wanted = _manifest_meeting_ids(sidecar)
+
+    if not own:
+        # No self-identifying date. Rather than promote the filename from
+        # convention to evidence, ask the question that does not need a date:
+        # is any of this batch's raw anywhere on disk? That keeps the #69 bound
+        # (a genuinely lost sidecar still has none) without betting a delete on
+        # a filename nobody verified.
+        if wanted is None:
+            return "it carries neither a date nor a readable manifest"
+        try:
+            present = _all_meeting_ids_in_raw(raw_dir)
+        except _RAW_READ_ERRORS as exc:
+            return (f"it carries no date and raw could not be scanned "
+                    f"({exc.__class__.__name__}), so absence is not established")
+        if wanted & present:
+            return ("it carries no date, and raw for some of its own meetings "
+                    "is on disk under some date")
+        return None
+
+    try:
+        datetime.strptime(stem, "%Y-%m-%d")
+    except ValueError:
+        return f"its filename ({stem!r}) is not a date, so its raw cannot be located"
+    if own != stem:
+        return (f"its own date field ({own!r}) disagrees with its filename "
+                f"({stem!r}), so which date's raw to check is unclear")
+    try:
+        available = _load_meetings_for_date(stem, raw_dir)
+    except _RAW_READ_ERRORS as exc:
+        return (f"its raw for {stem} is on disk but unreadable "
+                f"({exc.__class__.__name__}), so absence is not established")
+    if not available:
+        return None
+    if wanted is None:
+        return (f"raw for {stem} is back on disk and its manifest cannot be "
+                f"read, so what a rebuild would need is unknown")
+    if wanted & set(available):
+        return "raw for some of its own meetings is back on disk"
+    # Raw exists for the date but none of it is this batch's meetings — e.g. a
+    # kantei file for a date whose batch covered NDL. Nothing to rebuild.
+    return None
+
+
+def _abandon_sidecar(path: str, date_str: str, sidecar: dict, age: float,
+                     abandoned_dates: list) -> None:
+    """Record a provably uncollectable batch as permanently lost, then delete it.
+
+    The ONE abandon site (#69). It used to live inside the raw-missing branch,
+    which the three held regimes never reach — they return before the poll — so
+    the population most likely to sit for months was the one #66's
+    "record the loss and clear it" principle never covered. A held sidecar
+    stayed on disk, out of ``abandoned_dates``, reding every morning forever
+    while the thing it was protecting had already expired.
+
+    The caller owns the decision — including the raw check, which must stay
+    there and not move in here: this function deletes, so everything that could
+    make deletion wrong belongs where it can still be reconsidered.
+
+    Not a hard fail: nothing about a loss that already happened is a reason to
+    withhold today's other dates.
+    """
+    reason = _why_a_sidecar_stopped_moving(sidecar)
+    # If the sidecar never told us its date, say so. The gate deliberately
+    # refused to treat the filename as evidence when deciding to delete (a
+    # rename or stray copy makes it a guess), so presenting that same string
+    # afterwards as the lost date would send an operator to re-summarize a date
+    # this batch may not have covered. It is still the best identifier there is
+    # — it just has to be labelled as one.
+    unverified = "" if isinstance(sidecar.get("date"), str) and sidecar["date"] else (
+        " NOTE: this sidecar carried no date of its own, so the date above is "
+        "taken from its filename and is UNVERIFIED — confirm against the batch "
+        "before acting on it.")
+    # Not bs.current_batch_id: that indexes ["batch_id"] and this runs on shapes
+    # this module does not control (the same reason age_days_or_none exists). A
+    # KeyError here would abort Collect under set -e and take the morning's
+    # publish down — over a string that only appears in an annotation.
+    attempts = sidecar.get("attempts") or []
+    last = attempts[-1] if attempts and isinstance(attempts[-1], dict) else {}
+    batch_id = last.get("batch_id") or "unknown"
+    log.error("Resume: %s unrecoverable (age %.1fd, was %s) — abandoning sidecar",
+              date_str, age, reason)
+    # Say only what is provable, and no more. Two claims an earlier wording got
+    # wrong, both of which send an operator the wrong way:
+    #
+    # * NOT "the date is empty" — this sidecar's uncollected threads are gone,
+    #   but the date may well have published threads from earlier runs, and
+    #   saying otherwise sends them hunting for threads never lost.
+    # * NOT "no action recovers this" — what is unrecoverable is THIS BATCH:
+    #   already paid for, its results expired, its manifest's raw off disk. The
+    #   date's content is a different question; a manual run with a wide enough
+    #   `lookback_days` can re-fetch the raw and summarize it again from
+    #   scratch, at the cost of a second batch. Declaring that impossible is how
+    #   a recoverable date stays unrecovered.
+    abandoned_dates.append(date_str)
+    _annotate(
+        "error",
+        f"{date_str}: this batch is permanently lost — the uncollected threads "
+        f"from batch {batch_id} (age {age:.1f}d) can never be assembled: "
+        f"its manifest's raw is not on disk (checked this run) and at this age "
+        f"the batch results have expired (~29-day retention), so there is "
+        f"nothing to assemble from and nothing to resubmit. Last recorded "
+        f"state: {reason}. The sidecar is deleted and the loss is on the "
+        f"record; no action recovers THESE results. Re-summarizing the date "
+        f"from scratch is still possible (a manual run with lookback_days wide "
+        f"enough to re-fetch it, paying for a new batch) — decide that "
+        f"separately. Threads published for this date by earlier runs are "
+        f"unaffected, and this is not an API rejection." + unverified)
+    bs.delete_sidecar(path)
+
+
 def _date_from_sidecar_path(path: str) -> str:
-    """Fall back to the filename's date when a sidecar's own "date" field is
-    missing or unreliable — sidecars are always saved as "{date}.json"
-    (see bs.sidecar_path), so the filename is a safe date even when the
-    sidecar's shape is not guaranteed (e.g. a stale-schema sidecar, which is
-    held precisely because its shape may not match what this code expects)."""
+    """The date a sidecar's filename claims — sidecars are always written to
+    "{date}.json" (see bs.sidecar_path), so this is the best IDENTIFIER
+    available when the sidecar's own "date" is missing or its shape is not
+    guaranteed (e.g. a stale-schema sidecar).
+
+    It is a naming convention, not evidence, and the difference matters exactly
+    once: a rename, a merge resolution or a stray copy makes it wrong, so
+    ``_reason_not_to_abandon`` will not delete anything on its word alone. Use
+    it to report and to label; never to decide that data may be destroyed."""
     return os.path.splitext(os.path.basename(path))[0]
+
+
+def _reporting_date(sidecar: dict, path: str) -> str:
+    """See bs.reporting_date — the rule lives there because check_stuck_batches
+    has to apply the SAME one to dedup this run's reported dates (#71), and it
+    cannot import this module (that would pull in the Anthropic SDK)."""
+    return bs.reporting_date(sidecar, path)
 
 
 def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
@@ -1298,11 +1542,10 @@ def _apply_failure_policy(client, sidecar: dict, path: str, reason: str,
             bs.save_sidecar(path, sidecar)
             if ci_commit:
                 # A stale-schema sidecar's shape is not guaranteed (that is
-                # exactly why it is being held), so fall back to the filename
-                # — sidecars are always named "{date}.json" — rather than
-                # index a "date" key that may not exist.
-                _git_commit_sidecar(
-                    path, sidecar.get("date") or _date_from_sidecar_path(path))
+                # exactly why it is being held), so use the shared reporting
+                # rule rather than index a "date" key that may not exist — or
+                # may hold something that is not a string.
+                _git_commit_sidecar(path, _reporting_date(sidecar, path))
         return "blocked", diagnostic
 
     if policy == bs.HOLD:
@@ -1402,9 +1645,10 @@ def collect_pending_batches(
       ``_record_held_sidecar``. Disjoint from ``systemic_dates`` /
       ``suspect_dates``: a held date is neither a publication verdict nor weak
       evidence, it is a decision request, and must not be diluted into either.
-    * ``abandoned_dates`` — dates whose sidecar passed the abandon age with raw
-      out of the fetch window: that sidecar's uncollected threads can never be
-      assembled and the sidecar is deleted. The only permanently irreversible
+    * ``abandoned_dates`` — dates whose sidecar passed the abandon age AND whose
+      raw is not on disk this run, in whatever regime it was held (#69): that
+      sidecar's uncollected threads can never be assembled and the sidecar is
+      deleted. The only permanently irreversible
       outcome in this function, and disjoint from ``systemic_dates`` /
       ``suspect_dates`` / ``held_dates`` for the same reason those are disjoint
       from each other — it is a distinct claim ("this batch's threads are gone
@@ -1424,6 +1668,43 @@ def collect_pending_batches(
         sidecar = bs.load_sidecar(path)
         if sidecar is None:
             continue
+
+        # BEFORE every regime check and before the poll (#69). Whether this batch
+        # is still collectable does not depend on why it stopped moving, and the
+        # three regimes below return early — leaving a provably-lost sidecar to
+        # red the run every morning forever if the check sits after them.
+        #
+        # Safe to run this early because neither half of the proof needs the
+        # poll or any field a stale-schema sidecar might not carry:
+        #
+        # * results expired — inferred from the current attempt's age, and a
+        #   resubmit pushes a new attempt, so a batch still being retried can
+        #   never be deleted here (bs.is_abandonable); and
+        # * nothing is left to rebuild from — OBSERVED, not inferred, and every
+        #   way of failing to observe it means "keep". The age implies the date
+        #   is outside the DEFAULT lookback, but `lookback_days` is a
+        #   workflow_dispatch input accepting up to 365, and widening it is
+        #   precisely how a human rescues a held sidecar: that run fetches the
+        #   raw back, so inferring this half would delete the sidecar the rescue
+        #   was for, in the same job that restored it. See
+        #   _reason_not_to_abandon. With the default 30-day lookback raw for an
+        #   over-age date is never present (data/raw/ is gitignored, so CI
+        #   re-fetches every run), so the bound #69 added still holds for the
+        #   daily run.
+        now_iso = _utcnow_iso()
+        age = bs.age_days_or_none(sidecar, now_iso)
+        if age is not None and bs.is_abandonable(sidecar, now_iso):
+            keep = _reason_not_to_abandon(sidecar, path, raw_dir)
+            if keep is None:
+                _abandon_sidecar(path, _date_from_sidecar_path(path),
+                                 sidecar, age, abandoned_dates)
+                continue
+            # Not collectable as it stands (the results are gone), but not
+            # provably lost either — fall through and let the regimes below
+            # report it as the human decision it is.
+            log.error("Resume: %s is past the abandon age (%.1fd) but %s "
+                      "— not abandoning", _date_from_sidecar_path(path), age, keep)
+
         if not bs.is_current_schema(sidecar):
             log.error(
                 "Sidecar %s has schema_version %r (expected %d) — holding; "
@@ -1438,14 +1719,42 @@ def collect_pending_batches(
             _apply_failure_policy(client, sidecar, path, "stale_schema", None,
                                   raw_dir, model, ci_commit)
             # is_current_schema() being False means this sidecar's shape is
-            # not guaranteed, so do not assume "date" is present — fall back
-            # to the filename (see _date_from_sidecar_path). A KeyError here
-            # would crash Collect under set -e and take the whole morning's
-            # publish down with it — exactly the failure mode #65 removed.
-            _record_held_sidecar(sidecar.get("date") or _date_from_sidecar_path(path),
+            # not guaranteed, so do not assume "date" is present OR that it is
+            # a string — _reporting_date settles both. This branch runs BEFORE
+            # the no-date guard below, so it is the one place a dateless (or
+            # wrongly-typed-date) sidecar still reaches, and a raw ["date"]
+            # here would crash Collect under set -e and take the whole
+            # morning's publish down — the failure mode #65 removed.
+            _record_held_sidecar(_reporting_date(sidecar, path),
                                  sidecar, _diagnostic("stale_schema"), held_dates,
                                  diagnostics)
             continue
+
+        # AFTER the schema check (a stale-schema sidecar is missing its date
+        # *because* it is old, and that is the more useful diagnosis) but before
+        # everything else: the retry-threshold branch, the poll, the
+        # terminal-status rebuild and the assembly all index sidecar["date"], so
+        # a sidecar without one is a shape this function can report but not
+        # process. Letting it through would move the KeyError a few lines down
+        # rather than prevent it, and a crash here aborts Collect under set -e
+        # and takes the morning's publish with it (#65). Held, not abandoned:
+        # whether it is recoverable was already settled by the gate above, which
+        # deliberately does not need the date.
+        if not isinstance(sidecar.get("date"), str) or not sidecar["date"]:
+            log.error("Sidecar %s has no usable \"date\" field — holding; "
+                      "every path below this point needs one", path)
+            # Through the policy, like every other BLOCKED regime, so the marker
+            # is actually written: declaring a state without persisting it makes
+            # check_stuck_batches.py report this as "in flight, retries 0" (an
+            # untried jam) and leaves a later abandon record saying no reason was
+            # ever recorded — for a sidecar whose reason is precisely known.
+            _apply_failure_policy(client, sidecar, path, "sidecar_has_no_date",
+                                  None, raw_dir, model, ci_commit)
+            _record_held_sidecar(_reporting_date(sidecar, path), sidecar,
+                                 _diagnostic("sidecar_has_no_date"),
+                                 held_dates, diagnostics)
+            continue
+
         if bs.should_hard_fail(sidecar):
             # The SECOND hard-fail site. _apply_failure_policy converts the
             # threshold when it is crossed; this one catches a sidecar that
@@ -1459,6 +1768,10 @@ def collect_pending_batches(
                                  _diagnostic("retry_exhausted"), held_dates, diagnostics)
             continue
 
+        # Safe to index: the guard above returned for every sidecar without a
+        # non-empty string "date". Everything from here down (rebuild, assembly,
+        # the resubmit paths) relies on that same guard — do not add a fallback
+        # here instead, or a dateless sidecar reaches code that cannot use it.
         date_str = sidecar["date"]
         batch_id = bs.current_batch_id(sidecar)
         remaining = max(0, int(deadline - time.time()))
@@ -1483,44 +1796,14 @@ def collect_pending_batches(
         # batch we cannot use anyway (which would crash if results have expired).
         meetings_by_id = _load_meetings_for_date(date_str, raw_dir)
         if not meetings_by_id:
-            # Raw is gone. If the sidecar is old enough that raw has aged out of
-            # the fetch window for good (and results have expired too), it can
-            # never be collected — abandon it. Otherwise the miss may be
-            # transient (raw not fetched this run), so keep it for next time.
-            now_iso = _utcnow_iso()
-            if bs.is_abandonable(sidecar, now_iso):
-                age = bs.age_days(sidecar, now_iso)
-                batch_id = bs.current_batch_id(sidecar)
-                log.error(
-                    "Resume: %s unrecoverable (raw out of window, age %.1fd) "
-                    "— abandoning sidecar", date_str, age,
-                )
-                # The only permanently irreversible event in this pipeline, and
-                # until #66 the only one that left the run green. Red, but not
-                # hard_fail: nothing about a loss that already happened is a
-                # reason to withhold today's other dates.
-                #
-                # Say only what is provable. This sidecar's UNCOLLECTED threads
-                # are gone; the date itself may well have published threads from
-                # earlier runs, and telling an operator the date is empty sends
-                # them hunting for threads that were never lost.
-                abandoned_dates.append(date_str)
-                _annotate(
-                    "error",
-                    f"{date_str}: permanently lost — the uncollected threads from "
-                    f"batch {batch_id} (age {age:.1f}d) can never be assembled: "
-                    f"the raw aged out of the fetch window and the batch results "
-                    f"have expired. No action recovers them; this is recorded so "
-                    f"the loss is on the record. Threads published for this date "
-                    f"by earlier runs are unaffected, and this is not an API "
-                    f"rejection")
-                bs.delete_sidecar(path)
-            else:
-                log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
-                          date_str)
-                _record_held_sidecar(date_str, sidecar,
-                                     _diagnostic("raw_date_missing"),
-                                     held_dates, diagnostics)
+            # Raw is gone, and this sidecar is younger than the abandon age (the
+            # top-of-loop gate already removed the ones that are not), so the miss
+            # may be transient — raw simply not fetched this run. Keep it.
+            log.error("Resume: no raw for %s (outside window?) — keeping sidecar",
+                      date_str)
+            _record_held_sidecar(date_str, sidecar,
+                                 _diagnostic("raw_date_missing"),
+                                 held_dates, diagnostics)
             continue
 
         # Verify BEFORE touching results. Both are needed to assemble, but only

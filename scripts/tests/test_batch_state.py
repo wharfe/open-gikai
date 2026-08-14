@@ -132,6 +132,46 @@ def test_is_stuck_uses_threshold():
     assert bs.is_stuck(sc, "2026-06-11T00:00:00Z") is False  # 1d
 
 
+# --- The age helpers must survive a sidecar whose shape is not guaranteed (#69)
+#
+# Since #69 the abandon gate runs on EVERY sidecar before the schema check, i.e.
+# on shapes this code does not control. age_days raising there would abort
+# Collect under set -e and take the morning's publish down (#65's failure mode),
+# and since abandoning deletes data, "age unknown" must never read as "old".
+
+def test_age_days_returns_none_when_it_cannot_be_computed():
+    no_attempts = bs.new_sidecar("2026-05-14", "m")
+    assert bs.age_days_or_none(no_attempts, "2026-06-12T00:00:00Z") is None
+
+    unparseable = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(unparseable, "msgbatch_A", "not-a-timestamp")
+    assert bs.age_days_or_none(unparseable, "2026-06-12T00:00:00Z") is None
+
+    missing_field = {"attempts": [{"batch_id": "msgbatch_A"}]}
+    assert bs.age_days_or_none(missing_field, "2026-06-12T00:00:00Z") is None
+
+
+def test_an_uncomputable_age_is_never_stuck_and_never_abandonable():
+    """Fail closed in opposite directions for the same reason: neither claim is
+    provable without the timestamp, and one of them deletes data."""
+    unparseable = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(unparseable, "msgbatch_A", "not-a-timestamp")
+    assert bs.is_stuck(unparseable, "2026-08-12T00:00:00Z") is False
+    assert bs.is_abandonable(unparseable, "2026-08-12T00:00:00Z") is False
+
+
+def test_abandonable_only_past_the_threshold():
+    sc = bs.new_sidecar("2026-05-14", "m")
+    bs.add_attempt(sc, "msgbatch_A", "2026-06-10T00:00:00Z")
+    assert bs.is_abandonable(sc, "2026-07-12T00:00:00Z") is True    # 32d
+    assert bs.is_abandonable(sc, "2026-07-10T00:00:00Z") is False   # 30d
+    # Keyed to the CURRENT attempt: a resubmit resets the clock, because the new
+    # batch's results are fresh. This is what makes one top-of-loop gate safe
+    # for every regime — only a sidecar that stopped moving ages into it.
+    bs.add_attempt(sc, "msgbatch_B", "2026-07-11T00:00:00Z")
+    assert bs.is_abandonable(sc, "2026-07-12T00:00:00Z") is False
+
+
 # --- Failure regimes (#65) -------------------------------------------------
 
 def test_failure_policy_classifies_the_three_regimes():
