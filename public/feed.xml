@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 17 Aug 2026 21:36:23 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 21:44:50 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W33 国会まとめ — 3件の議論</title>
@@ -24,11 +24,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W31 国会まとめ — 18件の議論</title>
+      <title>2026-W31 国会まとめ — 43件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W31</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W31</guid>
       <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <description>18件のスレッド、4委員会の議論をまとめました。｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見、令和８年熊本地震についての会見（２）、熊本県熊本地方を震源とする地震についての会見ほか。</description>
+      <description>43件のスレッド、5委員会の議論をまとめました。｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見、令和８年熊本地震についての会見（２）、熊本県熊本地方を震源とする地震についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -280,164 +280,164 @@
       <category>高市内閣総理大臣記者会見</category>
     </item>
     <item>
-      <title>軍備拡大・軍事関連請願の審査 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_61fd48_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_61fd48_01</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>軍備拡大中止や武器輸出禁止など9種類169件の請願を審査した（国会会議録・2026.07.24・2発言）</description>
-      <category>外交防衛委員会</category>
+      <title>FOIPとインド太平洋外交 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_13</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>進化したFOIPの下でインド太平洋地域の秩序構築に主体的役割を果たす方針を確認（国会会議録・2026.07.27・2発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>請願・陳情・意見書の処理 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_a6bb77_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_a6bb77_02</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>請願一件の取扱い保留と陳情書・意見書の送付を確認した（国会会議録・2026.07.24・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>骨太の方針2026と成長投資戦略 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_14</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>積極財政による危機管理投資・成長投資の拡大方針と地域経済振興策を議論（国会会議録・2026.07.27・10発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>法務委員会等採択請願の緊急上程 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_a6bb77_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_a6bb77_03</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>法務・厚労委で採択された請願を本会議で緊急上程することを決定（国会会議録・2026.07.24・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>高校・大学の人材育成システム改革 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_15</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>専門高校の役割強化と大学のリスキリング機能拡充による人材育成改革を議論（国会会議録・2026.07.27・4発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>閉会中審査に関する申出 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_a6bb77_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_a6bb77_04</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>コロナ検証委設置法案等の閉会中審査を議長に申し出ることを決定（国会会議録・2026.07.24・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>水産業の持続可能性と陸上養殖振興 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_16</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>海洋環境変化によるサケ漁獲激減を受け、陸上養殖推進による水産業支援を議論（国会会議録・2026.07.27・2発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>各委員会からの閉会中審査申出案件 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_a6bb77_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_a6bb77_05</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>内閣委員会など各常任・特別委員会の閉会中審査申出案件を承認（国会会議録・2026.07.24・2発言）</description>
-      <category>議院運営委員会</category>
+      <title>日・メルコスールEPA交渉 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_17</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>南米メルコスールとのEPA交渉開始を受け、農畜産業への影響懸念と経済安保の意義を議論（国会会議録・2026.07.27・3発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>本会議の議事運営（閉会挨拶含む） — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_a6bb77_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_a6bb77_06</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>本会議の議事日程と国会閉会に際する議長挨拶の予定を説明（国会会議録・2026.07.24・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>内閣支持率低下の要因と国会運営姿勢 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_18</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>内閣支持率急落の要因として物価高対応の遅れと国会軽視の姿勢を野党が追及（国会会議録・2026.07.27・3発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>閉会中審査に関する手続き — 財務金融委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_76ad09_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_76ad09_07</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>閉会中審査の対象案件や参考人・委員派遣の手続きを決定した（国会会議録・2026.07.24・3発言）</description>
-      <category>財務金融委員会</category>
+      <title>賃金・分配と最低賃金政策 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_19</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>実質賃金向上には分配の仕組みが不可欠と指摘、最低賃金目標後退を批判（国会会議録・2026.07.27・4発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>金権腐敗政治一掃に関する請願の審査 — 政治改革に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260724_64c92a_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260724_64c92a_08</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>金権腐敗政治一掃に関する請願外54件を審査し保留と決定した（国会会議録・2026.07.24・1発言）</description>
-      <category>政治改革に関する特別委員会</category>
+      <title>日銀の金融政策と為替・物価高対策 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_20</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_20</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>金融政策は日銀に委ねる立場を確認しつつ、円安による輸入物価高への対応を議論（国会会議録・2026.07.27・3発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>元議長河野洋平氏逝去に伴う弔詞贈呈 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_1b3f4a_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_1b3f4a_01</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>元衆議院議長河野洋平氏の逝去に際し弔詞贈呈を決定（国会会議録・2026.07.22・2発言）</description>
-      <category>議院運営委員会</category>
+      <title>財政健全化目標と骨太方針の債務残高指標 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_21</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_21</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>骨太方針からPB黒字化目標が後退し債務残高対GDP比中心に、市場の信認への懸念（国会会議録・2026.07.27・5発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>医療的ケア児支援法改正案の趣旨説明 — こども・子育て・若者活躍に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_238938_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_02</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>医療的ケア児支援法改正案について提出者が支援対象拡大などの提案趣旨を説明（国会会議録・2026.07.22・2発言）</description>
-      <category>こども・子育て・若者活躍に関する特別委員会</category>
+      <title>基金・租税特別措置の見直し — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_22</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_22</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>基金の複数年度執行や租特の自主点検の実効性の乏しさを野党が批判（国会会議録・2026.07.27・2発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>医療的ケア児の成人後の住まい・受皿確保 — こども・子育て・若者活躍に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_238938_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_03</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>成人した医療的ケア児のグループホームや施設など地域生活の受皿不足が課題（国会会議録・2026.07.22・11発言）</description>
-      <category>こども・子育て・若者活躍に関する特別委員会</category>
+      <title>皇室典範改正と皇位継承の在り方 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_23</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_23</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>女性皇族の配偶者・子の地位や皇位継承有識者会議設置について附帯決議の履行を追及（国会会議録・2026.07.27・5発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>支援対象拡大と支援センターの地域格差是正 — こども・子育て・若者活躍に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_238938_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_04</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>強度行動障害者への支援拡大や医療的ケア児等支援センターの地域格差解消策を議論（国会会議録・2026.07.22・7発言）</description>
-      <category>こども・子育て・若者活躍に関する特別委員会</category>
+      <title>副首都法案の附帯決議と与党の対応 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_24</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_24</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>副首都法附帯決議の選挙期間調整を巡る与党対応の是非を追及（国会会議録・2026.07.27・3発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>家族の負担軽減と人材確保 — こども・子育て・若者活躍に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_238938_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_05</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>在宅ケアを担う家族の夜間負担軽減とケア人材確保の必要性を議論（国会会議録・2026.07.22・2発言）</description>
-      <category>こども・子育て・若者活躍に関する特別委員会</category>
+      <title>企業・団体献金規制の在り方 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_25</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_25</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>企業・団体献金の規制強化が後回しにされている政治の信頼回復の遅れを批判（国会会議録・2026.07.27・3発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>教育現場での医療的ケア児受入れ体制 — こども・子育て・若者活躍に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_238938_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_06</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>学校・保育所での医療的ケア児受入れ拡大と看護師配置の予算確保が課題（国会会議録・2026.07.22・8発言）</description>
-      <category>こども・子育て・若者活躍に関する特別委員会</category>
+      <title>サナエトークン問題と暗号資産規制 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_26</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_26</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>総理秘書らが関与した暗号資産宣伝疑惑と金融庁の実態把握対応を追及（国会会議録・2026.07.27・21発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>医療的ケア児支援法改正案の採決・附帯決議 — こども・子育て・若者活躍に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20260722_238938_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260722_238938_07</guid>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
-      <description>改正法案が可決され、支援体制強化を求める附帯決議が採択された（国会会議録・2026.07.22・2発言）</description>
-      <category>こども・子育て・若者活躍に関する特別委員会</category>
+      <title>補助金・租特見直しとAI活用提案 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_27</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_27</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>補助金・租特見直しの停滞を指摘し、AI活用による歳出見直しを提案（国会会議録・2026.07.27・3発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>会期延長の件 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260717_db4467_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260717_db4467_01</guid>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>会期を7月25日まで8日間延長する件で各党の意見が一致していない（国会会議録・2026.07.17・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>社会保険料負担軽減と自民・維新合意 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_28</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_28</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>現役世代の社会保険料負担軽減へ向けた自民・維新合意の実現状況を確認（国会会議録・2026.07.27・5発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>本会議の議事日程 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20260717_db4467_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260717_db4467_02</guid>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>会期延長の件を採決する本会議の議事日程と各党の賛否を報告（国会会議録・2026.07.17・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>食料品消費税減税と給付つき税額控除 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_29</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_29</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>社会保障国民会議での消費税減税・給付つき税額控除の取りまとめ内容を巡り質疑（国会会議録・2026.07.27・15発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>改正皇室典範の成立と皇位継承の安定化議論 — 皇室典範改正の法案成立等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260717_1349e1_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260717_1349e1_03</guid>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>皇族数確保のための改正皇室典範成立を受け、養子の子の皇位継承資格明記への評価と今後の議論姿勢を問う（首相記者会見・2026.07.17・2発言）</description>
-      <category>皇室典範改正の法案成立等についての会見</category>
+      <title>米価格と政府備蓄米の買戻し — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_30</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_30</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>新米価格への影響を左右する政府備蓄米買戻しタイミングの早期決断を要求（国会会議録・2026.07.27・7発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>国会会期延長と法案成立への対応 — 皇室典範改正の法案成立等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260717_1349e1_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260717_1349e1_04</guid>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
-      <description>国会会期の7月25日までの延長決定を受け、政府提出法案の会期内成立に向けた総理の姿勢を問う（首相記者会見・2026.07.17・2発言）</description>
-      <category>皇室典範改正の法案成立等についての会見</category>
+      <title>豪雨災害宅地かさ上げ事業の課税誤り — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_31</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_31</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>令和2年豪雨の宅地かさ上げ事業補償金の課税説明誤りへの謝罪と対応を要求（国会会議録・2026.07.27・2発言）</description>
+      <category>予算委員会</category>
     </item>
     <item>
-      <title>駐留軍等労働者の給与支払遅延問題 — 外交防衛委員会</title>
-      <link>https://open-gikai.net/t/t_20260716_5f911c_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260716_5f911c_01</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description>米軍データ提供遅延による在日米軍基地従業員の給与遅配を防衛大臣に改善要求（国会会議録・2026.07.16・21発言）</description>
-      <category>外交防衛委員会</category>
+      <title>酷暑対策と熱中症対策 — 予算委員会</title>
+      <link>https://open-gikai.net/t/t_20260727_581690_32</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_32</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description>連日40度超の酷暑を受け、既存の熱中症対策実行計画の強化を要請（国会会議録・2026.07.27・2発言）</description>
+      <category>予算委員会</category>
     </item>
   </channel>
 </rss>
