@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 18 Aug 2026 21:44:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 21:53:03 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W34 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W34</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W34</guid>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W33 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W33</link>
@@ -32,12 +40,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W30 国会まとめ — 15件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W30</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W30</guid>
-      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <description>15件のスレッド、5委員会の議論をまとめました。外交防衛委員会、議院運営委員会、財務金融委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>日・トルコ首脳電話会談 — エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</title>
+      <link>https://open-gikai.net/t/t_20260819_165910_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260819_165910_01</guid>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
+      <description>エルドアン大統領と電話会談、中東情勢や日土間の戦略的パートナーシップ強化を協議（首相記者会見・2026.08.19・2発言）</description>
+      <category>エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</category>
+    </item>
+    <item>
+      <title>米国によるICC所長への制裁 — エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</title>
+      <link>https://open-gikai.net/t/t_20260819_165910_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260819_165910_02</guid>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
+      <description>米国のICC赤根所長制裁指定に「残念」と表明、関係国と意思疎通を継続する方針（首相記者会見・2026.08.19・2発言）</description>
+      <category>エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</category>
     </item>
     <item>
       <title>プーチン大統領の択捉島訪問への抗議と対応 — プーチン・ロシア大統領による択捉島訪問についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_30</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>新米価格への影響を左右する政府備蓄米買戻しタイミングの早期決断を要求（国会会議録・2026.07.27・7発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>豪雨災害宅地かさ上げ事業の課税誤り — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_31</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_31</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>令和2年豪雨の宅地かさ上げ事業補償金の課税説明誤りへの謝罪と対応を要求（国会会議録・2026.07.27・2発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>酷暑対策と熱中症対策 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_32</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_32</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>連日40度超の酷暑を受け、既存の熱中症対策実行計画の強化を要請（国会会議録・2026.07.27・2発言）</description>
       <category>予算委員会</category>
     </item>
   </channel>

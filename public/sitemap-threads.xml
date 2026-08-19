@@ -18979,6 +18979,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://open-gikai.net/t/t_20260723_3fa6bc_01</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://open-gikai.net/t/t_20260724_61fd48_01</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -19353,6 +19359,18 @@
   <url>
     <loc>https://open-gikai.net/t/t_20260813_21aa8a_01</loc>
     <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260819_165910_01</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/t/t_20260819_165910_02</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
