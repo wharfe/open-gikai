@@ -1,0 +1,68 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-19",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_013YHzu68Nh9ci4J8URdSwLM",
+      "submitted_at": "2026-08-19T21:39:13Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-08-19",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_165910152045_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "日・トルコ首脳電話会談",
+            "topicTag": "日土会談",
+            "topicColor": "#06b6d4",
+            "summary": "エルドアン大統領と電話会談、中東情勢や日土間の戦略的パートナーシップ強化を協議",
+            "contextDescription": "トルコは中東地域で重要な役割を持つ国。日本との教育・安全保障・経済協力の強化が焦点。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:f0eea48d7d14149744e4a2045947a53463a903e584ba8746dff9c530408e8157"
+        },
+        {
+          "custom_id": "s_165910152045_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "米国によるICC所長への制裁",
+            "topicTag": "ICC制裁",
+            "topicColor": "#ef4444",
+            "summary": "米国のICC赤根所長制裁指定に「残念」と表明、関係国と意思疎通を継続する方針",
+            "contextDescription": "米トランプ政権が国際刑事裁判所（ICC）の赤根所長を制裁対象に指定。日本はICCを支持する立場。",
+            "legislationName": null,
+            "speechOrders": [
+              3,
+              4
+            ]
+          },
+          "speechOrders": [
+            3,
+            4
+          ],
+          "input_hash": "sha256:c78f9148b077551a4d2d380e256a1b5b5fc9456f30ee2e280ad5a72df78f3d6f"
+        }
+      ]
+    }
+  ]
+}
