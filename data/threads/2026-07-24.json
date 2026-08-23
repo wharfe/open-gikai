@@ -970,6 +970,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122114024X03320260724"
         }
+      ],
+      "news": [
+        {
+          "title": "JR陸羽西線 運転再開後「羽前前波」「高屋」駅を通過駅とする方向で検討 住民らに説明",
+          "url": "https://news.livedoor.com/article/detail/29451247/",
+          "source": "livedoor ニュース",
+          "pubDate": "Wed, 27 Aug 2025 00:30:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/d/6/d6f80_1820_ca56c15a_2f3d0128.jpg"
+        },
+        {
+          "title": "カタール、ホルムズ海峡再開後2カ月以内にLNG生産80%回復へ－関係者",
+          "url": "https://www.bloomberg.com/jp/news/articles/2026-06-16/-2-lng-80",
+          "source": "Bloomberg",
+          "pubDate": "Tue, 16 Jun 2026 01:00:00 GMT"
+        }
       ]
     },
     "speeches": [

@@ -17,6 +17,14 @@
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0727kaiken.html"
         }
+      ],
+      "news": [
+        {
+          "title": "トランプ政権の新たな追加関税、NY州の輸入業者らが徴収差し止め求め提訴…1社は「代替関税」1審で勝訴",
+          "url": "https://www.yomiuri.co.jp/economy/20260725-GYT1T00173/",
+          "source": "読売新聞",
+          "pubDate": "Fri, 21 Aug 2026 05:59:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -5687,6 +5695,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122105261X01720260727"
+        }
+      ],
+      "news": [
+        {
+          "title": "【図解・社会】SNSなど交流サイトを通じ犯罪被害に遭った子どもの推移",
+          "url": "https://www.jiji.com/jc/graphics?p=ve_soc_tyosa-jikenchildren-network",
+          "source": "時事ドットコム",
+          "pubDate": "Wed, 19 Aug 2026 17:01:00 GMT",
+          "image": "https://www.jiji.com/news2/graphics/images/20200312j-03-w450.gif"
+        },
+        {
+          "title": "SNSにおける性的トラブルから子どもを守るために 保護者が知っておきたい基礎知識",
+          "url": "https://news.yahoo.co.jp/expert/articles/10a7c30bc096cdafbd0542526718faafe8fa3f85",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Fri, 27 Feb 2026 22:01:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/moriyamasaya/02544820/title-1772234291595.jpeg?exp=10800"
         }
       ]
     },
