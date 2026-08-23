@@ -415,9 +415,16 @@ Anything requiring a runtime belongs under `apps/`.
 - 受け入れ基準（機械判定）: `npm run lint && npm run validate`。
   `scripts/` の Python を触ったら `python -m pytest scripts/tests`（resume/batch_state の
   ユニットテストがある — フロントには無い）。表示に影響する変更は `npm run test:e2e` を追加実行。
-  **依存に `pyyaml` が要る**（`pip install anthropic python-dotenv pytest pyyaml`）。無いと
+  **依存に `pyyaml` が要る**（`pip install 'anthropic>=0.72,<1' python-dotenv pytest pyyaml`）。無いと
   daily-batch.yml を読む契約テスト群が `importorskip` で**静かに skip** され、緑のまま
   「exit コード契約・held/abandoned の扱い・action バージョンの下限」が検査されない。
   ローカルで skip 数が出ていたら、それは合格ではなく計測していないという意味。
+  **`anthropic` の `<1` は消さない**: 1.0.0 が HTTP 層を `httpx` から fork の `httpx2` へ
+  移し、`httpx` は依存として入らなくなった。`scripts/pipeline/summarizer.py` は
+  `httpx.Timeout` を直接組むので（SDK の non-streaming timeout ガード回避、#46）、
+  無指定 install だと要約レイヤ全体が `No module named 'httpx'` で死ぬ。2026-08-20〜22 の
+  3朝、新規スレッドがゼロで publish されたのがこれ。移行は #80、pin を守るのは
+  `test_the_anthropic_pin_matches_what_the_summary_layer_imports`（bare `httpx` を import
+  している間だけ pin を要求し、`httpx2` へ移せば要求が自動で外れる）。
 - 単発の小修正（数十行以下）は Gate 省略可。ただしスクレイパーのレート制御・公開データの
   生成ロジックに触れる diff はサイズによらず Gate 対象。

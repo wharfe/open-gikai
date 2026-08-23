@@ -1915,3 +1915,80 @@ def test_the_annotation_does_not_send_an_operator_after_a_summary_request(
     assert errors, "the outage said nothing at all"
     assert "sent no summary request at all" in errors[0]
     assert "R1" in errors[0], "the operator is not told which meeting"
+
+
+def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
+    """#80. The pipeline installs its Python deps fresh every morning, so an
+    upstream major release lands in production without a commit.
+
+    That happened: `anthropic` 1.0.0 (2026-08-20) moved the HTTP layer from
+    `httpx` to its fork `httpx2`, and `httpx` stopped being installed at all.
+    `summarizer.sync_call_kwargs` imports `httpx` DIRECTLY — the timeout it
+    builds there is what stops the SDK refusing a non-streaming request before
+    sending it (#46) — so every meeting failed with `No module named 'httpx'`
+    and three consecutive mornings published zero new threads.
+
+    So this fence is on the COUPLING, not on a version string: while anything
+    under `scripts/` imports bare `httpx`, every workflow that installs
+    `anthropic` must exclude the majors that do not ship it. Swap those imports
+    to `httpx2` and the demand lifts by itself — which is the point. A test
+    that just asserted `<1` forever would have to be deleted by the very commit
+    that makes the pin unnecessary, and a fence you delete to make progress is
+    one you eventually delete carelessly.
+    """
+    yaml = pytest.importorskip("yaml")
+    specifiers = pytest.importorskip("packaging.specifiers")
+    version = pytest.importorskip("packaging.version")
+
+    # Bare `import httpx` / `from httpx import ...` only. `httpx2` (and an
+    # `import httpx2 as httpx` alias) is the post-migration shape and must not
+    # keep the pin alive.
+    import ast
+
+    importers = []
+    for path in sorted((REPO_ROOT / "scripts").rglob("*.py")):
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                names = [a.name for a in node.names]
+            elif isinstance(node, ast.ImportFrom):
+                names = [node.module or ""]
+            else:
+                continue
+            if any(n == "httpx" or n.startswith("httpx.") for n in names):
+                importers.append(path.relative_to(REPO_ROOT).as_posix())
+                break
+
+    workflows = (".github/workflows/daily-batch.yml", ".github/workflows/ci.yml")
+    for rel in workflows:
+        wf = yaml.safe_load((REPO_ROOT / rel).read_text(encoding="utf-8"))
+        requirements = []
+        for job in wf["jobs"].values():
+            for step in job.get("steps", []):
+                run = str(step.get("run", ""))
+                if "pip install" not in run:
+                    continue
+                for token in run.replace("'", " ").replace('"', " ").split():
+                    if token.startswith("anthropic"):
+                        requirements.append(token)
+        # Not a vacuous pass: a renamed install step or a move to
+        # requirements.txt must fail here and be re-fenced deliberately.
+        assert requirements, (
+            f"{rel} no longer installs anthropic by name — re-point this fence "
+            f"at wherever the version is now declared, do not drop it")
+        for req in requirements:
+            spec = specifiers.SpecifierSet(req[len("anthropic"):])
+            for importer in importers:
+                assert not spec.contains(version.Version("1.0.0")), (
+                    f"{rel} allows anthropic 1.0.0 (`{req}`) while {importer} "
+                    f"imports bare `httpx`, which 1.x does not install — this "
+                    f"is the shape that published zero threads for three days")
+
+    # The other direction: once the migration lands there must be nothing left
+    # importing bare httpx, or this loop goes quiet while the coupling remains.
+    if not importers:
+        for rel in workflows:
+            text = (REPO_ROOT / rel).read_text(encoding="utf-8")
+            assert "httpx" not in text, (
+                f"nothing imports bare httpx any more, but {rel} still explains "
+                f"its pin by it — stale prose is the defect (#80)")
