@@ -1,0 +1,3298 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-14",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_0195NACuFDNoeJvm8Z52qyX9",
+      "submitted_at": "2026-08-23T01:06:12Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_厚生労働委員会_2026-07-14_第18号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_eb9ef18a62ae_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "戦没者遺骨収集とDNA鑑定体制の強化",
+            "topicTag": "遺骨収集",
+            "topicColor": "#6b7280",
+            "summary": "遺骨収集の遅れとDNA鑑定能力不足への対応強化を求める議論",
+            "contextDescription": "戦没者遺骨収集推進法に基づく遺骨収容とDNA鑑定を通じた御遺族への返還事業の課題。",
+            "legislationName": "戦没者の遺骨収集の推進に関する法律",
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "input_hash": "sha256:e22a34d155a1a4cc57645e15893db0daf22d56c9242f3906f5ea3855f9752f46"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "米国MFN価格政策と創薬・薬価制度",
+            "topicTag": "薬価創薬",
+            "topicColor": "#3b82f6",
+            "summary": "米国最恵国待遇価格政策の影響と国内創薬環境・薬価下支え策の課題",
+            "contextDescription": "米国の薬価政策変化が製薬企業の日本市場戦略に与える影響と、国内の薬価制度による支援の在り方。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          "speechOrders": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "input_hash": "sha256:428c392c4204f1aa9d45f2468aad1fd64fffc5ec4b68d1d142a19a24e0a4e1ab"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "ILOプラットフォームワーカー条約と労働者性判断",
+            "topicTag": "労働者性",
+            "topicColor": "#6366f1",
+            "summary": "ILO新条約採択を受けたプラットフォーク労働者の労働者性判断基準見直しの必要性",
+            "contextDescription": "ILO総会で議論されたプラットフォーム就業者保護の新条約と、日本の労働基準法上の労働者性判断基準の課題。",
+            "legislationName": null,
+            "speechOrders": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          "speechOrders": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "input_hash": "sha256:a6332cc1ecfe24d1c0597acfd3d8f0073e3922dd242ab89364e8e0a80bec28c0"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "ブラック企業対策とワークルール教育・労使関係強化",
+            "topicTag": "労使関係",
+            "topicColor": "#6366f1",
+            "summary": "ブラック企業対策としてワークルール教育や労働協約拡張適用の強化を求める議論",
+            "contextDescription": "非正規雇用労働者の権利保護のためのワークルール教育推進や、労働組合の集団的労使関係強化策。",
+            "legislationName": "ワークルール教育推進法案",
+            "speechOrders": [
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31
+            ]
+          },
+          "speechOrders": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "input_hash": "sha256:18dba44c578063d137e28cc37ba9a1c4b2bf11886357ca64280c99c15b89f151"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "労働基準監督官の人員体制強化",
+            "topicTag": "監督官",
+            "topicColor": "#6366f1",
+            "summary": "労働基準監督官の定員不足とILO基準に基づく人員確保・多様な人材登用の検討",
+            "contextDescription": "労働基準法令の遵守を確保する労働基準監督官の人員体制が国際基準と比較して不足している問題。",
+            "legislationName": null,
+            "speechOrders": [
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:5c6779b22aa86c72e8944d203cea241635e8ac3f0a6a1a38a9ae1e7722e29a6e"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "医療系国家試験の早期化・CBT化",
+            "topicTag": "国家試験",
+            "topicColor": "#f59e0b",
+            "summary": "医師・看護師等国家試験の合格発表早期化とCBT方式導入の検討状況",
+            "contextDescription": "医師国家試験等の合格発表時期や試験方式（CBT化）の見直しに関する検討課題。",
+            "legislationName": null,
+            "speechOrders": [
+              39,
+              40,
+              41,
+              42
+            ]
+          },
+          "speechOrders": [
+            39,
+            40,
+            41,
+            42
+          ],
+          "input_hash": "sha256:e546caa0f0c5342cdd07c90626503e32e6af7d7aee1b2d7c5eea6280c2d7c986"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "造船業の人材確保と職場環境整備支援",
+            "topicTag": "造船人材",
+            "topicColor": "#3b82f6",
+            "summary": "造船業の人材確保に向けた寮・設備投資支援と熱中症対策の拡充",
+            "contextDescription": "成長戦略分野である造船業での人材確保・定着のための職場環境整備や熱中症対策の支援策。",
+            "legislationName": null,
+            "speechOrders": [
+              43,
+              44,
+              45,
+              46,
+              47,
+              48
+            ]
+          },
+          "speechOrders": [
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "input_hash": "sha256:9a5d0a4461e7a32f58607797a15b2e5c8bfa3b34c87a988346d90417b335b2e4"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "ドラッグロス・薬価算定ルールの課題",
+            "topicTag": "薬価ロス",
+            "topicColor": "#3b82f6",
+            "summary": "後発品薬価算定ルールが招くドラッグロス・ドラッグラグへの対応を求める",
+            "contextDescription": "後発品の薬価が先発品比で低く設定されるルールにより、必要な薬が発売されないドラッグロス問題。",
+            "legislationName": null,
+            "speechOrders": [
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55
+            ]
+          },
+          "speechOrders": [
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "input_hash": "sha256:9fdee19e5b82e6d57cde8da25f06fa8a03fceb32c08173acb9834994ef66fdca"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "ケアマネジャー法定研修の質の課題",
+            "topicTag": "ケアマネ研修",
+            "topicColor": "#8b5cf6",
+            "summary": "ケアマネジャー法定研修の内容・費用対効果に対する不満と改善要望",
+            "contextDescription": "介護保険法改正で見直されたケアマネジャーの研修制度の実効性に関する議論。",
+            "legislationName": "介護保険法",
+            "speechOrders": [
+              56,
+              57,
+              58
+            ]
+          },
+          "speechOrders": [
+            56,
+            57,
+            58
+          ],
+          "input_hash": "sha256:830728322d20f65daa0928c29b2463bc3bce1c310d6dae90216f4503d01ce3f8"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "ホームレス自立支援特措法の実効性",
+            "topicTag": "ホームレス",
+            "topicColor": "#8b5cf6",
+            "summary": "ホームレス数は減少も女性割合増加等の残る課題と特措法の必要性",
+            "contextDescription": "ホームレスの自立支援等に関する特別措置法に基づく実態調査と支援施策の現状評価。",
+            "legislationName": "ホームレスの自立の支援等に関する特別措置法",
+            "speechOrders": [
+              59,
+              60,
+              61,
+              62
+            ]
+          },
+          "speechOrders": [
+            59,
+            60,
+            61,
+            62
+          ],
+          "input_hash": "sha256:68f30c1cee2b92b85d562536d4ce4dec6a39c2726e7b80b1e4bca89046b24454"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "派遣労働者の同一労働同一賃金の徹底",
+            "topicTag": "派遣賃金",
+            "topicColor": "#6366f1",
+            "summary": "派遣先指針改正後の派遣料金交渉・最低賃金遵守の周知徹底を求める",
+            "contextDescription": "派遣労働者の同一労働同一賃金確保に向けた派遣先指針改定の運用と周知状況。",
+            "legislationName": null,
+            "speechOrders": [
+              63,
+              64,
+              65,
+              66
+            ]
+          },
+          "speechOrders": [
+            63,
+            64,
+            65,
+            66
+          ],
+          "input_hash": "sha256:adcbfb51898c51fb6f64a941320570c7608ee742c06c844e64dd2827eeefbff2"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "後発医薬品の安定供給とサプライチェーン評価",
+            "topicTag": "後発品供給",
+            "topicColor": "#3b82f6",
+            "summary": "後発品企業指標の原薬調達・製造受託企業の評価見直しによる安定供給確保",
+            "contextDescription": "後発医薬品の安定供給確保のための企業評価指標の在り方とサプライチェーン全体の支援策。",
+            "legislationName": null,
+            "speechOrders": [
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72
+            ]
+          },
+          "speechOrders": [
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72
+          ],
+          "input_hash": "sha256:9a7e8f38ae4d1fb7859bcd7ae87f7e2b237d85b78ffb3a7de114cb95e3b433c9"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "ピロリ菌除菌治療の保険適用拡大",
+            "topicTag": "胃がん対策",
+            "topicColor": "#8b5cf6",
+            "summary": "胃がん予防のピロリ菌除菌治療、三次除菌の保険適用検討を求める",
+            "contextDescription": "ピロリ菌除菌治療の保険適用による胃がん死亡減少の成果と、更なる治療（三次除菌）の適用拡大課題。",
+            "legislationName": null,
+            "speechOrders": [
+              73,
+              74,
+              75
+            ]
+          },
+          "speechOrders": [
+            73,
+            74,
+            75
+          ],
+          "input_hash": "sha256:0814d546097ef5a5427da86d8405b36e89ae6f3aeb5c5a1b19eddace2d030713"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "踏切内の点字ブロック設置",
+            "topicTag": "踏切安全",
+            "topicColor": "#8b5cf6",
+            "summary": "視覚障害者の踏切内移動安全確保のための点字ブロック設置促進",
+            "contextDescription": "バリアフリー法に基づく踏切道内の点字ブロック設置の指定・優先整備の仕組み。",
+            "legislationName": null,
+            "speechOrders": [
+              76,
+              77
+            ]
+          },
+          "speechOrders": [
+            76,
+            77
+          ],
+          "input_hash": "sha256:2ba8950ef7a70380960e99ac5e835e6ff8cc7cbaead8a1516245a0d16a4d924a"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "カネミ油症の診断基準見直し",
+            "topicTag": "油症診断",
+            "topicColor": "#8b5cf6",
+            "summary": "カネミ油症のPCB・PeCDF濃度による診断基準の適切な運用を求める",
+            "contextDescription": "ライスオイルへのPCB混入によるカネミ油症の診断基準に関する長期的な見直しの経緯。",
+            "legislationName": null,
+            "speechOrders": [
+              79,
+              80,
+              81
+            ]
+          },
+          "speechOrders": [
+            79,
+            80,
+            81
+          ],
+          "input_hash": "sha256:bc34318ae80bc219b440b05bf1ad83e5137965aa4087121e890d7cf3ab360d72"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "血液製剤の国内自給と薬害の反省",
+            "topicTag": "血液製剤",
+            "topicColor": "#8b5cf6",
+            "summary": "フィブリノゲンは国内自給達成もグロブリン製剤の自給達成を求める",
+            "contextDescription": "薬害の反省に基づく血液製剤・血漿分画製剤の国内自給原則と、免疫グロブリン製剤の供給不足問題。",
+            "legislationName": null,
+            "speechOrders": [
+              81,
+              82,
+              83,
+              84,
+              85
+            ]
+          },
+          "speechOrders": [
+            81,
+            82,
+            83,
+            84,
+            85
+          ],
+          "input_hash": "sha256:ea83297687e9fd19c57da927cf36505a257d2276c181e36e2dd18acfb6a7bfa5"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "在宅高齢者の栄養管理と主治医意見書の評価",
+            "topicTag": "低栄養対策",
+            "topicColor": "#8b5cf6",
+            "summary": "在宅高齢者の低栄養リスクと要介護認定時の栄養評価の精度向上を求める",
+            "contextDescription": "攻めの予防医療における栄養管理の重要性と、要介護認定の主治医意見書における栄養状態評価の課題。",
+            "legislationName": null,
+            "speechOrders": [
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100
+            ]
+          },
+          "speechOrders": [
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100
+          ],
+          "input_hash": "sha256:67cd504aa8a653b7c5ace41f69d10b2a861430d6ac1c2b912b29f4858984b636"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "高齢者医療費窓口負担割合の公平化",
+            "topicTag": "窓口負担",
+            "topicColor": "#8b5cf6",
+            "summary": "高齢者と現役世代の窓口負担公平化に向けた見直しと受診抑制への懸念",
+            "contextDescription": "自民・維新の協議体で合意された、年齢によらない応能負担実現に向けた高齢者医療費窓口負担見直し。",
+            "legislationName": null,
+            "speechOrders": [
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112
+            ]
+          },
+          "speechOrders": [
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112
+          ],
+          "input_hash": "sha256:0fe114e6b8c0ad767fadf6a4c32b158d8bcb0565552b77bf402e72c02c68c196"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "医療法人理事長の複数法人兼務規制",
+            "topicTag": "医療法人",
+            "topicColor": "#3b82f6",
+            "summary": "医療法人の統合再編を阻害しない理事長兼務規制の柔軟な運用を求める",
+            "contextDescription": "医療法人理事長の複数法人兼務に関する都道府県の判断基準と、法人統合再編を進める上での制度課題。",
+            "legislationName": null,
+            "speechOrders": [
+              113,
+              114,
+              115,
+              116,
+              117,
+              118
+            ]
+          },
+          "speechOrders": [
+            113,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "input_hash": "sha256:f1213d36a65815e095b3e79533e81216b02aef67a769e3cfa55f32eae6cac5a3"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "BSL4施設移転先選定と住民リスクコミュニケーション",
+            "topicTag": "BSL4施設",
+            "topicColor": "#ef4444",
+            "summary": "感染症研究所BSL4施設の移転先選定における安全性配慮と住民説明の在り方",
+            "contextDescription": "国立健康危機管理研究機構のBSL4施設（危険病原体取扱施設）の移転先選定を巡る立地基準と住民理解。",
+            "legislationName": null,
+            "speechOrders": [
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131
+            ]
+          },
+          "speechOrders": [
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131
+          ],
+          "input_hash": "sha256:78978f97ac364d435b40d5736a913acd5bba7fbd90684e274bac8bc03f9510ea"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "コロナ関連データ・行政文書の保存と活用",
+            "topicTag": "コロナ検証",
+            "topicColor": "#ef4444",
+            "summary": "超過死亡分析と予防接種データベース活用、コロナ対応文書の保存状況を確認",
+            "contextDescription": "新型コロナ対応の検証に向けた超過死亡データ分析、予防接種データベースの活用、行政文書保存の徹底。",
+            "legislationName": null,
+            "speechOrders": [
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139
+            ]
+          },
+          "speechOrders": [
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139
+          ],
+          "input_hash": "sha256:9e2e4c9fd34784c3e07e765b64035d3d011ae861fffe0c462c58a74159c8dd06"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "急迫保護の適用徹底",
+            "topicTag": "急迫保護",
+            "topicColor": "#8b5cf6",
+            "summary": "住まいなき生活困窮者への急迫保護の申請なし適用を自治体に徹底求める",
+            "contextDescription": "生活保護法の急迫保護規定について自治体の理解不足による適用拒否事案への対応。",
+            "legislationName": "生活保護法",
+            "speechOrders": [
+              140,
+              141,
+              142
+            ]
+          },
+          "speechOrders": [
+            140,
+            141,
+            142
+          ],
+          "input_hash": "sha256:c7fac998cbfb711ed39b295a7838bc1b3ab897f81b63d6941f82652f781194d6"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "生活扶助基準引下げ違憲判決と追加給付対応",
+            "topicTag": "生保追加給付",
+            "topicColor": "#8b5cf6",
+            "summary": "生活扶助基準減額の違法確定を受けた追加給付の迅速化と自治体負担軽減を要求",
+            "contextDescription": "2013-15年の生活扶助基準減額が違法とされた最高裁判決を受けた、対象者への追加給付の実施方法。",
+            "legislationName": null,
+            "speechOrders": [
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156
+            ]
+          },
+          "speechOrders": [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156
+          ],
+          "input_hash": "sha256:f25b2de399687e1a837d38df78e3e4d07701a708c9ef1c6c9a82850b12d59cb1"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "医療的ケア児者支援法改正と本人主体の意思決定支援",
+            "topicTag": "医ケア支援",
+            "topicColor": "#8b5cf6",
+            "summary": "医療的ケア児者支援法改正を機に本人主体の意思決定支援・介助保障の充実を議論",
+            "contextDescription": "医療的ケアが必要な方への支援法の改正案。本人の意思尊重や地域生活の選択肢確保が焦点。",
+            "legislationName": "医療的ケアの必要な方への支援に関する法律の改正案",
+            "speechOrders": [
+              157,
+              158,
+              159,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166,
+              168,
+              169,
+              171,
+              172,
+              174,
+              175,
+              176,
+              177
+            ]
+          },
+          "speechOrders": [
+            157,
+            158,
+            159,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            168,
+            169,
+            171,
+            172,
+            174,
+            175,
+            176,
+            177
+          ],
+          "input_hash": "sha256:3d9203ed550a45ba9b757064937d03c02f077b3ce61345d14ca94de06dc58bdc"
+        },
+        {
+          "custom_id": "s_eb9ef18a62ae_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "ヒトゲノム編集胚等の規制法案提案理由",
+            "topicTag": "ゲノム編集",
+            "topicColor": "#6366f1",
+            "summary": "ヒト胚等へのゲノム編集技術利用に伴う世代を超えるリスクを規制する法案の趣旨説明",
+            "contextDescription": "ヒト胚・生殖細胞へのゲノム編集技術利用による将来世代への影響を規制する新法案。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              180
+            ]
+          },
+          "speechOrders": [
+            180
+          ],
+          "input_hash": "sha256:742a31e53ea99a3a864747c710fb56a63c149ea0a3113a2ca9d473aa8f942357"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_国土交通委員会_2026-07-14_第13号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_0d23fb17768d_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "下水道法改正案に関する参考人意見聴取（老朽化・点検体制）",
+            "topicTag": "参考人聴取",
+            "topicColor": "#3b82f6",
+            "summary": "下水道老朽化対策と点検技術の課題について3名の参考人が専門的知見を提示",
+            "contextDescription": "下水道管路の老朽化・事故対策を強化する法案の審査にあたり、専門家が技術・財政面から意見陳述。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              1,
+              2,
+              4,
+              6
+            ]
+          },
+          "speechOrders": [
+            1,
+            2,
+            4,
+            6
+          ],
+          "input_hash": "sha256:b5d4827e7ff181cd32b960b56ec9b5056aeae127f1a3b9f01eaf46a59185d4d2"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "八潮市陥没事故を踏まえた点検・老朽化対策への質疑（自民党）",
+            "topicTag": "点検技術",
+            "topicColor": "#3b82f6",
+            "summary": "老朽化管路の点検頻度・重点化と官民連携の費用負担について参考人に質問",
+            "contextDescription": "埼玉県八潮市の下水道陥没事故を受け、管路点検の在り方や官民連携の是非が論点に。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "speechOrders": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "input_hash": "sha256:069cc6c8ad84c3ef45f978fc708332d2bc5dadeb616558c8fba8cd4dc9e5fbf3"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "老朽化管路の重点化・人材不足・使用料原価割れ問題（立憲民主）",
+            "topicTag": "老朽化対策",
+            "topicColor": "#3b82f6",
+            "summary": "管路老朽化の急速な進行と技術者不足、使用料原価割れの財政課題を議論",
+            "contextDescription": "下水道管路の急速な老朽化と技術系職員不足、使用料収入不足という構造的課題への対応策。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ]
+          },
+          "speechOrders": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "input_hash": "sha256:8e119b21ffe2ba05abc6f44676a825f038a9cdd409ed80777e208aaac38b0aec"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "群マネ・分散型処理・財源ポートフォリオ（国民民主）",
+            "topicTag": "群マネ",
+            "topicColor": "#3b82f6",
+            "summary": "地域インフラ群マネジメントと分散型処理、財源多様化の在り方を議論",
+            "contextDescription": "小規模自治体の技術者不足対策としての広域連携（群マネ）や浄化槽等分散型処理への転換論。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ]
+          },
+          "speechOrders": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "input_hash": "sha256:6e47928ac9a3dd7e11d6aeb6ac91b999b59cab99307fef66511a2bf205562e49"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "コンクリート腐食メカニズムと統合アセットガバナンス（公明党）",
+            "topicTag": "腐食機構",
+            "topicColor": "#3b82f6",
+            "summary": "硫化水素による急速腐食の実態と道路・下水道横断的な資産管理の必要性",
+            "contextDescription": "八潮事故の要因である管路腐食の技術的メカニズムと、縦割り行政を超えた統合的な維持管理体制。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:cc2edc34b6ca6b20d141748d651cbbfca6c0bb523ece89fa7033b86051916f94"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "予防保全転換とDX・広域連携の効果（日本維新の会）",
+            "topicTag": "予防保全",
+            "topicColor": "#3b82f6",
+            "summary": "事後保全から予防保全への転換とAI・ドローン等DX技術活用の課題を確認",
+            "contextDescription": "老朽化対応を事故後の修繕から事前予防型へ転換する政策と、そのためのデジタル技術活用策。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45
+            ]
+          },
+          "speechOrders": [
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ],
+          "input_hash": "sha256:5910cc135e0d76272d862ffd5c752bd82d2113de1712289fc41b59ea76fd036a"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "笹子トンネル事故の教訓と財源ポートフォリオ・地方創生（参政党）",
+            "topicTag": "財源確保",
+            "topicColor": "#3b82f6",
+            "summary": "インフラメンテナンスの根本課題と人口減少下での財源多様化策を議論",
+            "contextDescription": "過去の重大インフラ事故の教訓を踏まえ、人口減少社会における下水道財源の確保方法を検討。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52
+            ]
+          },
+          "speechOrders": [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ],
+          "input_hash": "sha256:0b8c0e9f369a477154232cf3b0c12123d70ef35e7103e80feb7a9a24ca5e8900"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "見える化・点検困難箇所の技術的対応・制度優先順位（各派に属しない議員）",
+            "topicTag": "見える化",
+            "topicColor": "#3b82f6",
+            "summary": "住民の当事者意識醸成のための見える化と点検困難箇所への複線化対応を議論",
+            "contextDescription": "住民理解を得るための情報公開の在り方と、点検が困難な大口径管路の抜本対策としての複線化。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61
+            ]
+          },
+          "speechOrders": [
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61
+          ],
+          "input_hash": "sha256:5e0d32b401814c613e023055573e3896f0c4978e1bfaa69af079862b38c18032"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "マンホール事故・現場作業環境と道路下水道情報共有（各派に属しない議員）",
+            "topicTag": "現場環境",
+            "topicColor": "#3b82f6",
+            "summary": "マンホール蓋の安全対策と土木現場の労働環境改善の必要性を提起",
+            "contextDescription": "マンホール蓋飛散事故の教訓や、下水道工事現場で働く技術者への社会的評価・処遇の課題。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "input_hash": "sha256:3217a151897986eb7cd5fc940ef5d922b5d31ae86a23b4e05cabcd68b93e366c"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "政府参考人出席要求（手続）",
+            "topicTag": "手続",
+            "topicColor": "#6b7280",
+            "summary": "政府参考人の出席を求める手続的決定",
+            "contextDescription": "法案審査のための政府参考人出席要求に関する委員会手続。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              71
+            ]
+          },
+          "speechOrders": [
+            71
+          ],
+          "input_hash": "sha256:8a9e79ce9d14477bbfe94c5c8466746ea9720a9e6e758c1317c68b0533be8bcd"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "診断基準法制化とウォーターPPP・浄化槽転換（自民党・若井議員）",
+            "topicTag": "診断基準",
+            "topicColor": "#3b82f6",
+            "summary": "点検基準強化と官民連携推進、下水道から浄化槽への転換支援策を質す",
+            "contextDescience": "",
+            "contextDescription": "法案が定める診断基準の法制化とウォーターPPP推進、浄化槽転換時の環境省・国交省連携。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82
+            ]
+          },
+          "speechOrders": [
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "input_hash": "sha256:ae2c0ae324d2656e939979f0c9ce74c44e9c0ddbddff15462730ed48c38d111e"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "災害復旧の権限代行制度と道路陥没調査体制（立憲民主・羽田議員）",
+            "topicTag": "復旧代行",
+            "topicColor": "#3b82f6",
+            "summary": "都道府県による復旧代行制度の要件や路面下空洞調査の体制強化を質疑",
+            "contextDescription": "八潮事故を踏まえた都道府県による災害復旧代行制度の創設と、道路陥没を防ぐ空洞調査の実効性。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103
+            ]
+          },
+          "speechOrders": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          "input_hash": "sha256:8bde0f23adf555d8f04531ce954217d0b0ac2ee063f2606030b45b445a9e786c"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "広域連携の課題と分散型処理の位置付け（立憲民主・羽田議員）",
+            "topicTag": "広域連携",
+            "topicColor": "#3b82f6",
+            "summary": "広域連携を見送る自治体の事情と分散型処理の併存の必要性を議論",
+            "contextDescription": "経営基盤強化のための広域連携推進策と、それに参加しない自治体への配慮、浄化槽等分散処理の位置付け。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113
+            ]
+          },
+          "speechOrders": [
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113
+          ],
+          "input_hash": "sha256:3e7ae0403ce51b6bd9f4648f883aa6353c6e070f8ad58c865d54e3c6d4d732d3"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "中東情勢と建設資材価格高騰（国民民主・後藤議員）",
+            "topicTag": "資材高騰",
+            "topicColor": "#3b82f6",
+            "summary": "中東情勢緊迫化による資材・燃料価格高騰が公共事業に与える影響を懸念",
+            "contextDescription": "中東情勢の緊迫化に伴う建設資材・燃料価格の高止まりが公共インフラ事業の執行に与える影響。",
+            "legislationName": null,
+            "speechOrders": [
+              114,
+              115,
+              116,
+              117
+            ]
+          },
+          "speechOrders": [
+            114,
+            115,
+            116,
+            117
+          ],
+          "input_hash": "sha256:162b5b572fc5f141ff40764460da60931a75f1955694f041ce18672268b552fa"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "下水道財政の三本柱と汚泥エネルギー利用（国民民主・後藤議員）",
+            "topicTag": "汚泥活用",
+            "topicColor": "#22c55e",
+            "summary": "人材確保と下水道財政の持続性、下水汚泥の資源・エネルギー活用を提案",
+            "contextDescription": "下水道事業の財源構造（補助金・一般会計・使用料）に加え、下水汚泥の肥料化・発電利用による新たな収益源の可能性。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124
+            ]
+          },
+          "speechOrders": [
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ],
+          "input_hash": "sha256:311ac18ffd20f38bc6eebd45995f7214590a269a16ca209e1bfda3a9b459dde8"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "フェールセーフ対策と官民連携・浄化槽転換の実務（公明党・三浦議員）",
+            "topicTag": "陥没防止",
+            "topicColor": "#3b82f6",
+            "summary": "陥没を防ぐ地盤補強とウォーターPPPの技術者ネットワーク化、浄化槽転換の実務課題",
+            "contextDescription": "管路破損時でも陥没に至らせないフェールセーフ工法と、官民連携・浄化槽転換を進める上での実務的論点。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131,
+              132,
+              133,
+              134,
+              135
+            ]
+          },
+          "speechOrders": [
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135
+          ],
+          "input_hash": "sha256:9a926284e65a565f4d8321b6bd49eaade4a160262eed3eddf834060377228015"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "河川・ダム・海岸の総合的土砂管理（公明党・三浦議員）",
+            "topicTag": "土砂管理",
+            "topicColor": "#22c55e",
+            "summary": "下水道以外のインフラ（河川・ダム・海岸）を含めた総合的な老朽化・土砂対策の必要性",
+            "contextDescription": "気候変動による水災害激甚化を踏まえ、河川構造物・ダム堆砂・海岸浸食を一体的に管理する重要性。",
+            "legislationName": null,
+            "speechOrders": [
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143
+            ]
+          },
+          "speechOrders": [
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143
+          ],
+          "input_hash": "sha256:a2f2c385d6f2eb5213b9688a9f0a953b1a17fa95b533876c7e78cf772c2a8a82"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "予防保全転換と財政・技術支援・DX活用（日本維新の会・石井議員）",
+            "topicTag": "予防保全2",
+            "topicColor": "#3b82f6",
+            "summary": "予防保全型メンテナンスへの転換に向けた財政・技術支援とDX活用策を確認",
+            "contextDescription": "八潮事故を教訓とした予防保全型行政への転換と、自治体支援のための財政措置・DX技術導入策。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154
+            ]
+          },
+          "speechOrders": [
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154
+          ],
+          "input_hash": "sha256:3349e01154cdcf26db70bf8c2adc44f2bb118b2487a9f7551b3044ba0dff9e2f"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "ウォーターPPPと株式会社の利益追求構造（参政党・安藤議員）",
+            "topicTag": "民営化懸念",
+            "topicColor": "#3b82f6",
+            "summary": "下水道官民連携における株主配当と料金上昇の関係性、反グローバリズムの立場から懸念を提起",
+            "contextDescription": "下水道事業への民間参入（ウォーターPPP）が株主配当を通じて料金上昇や外国資本参入につながる懸念。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              155,
+              156,
+              157,
+              158,
+              159,
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171
+            ]
+          },
+          "speechOrders": [
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171
+          ],
+          "input_hash": "sha256:7733870303929fa76b6e8bee124f94a619797e1287d67756bfff32be0e08a756"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "省エネの成功事例に学ぶDX導入とリスクコミュニケーション（各派に属しない議員・ながえ議員）",
+            "topicTag": "DX導入",
+            "topicColor": "#3b82f6",
+            "summary": "ドローン等デジタル技術の導入状況と点検困難箇所の残存リスクへの対応を議論",
+            "contextDescription": "省エネ技術の成功例に倣い、下水道点検のデジタル化を進める一方、技術で解決しきれないリスク管理の課題。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180
+            ]
+          },
+          "speechOrders": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180
+          ],
+          "input_hash": "sha256:b63a11dca33fc7816a530c3ae0cfb1786e3c44163d59c605a456484b4405de44"
+        },
+        {
+          "custom_id": "s_0d23fb17768d_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "全国特別重点調査の結果と情報公開の統一化（各派に属しない議員・平山議員）",
+            "topicTag": "情報公開",
+            "topicColor": "#3b82f6",
+            "summary": "緊急度判定された管路への対策スケジュールと維持管理情報の公表統一ルールを議論",
+            "contextDescription": "八潮事故後の全国緊急点検で判明した危険箇所への対策と、住民理解のための情報公開の標準化。",
+            "legislationName": "下水道法等の一部を改正する法律案",
+            "speechOrders": [
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188,
+              189
+            ]
+          },
+          "speechOrders": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189
+          ],
+          "input_hash": "sha256:74f9e26dca4f9f4c4e56caffe31acc1efac7ceb33933a8fac4e040a3f0d61a0b"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_総務委員会_2026-07-14_第13号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "附帯決議あり",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_77db0252b3b9_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "NHK令和六年度決算の概要説明",
+            "topicTag": "決算概要",
+            "topicColor": "#3b82f6",
+            "summary": "NHK令和六年度決算は資産1兆2654億円、会計検査院の検査結果も報告された",
+            "contextDescription": "NHKの令和六年度財務諸表について、総務大臣・NHK会長・会計検査院がその内容を国会に報告する審議。",
+            "legislationName": null,
+            "speechOrders": [
+              7,
+              9,
+              11
+            ]
+          },
+          "speechOrders": [
+            7,
+            9,
+            11
+          ],
+          "input_hash": "sha256:dfcd7ae36ee721b37472757dbde3623e0c3620b911efdec05a7a46e380ba00a5"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "公共放送の役割と地域放送の在り方",
+            "topicTag": "公共放送",
+            "topicColor": "#6b7280",
+            "summary": "情報空間の参照点としてのNHKの使命と地域放送・人材確保の取り組みを議論",
+            "contextDescription": "NHKが目指す公共放送としての役割や、地域放送局の維持・人材確保の課題について質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "input_hash": "sha256:de3728a63083a7735b690eca3cf9f5af22e5f0684b14124aacb9820e7179c462"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "受信料制度・カーナビ受信契約の見直し",
+            "topicTag": "受信料",
+            "topicColor": "#6b7280",
+            "summary": "受信料収入減少とカーナビ等新たな受信形態への対応、制度改正の方向性を議論",
+            "contextDescription": "NHK受信料収入が減少する中、受信契約の対象範囲（カーナビ等）や制度の見直しが議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              19,
+              20,
+              21
+            ]
+          },
+          "speechOrders": [
+            19,
+            20,
+            21
+          ],
+          "input_hash": "sha256:73d1df65dd005954e2cfa71c846581be74e0cc8e51b1023876be034a132d74ec"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "特別支出・還元目的積立金の使途",
+            "topicTag": "特別支出",
+            "topicColor": "#3b82f6",
+            "summary": "ラジオ波削減とシステム開発中止に伴う減損損失、還元目的積立金の取崩しの妥当性",
+            "contextDescription": "NHKの令和六年度決算で特別支出が予算を大幅に超過した要因と、還元目的積立金の使用ルールについての検証。",
+            "legislationName": null,
+            "speechOrders": [
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              33,
+              34,
+              35,
+              36,
+              37
+            ]
+          },
+          "speechOrders": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "input_hash": "sha256:ee2d9a7054ec5a5b05f9cf71043aab3b9c031f693a11f6db5a9c3b2d4e1892e3"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "視聴者局の名称変更（営業局へ）",
+            "topicTag": "組織改編",
+            "topicColor": "#f97316",
+            "summary": "視聴者局を営業局に改称する狙いと受信料業務の位置付けを質疑",
+            "contextDescription": "NHKが視聴者局を営業局に名称変更する組織改正の目的について、その意義を問う質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              38,
+              39
+            ]
+          },
+          "speechOrders": [
+            38,
+            39
+          ],
+          "input_hash": "sha256:816a3ec6249a94c2014a52b05e55557ee6136b77749f6f4ccae3dc6bdf3a40b3"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "NHK関連団体との随意契約・利益剰余金",
+            "topicTag": "関連団体",
+            "topicColor": "#3b82f6",
+            "summary": "会計検査院が指摘した随意契約比率の高止まりと子会社の利益剰余金・特例配当の在り方",
+            "contextDescription": "NHKと関連団体との取引の競争性や、子会社に蓄積された利益剰余金の還元方法について会計検査院が指摘。",
+            "legislationName": null,
+            "speechOrders": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49
+            ]
+          },
+          "speechOrders": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "input_hash": "sha256:a854e4fa56439358088e8d54a19ede77323082b6cb7045b35d8dc6c7b79a48ae"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "新体制の役員人事・組織刷新",
+            "topicTag": "役員人事",
+            "topicColor": "#f97316",
+            "summary": "井上新会長による大規模な執行部刷新の狙いと経営委員会の受け止め",
+            "contextDescription": "井上新会長就任後に行われた専務理事・理事の大幅な人事異動について、その意図と評価を問う質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:910c692c89d50c7e482ee49c371ea4022f0533fa12ca81b8383e4d7fe6d57512"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "経営委員会委員の選任プロセスと報酬水準",
+            "topicTag": "経営委員報酬",
+            "topicColor": "#f97316",
+            "summary": "経営委員会委員の選任基準や報酬決定の仕組み、その水準の妥当性を巡る議論",
+            "contextDescription": "NHK経営委員会委員の選任方法や報酬額（委員長約619万円等）の決定プロセス・妥当性についての質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "speechOrders": [
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "input_hash": "sha256:7d0023122acb61c8374a0a07b4635405ed8aafed904312d04f596114d1b3eb61"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "受信料支払率の低下と目標設定",
+            "topicTag": "支払率",
+            "topicColor": "#6b7280",
+            "summary": "受信料支払率が10年間8割に届かず低下傾向、具体的な目標設定の必要性を追及",
+            "contextDescription": "NHKの受信料支払率が長年目標の80%に届かず、令和六年度は77.5%まで低下している問題。",
+            "legislationName": null,
+            "speechOrders": [
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84
+            ]
+          },
+          "speechOrders": [
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84
+          ],
+          "input_hash": "sha256:0ecabc0f608b9fff8b9e91dbdd159745f460b24d9b0bf2a01aae6b560dff8195"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "4K・8K放送の継続方針と放送の将来像",
+            "topicTag": "4K8K",
+            "topicColor": "#3b82f6",
+            "summary": "民放がBS4Kから撤退する中、NHKが4K・8K放送を継続する整合性とネット配信の位置付け",
+            "contextDescription": "民放各社がBS4K放送から撤退する一方、NHKは受信料で4K・8K放送を継続する方針の是非。",
+            "legislationName": null,
+            "speechOrders": [
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91
+            ]
+          },
+          "speechOrders": [
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91
+          ],
+          "input_hash": "sha256:4bf3a829e0591eee3fcb1313e45054b0c6c763029f1d023662722c588718aae6"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "カーナビ受信契約と事業所単位の契約基準",
+            "topicTag": "契約単位",
+            "topicColor": "#6b7280",
+            "summary": "自治体でのカーナビ受信契約届出漏れや事業所の契約単位の分かりにくさを指摘",
+            "contextDescription": "テレビ受信機能付きカーナビの受信契約漏れや、事業所単位での受信契約ルールの複雑さについての質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102
+            ]
+          },
+          "speechOrders": [
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102
+          ],
+          "input_hash": "sha256:64fe0d9696275b8dff034212eabc0fd6578b4ab31e3973cd9243920b9b982c8e"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "受信料で支える放送技術研究とコンテンツ活用",
+            "topicTag": "技術研究",
+            "topicColor": "#3b82f6",
+            "summary": "放送技術研究所の役割や映像アーカイブ・海外配信によるコンテンツの有効活用を議論",
+            "contextDescription": "NHKの放送技術研究所の活動や、保有する映像資産・時代劇コンテンツの国内外での活用方策について。",
+            "legislationName": null,
+            "speechOrders": [
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111
+            ]
+          },
+          "speechOrders": [
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111
+          ],
+          "input_hash": "sha256:6977e70f83a564d9fda7fbc68b599845741d4d799d3fda694076d194995337b4"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "辺野古学習報道と教育の政治的中立性",
+            "topicTag": "辺野古報道",
+            "topicColor": "#f59e0b",
+            "summary": "同志社国際高校の辺野古研修報道を巡り、教育の政治的中立性とNHK報道表現の妥当性を追及",
+            "contextDescription": "文科省が同志社国際高校の辺野古研修旅行を教育基本法違反と指摘した件のNHK報道表現が問題視された。",
+            "legislationName": null,
+            "speechOrders": [
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              122
+            ]
+          },
+          "speechOrders": [
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            122
+          ],
+          "input_hash": "sha256:7e330b1b7d4b929dcc5d1784c5b5778e7637ef65f340964b1f3cf5284fe13cfb"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "NHK保有データのAI活用と個人情報保護",
+            "topicTag": "AI活用",
+            "topicColor": "#6366f1",
+            "summary": "NHKの報道アーカイブや映像データをAI学習に活用する際の個人情報保護上の課題を検証",
+            "contextDescription": "NHKが保有する報道データ・映像資産をAI開発に活用する際の個人情報保護法上の論点についての質疑。",
+            "legislationName": "個人情報保護法",
+            "speechOrders": [
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131
+            ]
+          },
+          "speechOrders": [
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131
+          ],
+          "input_hash": "sha256:5eac5f727e7908640d24156706d49e34e4fb09c918b2578d3c2920c6e676e209"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "受信料値上げの見通しと経営委員会報酬の妥当性",
+            "topicTag": "値上げ",
+            "topicColor": "#8b5cf6",
+            "summary": "次期中期経営計画での受信料値上げの可能性と、経営委員会委員の報酬水準の是非を再論",
+            "contextDescription": "NHKの次期中期経営計画において受信料値上げが検討される中、経営委員報酬の妥当性を巡る議論。",
+            "legislationName": null,
+            "speechOrders": [
+              132,
+              133,
+              134,
+              135,
+              136,
+              140
+            ]
+          },
+          "speechOrders": [
+            132,
+            133,
+            134,
+            135,
+            136,
+            140
+          ],
+          "input_hash": "sha256:d77a10868260e2941dbe90e181580439fecc64c4247938851ef674ad85807b93"
+        },
+        {
+          "custom_id": "s_77db0252b3b9_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "NHK令和六年度決算の採決・討論",
+            "topicTag": "決算採決",
+            "topicColor": "#3b82f6",
+            "summary": "令和六年度決算の是非を巡り反対討論が行われた上で採決された",
+            "contextDescription": "NHK令和六年度決算の是非について委員会で討論・採決が行われる審議の最終段階。",
+            "legislationName": null,
+            "speechOrders": [
+              142
+            ]
+          },
+          "speechOrders": [
+            142
+          ],
+          "input_hash": "sha256:b7c5d27653008f7468b02d4430bd1db163961312aa7549b8f2f6c9a7db93b5de"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_財政金融委員会_2026-07-14_第12号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "暗号資産投資家保護、金融リテラシー向上、無登録業者対策、証券取引等監視委員会の体制強化、特定非財務情報開示制度の慎重な運用等について政府に配慮を求める全14項目の決議",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_c76cb701e7ec_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "暗号資産規制の資金決済法から金商法への移管と情報開示",
+            "topicTag": "暗号資産",
+            "topicColor": "#3b82f6",
+            "summary": "暗号資産規制を資金決済法から金商法に移し情報公表・不正取引規制を強化する意義を議論",
+            "contextDescription": "金商法等改正案は暗号資産を投資対象と位置付け直し、情報開示や不公正取引規制、無登録業者対策を強化するもの。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "speechOrders": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "input_hash": "sha256:5792aaa6200b124c7203f196bf5ad4ed51df5cdd0f8d438dcdd2c5058310338c"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "サステナビリティー情報開示・保証制度",
+            "topicTag": "サステナ開示",
+            "topicColor": "#22c55e",
+            "summary": "サステナビリティー情報開示の第三者保証制度や国際基準との整合性を議論",
+            "contextDescription": "気候変動等の非財務情報について、企業に開示と第三者保証を求める新制度。国際的な開示基準との整合が課題。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "input_hash": "sha256:d6643982f97ec5606df9ba0cacbaf60215bf45094ade676fdc365f3046fa2678"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "スタートアップ資金供給とセカンダリー市場整備",
+            "topicTag": "スタートアップ",
+            "topicColor": "#3b82f6",
+            "summary": "非上場株式のセカンダリー市場整備によるスタートアップ資金調達の円滑化を議論",
+            "contextDescription": "スタートアップの成長資金確保のため、非上場株式の流通市場整備や届出基準見直しを図る施策。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              19,
+              20,
+              21
+            ]
+          },
+          "speechOrders": [
+            19,
+            20,
+            21
+          ],
+          "input_hash": "sha256:a73829b6d48529e49e400fe592e320269048389da2c278d2b406a1fef57fd63c"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "暗号資産相談件数と海外業者・利用者保護",
+            "topicTag": "暗資被害",
+            "topicColor": "#3b82f6",
+            "summary": "暗号資産関連の相談急増と海外無登録業者利用時の投資者保護の限界を議論",
+            "contextDescription": "暗号資産の詐欺的勧誘被害が増加する中、登録業者制度と海外無登録業者への対応が課題となっている。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ]
+          },
+          "speechOrders": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "input_hash": "sha256:87aad8062b9b6a8adf587e8b47b94b29df27056368f2691397dbdd0dd7f4e59b"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "暗号資産相続の課税と清算手続",
+            "topicTag": "暗資相続",
+            "topicColor": "#8b5cf6",
+            "summary": "暗号資産の相続申告や相続放棄時の財産清算の扱いを議論",
+            "contextDescription": "暗号資産は相続財産に含まれるが、価格変動や相続放棄時の扱いなど課税・法務上の課題がある。",
+            "legislationName": null,
+            "speechOrders": [
+              30,
+              31,
+              32,
+              33
+            ]
+          },
+          "speechOrders": [
+            30,
+            31,
+            32,
+            33
+          ],
+          "input_hash": "sha256:22ce624974ec454edfcf08335856c880b05d8436ba66cf3f545f3ade927b2164"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "東京都と地方の税収格差是正",
+            "topicTag": "税収格差",
+            "topicColor": "#6b7280",
+            "summary": "東京一極集中による税収格差是正に向けた地方税制の見直しを議論",
+            "contextDescription": "東京都の税収好調により自治体間の財政格差が拡大しており、地方税の偏在是正が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:02466e67cb2da8808a6ff08f914efc7ac95a164a9daa05fb68038399f675ae4d"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "スタートアップ資金調達基準の引き上げ",
+            "topicTag": "資金調達",
+            "topicColor": "#3b82f6",
+            "summary": "有価証券届出書の提出免除基準引き上げなどスタートアップ資金調達促進策を議論",
+            "contextDescription": "スタートアップの資金調達円滑化のため、有価証券届出書の免除基準や私募の範囲を見直す施策。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:df8954f6237749e05ee1dffa0a769ee39e5870cb23fea5b71b7c219e823cc44d"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "印紙税の在り方・廃止論",
+            "topicTag": "印紙税",
+            "topicColor": "#6b7280",
+            "summary": "デジタル化に伴う印紙税の課税の不公平と廃止の是非を議論",
+            "contextDescription": "紙の契約書等に課される印紙税は、電子取引が非課税である一方で公平性やデジタル化対応が問題視されている。",
+            "legislationName": null,
+            "speechOrders": [
+              38,
+              40,
+              42,
+              44,
+              45
+            ]
+          },
+          "speechOrders": [
+            38,
+            40,
+            42,
+            44,
+            45
+          ],
+          "input_hash": "sha256:075155f9a5c32664999930df72dfcd8d47e6cd2ab2edbc73afefea0822d52324"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "ミームコイン被害と海外DEX規制の限界",
+            "topicTag": "ミームコ",
+            "topicColor": "#3b82f6",
+            "summary": "海外DEX経由のミームコイン被害実態把握とSNS勧誘規制の境界を議論",
+            "contextDescription": "分散型取引所（DEX）やSNSを通じたミームコイン投資被害が拡大し、現行規制の実効性が問われている。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64
+            ]
+          },
+          "speechOrders": [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64
+          ],
+          "input_hash": "sha256:f7081f60446de3e533a25fcd6118781e9ada48000a9db2cdb73d61d3a8a299c6"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "決済代行会社「全東信」破産と中小事業者影響",
+            "topicTag": "全東信",
+            "topicColor": "#3b82f6",
+            "summary": "クレジットカード決済代行会社の破産による中小加盟店・金融機関への影響を確認",
+            "contextDescription": "決済代行会社全東信の破産により、加盟店の売上金入金停止など中小事業者への影響が生じている。",
+            "legislationName": null,
+            "speechOrders": [
+              65,
+              66,
+              67
+            ]
+          },
+          "speechOrders": [
+            65,
+            66,
+            67
+          ],
+          "input_hash": "sha256:083bfeef60bfd294115fb42ccf85f7e346a9c6bd90996decd1cb7471a46dde1b"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "サステナビリティー保証制度の体制整備・国際整合性",
+            "topicTag": "保証体制",
+            "topicColor": "#22c55e",
+            "summary": "サステナ情報保証業者の監督体制や国際基準との整合性確保を議論",
+            "contextDescription": "サステナビリティー情報の第三者保証を担う業者への監督体制整備と、国際的な保証基準との整合が課題。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              68,
+              69,
+              70,
+              71,
+              72,
+              79,
+              80
+            ]
+          },
+          "speechOrders": [
+            68,
+            69,
+            70,
+            71,
+            72,
+            79,
+            80
+          ],
+          "input_hash": "sha256:c2e380c223e803c02fba860ba8d61436dfd09f6877dd1d916af65390dc4d798e"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "セーフハーバールールと将来情報の民事責任",
+            "topicTag": "セーフハーバー",
+            "topicColor": "#6366f1",
+            "summary": "将来情報開示に関する民事責任免除ルールの適用範囲とバランスを議論",
+            "contextDescription": "企業が将来情報を積極開示できるよう、事後の事実相違のみでは虚偽記載責任を問わない制度を新設。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              73,
+              74,
+              75
+            ]
+          },
+          "speechOrders": [
+            73,
+            74,
+            75
+          ],
+          "input_hash": "sha256:02fb0b56511b5c62a9487f5e9d3caee75ead876b108c9b2257ce7f0fc9a05daa"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "有価証券報告書の株主総会前開示と書類一本化",
+            "topicTag": "総会前開示",
+            "topicColor": "#6366f1",
+            "summary": "有報の株主総会前開示促進と会社法・金商法開示書類の一本化を議論",
+            "contextDescription": "株主の議決権行使に資するため有価証券報告書の総会前開示が求められており、開示・監査の一元化も課題。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              76,
+              77,
+              78
+            ]
+          },
+          "speechOrders": [
+            76,
+            77,
+            78
+          ],
+          "input_hash": "sha256:58f30cad49959673a9153d62da4b7f01ff582e0b4fea3f4229695b247a4ced48"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "量子コンピューター技術進展と暗号技術移行",
+            "topicTag": "耐量子",
+            "topicColor": "#3b82f6",
+            "summary": "量子コンピューター技術の脅威に備えた金融分野の耐量子暗号への移行計画を議論",
+            "contextDescription": "量子コンピューターの発展が既存暗号技術を脅かす可能性があり、金融分野での耐量子計算機暗号への移行が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              82,
+              83,
+              84,
+              85
+            ]
+          },
+          "speechOrders": [
+            82,
+            83,
+            84,
+            85
+          ],
+          "input_hash": "sha256:d9e3b30f511f384ffbd760945c21c5a0b3d6d4789d11d9e25e79db5ba2fc1147"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "日銀の国債買入れ縮小と金融政策運営",
+            "topicTag": "国債買入",
+            "topicColor": "#3b82f6",
+            "summary": "国債買入れ額の段階的縮小と物価の基調的動向・中立金利との距離を議論",
+            "contextDescription": "日本銀行は金融政策として国債買入れの縮小方針を決定しており、その影響や物価指標の評価が焦点。",
+            "legislationName": null,
+            "speechOrders": [
+              86,
+              87,
+              88,
+              89,
+              91,
+              93
+            ]
+          },
+          "speechOrders": [
+            86,
+            87,
+            88,
+            89,
+            91,
+            93
+          ],
+          "input_hash": "sha256:5a95a3f9ac269cb55c554d38afdaf66444b42c520d5eaffc1b7c830e96a839bb"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "通貨の本質論とドル基軸体制・暗号資産の位置付け",
+            "topicTag": "通貨論",
+            "topicColor": "#3b82f6",
+            "summary": "通貨の定義や国際通貨体制の変化を踏まえた暗号資産・ステーブルコインの位置付けを議論",
+            "contextDescription": "ドル基軸の国際通貨体制の揺らぎや暗号資産の台頭を背景に、通貨とは何かという根本的な議論。",
+            "legislationName": null,
+            "speechOrders": [
+              94,
+              95,
+              96,
+              97
+            ]
+          },
+          "speechOrders": [
+            94,
+            95,
+            96,
+            97
+          ],
+          "input_hash": "sha256:4cc2103c8b35221e02916f07d89d1e95be712d1952516e5f613482425c7bf8e1"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "ブロックチェーン・トークンエコノミーの発展可能性",
+            "topicTag": "トークン",
+            "topicColor": "#3b82f6",
+            "summary": "ブロックチェーン技術やトークンエコノミーの地域活性化等への活用可能性を議論",
+            "contextDescription": "暗号資産の基盤技術であるブロックチェーンは地域通貨等への応用が期待されるが、規制対象は暗号資産に限定。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              98,
+              99,
+              100,
+              101
+            ]
+          },
+          "speechOrders": [
+            98,
+            99,
+            100,
+            101
+          ],
+          "input_hash": "sha256:b2cd226b7c6ed912eb91452755de8dd26b2069b75af5fc730b06331e3dd2b09a"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "脱炭素政策への賛否とサステナ開示の意義",
+            "topicTag": "脱炭素論",
+            "topicColor": "#22c55e",
+            "summary": "脱炭素政策の是非を巡る立場からサステナビリティー開示制度への賛否を議論",
+            "contextDescription": "国際的に脱炭素潮流への評価が分かれる中、サステナビリティー情報開示制度の妥当性が問われている。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              102,
+              103,
+              104,
+              105,
+              106
+            ]
+          },
+          "speechOrders": [
+            102,
+            103,
+            104,
+            105,
+            106
+          ],
+          "input_hash": "sha256:8370127ee6e16a2166adc18a576ada12e36fcd82e59878f3b75b21daef69bcfe"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "サナエトークン事案と金融庁の調査権限・対応",
+            "topicTag": "サナエTK",
+            "topicColor": "#3b82f6",
+            "summary": "サナエトークンを巡る無登録業者の違法性と金融庁の調査・行政対応の是非を追及",
+            "contextDescription": "ミームコイン「サナエトークン」を巡り無登録業者の資金決済法違反疑惑と金融庁の対応姿勢が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              128,
+              129,
+              130,
+              131,
+              132,
+              133,
+              135,
+              136
+            ]
+          },
+          "speechOrders": [
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            135,
+            136
+          ],
+          "input_hash": "sha256:02725973c622a7208958c6d991b74d5476f6688d2c75d9ce77196e9a5a3a5870"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "暗号資産取引の分離課税化と対象範囲",
+            "topicTag": "分離課税",
+            "topicColor": "#3b82f6",
+            "summary": "登録業者経由の暗号資産取引に限定した分離課税化の是非と対象範囲を議論",
+            "contextDescription": "令和8年度税制改正で登録業者を通じた暗号資産取引を分離課税とする制度が導入される。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              144,
+              145
+            ]
+          },
+          "speechOrders": [
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            144,
+            145
+          ],
+          "input_hash": "sha256:e24b3c3a7a13049f5fd0c7f19448e4a3f262c44d077aa99f52d505c97f75307c"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "暗号資産取引業者の責任準備金制度",
+            "topicTag": "責任準備金",
+            "topicColor": "#3b82f6",
+            "summary": "暗号資産流出時に備える責任準備金制度の水準・機能を議論",
+            "contextDescription": "サイバー攻撃等による暗号資産流出リスクに備え、取引業者に責任準備金の積立てを義務付ける新制度。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156,
+              157,
+              158
+            ]
+          },
+          "speechOrders": [
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158
+          ],
+          "input_hash": "sha256:d805c7e4dae62a86eb662cf167db59ec3f887330ec6578aa9b9d104f1de21967"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "市場に存在する暗号資産の種類数と海外DEX・ミームコイン規制",
+            "topicTag": "DEX規制",
+            "topicColor": "#3b82f6",
+            "summary": "把握困難な暗号資産の種類数とミームコイン発行・海外DEXへの規制の限界を議論",
+            "contextDescription": "数千万種とされる暗号資産の実態把握や、発行自体に規制がないミームコインへの対応が課題。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              159,
+              160,
+              161,
+              162,
+              163,
+              164
+            ]
+          },
+          "speechOrders": [
+            159,
+            160,
+            161,
+            162,
+            163,
+            164
+          ],
+          "input_hash": "sha256:9540e7b9587c9c3e19f407ea497d09f09fe99d8a7579cc0bd611984964319085"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "暗号資産投資への「お墨付き」批判とETF解禁",
+            "topicTag": "ETF解禁",
+            "topicColor": "#3b82f6",
+            "summary": "分離課税化やETF解禁が暗号資産投資を事実上推奨することにならないかを追及",
+            "contextDescription": "暗号資産の分離課税化や暗号資産組入れETFの解禁により、政府が投資を推奨しているとの批判がある。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171
+            ]
+          },
+          "speechOrders": [
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171
+          ],
+          "input_hash": "sha256:7db4a6f666510ebaf5bbd386800084f322d21edd83a5d22a473fc79b195c6ab1"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "違法オンラインカジノ決済への暗号資産利用対策",
+            "topicTag": "違法カジノ",
+            "topicColor": "#ef4444",
+            "summary": "違法オンラインカジノの賭け金決済に暗号資産が利用される問題への対策を議論",
+            "contextDescription": "国内から違法なオンラインカジノへ暗号資産を通じて賭け金を決済する事例が問題化している。",
+            "legislationName": null,
+            "speechOrders": [
+              171,
+              172,
+              173
+            ]
+          },
+          "speechOrders": [
+            171,
+            172,
+            173
+          ],
+          "input_hash": "sha256:541e2b428ac80ef54d41701db6c036f0597ba907b820dbdec38305094a87bb67"
+        },
+        {
+          "custom_id": "s_c76cb701e7ec_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "法案に対する反対討論・附帯決議",
+            "topicTag": "討論採決",
+            "topicColor": "#3b82f6",
+            "summary": "暗号資産を投資対象化する法案への反対討論と全会派共同の附帯決議を採択",
+            "contextDescription": "金商法等改正案の採決に際し、共産党の反対討論と各会派共同提案による附帯決議が行われた。",
+            "legislationName": "金融商品取引法及び資金決済に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              175,
+              178,
+              181
+            ]
+          },
+          "speechOrders": [
+            175,
+            178,
+            181
+          ],
+          "input_hash": "sha256:a67056b90650e07d5396093d8ec0144c280c00316086df5d68fb42097fafd578"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_農林水産委員会_2026-07-14_第15号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_07167a80379a_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "参考人による法案への意見陳述（種苗・育種３法案）",
+            "topicTag": "意見陳述",
+            "topicColor": "#6366f1",
+            "summary": "農業試験場、研究者、市民団体代表が種苗３法案について異なる立場から意見を述べた",
+            "contextDescription": "種苗の育成振興、種苗法改正、公的新品種育成促進に関する３法案について参考人が意見を述べる質疑。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案、種苗法の一部を改正する法律案、主要農作物の優良な品種を確保するための公的新品種育成の促進等に関する法律案",
+            "speechOrders": [
+              2,
+              3,
+              5,
+              7
+            ]
+          },
+          "speechOrders": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "input_hash": "sha256:40de3bc4ba734cbf844c8e73b9af410364d268a29e10eb53e87917a6dfa03cde"
+        },
+        {
+          "custom_id": "s_07167a80379a_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "気候変動対応と品種育成のスピード・人材育成",
+            "topicTag": "気候品種",
+            "topicColor": "#22c55e",
+            "summary": "高温耐性など気候変動に対応した品種育成の現状と、育種を担う人材育成の課題",
+            "contextDescription": "気候変動により求められる品種特性が多様化する中、品種開発のスピードと担い手育成が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              10,
+              11,
+              13,
+              14,
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            9,
+            10,
+            11,
+            13,
+            14,
+            15,
+            16
+          ],
+          "input_hash": "sha256:fa89c3b790e9b29a64de6f5f184e7e25253158686977c5f48792415cb2dbab94"
+        },
+        {
+          "custom_id": "s_07167a80379a_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "海外生産者団体との連携と種苗法改正による国際対応",
+            "topicTag": "海外連携",
+            "topicColor": "#06b6d4",
+            "summary": "海外生産者団体との許諾契約の実例と、育成者権保護強化による国際的な知財管理の課題",
+            "contextDescription": "種苗法改正は育成者権の保護強化を目的とし、海外への品種流出防止や許諾契約の在り方が論点となる。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              17,
+              18,
+              19
+            ]
+          },
+          "speechOrders": [
+            17,
+            18,
+            19
+          ],
+          "input_hash": "sha256:fffc962169cd9d83549cbb2f92f2256140f321f887b59f7f162f4e340f95e63f"
+        },
+        {
+          "custom_id": "s_07167a80379a_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "種子システムの多様性と地域品種の安定供給",
+            "topicTag": "種子供給",
+            "topicColor": "#8b5cf6",
+            "summary": "産業的種子システムと在来・地域品種の共存、成功事例としてのブランド米などを議論",
+            "contextDescription": "気候変動下で農家への種子の持続的供給をどう確保するか、産業的システムと地域固有品種のバランスが論点。",
+            "legislationName": null,
+            "speechOrders": [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "input_hash": "sha256:6f508d7289b628fc3b7fc598d5d78c3dbafe1337a8f4d0ec193fe9396bde9645"
+        },
+        {
+          "custom_id": "s_07167a80379a_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "地域特性に応じた品種開発と財政的裏付け",
+            "topicTag": "地域育種",
+            "topicColor": "#3b82f6",
+            "summary": "自治体ごとの多様な気候条件に応じた品種開発の重要性と、それを支える予算・人材確保の課題",
+            "contextDescription": "都道府県の農業試験場は地域固有の気候風土に応じた品種育成を担うが、財政基盤の確保が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          "speechOrders": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "input_hash": "sha256:064cdad347e2db212314d42ba0c339da09deb462d97afd4e3742681ff8912349"
+        },
+        {
+          "custom_id": "s_07167a80379a_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "遺伝資源の多様性確保とジーンバンクの在り方",
+            "topicTag": "遺伝資源",
+            "topicColor": "#22c55e",
+            "summary": "品種育成の基盤となる遺伝資源の多様性確保とジーンバンク・在来種保存の課題",
+            "contextDescription": "新品種育成の元となる遺伝資源の確保・保存が重要視されており、国内外のジーンバンクの役割が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              33,
+              34,
+              35,
+              36,
+              37,
+              39,
+              40
+            ]
+          },
+          "speechOrders": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            39,
+            40
+          ],
+          "input_hash": "sha256:17cece5d99fba0f69e27b1273853faffaf1fb3e639b557de428c0c86d5dfd284"
+        },
+        {
+          "custom_id": "s_07167a80379a_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "育成者権侵害対策と現場のコスト負担",
+            "topicTag": "権利侵害",
+            "topicColor": "#6366f1",
+            "summary": "無断転売など育成者権侵害の実態と、権利保護に伴う現場の事務・費用負担への支援の必要性",
+            "contextDescription": "種苗法改正は育成者権侵害への対策強化を目的とするが、現場での運用コストや支援体制が課題となる。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              41,
+              42,
+              43
+            ]
+          },
+          "speechOrders": [
+            41,
+            42,
+            43
+          ],
+          "input_hash": "sha256:0b96139ebc0f2e9ed533dbf5d6dd5458a1fa540ada735d81ebb703f4e9f5053e"
+        },
+        {
+          "custom_id": "s_07167a80379a_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "意図しない交雑による権利侵害と農家への萎縮効果",
+            "topicTag": "交雑萎縮",
+            "topicColor": "#6366f1",
+            "summary": "意図しない交雑が育成者権侵害とされることへの懸念と、農家の萎縮効果を防ぐ制度運用の明確化",
+            "contextDescription": "育成者権の保護強化に伴い、意図せず似た品種が生じた場合の農家への影響や訴訟リスクが懸念されている。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              45,
+              46,
+              47,
+              48,
+              49
+            ]
+          },
+          "speechOrders": [
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "input_hash": "sha256:f419492fcf9ac2aa5d2159a37ee2bbff378e982df6dcbcdeda017d2ca3d99be2"
+        },
+        {
+          "custom_id": "s_07167a80379a_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "気候変動下の品種転換と輸出戦略・国内多様な生態系への対応",
+            "topicTag": "輸出戦略",
+            "topicColor": "#3b82f6",
+            "summary": "気候変動による品種の作り替えと、輸出重視の攻めの農業か国内食料自給率重視かという方向性の対立",
+            "contextDescription": "気候変動対応の品種転換に加え、日本の種苗産業が輸出競争力強化を目指すべきか、食料自給率向上を優先すべきか議論がある。",
+            "legislationName": null,
+            "speechOrders": [
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:553b4fb025122c3920c7dd148c2bec605b155977acddaa12303b45d947931fdb"
+        },
+        {
+          "custom_id": "s_07167a80379a_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "主要農作物と地方品目間の予算・人員配分のミスマッチ",
+            "topicTag": "予算配分",
+            "topicColor": "#f97316",
+            "summary": "国支援のある稲・麦・大豆育種と地方独自の野菜等品目育種との予算・人員配分の偏りへの懸念",
+            "contextDescription": "主要農作物への国支援強化が、地域固有の野菜品種育成の予算・人員を圧迫する懸念が指摘されている。",
+            "legislationName": null,
+            "speechOrders": [
+              55,
+              56,
+              57,
+              58,
+              59,
+              60
+            ]
+          },
+          "speechOrders": [
+            55,
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "input_hash": "sha256:9a6cead1dd2d014674ebf86433e199c41b4281e9ab4811eadfd0b8a27e28e161"
+        },
+        {
+          "custom_id": "s_07167a80379a_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "伝統野菜・在来種の保護と公共調達の役割",
+            "topicTag": "在来種保護",
+            "topicColor": "#8b5cf6",
+            "summary": "法改正が伝統野菜・在来種の自由な栽培を制限しないかという懸念と、公共調達による保護の必要性",
+            "contextDescription": "法改正により伝統野菜や在来種の栽培が制限されるとの懸念が広がっており、保護の在り方が論点となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              61,
+              62,
+              63,
+              64
+            ]
+          },
+          "speechOrders": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "input_hash": "sha256:ae5d741d10bc875da80a004f4b37210491fc18a323bb581b40ecb3667fe253e3"
+        },
+        {
+          "custom_id": "s_07167a80379a_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "災害リスクに備えた種子備蓄と保存体制",
+            "topicTag": "種子備蓄",
+            "topicColor": "#dc2626",
+            "summary": "自然災害の激甚化に備え、種子や遺伝資源をどのように分散保存・備蓄すべきかを議論",
+            "contextDescription": "自然災害の激甚化を踏まえ、備蓄米制度の活用も含めた種子・遺伝資源の保存体制強化が論点となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              65,
+              66,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            65,
+            66,
+            67,
+            68
+          ],
+          "input_hash": "sha256:77a7ba3e1a28ff805af2239e3eb8ecfd2fa7efc26315e6d1512f1d0c9ca44230"
+        },
+        {
+          "custom_id": "s_07167a80379a_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "ゲノム編集・遺伝子組換え技術の安全性と消費者理解",
+            "topicTag": "ゲノム編集",
+            "topicColor": "#8b5cf6",
+            "summary": "ゲノム編集・遺伝子組換え技術の安全性への懸念と、消費者・生産者の合意形成の必要性",
+            "contextDescription": "育種の高速化技術として期待されるゲノム編集・遺伝子組換えについて、健康影響や社会的合意が論点となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              69,
+              70,
+              71,
+              72,
+              73
+            ]
+          },
+          "speechOrders": [
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "input_hash": "sha256:f1cf681fe0fa53a775d36029f5e1c49a77d02d60ca9f097420fe6faaab9922de"
+        },
+        {
+          "custom_id": "s_07167a80379a_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "種子法廃止後の種子条例の役割",
+            "topicTag": "種子条例",
+            "topicColor": "#8b5cf6",
+            "summary": "種子法廃止に伴い各県が制定した種子条例が果たしてきた公的種子生産体制維持の役割",
+            "contextDescription": "2018年の主要農作物種子法廃止を受け、都道府県が独自に種子条例を制定し公的な種子供給体制を維持している。",
+            "legislationName": null,
+            "speechOrders": [
+              74,
+              75
+            ]
+          },
+          "speechOrders": [
+            74,
+            75
+          ],
+          "input_hash": "sha256:d32518039be980966961cad3fce08182e9d38fee8fd01156205e36e3c49bd372"
+        },
+        {
+          "custom_id": "s_07167a80379a_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "アグロエコロジー・有機農業への法改正の影響",
+            "topicTag": "農業多様性",
+            "topicColor": "#22c55e",
+            "summary": "法改正がアグロエコロジーや有機農業、農村の多様性に与える影響についての評価",
+            "contextDescription": "種苗３法案が、環境調和型のアグロエコロジーや有機農業、農村の多様性にどう影響するかが論点となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              76,
+              77
+            ]
+          },
+          "speechOrders": [
+            76,
+            77
+          ],
+          "input_hash": "sha256:51b7287ae6a20328f8a27dd7af980d8f65f06c108c74686889b0d50d06dc4476"
+        },
+        {
+          "custom_id": "s_07167a80379a_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "育成者権存続期間延長（UPOV条約対応）の是非",
+            "topicTag": "存続期間",
+            "topicColor": "#6366f1",
+            "summary": "育成者権の存続期間を35年に延長することの是非と、農家の種利用への影響",
+            "contextDescription": "本法案は育成者権の存続期間を現行より延長し35年とする内容で、UPOV条約が求める期間を大きく上回る点が論点。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              78,
+              79,
+              80
+            ]
+          },
+          "speechOrders": [
+            78,
+            79,
+            80
+          ],
+          "input_hash": "sha256:54debcd8195954d6a3be3de98a9840421101dc4c1a8923718033de0bddbb8abc"
+        },
+        {
+          "custom_id": "s_07167a80379a_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "米国の知財政策転換と日本の育種方向性・消費者の知る権利",
+            "topicTag": "知財政策",
+            "topicColor": "#6366f1",
+            "summary": "米国の公共品種重視への政策転換と対照的な日本の方向性、ゲノム編集品種の情報開示の必要性",
+            "contextDescription": "米国では知的財産権を抑制し公共品種への投資を進める動きがある一方、日本は逆方向に進んでいるとの指摘がある。",
+            "legislationName": null,
+            "speechOrders": [
+              81,
+              82,
+              83,
+              84,
+              85
+            ]
+          },
+          "speechOrders": [
+            81,
+            82,
+            83,
+            84,
+            85
+          ],
+          "input_hash": "sha256:4f78c93e93e0ccbc3db09e8e9fa43ff8c7399a507b7e6316a485b2ded39242fc"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_本会議_2026-07-14_第31号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_3de402c63c7a_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "医療的ケア児及びその家族に対する支援に関する法律の一部改正案",
+            "topicTag": "医ケア児",
+            "topicColor": "#8b5cf6",
+            "summary": "医療的ケア児支援の対象を重症心身障害者等にも拡大する法案を全会一致で可決",
+            "contextDescription": "医療的ケア児やその家族への支援施策を定める法律。支援対象拡大などを図る改正案。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              4,
+              5
+            ]
+          },
+          "speechOrders": [
+            4,
+            5
+          ],
+          "input_hash": "sha256:568f5cda5bb4e0b5b6c1b2914c5df1b5297f50a4dd593efcd5f69847542eeda3"
+        }
+      ]
+    }
+  ]
+}
