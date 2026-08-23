@@ -52,9 +52,13 @@ jobs:
       # anthropic is pinned below 1.0 for the same reason daily-batch.yml
       # pins it: 1.x ships httpx2 instead of httpx, and both
       # `scripts/pipeline/summarizer.py` and the tests' own fake responses
-      # import `httpx` directly. Keep the two floors identical -- a CI that
-      # tests a different SDK major than the pipeline runs is worse than no
-      # pin, because it goes green on code the morning cannot execute.
+      # import `httpx` directly. Keep this the SAME CONSTRAINT daily-batch.yml
+      # uses -- a CI that tests a different SDK range than the pipeline runs is
+      # worse than no pin, because it goes green on code the morning cannot
+      # execute. That is enforced, not just asked for:
+      # `test_the_anthropic_pin_matches_what_the_summary_layer_imports`, which
+      # compares the ranges after normalising them, so reordering the clauses
+      # is fine and widening them is not.
       - run: pip install 'anthropic>=0.72,<1' python-dotenv pytest pyyaml
       - run: cd scripts && python -m pytest -q
 

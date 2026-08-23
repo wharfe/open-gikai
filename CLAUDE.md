@@ -422,9 +422,17 @@ Anything requiring a runtime belongs under `apps/`.
   **`anthropic` の `<1` は消さない**: 1.0.0 が HTTP 層を `httpx` から fork の `httpx2` へ
   移し、`httpx` は依存として入らなくなった。`scripts/pipeline/summarizer.py` は
   `httpx.Timeout` を直接組むので（SDK の non-streaming timeout ガード回避、#46）、
-  無指定 install だと要約レイヤ全体が `No module named 'httpx'` で死ぬ。2026-08-20〜22 の
-  3朝、新規スレッドがゼロで publish されたのがこれ。移行は #80、pin を守るのは
-  `test_the_anthropic_pin_matches_what_the_summary_layer_imports`（bare `httpx` を import
-  している間だけ pin を要求し、`httpx2` へ移せば要求が自動で外れる）。
+  **1.0 以上を許す install** だと要約レイヤ全体が `No module named 'httpx'` で死ぬ。
+  2026-08-20〜22 の3朝、新規スレッドがゼロで publish されたのがこれ。**通知が鳴らなかった
+  わけではない**（3回とも exit 3 で run は赤）。それでも commit は `+0 threads` で残るので、
+  静かな国会の日と見分けがつかず3朝通過した。移行は #80、pin を守るのは
+  `test_the_anthropic_pin_matches_what_the_summary_layer_imports`。この fence は
+  **バージョン文字列ではなく結合**を見る: bare `httpx` を import している間だけ pin を要求し、
+  `httpx2` へ移せば要求が自動で外れる。要求の中身は「1.0 以上を1つも許さない上限があること」で、
+  `>=1.0.1` や `>=1.4,<2` のような**1.x への pin 付け替えも落ちる**（1.0.0 という一点だけを
+  見ていた初版はこれを通していた）。さらに ci.yml / daily-batch.yml / **この行**の3箇所が
+  **同じ制約であること**まで要求する（CI が本番と違う range を試すのは pin 無しより悪い）。
+  比較は正規化後なので句の並べ替えは通るが、範囲が違えば落ちる。だからここを書き換えるときは
+  3箇所を同時に直す。この行自体も宣言サイトなので、**消したり2行に折り返したりしても落ちる**。
 - 単発の小修正（数十行以下）は Gate 省略可。ただしスクレイパーのレート制御・公開データの
   生成ロジックに触れる diff はサイズによらず Gate 対象。

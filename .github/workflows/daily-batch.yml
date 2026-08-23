@@ -72,10 +72,14 @@ jobs:
       # `summarizer.sync_call_kwargs` imports it directly to build the
       # `httpx.Timeout` that defuses the SDK's non-streaming timeout guard.
       # With an unpinned install, the 2026-08-20 release turned every meeting
-      # into `Failed to prepare ...: No module named 'httpx'`: three mornings
-      # published zero new threads before anyone noticed, because each date
-      # only reported exit 3 rather than crashing. #80 tracks the real 1.x
-      # migration; until it lands, the floor here is the whole defence.
+      # into `Failed to prepare ...: No module named 'httpx'`. The alarm did
+      # work -- all three runs went red on exit 3, as the contract says they
+      # should -- but each still committed as `+0 threads`, which is what a
+      # quiet Diet day looks like, so three of them passed before anyone read
+      # the annotation. Do not read this as "exit 3 is too quiet": it is the
+      # loudest signal this pipeline has. #80 tracks the real 1.x migration;
+      # until it lands, the `<1` CEILING here is the whole defence (`>=0.72`
+      # is only the floor the code was written against).
       - name: Install Python dependencies
         run: pip install requests 'anthropic>=0.72,<1' python-dotenv pymupdf beautifulsoup4
 

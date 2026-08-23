@@ -1929,22 +1929,75 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
     and three consecutive mornings published zero new threads.
 
     So this fence is on the COUPLING, not on a version string: while anything
-    under `scripts/` imports bare `httpx`, every workflow that installs
+    under `scripts/` imports bare `httpx`, every place that installs
     `anthropic` must exclude the majors that do not ship it. Swap those imports
     to `httpx2` and the demand lifts by itself — which is the point. A test
     that just asserted `<1` forever would have to be deleted by the very commit
     that makes the pin unnecessary, and a fence you delete to make progress is
     one you eventually delete carelessly.
+
+    `_admits_nothing_from` is where that promise is kept or lost, and it is
+    written the awkward way on purpose. The first version of this fence asked
+    `SpecifierSet.contains(Version("1.0.0"))` — one point — while its own
+    message claimed to fence "the majors". `>=1.0.1`, `>=1.4,<2`, `!=1.0.0` and
+    `>=2` all sailed through it: it caught only a pin deleted outright, not a
+    pin *moved* into the httpx2 era, which is the likelier way this recurs (the
+    #80 migration is a bump). A probe proves something about the versions it
+    happened to try; an upper bound proves something about all of them.
     """
-    yaml = pytest.importorskip("yaml")
-    specifiers = pytest.importorskip("packaging.specifiers")
-    version = pytest.importorskip("packaging.version")
+    import ast
+    import re
+
+    # NOT importorskip. Every other yaml-reading test in this file skips when
+    # pyyaml is absent, and CLAUDE.md already warns that a skip there is "not
+    # measured" rather than "passed". This one is the guard for a production
+    # outage, so it fails instead: an unrecognised environment must not be able
+    # to retire it quietly. (`packaging` is a hard dependency of pytest, so it
+    # is present wherever this runs at all.)
+    import yaml
+    from packaging.requirements import InvalidRequirement, Requirement
+    from packaging.utils import canonicalize_name
+    from packaging.version import InvalidVersion, Version
+
+    # The first major that dropped httpx. Must be a major boundary (`X.0`).
+    HTTPX2_MAJOR = Version("1.0")
+    PIP_INSTALL = re.compile(r"\b(?:pip3?|python3?\s+-m\s+pip)\s+install\b")
+
+    def _admits_nothing_from(spec, boundary):
+        """Does `spec` exclude every release at or above `boundary`?
+
+        Answered by looking for a clause that caps below the boundary, never by
+        sampling versions — see the docstring above. Anything unrecognised
+        counts as *no* cap, so an exotic-but-valid spelling gets a red a human
+        resolves. That is the cheap direction to be wrong in; the other one
+        published zero threads for three days.
+        """
+        for clause in spec:
+            op, raw = clause.operator, clause.version
+            if op == "==" and raw.endswith(".*"):
+                # `==0.*` tops out inside major 0, same as `~=0`.
+                op, raw = "~=", raw[: -len(".*")]
+            try:
+                pinned = Version(raw)
+            except InvalidVersion:
+                continue
+            if pinned.epoch != boundary.epoch:
+                # `~=1!0.72` has release[0] == 0 and would read as a cap under
+                # major 1, while admitting 1!0.99 — which sorts ABOVE every
+                # version the boundary is about. Epochs are unrecognised here,
+                # and unrecognised means no cap.
+                continue
+            if op == "<" and pinned <= boundary:
+                return True
+            if op in ("<=", "==", "===") and pinned < boundary:
+                return True
+            if op == "~=" and pinned.release[0] < boundary.release[0]:
+                return True
+        return False
 
     # Bare `import httpx` / `from httpx import ...` only. `httpx2` (and an
     # `import httpx2 as httpx` alias) is the post-migration shape and must not
     # keep the pin alive.
-    import ast
-
     importers = []
     for path in sorted((REPO_ROOT / "scripts").rglob("*.py")):
         tree = ast.parse(path.read_text(encoding="utf-8"))
@@ -1959,36 +2012,142 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
                 importers.append(path.relative_to(REPO_ROOT).as_posix())
                 break
 
-    workflows = (".github/workflows/daily-batch.yml", ".github/workflows/ci.yml")
-    for rel in workflows:
-        wf = yaml.safe_load((REPO_ROOT / rel).read_text(encoding="utf-8"))
-        requirements = []
-        for job in wf["jobs"].values():
-            for step in job.get("steps", []):
-                run = str(step.get("run", ""))
-                if "pip install" not in run:
-                    continue
-                for token in run.replace("'", " ").replace('"', " ").split():
-                    if token.startswith("anthropic"):
-                        requirements.append(token)
-        # Not a vacuous pass: a renamed install step or a move to
-        # requirements.txt must fail here and be re-fenced deliberately.
-        assert requirements, (
-            f"{rel} no longer installs anthropic by name — re-point this fence "
-            f"at wherever the version is now declared, do not drop it")
-        for req in requirements:
-            spec = specifiers.SpecifierSet(req[len("anthropic"):])
-            for importer in importers:
-                assert not spec.contains(version.Version("1.0.0")), (
-                    f"{rel} allows anthropic 1.0.0 (`{req}`) while {importer} "
-                    f"imports bare `httpx`, which 1.x does not install — this "
-                    f"is the shape that published zero threads for three days")
+    def _anthropic_requirements(rel, command):
+        """The `anthropic` requirements one *executed* install command declares.
 
-    # The other direction: once the migration lands there must be nothing left
-    # importing bare httpx, or this loop goes quiet while the coupling remains.
+        Commented-out and echoed text does not count, and that is not tidiness.
+        The sweep below accepts one readable declaration as evidence that a
+        workflow's install is visible to it — so a step that comments the old
+        line out and moves the real install into a shell script would satisfy
+        the check with a pin nothing runs, which is the exact hole the check
+        was added to close.
+        """
+        found = []
+        tokens = command.replace("'", " ").replace('"', " ").split()
+        # A move to `pip install -r ...` hides the version from this fence
+        # entirely, so it is a red that says where to re-point it rather than a
+        # silent loss of coverage.
+        assert not ({"-r", "--requirement"} & set(tokens)), (
+            f"{rel} installs from a requirements file (`{command.strip()}`), "
+            f"which this fence cannot read — re-point it at that file, do not "
+            f"drop it")
+        for token in tokens:
+            if not token[:1].isalpha():
+                continue
+            try:
+                req = Requirement(token)
+            except InvalidRequirement:
+                continue
+            if canonicalize_name(req.name) == "anthropic":
+                found.append((token, req))
+        return found
+
+    def _install_commands(block):
+        """The lines of a `run:` block that actually install something."""
+        for line in block.splitlines():
+            line = line.split("#", 1)[0].strip()
+            if not line or line.split()[0] in ("echo", "printf", ":"):
+                continue
+            if PIP_INSTALL.search(line):
+                yield line
+
+    # Every workflow, not a hard-coded pair: a third one that installs
+    # anthropic is the same outage.
+    #
+    # What this sweep can see is a literal `pip install` inside a step's `run`.
+    # It cannot see one built from a matrix or an env var, one inside a
+    # composite/reusable action, or one in a shell script the workflow calls.
+    # Two things keep that from being a silent hole: the named sites below must
+    # each still declare the requirement, and any workflow that so much as
+    # mentions anthropic outside a comment must yield at least one declaration
+    # — so a new workflow installing it in a shape this parser does not
+    # understand reds here rather than passing unexamined.
+    declarations = []  # (where, raw token, Requirement)
+    for path in sorted((REPO_ROOT / ".github" / "workflows").iterdir()):
+        if path.suffix not in (".yml", ".yaml"):
+            continue
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        text = path.read_text(encoding="utf-8")
+        found_here = []
+        for job in (yaml.safe_load(text) or {}).get("jobs", {}).values():
+            for step in job.get("steps") or []:
+                for command in _install_commands(str(step.get("run", ""))):
+                    found_here += _anthropic_requirements(rel, command)
+        # Comments are excluded from the mention test as well as from the
+        # harvest, and the match is case-insensitive: a prose sentence about
+        # the outage is not an install, and "Anthropic" and "anthropic" must
+        # not mean different things to a guard.
+        live = "\n".join(
+            line.split("#", 1)[0] for line in text.splitlines()).lower()
+        assert found_here or "anthropic" not in live, (
+            f"{rel} names anthropic outside a comment but declares no version "
+            f"this fence can read — it installs it in a shape the sweep does "
+            f"not understand, so teach the sweep that shape rather than "
+            f"leaving it unchecked")
+        declarations += [(rel, tok, req) for tok, req in found_here]
+
+    # CLAUDE.md documents the same install for humans and for Claude. It is not
+    # an install site, but a doc that drifts to an unpinned command is how the
+    # pin gets removed by someone following instructions.
+    for line in (REPO_ROOT / "CLAUDE.md").read_text(encoding="utf-8").splitlines():
+        if PIP_INSTALL.search(line):
+            declarations += [
+                ("CLAUDE.md", tok, req)
+                for tok, req in _anthropic_requirements(
+                    "CLAUDE.md", re.sub(r"[（）()`]", " ", line))]
+
+    # CLAUDE.md is in here, not just the two workflows: it was made a third
+    # declaration site, and a site nothing requires to exist can be deleted (or
+    # wrapped across two lines, which this line-at-a-time read cannot follow)
+    # without a single test noticing.
+    named = {
+        ".github/workflows/daily-batch.yml",
+        ".github/workflows/ci.yml",
+        "CLAUDE.md",
+    }
+    declared_in = {where for where, _, _ in declarations}
+    assert named <= declared_in, (
+        f"{sorted(named - declared_in)} no longer declares anthropic by name on "
+        f"a single line — re-point this fence at wherever the version is now "
+        f"written, do not drop it")
+
+    # The outage guard runs FIRST. The consistency check below reds on most of
+    # the same edits, and if it went first it would answer "spelled two ways"
+    # to someone who has just unpinned production — true, unhelpful, and it
+    # hides the sentence naming the three-day failure.
+    for where, token, req in declarations:
+        for importer in importers:
+            assert _admits_nothing_from(req.specifier, HTTPX2_MAJOR), (
+                f"{where} allows anthropic {HTTPX2_MAJOR} or later (`{token}`) "
+                f"while {importer} imports bare `httpx`, which those majors do "
+                f"not install — this is the shape that published zero threads "
+                f"for three days")
+
+    # ci.yml's own comment promises CI and the morning run install the same
+    # thing. Nothing enforced that, so this does: a CI that tests a different
+    # SDK range than production runs is worse than no pin, because it goes
+    # green on code the morning cannot execute. Compared after `Requirement`
+    # normalises them, so `>=0.72,<1` and `<1,>=0.72` are the same constraint
+    # and pass — it is the range that has to match, not the typing.
+    constraints = {str(req.specifier) for _, _, req in declarations}
+    assert len(constraints) == 1, (
+        f"the anthropic constraint differs across "
+        f"{sorted(where for where, _, _ in declarations)}: {sorted(constraints)} "
+        f"— CI must install the same range the morning run does, or it "
+        f"green-lights an SDK range production cannot execute")
+
+    # The other direction: once the migration lands, the pin and every
+    # paragraph justifying it are stale, and stale prose is the defect. This
+    # only fires when nothing imports bare httpx any more. `httpx(?!2)` and not
+    # `httpx`, or the correct post-migration sentence ("the SDK uses httpx2")
+    # would itself read as the stale one.
     if not importers:
-        for rel in workflows:
-            text = (REPO_ROOT / rel).read_text(encoding="utf-8")
-            assert "httpx" not in text, (
-                f"nothing imports bare httpx any more, but {rel} still explains "
-                f"its pin by it — stale prose is the defect (#80)")
+        bare = re.compile(r"httpx(?!2)")
+        stale = [
+            rel
+            for rel in sorted(named)
+            if bare.search((REPO_ROOT / rel).read_text(encoding="utf-8"))]
+        assert not stale, (
+            f"nothing imports bare httpx any more, but {stale} still explain "
+            f"the anthropic pin by it — lift the pin, or say there what the "
+            f"new reason is and re-point this branch (#80)")
