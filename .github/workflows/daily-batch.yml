@@ -743,9 +743,97 @@ jobs:
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, etc.) as a
   # GitHub Issue so they don't sit silently until someone runs `gh run list`.
   # Runs even when the fetch step itself dies, since it's a separate job.
+  # ----- Publish the SAME data to the MCP server -----
+  # #85. `apps/mcp` is a second Vercel project and it was deployed BY HAND, so it
+  # stopped: its last deploy was 2026-05-22 and it served data ending 2026-05-19
+  # while the site was at 2026-08-20. Three months, unnoticed, because the
+  # endpoint answers 200 and `tools/list` works — never broken, only old.
+  #
+  # Deploying from here rather than wiring Vercel's git integration is
+  # deliberate: the mechanism is then a reviewable line in the repo that a test
+  # can read. The out-of-repo alternative can be changed or disabled invisibly,
+  # which is the exact shape of the failure being fixed — and it has a trap on
+  # top, since an "Ignored Build Step" scoped to `apps/mcp/**` would skip
+  # data-only commits (the data lives at the repo ROOT) and rebuild this outage
+  # out of configuration.
+  deploy-mcp:
+    name: Deploy MCP server
+    needs: fetch-and-summarize
+    # Not `success()`: the main job fails on its LAST step for a systemic-summary
+    # date, long after it has pushed. Refusing to deploy then would leave the MCP
+    # server a day behind the site every time one date misbehaved.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # No write scope. A deploy credential and `contents: write` do not belong in
+    # one job, and nothing here writes to the repo.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # THE tip of the branch, not `github.sha`. On a scheduled run that SHA
+          # is main as it was when the run started — BEFORE the data commit this
+          # job exists to publish. Checking it out would deploy yesterday's data
+          # every morning while reporting success.
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mcp/package-lock.json
+
+      - name: Install MCP dependencies
+        working-directory: apps/mcp
+        run: npm ci
+
+      # Must run HERE, not on Vercel. `vercel deploy` uploads `apps/mcp` alone,
+      # so the repo-root `data/` is not there to copy from; the remote prebuild
+      # then only verifies the bundle already inside the upload (#73). Skip this
+      # and the deploy succeeds while shipping whatever was last bundled.
+      - name: Bundle the current data into apps/mcp
+        working-directory: apps/mcp
+        run: node ./scripts/copy-data.mjs
+
+      - name: Deploy to Vercel
+        working-directory: apps/mcp
+        env:
+          # Identifiers, not secrets — kept literal so the wiring stays visible
+          # in the repo. `.vercel/` is gitignored, so the CLI needs them here.
+          VERCEL_ORG_ID: team_3NsOtiHzlY5xjLpmjw9PAOE7
+          VERCEL_PROJECT_ID: prj_9keEpvlkpx71V2A1dQkH7QtcKV95
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -e
+          # Fail loudly rather than skip. A missing token means the MCP server is
+          # going stale, which is the thing this job exists to stop — and a
+          # warning nobody reads is how it went stale for three months. The data
+          # publish already happened in the job above, so this red does not block
+          # the site.
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::VERCEL_TOKEN is not set, so the MCP server was NOT deployed and is now behind the site. Create a Vercel token with deploy access to open-gikai-mcp and add it as the VERCEL_TOKEN repository secret (#85). The site itself published normally."
+            exit 1
+          fi
+          # Pinned for the reason requirements.txt exists: an unpinned tool that
+          # re-resolves every morning changes production without a commit (#80).
+          npx --yes vercel@59.3.0 deploy --prod --yes --token "$VERCEL_TOKEN"
+
+      # Deploying is not the same as having deployed, and this is also the
+      # freshness monitor. Its comparison — what the server answers vs what is
+      # committed — is the only one that can see "200, correct tools, three
+      # months old". Kept in a script rather than inline shell so it is unit
+      # tested (scripts/tests/test_mcp_freshness.py).
+      - name: Verify the MCP server serves the committed data
+        run: python3 scripts/check_mcp_freshness.py
+
   notify-on-failure:
     name: Notify on failure
-    needs: fetch-and-summarize
+    # deploy-mcp too, not just the publish. #85 went unnoticed for three months
+    # because a stale MCP server looks like nothing: a red check nobody opens.
+    # `failure()` is true if EITHER needed job failed, so the morning that stops
+    # deploying the MCP server raises the same issue a failed publish does.
+    needs: [fetch-and-summarize, deploy-mcp]
     if: failure()
     runs-on: ubuntu-latest
     permissions:
