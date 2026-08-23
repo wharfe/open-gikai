@@ -2276,63 +2276,94 @@ def _sub(path, old, new):
     path.write_text(path.read_text().replace(old, new))
 
 
-FENCE_EVASIONS = {
-    "a shell-expanded extra on the install line":
-        lambda r: _sub(r / ".github/workflows/ci.yml",
-                       "pip install -r requirements-dev.txt",
-                       "pip install -r requirements-dev.txt $EXTRA"),
-    "a package on a backslash continuation line":
-        lambda r: _sub(r / ".github/workflows/ci.yml",
-                       "      - run: pip install -r requirements-dev.txt",
-                       "      - run: |\n"
-                       "          pip install -r requirements-dev.txt \\\n"
-                       "            anthropic"),
-    "a second install hidden behind && after an echo":
-        lambda r: _sub(r / ".github/workflows/ci.yml",
-                       "      - run: pip install -r requirements-dev.txt",
-                       "      - run: echo installing && pip install requests"),
-    "a dependency loosened from == to a range":
-        lambda r: _sub(r / "requirements.txt", "requests==2.34.2", "requests>=2"),
-    "a dependency left completely unpinned":
-        lambda r: _sub(r / "requirements.txt",
-                       "beautifulsoup4==4.15.0", "beautifulsoup4"),
-    "a wildcard pin":
-        lambda r: _sub(r / "requirements.txt", "pymupdf==1.28.2", "pymupdf==1.28.*"),
-    "extras that pull in unpinned packages":
-        lambda r: _sub(r / "requirements.txt",
-                       "anthropic==0.125.0", "anthropic[bedrock]==0.125.0"),
-    "an environment marker gating a pin away":
-        lambda r: _sub(r / "requirements.txt", "requests==2.34.2",
-                       'requests==2.34.2; python_version < "3.0"'),
-    "an extra include bringing in an unchecked file":
-        lambda r: _sub(r / "requirements.txt", "anthropic==0.125.0",
-                       "-r extra.txt\nanthropic==0.125.0"),
-    "the same package declared in both files":
-        lambda r: _sub(r / "requirements-dev.txt", "pytest==9.1.1",
-                       "pytest==9.1.1\nrequests==2.34.2"),
-    "the httpx declaration #81 asked for, deleted":
-        lambda r: _drop(r / "requirements.txt", "httpx=="),
-    "a runtime dependency demoted to dev-only":
-        lambda r: (_drop(r / "requirements.txt", "requests=="),
-                   _sub(r / "requirements-dev.txt", "pytest==9.1.1",
-                        "pytest==9.1.1\nrequests==2.34.2")),
-    "anthropic bumped into the httpx2 era":
-        lambda r: _sub(r / "requirements.txt",
-                       "anthropic==0.125.0", "anthropic==1.4.0"),
-    "CLAUDE.md drifted back to naming packages":
-        lambda r: _sub(r / "CLAUDE.md", "`pip install -r requirements-dev.txt`",
-                       "`pip install anthropic python-dotenv pytest`"),
-    "CLAUDE.md naming a package alongside the approved -r":
-        lambda r: _sub(r / "CLAUDE.md", "`pip install -r requirements-dev.txt`",
-                       "`pip install requests -r requirements-dev.txt`"),
-}
-
 FENCE_TESTS = (
     "test_every_dependency_is_pinned_exactly_and_declared_once",
     "test_every_third_party_import_is_declared",
     "test_the_docs_do_not_teach_an_unpinned_install",
     "test_the_anthropic_pin_matches_what_the_summary_layer_imports",
 )
+
+_PINNED = "test_every_dependency_is_pinned_exactly_and_declared_once"
+_IMPORTS = "test_every_third_party_import_is_declared"
+_DOCS = "test_the_docs_do_not_teach_an_unpinned_install"
+_ANTHROPIC = "test_the_anthropic_pin_matches_what_the_summary_layer_imports"
+
+# Each entry names the test that MUST reject it. Asserting only that *something*
+# rejected is not enough and the difference is not theoretical: several of these
+# shapes are caught by two fences at once, so a property could stop working and
+# the suite would stay green on its neighbour's rejection. `_ANTHROPIC` in
+# particular carries four independent properties in one test, and three of them
+# used to have no case that violated them ALONE.
+FENCE_EVASIONS = {
+    "a shell-expanded extra on the install line":
+        (lambda r: _sub(r / ".github/workflows/ci.yml",
+                        "pip install -r requirements-dev.txt",
+                        "pip install -r requirements-dev.txt $EXTRA"), _ANTHROPIC),
+    "a package on a backslash continuation line":
+        (lambda r: _sub(r / ".github/workflows/ci.yml",
+                        "      - run: pip install -r requirements-dev.txt",
+                        "      - run: |\n"
+                        "          pip install -r requirements-dev.txt \\\n"
+                        "            anthropic"), _ANTHROPIC),
+    "a second install hidden behind && after an echo":
+        (lambda r: _sub(r / ".github/workflows/ci.yml",
+                        "      - run: pip install -r requirements-dev.txt",
+                        "      - run: echo installing && pip install requests"),
+         _ANTHROPIC),
+    "a dependency loosened from == to a range":
+        (lambda r: _sub(r / "requirements.txt", "requests==2.34.2",
+                        "requests>=2"), _PINNED),
+    "a dependency left completely unpinned":
+        (lambda r: _sub(r / "requirements.txt",
+                        "beautifulsoup4==4.15.0", "beautifulsoup4"), _PINNED),
+    "a wildcard pin":
+        (lambda r: _sub(r / "requirements.txt", "pymupdf==1.28.2",
+                        "pymupdf==1.28.*"), _PINNED),
+    "extras that pull in unpinned packages":
+        (lambda r: _sub(r / "requirements.txt",
+                        "anthropic==0.125.0", "anthropic[bedrock]==0.125.0"),
+         _PINNED),
+    "an environment marker gating a pin away":
+        (lambda r: _sub(r / "requirements.txt", "requests==2.34.2",
+                        'requests==2.34.2; python_version < "3.0"'), _PINNED),
+    "an extra include bringing in an unchecked file":
+        (lambda r: _sub(r / "requirements.txt", "anthropic==0.125.0",
+                        "-r extra.txt\nanthropic==0.125.0"), _PINNED),
+    "the same package declared in both files":
+        (lambda r: _sub(r / "requirements-dev.txt", "pytest==9.1.1",
+                        "pytest==9.1.1\nrequests==2.34.2"), _PINNED),
+    "the httpx declaration #81 asked for, deleted":
+        (lambda r: _drop(r / "requirements.txt", "httpx=="), _IMPORTS),
+    "a runtime dependency demoted to dev-only":
+        (lambda r: (_drop(r / "requirements.txt", "requests=="),
+                    _sub(r / "requirements-dev.txt", "pytest==9.1.1",
+                         "pytest==9.1.1\nrequests==2.34.2")), _IMPORTS),
+    # Property 1 of _ANTHROPIC, alone: still pinned exactly, still declared once,
+    # still installed only from requirements files — only the ceiling is gone.
+    "anthropic bumped into the httpx2 era":
+        (lambda r: _sub(r / "requirements.txt",
+                        "anthropic==0.125.0", "anthropic==1.4.0"), _ANTHROPIC),
+    # Property 2 of _ANTHROPIC, alone. `_PINNED` also rejects a package declared
+    # twice, which is why this case exists at all: without it, property 2 could
+    # be deleted and its neighbour would keep the suite green.
+    "anthropic declared in both requirements files":
+        (lambda r: _sub(r / "requirements-dev.txt", "pytest==9.1.1",
+                        "anthropic==0.125.0\npytest==9.1.1"), _ANTHROPIC),
+    # Property 4 of _ANTHROPIC, alone, and the case that was missing entirely.
+    # Dropping the `-r` line leaves every remaining declaration exactly pinned
+    # and declared once, so NO fence rejected it: CI would resolve its own
+    # anthropic again, which is the precise shape of #80, and the mutation suite
+    # said the fence was complete.
+    "requirements-dev.txt no longer includes the runtime set":
+        (lambda r: _drop(r / "requirements-dev.txt", "-r requirements.txt"),
+         _ANTHROPIC),
+    "CLAUDE.md drifted back to naming packages":
+        (lambda r: _sub(r / "CLAUDE.md", "`pip install -r requirements-dev.txt`",
+                        "`pip install anthropic python-dotenv pytest`"), _DOCS),
+    "CLAUDE.md naming a package alongside the approved -r":
+        (lambda r: _sub(r / "CLAUDE.md", "`pip install -r requirements-dev.txt`",
+                        "`pip install requests -r requirements-dev.txt`"), _DOCS),
+}
 
 
 def _fence_inputs_copied_to(tmp_path):
@@ -2351,15 +2382,15 @@ def _fence_inputs_copied_to(tmp_path):
 
 
 def _run_fences_against(root, monkeypatch):
-    """Which of the fence tests reject `root`."""
+    """`{test name: first line of its complaint}` for the fences that reject."""
     module = sys.modules[__name__]
     monkeypatch.setattr(module, "REPO_ROOT", root)
-    rejected = []
+    rejected = {}
     for name in FENCE_TESTS:
         try:
             getattr(module, name)()
         except AssertionError as exc:
-            rejected.append(f"{name}: {str(exc).splitlines()[0]}")
+            rejected[name] = str(exc).splitlines()[0]
     return rejected
 
 
@@ -2377,16 +2408,28 @@ def test_the_fence_rejects_each_way_80_could_come_back(evasion, tmp_path,
     """Proving a guard REJECTS is the only half that matters.
 
     A fence is only ever exercised here in the direction that passes, so
-    "339 passed" says nothing about whether it can still say no — and every
+    "380 passed" says nothing about whether it can still say no — and every
     hole listed above was live while the suite was green. This is the repo's
     own rule about fail-closed guards applied to the fence itself: break it on
     purpose, and check that it breaks.
+
+    It checks WHICH fence broke, not merely that one did. Several of these
+    shapes trip two fences, so "something rejected" lets the property this case
+    was written for rot behind a neighbour's rejection — a mutation suite
+    reporting a coverage it no longer has, which is the failure mode it exists
+    to catch one level down.
     """
     root = _fence_inputs_copied_to(tmp_path)
-    FENCE_EVASIONS[evasion](root)
-    assert _run_fences_against(root, monkeypatch), (
+    mutate, expected = FENCE_EVASIONS[evasion]
+    mutate(root)
+    rejected = _run_fences_against(root, monkeypatch)
+    assert rejected, (
         f"the fence APPROVED `{evasion}` — that shape reaches production with "
         f"a version nothing pins, which is #80")
+    assert expected in rejected, (
+        f"`{evasion}` was rejected, but by {sorted(rejected)} rather than by "
+        f"{expected} — the property this case was written to exercise is no "
+        f"longer doing it, and the suite is green on a neighbour's rejection")
 
 
 def test_the_anthropic_pin_matches_what_the_summary_layer_imports():

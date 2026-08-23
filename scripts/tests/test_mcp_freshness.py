@@ -112,6 +112,25 @@ def test_an_answer_without_readable_counts_is_unanswered(shape):
         freshness.served_index("http://x", opener=_served(shape, wrap=lambda i: i))
 
 
+@pytest.mark.parametrize("shape", [
+    [{"date": "2026-08-20", "threads": 1}, {"threads": 3}],       # no date
+    [{"date": "2026-08-20", "threads": 1}, {"date": None, "threads": 3}],
+    [{"date": "2026-08-20", "threads": 1}, {"date": "", "threads": 3}],
+    [{"date": "2026-08-20", "threads": 1}, 42],                   # not an entry
+])
+def test_an_entry_this_check_cannot_place_is_refused_not_dropped(shape):
+    """The same rule the count already followed, applied to the whole entry.
+
+    Skipping an unreadable entry keeps the comparison running against a SHORTER
+    index, so the remaining dates still line up and the dropped one is reported
+    as `committed N / served absent` — staleness, which is a cause this check
+    has not established. That sends an operator to the Vercel dashboard for
+    someone else's change to the answer shape.
+    """
+    with pytest.raises(freshness.Unanswered):
+        freshness.served_index("http://x", opener=_served(shape, wrap=lambda i: i))
+
+
 @pytest.mark.parametrize("opener,why", [
     (lambda r, timeout=None: (_ for _ in ()).throw(
         urllib.error.URLError("boom")), "network"),
@@ -135,6 +154,43 @@ def test_an_unreadable_answer_names_what_came_back():
         freshness.served_index("http://x",
                                opener=lambda r, timeout=None: _Junk())
     assert "504" in str(exc.value), "the operator is not shown what answered"
+
+
+@pytest.mark.parametrize("body,why", [
+    (b'\xff\xfe{"jsonrpc"', "not UTF-8 at all"),
+    ('{"result": "\udcff"}'.encode("utf-8", "surrogateescape"), "lone surrogate"),
+])
+def test_an_undecodable_body_is_unanswered_and_not_a_traceback(body, why):
+    """`UnicodeDecodeError` is a `ValueError`, not an `OSError`.
+
+    The exact trap `committed_index` spells out, on the side that had not closed
+    it: naming only the `OSError` family let this walk out past `main` as a
+    traceback, taking the remaining attempts AND the "this is not evidence of
+    staleness" wording with it. A gateway that answers with a binary error page
+    is not a stale server, and must not be reported as one.
+    """
+    class _Bytes:
+        def __enter__(self): return self
+        def __exit__(self, *exc): return False
+        def read(self): return body
+
+    with pytest.raises(freshness.Unanswered):
+        freshness.served_index("http://x", opener=lambda r, timeout=None: _Bytes())
+
+
+def test_a_truncated_body_is_unanswered_and_not_a_traceback():
+    """`http.client.IncompleteRead` is an `HTTPException`, not an `OSError` — so
+    a connection dropped mid-body escaped the same guard. This is what a deploy
+    dying halfway through actually looks like from here."""
+    import http.client
+
+    class _Cut:
+        def __enter__(self): return self
+        def __exit__(self, *exc): return False
+        def read(self): raise http.client.IncompleteRead(b"{\"jsonr")
+
+    with pytest.raises(freshness.Unanswered):
+        freshness.served_index("http://x", opener=lambda r, timeout=None: _Cut())
 
 
 def test_an_empty_date_list_is_unanswered_not_fresh():
@@ -211,6 +267,22 @@ def test_a_thread_is_counted_under_its_own_date_not_its_filename(tmp_path):
                                                  "2026-08-19": 2}
 
 
+def test_a_json_file_the_server_reads_is_counted_whatever_it_is_named(tmp_path):
+    """The file predicate is the server's, not the directory's naming habit.
+
+    `loadThreads` (apps/mcp/src/lib/data.ts) takes every `*.json` except
+    `*.progress.json`, and `copy-data.mjs` bundles the directory wholesale — so
+    one `backup.json` holding real threads is served. Tally only `YYYY-MM-DD`
+    names and the two sides disagree on a byte-perfect deploy, every morning,
+    until a human edits the data. `validate-data.mjs` does not forbid the file,
+    so nothing upstream makes the narrow pattern safe.
+    """
+    d = _threads(tmp_path, "2026-08-20")
+    (__import__("pathlib").Path(d) / "backup.json").write_text(
+        json.dumps([{"id": "z", "date": "2026-08-19"}]), encoding="utf-8")
+    assert freshness.committed_index(d) == {"2026-08-20": 1, "2026-08-19": 1}
+
+
 def test_date_files_holding_no_threads_at_all_is_refused(tmp_path):
     """Distinct from "no date files": the directory is populated, so this is not
     an empty checkout — but there is still nothing the server could confirm."""
@@ -248,10 +320,14 @@ def test_a_thread_this_check_cannot_place_is_unreadable(tmp_path, payload):
 
 
 def test_a_progress_sidecar_is_not_mistaken_for_a_date(tmp_path):
-    """`*.progress.json` is gitignored so it should never be here, but the
-    pattern excludes it rather than a filter doing so — a filter would quietly
-    accept it if that ever changed, and `2026-08-21.progress` sorts above
-    `2026-08-20`."""
+    """Excluded because the SERVER excludes it, not because it is gitignored.
+
+    Grounding it in the server's own predicate is what makes the two sides agree
+    if `*.progress.json` ever stops being gitignored — and the file is worth a
+    case of its own because `{}` is not a thread list and `2026-08-21.progress`
+    sorts above `2026-08-20`, so a version that read it would both crash and
+    invent a newest date.
+    """
     d = _threads(tmp_path, "2026-08-20")
     (__import__("pathlib").Path(d) / "2026-08-21.progress.json").write_text(
         "{}", encoding="utf-8")

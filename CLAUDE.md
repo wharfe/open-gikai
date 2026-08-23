@@ -254,9 +254,11 @@ python scripts/summarize.py --date YYYY-MM-DD --batch
 python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
 
 # Is the deployed MCP server serving what this checkout has committed? (#85)
-# Read-only; safe to run any time. Three outcomes: it matches (0); it answered
-# and disagrees, naming the dates (1); or it never gave a readable answer, which
-# says nothing about staleness and says so (1).
+# Read-only; safe to run any time. Four outcomes, and only ONE of them is
+# "stale": it matches (0); it answered and disagrees, naming the dates (1); it
+# never gave a readable answer (1); or the committed side could not be read, so
+# there was nothing to compare against (1). The last two say nothing about
+# staleness and say so — do not read a red here as "the server is old".
 python scripts/check_mcp_freshness.py --attempts 1
 ```
 
@@ -421,7 +423,13 @@ only old** — which is the failure mode uptime checks structurally cannot see,
 and `uptime.yml` never touched it anyway.
 
 So `daily-batch.yml`'s **`deploy-mcp`** job publishes it, every morning, right
-after the data commit. Three things about it are load-bearing:
+after the data commit. Read what a green `deploy-mcp` actually promises: **the
+server agrees with the checkout it deployed**, not that today's threads exist.
+It runs on `!cancelled()`, so on a morning the publish job died there was no
+data commit — and the job still goes green, because both sides of the freshness
+comparison come from that same unchanged checkout. The publish's own red is what
+says the day's data is missing; this job only ever says the two are in sync.
+Three things about it are load-bearing:
 
 - It checks out `github.ref_name`, **not** `github.sha`: on a scheduled run that
   SHA is main as it was when the run started, i.e. before the data commit this

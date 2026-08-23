@@ -763,7 +763,7 @@ jobs:
     runs-on: ubuntu-latest
     # 60, not 20, and the number is measured rather than chosen. This job's
     # first real run took 18m34s: the upload was 2 SECONDS and the build was
-    # everything else, because it was queued. Vercel Hobby runs one build at a
+    # everything else, because it was queued. This Vercel account builds one at a
     # time and the frontend project — which the very same data commit triggers —
     # takes 10-11 minutes on its own (OGP images, 3400+ threads). So the MCP
     # build queues behind the site build every single morning, and 20 minutes
@@ -832,7 +832,7 @@ jobs:
           # says so rather than picking one (an operator sent to the wrong place
           # is the cost this pipeline keeps measuring).
           if ! npx --yes vercel@59.3.0 deploy --prod --yes --token "$VERCEL_TOKEN"; then
-            echo "::error::vercel deploy exited non-zero, so what the MCP server is now serving is UNCONFIRMED — most likely the previous bundle, though a deploy can also complete and then lose the connection (#85). The freshness step below does not run after this, so nothing here has compared it. If the CLI said 'Project not found', do not take that literally: VERCEL_PROJECT_ID/VERCEL_ORG_ID above are set from apps/mcp/.vercel/project.json, so check instead (a) that the VERCEL_TOKEN secret belongs to an account with access to the TEAM that owns open-gikai-mcp — a personal-scope token cannot see a team project and reports it as missing, and (b) that the ids still match apps/mcp/.vercel/project.json. Verify the current state with: python3 scripts/check_mcp_freshness.py --attempts 1"
+            echo "::error::vercel deploy exited non-zero, so what the MCP server is now serving is UNCONFIRMED — most likely the previous bundle, though a deploy can also complete and then lose the connection (#85). The freshness step below does not run after this, so nothing here has compared it. If the CLI said 'Project not found', do not take that literally: VERCEL_PROJECT_ID/VERCEL_ORG_ID above are set from apps/mcp/.vercel/project.json, so check instead (a) that the VERCEL_TOKEN secret belongs to an account with access to the TEAM that owns open-gikai-mcp — a personal-scope token cannot see a team project and reports it as missing, and (b) that the ids still name a live project — read them off the Vercel dashboard for open-gikai-mcp, NOT off apps/mcp/.vercel/project.json, which is gitignored and exists only on whichever machine last ran vercel link. Verify the current state with: python3 scripts/check_mcp_freshness.py --attempts 1"
             exit 1
           fi
 
@@ -863,6 +863,14 @@ jobs:
     # because a stale MCP server looks like nothing: a red check nobody opens.
     # `failure()` is true if EITHER needed job failed, so the morning that stops
     # deploying the MCP server raises the same issue a failed publish does.
+    #
+    # The cost, paid knowingly: `needs` waits for BOTH, so a publish failure no
+    # longer raises its issue immediately — it waits out deploy-mcp, which is
+    # ~19 minutes on the measured normal path and up to its 60-minute timeout.
+    # Acceptable because this is a once-a-morning GitHub issue and not a page,
+    # and because the alternative — one notify job per needed job — duplicates
+    # the create-or-update logic and can file the same morning twice. #90 tracks
+    # decoupling the latency without losing either signal.
     needs: [fetch-and-summarize, deploy-mcp]
     if: failure()
     runs-on: ubuntu-latest
@@ -888,7 +896,7 @@ jobs:
           # WHICH job failed first: a Deploy MCP server failure says nothing
           # about the day's threads (they are already pushed), and a publish
           # failure says nothing about the MCP server.
-          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCheck which job went red first.\n\n**fetch-and-summarize** (the publish): NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on", "held for a human decision", or "Permanently lost". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. A held or abandoned sidecar can red the run with the Summarize step never running at all — check the Collect step annotations too.\n\n**deploy-mcp** (the MCP server, #85): what the MCP server is serving is unconfirmed — read the job to see whether the deploy failed or the freshness check did, and note the check has three outcomes, one of which is "could not reach the server at all" and says nothing about staleness. Causes: the VERCEL_TOKEN secret missing, expired, or not scoped to the team that owns open-gikai-mcp (the CLI reports that last one as "Project not found"); or the deployed server genuinely disagreeing with the committed data. This job runs whether or not the publish above succeeded, so do not read a failure here as saying anything about the day threads either way.' "$DATE_TAG" "$RUN_URL")
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCheck which job went red first.\n\n**fetch-and-summarize** (the publish): NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on", "held for a human decision", or "Permanently lost". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. A held or abandoned sidecar can red the run with the Summarize step never running at all — check the Collect step annotations too.\n\n**deploy-mcp** (the MCP server, #85): what the MCP server is serving is unconfirmed — read the job to see whether the deploy failed or the freshness check did, and note the check has four outcomes and only ONE of them is staleness — "could not reach the server at all" and "could not read the committed data either" are the other two reds, and both say nothing about whether the server is old. Causes: the VERCEL_TOKEN secret missing, expired, or not scoped to the team that owns open-gikai-mcp (the CLI reports that last one as "Project not found"); or the deployed server genuinely disagreeing with the committed data. This job runs whether or not the publish above succeeded, so do not read a failure here as saying anything about the day threads either way.' "$DATE_TAG" "$RUN_URL")
           # Ensure the dedup label exists (no-op if already present).
           gh label create pipeline-failure \
             --color B60205 \

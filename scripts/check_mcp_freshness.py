@@ -31,16 +31,35 @@ closing it would need the server to answer with a digest of the bundle.
 """
 
 import argparse
+import http.client
 import json
 import os
-import re
 import sys
 import time
 import urllib.error
 import urllib.request
 
 DEFAULT_URL = "https://open-gikai-mcp.vercel.app/api/mcp"
-DATE_FILE = re.compile(r"^(\d{4}-\d{2}-\d{2})\.json$")
+
+
+def _is_a_file_the_server_reads(name):
+    """The server's own file predicate, copied rather than approximated.
+
+    `loadThreads` (apps/mcp/src/lib/data.ts) takes every `*.json` directly in
+    the directory except `*.progress.json`, and the bundle verifier in
+    apps/mcp/scripts/copy-data.mjs deliberately uses the same one. Matching
+    `YYYY-MM-DD.json` instead reads narrower than the thing being checked, and
+    the gap is a false RED on a correct deploy: one `backup.json` holding real
+    threads is counted by the server and not here, so the comparison disagrees
+    every morning until a human edits the data. `validate-data.mjs` does not
+    forbid such a file, so nothing upstream makes the narrow pattern safe.
+
+    `*.progress.json` is excluded because the SERVER excludes it, not because
+    it is gitignored — if it ever stops being gitignored, both sides still
+    agree.
+    """
+    return name.endswith(".json") and not name.endswith(".progress.json")
+
 
 # `list_dates` takes no arguments and is the cheapest question that exposes
 # staleness. Kept as a literal so a tool rename fails loudly here rather than
@@ -77,9 +96,8 @@ def committed_index(threads_dir):
     a correct deploy is one that gets switched off, so the projection is copied
     rather than approximated.
 
-    `*.progress.json` is excluded by the pattern, not by a second filter: it is
-    gitignored so it should never be here, and a filter would quietly accept it
-    if that ever changed.
+    Which FILES are read is copied for the same reason and from the same place
+    — see `_is_a_file_the_server_reads`.
 
     Every way of failing to read raises `Unanswered`, including the directory
     not being there at all. `os.listdir` would otherwise raise `FileNotFoundError`
@@ -89,6 +107,14 @@ def committed_index(threads_dir):
     A file that does not parse into a LIST of objects is unreadable, not empty:
     counting it anyway means comparing a fabricated number and reporting the
     difference as staleness.
+
+    That last one is the one place this is deliberately LOUDER than the server,
+    which skips a non-array file (`if (Array.isArray(data))`) and serves the
+    rest. Not an oversight and not a false red: `copy-data.mjs` verifies every
+    bundled file parses AND has the right top-level shape, so such a file fails
+    the deploy step before this check ever runs. Refusing here means the one way
+    it can still be reached — a file that appeared after the bundle was built —
+    reports "cannot read", not a thread count nobody vouched for.
     """
     try:
         names = sorted(os.listdir(threads_dir))
@@ -100,7 +126,7 @@ def committed_index(threads_dir):
     index = {}
     files = 0
     for name in names:
-        if not DATE_FILE.match(name):
+        if not _is_a_file_the_server_reads(name):
             continue
         files += 1
         path = os.path.join(threads_dir, name)
@@ -129,12 +155,12 @@ def committed_index(threads_dir):
 
     if not files:
         raise Unanswered(
-            f"no YYYY-MM-DD.json files in {threads_dir} — refusing to call the "
+            f"no thread files in {threads_dir} — refusing to call the "
             f"MCP server fresh against nothing")
     if not index:
         raise Unanswered(
-            f"{files} date file(s) in {threads_dir} but not one thread in any of "
-            f"them — refusing to call the MCP server fresh against nothing")
+            f"{files} thread file(s) in {threads_dir} but not one thread in any "
+            f"of them — refusing to call the MCP server fresh against nothing")
     return index
 
 
@@ -153,8 +179,19 @@ def served_index(url, timeout=30.0, opener=None):
     try:
         with (opener or urllib.request.urlopen)(request, timeout=timeout) as response:
             raw = response.read().decode("utf-8")
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as exc:
+    # `URLError`/`HTTPError` are `OSError` subclasses, but the two ways a
+    # half-delivered answer arrives are NOT: `http.client.IncompleteRead` is an
+    # `HTTPException`, and `UnicodeDecodeError` is a `ValueError`. Both used to
+    # walk out past `main` as a traceback — killing the remaining attempts and
+    # the carefully-worded "this is not evidence of staleness" note with them,
+    # which is the one outcome this function exists to prevent. It is the same
+    # trap `committed_index` spells out below; only one side had closed it.
+    except (OSError, http.client.HTTPException) as exc:
         raise Unanswered(f"could not reach {url}: {exc}") from exc
+    except ValueError as exc:
+        raise Unanswered(
+            f"{url} answered bytes this check cannot decode as UTF-8 "
+            f"({exc})") from exc
 
     try:
         envelope = json.loads(raw)
@@ -168,15 +205,26 @@ def served_index(url, timeout=30.0, opener=None):
     if isinstance(listed, dict):
         listed = listed.get("dates", [])
     index = {}
+    # An entry this check cannot read is refused, never skipped — the same rule
+    # the count below already followed, applied to the whole entry. Dropping one
+    # silently keeps the comparison running against a SHORTER index, so a
+    # changed answer shape is reported as "committed N / served absent", i.e.
+    # staleness: a cause this check has not established, sending an operator to
+    # the Vercel dashboard for someone else's refactor.
     for item in listed if isinstance(listed, list) else []:
         if isinstance(item, str):
             date, threads = item, None
         elif isinstance(item, dict):
             date, threads = item.get("date"), item.get("threads")
         else:
-            continue
+            raise Unanswered(
+                f"{url} listed a {type(item).__name__} where a date entry was "
+                f"expected ({item!r}) — the tool's answer shape changed, so "
+                f"nothing here is comparable")
         if not isinstance(date, str) or not date:
-            continue
+            raise Unanswered(
+                f"{url} listed an entry with no usable date ({date!r}) — the "
+                f"tool's answer shape changed, so nothing here is comparable")
         # The tool answers `2026.07.14` on threads but plain dates here;
         # normalise so a formatting difference is never read as staleness.
         date = date.replace(".", "-")
