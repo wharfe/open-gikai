@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Aug 2026 21:31:20 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 02:22:14 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W34 国会まとめ — 2件の議論</title>
+      <title>2026-W34 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W34</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W34</guid>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見ほか。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、2委員会の議論をまとめました。バーナム英国首相との電話会談についての会見、エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,14 @@
       <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
       <description>43件のスレッド、5委員会の議論をまとめました。｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見、令和８年熊本地震についての会見（２）、熊本県熊本地方を震源とする地震についての会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>バーナム英国首相との電話会談 — バーナム英国首相との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260820_11e12a_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260820_11e12a_01</guid>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
+      <description>高市首相が就任したばかりの英国バーナム首相と初電話会談、日英関係や中東情勢を協議（首相記者会見・2026.08.20・2発言）</description>
+      <category>バーナム英国首相との電話会談についての会見</category>
     </item>
     <item>
       <title>日・トルコ首脳電話会談 — エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_29</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>社会保障国民会議での消費税減税・給付つき税額控除の取りまとめ内容を巡り質疑（国会会議録・2026.07.27・15発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>米価格と政府備蓄米の買戻し — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_30</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_30</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>新米価格への影響を左右する政府備蓄米買戻しタイミングの早期決断を要求（国会会議録・2026.07.27・7発言）</description>
       <category>予算委員会</category>
     </item>
   </channel>
