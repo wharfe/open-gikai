@@ -252,6 +252,12 @@ npm run build    # prebuild script copies data/ from repo root
 python scripts/fetch_ndl.py --lookback-days 30
 python scripts/summarize.py --date YYYY-MM-DD --batch
 python scripts/enrich-news.py --date YYYY-MM-DD --rank-with-claude
+
+# Is the deployed MCP server serving what this checkout has committed? (#85)
+# Read-only; safe to run any time. Three outcomes: it matches (0); it answered
+# and disagrees, naming the dates (1); or it never gave a readable answer, which
+# says nothing about staleness and says so (1).
+python scripts/check_mcp_freshness.py --attempts 1
 ```
 
 ### `summarize.py` exit codes (a contract split across two files)
@@ -405,6 +411,38 @@ The repo hosts **two Vercel projects** pointing at the same GitHub repo:
   `process.cwd()/data` — see `apps/mcp/src/lib/data.ts`. We deliberately
   avoid `outputFileTracingRoot` pointing above the project root because
   Vercel double-prefixes such absolute paths during deploy.
+
+**Only the frontend deploys itself.** The root project is wired to git and
+rebuilds on every push; `apps/mcp` is not, and was deployed by hand until #85 —
+which is to say it stopped. Its last deploy was 2026-05-22 and it served data
+ending 2026-05-19 while the site was three months ahead, and nothing noticed,
+because the endpoint answers 200 and `tools/list` works. **It was never broken,
+only old** — which is the failure mode uptime checks structurally cannot see,
+and `uptime.yml` never touched it anyway.
+
+So `daily-batch.yml`'s **`deploy-mcp`** job publishes it, every morning, right
+after the data commit. Three things about it are load-bearing:
+
+- It checks out `github.ref_name`, **not** `github.sha`: on a scheduled run that
+  SHA is main as it was when the run started, i.e. before the data commit this
+  job exists to publish.
+- It runs `node apps/mcp/scripts/copy-data.mjs` **locally, before deploying**.
+  `vercel deploy` uploads `apps/mcp` alone, so the repo-root `data/` is not
+  there for the remote prebuild to copy from — it would only re-verify whatever
+  was last bundled, and succeed.
+- It then runs `scripts/check_mcp_freshness.py`, which asks the live server for
+  `list_dates` and compares **the whole index** — every date and its thread
+  count — against the committed `data/threads/`. Not the newest date alone: the
+  pipeline re-visits a 30-day window, so most mornings only backfill existing
+  dates and a quiet Diet day adds none, and a newest-date check passes on all of
+  them. Deploying is not the same as having deployed.
+
+**It needs a `VERCEL_TOKEN` repository secret**, scoped to the *team* that owns
+`open-gikai-mcp` — a personal-scope token cannot see a team project and the CLI
+reports that as `Error: Project not found`, quoting ids that are perfectly
+correct. A missing or unscoped token **fails the job red** rather than skipping:
+the day's data is already pushed by then, so the red costs nothing but attention,
+and a warning nobody reads is precisely how this went stale for three months.
 
 Because the frontend uses static export, **server-side features (Route
 Handlers, dynamic API routes, middleware) cannot be added under `src/app/`**.

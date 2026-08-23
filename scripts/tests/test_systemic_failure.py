@@ -20,6 +20,7 @@ fail-open shape the feature exists to prevent.
 import hashlib
 import json
 import os
+import sys
 from pathlib import Path
 
 import pytest
@@ -1953,6 +1954,441 @@ def test_the_annotation_does_not_send_an_operator_after_a_summary_request(
     assert "R1" in errors[0], "the operator is not told which meeting"
 
 
+RUNTIME_REQUIREMENTS = "requirements.txt"
+DEV_REQUIREMENTS = "requirements-dev.txt"
+
+# Import name -> the distribution that provides it. Only the ones that differ;
+# everything else is assumed to match, and an unmapped import that is not
+# declared is a RED rather than a pass — a new dependency must be either pinned
+# or taught to this map, and the direction that costs a human one line is the
+# cheap one (#80/#81).
+IMPORT_TO_DISTRIBUTION = {
+    "bs4": "beautifulsoup4",
+    "dotenv": "python-dotenv",
+    "fitz": "pymupdf",
+    "yaml": "pyyaml",
+}
+
+
+PIP_INSTALL_RE = __import__("re").compile(
+    r"\b(?:pip3?|python3?\s+-m\s+pip)\s+install\b")
+
+
+def _pip_installs(script):
+    """Every `pip install` in a shell script, one per shell command.
+
+    Split on the operators that start a new command, because a whole line was
+    the unit before and that is not what runs: `echo preparing && pip install
+    requests` was skipped entirely on the strength of its FIRST token, while
+    installing an unpinned package. Backslash continuations are joined first,
+    for the neighbouring reason — a package on the next line was never looked
+    at.
+
+    A comment strips the rest of the line, and a segment whose own first token
+    is `echo`/`printf`/`:` is prose about pip rather than pip: a step that
+    comments the real line out and installs from a shell script must not
+    satisfy the fence with a command nothing runs.
+    """
+    import re
+
+    for line in script.replace("\\\n", " ").splitlines():
+        line = line.split("#", 1)[0]
+        for segment in re.split(r"&&|\|\||[;|]", line):
+            segment = segment.strip()
+            if not segment or not PIP_INSTALL_RE.search(segment):
+                continue
+            if segment.split()[0] in ("echo", "printf", ":"):
+                continue
+            yield segment
+
+
+def _assert_installs_only_from_our_requirements(where, cmd, ours):
+    """`cmd` may install from our requirements files and do nothing else.
+
+    An ALLOWLIST, not a forbid-list. The earlier version kept anything that
+    looked like a package name (`t[:1].isalpha()`) and let everything else
+    through, so `pip install -r requirements.txt $EXTRA` passed — `$` is not
+    alphabetic. What may legitimately appear here is a short, knowable set;
+    anything else is a red a human resolves. Guards fail closed.
+    """
+    tokens = cmd.replace("'", " ").replace('"', " ").split()
+    after = tokens[tokens.index("install") + 1:]
+    flags = {"-r", "--requirement"}
+    assert flags & set(after), (
+        f"{where} installs Python packages by name (`{cmd}`) instead of from "
+        f"{sorted(ours)} — a name here is a version nothing pins, which is the "
+        f"pre-#80 state this fence exists to keep out")
+    assert set(after) & ours, (
+        f"{where} installs from a requirements file this fence does not know "
+        f"(`{cmd}`) — teach it that file rather than leaving the pins "
+        f"unchecked")
+    extra = [t for t in after if t not in flags and t not in ours]
+    assert not extra, (
+        f"{where} puts {extra} on a requirements install (`{cmd}`) — a package "
+        f"name is a version nothing pins, and anything the shell expands is a "
+        f"version this fence cannot even read. Put it in "
+        f"{RUNTIME_REQUIREMENTS} instead, where something pins it")
+
+
+def _requirement_lines(rel):
+    """The requirement and `-r` lines of one requirements file.
+
+    Comments and blanks dropped; an inline `# ...` trimmed. Nothing clever:
+    these files are ours and stay simple, and a parser that quietly ignores a
+    line it cannot read is how a pin stops being checked.
+    """
+    path = REPO_ROOT / rel
+    assert path.exists(), (
+        f"{rel} is gone — versions were moved somewhere this fence cannot "
+        f"read. Re-point it, do not drop it (#80)")
+    out = []
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if line:
+            out.append(line)
+    return out
+
+
+def _declarations():
+    """Every package declaration across both requirements files.
+
+    Returns `[(file, raw line, Requirement)]`. A line that does not parse as a
+    requirement is a red here rather than a skip: silently ignoring it is how a
+    pin stops being checked.
+    """
+    from packaging.requirements import InvalidRequirement, Requirement
+
+    # The ONE option line this fence understands. Skipping every `-`-prefixed
+    # line was the earlier shape, and it let `-r extra.txt` or `-e git+...`
+    # smuggle a whole unpinned dependency set past everything below — the
+    # option line is not the exception to the pin rule, it is a way around it.
+    allowed_options = {DEV_REQUIREMENTS: f"-r {RUNTIME_REQUIREMENTS}"}
+
+    out = []
+    for rel in (RUNTIME_REQUIREMENTS, DEV_REQUIREMENTS):
+        for line in _requirement_lines(rel):
+            if line.startswith("-"):
+                assert line == allowed_options.get(rel), (
+                    f"{rel} carries an option line this fence does not know "
+                    f"(`{line}`) — an include or an editable install brings in "
+                    f"versions nothing here pins (#80)")
+                continue
+            try:
+                out.append((rel, line, Requirement(line)))
+            except InvalidRequirement as exc:
+                raise AssertionError(
+                    f"{rel} has a line this fence cannot parse (`{line}`: "
+                    f"{exc}) — an unreadable line is an unchecked pin (#80)")
+    return out
+
+
+def test_every_dependency_is_pinned_exactly_and_declared_once():
+    """#80's actual rule, applied to every package rather than to `anthropic`.
+
+    The ceiling test below is about one coupling. This is about the property the
+    requirements files exist for: a version that cannot change without a commit.
+    Without it the fence approves `requests>=2` or a bare `beautifulsoup4` —
+    every morning re-resolves it, and the next `anthropic` 1.0.0 arrives through
+    whichever package was left loose. Guards here fail closed (a forbid-list
+    that does not recognise a construct waves it through), so this demands the
+    one shape that is safe rather than listing the shapes that are not:
+
+    * exactly one clause, and it is `==`
+    * no wildcard (`==2.*` re-resolves inside the major, which is the whole bug)
+    * no environment marker gating it away on the runner
+    * declared in exactly one of the two files — two declarations is how CI and
+      the morning run drift onto different versions, which is what #80 was
+    """
+    from packaging.utils import canonicalize_name
+
+    seen = {}
+    for rel, line, req in _declarations():
+        name = canonicalize_name(req.name)
+        assert name not in seen, (
+            f"{name} is declared twice ({seen.get(name)} and `{line}` in "
+            f"{rel}) — two declarations are how CI and the morning run drift "
+            f"onto different versions, which is what #80 was")
+        seen[name] = f"`{line}` in {rel}"
+
+        clauses = list(req.specifier)
+        assert len(clauses) == 1 and clauses[0].operator == "==", (
+            f"{rel} does not pin {name} to one exact version (`{line}`) — a "
+            f"range re-resolves every morning, so production changes without a "
+            f"commit (#80)")
+        assert not clauses[0].version.endswith(".*"), (
+            f"{rel} pins {name} with a wildcard (`{line}`), which still "
+            f"re-resolves inside that range every morning (#80)")
+        assert not req.marker, (
+            f"{rel} gates {name} behind an environment marker (`{line}`) — the "
+            f"fence cannot tell whether the runner installs it at all")
+        assert not req.extras, (
+            f"{rel} declares {name} with extras (`{line}`), which pull in "
+            f"packages nothing here pins — `anthropic[httpx2]` is the shape "
+            f"that matters, and it must be a decision with a version behind "
+            f"it, not a bracket (#80)")
+
+
+def test_every_third_party_import_is_declared():
+    """#81, as a property rather than a line in a file.
+
+    `httpx` was installed only because `anthropic` 0.x happened to depend on it,
+    and #80 is what that costs: someone else's dependency change broke an import
+    of ours. Declaring it fixed that ONE module. This is the general rule —
+    anything `scripts/` imports and does not ship is ours to declare — and
+    without it, deleting the `httpx` line goes green until the next upstream
+    change re-opens #80 in exactly the same shape.
+
+    Test-only imports may live in either file, since dev includes runtime.
+    Everything the pipeline itself imports must be in requirements.txt: CI
+    installing it is not the morning run installing it.
+    """
+    import ast
+    import sys
+
+    from packaging.utils import canonicalize_name
+
+    scripts = REPO_ROOT / "scripts"
+    # TOP LEVEL only, on both import paths that exist here: `scripts/` itself
+    # (how the scripts run) and `scripts/tests/` (how pytest runs them). A
+    # recursive sweep of every `*.py` at any depth was the earlier shape and it
+    # is far too generous — one file named `scripts/sources/requests.py` would
+    # make every `import requests` in the pipeline look local, while at runtime
+    # it still resolves to the real distribution.
+    local = set()
+    for directory in (scripts, scripts / "tests"):
+        for entry in directory.iterdir():
+            if entry.suffix == ".py":
+                local.add(entry.stem)
+            elif entry.is_dir() and (entry / "__init__.py").exists():
+                local.add(entry.name)
+
+    declared = {}
+    for rel, _line, req in _declarations():
+        declared[canonicalize_name(req.name)] = rel
+
+    for path in sorted(scripts.rglob("*.py")):
+        rel_path = path.relative_to(REPO_ROOT).as_posix()
+        is_test = "tests/" in rel_path
+        for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
+            if isinstance(node, ast.Import):
+                modules = [a.name.split(".")[0] for a in node.names]
+            elif isinstance(node, ast.ImportFrom) and node.level == 0:
+                modules = [(node.module or "").split(".")[0]]
+            # The literal-string forms of a dynamic import. Not every dynamic
+            # import is reachable this way — a name built at runtime is not —
+            # but `importlib.import_module("x")` is the shape someone reaches
+            # for to import an optional dependency, and it is precisely the one
+            # that must still be declared.
+            elif (isinstance(node, ast.Call)
+                    and node.args
+                    and isinstance(node.args[0], ast.Constant)
+                    and isinstance(node.args[0].value, str)
+                    and (getattr(node.func, "id", None) == "__import__"
+                         or getattr(node.func, "attr", None) == "import_module")):
+                modules = [node.args[0].value.split(".")[0]]
+            else:
+                continue
+            for module in modules:
+                if (not module or module == "__future__"
+                        or module in sys.stdlib_module_names
+                        or module in local):
+                    continue
+                dist = canonicalize_name(
+                    IMPORT_TO_DISTRIBUTION.get(module, module))
+                where = declared.get(dist)
+                assert where, (
+                    f"{rel_path} imports `{module}` but nothing declares "
+                    f"`{dist}` — an undeclared import is installed only because "
+                    f"something else happens to depend on it, which is #81 and "
+                    f"then #80. Pin it, or teach IMPORT_TO_DISTRIBUTION its "
+                    f"real distribution name")
+                assert is_test or where == RUNTIME_REQUIREMENTS, (
+                    f"{rel_path} runs in the pipeline and imports `{module}`, "
+                    f"but `{dist}` is declared only in {where} — CI would have "
+                    f"it and the morning run would not")
+
+
+def test_the_docs_do_not_teach_an_unpinned_install():
+    """CLAUDE.md is a declaration site in the sense that matters.
+
+    The old fence required it to carry the same constraint as the workflows,
+    because "a doc that drifts to an unpinned command is how the pin gets
+    removed by someone following instructions". The version string moved into
+    requirements.txt; that reason did not move anywhere. Property 3 sweeps
+    `.github/workflows/**` only, so without this a doc can tell a human to run
+    the pre-#80 command and every test stays green.
+    """
+    import re
+
+    ours = {RUNTIME_REQUIREMENTS, DEV_REQUIREMENTS}
+
+    def _commands(text):
+        """Every `pip install` a reader could copy: fenced block lines and
+        inline code spans, split into shell commands by the shared helper.
+
+        Prose ABOUT pip is not a command, and the difference is whether it
+        carries arguments — this file's own rule is written as "do not add a
+        package to the `pip install` line", which names the command and
+        instructs the opposite. Failing on that would be a fence that fires on
+        the sentence forbidding the thing it guards, and an alarm that cries
+        wrong gets switched off.
+        """
+        fence = None
+        for line in text.splitlines():
+            marker = line.lstrip()[:3]
+            if marker in ("```", "~~~"):
+                if fence is None:
+                    fence = marker
+                elif fence == marker:
+                    fence = None
+                continue
+            spans = [line] if fence else re.findall(r"`([^`]+)`", line)
+            for span in spans:
+                for cmd in _pip_installs(span):
+                    if cmd[cmd.index("install") + len("install"):].strip():
+                        yield cmd
+
+    for rel in ("CLAUDE.md",):
+        found = list(_commands((REPO_ROOT / rel).read_text(encoding="utf-8")))
+        assert found, (
+            f"{rel} no longer shows how to install the pipeline's Python "
+            f"dependencies — the instruction moved somewhere this fence cannot "
+            f"read it, which is how it drifts back to naming packages (#80)")
+        for command in found:
+            # The same allowlist the workflows get. Asking only "does `-r
+            # requirements-dev.txt` appear" passed `pip install requests -r
+            # requirements-dev.txt`, which installs an unpinned package and
+            # reads, to a human copying it, as the approved command.
+            _assert_installs_only_from_our_requirements(rel, command, ours)
+
+
+# Each entry mutates a COPY of the repo's fence inputs in one way that #80/#81
+# would come back through. Every one of them was a shape some version of this
+# fence approved — most of them at the same time, because a forbid-list waves
+# through what it does not recognise, and every one of these was found by
+# someone reading the fence adversarially rather than by the fence itself.
+def _drop(path, prefix):
+    path.write_text("\n".join(l for l in path.read_text().splitlines()
+                              if not l.startswith(prefix)))
+
+
+def _sub(path, old, new):
+    path.write_text(path.read_text().replace(old, new))
+
+
+FENCE_EVASIONS = {
+    "a shell-expanded extra on the install line":
+        lambda r: _sub(r / ".github/workflows/ci.yml",
+                       "pip install -r requirements-dev.txt",
+                       "pip install -r requirements-dev.txt $EXTRA"),
+    "a package on a backslash continuation line":
+        lambda r: _sub(r / ".github/workflows/ci.yml",
+                       "      - run: pip install -r requirements-dev.txt",
+                       "      - run: |\n"
+                       "          pip install -r requirements-dev.txt \\\n"
+                       "            anthropic"),
+    "a second install hidden behind && after an echo":
+        lambda r: _sub(r / ".github/workflows/ci.yml",
+                       "      - run: pip install -r requirements-dev.txt",
+                       "      - run: echo installing && pip install requests"),
+    "a dependency loosened from == to a range":
+        lambda r: _sub(r / "requirements.txt", "requests==2.34.2", "requests>=2"),
+    "a dependency left completely unpinned":
+        lambda r: _sub(r / "requirements.txt",
+                       "beautifulsoup4==4.15.0", "beautifulsoup4"),
+    "a wildcard pin":
+        lambda r: _sub(r / "requirements.txt", "pymupdf==1.28.2", "pymupdf==1.28.*"),
+    "extras that pull in unpinned packages":
+        lambda r: _sub(r / "requirements.txt",
+                       "anthropic==0.125.0", "anthropic[bedrock]==0.125.0"),
+    "an environment marker gating a pin away":
+        lambda r: _sub(r / "requirements.txt", "requests==2.34.2",
+                       'requests==2.34.2; python_version < "3.0"'),
+    "an extra include bringing in an unchecked file":
+        lambda r: _sub(r / "requirements.txt", "anthropic==0.125.0",
+                       "-r extra.txt\nanthropic==0.125.0"),
+    "the same package declared in both files":
+        lambda r: _sub(r / "requirements-dev.txt", "pytest==9.1.1",
+                       "pytest==9.1.1\nrequests==2.34.2"),
+    "the httpx declaration #81 asked for, deleted":
+        lambda r: _drop(r / "requirements.txt", "httpx=="),
+    "a runtime dependency demoted to dev-only":
+        lambda r: (_drop(r / "requirements.txt", "requests=="),
+                   _sub(r / "requirements-dev.txt", "pytest==9.1.1",
+                        "pytest==9.1.1\nrequests==2.34.2")),
+    "anthropic bumped into the httpx2 era":
+        lambda r: _sub(r / "requirements.txt",
+                       "anthropic==0.125.0", "anthropic==1.4.0"),
+    "CLAUDE.md drifted back to naming packages":
+        lambda r: _sub(r / "CLAUDE.md", "`pip install -r requirements-dev.txt`",
+                       "`pip install anthropic python-dotenv pytest`"),
+    "CLAUDE.md naming a package alongside the approved -r":
+        lambda r: _sub(r / "CLAUDE.md", "`pip install -r requirements-dev.txt`",
+                       "`pip install requests -r requirements-dev.txt`"),
+}
+
+FENCE_TESTS = (
+    "test_every_dependency_is_pinned_exactly_and_declared_once",
+    "test_every_third_party_import_is_declared",
+    "test_the_docs_do_not_teach_an_unpinned_install",
+    "test_the_anthropic_pin_matches_what_the_summary_layer_imports",
+)
+
+
+def _fence_inputs_copied_to(tmp_path):
+    """A throwaway repo holding everything the four fence tests read."""
+    import shutil
+
+    root = tmp_path / "repo"
+    (root / ".github").mkdir(parents=True)
+    shutil.copytree(REPO_ROOT / ".github/workflows", root / ".github/workflows")
+    shutil.copytree(
+        REPO_ROOT / "scripts", root / "scripts",
+        ignore=shutil.ignore_patterns("__pycache__", ".pytest_cache"))
+    for name in ("requirements.txt", "requirements-dev.txt", "CLAUDE.md"):
+        shutil.copy(REPO_ROOT / name, root / name)
+    return root
+
+
+def _run_fences_against(root, monkeypatch):
+    """Which of the fence tests reject `root`."""
+    module = sys.modules[__name__]
+    monkeypatch.setattr(module, "REPO_ROOT", root)
+    rejected = []
+    for name in FENCE_TESTS:
+        try:
+            getattr(module, name)()
+        except AssertionError as exc:
+            rejected.append(f"{name}: {str(exc).splitlines()[0]}")
+    return rejected
+
+
+def test_the_fence_passes_an_untouched_copy_of_this_repo(tmp_path, monkeypatch):
+    """The control. Without it every case below could be passing because the
+    copied tree is broken in some way of its own, and the suite would report a
+    fence that rejects everything as a fence that works."""
+    rejected = _run_fences_against(_fence_inputs_copied_to(tmp_path), monkeypatch)
+    assert not rejected, rejected
+
+
+@pytest.mark.parametrize("evasion", sorted(FENCE_EVASIONS))
+def test_the_fence_rejects_each_way_80_could_come_back(evasion, tmp_path,
+                                                       monkeypatch):
+    """Proving a guard REJECTS is the only half that matters.
+
+    A fence is only ever exercised here in the direction that passes, so
+    "339 passed" says nothing about whether it can still say no — and every
+    hole listed above was live while the suite was green. This is the repo's
+    own rule about fail-closed guards applied to the fence itself: break it on
+    purpose, and check that it breaks.
+    """
+    root = _fence_inputs_copied_to(tmp_path)
+    FENCE_EVASIONS[evasion](root)
+    assert _run_fences_against(root, monkeypatch), (
+        f"the fence APPROVED `{evasion}` — that shape reaches production with "
+        f"a version nothing pins, which is #80")
+
+
 def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
     """#80. Production used to change without a commit.
 
@@ -2043,24 +2479,6 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
                 return True
         return False
 
-    def _requirement_lines(rel):
-        """The requirement and `-r` lines of one requirements file.
-
-        Comments and blanks dropped; an inline `# ...` trimmed. Nothing clever:
-        these files are ours and stay simple, and a parser that quietly ignores
-        a line it cannot read is how a pin stops being checked.
-        """
-        path = REPO_ROOT / rel
-        assert path.exists(), (
-            f"{rel} is gone — versions were moved somewhere this fence cannot "
-            f"read. Re-point it, do not drop it (#80)")
-        out = []
-        for raw in path.read_text(encoding="utf-8").splitlines():
-            line = raw.split("#", 1)[0].strip()
-            if line:
-                out.append(line)
-        return out
-
     # ---- 1 + 2: the ceiling, declared exactly once ------------------------
     #
     # Bare `import httpx` / `from httpx import ...` only. `httpx2` (and an
@@ -2125,37 +2543,9 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
         installs = []
         for job in (yaml.safe_load(text) or {}).get("jobs", {}).values():
             for step in job.get("steps") or []:
-                for cmd in str(step.get("run", "")).splitlines():
-                    cmd = cmd.split("#", 1)[0].strip()
-                    # Commented-out and echoed text does not count: a step that
-                    # comments the real line out and installs from a shell
-                    # script would otherwise satisfy this with a command nothing
-                    # runs.
-                    if not cmd or cmd.split()[0] in ("echo", "printf", ":"):
-                        continue
-                    if PIP_INSTALL.search(cmd):
-                        installs.append(cmd)
+                installs.extend(_pip_installs(str(step.get("run", ""))))
         for cmd in installs:
-            tokens = cmd.replace("'", " ").replace('"', " ").split()
-            after = tokens[tokens.index("install") + 1:]
-            flags = {"-r", "--requirement"}
-            named = [t for t in after
-                     if t[:1].isalpha() and t not in ("install",)]
-            files = [t for t in after if t in ours]
-            assert flags & set(after), (
-                f"{rel} installs Python packages by name (`{cmd}`) instead of "
-                f"from {sorted(ours)} — a name here is a version nothing pins, "
-                f"which is the pre-#80 state this file exists to keep out")
-            assert files, (
-                f"{rel} installs from a requirements file this fence does not "
-                f"know (`{cmd}`) — teach it that file rather than leaving the "
-                f"pins unchecked")
-            # `-r x.txt` leaves the filename in `named`; anything else there is
-            # a package smuggled onto the same line.
-            extra = [t for t in named if t not in ours]
-            assert not extra, (
-                f"{rel} adds {extra} to a requirements install (`{cmd}`) — put "
-                f"the version in {RUNTIME} instead, where something pins it")
+            _assert_installs_only_from_our_requirements(rel, cmd, ours)
         live = "\n".join(
             l.split("#", 1)[0] for l in text.splitlines()).lower()
         assert installs or "anthropic" not in live, (
