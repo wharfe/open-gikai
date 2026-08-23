@@ -1,0 +1,700 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-15",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01Y7YwbwtwBPia5KqVd8DBkE",
+      "submitted_at": "2026-08-23T01:10:48Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_国家基本政策委員会_2026-07-15_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_議院運営委員会_2026-07-15_第31号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_厚生労働委員会_2026-07-15_第19号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_96aefdccb69e_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "京都視察報告と厚労関係基本施策の質疑導入",
+            "topicTag": "視察報告",
+            "topicColor": "#6b7280",
+            "summary": "委員長が京都府視察の概要を報告し、政府参考人の出席を諮った",
+            "contextDescription": "厚生労働委員会が実施した京都府視察（京大病院・iPS細胞研究所）の報告と、質疑に向けた手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:f55ecffecf05b6a9b8d1425b66f2643d22968ca5ede2f1b895ec4ed4d51f94da"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "地域医療を支える薬局・薬剤師の役割強化",
+            "topicTag": "薬局機能",
+            "topicColor": "#8b5cf6",
+            "summary": "健康増進支援薬局の認定制度と医薬品安定供給の課題を議論",
+            "contextDescription": "令和7年薬機法改正で新設される健康増進支援薬局の認定制度と、薬局が担う地域医療機能の拡充策。",
+            "legislationName": "薬機法",
+            "speechOrders": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "input_hash": "sha256:b8dc13f01731e43a41c7bd61a4d0db6de98a283ae86b2aebacbf57097814d414"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "カスタマーハラスメント対策の実効性確保",
+            "topicTag": "カスハラ",
+            "topicColor": "#8b5cf6",
+            "summary": "改正労働施策総合推進法施行に向けた周知・支援策を確認",
+            "contextDescription": "労働施策総合推進法改正により事業主にカスハラ対策が義務化される。令和8年10月施行予定。",
+            "legislationName": "労働施策総合推進法",
+            "speechOrders": [
+              11,
+              12,
+              13,
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            11,
+            12,
+            13,
+            15,
+            16
+          ],
+          "input_hash": "sha256:3f52950b2909579deae08b310687338948efc55a98631caa71459992175ad385"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "ドクターヘリの安定運航体制の確保",
+            "topicTag": "ドクヘリ",
+            "topicColor": "#8b5cf6",
+            "summary": "ドクターヘリ運休問題を受け、財政支援や機体保有の在り方を検討",
+            "contextDescription": "地域の救急医療を支えるドクターヘリの運航が一部地域で困難化しており、国の支援体制強化が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              18,
+              19,
+              20
+            ]
+          },
+          "speechOrders": [
+            18,
+            19,
+            20
+          ],
+          "input_hash": "sha256:78fb9cd3b7bd81dfeda0c8dcb82daee8ee7d81da5bc57b73a57b2d75158a96d0"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "教育ローン・奨学金の金利・保証料負担軽減",
+            "topicTag": "教育ローン",
+            "topicColor": "#f59e0b",
+            "summary": "日本公庫の教育ローン金利と学生支援機構の保証料の負担軽減を要望",
+            "contextDescription": "低所得世帯や交通遺児家庭などが利用する教育ローン・奨学金制度の金利・保証料水準が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              21,
+              22,
+              23,
+              24
+            ]
+          },
+          "speechOrders": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "input_hash": "sha256:40aba787350eb8a2714c0c7e32ea3b495d802ddd006dd309a7827e9974e61d12"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "脳卒中患者の治療と仕事の両立支援",
+            "topicTag": "両立支援",
+            "topicColor": "#8b5cf6",
+            "summary": "リハビリ専門職の関与拡大や相談支援加算の対象見直しを求める",
+            "contextDescription": "脳卒中患者が治療をしながら就労を継続できるよう、多職種連携による支援体制の充実が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          "speechOrders": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "input_hash": "sha256:9d36b72c9836e46c60d9f2041e796a37f1af409380abd3c19f2ebcd1186d1f97"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "ADHD治療薬コンサータの供給不足対策",
+            "topicTag": "コンサータ",
+            "topicColor": "#8b5cf6",
+            "summary": "薬局間譲渡の特例措置と流通管理強化による供給安定化を議論",
+            "contextDescription": "発達障害治療薬コンサータの供給不足に対し、薬局間譲渡解禁など特例的な対応が取られている。",
+            "legislationName": null,
+            "speechOrders": [
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40
+            ]
+          },
+          "speechOrders": [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "input_hash": "sha256:c8f65ac7d07b3dbdbaef5b66c439e7ecf4c2eb8ea7a63ed6ba5871bf8d239430"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "在日米軍基地従業員の給与支払い日問題",
+            "topicTag": "米軍給与",
+            "topicColor": "#ef4444",
+            "summary": "米軍基地の日本人従業員給与の支払い遅延と労基法適合性を追及",
+            "contextDescription": "横須賀基地等の駐留軍等労働者の給与支払い日が休日と重なる際の取扱いや過払い事案が問題視されている。",
+            "legislationName": null,
+            "speechOrders": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:c466014d63f9fcba81f22e96a559b9a5b1cdaeb6af6eb9fb1411b7b519388c7f"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "がん遺伝子パネル検査の保険適用範囲",
+            "topicTag": "がん検査",
+            "topicColor": "#8b5cf6",
+            "summary": "標準治療終了前のがん遺伝子パネル検査の保険適用拡大を求める",
+            "contextDescription": "がん遺伝子パネル検査は現在標準治療終了後のみ保険適用となっており、早期実施の必要性が議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              56,
+              57,
+              58
+            ]
+          },
+          "speechOrders": [
+            56,
+            57,
+            58
+          ],
+          "input_hash": "sha256:975a9db17af0b741c8f8a0fe58c336798aac958ce35631e9944cc020dd6d4dc2"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "生レバー（牛肝臓）生食禁止規制の見直し",
+            "topicTag": "生レバー",
+            "topicColor": "#8b5cf6",
+            "summary": "食中毒防止のための牛肝臓生食禁止の科学的検証と解禁可能性を議論",
+            "contextDescription": "2012年に腸管出血性大腸菌対策として牛肝臓の生食用販売が禁止された規制の妥当性が論点。",
+            "legislationName": "食品衛生法",
+            "speechOrders": [
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "input_hash": "sha256:631d2f7fb706517716483ba80b2334975f378a62070a59a1813fd4ddadcf0c4e"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "長崎被爆体験者の救済と内部被曝の科学的評価",
+            "topicTag": "被爆体験者",
+            "topicColor": "#8b5cf6",
+            "summary": "被爆体験者の認定基準と放射性微粒子の内部被曝影響を巡る議論",
+            "contextDescription": "長崎の被爆体験者は被爆者と認定されておらず、係争中の訴訟や新研究論文を踏まえた救済策が論点。",
+            "legislationName": "被爆者援護法",
+            "speechOrders": [
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90
+            ]
+          },
+          "speechOrders": [
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90
+          ],
+          "input_hash": "sha256:47f333ec3b8b2a00a638e18afc11e57be26d4e5bfaf272f8f4ee09b022998be5"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "医療的ケア児支援法改正と重症心身障害児の支援拡大",
+            "topicTag": "医ケア児",
+            "topicColor": "#8b5cf6",
+            "summary": "改正法による支援対象拡大と学校・放課後デイの受入体制格差を議論",
+            "contextDescription": "医療的ケア児支援法改正により対象が拡大される中、学校や放課後等デイサービスでの受入格差が課題。",
+            "legislationName": "医療的ケア児及びその家族に対する支援に関する法律の一部を改正する法律",
+            "speechOrders": [
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106
+            ]
+          },
+          "speechOrders": [
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106
+          ],
+          "input_hash": "sha256:8fce75aa4ba60a4497f3e5ca3ce0241ba7f67e74df9b4bba622f77837574e20d"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "京都視察を踏まえた両立支援・再生医療・薬価制度",
+            "topicTag": "再生医療",
+            "topicColor": "#3b82f6",
+            "summary": "MSWの役割拡充やiPS細胞由来製品支援、薬価下支え策を議論",
+            "contextDescription": "京都視察を踏まえ、医療ソーシャルワーカーの役割やiPS細胞再生医療、医薬品の薬価維持策が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              108,
+              109,
+              110,
+              111,
+              112,
+              113
+            ]
+          },
+          "speechOrders": [
+            108,
+            109,
+            110,
+            111,
+            112,
+            113
+          ],
+          "input_hash": "sha256:a9a88f4399142ec6e9b191c6dc1362a1711a32b12c51722e5ae0067519c8e40a"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "病院・介護施設の赤字と老朽化対策",
+            "topicTag": "施設老朽化",
+            "topicColor": "#3b82f6",
+            "summary": "医療法人・介護施設の高い赤字率と老朽化への財政支援を要望",
+            "contextDescription": "物価高騰や建築費上昇により病院・介護施設の経営が悪化し、老朽化した施設の更新が社会問題化。",
+            "legislationName": null,
+            "speechOrders": [
+              114,
+              115,
+              116,
+              117,
+              118
+            ]
+          },
+          "speechOrders": [
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "input_hash": "sha256:15bbf088a7641767602d107549b3b84be0b6a9abb1d9c319eee294fa72494ea2"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "新たな地域医療構想における予防医療の位置づけ",
+            "topicTag": "地域医療構想",
+            "topicColor": "#3b82f6",
+            "summary": "2040年に向けた地域医療構想での予防医療・健康増進の扱いを確認",
+            "contextDescription": "人口減少・高齢化に対応するため策定される新たな地域医療構想における予防医療施策の位置づけ。",
+            "legislationName": null,
+            "speechOrders": [
+              120,
+              121
+            ]
+          },
+          "speechOrders": [
+            120,
+            121
+          ],
+          "input_hash": "sha256:fa66cf37975e008a483202fad8f162f6691112f5aaea3d676ac9574c668e2234"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "オンライン診療の普及と画像診断AIの活用",
+            "topicTag": "医療DX",
+            "topicColor": "#3b82f6",
+            "summary": "オンライン診療の利用実態格差と画像診断AI普及策を議論",
+            "contextDescription": "医療法改正後もオンライン診療の普及に地域差があり、画像診断AIの活用促進も課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "speechOrders": [
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "input_hash": "sha256:988c3be220380d879be3012edc769edd35b253bf59ba264d3a61dbbd2581c81f"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "福祉手続のオンライン化とダッシュボード整備",
+            "topicTag": "福祉DX",
+            "topicColor": "#f97316",
+            "summary": "障害福祉等の手続オンライン化とデジタル庁との連携を求める",
+            "contextDescription": "子育て・介護分野に比べ障害福祉等の手続オンライン化の進捗可視化が遅れている問題。",
+            "legislationName": null,
+            "speechOrders": [
+              128,
+              129,
+              130,
+              131,
+              132,
+              133,
+              134
+            ]
+          },
+          "speechOrders": [
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134
+          ],
+          "input_hash": "sha256:ab8bc968587fb7a9ddeca94d31199199ad9ec02f8420ad93dfafbef8917435e2"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "福岡県議会の金銭授受疑惑への政務官対応",
+            "topicTag": "政治とカネ",
+            "topicColor": "#6b7280",
+            "summary": "福岡県議会議長就任時の金銭要求疑惑と政務官の調査姿勢を追及",
+            "contextDescription": "福岡県議会で議長・副議長就任時に多額の金銭授受が求められたとの告発があり、政治資金の透明性が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142
+            ]
+          },
+          "speechOrders": [
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142
+          ],
+          "input_hash": "sha256:f9f8b2f077054a08d04f75701e7e58c2c6a9c6c5ea8ca565ded5de99541593c4"
+        },
+        {
+          "custom_id": "s_96aefdccb69e_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "兵庫県知事の公益通報者保護法違反疑惑",
+            "topicTag": "公益通報",
+            "topicColor": "#6366f1",
+            "summary": "兵庫県知事による通報者探索・妨害の公益通報者保護法違反を追及",
+            "contextDescription": "兵庫県知事が第三者委員会の違法認定を無視し、公益通報者を探索・不利益扱いした疑いが問題化。",
+            "legislationName": "公益通報者保護法",
+            "speechOrders": [
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              154
+            ]
+          },
+          "speechOrders": [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            154
+          ],
+          "input_hash": "sha256:dcbfd19d6537ab3f077a42550053ad353e804941f827fc1dc833e295165f73d9"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_本会議_2026-07-15_第32号",
+      "outcome": {
+        "result": "可決",
+        "resolution": null,
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_81f56ab8e288_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "副首都整備法案と大都市法改正案の審議・採決",
+            "topicTag": "副首都法",
+            "topicColor": "#f97316",
+            "summary": "災害時の国家機能維持へ副首都整備を進める法案と大都市法改正案の是非を討論",
+            "contextDescription": "大規模災害に備え副首都の整備を推進する法案と、特別区設置に関わる大都市法改正案の審議。",
+            "legislationName": "国家社会機能継続性確保施策及び副首都の整備に係る施策の推進に関する法律案／大都市地域における特別区の設置に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              2,
+              5,
+              6,
+              8,
+              10,
+              12,
+              14,
+              16,
+              18,
+              20,
+              21
+            ]
+          },
+          "speechOrders": [
+            2,
+            5,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            21
+          ],
+          "input_hash": "sha256:d74d3212fff28f72bcd7abf2ce0a03275c5a0494ff9da3a15cb1700990960075"
+        }
+      ]
+    }
+  ]
+}
