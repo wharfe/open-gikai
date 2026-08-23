@@ -418,24 +418,108 @@ jobs:
             # and #75 deliberately leaves an unreadable file unstaged — a dirty
             # tracked file would otherwise make the rebase refuse to start.
             #
-            # A rebase that cannot apply is left aborted and the step fails
-            # loudly: a conflict here means something hand-edited the same
-            # generated file, which is a human decision and not a retry.
+            # A rebase that stops part-way is left aborted and the step fails
+            # loudly: it means something hand-edited the same generated file,
+            # which is a human decision and not a retry. Everything else that
+            # goes wrong short of that is retried.
+            #
+            # Two shape rules, both load-bearing, both learned by getting them
+            # wrong once. (1) The rebase comes FIRST in the loop body and the
+            # push LAST. The first version pushed first and rebased after, so
+            # the third rejection bought a rebase nothing ever pushed: the
+            # branch ended up correctly replayed onto origin — one `git push`
+            # from published — and the step exited 1 and threw it away. (2)
+            # Every iteration reaches the push. No `continue` above it, however
+            # pointless the push looks after a failed fetch: the budget is
+            # counted in PUSHES, and any path that skips one silently converts
+            # three retries into fewer, which is the same lost day by a quieter
+            # route. `attempt` 0 is the plain push; 1..3 each rebase and push.
             PUSHED=no
-            for attempt in 1 2 3; do
-              if git push; then
+            for attempt in 0 1 2 3; do
+              if [ "$attempt" -gt 0 ]; then
+                echo "::warning::push rejected — rebasing onto origin/${GITHUB_REF_NAME} and retrying (${attempt}/3)"
+                if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+                  # `git pull --rebase --autostash` exits 0 even when RE-APPLYING
+                  # the autostash conflicts: git finishes the rebase, reports
+                  # "Applying autostash resulted in conflicts", keeps the stash
+                  # and leaves an UNMERGED INDEX (verified on git 2.49). What
+                  # conflicted is #75's deliberately-unstaged junk meeting the
+                  # other push — not this run's commit, which replayed fine and
+                  # is pushable.
+                  #
+                  # Clear it rather than carrying it, because an unmerged index
+                  # makes every LATER `git pull` refuse outright ("Pulling is
+                  # not possible because you have unmerged files", exit 128,
+                  # with no rebase started). That reaches this loop as a
+                  # not-a-conflict failure, so the loop would spend its whole
+                  # budget on a state that cannot resolve itself and then throw
+                  # away a commit it was one push from publishing. `reset --hard
+                  # HEAD` drops only the failed re-apply: HEAD is the replayed
+                  # commit, everything dirty is already IN the stash, and the
+                  # stash survives. `git ls-files -u` rather than `git stash
+                  # list` — the question is whether THIS re-apply conflicted,
+                  # and a pre-existing stash is not evidence of that.
+                  # Captured separately rather than inlined in `[ -n ... ]`:
+                  # there the exit status disappears into the test's result, so
+                  # an index git cannot even read would answer "nothing
+                  # conflicted" and walk straight into the state above.
+                  if ! UNMERGED=$(git ls-files -u); then
+                    echo "::error::cannot read the index after rebasing onto origin/${GITHUB_REF_NAME} — see the git output above. This run's data commit is LOCAL and dies with the runner."
+                    exit 1
+                  fi
+                  if [ -n "$UNMERGED" ]; then
+                    echo "::warning::the rebase finished but left an unmerged index — almost certainly the autostash failing to re-apply over the other push (see the git output above); discarding it. This run's commit is unaffected and is being pushed."
+                    # Guarded for the same reason as the `git rev-parse` below:
+                    # a bare failure here is `bash -e` killing the step without
+                    # ever saying the day is gone.
+                    if ! git reset -q --hard HEAD; then
+                      echo "::error::could not clear the unmerged autostash re-apply — see the git output above. This run's data commit is LOCAL and dies with the runner."
+                      exit 1
+                    fi
+                  fi
+                else
+                  # Only a rebase left IN PROGRESS says the replay itself
+                  # stopped. Everything else that fails here — a fetch that
+                  # timed out, expired credentials, a ref that would not
+                  # resolve, the unmerged index above — never started one, so
+                  # `git rebase --abort` fails and `|| true` hides it. Telling
+                  # those apart is not cosmetic: announcing a conflict sends the
+                  # operator hunting a hand edit that does not exist, the same
+                  # morning-wasting misreport the exit-3 contract is written to
+                  # avoid.
+                  if ! GIT_DIR_PATH=$(git rev-parse --git-dir); then
+                    # Not `bash -e`'s to swallow: a bare assignment that fails
+                    # would kill the step before it said why the day is gone.
+                    echo "::error::cannot inspect the git state after a failed rebase onto origin/${GITHUB_REF_NAME} — see the git output above. This run's data commit is LOCAL and dies with the runner."
+                    exit 1
+                  fi
+                  if [ -d "${GIT_DIR_PATH}/rebase-merge" ] || [ -d "${GIT_DIR_PATH}/rebase-apply" ]; then
+                    git rebase --abort || true
+                    echo "::error::the rebase of this run's data commit onto origin/${GITHUB_REF_NAME} stopped part-way and an abort was issued (the git output above says whether the abort itself succeeded) — most likely a conflict with a push that landed during the run, i.e. something hand-edited the same generated file (see the git output above for what git actually said). The commit is still LOCAL and dies with the runner — nothing this run produced reached the site. Resolve by hand."
+                    exit 1
+                  fi
+                  # No `continue`. The budget below is counted in PUSHES, and
+                  # skipping one is how a rescued commit gets dropped: the push
+                  # costs nothing when it cannot work, and the next attempt
+                  # rebases again if the fetch recovers.
+                  echo "::warning::could not rebase onto origin/${GITHUB_REF_NAME}, and NO rebase was started — this is not a content conflict (network, credentials or ref resolution; see the git output above). Pushing anyway; the remaining attempts still apply."
+                fi
+              fi
+              # Explicit refspec, matching the rebase above, rather than a bare
+              # `git push`: the comment further up already doubts that
+              # actions/checkout's `-B` leaves an upstream configured, and a
+              # missing upstream would otherwise spend all three retries and
+              # then be reported as a lost race.
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
                 PUSHED=yes
                 break
               fi
-              echo "::warning::push rejected (attempt ${attempt}) — rebasing onto origin/${GITHUB_REF_NAME} and retrying"
-              if ! git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
-                git rebase --abort || true
-                echo "::error::cannot rebase this run's data commit onto origin/${GITHUB_REF_NAME}: it conflicts with a push that landed during the run. The commit is still LOCAL and dies with the runner — nothing this run produced reached the site. Resolve by hand."
-                exit 1
-              fi
             done
             if [ "$PUSHED" != yes ]; then
-              echo "::error::still could not push after 3 rebase attempts — something is pushing to ${GITHUB_REF_NAME} continuously. This run's data commit is LOCAL and dies with the runner."
+              # Do not name a cause here. Continuous pushes, branch protection
+              # and expired credentials all arrive as the same rejection, and
+              # asserting one of them picks the operator's search for them.
+              echo "::error::still could not push to ${GITHUB_REF_NAME} after 4 attempts, the last three each preceded by a rebase attempt — see the git output above for why each push was refused (continuous pushes, branch protection and lost credentials all look like this). This run's data commit is LOCAL and dies with the runner."
               exit 1
             fi
           else

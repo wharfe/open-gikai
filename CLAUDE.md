@@ -341,6 +341,42 @@ An outage must be loud without blocking the publish. **Both halves have to move 
 `test_systemic_failure.py::test_the_workflow_tolerates_exactly_these_exit_codes` parses the YAML and fails if
 they drift.
 
+### The final push is the publish (#82)
+
+The commit step's `git push` is the only thing that makes a run's work exist. The runner is
+ephemeral, so a commit that is not pushed is destroyed with it — and `AHEAD` is measured against the
+`origin/<branch>` **this checkout fetched**, which stays true while the real remote moves on. Any
+other push during the ~1h run therefore made the push non-fast-forward and killed the step under
+`bash -e`. That is not hypothetical: on 2026-08-23 a hand push during a recovery run cost 236
+assembled threads their commit, with every other step green. So the push **rebases and retries**:
+one plain push, then up to three rebase-and-retry attempts.
+
+Three properties of that loop are contracts, not style, and each was learned by getting it wrong:
+
+- **Rebase, never merge or force.** `--force-with-lease` would delete the other push. A merge is
+  worse than it looks: the stalled-pipeline check further down the same workflow reads
+  `git log -n 40`, keeps only subjects matching `^data: daily-batch run `, and counts the leading
+  `(+0 threads)` ones out of the first 10. A merge commit does not match that grep, so it is not
+  miscounted — it consumes one of the **40** slots the 10 are drawn from, and data commits already
+  share that window with `chore(pipeline)` ones. Enough of them and the counter silently has fewer
+  than 10 runs to look at, which is under-counting in a check whose whole job is to notice a long
+  quiet streak. `test_push_race.py::test_the_retry_is_a_rebase_and_not_a_merge` is what keeps the
+  two in agreement — **if you change one, you are changing the other.**
+- **Every iteration reaches the push.** The budget is counted in *pushes*. The first version pushed
+  first and rebased after, so the third rejection bought a rebase nothing ever pushed — the branch
+  ended correctly replayed onto origin, one `git push` from published, and the step exited 1 and
+  threw it away. Any `continue` above the push re-creates that, quietly.
+- **`--autostash`, and clean up after it.** #75 deliberately leaves an unreadable file unstaged, so
+  the tree is dirty at push time by design. When re-applying that autostash conflicts, `git pull
+  --rebase --autostash` still exits **0** — the rebase finished, the stash is kept, and an
+  **unmerged index** is left behind, which makes every *later* `git pull` refuse outright. Carrying
+  it spends the rest of the budget on a state that cannot resolve itself, so it is cleared.
+
+A rebase that stops part-way is the one thing that is *not* retried: it means something hand-edited
+the same generated file, which is a decision. Everything else — a fetch that timed out, expired
+credentials — is retried, and the annotations deliberately **name no cause they did not establish**,
+for the same reason the exit-3 contract above does.
+
 ## Project Structure
 
 ```
