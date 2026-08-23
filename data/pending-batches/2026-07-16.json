@@ -1,0 +1,3022 @@
+{
+  "schema_version": 4,
+  "date": "2026-07-16",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_018EDgKPsKVjGzisqifxK7P9",
+      "submitted_at": "2026-08-23T01:20:18Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_厚生労働委員会_2026-07-16_第19号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "ゲノム編集技術の運用基準、届出徹底と監督体制整備、政令要件の科学的担保、指針策定への意見聴取、臨床利用に関する継続的検討と当事者意見聴取、クローン規制法との一体的検討、人の尊厳・生命倫理の尊重等を政府に求める内容。",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_da3e8a427854_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "ヒトゲノム編集胚規制法案の目的・生殖補助医療との関係",
+            "topicTag": "法目的",
+            "topicColor": "#6366f1",
+            "summary": "法案の目的規定や生殖補助医療・再生医療関連法との関係、ミトコンドリア病治療技術への影響を確認",
+            "contextDescription": "ヒト胚・生殖細胞へのゲノム編集の臨床利用等を禁止する法案。生殖補助医療や再生医療関連法との切り分けが論点。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          "speechOrders": [
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "input_hash": "sha256:84bb0f5e7bde29eddfeb63129fb8691168223ab9d45a47898f7db28497fa5123"
+        },
+        {
+          "custom_id": "s_da3e8a427854_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "ヒトゲノム編集胚規制法案の罰則水準と研究推進の両立",
+            "topicTag": "罰則均衡",
+            "topicColor": "#6366f1",
+            "summary": "諸外国と比較した罰則の妥当性と、規制と研究推進の両立をどう図るか議論",
+            "contextDescription": "ヒトゲノム編集胚等の取扱いを規制する法案の罰則水準や国際協調の在り方に関する質疑。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          "speechOrders": [
+            14,
+            15,
+            16,
+            17
+          ],
+          "input_hash": "sha256:336b0d9fa107ef3c5aa8879560dcc27cb6bf7af4901ced498b5040146c89c300"
+        },
+        {
+          "custom_id": "s_da3e8a427854_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "骨太方針における社会保障の給付と負担の見直し",
+            "topicTag": "給付負担",
+            "topicColor": "#8b5cf6",
+            "summary": "現役世代の保険料引下げや医療介護の負担増を巡る骨太方針の方向性を質す",
+            "contextDescription": "政府が策定する経済財政運営の基本方針（骨太方針）で検討されている社会保障の給付と負担の見直し議論。",
+            "legislationName": null,
+            "speechOrders": [
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ]
+          },
+          "speechOrders": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "input_hash": "sha256:d80d3eefd502e259a10dbd56fbbfcf60a09255fddaa325a537faf6850535f604"
+        },
+        {
+          "custom_id": "s_da3e8a427854_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "高額療養費・高額特定疾病制度の見直しと患者団体協議",
+            "topicTag": "高額療養",
+            "topicColor": "#8b5cf6",
+            "summary": "高額特定疾病制度の見直し方針と、見直し時の患者団体との協議の要否を確認",
+            "contextDescription": "人工透析患者等の医療費負担を軽減する高額特定疾病制度の存廃・見直しを巡る議論。",
+            "legislationName": null,
+            "speechOrders": [
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ]
+          },
+          "speechOrders": [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "input_hash": "sha256:76da0f74ac1f166b54ebdc337d45bfeb33c257b5bf8c3e1f6ab39702f7413c71"
+        },
+        {
+          "custom_id": "s_da3e8a427854_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "介護職員の処遇改善加算の運用と課題",
+            "topicTag": "介護処遇",
+            "topicColor": "#8b5cf6",
+            "summary": "処遇改善加算の使途要件や制度の複雑化、訪問介護の経営難への対応を議論",
+            "contextDescription": "介護職員の賃金改善のため設けられた介護報酬の処遇改善加算の運用実態と課題に関する質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37
+            ]
+          },
+          "speechOrders": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "input_hash": "sha256:75ccac3d8c91691463effdf2cd6bc793d5b11de3f7efb614fa16607d5bfb71c0"
+        },
+        {
+          "custom_id": "s_da3e8a427854_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "介護分野の特定最低賃金導入の是非",
+            "topicTag": "特定賃金",
+            "topicColor": "#8b5cf6",
+            "summary": "介護職の処遇改善策として特定最低賃金導入のハードルの高さと検討の必要性を提起",
+            "contextDescription": "特定産業ごとに設定できる特定最低賃金を介護分野に導入する検討の是非を巡る議論。",
+            "legislationName": null,
+            "speechOrders": [
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44
+            ]
+          },
+          "speechOrders": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "input_hash": "sha256:c817cd48eacfa45047c07351328817ad3c13093bbd07be2d592f75014d156427"
+        },
+        {
+          "custom_id": "s_da3e8a427854_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "ゲノム医療推進法・再生医療等安全確保法との規制関係整理",
+            "topicTag": "規制整理",
+            "topicColor": "#6366f1",
+            "summary": "ゲノム医療推進法や再生医療等安全確保法と本法案との規制範囲の重複・網羅性を確認",
+            "contextDescription": "既存のゲノム医療推進法・再生医療等安全確保法と新法案の規制対象の関係を整理する質疑。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              45,
+              46,
+              47,
+              48,
+              49
+            ]
+          },
+          "speechOrders": [
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "input_hash": "sha256:1d5a92fa95236e1d2f337139fb6a0c1f083b612d1bb042a0004ef0851f830864"
+        },
+        {
+          "custom_id": "s_da3e8a427854_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "無届出研究の把握と公益通報者保護の実効性",
+            "topicTag": "無届研究",
+            "topicColor": "#6366f1",
+            "summary": "届出制の抜け穴となる無届出研究の捕捉方法と公益通報制度の適用限界を追及",
+            "contextDescription": "新法案は届出制を採用するが、届出をせず研究を行う者の把握や内部通報制度の実効性が課題。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59
+            ]
+          },
+          "speechOrders": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59
+          ],
+          "input_hash": "sha256:559bcd81b31288e5a832f1fafc7536b96c098a1aee1ceda847c9b2bcc0d88677"
+        },
+        {
+          "custom_id": "s_da3e8a427854_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "創薬・先端医療分野の成長戦略と薬価制度",
+            "topicTag": "創薬戦略",
+            "topicColor": "#3b82f6",
+            "summary": "戦略投資分野の創薬・先端医療振興と、薬価制度の抜本見直しの必要性を議論",
+            "contextDescription": "日本成長戦略で重点分野とされる創薬・先端医療の投資促進と、中医協で決まる薬価制度との関係。",
+            "legislationName": null,
+            "speechOrders": [
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            67,
+            68
+          ],
+          "input_hash": "sha256:b797cba6b808e9edc79b2cf81c9292ade3b2951f38a67d60854b5a03876c3413"
+        },
+        {
+          "custom_id": "s_da3e8a427854_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "沖縄型神経原性筋萎縮症とゲノム編集治療への期待",
+            "topicTag": "難病治療",
+            "topicColor": "#6366f1",
+            "summary": "難病患者へのゲノム編集技術応用の可能性と、法案による当面の実施制約を確認",
+            "contextDescription": "沖縄型神経原性筋萎縮症など難病治療にゲノム編集技術を用いる将来的可能性と規制の関係。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79
+            ]
+          },
+          "speechOrders": [
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79
+          ],
+          "input_hash": "sha256:0519e8ad3f9846ba8fb7ca32cbe1b628963505dd9c6df4af9ab8cfd98143e0dd"
+        },
+        {
+          "custom_id": "s_da3e8a427854_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "ゲノムデータの個人情報保護と第三者提供の在り方",
+            "topicTag": "ゲノム情報",
+            "topicColor": "#6366f1",
+            "summary": "ゲノムデータの個人識別性や統計特例による民間提供の権利利益保護上の懸念を追及",
+            "contextDescription": "個人情報保護法改正により統計目的でのゲノムデータ第三者提供が可能となることの是非。",
+            "legislationName": "個人情報保護法等改正法",
+            "speechOrders": [
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90
+            ]
+          },
+          "speechOrders": [
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90
+          ],
+          "input_hash": "sha256:4b73e3849347e74821a7738a0421f9ee6aba160ca2758f7c5ee6971ea267bbfe"
+        },
+        {
+          "custom_id": "s_da3e8a427854_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "ゲノム編集規制の対象範囲と将来的な臨床利用の容認可能性",
+            "topicTag": "規制範囲",
+            "topicColor": "#6366f1",
+            "summary": "ミトコンドリア核置換術等の規制対象範囲と、将来の臨床利用容認・差別防止の課題を議論",
+            "contextDescription": "法案が規制対象とする技術範囲や、将来ゲノム編集の臨床利用が容認された場合の優生学的差別への懸念。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99
+            ]
+          },
+          "speechOrders": [
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99
+          ],
+          "input_hash": "sha256:97fdd01bc34d70dcf9bcb21de81939a329f127c3cc2af1637769f5dafe151448"
+        },
+        {
+          "custom_id": "s_da3e8a427854_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "罰則対象の範囲・デザイナーベビー・技術進歩への対応",
+            "topicTag": "罰則対象",
+            "topicColor": "#6366f1",
+            "summary": "罰則の対象行為、デザイナーベビー出生後の子の保護、人工子宮等新技術への法対応を質疑",
+            "contextDescription": "法案の罰則規定の適用範囲と、将来の技術進歩（人工子宮、AI活用等）に法律がどう対応するかの議論。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112
+            ]
+          },
+          "speechOrders": [
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112
+          ],
+          "input_hash": "sha256:0a126ce70e858353ab15db09ed503c56c224efa3e4f7d64e14cf08f7f3984e75"
+        },
+        {
+          "custom_id": "s_da3e8a427854_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "ヒト受精胚提供のインフォームド・コンセントと指針策定の透明性",
+            "topicTag": "同意撤回",
+            "topicColor": "#6366f1",
+            "summary": "受精胚提供者のインフォームド・コンセント撤回権や指針策定への当事者参画の保障を求める",
+            "contextDescription": "研究用に提供されるヒト受精胚について、提供者の同意撤回権や指針策定過程への患者参画の在り方。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126
+            ]
+          },
+          "speechOrders": [
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126
+          ],
+          "input_hash": "sha256:4ade7adb9f1a8bf4221c9ec4d6ef77336f0aefe556ead35413298b2bb908dd3d"
+        },
+        {
+          "custom_id": "s_da3e8a427854_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "優生思想への懸念と第三者審査・胎内移植例外規定の明確化",
+            "topicTag": "優生懸念",
+            "topicColor": "#6366f1",
+            "summary": "旧優生保護法の反省を踏まえた優生思想排除の必要性と、胎内移植例外規定の曖昧さを追及し反対討論",
+            "contextDescription": "障害者権利や優生思想への懸念から、法案の第三者審査の欠如や胎内移植例外規定の書きぶりを問題視。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              127,
+              128,
+              129,
+              130,
+              132,
+              133,
+              134,
+              135,
+              137,
+              138,
+              140,
+              142
+            ]
+          },
+          "speechOrders": [
+            127,
+            128,
+            129,
+            130,
+            132,
+            133,
+            134,
+            135,
+            137,
+            138,
+            140,
+            142
+          ],
+          "input_hash": "sha256:7c51c0f92ef75c498a4be9968f2e86f3b7ce71e5bd041925a3774821bda52117"
+        },
+        {
+          "custom_id": "s_da3e8a427854_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "法案採決に伴う附帯決議",
+            "topicTag": "附帯決議",
+            "topicColor": "#6366f1",
+            "summary": "法案可決に際し、施行上留意すべき事項をまとめた附帯決議を各会派共同提案",
+            "contextDescription": "ヒトゲノム編集胚等取扱い規制法案の可決に伴い、施行時の配慮事項を定めた附帯決議の提出。",
+            "legislationName": "ヒトゲノム編集胚等の取扱いの規制に関する法律案",
+            "speechOrders": [
+              145,
+              148
+            ]
+          },
+          "speechOrders": [
+            145,
+            148
+          ],
+          "input_hash": "sha256:7162f0ef4339b01965248cf3bc8c8feb564037653b92ecf9f8813cf50d20eddc"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_法務委員会_2026-07-16_第21号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "検察官の証拠開示・是正措置の適正化、再審請求審での証拠提出命令や不服申立て制限の運用、証拠保存や国選弁護制度の検討など9項目を政府・最高裁に求める附帯決議",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_818bb9cc6b83_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "刑訴法改正案の政府参考人出席要求",
+            "topicTag": "手続",
+            "topicColor": "#6b7280",
+            "summary": "刑事訴訟法改正案審査のための政府参考人出席要求を採決した",
+            "contextDescription": "法案審査にあたり法務省など関係省庁の担当者を政府参考人として招致する手続。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              2
+            ]
+          },
+          "speechOrders": [
+            2
+          ],
+          "input_hash": "sha256:b73864ea501b2e35d43b36d3e4ccbe53e7956cdf40b71dacfac06ca9832926fc"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "袴田事件をめぐる検察の対応と証拠提出命令制度",
+            "topicTag": "袴田事件",
+            "topicColor": "#6366f1",
+            "summary": "袴田事件の証拠隠しを踏まえ、検察任せの証拠開示運用の是非を追及",
+            "contextDescription": "袴田事件は証拠捏造疑惑により再審無罪となった冤罪事件。改正案は証拠提出命令制度を新設。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "input_hash": "sha256:67d98875d23765fee1a8b2fe32cc91c1382ab59aa93f09f8141598f625fe00c2"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "再審開始決定への検察官抗告制度",
+            "topicTag": "検察抗告",
+            "topicColor": "#6366f1",
+            "summary": "袴田・日野町・福井事件の抗告が救済を遅らせた実態と抗告要件の妥当性を追及",
+            "contextDescription": "検察官が再審開始決定に不服申立て（抗告）することで救済が長期化する問題。改正案は抗告を原則禁止し例外要件を設ける。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "input_hash": "sha256:66c26412b35e7e9ccb9892b0189205bd4b4ae24b8681b04b34389aae2052cd79"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "福井女子中学生殺人事件の証拠隠しと検察の責任",
+            "topicTag": "福井事件",
+            "topicColor": "#6366f1",
+            "summary": "福井事件で検察が無罪証拠を隠し有罪立証を続けた問題と謝罪の欠如を追及",
+            "contextDescription": "福井女子中学生殺人事件は目撃証言誘導疑惑により再審無罪となった冤罪事件。検察の組織的問題が指摘される。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              32
+            ]
+          },
+          "speechOrders": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            32
+          ],
+          "input_hash": "sha256:ac1d0c7bb42e8bde0ef84c87456fcf021ab16b1f6bd40af3724811549e1439cf"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "証拠開示の運用と衆院修正附則四条二項",
+            "topicTag": "証拠開示",
+            "topicColor": "#6366f1",
+            "summary": "証拠開示の運用が後退しないことを確認し、証拠一覧表や周知徹底を求めた",
+            "contextDescription": "再審請求審での証拠開示は法制化されず運用に委ねられてきた。衆院修正で運用の維持を明記する附則が追加された。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40
+            ]
+          },
+          "speechOrders": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "input_hash": "sha256:2e99b3d985632e49afcda4c5575d1aa219524658dfe2b6a45ef1a54b00912ef2"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "証拠の目的外使用禁止規定",
+            "topicTag": "目的外使用",
+            "topicColor": "#6366f1",
+            "summary": "再審証拠の目的外使用一律禁止が支援活動や報道を萎縮させると批判",
+            "contextDescription": "改正案は再審請求審で開示された証拠の目的外使用を罰則付きで禁止。報道・支援活動への影響が懸念される。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              50
+            ]
+          },
+          "speechOrders": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            50
+          ],
+          "input_hash": "sha256:deff5ff4990fa69ebb486a2d2ab230e79fcd54acec1cc77e5e516c44cbb926f5"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "証拠提出命令制度の運用と裁判所の役割",
+            "topicTag": "提出命令",
+            "topicColor": "#6366f1",
+            "summary": "証拠提出命令の関連性判断や裁判所の主体的運用の在り方を確認",
+            "contextDescription": "改正案で新設される証拠提出命令制度は、裁判所が検察官に証拠提出を命じる仕組み。運用が鍵となる。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66
+            ]
+          },
+          "speechOrders": [
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "input_hash": "sha256:c00878a85b145387b74b2acee75b91f2774ae2b9775ee7c697d8fcbdb7cf8556"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "再審制度の濫用防止と外国人犯罪統計",
+            "topicTag": "濫用外国人",
+            "topicColor": "#6366f1",
+            "summary": "再審請求の濫用リスクと外国人被告人の有罪比率について議論",
+            "contextDescription": "再審制度が悪用される懸念と、刑事裁判における外国人被告人の割合が話題となった。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              82
+            ]
+          },
+          "speechOrders": [
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            82
+          ],
+          "input_hash": "sha256:f9d542df728394d093bd816609a67b68b70955d069db0d88774a269a0d33174f"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "自白偏重・人質司法と検察の組織体質",
+            "topicTag": "自白偏重",
+            "topicColor": "#6366f1",
+            "summary": "冤罪の背景にある自白偏重や検察組織の隠蔽体質を厳しく追及",
+            "contextDescription": "自白を迫る捜査手法や、検察組織が不利な証拠を隠す構造的問題が冤罪の温床とされる。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              94
+            ]
+          },
+          "speechOrders": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            94
+          ],
+          "input_hash": "sha256:008337062ae71fdcea06054cc1f0f1668c6e69335a449bf4d9ef376bf8541903"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "検察の不祥事と組織風土改革",
+            "topicTag": "検察改革",
+            "topicColor": "#6366f1",
+            "summary": "検察の不適正取調べ問題を踏まえた内部監察・組織風土改革の必要性",
+            "contextDescription": "検察官の独自捜査での不適正な取調べが相次いで指摘され、内部チェック体制の強化が求められている。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              106
+            ]
+          },
+          "speechOrders": [
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            106
+          ],
+          "input_hash": "sha256:476609fcda050f920f969140b961462c61f258ac1978fcf7b48aafb3591a9cc9"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "総理による再審法改正への決意表明",
+            "topicTag": "総理決意",
+            "topicColor": "#6366f1",
+            "summary": "高市総理が再審制度見直しへの決意と検察の信頼回復への取り組みを表明",
+            "contextDescription": "刑事訴訟法制定後78年で初の再審法改正。総理が法案の意義と検察改革姿勢を述べた。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              107,
+              108,
+              109,
+              110
+            ]
+          },
+          "speechOrders": [
+            107,
+            108,
+            109,
+            110
+          ],
+          "input_hash": "sha256:a616eabfce22cac251bf93a5eb7479cff8ea38669aa3e856e6704ea30b34e232"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "袴田ひで子氏の訴えと修正の可否",
+            "topicTag": "修正要求",
+            "topicColor": "#6366f1",
+            "summary": "袴田ひで子氏らの訴えを踏まえ目的外使用禁止削除など修正を総理に迫る",
+            "contextDescription": "冤罪被害者家族が現行案では不十分と訴え、目的外使用禁止規定の削除など修正を求めた。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              111,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              120
+            ]
+          },
+          "speechOrders": [
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            120
+          ],
+          "input_hash": "sha256:b7c7d7bda227ef04c4eb421456de1aa31a1fbb9441f80532216234d10d166b6b"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "検察不祥事と証拠開示運用への総理見解",
+            "topicTag": "検察不祥事",
+            "topicColor": "#6366f1",
+            "summary": "検察官の不祥事事案を踏まえ、証拠開示運用や目的外使用への総理の姿勢を追及",
+            "contextDescription": "大阪地検・東京地検の検察官不祥事が相次ぎ発覚し、検察組織全体への信頼が問われている。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              130
+            ]
+          },
+          "speechOrders": [
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            130
+          ],
+          "input_hash": "sha256:0ce465535b369a28047e815bd1679615730de7d0d30ca78a4d0f1cd1047ead74"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "刑執行停止・国選弁護制度・判検交流",
+            "topicTag": "制度課題",
+            "topicColor": "#6366f1",
+            "summary": "刑執行停止の運用や再審での国選弁護、判検交流の是非を総理に質した",
+            "contextDescription": "再審請求時の刑執行停止判断、弁護士費用支援、裁判官と検察官の人事交流の在り方が論点。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              138,
+              139,
+              140,
+              141,
+              143
+            ]
+          },
+          "speechOrders": [
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            138,
+            139,
+            140,
+            141,
+            143
+          ],
+          "input_hash": "sha256:e7de7fb3e9dd604929edfd605c53d31efc6c520fccdce902645415798d32c35a"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "安倍元総理銃撃事件と選挙妨害・戦犯裁判検証",
+            "topicTag": "その他質問",
+            "topicColor": "#ef4444",
+            "summary": "安倍元総理銃撃事件の風化防止、選挙妨害対策、戦犯裁判資料検証を総理に質問",
+            "contextDescription": "再審法審議とは別に、街頭演説の安全確保や東京裁判関連資料の再検証などが取り上げられた。",
+            "legislationName": null,
+            "speechOrders": [
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151
+            ]
+          },
+          "speechOrders": [
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151
+          ],
+          "input_hash": "sha256:aec674117878538fe3f4112c13c3908d02beca2d17591d1444b47b5cb8a3e3f8"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "検事総長談話と袴田事件の検証拒否姿勢",
+            "topicTag": "総長談話",
+            "topicColor": "#6366f1",
+            "summary": "袴田事件の検事総長談話が検察のおごりだと批判し、第三者検証を求めた",
+            "contextDescision": "",
+            "contextDescription": "袴田事件の再審無罪確定後も検事総長談話が「犯人立証可能」と主張し続けたことへの批判。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              152,
+              153,
+              154,
+              155,
+              156
+            ]
+          },
+          "speechOrders": [
+            152,
+            153,
+            154,
+            155,
+            156
+          ],
+          "input_hash": "sha256:9e0cb4a7294a56bf0bb87556e35c946cd64f4209135af381255eda8d69ee9e93"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "外国人受入れと治安リスクの類型化",
+            "topicTag": "外国人政策",
+            "topicColor": "#ef4444",
+            "summary": "特定属性の外国人による犯罪リスクの類型化と入国制限の可否を総理に質問",
+            "contextDescription": "海外の意識調査を根拠に、出身地域による外国人受入れ制限の是非が議論された。",
+            "legislationName": null,
+            "speechOrders": [
+              157,
+              158,
+              159,
+              160,
+              162
+            ]
+          },
+          "speechOrders": [
+            157,
+            158,
+            159,
+            160,
+            162
+          ],
+          "input_hash": "sha256:1aae4e341ab4957bf45f7e79ca3dc434118502b68ce720939746892f5eb45a19"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "立憲・公明共同修正案の提出と趣旨説明",
+            "topicTag": "修正案提出",
+            "topicColor": "#6366f1",
+            "summary": "立憲・公明が刑訴法改正案への修正動議を提出し趣旨を説明",
+            "contextDescription": "政府原案に対し、証拠開示拡充や抗告制限強化などを盛り込んだ野党修正案が提出された。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              165
+            ]
+          },
+          "speechOrders": [
+            165
+          ],
+          "input_hash": "sha256:c690603843453bf6d7de884a4cf26714fd350a4b70ad60c66296a831af33c83d"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "刑事司法への信頼確保と目的外使用の運用",
+            "topicTag": "信頼確保",
+            "topicColor": "#6366f1",
+            "summary": "刑事司法全体への信頼確保のため通常審の機能や目的外使用運用を確認",
+            "contextDescription": "再審制度改正の前提として、捜査・公判を含む刑事司法制度全体の信頼性が問われている。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              167,
+              168,
+              169,
+              170,
+              171,
+              172
+            ]
+          },
+          "speechOrders": [
+            167,
+            168,
+            169,
+            170,
+            171,
+            172
+          ],
+          "input_hash": "sha256:790d00f19304da277af03e1fae1c80b182b4733ae7c5924cc6e0159f0855ba51"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "修正案の五論点をめぐる質疑（証拠開示・目的外使用・一覧表・保管・抗告）",
+            "topicTag": "修正案質疑",
+            "topicColor": "#6366f1",
+            "summary": "立憲・公明修正案の証拠開示拡大や抗告禁止など5論点を政府案と比較検証",
+            "contextDescription": "野党修正案は証拠開示の幅広さ、目的外使用禁止の削除、証拠一覧表・保管制度、抗告全面禁止などを提案。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188,
+              189,
+              190,
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              197,
+              198
+            ]
+          },
+          "speechOrders": [
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198
+          ],
+          "input_hash": "sha256:3e9647d96d17167ebeb6946f0faed9e4bf12531a30e7b9ccefb104310e56cd7d"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "検察トップの人事制度と抗告理由の公表運用",
+            "topicTag": "検察人事",
+            "topicColor": "#6366f1",
+            "summary": "検事総長・高検検事長の定年制度と抗告理由公表の遡及適用を確認",
+            "contextDescription": "検察幹部人事の独立性や、改正後の抗告理由公表制度が既存の再審係属事件にどう適用されるかが焦点。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              199,
+              200,
+              201,
+              202,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              209,
+              210,
+              211,
+              212,
+              213
+            ]
+          },
+          "speechOrders": [
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213
+          ],
+          "input_hash": "sha256:6a9bd5584073c0260aa7b9ed6e34e9d991912578e3a799d2e37eca5fe11bcd9e"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "再審公判の長期化防止と裁判官研修・附則見直し",
+            "topicTag": "審理長期化",
+            "topicColor": "#6366f1",
+            "summary": "再審公判の長期化防止策と裁判官向け研究会、5年後見直しの実効性を確認",
+            "contextDescription": "再審は請求審と公判の二段階構造で長期化しやすく、裁判所の研修や5年ごとの見直し規定が焦点。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              214,
+              215,
+              216,
+              217,
+              218,
+              219,
+              220,
+              221,
+              222,
+              223,
+              224,
+              225,
+              226
+            ]
+          },
+          "speechOrders": [
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226
+          ],
+          "input_hash": "sha256:6ed531912a39099eb6ff976202413c1405564ec0be67fe6d863dd0abba2ffe8f"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "裁判官人事評価と判検交流の実態",
+            "topicTag": "裁判官人事",
+            "topicColor": "#6366f1",
+            "summary": "再審事件処理が裁判官評価に与える影響と判検交流の在り方を追及",
+            "contextDescription": "裁判官の人事評価制度が再審への消極姿勢を助長していないか、また法務省への裁判官出向の是非が問われた。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              227,
+              228,
+              229,
+              230,
+              231
+            ]
+          },
+          "speechOrders": [
+            227,
+            228,
+            229,
+            230,
+            231
+          ],
+          "input_hash": "sha256:3e86cc391e4020d68c6f8cfb14715c66b30ccdc08d1e4e98f6ca227a11a8c3b2"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "法人登記の本人確認と偽造リスク",
+            "topicTag": "登記偽造",
+            "topicColor": "#6366f1",
+            "summary": "会社登記申請における印鑑照合の限界と偽造防止策の強化を要望",
+            "contextDescription": "登記申請の本人確認手法が印影照合等に依存し、偽造リスクへの対応強化が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              233,
+              234
+            ]
+          },
+          "speechOrders": [
+            233,
+            234
+          ],
+          "input_hash": "sha256:6ca5b2e4964439b837a1711fba3852dc741dee2c8d4a0b4d45f25d3445507248"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "再審事実取調べにおける国選弁護制度",
+            "topicTag": "国選弁護",
+            "topicColor": "#6366f1",
+            "summary": "再審の事実取調べ段階での国選弁護制度の必要性を議論",
+            "contextDescription": "再審請求審での証人尋問等の事実取調べにおいて、弁護士費用の公費負担制度が未整備な点が課題。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              235,
+              236,
+              237
+            ]
+          },
+          "speechOrders": [
+            235,
+            236,
+            237
+          ],
+          "input_hash": "sha256:fbc14bac938ca85c7ee62afd041e5286ea2607e8377cc3ad047fe36e6f02e47e"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_25",
+          "thread_idx": 25,
+          "thread_info": {
+            "topic": "刑事弁護士確保と虚偽告訴・偽証罪の運用",
+            "topicTag": "弁護士確保",
+            "topicColor": "#6366f1",
+            "summary": "刑事弁護士の担い手不足と虚偽告訴・偽証罪の低い処罰率を問題視",
+            "contextDescription": "刑事弁護の報酬や負担の問題で担い手が減少する一方、虚偽告訴・偽証罪の摘発が少ない現状が指摘された。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              238,
+              239,
+              240,
+              241,
+              243
+            ]
+          },
+          "speechOrders": [
+            238,
+            239,
+            240,
+            241,
+            243
+          ],
+          "input_hash": "sha256:7850e8f939c2542dba3db13ba90a42dddc403b7440e6b533f14048b8cf9d5142"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_26",
+          "thread_idx": 26,
+          "thread_info": {
+            "topic": "目的外使用の構成要件の不明確さと捜査情報漏洩",
+            "topicTag": "構成要件",
+            "topicColor": "#6366f1",
+            "summary": "目的外使用罪の構成要件の曖昧さと捜査機関側の情報漏洩の非対称性を追及",
+            "contextDescription": "目的外使用禁止規定は請求人側の行為を処罰対象とする一方、捜査機関側の情報漏洩への対応が問われた。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              244,
+              245,
+              246,
+              247,
+              248
+            ]
+          },
+          "speechOrders": [
+            244,
+            245,
+            246,
+            247,
+            248
+          ],
+          "input_hash": "sha256:8720d3310f9e5e26380a5c3d7036897efb140fdd7a18d56cb05f919669fadb3a"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_27",
+          "thread_idx": 27,
+          "thread_info": {
+            "topic": "証拠開示の範囲をめぐる大臣との最終論戦",
+            "topicTag": "開示範囲",
+            "topicColor": "#6366f1",
+            "summary": "全面証拠開示か関連性限定かをめぐり法務大臣と最後まで対立",
+            "contextDescription": "再審請求審での証拠開示範囲について、関連性要件を課す政府案と全面開示を求める野党の立場が対立。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              249,
+              250,
+              251,
+              252,
+              253,
+              254,
+              255,
+              257
+            ]
+          },
+          "speechOrders": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            257
+          ],
+          "input_hash": "sha256:bcf708b341662d4929acf80e2727e3f5cf37e4803fb2b77d986337f0a05cb902"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_28",
+          "thread_idx": 28,
+          "thread_info": {
+            "topic": "外国人被疑者の通訳確保と刑事手続の課題",
+            "topicTag": "通訳確保",
+            "topicColor": "#6366f1",
+            "summary": "検察の通訳人確保状況と外国人被疑者の捜査における時間的制約を議論",
+            "contextDescription": "外国人被疑者の取調べでは通訳を介するため時間を要し、捜査・身柄拘束期間への影響が懸念される。",
+            "legislationName": null,
+            "speechOrders": [
+              258,
+              259,
+              260,
+              261,
+              262,
+              263,
+              264,
+              265,
+              266
+            ]
+          },
+          "speechOrders": [
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266
+          ],
+          "input_hash": "sha256:0bece6d63a54e7d30c40b44152efefbd96fdedecf8a0ebd0781cafe7460afaee"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_29",
+          "thread_idx": 29,
+          "thread_info": {
+            "topic": "刑訴法改正案に対する各会派の賛否討論",
+            "topicTag": "討論採決",
+            "topicColor": "#6366f1",
+            "summary": "各会派が政府原案・修正案への賛否を表明し法案の評価が分かれた",
+            "contextDescription": "刑事訴訟法改正案とその修正案について、各党が最終的な賛否の立場を表明する討論が行われた。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              268,
+              269,
+              270,
+              271,
+              272
+            ]
+          },
+          "speechOrders": [
+            268,
+            269,
+            270,
+            271,
+            272
+          ],
+          "input_hash": "sha256:5d681370eaa7c3bdfe6ee21bc07c9b84ec964d85d1c6b53c55b81722393da912"
+        },
+        {
+          "custom_id": "s_818bb9cc6b83_30",
+          "thread_idx": 30,
+          "thread_info": {
+            "topic": "刑訴法改正案に対する附帯決議",
+            "topicTag": "附帯決議",
+            "topicColor": "#6366f1",
+            "summary": "法案可決に伴い運用面での配慮事項を求める附帯決議が提出・可決",
+            "contextDescription": "法案成立後の運用について、政府・最高裁に格段の配慮を求める附帯決議が全会派共同で提出された。",
+            "legislationName": "刑事訴訟法の一部を改正する法律案",
+            "speechOrders": [
+              276,
+              279
+            ]
+          },
+          "speechOrders": [
+            276,
+            279
+          ],
+          "input_hash": "sha256:da0dc1792303a4b8c1ecf8c7949c52c60204a0386a60fba280f5da95b8b517ef"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_財政金融委員会_2026-07-16_第13号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_72c1f26bce2f_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "日本経済の現状認識と円安・成長戦略",
+            "topicTag": "経済情勢",
+            "topicColor": "#3b82f6",
+            "summary": "原油価格や物価動向を踏まえた日本経済の現状と、歴史的円安への対応策を議論",
+            "contextDescription": "原油価格変動や歴史的な円安水準を背景に、日本経済の現状と政府の成長戦略の方向性が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "input_hash": "sha256:4ad344701784134313ff2964b5353bc91296aeccd1bfca203f04297a1867dd88"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "スルガ銀行不正融資問題への金融庁対応（午前）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "スルガ銀行の不正融資問題で金融庁の業務改善指導と被害者救済の進捗を確認",
+            "contextDescription": "スルガ銀行の投資用不動産向け不正融資事件を巡り、金融庁が銀行を監督し被害者救済を進めている問題。",
+            "legislationName": null,
+            "speechOrders": [
+              10,
+              11,
+              12
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12
+          ],
+          "input_hash": "sha256:51b2dede12455c5f9c481fef6844e97c6a3676dd78701e472a6cba153c8ddd95"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "地域金融機関の役割と成長支援策",
+            "topicTag": "地域金融",
+            "topicColor": "#3b82f6",
+            "summary": "百億企業創出や事業承継を後押しする地域金融機関の資金供給・リスクマネー環境整備を議論",
+            "contextDescription": "人口減少下で地域経済を支える中小企業の成長支援や事業承継のため、地域金融機関の機能強化が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              13,
+              14,
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "input_hash": "sha256:77143019d45b68de8cc241a5c600f783e0e9452cad722c420b2e54fb447218ed"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "介護報酬改定と介護施設の防災機能",
+            "topicTag": "介護",
+            "topicColor": "#8b5cf6",
+            "summary": "介護職員の賃上げ措置と、災害時に地域を支える介護施設の防災・減災対策を議論",
+            "contextDescription": "物価高・人手不足に苦しむ介護現場の処遇改善と、災害時の要配慮者支援拠点としての介護施設の役割。",
+            "legislationName": null,
+            "speechOrders": [
+              17,
+              18,
+              19,
+              20
+            ]
+          },
+          "speechOrders": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "input_hash": "sha256:efb3c3638076f9db4d8db5c512114b292674283235b8efcc9af0f13b53bb44c7"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "スルガ銀行不正融資問題の被害者救済（柴議員質疑）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "調停未参加者を含む被害者救済の対象拡大や金融庁の監督責任の在り方を厳しく追及",
+            "contextDescription": "スルガ銀行の不正融資事件で、民事調停に参加していない被害者への支援や金融庁の監督権限行使が争点。",
+            "legislationName": null,
+            "speechOrders": [
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37
+            ]
+          },
+          "speechOrders": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "input_hash": "sha256:fba28fa6a0f724f94c1a135aefcacacb2e76285e9c0a0280e81a102f6f3a1d67"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "骨太の方針原案と財政・日銀共同宣言を巡る市場の反応",
+            "topicTag": "骨太方針",
+            "topicColor": "#3b82f6",
+            "summary": "骨太方針原案での財政健全化文言削除や日銀共同宣言への言及が市場に与えた影響を追及",
+            "contextDescription": "2026年骨太の方針原案が公表され、財政規律の後退懸念や日銀金融政策への言及が市場の混乱を招いた問題。",
+            "legislationName": null,
+            "speechOrders": [
+              38,
+              39,
+              40,
+              41,
+              43,
+              45
+            ]
+          },
+          "speechOrders": [
+            38,
+            39,
+            40,
+            41,
+            43,
+            45
+          ],
+          "input_hash": "sha256:5bbab9a2de4fc47547e80b6076adb67860f4cabb8f8809073ed1aec3552ffb95"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "三菱UFJ銀行の情報漏えい・不祥事対応",
+            "topicTag": "情報漏えい",
+            "topicColor": "#6366f1",
+            "summary": "三菱UFJ銀行の顧客情報流出事案への金融庁報告の有無と対応の是非を追及",
+            "contextDescription": "ハウスメーカー社員の個人情報が三菱UFJ銀行から流出したとされる事案を巡る金融庁の監督対応。",
+            "legislationName": null,
+            "speechOrders": [
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52
+            ]
+          },
+          "speechOrders": [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ],
+          "input_hash": "sha256:9e109ef17ea953a154c8ca84560409680be3be065e58d8b0c7fcbd691dae0410"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "国債NISA導入の提案",
+            "topicTag": "国債NISA",
+            "topicColor": "#3b82f6",
+            "summary": "インフレに負ける預金対策として個人向け国債のNISA対象化と物価連動国債の導入を提案",
+            "contextDescription": "物価上昇が続く中、個人向け国債をNISA対象に加え家計の資産形成を後押しする政策提案。",
+            "legislationName": null,
+            "speechOrders": [
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63
+            ]
+          },
+          "speechOrders": [
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "input_hash": "sha256:38b34d1ae2ea6834846c2d8d54877dc8ec4faa5019e4e2032d6e9827f9d7b8a2"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "スルガ銀行返済プランの妥当性と専用窓口対応（上田勇議員）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "生活困窮を招く返済プランへの指導強化と専用相談窓口の実効性を確認",
+            "contextDescription": "スルガ銀行不正融資問題で、返済プランが被害者の生活を圧迫しないよう金融庁の指導が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70
+            ]
+          },
+          "speechOrders": [
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70
+          ],
+          "input_hash": "sha256:2f57ed2176fe1885f31dbf1f3e5148c2585afebe8bf4e2c9d7818abf1ab72421"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "GPIF運用と政治的関与を巡る議論",
+            "topicTag": "GPIF",
+            "topicColor": "#8b5cf6",
+            "summary": "年金積立金運用への政策的関与の是非と成長投資への活用を巡る認識の相違",
+            "contextDescription": "年金積立金管理運用独立行政法人（GPIF）の運用方針に政府の政策判断が及ぶべきかが争点。",
+            "legislationName": null,
+            "speechOrders": [
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              80,
+              81
+            ]
+          },
+          "speechOrders": [
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            80,
+            81
+          ],
+          "input_hash": "sha256:6f21e5a64177ae3ad79a19301f9dfc4a1a5794822ffe3b8c49e400f486ceae2e"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "スルガ銀行問題と長期金利・骨太方針への懸念（片山大介議員）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "アパマン融資問題の長期化要因と、骨太方針を巡る市場とのコミュニケーション不足を指摘",
+            "contextDescription": "スルガ銀行不正融資問題の解決長期化と、骨太方針原案が市場に与えた影響への対応を検証。",
+            "legislationName": null,
+            "speechOrders": [
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92
+            ]
+          },
+          "speechOrders": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92
+          ],
+          "input_hash": "sha256:99b21d7a6b8b864e7aa49369390be015429555f4401ab6ae02f0325dc631daef"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "租税特別措置の見直し（日本版DOGE）",
+            "topicTag": "租特見直し",
+            "topicColor": "#f97316",
+            "summary": "各省庁の租税特別措置自己点検結果が不十分だとして抜本的な見直しを要求",
+            "contextDescription": "政府の行政改革の一環で租税特別措置や補助金を見直す「日本版DOGE」構想の実効性が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              93,
+              94,
+              95,
+              96,
+              97,
+              99
+            ]
+          },
+          "speechOrders": [
+            93,
+            94,
+            95,
+            96,
+            97,
+            99
+          ],
+          "input_hash": "sha256:003240a6e4429c5fae13c58caa6b1082af1717dcc639893bb4a66c2c7391a8a3"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "官民投資370兆円ロードマップと地方負担",
+            "topicTag": "官民投資",
+            "topicColor": "#3b82f6",
+            "summary": "成長戦略の官民投資額370兆円の内訳の不透明さと地方公共団体への負担を追及",
+            "contextDescription": "高市内閣の成長戦略で示された官民投資370兆円ロードマップの財源内訳や地方負担の在り方が争点。",
+            "legislationName": null,
+            "speechOrders": [
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107
+            ]
+          },
+          "speechOrders": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+          ],
+          "input_hash": "sha256:526192ee1b1c326e39ea15d6be73bdc7eacf7e1f4c692e521fa4ecd1316f0091"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "外為法とウォーターPPP運営権の審査対象化",
+            "topicTag": "外為法",
+            "topicColor": "#f97316",
+            "summary": "下水道民営化における運営権取得を外為法の対内直接投資審査対象に加えるべきと提起",
+            "contextDescription": "外国資本によるインフラ運営権取得が外為法の審査対象外である現状の是非が問われている。",
+            "legislationName": "外国為替及び外国貿易法",
+            "speechOrders": [
+              107,
+              108,
+              109
+            ]
+          },
+          "speechOrders": [
+            107,
+            108,
+            109
+          ],
+          "input_hash": "sha256:e0cdfee4a09e02240fa2daadf97bef42dc6e224f88e1c2db051591edc1ac96a3"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "日銀の金融政策運営と物価安定目標",
+            "topicTag": "日銀政策",
+            "topicColor": "#3b82f6",
+            "summary": "骨太方針原案を踏まえた日銀の金融政策運営スタンスと物価安定目標の位置付けを確認",
+            "contextDescription": "骨太方針にデフレ脱却関連の記述がある中、日銀の金融政策運営の独立性と物価安定目標の意義が議論に。",
+            "legislationName": null,
+            "speechOrders": [
+              109,
+              111,
+              112
+            ]
+          },
+          "speechOrders": [
+            109,
+            111,
+            112
+          ],
+          "input_hash": "sha256:fd5a39b1c5f8dc3632aaaa28fc4f35271ad720ef07667e87d4eafa9246975bcd"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "財政金融一体論と対米投資・財政投融資の活用",
+            "topicTag": "財政投融資",
+            "topicColor": "#3b82f6",
+            "summary": "財政と金融の分離の経緯、対米投資に伴うドル調達懸念、財政投融資の積極活用を議論",
+            "contextDescription": "旧大蔵省の財金分離の経緯や、対米関税合意に伴う巨額投資、財政投融資の役割拡大が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              120
+            ]
+          },
+          "speechOrders": [
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            120
+          ],
+          "input_hash": "sha256:3c9a1dd139fc5206929487a94d9a3db4b00b5e23909afd330f004dc9297d9ebc"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "スルガ銀行問題と金融庁の姿勢（小池議員）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "金融庁の答弁がスルガ銀行寄りだと批判し、被害者全体への対応強化を要求",
+            "contextDescription": "スルガ銀行不正融資問題で、金融庁の監督姿勢が銀行の主張に沿ったものになっていないかが問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128
+            ]
+          },
+          "speechOrders": [
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128
+          ],
+          "input_hash": "sha256:de70337a84b9910e8995cf9815b92b2235e1a7010072ddae9cb308c5b69d0b71"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "租特見直しの限界と国会の役割（小池議員）",
+            "topicTag": "租特見直し",
+            "topicColor": "#f97316",
+            "summary": "租税特別措置見直しが大規模減税に切り込めていないとし国会による審査の必要性を主張",
+            "contextDescription": "日本版DOGEによる租特見直しが期限到来分に限定され、研究開発減税等の大口優遇には及んでいない問題。",
+            "legislationName": null,
+            "speechOrders": [
+              130
+            ]
+          },
+          "speechOrders": [
+            130
+          ],
+          "input_hash": "sha256:6b5677aa1ac0c7f4628dbd09d11c1b32cb532646473a5a10e6ed19c0de4e44b6"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "給付付き税額控除と消費税減税の比較",
+            "topicTag": "税額控除",
+            "topicColor": "#3b82f6",
+            "summary": "給付付き税額控除案の対象範囲の狭さを指摘し消費税減税の方が効果的だと主張",
+            "contextDescription": "中低所得者支援として検討される給付付き税額控除制度の対象範囲や規模が、消費税減税と比較検討されている。",
+            "legislationName": null,
+            "speechOrders": [
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139,
+              141
+            ]
+          },
+          "speechOrders": [
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            141
+          ],
+          "input_hash": "sha256:6e6db81d14b6c31545169d12c106d4f4dff454cfd0ab56d3c54cb3320b585ece"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "スルガ銀行専用窓口の実効性（大島議員）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "専用相談窓口の対象や表示の分かりやすさを問い、金融行政の消費者保護姿勢を求める",
+            "contextDescription": "スルガ銀行不正融資問題で新設された相談窓口が、実際に利用者に分かりやすく機能しているかが焦点。",
+            "legislationName": null,
+            "speechOrders": [
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150
+            ]
+          },
+          "speechOrders": [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150
+          ],
+          "input_hash": "sha256:02a7f3cd12884f45799897e6df44a72bdab105f9fb9a3f4d1156d467283a2c39"
+        },
+        {
+          "custom_id": "s_72c1f26bce2f_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "スルガ銀行示談内容の妥当性と制裁金制度導入（ラサール議員）",
+            "topicTag": "スルガ銀行",
+            "topicColor": "#6366f1",
+            "summary": "示談成立物件の実態や債務免除の非課税扱い、欧米型制裁金制度の導入必要性を追及",
+            "contextDescription": "スルガ銀行不正融資問題で、示談の妥当性検証や再発防止のための欧米型課徴金制度導入が論点となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              151,
+              152,
+              153,
+              154,
+              155,
+              156,
+              157,
+              158,
+              159,
+              160,
+              161,
+              162,
+              163
+            ]
+          },
+          "speechOrders": [
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163
+          ],
+          "input_hash": "sha256:09cda4c5e11475390125cfc1a8f36ee6110676cab0c4b73a3973fe9a102d60f5"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_農林水産委員会_2026-07-16_第16号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "育成者権保護強化のため、存続期間延長の周知、輸出差止請求制度や保管行為への効力拡大の周知・体制整備、貸渡し保護等の説明徹底、優先審査の透明性確保、育成者権管理機関の支援等を求める決議。",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_031b4cfc80f8_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "クビアカツヤカミキリの被害拡大対策",
+            "topicTag": "害虫対策",
+            "topicColor": "#22c55e",
+            "summary": "外来害虫クビアカツヤカミキリの被害拡大を受け、関係省庁・自治体連携の対策本部設置を確認",
+            "contextDescription": "特定外来生物クビアカツヤカミキリが果樹等に被害を与え、複数都府県で発生拡大している問題。",
+            "legislationName": null,
+            "speechOrders": [
+              7,
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            7,
+            8,
+            9
+          ],
+          "input_hash": "sha256:a0109927393ba2011d3e54cc0bcc4e65762c000ef5cb66ff4595a70ceb50b404"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "農研機構・試験研究機関の施設老朽化と人材不足",
+            "topicTag": "研究環境",
+            "topicColor": "#3b82f6",
+            "summary": "農研機構や都道府県試験研究機関の施設老朽化・人材不足の深刻な実態と予算措置の必要性",
+            "contextDescription": "農業研究の中核機関である農研機構や地方試験研究機関の施設・機器の老朽化、研究人材の減少が進んでいる問題。",
+            "legislationName": null,
+            "speechOrders": [
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26,
+              27,
+              28,
+              61,
+              62,
+              63,
+              64,
+              65,
+              73,
+              74,
+              75,
+              76,
+              77,
+              90,
+              91,
+              92,
+              132,
+              133
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12,
+            13,
+            24,
+            25,
+            26,
+            27,
+            28,
+            61,
+            62,
+            63,
+            64,
+            65,
+            73,
+            74,
+            75,
+            76,
+            77,
+            90,
+            91,
+            92,
+            132,
+            133
+          ],
+          "input_hash": "sha256:26a2dc838301669850c93a1fe8a59bff9f746714fb483b7f03ff7fa1fc8b962f"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "気候変動等対応品種法案の重要品種育成支援策",
+            "topicTag": "重要品種",
+            "topicColor": "#22c55e",
+            "summary": "気候変動対応の重要品種育成に向けた国の支援体制と対象品目の範囲を議論",
+            "contextDescription": "高温耐性等の形質を持つ重要品種の育成・普及を促進する法案。農研機構の設備供用等の支援策を規定。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案",
+            "speechOrders": [
+              14,
+              15,
+              16,
+              17,
+              78,
+              79,
+              85,
+              89
+            ]
+          },
+          "speechOrders": [
+            14,
+            15,
+            16,
+            17,
+            78,
+            79,
+            85,
+            89
+          ],
+          "input_hash": "sha256:9552af33412be4f68b0dd58be8c52d557e6ed7d8542c4f838c0c04278e43af33"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "優良品種の海外流出防止対策の強化",
+            "topicTag": "海外流出",
+            "topicColor": "#6366f1",
+            "summary": "品種登録前流出という新課題への対応と流出防止策の実効性を検証",
+            "contextDescription": "シャインマスカット等、日本の優良品種が海外に流出し無断栽培される問題への対応策。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              18,
+              19
+            ]
+          },
+          "speechOrders": [
+            18,
+            19
+          ],
+          "input_hash": "sha256:0ce5dc8d48e512fa4b4917760d71c808ccc09d05d9f23f673b3f26134f4b6a2b"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "育成者権の存続期間延長の是非",
+            "topicTag": "権利延長",
+            "topicColor": "#6366f1",
+            "summary": "育成者権の存続期間を10年延長する改正の意義と、既存品種への遡及適用による影響を議論",
+            "contextDescription": "種苗法改正案で育成者権の存続期間を25年から35年（永続性植物30→40年）に延長する内容。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              20,
+              21,
+              117,
+              118,
+              144,
+              145,
+              146,
+              147,
+              148,
+              167,
+              168,
+              169
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            117,
+            118,
+            144,
+            145,
+            146,
+            147,
+            148,
+            167,
+            168,
+            169
+          ],
+          "input_hash": "sha256:1160a7efe6cee0fbd60fc531e2f0f7ff440a0159713d00c86f29e40ab46031ee"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "新品種開発における国・都道府県の役割と予算確保",
+            "topicTag": "公的支援",
+            "topicColor": "#3b82f6",
+            "summary": "主要農作物以外も含めた新品種開発で国・都道府県が果たすべき役割と財政措置を確認",
+            "contextDescription": "米・麦・大豆以外の果樹・野菜も含め、公的機関による品種開発を支える予算・人材確保の必要性。",
+            "legislationName": null,
+            "speechOrders": [
+              22,
+              23
+            ]
+          },
+          "speechOrders": [
+            22,
+            23
+          ],
+          "input_hash": "sha256:89b40dc8af0932d18e7bceb3342bacb7e6cb9876306bda37751bcdf0c7d4af91"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "種苗法改正による海外流出の実態把握と立法根拠",
+            "topicTag": "流出実態",
+            "topicColor": "#6366f1",
+            "summary": "海外流出の科学的証拠が乏しい中での立法根拠の妥当性と流出ルート特定の困難さを追及",
+            "contextDescription": "2021年種苗法改正の自家増殖規制の効果検証と、海外流出事例の把握状況に関する議論。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:a214669d14a12709a902d0e126eed28545fd6d98932dd6b99493ddcad3c114ad"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "登録品種名称使用義務違反への罰則強化の妥当性",
+            "topicTag": "罰則強化",
+            "topicColor": "#6366f1",
+            "summary": "名称使用義務違反の過料を10万円から20万円に倍増する根拠の合理性を問う",
+            "contextDescription": "登録品種の名称表示義務違反に対する過料を引き上げる改正内容。過去の執行実績との整合性が争点。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47
+            ]
+          },
+          "speechOrders": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "input_hash": "sha256:a3ad5f771d4ea4a97e8f427f7710201662172ac643d3995332f0287c30544f01"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "ゲノム編集食品の表示義務化を巡る議論",
+            "topicTag": "GM表示",
+            "topicColor": "#8b5cf6",
+            "summary": "ゲノム編集食品の表示義務化について、消費者の選択権と科学的検証困難性の間で対立",
+            "contextDescription": "ゲノム編集技術応用食品は日本で表示義務がなく、消費者の選択権確保との兼ね合いが問題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          "speechOrders": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53
+          ],
+          "input_hash": "sha256:17336d7e6ac64dd88516374d257fe6536db9a6a5421bb810e461c03791eab22a"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "重要品種の広域普及要件と地域ブランド品種の両立",
+            "topicTag": "広域普及",
+            "topicColor": "#22c55e",
+            "summary": "重要品種認定の広域普及要件と地域特化型ブランド品種育成のバランスをどう取るか",
+            "contextDescription": "重要品種は二都道府県以上への広域普及が条件だが、地域限定のブランド品種育成との整合性が課題。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案",
+            "speechOrders": [
+              54,
+              55,
+              56,
+              154,
+              155,
+              156
+            ]
+          },
+          "speechOrders": [
+            54,
+            55,
+            56,
+            154,
+            155,
+            156
+          ],
+          "input_hash": "sha256:6b5a1de513d65ed7fa1a6d0ed796021fda0041586e3058daa71924a2172b4831"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "知的財産サイクルと新品種出願件数の減少",
+            "topicTag": "知財活用",
+            "topicColor": "#3b82f6",
+            "summary": "知財サイクル確立の重要性と、都道府県における新品種出願件数が3分の1に激減した実態",
+            "contextDescription": "公的機関の知財活用による研究資金循環（知的創造サイクル）と、育種コスト上昇・人材不足による出願減少の問題。",
+            "legislationName": null,
+            "speechOrders": [
+              57,
+              58,
+              59,
+              60
+            ]
+          },
+          "speechOrders": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "input_hash": "sha256:7cab712afb165b96d0ede6faf2df7b5fd31c99e9cbf3e4986c766041b8a5a006"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "主要農作物種子確保法案の意義と対象範囲",
+            "topicTag": "種子確保法",
+            "topicColor": "#22c55e",
+            "summary": "米麦大豆に限定した公的品種育成促進の議員立法の必要性と民間開発の限界を議論",
+            "contextDescription": "議員立法により、公的試験研究機関による米・麦・大豆の品種育成を財政面で支援する法案。",
+            "legislationName": "主要農作物の優良な品種を確保するための公的品種育成の促進等に関する法律案",
+            "speechOrders": [
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72
+            ]
+          },
+          "speechOrders": [
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72
+          ],
+          "input_hash": "sha256:2d2bc4a3ff3f77da85e5121df67215e334c1f94fb6a4be43972d31a177971d3f"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "産官学連携による品種開発と農業競争力強化支援法の検証",
+            "topicTag": "産官学",
+            "topicColor": "#3b82f6",
+            "summary": "民間活力導入を目指した農業競争力強化支援法の実績が乏しい現状と公的機関の役割を再検討",
+            "contextDescription": "2017年施行の農業競争力強化支援法は民間の種苗開発促進を目指したが、実績が伸びていない状況。",
+            "legislationName": "農業競争力強化支援法",
+            "speechOrders": [
+              80,
+              81,
+              82,
+              83,
+              84,
+              86,
+              87,
+              88
+            ]
+          },
+          "speechOrders": [
+            80,
+            81,
+            82,
+            83,
+            84,
+            86,
+            87,
+            88
+          ],
+          "input_hash": "sha256:0862e9c71be640a735813b82de012cb652efea738c3a0091a6ea379c6a292593"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "重要品種育成事業における外国資本・知財流出リスク管理",
+            "topicTag": "知財管理",
+            "topicColor": "#6366f1",
+            "summary": "重要品種育成計画への外国企業参入や情報管理体制、育成者権管理機関の早期設立を議論",
+            "contextDescription": "重要品種育成事業に参加する企業の国籍・資本構成の確認や、知的財産の流出防止体制構築が課題。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案",
+            "speechOrders": [
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104
+            ]
+          },
+          "speechOrders": [
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104
+          ],
+          "input_hash": "sha256:db1738755ac8fa57a5b1fef3596e5f1945f20de94dcbe96323a272f3149fd45e"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "気候変動等対応品種法案と種苗法改正の現場実装",
+            "topicTag": "現場実装",
+            "topicColor": "#22c55e",
+            "summary": "採種・養蜂等の現場で制度が実際に機能するための課題を実務目線で確認",
+            "contextDescription": "両法案の制度が現場で実際に活用されるための実務的な論点を、専門家・現場の声を踏まえて検証。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案",
+            "speechOrders": [
+              105,
+              106
+            ]
+          },
+          "speechOrders": [
+            105,
+            106
+          ],
+          "input_hash": "sha256:1a7694aa6c176e2c78bb7e7f52bb4320d019d7777f38699bae853ddecf1ae3f3"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "花粉交配用蜜蜂不足と養蜂支援",
+            "topicTag": "蜜蜂対策",
+            "topicColor": "#22c55e",
+            "summary": "花粉交配用蜜蜂の不足が農業生産に及ぼす影響と、蜜源植物・農薬対策による支援強化",
+            "contextDescription": "施設園芸・果樹・種子生産で不可欠な花粉交配用蜜蜂が不足している問題と、その環境要因への対応。",
+            "legislationName": null,
+            "speechOrders": [
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115
+            ]
+          },
+          "speechOrders": [
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115
+          ],
+          "input_hash": "sha256:4020caec73e96845c524d1b06a3f2a8749a0273f17dd89adb74756e81ac246ff"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "海外持ち出し制限の効果検証と輸出目的保管への育成者権拡張",
+            "topicTag": "流出規制",
+            "topicColor": "#6366f1",
+            "summary": "過去の海外持ち出し制限の効果検証、輸出目的保管への育成者権拡張の実務運用を確認",
+            "contextDescription": "2020年改正の海外持ち出し制限に続き、今回は輸出目的での保管段階にも育成者権の効力を及ぼす改正。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              116,
+              119,
+              120,
+              121,
+              122,
+              123,
+              125,
+              126
+            ]
+          },
+          "speechOrders": [
+            116,
+            119,
+            120,
+            121,
+            122,
+            123,
+            125,
+            126
+          ],
+          "input_hash": "sha256:5eedaf4fe5dd54af98b657e4f2430cd2b4b95f103678a6c41eb183d21e3b918d"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "議員立法と閣法の関係、農研機構への財政支援の枠組み",
+            "topicTag": "法案関係",
+            "topicColor": "#3b82f6",
+            "summary": "議員立法による対象拡大が閣法の財源を圧迫しないか、独法運営費交付金の在り方を議論",
+            "contextDescription": "政府提出の重要品種法案と、議員立法の主要農作物種子確保法案の関係性、財政支援の重複・整合性の検証。",
+            "legislationName": "主要農作物の優良な品種を確保するための公的品種育成の促進等に関する法律案",
+            "speechOrders": [
+              129,
+              130,
+              131,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139
+            ]
+          },
+          "speechOrders": [
+            129,
+            130,
+            131,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139
+          ],
+          "input_hash": "sha256:40fbca195b04117e299bd418a6ab6ff164a28b89336b04713aeaf7f559d0107b"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "種苗法改正による農家の自家増殖許諾負担と好循環構築",
+            "topicTag": "許諾負担",
+            "topicColor": "#6366f1",
+            "summary": "自家増殖許諾手続きの負担軽減とライセンス収益を新品種開発に還元する好循環の構築",
+            "contextDescription": "2020年改正で導入された自家増殖許諾制度の農家負担を軽減しつつ、知財収益循環を目指す取組。",
+            "legislationName": "種苗法の一部を改正する法律案",
+            "speechOrders": [
+              140,
+              141,
+              142,
+              143
+            ]
+          },
+          "speechOrders": [
+            140,
+            141,
+            142,
+            143
+          ],
+          "input_hash": "sha256:5a6cda4d8cd6fe3de163cbe21295677d55da2aa60c2519152e2ae83f69d8bd34"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "ゲノム編集食品表示義務化を巡る消費者庁の見解",
+            "topicTag": "GM表示2",
+            "topicColor": "#8b5cf6",
+            "summary": "遺伝子組換え食品と異なりゲノム編集食品は科学的検証困難とし表示義務化を否定",
+            "contextDescription": "ゲノム編集技術応用食品の表示義務化について、判別技術上の制約から消費者庁が慎重姿勢を示す議論。",
+            "legislationName": null,
+            "speechOrders": [
+              159,
+              160
+            ]
+          },
+          "speechOrders": [
+            159,
+            160
+          ],
+          "input_hash": "sha256:8d864d4a06001c88c376269bb8cda462d11536a0f9bc887f492d6ce78e0c8f50"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "みどりの食料システム法の環境直接支払交付金の運用",
+            "topicTag": "環境支払",
+            "topicColor": "#22c55e",
+            "summary": "環境保全型農業への直接支払を5年で打ち切る方針の実態との乖離を批判",
+            "contextDescription": "みどりの食料システム法に基づく認定農業者への環境直接支払交付金の支援期間・要件を巡る議論。",
+            "legislationName": "みどりの食料システム法",
+            "speechOrders": [
+              161,
+              162,
+              163,
+              164,
+              165
+            ]
+          },
+          "speechOrders": [
+            161,
+            162,
+            163,
+            164,
+            165
+          ],
+          "input_hash": "sha256:e150b4e799a95ce5e220ffa9fbde787fa7b594c7ea634ff7109669b07e5ad44a"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "種苗法改正・重要品種法案が招く種子の企業寡占リスク",
+            "topicTag": "種子寡占",
+            "topicColor": "#6366f1",
+            "summary": "公的資源を活用した民間参入促進が種子の高価格化・企業寡占を招く懸念を追及",
+            "contextDescription": "種子法廃止以降の流れの中、公的試験研究機関の資源が民間企業（外資含む）に活用される懸念と、米国での種子寡占・価格高騰の先例。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案",
+            "speechOrders": [
+              166,
+              170,
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              181,
+              182,
+              183,
+              184,
+              185
+            ]
+          },
+          "speechOrders": [
+            166,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185
+          ],
+          "input_hash": "sha256:7fc0ee23ab9576424cc957bf44f1b3bc290f76768c50ed9ebd753c80f29275bd"
+        },
+        {
+          "custom_id": "s_031b4cfc80f8_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "両法案に対する討論・採決",
+            "topicTag": "討論採決",
+            "topicColor": "#6b7280",
+            "summary": "重要品種法案・種苗法改正案に対し各会派が賛否を表明し附帯決議を採択",
+            "contextDescription": "重要品種の育成及びその種苗の生産の振興に関する法律案と種苗法改正案の採決に向けた各党討論。",
+            "legislationName": "重要品種の育成及びその種苗の生産の振興に関する法律案／種苗法の一部を改正する法律案",
+            "speechOrders": [
+              188,
+              189,
+              192,
+              195,
+              198,
+              201
+            ]
+          },
+          "speechOrders": [
+            188,
+            189,
+            192,
+            195,
+            198,
+            201
+          ],
+          "input_hash": "sha256:b76ba5da3cc9d52bee4cb77abc7e1af90a579c524c3fb5c0ad2372a6d7e7d965"
+        }
+      ]
+    }
+  ]
+}
