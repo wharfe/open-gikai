@@ -1,0 +1,47 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-20",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_014kz9zaAJ9SGgvufU5rMXKQ",
+      "submitted_at": "2026-08-23T01:32:45Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-08-20",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_11e12ad9ec81_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "バーナム英国首相との電話会談",
+            "topicTag": "日英会談",
+            "topicColor": "#06b6d4",
+            "summary": "高市首相が就任したばかりの英国バーナム首相と初電話会談、日英関係や中東情勢を協議",
+            "contextDescription": "新たに就任した英国首相と日本の首相が電話会談を行い、両国関係の強化や国際情勢について意見交換した。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:6c70753efb90a2c6ea8d627e7a6412d19e44b00258e4dcfa5cb86455c70f6275"
+        }
+      ]
+    }
+  ]
+}
