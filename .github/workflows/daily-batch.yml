@@ -399,7 +399,45 @@ jobs:
             exit 1
           fi
           if [ "$AHEAD" -gt 0 ]; then
-            git push
+            # Push through a rebase-and-retry, not once. `AHEAD` is measured
+            # against the `origin/<branch>` THIS checkout fetched, so it stays
+            # true while the remote moves on: any other push during the run — a
+            # human, a second dispatch that was waiting on the concurrency
+            # group — makes this push non-fast-forward, and under `bash -e` the
+            # step then dies with the day's commit still only local. Not
+            # hypothetical: on 2026-08-23 a hand push during a recovery run cost
+            # 236 assembled threads their commit (#82). Note the asymmetry it
+            # fixes — summarize.py's early sidecar push already treats losing
+            # this race as a warning and leans on this step; this step was the
+            # one place that treated it as fatal.
+            #
+            # Rebase, never merge or force. What this run wrote is its own
+            # generated output, so replaying it on top of whatever landed is
+            # exactly right, while `--force-with-lease` would delete the other
+            # push. `--autostash` because the commit stages specific pathspecs
+            # and #75 deliberately leaves an unreadable file unstaged — a dirty
+            # tracked file would otherwise make the rebase refuse to start.
+            #
+            # A rebase that cannot apply is left aborted and the step fails
+            # loudly: a conflict here means something hand-edited the same
+            # generated file, which is a human decision and not a retry.
+            PUSHED=no
+            for attempt in 1 2 3; do
+              if git push; then
+                PUSHED=yes
+                break
+              fi
+              echo "::warning::push rejected (attempt ${attempt}) — rebasing onto origin/${GITHUB_REF_NAME} and retrying"
+              if ! git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+                git rebase --abort || true
+                echo "::error::cannot rebase this run's data commit onto origin/${GITHUB_REF_NAME}: it conflicts with a push that landed during the run. The commit is still LOCAL and dies with the runner — nothing this run produced reached the site. Resolve by hand."
+                exit 1
+              fi
+            done
+            if [ "$PUSHED" != yes ]; then
+              echo "::error::still could not push after 3 rebase attempts — something is pushing to ${GITHUB_REF_NAME} continuously. This run's data commit is LOCAL and dies with the runner."
+              exit 1
+            fi
           else
             echo "Nothing to push"
           fi
