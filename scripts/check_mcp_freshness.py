@@ -310,15 +310,22 @@ def main(argv=None):
     # then assert a present state nothing established. What is established is
     # that it answered at least once and disagreed.
     shown = _differences(expected, last_answer)
-    trailing = "" if last_error is None else (
-        f" Attempts after that answer did not get through ({last_error}), so "
-        f"the CURRENT state is unconfirmed — what is established is the "
-        f"disagreement, not that it is still true.")
+    # The tail is branched, not appended. Appending contradicted the sentence
+    # before it inside one annotation: "the CURRENT state is unconfirmed"
+    # followed by a present-tense "the endpoint answers correctly and serves
+    # data that is not ours" tells the reader two different things about now.
+    if last_error is None:
+        tail = (f" If the deploy step reported success, this is the failure #85 "
+                f"was about: the endpoint answers correctly and serves data that "
+                f"is not ours.")
+    else:
+        tail = (f" Attempts after that answer did not get through "
+                f"({last_error}), so the CURRENT state is unconfirmed — what is "
+                f"established is that it answered once and disagreed, not that "
+                f"it still does.")
     print(f"::error::the MCP server answered and disagreed with the committed "
           f"data: {len(shown)} date(s) differ, e.g. {'; '.join(shown[:5])}."
-          f"{trailing} If the deploy step reported success, this is the failure "
-          f"#85 was about: the endpoint answers correctly and serves data that "
-          f"is not ours. Check the Vercel deployment for open-gikai-mcp.")
+          f"{tail} Check the Vercel deployment for open-gikai-mcp.")
     return 1
 
 

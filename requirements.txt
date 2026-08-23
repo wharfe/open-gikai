@@ -4,10 +4,12 @@
 # `pip install <bare names>`, so every morning re-resolved the latest release of
 # everything — production changed without a commit.
 #
-# Read the reach literally: these are the DIRECT dependencies. The resolved
-# environment is 29 packages; 9 are named here and in requirements-dev.txt, so
-# 20 transitive ones (httpcore, pydantic, certifi, soupsieve, jiter …) still
-# re-resolve on every run. So "production cannot change without a commit" is NOT
+# Read the reach literally: these are the DIRECT dependencies. Observed
+# 2026-08-23 on Python 3.12 (the version CI uses), the resolved environment was
+# 29 packages of which 9 are named here and in requirements-dev.txt — so 20
+# transitive ones (httpcore, pydantic, certifi, soupsieve, jiter …) still
+# re-resolve on every run. Those counts are a measurement, not a constant: they
+# move on their own, because nothing pins them. That is the point. So "production cannot change without a commit" is NOT
 # true yet — a breaking release of a transitive dependency reaches the morning
 # exactly the way #80 did. What this file removes is the specific class that bit
 # us: a library this repo imports itself, changing major under us. #93 tracks

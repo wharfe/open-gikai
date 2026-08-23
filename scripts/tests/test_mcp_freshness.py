@@ -590,3 +590,90 @@ def test_the_deploy_job_allows_for_the_build_queue():
         f"timeout-minutes is {job['timeout-minutes']}, but the MCP build queues "
         f"behind an 10-11 minute frontend build every morning (observed: 18m34s "
         f"end to end)")
+
+
+def test_a_blip_before_a_mismatch_is_not_reported_as_doubt_about_it(
+        tmp_path, capsys, monkeypatch):
+    """The reason `last_error` is cleared on a successful answer. Without it, an
+    unreachable attempt 1 followed by a real mismatch on attempt 2 gets reported
+    as "the current state is unconfirmed" — hedging a disagreement that WAS the
+    last thing observed. That is the same unestablished claim as the case above,
+    pointing the other way."""
+    answers = [freshness.Unanswered("blip"), {"2026-08-19": 1}]
+
+    def _next(*a, **k):
+        got = answers.pop(0)
+        if isinstance(got, Exception):
+            raise got
+        return got
+
+    monkeypatch.setattr(freshness, "served_index", _next)
+    rc = freshness.main(["--threads-dir", _threads(tmp_path, "2026-08-20"),
+                         "--attempts", "2", "--sleep", "0"])
+    out = capsys.readouterr().out
+    assert rc == 1
+    assert "did not get through" not in out, out
+    assert "blip" not in out.split("::error::")[1], (
+        "a stale error leaked into the final annotation")
+
+
+def test_a_blip_before_a_match_still_exits_zero(tmp_path, capsys, monkeypatch):
+    """An unreachable first attempt must not survive as doubt once the server
+    answers correctly — this is the path a real alias swap takes."""
+    answers = [freshness.Unanswered("blip"), {"2026-08-20": 1}]
+
+    def _next(*a, **k):
+        got = answers.pop(0)
+        if isinstance(got, Exception):
+            raise got
+        return got
+
+    monkeypatch.setattr(freshness, "served_index", _next)
+    assert freshness.main(["--threads-dir", _threads(tmp_path, "2026-08-20"),
+                           "--attempts", "3", "--sleep", "0"]) == 0
+    assert "serving the committed data" in capsys.readouterr().out
+
+
+def test_the_production_deploy_is_gated_by_a_credential_and_not_only_by_if():
+    """The second finding on the same hole, and the one that matters:
+    `workflow_dispatch` runs the workflow definition from the SELECTED ref, so an
+    `if:` added here exists only on refs that already have it. Any branch
+    predating it still carries the old condition. The gate cannot gate itself.
+
+    So the job must name an environment — `VERCEL_TOKEN` lives there, gated to
+    the default branch, and not as a repository secret. A branch that names the
+    environment is refused by GitHub; one that does not gets an empty token and
+    stops at the guard. Asserting the `if:` alone would pass on the arrangement
+    that is provably bypassable.
+    """
+    _, job = _deploy_job()
+    assert job.get("environment") == "mcp-production", (
+        "the deploy job must run in the branch-gated environment that holds "
+        "VERCEL_TOKEN — an `if:` on the workflow cannot bind other refs")
+
+
+def test_a_mismatch_then_silence_does_not_assert_the_present_tense(
+        tmp_path, capsys, monkeypatch):
+    """The other ordering, and the one the branched tail exists for. A mismatch
+    on attempt 1 followed by unreachable attempts must not end with "the
+    endpoint answers correctly and serves data that is not ours" — that is a
+    claim about now, inside the same annotation that just said now is
+    unconfirmed. Appending both was the bug; this pins the branch.
+    """
+    answers = [{"2026-08-19": 1}, freshness.Unanswered("gone"),
+               freshness.Unanswered("gone")]
+
+    def _next(*a, **k):
+        got = answers.pop(0)
+        if isinstance(got, Exception):
+            raise got
+        return got
+
+    monkeypatch.setattr(freshness, "served_index", _next)
+    rc = freshness.main(["--threads-dir", _threads(tmp_path, "2026-08-20"),
+                         "--attempts", "3", "--sleep", "0"])
+    error = capsys.readouterr().out.split("::error::")[1]
+    assert rc == 1
+    assert "CURRENT state is unconfirmed" in error, error
+    assert "answers correctly and serves data that is not ours" not in error, (
+        "the annotation asserts a present state it did not establish")

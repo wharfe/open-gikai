@@ -68,8 +68,8 @@ jobs:
 
       # The DIRECT versions this job runs on are pinned in requirements.txt, and
       # that file's header says why — and is honest about what is still loose:
-      # 20 of the 29 resolved packages are transitive and still re-resolve every
-      # run (#93). The short version: this step used to `pip install <bare
+      # 20 of the 29 packages resolved on 2026-08-23 were transitive and still
+      # re-resolve every run (#93). The short version: this step used to `pip install <bare
       # names>`, so each morning re-resolved the latest release of everything,
       # including the ones this repo imports directly. #80.
       #
@@ -758,14 +758,30 @@ jobs:
   deploy-mcp:
     name: Deploy MCP server
     needs: fetch-and-summarize
-    # Two conditions, and the branch one is not tidiness. `workflow_dispatch`
-    # lets anyone pick a ref, this job checks THAT ref out, and it deploys with
-    # `--prod`. So a dispatch from a feature branch would put that branch's data
-    # and code on the production MCP server — and go GREEN, because the freshness
-    # check compares the server against the same checkout it just deployed. The
-    # check cannot catch this: both sides agree. It is the "an incorrect
-    # production deploy is green" shape, arrived at from the one direction
-    # nothing else here guards.
+    # The credential is what enforces this, NOT the condition below. That was
+    # the second finding on the same hole and it is the important one:
+    # `workflow_dispatch` runs the workflow definition from the SELECTED ref, so
+    # an `if:` added here only exists on the refs that already have it. Any
+    # branch predating this commit still carries the old `if: !cancelled()` and
+    # would deploy to production — the gate cannot gate itself.
+    #
+    # So `VERCEL_TOKEN` lives in the `mcp-production` environment, whose
+    # deployment-branch policy allows `main` only, and NOT as a repository
+    # secret. That boundary holds for workflow versions this commit will never
+    # see: a job on another branch that names the environment is refused by
+    # GitHub, and an old version that does not name it resolves
+    # `secrets.VERCEL_TOKEN` to empty and stops at the guard below. Neither path
+    # deploys. Delete the environment, or re-add the token as a repository
+    # secret, and the hole is open again — the workflow file cannot tell.
+    #
+    # The condition is still worth having as the readable statement of intent,
+    # and it is what makes a same-branch mistake fail early rather than at the
+    # token check. What it is NOT is the enforcement.
+    #
+    # Why any of this matters: a dispatch from a feature branch would put that
+    # branch's data and code on the production MCP server and go GREEN, because
+    # the freshness check compares the server against the same checkout it just
+    # deployed. Both sides agree; the check structurally cannot see it.
     #
     # Not `success()` for the other half: the main job fails on its LAST step for
     # a systemic-summary date, long after it has pushed. Refusing to deploy then
@@ -793,6 +809,8 @@ jobs:
     # one job, and nothing here writes to the repo.
     permissions:
       contents: read
+    # Where VERCEL_TOKEN actually lives. See the comment above the `if:`.
+    environment: mcp-production
     steps:
       - uses: actions/checkout@v7
         with:

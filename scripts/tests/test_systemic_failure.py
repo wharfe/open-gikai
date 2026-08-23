@@ -2501,11 +2501,33 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
     # not on this list, or one inside a shell script the workflow calls, is not
     # seen. What keeps that from being silent is the whole-file check below —
     # a workflow with no readable install at all cannot mention the package.
-    INSTALLER = re.compile(
+    # Two contracts, because these commands are not the same kind of thing.
+    #
+    # ADD-style resolves a NEW version at run time — the pre-#80 state whatever
+    # file it writes afterwards — so it is forbidden outright. PIP-style must
+    # name a requirements file. LOCK-style builds from a lock file and never
+    # takes `-r`, so demanding one would REJECT a correctly pinned install; the
+    # previous version did exactly that, which would have blocked #93 the moment
+    # it landed. Those are allowed, on the condition that the lock they build
+    # from is actually tracked in the repo.
+    #
+    # The residual, stated rather than implied: an installer on none of these
+    # lists, or one inside a shell script the workflow calls, is not seen. The
+    # whole-file check further down only catches that when the workflow has NO
+    # readable installer at all — with one present, an unknown one gets through.
+    # That is a real hole, and the honest place for it is this comment.
+    ADD_STYLE = re.compile(r"\b(?:uv|poetry|pdm|rye)\s+add\b")
+    PIP_STYLE = re.compile(
         r"\b(?:pip3?\s+install|python3?\s+-m\s+pip\s+install"
-        r"|uv\s+(?:pip\s+install|add|sync)|poetry\s+(?:add|install)"
-        r"|pipenv\s+install|pdm\s+(?:add|install)"
-        r"|(?:conda|mamba)\s+install|easy_install)\b")
+        r"|uv\s+pip\s+install|easy_install)\b")
+    LOCK_STYLE = {
+        re.compile(r"\buv\s+sync\b"): "uv.lock",
+        re.compile(r"\bpoetry\s+install\b"): "poetry.lock",
+        re.compile(r"\bpipenv\s+(?:install|sync)\b"): "Pipfile.lock",
+        re.compile(r"\bpdm\s+(?:install|sync)\b"): "pdm.lock",
+        re.compile(r"\brye\s+sync\b"): "requirements.lock",
+        re.compile(r"\b(?:conda|mamba)\s+install\b"): None,
+    }
 
     def _admits_nothing_from(spec, boundary):
         """Does `spec` exclude every release at or above `boundary`?
@@ -2606,22 +2628,40 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
                 installs.extend(_pip_installs(str(step.get("run", ""))))
         for cmd in installs:
             _assert_installs_only_from_our_requirements(rel, cmd, ours)
-        # Per LINE, keyed off the installer VERB rather than off the package
-        # name. Keying off the name looked stricter and was wrong in both
-        # directions: it tripped on the failure-issue body, which says
-        # "Anthropic credit exhaustion" about the company, and it would still
-        # have missed `poetry add requests`. Every recognised installer has to
-        # go through a requirements file, whatever it is installing.
+        # Per shell SEGMENT, not per line. Skipping a line whose first token was
+        # `echo`/`printf` was a verified fail-open: `echo preparing && poetry
+        # add anthropic` and `printf x; pip install anthropic` both passed.
+        # Split on `&&`, `||` and `;` so each command answers for itself.
+        #
+        # Keyed off the installer VERB, not the package name. Keying off the
+        # name looked stricter and was wrong in both directions: it tripped on
+        # the failure-issue body, which says "Anthropic credit exhaustion" about
+        # the company, and it would still have missed `poetry add requests`.
+        tracked = {q.name for q in REPO_ROOT.iterdir()}
         for raw in text.splitlines():
-            probe = raw.split("#", 1)[0].strip()
-            if not probe or probe.split()[0] in ("echo", "printf", ":"):
-                continue
-            if not INSTALLER.search(probe):
-                continue
-            assert {"-r", "--requirement"} & set(probe.split()), (
-                f"{rel} installs Python packages without a requirements file "
-                f"(`{probe}`) — a name on an install line is a version nothing "
-                f"pins, which is the pre-#80 state this fence exists to keep out")
+            for segment in re.split(r"&&|\|\||;", raw.split("#", 1)[0]):
+                probe = segment.strip()
+                if not probe:
+                    continue
+                assert not ADD_STYLE.search(probe), (
+                    f"{rel} resolves a new version at run time (`{probe}`) — "
+                    f"that is the pre-#80 state whatever file it writes after")
+                if PIP_STYLE.search(probe):
+                    assert {"-r", "--requirement"} & set(probe.split()), (
+                        f"{rel} installs Python packages without a requirements "
+                        f"file (`{probe}`) — a name on an install line is a "
+                        f"version nothing pins, the pre-#80 state")
+                for pattern, lock in LOCK_STYLE.items():
+                    if not pattern.search(probe):
+                        continue
+                    assert lock is not None, (
+                        f"{rel} installs with a resolver this fence cannot pin "
+                        f"(`{probe}`) — conda/mamba resolve at run time unless "
+                        f"an explicit lock is used; make it readable here first")
+                    assert lock in tracked, (
+                        f"{rel} builds the environment from {lock} (`{probe}`) "
+                        f"but that file is not in the repo — nothing pins what "
+                        f"it installs")
 
         # The coarse net, for a workflow this sweep cannot read at all: it may
         # not so much as name the package. Kept as well as the per-line rule
