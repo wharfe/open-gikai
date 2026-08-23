@@ -66,22 +66,15 @@ jobs:
           node-version: 22
           cache: npm
 
-      # anthropic is PINNED BELOW 1.0 on purpose, and unpinning it stops the
-      # morning. 1.0.0 moved the HTTP layer from `httpx` to its fork `httpx2`,
-      # so `httpx` is no longer installed as a dependency -- and
-      # `summarizer.sync_call_kwargs` imports it directly to build the
-      # `httpx.Timeout` that defuses the SDK's non-streaming timeout guard.
-      # With an unpinned install, the 2026-08-20 release turned every meeting
-      # into `Failed to prepare ...: No module named 'httpx'`. The alarm did
-      # work -- all three runs went red on exit 3, as the contract says they
-      # should -- but each still committed as `+0 threads`, which is what a
-      # quiet Diet day looks like, so three of them passed before anyone read
-      # the annotation. Do not read this as "exit 3 is too quiet": it is the
-      # loudest signal this pipeline has. #80 tracks the real 1.x migration;
-      # until it lands, the `<1` CEILING here is the whole defence (`>=0.72`
-      # is only the floor the code was written against).
+      # Every version this job runs on is pinned in requirements.txt, and that
+      # file's header says why. The short version: this step used to
+      # `pip install <bare names>`, so each morning re-resolved the latest
+      # release of everything and production changed without a commit. #80.
+      #
+      # Do not add a package to this line. A name here is a version nothing
+      # pins, which is the whole failure.
       - name: Install Python dependencies
-        run: pip install requests 'anthropic>=0.72,<1' python-dotenv pymupdf beautifulsoup4
+        run: pip install -r requirements.txt
 
       - name: Install Node dependencies
         run: npm ci

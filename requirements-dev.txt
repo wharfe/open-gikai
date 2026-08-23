@@ -1,0 +1,21 @@
+# Test dependencies. Installed by ci.yml, and by a human following CLAUDE.md.
+#
+# `-r requirements.txt` first, deliberately: it makes the test environment a
+# SUPERSET of the pipeline's, so CI cannot green-light a dependency set the
+# morning run is unable to execute. That was the actual shape of #80 — CI and
+# daily-batch each resolved `anthropic` independently, so there was never a
+# moment where one could have caught what the other was about to install. It
+# also means every package has exactly one declared version, which two hand-kept
+# lists could not promise.
+-r requirements.txt
+
+# pyyaml is not optional. Several tests parse daily-batch.yml to fence the
+# summarize.py<->workflow contract, and most guard themselves with
+# `importorskip` — so without it they SKIP, which is a fail-open guard in the
+# one place the regression would land.
+pyyaml==6.0.3
+
+# `packaging` arrives with pytest, but `test_systemic_failure.py` imports it
+# directly to reason about version specifiers — same rule as httpx above.
+packaging==26.3
+pytest==9.1.1

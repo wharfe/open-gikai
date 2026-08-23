@@ -1,0 +1,23 @@
+# Python dependencies for the data pipeline (`scripts/`).
+#
+# Pinned EXACTLY, and that is the point of the file. Both workflows used to
+# `pip install <bare names>`, so every morning re-resolved the latest release of
+# everything — production changed without a commit. On 2026-08-20 `anthropic`
+# 1.0.0 did exactly that: it moved the HTTP layer to the `httpx2` fork, `httpx`
+# stopped being installed, and `summarizer.sync_call_kwargs` (which imports
+# `httpx` directly) took every meeting down for three mornings. See #80.
+#
+# The versions here are not chosen, they are OBSERVED: each one is what the last
+# green run of daily-batch.yml / ci.yml actually installed, so adopting this file
+# changed nothing about what runs. Bump them in a commit, with the test suite as
+# the evidence — that commit is the thing whose absence caused the outage.
+#
+# `httpx` is listed even though `anthropic` 0.x installs it anyway (#81): a
+# library we `import` ourselves is ours to declare. Leaving it implicit is what
+# let someone else's dependency change break our import.
+anthropic==0.125.0
+beautifulsoup4==4.15.0
+httpx==0.28.1
+pymupdf==1.28.2
+python-dotenv==1.2.3
+requests==2.34.2
