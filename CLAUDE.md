@@ -445,12 +445,29 @@ Three things about it are load-bearing:
   dates and a quiet Diet day adds none, and a newest-date check passes on all of
   them. Deploying is not the same as having deployed.
 
-**It needs a `VERCEL_TOKEN` repository secret**, scoped to the *team* that owns
-`open-gikai-mcp` — a personal-scope token cannot see a team project and the CLI
-reports that as `Error: Project not found`, quoting ids that are perfectly
-correct. A missing or unscoped token **fails the job red** rather than skipping:
-the day's data is already pushed by then, so the red costs nothing but attention,
-and a warning nobody reads is precisely how this went stale for three months.
+**`VERCEL_TOKEN` lives in the `mcp-production` GitHub environment, whose
+deployment-branch policy allows `main` only — NOT as a repository secret**, and
+that is the enforcement rather than the job's `if:`. `workflow_dispatch` runs the
+workflow definition from the *selected ref*, so a branch condition added to this
+file exists only on refs that already have it: every branch predating it can
+still deploy to production. The gate cannot gate itself. Gating the credential
+instead binds refs this repo has not seen — a job on another branch naming the
+environment is refused by GitHub, and an old version that does not name it gets
+an empty token and stops at the guard. **Re-adding the token as a repository
+secret re-opens the hole, and no test can see that.** Verified 2026-08-23 by
+deleting the repository secret and re-running: the deploy stayed green.
+
+The token must be scoped to the *team* that owns `open-gikai-mcp` — a
+personal-scope token cannot see a team project and the CLI reports that as
+`Error: Project not found`, quoting ids that are perfectly correct. A missing or
+unscoped token **fails the job red** rather than skipping: the day's data is
+already pushed by then, so the red costs nothing but attention, and a warning
+nobody reads is precisely how this went stale for three months.
+
+The freshness comparison and the deploy wiring are fenced by
+`scripts/tests/test_mcp_freshness.py` — including the environment, because
+asserting the `if:` alone passes on the arrangement that is provably
+bypassable.
 
 Because the frontend uses static export, **server-side features (Route
 Handlers, dynamic API routes, middleware) cannot be added under `src/app/`**.
