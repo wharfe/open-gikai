@@ -2489,6 +2489,23 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
     # The first major that dropped httpx. Must be a major boundary (`X.0`).
     HTTPX2_MAJOR = Version("1.0")
     PIP_INSTALL = re.compile(r"\b(?:pip3?|python3?\s+-m\s+pip)\s+install\b")
+    # Every Python installer this fence knows how to recognise. Broader than
+    # `pip install` on purpose: the aggregated version of this check was
+    # fail-open, and verified so — with one correct `-r` install present,
+    # `poetry add anthropic` and `uv add anthropic` in a second step both
+    # passed. (`uv pip install` happened to be caught, because the regex sees
+    # the `pip install` inside it, which is exactly why one passing example is
+    # not evidence about the rule.)
+    #
+    # The residual is real and stated rather than papered over: an installer
+    # not on this list, or one inside a shell script the workflow calls, is not
+    # seen. What keeps that from being silent is the whole-file check below —
+    # a workflow with no readable install at all cannot mention the package.
+    INSTALLER = re.compile(
+        r"\b(?:pip3?\s+install|python3?\s+-m\s+pip\s+install"
+        r"|uv\s+(?:pip\s+install|add|sync)|poetry\s+(?:add|install)"
+        r"|pipenv\s+install|pdm\s+(?:add|install)"
+        r"|(?:conda|mamba)\s+install|easy_install)\b")
 
     def _admits_nothing_from(spec, boundary):
         """Does `spec` exclude every release at or above `boundary`?
@@ -2589,13 +2606,33 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
                 installs.extend(_pip_installs(str(step.get("run", ""))))
         for cmd in installs:
             _assert_installs_only_from_our_requirements(rel, cmd, ours)
+        # Per LINE, keyed off the installer VERB rather than off the package
+        # name. Keying off the name looked stricter and was wrong in both
+        # directions: it tripped on the failure-issue body, which says
+        # "Anthropic credit exhaustion" about the company, and it would still
+        # have missed `poetry add requests`. Every recognised installer has to
+        # go through a requirements file, whatever it is installing.
+        for raw in text.splitlines():
+            probe = raw.split("#", 1)[0].strip()
+            if not probe or probe.split()[0] in ("echo", "printf", ":"):
+                continue
+            if not INSTALLER.search(probe):
+                continue
+            assert {"-r", "--requirement"} & set(probe.split()), (
+                f"{rel} installs Python packages without a requirements file "
+                f"(`{probe}`) — a name on an install line is a version nothing "
+                f"pins, which is the pre-#80 state this fence exists to keep out")
+
+        # The coarse net, for a workflow this sweep cannot read at all: it may
+        # not so much as name the package. Kept as well as the per-line rule
+        # above, not instead of it — the two miss different things.
         live = "\n".join(
             l.split("#", 1)[0] for l in text.splitlines()).lower()
-        assert installs or "anthropic" not in live, (
-            f"{rel} names anthropic outside a comment but runs no pip install "
-            f"this fence can read — it installs it in a shape the sweep does "
-            f"not understand, so teach the sweep that shape rather than "
-            f"leaving it unchecked")
+        assert installs or "anthropic" not in live.replace(
+                "anthropic_api_key", ""), (
+            f"{rel} names anthropic outside a comment but runs no install this "
+            f"fence can read — teach the sweep that shape rather than leaving "
+            f"it unchecked")
 
     # ---- 4: the dev set contains the runtime set --------------------------
     includes = [l for l in _requirement_lines(DEV)

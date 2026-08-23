@@ -277,6 +277,12 @@ def main(argv=None):
             print(f"attempt {attempt}: {exc}")
         else:
             last_answer = served
+            # Cleared, so `last_error` means "failures since the last answer"
+            # rather than "a failure happened at some point". Without this a
+            # blip on attempt 1 followed by a real mismatch on attempt 2 would
+            # be reported as "the disagreement may no longer be true", which is
+            # the same class of unestablished claim in the opposite direction.
+            last_error = None
             differences = _differences(expected, served)
             print(f"attempt {attempt}: MCP has {len(served)} dates, "
                   f"{sum(served.values())} threads, "
@@ -298,12 +304,21 @@ def main(argv=None):
               f"not evidence of staleness. Last failure: {last_error}")
         return 1
 
+    # Past tense, and it matters. `last_answer` is the last answer we GOT, which
+    # is not necessarily the last attempt: a mismatch on attempt 1 followed by
+    # five unreachable ones ends up here, and "the server is not serving" would
+    # then assert a present state nothing established. What is established is
+    # that it answered at least once and disagreed.
     shown = _differences(expected, last_answer)
-    print(f"::error::the MCP server is not serving the committed data: "
-          f"{len(shown)} date(s) differ, e.g. {'; '.join(shown[:5])}. If the "
-          f"deploy step reported success, this is the failure #85 was about: "
-          f"the endpoint answers correctly and serves data that is not ours. "
-          f"Check the Vercel deployment for open-gikai-mcp.")
+    trailing = "" if last_error is None else (
+        f" Attempts after that answer did not get through ({last_error}), so "
+        f"the CURRENT state is unconfirmed — what is established is the "
+        f"disagreement, not that it is still true.")
+    print(f"::error::the MCP server answered and disagreed with the committed "
+          f"data: {len(shown)} date(s) differ, e.g. {'; '.join(shown[:5])}."
+          f"{trailing} If the deploy step reported success, this is the failure "
+          f"#85 was about: the endpoint answers correctly and serves data that "
+          f"is not ours. Check the Vercel deployment for open-gikai-mcp.")
     return 1
 
 

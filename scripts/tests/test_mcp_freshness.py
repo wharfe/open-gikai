@@ -519,8 +519,27 @@ def test_the_deploy_runs_even_when_a_single_date_failed():
     after pushing. `success()` here would leave the MCP server a day behind the
     site every time one date misbehaved — and those are not rare."""
     _, job = _deploy_job()
-    assert job["if"] == "${{ !cancelled() }}", job.get("if")
+    assert "!cancelled()" in job["if"], job.get("if")
+    assert "success()" not in job["if"], (
+        "success() would skip the deploy on every morning a single date failed")
     assert job["needs"] == "fetch-and-summarize"
+
+
+def test_only_the_default_branch_can_deploy_to_production():
+    """`workflow_dispatch` lets anyone pick a ref, this job checks THAT ref out,
+    and it deploys with `--prod`. So a dispatch from a feature branch would put
+    that branch's data and code on the production MCP server — and the freshness
+    check would go GREEN, because it compares the server against the same
+    checkout it just deployed. Both sides agree; the check structurally cannot
+    see it. That is an incorrect production deploy reported as success, which is
+    the failure class this whole job exists inside.
+    """
+    _, job = _deploy_job()
+    condition = job["if"]
+    assert "github.ref" in condition and "default_branch" in condition, (
+        f"the deploy is not restricted to the default branch (`{condition}`) — a "
+        f"workflow_dispatch from any branch would deploy it to production and "
+        f"the freshness check would agree with itself")
 
 
 def test_a_failed_deploy_raises_an_issue_and_not_just_a_red_check():

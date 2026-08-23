@@ -2,7 +2,16 @@
 #
 # Pinned EXACTLY, and that is the point of the file. Both workflows used to
 # `pip install <bare names>`, so every morning re-resolved the latest release of
-# everything — production changed without a commit. On 2026-08-20 `anthropic`
+# everything — production changed without a commit.
+#
+# Read the reach literally: these are the DIRECT dependencies. The resolved
+# environment is 29 packages; 9 are named here and in requirements-dev.txt, so
+# 20 transitive ones (httpcore, pydantic, certifi, soupsieve, jiter …) still
+# re-resolve on every run. So "production cannot change without a commit" is NOT
+# true yet — a breaking release of a transitive dependency reaches the morning
+# exactly the way #80 did. What this file removes is the specific class that bit
+# us: a library this repo imports itself, changing major under us. #93 tracks
+# locking the whole closure. On 2026-08-20 `anthropic`
 # 1.0.0 did exactly that: it moved the HTTP layer to the `httpx2` fork, `httpx`
 # stopped being installed, and `summarizer.sync_call_kwargs` (which imports
 # `httpx` directly) took every meeting down for three mornings. See #80.

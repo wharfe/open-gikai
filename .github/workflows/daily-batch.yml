@@ -66,10 +66,12 @@ jobs:
           node-version: 22
           cache: npm
 
-      # Every version this job runs on is pinned in requirements.txt, and that
-      # file's header says why. The short version: this step used to
-      # `pip install <bare names>`, so each morning re-resolved the latest
-      # release of everything and production changed without a commit. #80.
+      # The DIRECT versions this job runs on are pinned in requirements.txt, and
+      # that file's header says why — and is honest about what is still loose:
+      # 20 of the 29 resolved packages are transitive and still re-resolve every
+      # run (#93). The short version: this step used to `pip install <bare
+      # names>`, so each morning re-resolved the latest release of everything,
+      # including the ones this repo imports directly. #80.
       #
       # Do not add a package to this line. A name here is a version nothing
       # pins, which is the whole failure.
@@ -756,10 +758,20 @@ jobs:
   deploy-mcp:
     name: Deploy MCP server
     needs: fetch-and-summarize
-    # Not `success()`: the main job fails on its LAST step for a systemic-summary
-    # date, long after it has pushed. Refusing to deploy then would leave the MCP
-    # server a day behind the site every time one date misbehaved.
-    if: ${{ !cancelled() }}
+    # Two conditions, and the branch one is not tidiness. `workflow_dispatch`
+    # lets anyone pick a ref, this job checks THAT ref out, and it deploys with
+    # `--prod`. So a dispatch from a feature branch would put that branch's data
+    # and code on the production MCP server — and go GREEN, because the freshness
+    # check compares the server against the same checkout it just deployed. The
+    # check cannot catch this: both sides agree. It is the "an incorrect
+    # production deploy is green" shape, arrived at from the one direction
+    # nothing else here guards.
+    #
+    # Not `success()` for the other half: the main job fails on its LAST step for
+    # a systemic-summary date, long after it has pushed. Refusing to deploy then
+    # would leave the MCP server a day behind the site every time one date
+    # misbehaved.
+    if: ${{ !cancelled() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
     runs-on: ubuntu-latest
     # 60, not 20, and the number is measured rather than chosen. This job's
     # first real run took 18m34s: the upload was 2 SECONDS and the build was
@@ -769,6 +781,13 @@ jobs:
     # build queues behind the site build every single morning, and 20 minutes
     # was "red the moment the site build gets a minute slower". Runner minutes
     # are free on a public repo; a timeout that fires on the normal path is not.
+    #
+    # 60 is headroom over ONE measurement, not a known ceiling: nothing here has
+    # established how long Vercel will queue a build under load. And note what
+    # this timeout does NOT do — killing the CLI does not cancel the remote
+    # build, so a deploy that lands at minute 61 is reported red having actually
+    # succeeded. #94 tracks asking the deployment for its state instead of
+    # inferring it from our own wait.
     timeout-minutes: 60
     # No write scope. A deploy credential and `contents: write` do not belong in
     # one job, and nothing here writes to the repo.
@@ -817,7 +836,7 @@ jobs:
           # publish already happened in the job above, so this red does not block
           # the site.
           if [ -z "$VERCEL_TOKEN" ]; then
-            echo "::error::VERCEL_TOKEN is not set, so the MCP server was NOT deployed and is now behind the site. Create a Vercel token with deploy access to open-gikai-mcp and add it as the VERCEL_TOKEN repository secret (#85). The site itself published normally."
+            echo "::error::VERCEL_TOKEN is not set, so nothing was deployed and nothing was compared — what the MCP server is currently serving is UNKNOWN from here, and this says nothing either way about whether the publish job above succeeded (this job runs even when it did not). Create a Vercel token with deploy access to open-gikai-mcp, scoped to the team that owns it, and add it as the VERCEL_TOKEN repository secret (#85). To find out the server's actual state: python3 scripts/check_mcp_freshness.py --attempts 1"
             exit 1
           fi
           # Pinned for the reason requirements.txt exists: an unpinned tool that
