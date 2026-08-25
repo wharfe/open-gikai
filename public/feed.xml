@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 Aug 2026 21:39:05 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 21:40:21 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W35 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W35</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W35</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W34 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W34</link>
@@ -32,12 +40,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W31 国会まとめ — 43件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W31</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W31</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <description>43件のスレッド、5委員会の議論をまとめました。｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見、令和８年熊本地震についての会見（２）、熊本県熊本地方を震源とする地震についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>ガソリン価格激変緩和措置の継続と水準設定 — 「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260825_e433dc_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260825_e433dc_01</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 GMT</pubDate>
+      <description>中東情勢による原油高騰を受け、ガソリン価格を全国平均170円に抑える緩和措置を継続する方針を説明（首相記者会見・2026.08.25・3発言）</description>
+      <category>「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</category>
+    </item>
+    <item>
+      <title>ICC所長への米国制裁と日本の対応 — 「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260825_e433dc_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260825_e433dc_02</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 GMT</pubDate>
+      <description>米国がICC赤根所長を制裁対象としたことへの日本の抗議姿勢と今後の対応方針について問われる（首相記者会見・2026.08.25・4発言）</description>
+      <category>「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</category>
     </item>
     <item>
       <title>バーナム英国首相との電話会談 — バーナム英国首相との電話会談についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_27</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>補助金・租特見直しの停滞を指摘し、AI活用による歳出見直しを提案（国会会議録・2026.07.27・3発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>社会保険料負担軽減と自民・維新合意 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_28</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_28</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>現役世代の社会保険料負担軽減へ向けた自民・維新合意の実現状況を確認（国会会議録・2026.07.27・5発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>食料品消費税減税と給付つき税額控除 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_29</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_29</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>社会保障国民会議での消費税減税・給付つき税額控除の取りまとめ内容を巡り質疑（国会会議録・2026.07.27・15発言）</description>
       <category>予算委員会</category>
     </item>
   </channel>
