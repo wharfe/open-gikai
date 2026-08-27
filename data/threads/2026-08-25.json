@@ -17,6 +17,20 @@
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0825kaiken.html"
         }
+      ],
+      "news": [
+        {
+          "title": "ガソリン「200円超え」を阻止! 政府が170円抑制の“緊急措置”を決定し3月19日から補助開始 経産省「普段通りの給油を」",
+          "url": "https://www.msn.com/ja-jp/money/%E5%85%A8%E8%88%AC/%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3-200%E5%86%86%E8%B6%85%E3%81%88-%E3%82%92%E9%98%BB%E6%AD%A2-%E6%94%BF%E5%BA%9C%E3%81%8C170%E5%86%86%E6%8A%91%E5%88%B6%E3%81%AE-%E7%B7%8A%E6%80%A5%E6%8E%AA%E7%BD%AE-%E3%82%92%E6%B1%BA%E5%AE%9A%E3%81%973%E6%9C%8819%E6%97%A5%E3%81%8B%E3%82%89%E8%A3%9C%E5%8A%A9%E9%96%8B%E5%A7%8B-%E7%B5%8C%E7%94%A3%E7%9C%81-%E6%99%AE%E6%AE%B5%E9%80%9A%E3%82%8A%E3%81%AE%E7%B5%A6%E6%B2%B9%E3%82%92/ar-AA1YDIUd",
+          "source": "MSN",
+          "pubDate": "Sat, 14 Mar 2026 14:30:00 GMT"
+        },
+        {
+          "title": "斎藤経産相、燃料油の激変緩和措置について4月末から一定期間延長へ",
+          "url": "https://www.bloomberg.com/jp/news/articles/2024-03-29/SB374XT1UM0W00",
+          "source": "Bloomberg L.P.",
+          "pubDate": "Thu, 28 Mar 2024 19:36:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -193,6 +207,28 @@
         {
           "label": "記者会見全文（首相官邸）",
           "url": "https://www.kantei.go.jp/jp/105/statement/2026/0825kaiken.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "「ハンドリング難しい」 ICC赤根所長制裁、米国意識する日本政府",
+          "url": "https://www.asahi.com/articles/ASV8V14DCV8VUTFK002M.html",
+          "source": "朝日新聞デジタル",
+          "pubDate": "Tue, 25 Aug 2026 21:04:00 GMT",
+          "image": "https://imgopt.asahi.com/ogp/AS20260826001740_comm.jpg"
+        },
+        {
+          "title": "ICC赤根所長「日本政府は法の支配守る努力を」 米制裁後も訴追継続",
+          "url": "https://www.nikkei.com/article/DGXZQOGR25BJT0V20C26A8000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Wed, 26 Aug 2026 14:35:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO3507642026082026000000-1.png?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;fp-x=0.51&amp;fp-y=0.38&amp;h=630&amp;w=1200&amp;s=e97a16c67b7e85a0450d036c5f1dbe35"
+        },
+        {
+          "title": "「アメリカの目的はICCの破壊」自国への“干渉”に不満？赤根所長への制裁は「家族に及ぶ可能性」クレカ使えず国際送金も ...",
+          "url": "https://www.msn.com/ja-jp/news/other/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AFicc%E3%81%AE%E7%A0%B4%E5%A3%8A-%E8%87%AA%E5%9B%BD%E3%81%B8%E3%81%AE-%E5%B9%B2%E6%B8%89-%E3%81%AB%E4%B8%8D%E6%BA%80-%E8%B5%A4%E6%A0%B9%E6%89%80%E9%95%B7%E3%81%B8%E3%81%AE%E5%88%B6%E8%A3%81%E3%81%AF-%E5%AE%B6%E6%97%8F%E3%81%AB%E5%8F%8A%E3%81%B6%E5%8F%AF%E8%83%BD%E6%80%A7-%E3%82%AF%E3%83%AC%E3%82%AB%E4%BD%BF%E3%81%88%E3%81%9A%E5%9B%BD%E9%9A%9B%E9%80%81%E9%87%91%E3%82%82%E9%9B%A3%E3%81%97%E3%81%8F-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%A7%BF%E5%8B%A2%E3%81%AB-%E6%B0%97%E6%8C%81%E3%81%A1%E3%81%A0%E3%81%91%E3%81%A7%E3%81%AA%E3%81%8F-%E6%84%8F%E6%80%9D-%E7%A4%BA%E3%81%97%E3%81%A6-%E3%81%A8%E5%B0%82%E9%96%80%E5%AE%B6/ar-AA2aZPkk",
+          "source": "TBS NEWS DIG on MSN",
+          "pubDate": "Wed, 26 Aug 2026 15:30:00 GMT"
         }
       ]
     },
