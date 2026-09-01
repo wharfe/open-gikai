@@ -5,14 +5,22 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Sep 2026 00:32:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 23:27:37 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W35 国会まとめ — 2件の議論</title>
+      <title>2026-W36 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W36</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W36</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。シャハ・ネパール首相との電話会談等についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>2026-W35 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W35</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W35</guid>
-      <pubDate>Tue, 25 Aug 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見ほか。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、3委員会の議論をまとめました。議院運営委員会図書館運営小委員会、議院運営委員会庶務小委員会、「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +40,36 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W32 国会まとめ — 9件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W32</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W32</guid>
-      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
-      <description>9件のスレッド、4委員会の議論をまとめました。長崎原爆犠牲者慰霊平和祈念式典参列等についての会見、広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見、「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>ネパール首相との電話会談と土石流被害への対応 — シャハ・ネパール首相との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260901_8eda08_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260901_8eda08_01</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <description>ネパール洪水被害に哀悼を伝え、行方不明の日本人への対応を協議（首相記者会見・2026.09.01・2発言）</description>
+      <category>シャハ・ネパール首相との電話会談等についての会見</category>
+    </item>
+    <item>
+      <title>長期金利上昇と財政政策への影響 — シャハ・ネパール首相との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260901_8eda08_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260901_8eda08_02</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <description>長期金利の急上昇が積極財政政策や市場の信認に与える影響を問われる（首相記者会見・2026.09.01・2発言）</description>
+      <category>シャハ・ネパール首相との電話会談等についての会見</category>
+    </item>
+    <item>
+      <title>令和九年度国立国会図書館予算概算要求案 — 議院運営委員会図書館運営小委員会</title>
+      <link>https://open-gikai.net/t/t_20260826_9fc594_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260826_9fc594_01</guid>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
+      <description>国立国会図書館が令和九年度予算概算要求案を説明し重点事項を報告（国会会議録・2026.08.26・1発言）</description>
+      <category>議院運営委員会図書館運営小委員会</category>
+    </item>
+    <item>
+      <title>令和九年度衆議院予算概算要求案 — 議院運営委員会庶務小委員会</title>
+      <link>https://open-gikai.net/t/t_20260826_a9f59b_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260826_a9f59b_02</guid>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
+      <description>令和九年度衆議院予算概算要求案の総額と主要経費項目の増額理由を説明した（国会会議録・2026.08.26・1発言）</description>
+      <category>議院運営委員会庶務小委員会</category>
     </item>
     <item>
       <title>ガソリン価格激変緩和措置の継続と水準設定 — 「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</title>
@@ -405,38 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_23</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>女性皇族の配偶者・子の地位や皇位継承有識者会議設置について附帯決議の履行を追及（国会会議録・2026.07.27・5発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>副首都法案の附帯決議と与党の対応 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_24</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_24</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>副首都法附帯決議の選挙期間調整を巡る与党対応の是非を追及（国会会議録・2026.07.27・3発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>企業・団体献金規制の在り方 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_25</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_25</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>企業・団体献金の規制強化が後回しにされている政治の信頼回復の遅れを批判（国会会議録・2026.07.27・3発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>サナエトークン問題と暗号資産規制 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_26</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_26</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>総理秘書らが関与した暗号資産宣伝疑惑と金融庁の実態把握対応を追及（国会会議録・2026.07.27・21発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>補助金・租特見直しとAI活用提案 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_27</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_27</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>補助金・租特見直しの停滞を指摘し、AI活用による歳出見直しを提案（国会会議録・2026.07.27・3発言）</description>
       <category>予算委員会</category>
     </item>
   </channel>
