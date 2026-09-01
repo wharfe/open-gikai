@@ -1,0 +1,74 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-26",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01VjymzaAy4cEYdUXtxHfaHb",
+      "submitted_at": "2026-09-01T23:15:33Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会図書館運営小委員会_2026-08-26_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_9fc594e46695_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "令和九年度国立国会図書館予算概算要求案",
+            "topicTag": "図書館予算",
+            "topicColor": "#f97316",
+            "summary": "国立国会図書館が令和九年度予算概算要求案を説明し重点事項を報告",
+            "contextDescription": "国立国会図書館の翌年度予算案について、デジタル化推進など重点施策を含めた概算要求内容を審議する。",
+            "legislationName": null,
+            "speechOrders": [
+              2
+            ]
+          },
+          "speechOrders": [
+            2
+          ],
+          "input_hash": "sha256:32884878a1878adb7ab32a3a93990213adf958b0120ca456535a5766d684c85f"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_議院運営委員会庶務小委員会_2026-08-26_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_a9f59b2b4fa2_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "令和九年度衆議院予算概算要求案",
+            "topicTag": "予算要求",
+            "topicColor": "#f97316",
+            "summary": "令和九年度衆議院予算概算要求案の総額と主要経費項目の増額理由を説明した",
+            "contextDescription": "衆議院事務局が翌年度の運営に必要な経費を見積もり、財務当局への概算要求として取りまとめる手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              2
+            ]
+          },
+          "speechOrders": [
+            2
+          ],
+          "input_hash": "sha256:c62c4a776e538770c1d172c8a239363e17770a32cbdf472c796d14bb11fcf193"
+        }
+      ]
+    }
+  ]
+}
