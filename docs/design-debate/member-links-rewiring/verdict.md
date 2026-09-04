@@ -71,7 +71,16 @@ Claude および両批評から、次だけ移します。
 
 走査は必ず `Object.entries(members)`。正本は **map key**。値の `id` が欠けていても key を `memberId` として使う。
 
-`getMemberMinistry` へ渡すときだけ `{ ...member, id: memberId }` と正規化する。正規化した `id` を JSON に書き戻さない。触ってよいフィールドは `links` だけ。
+> **[Gate2 で覆された — 2026-09-04]** 元の指示は「`getMemberMinistry` へ渡すときだけ
+> `{ ...member, id: memberId }` と正規化する」だった。**実装計画側では採らない。**
+> 理由は実測2点: (1) 正規化しても省庁の解決件数は **395 → 395** で1件も増えない（`id` を欠く31件は
+> `role` も空で、`getMemberMinistry` は `id` を見る前に null を返す）。(2) `src/lib/data.ts:352-354`
+> は保存されたオブジェクトのまま解決するので、こちらだけ正規化すると **`data.ts` が生成しない
+> `/gov` ページへリンクしうる** — `dynamicParams=false` なので hard 404。正規化は何も買わずに
+> 潜在的な404だけを持ち込んでいた。**正しくは `getMemberMinistry(member)`**（`data.ts` と同じ）。
+> 詳細は `docs/superpowers/plans/2026-09-04-member-links-rewiring.md`。
+
+触ってよいフィールドは `links` だけ。走査は `Object.entries` で、`m_` かどうかの判定には map key を使う（この半分は覆っていない）。
 
 実測（2026-09-04）: `m_` キー 646、うち値に `id` なし 31件。31件は全員 `role=""` かつ `name === key`。id を足しても省庁解決は 395 のまま増えない。それでも呼び出し形は key 側に合わせる（`getMemberMinistry` は `member.id` が `m_` でないと即 null）。
 
@@ -79,7 +88,8 @@ Claude および両批評から、次だけ移します。
 
 `buildMemberLinks(memberId, member, { ministry, liveSlugs })` が配列を返す。既存 `links` との merge はしない。完全置換。
 
-`ministry = getMemberMinistry({ ...member, id: memberId })`。`liveSlugs` は後述。
+`ministry = getMemberMinistry(member)`（**上の Gate2 注記で正規化は撤回**。`src/lib/data.ts:352-354`
+と同じく保存オブジェクトのまま渡す）。`liveSlugs` は後述。
 
 検索 URL は `URLSearchParams` で組む。氏名・役職は保存文字列を trim しただけ。先頭語抽出も別名正規化もしない。
 

@@ -78,6 +78,14 @@
 - Consumes: なし
 - Produces: `export function writeJsonAtomic(path: string, text: string): void` — `scripts/lib/jsonio.mjs` から。Task 2 が import する。**シグネチャは現行どおり `(path, text)`。Python 側の `write_json_atomic(path, obj)` と混ぜない（あちらはオブジェクトを取る）。**
 
+- [ ] **Step 0: ブランチを切る**
+
+```bash
+git switch main && git pull --rebase origin main
+git switch -c feat/member-links-rewiring
+```
+Expected: `main` の最新から新しいブランチができる。以降の全コミットはここに乗る。
+
 - [ ] **Step 1: 失敗するテストを書く**
 
 `scripts/tests/test_jsonio.py` の `test_the_js_half_of_the_rule_holds_too` を丸ごと置き換える。
@@ -363,6 +371,27 @@ def test_a_ministry_with_no_speaker_in_threads_gets_no_gov_link(tmp_path):
     assert links[0]["url"].startswith("https://www.google.com/search")
 
 
+def test_a_ministry_that_resolves_but_is_not_live_gets_no_gov_link(tmp_path):
+    """The sharper form of the test above: one ministry IS live and another
+    resolves without a speaker, in the same run. This is the only shape that
+    can fail — on the committed data every resolved ministry is live (37 of 37,
+    measured), so the real-data guards are green for a reason that has nothing
+    to do with the gate working. Delete `&& liveSlugs.has(...)` and this fails
+    while its neighbours keep passing.
+    """
+    members = {
+        "m_speaks": {"id": "m_speaks", "name": "寺崎秀俊",
+                     "role": "総務省自治税務局長", "rank": "member"},
+        "m_silent": {"id": "m_silent", "name": "野村竜一",
+                     "role": "気象庁長官", "rank": "minister"},
+    }
+    _, _, out = _run(members, {"d.json": _thread_with_speakers("m_speaks")}, tmp_path)
+    assert out["m_speaks"]["links"][0]["url"] == "/gov/soumu"
+    silent = [l["url"] for l in out["m_silent"]["links"]]
+    assert not any(u.startswith("/gov/") for u in silent), (
+        f"linked to a /gov page with no speaker, i.e. a 404: {silent}")
+
+
 def test_an_m_member_with_no_ministry_gets_one_search_and_no_wikipedia(tmp_path):
     members = {"m_b": {"id": "m_b", "name": "山田昌弘", "role": "中央大学文学部教授", "rank": "member"}}
     _, _, out = _run(members, {}, tmp_path)
@@ -418,12 +447,44 @@ def test_running_twice_does_not_touch_the_file(tmp_path):
 
 
 def test_only_links_is_written(tmp_path):
+    """`links` is the only field this script owns; every other one belongs to
+    scripts/pipeline/members.py or to validate-data.mjs --fix.
+
+    The assertion is on the key SET, not on the absence of `id` specifically.
+    An earlier draft asserted `"id" not in entry` — that made sense while the
+    plan normalised the map key onto the member before resolving the ministry,
+    because then a stray write-back was a real hazard. The plan stopped doing
+    that (it made this script link to /gov pages the site never builds), so the
+    hazard is gone and the assertion had become both wrong and unfixable: a
+    fixture needs `id` for getMemberMinistry to resolve at all, so it is in the
+    input, so it is in the output. Comparing key sets says what was actually
+    meant and does not care whether the fixture carries an `id`.
+    """
     members = {"m_a": {"id": "m_a", "name": "寺崎秀俊", "role": "総務省自治税務局長", "rank": "member",
                        "party": None, "bio": "", "stance": []}}
     _, _, out = _run(members, {"d.json": _thread_with_speakers("m_a")}, tmp_path)
     entry = out["m_a"]
-    assert "id" not in entry, "the normalised id must not be written back"
-    assert entry["bio"] == "" and entry["stance"] == [] and entry["party"] is None
+    assert set(entry) == set(members["m_a"]) | {"links"}, (
+        "enrich-members must add `links` and nothing else")
+    # The values it does not own come through byte-identical.
+    for field in ("id", "name", "role", "rank", "party", "bio", "stance"):
+        assert entry[field] == members["m_a"][field], field
+
+
+def test_one_malformed_member_does_not_stop_the_run(tmp_path):
+    """This step runs under `bash -e` a few steps before `git add
+    data/members.json`, so exiting on one bad row throws away the morning's
+    threads — which is what #52 and #74 each closed once. A file that will not
+    parse is still fatal (there is nothing to work from); one bad row is not.
+    """
+    members = {"m_a": {"id": "m_a", "name": "寺崎秀俊",
+                       "role": "総務省自治税務局長", "rank": "member"},
+               "m_bad": "これはオブジェクトではない"}
+    proc, _, out = _run(members, {"d.json": _thread_with_speakers("m_a")}, tmp_path)
+    assert proc.returncode == 0
+    assert out["m_bad"] == "これはオブジェクトではない", "the bad row is passed through as-is"
+    assert out["m_a"]["links"][0]["url"] == "/gov/soumu", "its neighbours are still enriched"
+    assert "m_bad" in proc.stdout + proc.stderr, "and it is named in the log"
 
 
 def test_a_broken_members_file_is_refused_without_writing(tmp_path):
@@ -534,6 +595,11 @@ export function computeLiveSlugs(members, threadsDir) {
   }
   const live = new Set();
   for (const [memberId, member] of Object.entries(members)) {
+    // Speech lookup is by map key here; data.ts:352 uses member.id. They agree
+    // on the committed data (0 mismatches, measured) — every entry either has
+    // id === key or has no id at all, and the latter never resolves a ministry
+    // anyway because its role is empty. Left asymmetric rather than "fixed" so
+    // this reads the same key it iterates; the fence below catches divergence.
     if (!spoken.has(memberId)) continue;
     // getMemberMinistry(member), NOT a key-normalised copy. data.ts resolves
     // from the stored object (Object.values + member.id), so normalising here
@@ -673,7 +739,34 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 と metrics ステップ（`daily-batch.yml:262-268`）は、それが2度起きた（#52 / #74）から今の形をしている。
 **ファイル全体が読めないことと、1行が変なことは違う。**
 
-- [ ] **Step 4: Python 版を削除する**
+- [ ] **Step 4: atomic writer の fence に `enrich-members.mjs` を加える**
+
+Task 1 の `test_the_js_half_of_the_rule_holds_too` は、当時まだ存在しなかったこのファイルを
+検査対象から外してある（:120 のコメントがそう約束している）。**その約束をここで履行する。**
+履行しないと、完成した PR に「`enrich-members.mjs` が atomic writer を通る」ことを見るものが
+1つも無くなる — 毎朝 `git add data/members.json` の数ステップ手前で走るスクリプトが、
+切り詰めた `members.json` をコミットしうる状態（#57 そのもの）。
+
+`scripts/tests/test_jsonio.py` の `test_the_js_half_of_the_rule_holds_too` 末尾を、
+両方の writer を回す形に戻す。
+
+```python
+    # Both writers of committed JSON go through it, and neither writes bare.
+    # enrich-members.mjs joined this list in the task that created it.
+    for name in ("validate-data.mjs", "enrich-members.mjs"):
+        src = open(os.path.join(SCRIPTS_DIR, name), encoding="utf-8").read()
+        assert "jsonio.mjs" in src, f"{name} must import the shared helper"
+        assert "writeJsonAtomic(" in src, f"{name} must write through the helper"
+        assert "writeFileSync(MEMBERS_PATH" not in src
+        assert "function writeJsonAtomic" not in src, (
+            f"{name} must not carry a third copy of the helper")
+```
+
+Run: `cd scripts && python -m pytest tests/test_jsonio.py -v`
+Expected: PASS。そのうえで `enrich-members.mjs` の `import { writeJsonAtomic } ...` を消して
+**FAIL することを確認してから戻す**。
+
+- [ ] **Step 5: Python 版を削除する**
 
 ```bash
 git rm scripts/enrich_members.py
@@ -689,29 +782,39 @@ Expected: ヒットは `docs/design-debate/**` の記録だけ。**コードと�
 
 Run: `cd scripts && python -m pytest tests/test_member_links.py -v`
 Expected: **全 PASS、skip 0。** このファイルは fixture しか読まないので、`data/members.json` が
-まだ再生成されていなくても緑になる。**赤が1本でも残ったままコミットしない** — `ci.yml:4-5` は
-`push: branches:[main]` で pytest を走らせ、この repo は main へ直接コミットするので、
-赤いテストを含むコミットはそのまま main の CI を落とす。
+まだ再生成されていなくても緑になる（実データを見るテストは Task 4 で足す）。
+
+ここが赤いまま次へ進まないこと。ブランチなので途中の赤自体は許容されるが、**このタスクの成果物は
+このタスクの中で検証できる** — 後のタスクに検証を先送りする理由が無い。
 
 - [ ] **Step 6: 分類 fence が効くか壊して確かめる**
 
 2つ壊す。どちらも「通っているテストが別経路で assert に達していないか」の確認。
 
-**先に知っておくこと（Gate2 実測）**: `liveSlugs` ゲートは **今日1件も弾いていない**。
+**先に知っておくこと（Gate2 実測）**: `liveSlugs` ゲートは **今日の実データでは1件も弾いていない**。
 省庁が解決する37 slug は全部 live で、`/gov` のダングリングはゼロ。1,298人中1,289人が発言済みなので、
-`liveSlugs.has(...)` が false になるメンバーが現在いない。**つまりこのゲートを守るテストは
-fixture でしか赤にできない**（だからこそ #2 の break-check が要る）。実データ側の
-`test_every_committed_gov_link_points_at_a_page_that_gets_built` も同じ理由で今日は
-falsifiable ではない — **緑であることは「守られている」の証拠にならない**。将来 fence として
-効き始めるものであって、今それが何かを止めていると読まないこと。
+`liveSlugs.has(...)` が false になるメンバーが現在いない。
+
+したがって**実データ側の** `test_every_committed_gov_link_points_at_a_page_that_gets_built` は
+今日 falsifiable ではない — **緑であることは「守られている」の証拠にならない**。
+
+**だからこの fence の破壊確認は fixture でやる。** そこでは「省庁は解決するが発言が無い」状態を
+作れるので、ゲートを外せば実際に 404 になるリンクが生成される。親セッションが実走で確認済み:
+
+```
+正常時   m_silent(気象庁長官・発言なし) -> 検索リンクのみ
+ゲート除去後 m_silent -> /gov/jma        ← dynamicParams=false なので実際に404
+```
 
 1. `buildMemberLinks` の `if (!memberId.startsWith("m_"))` を一時的に
    `if (!memberId.startsWith("m_") || member?.rank === "minister")` に書き換え、
    `cd scripts && python -m pytest tests/test_member_links.py::test_rank_minister_does_not_make_a_bureaucrat_elected -v`
    が **FAIL することを確認してから元に戻す**。
 2. `if (ministry && liveSlugs.has(ministry.slug))` から `&& liveSlugs.has(ministry.slug)` を落とし、
-   `cd scripts && python -m pytest tests/test_member_links.py::test_a_ministry_with_no_speaker_in_threads_gets_no_gov_link -v`
-   が **FAIL することを確認してから元に戻す**。これは 404 を止めている唯一の条件なので、
+   ```bash
+   cd scripts && python -m pytest tests/test_member_links.py -k "no_speaker or resolves_but_is_not_live" -v
+   ```
+   が **2本とも FAIL することを確認してから元に戻す**。これは 404 を止めている唯一の条件なので、
    ここを守るテストが空振りしていたら他の全部が緑でも意味がない。
 
 - [ ] **Step 7: コミット**
@@ -925,6 +1028,10 @@ Expected: `Member links written for 1298 members (37 ministries with a built /go
 
 - [ ] **Step 3: 差分を規則で検算する（全行の目視に頼らない）**
 
+**先に知っておく数字（Gate2 実測）**: `data/members.json` は **345,771 → 831,300 バイト（2.4倍）**。
+毎朝コミットされ、`copy-data.mjs` で MCP バンドルにも入る。ブロッカーではないが、初回の diff を
+見て驚かないための数字。
+
 ```bash
 python3 -c "
 import json,collections
@@ -972,7 +1079,12 @@ def _roster_slugs_the_site_will_build():
     for path in threads_dir.glob("*.json"):
         if path.name.endswith(".progress.json"):
             continue
-        threads = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            threads = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as e:
+            # Name the file, the way every other reader in this repo does. A
+            # bare traceback here sends the investigator after the test.
+            raise AssertionError(f"unreadable thread file {path.name}: {e}") from e
         for thread in threads:
             for speech in thread.get("speeches") or []:
                 if speech.get("memberId"):
@@ -1021,7 +1133,14 @@ def test_no_m_prefixed_member_links_to_any_wikipedia_host():
 
 def test_every_committed_gov_link_points_at_a_page_that_gets_built():
     """/gov/[slug] is dynamicParams=false, so a slug outside the built set is a
-    hard 404 for whoever clicks it — and nothing else in CI would notice."""
+    hard 404 for whoever clicks it — and nothing else in CI would notice.
+
+    Read this one honestly: on today's data every resolved ministry is live
+    (37 of 37), so this passes whether or not the gate that produces the links
+    works. It is a tripwire for the day that stops being true, not evidence
+    that anything is being stopped now. The test that can actually fail today
+    is the fixture one — test_a_ministry_that_resolves_but_is_not_live...
+    """
     members = json.loads(COMMITTED_MEMBERS.read_text(encoding="utf-8"))
     live = _roster_slugs_the_site_will_build()
     dangling = []
@@ -1165,9 +1284,14 @@ def test_ci_gives_the_python_tests_a_node_to_run():
     yaml = pytest.importorskip("yaml")
     wf = yaml.safe_load(
         (REPO_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"))
-    uses = [s.get("uses", "") for s in wf["jobs"]["python-tests"]["steps"]]
-    assert any(u.startswith("actions/setup-node@") for u in uses), (
-        f"python-tests has no setup-node: {uses}")
+    steps = wf["jobs"]["python-tests"]["steps"]
+    node_steps = [s for s in steps if str(s.get("uses", "")).startswith("actions/setup-node@")]
+    assert node_steps, f"python-tests has no setup-node: {[s.get('uses') for s in steps]}"
+    # The version too, not just the action. Naming the action without pinning
+    # the runtime is the #80 shape exactly: it resolves to whatever the runner
+    # ships that week, and nobody wrote that number down.
+    assert node_steps[0].get("with", {}).get("node-version") is not None, (
+        "setup-node must pin node-version")
 ```
 
 - [ ] **Step 2: 走らせて失敗を確認する**
@@ -1237,10 +1361,23 @@ Expected: pytest 全 PASS で **skip 0**、npm 3本とも成功
 Step 3 でその名前は消えた。論証自体は生き残る（3つの bare parse は分割後も
 `continue-on-error` なしで残る）ので、**名前だけを実態に合わせる**。
 
+**名前だけ直すと、段落の残りが今度こそ嘘になる。** 現在の論証は「`data/members.json` は
+syntax error ではここに到達しない。**このチェックがまだ拾えるのは wrong-shape のケースで、
+それらの reader は許容する**」。ところが新しい enrich ステップはトップレベルが dict でない場合に
+`exit 1` する（実測: `echo '[]' > x.json && node scripts/enrich-members.mjs --members-path x.json`
+→ `is not a JSON object` / EXIT=1）。つまり **wrong-shape も到達しなくなる**。
+
+段落全体を書き換える。書くべき内容:
+
+- ステップ名を `"Validate data"` / `"Enrich member links"` / `"Generate feeds and sitemaps"` に更新
+- syntax error は従来どおり到達不能（3つの bare parse が先に死ぬ）
+- **wrong-shape も到達不能になった** — `enrich-members.mjs` がトップレベル非 dict で exit 1 するため
+- したがって `CHECKS` の `("data/members.json", dict)` は**現時点で何も拾わない**。残すのは
+  `HEAD` 側の破損を見るためであって、**保護の主張として読まないこと**（この repo が元の段落で
+  わざわざ注意している読み方そのもの）
+
 Run: `grep -n "Validate and generate" scripts/check_committable_json.py`
-→ 該当行の `the "Validate and generate" step` を
-`the "Validate data" / "Generate feeds and sitemaps" steps` に置き換える。
-**追記ではなく置換**（追記は新しい嘘を作る）。
+Expected: 書き換え後はヒットゼロ。**追記ではなく置換**（追記は新しい嘘を作る）。
 
 - [ ] **Step 9: 直前に daily-batch が走っていないか確かめ、走っていたら取り込む**
 
@@ -1379,7 +1516,9 @@ gh pr merge --squash --delete-branch
   ```
   `run_in_background: true` で起動する（前面は 600s で殺される）。
 - **配線を実走させるまで完了にしない。** CI 定義を変えたので、次の朝の `daily-batch` を実際に見て、
-  `Enrich member links` が `Member links unchanged` で緑になること（＝本番で冪等）を確認する。
+  `Enrich member links` が緑になることを確認する。**出力は2通りとも正常**: 前夜からメンバーが
+  増えていなければ `Member links unchanged`（＝本番で冪等であることの確認）、`--fix` が新しい
+  発言者を足した朝は `Member links written for N members`。後者を異常と読まないこと。
 - 残存リスク（`verdict.md` §4）のうち、この plan が閉じないもの: 非 `m_` の Wikipedia は5%外れる /
   `m_` 空間の政治家重複（`石破 茂` が `m_b0533ae2` と `ishibashigeru` に両方いる）/ 検索1本だけの
   251人+stub 31人はページが薄いまま / `getMemberMinistry` の前方一致は省庁再編で静かに減る。
