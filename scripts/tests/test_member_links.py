@@ -272,6 +272,13 @@ def _roster_slugs_the_site_will_build():
             # Name the file, the way every other reader in this repo does. A
             # bare traceback here sends the investigator after the test.
             raise AssertionError(f"unreadable thread file {path.name}: {e}") from e
+        if not isinstance(threads, list):
+            # The generator side guards this too (Array.isArray in
+            # enrich-members.mjs). Without the check, a thread file that
+            # parses to an object gives a bare AttributeError from the
+            # `for thread in threads` below instead of naming the file, the
+            # same failure this function exists to avoid one line up.
+            raise AssertionError(f"thread file {path.name} is not a list of threads")
         for thread in threads:
             for speech in thread.get("speeches") or []:
                 if speech.get("memberId"):

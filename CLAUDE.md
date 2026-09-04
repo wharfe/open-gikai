@@ -184,9 +184,11 @@ its exit 3 into an exit 1. **A guard that a second reader can reach the file ahe
 guard** — when adding one, check what else opens the same path earlier in the call.
 
 The claim stops at `summarize.py` on purpose, because it is checkable there and not elsewhere:
-`scripts/validate-data.mjs` and `scripts/enrich-members.mjs` both still read `data/members.json`
-bare (only their *write* goes through `jsonio.mjs`), and `scripts/enrich-news.py` reads bare too
-(harmless only because `daily-batch.yml` runs it with `|| true`). Neither members.json reader sits
+`scripts/validate-data.mjs` still reads `data/members.json` bare, and `scripts/enrich-news.py`
+reads bare too (harmless only because `daily-batch.yml` runs it with `|| true`).
+`scripts/enrich-members.mjs` is guarded — it catches the parse failure and the non-object shape,
+names the file in the message, and exits 1 — but its guard is outside `summarize.py` and outside
+the Python AST fence, so it is not what the claim above is checking. Neither members.json reader sits
 immediately before the commit step any more: `Generate feeds and sitemaps` and `Compute new-thread
 metrics` now run between `Enrich member links` and `Commit and push data`. All three are outside
 this file and outside the Python AST fence.
