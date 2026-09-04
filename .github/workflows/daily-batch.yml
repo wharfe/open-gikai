@@ -242,9 +242,19 @@ jobs:
           done
 
       # ----- Post-processing -----
-      - name: Validate and generate
+      - name: Validate data
+        run: node scripts/validate-data.mjs --fix
+
+      # After the validator, never before it: --fix adds members that appear
+      # only in threads, with no links and no `id`. Enriching first commits
+      # those with zero links on the same morning. No `|| true` — the enricher
+      # going quiet for months, with nobody noticing, is what this replaces.
+      - name: Enrich member links
+        id: enrich_members
+        run: node scripts/enrich-members.mjs
+
+      - name: Generate feeds and sitemaps
         run: |
-          node scripts/validate-data.mjs --fix
           node scripts/generate-feeds.js
           node scripts/generate-sitemap.mjs
 

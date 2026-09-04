@@ -2697,3 +2697,65 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
             f"nothing imports bare httpx any more, but {stale} still explain "
             f"the anthropic pin by it — lift the pin, or say there what the "
             f"new reason is and re-point this branch (#80)")
+
+
+def test_the_workflow_enriches_member_links_after_the_validator_adds_members():
+    """validate-data.mjs --fix adds members that appear only in threads, with
+    no links and no `id`. Enriching before it therefore commits members with
+    zero links on the very first morning — which is the state this whole
+    change exists to end. Order, not presence, is the contract.
+
+    No `|| true` either: enrich-news.py carries one because a missing news
+    article must not stop the publish, and copying it here would restore the
+    silent drift (nobody ran the enricher for months and nothing noticed).
+    """
+    yaml = pytest.importorskip("yaml")
+    wf = yaml.safe_load(
+        (REPO_ROOT / ".github" / "workflows" / "daily-batch.yml").read_text(encoding="utf-8"))
+    steps = wf["jobs"]["fetch-and-summarize"]["steps"]
+    runs = [(s.get("name", ""), s.get("run", "") or "", s) for s in steps]
+
+    def index_of(needle):
+        for i, (_, run, _) in enumerate(runs):
+            if needle in run:
+                return i
+        raise AssertionError(f"no step runs {needle!r}")
+
+    validate_at = index_of("scripts/validate-data.mjs --fix")
+    enrich_at = index_of("scripts/enrich-members.mjs")
+    feeds_at = index_of("scripts/generate-feeds.js")
+    assert validate_at < enrich_at < feeds_at, (
+        "enrich must run after the validator adds members and before the feeds "
+        f"are generated (validate={validate_at}, enrich={enrich_at}, feeds={feeds_at})")
+
+    _, enrich_run, enrich_step = runs[enrich_at]
+    assert "|| true" not in enrich_run
+    assert enrich_step.get("continue-on-error") is not True
+    assert "if" not in enrich_step, "the enrich step must not be conditional"
+
+
+def test_the_production_build_enriches_too():
+    """package.json's `build` is the other definition of this pipeline, and it
+    is the one Vercel runs. Without enrich there, the --fix in a production
+    build can add a member and render the deploy with no link for them."""
+    pkg = json.loads((REPO_ROOT / "package.json").read_text(encoding="utf-8"))
+    build = pkg["scripts"]["build"]
+    assert "scripts/enrich-members.mjs" in build
+    assert build.index("validate-data.mjs") < build.index("enrich-members.mjs")
+
+
+def test_ci_gives_the_python_tests_a_node_to_run():
+    """test_member_links.py subprocesses the node CLI. Without setup-node the
+    job leans on whatever node the runner image happens to ship — the same
+    unpinned-dependency shape as #80."""
+    yaml = pytest.importorskip("yaml")
+    wf = yaml.safe_load(
+        (REPO_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"))
+    steps = wf["jobs"]["python-tests"]["steps"]
+    node_steps = [s for s in steps if str(s.get("uses", "")).startswith("actions/setup-node@")]
+    assert node_steps, f"python-tests has no setup-node: {[s.get('uses') for s in steps]}"
+    # The version too, not just the action. Naming the action without pinning
+    # the runtime is the #80 shape exactly: it resolves to whatever the runner
+    # ships that week, and nobody wrote that number down.
+    assert node_steps[0].get("with", {}).get("node-version") is not None, (
+        "setup-node must pin node-version")
