@@ -17,6 +17,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122104040X00220260826"
         }
+      ],
+      "news": [
+        {
+          "title": "経済成長に向け新たな投資枠、上限設けず 令和9年度予算の概算要求基準を閣議了解",
+          "url": "https://www.sankei.com/article/20260730-YPV5ZVVZMNKHFILMYOKMQQRKTI/",
+          "source": "産経新聞",
+          "pubDate": "Thu, 30 Jul 2026 09:46:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/WSBB5RCAXJOOJCRZCXB7ZAWHWA.jpg?auth=f9007d4fddb803b71a0112d73a0d2d982cda081a0b93fc8f05f6d8b4cd817d33&amp;quality=50&amp;focal=2562%2C954&amp;width=1200&amp;height=675"
+        },
+        {
+          "title": "高市政権の「新しい投資枠」に上限なし 来年度予算の概算要求基準",
+          "url": "https://www.asahi.com/articles/ASV7S30Z4V7SULFA02KM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Fri, 24 Jul 2026 02:17:00 GMT"
+        },
+        {
+          "title": "政府、来年度予算で脱「シーリング」 成長効果を重視―概算要求基準",
+          "url": "https://www.jiji.com/jc/article?k=2026073000385&g=eco",
+          "source": "時事ドットコム",
+          "pubDate": "Thu, 30 Jul 2026 01:11:00 GMT",
+          "image": "https://www.jiji.com/news2/kiji_photos/202607/20260730at16S_ogp.jpg"
+        }
       ]
     },
     "speeches": [
