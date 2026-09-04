@@ -154,20 +154,27 @@ export function MemberProfileView({
           </div>
         )}
 
-        {/* External links */}
+        {/* Links — relative URLs are internal pages, not external destinations */}
         {member.links && member.links.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-3">
-            {member.links.map((link) => (
-              <a
-                key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-x-border px-3 py-1 text-[13px] text-x-accent transition-colors hover:bg-x-accent/10"
-              >
-                {link.label} <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>open_in_new</span>
-              </a>
-            ))}
+            {member.links.map((link) => {
+              const chip = "rounded-full border border-x-border px-3 py-1 text-[13px] text-x-accent transition-colors hover:bg-x-accent/10";
+              return link.url.startsWith("/") ? (
+                <Link key={link.label} href={link.url} className={chip}>
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={chip}
+                >
+                  {link.label} <span className="material-symbols-rounded align-middle" style={{ fontSize: 14 }}>open_in_new</span>
+                </a>
+              );
+            })}
           </div>
         )}
 
