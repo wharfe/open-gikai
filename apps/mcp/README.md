@@ -94,8 +94,23 @@ Two consequences worth knowing before a deploy:
   the older script are refused, so the next deploy has to be built where the
   repo-root `data/` exists.
 
-After deployment, attach a domain like `mcp.open-gikai.net` (or
-`api.open-gikai.net` with a path mapping) to the new Vercel project.
+### Where this project's server actually answers
+
+`https://open-gikai-mcp.vercel.app` — that is the address today, and it is the
+one `scripts/check_mcp_freshness.py` asks every morning.
+
+**No custom domain is attached yet.** `mcp.open-gikai.net` appears nowhere in
+DNS; it was written here as a plan and read since as a fact. Attaching one is
+still the right end state, because a Vercel host name published as a public API
+window cannot be moved later without breaking every client config that copied
+it. Two things have to happen together when it is:
+
+1. the DNS record and the Vercel domain assignment (neither is in this repo), and
+2. `DEFAULT_URL` in `scripts/check_mcp_freshness.py`, moved over in the same
+   change as the example below.
+
+Leaving the freshness check on the old host would keep it green against an
+address nobody uses — which is the shape of failure #85 was about.
 
 ## Configuring Claude Desktop
 
@@ -105,13 +120,14 @@ Add to your `claude_desktop_config.json`:
 {
   "mcpServers": {
     "open-gikai": {
-      "url": "https://mcp.open-gikai.net/api/mcp"
+      "url": "https://open-gikai-mcp.vercel.app/api/mcp"
     }
   }
 }
 ```
 
-(Replace the URL with whatever domain you attached to the Vercel deployment.)
+(Running your own copy? Use whatever domain you attached to your own Vercel
+deployment instead.)
 
 ## Costs
 
