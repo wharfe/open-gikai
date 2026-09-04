@@ -249,6 +249,14 @@ jobs:
       # only in threads, with no links and no `id`. Enriching first commits
       # those with zero links on the same morning. No `|| true` — the enricher
       # going quiet for months, with nobody noticing, is what this replaces.
+      #
+      # The one new way this step can end the morning: a non-object
+      # data/members.json (enrich-members.mjs's own regeneration bug, or a
+      # HEAD-side one validate-data.mjs didn't catch) makes it exit 1, and
+      # this runs under `bash -e` a few steps before `git add
+      # data/members.json` — so the morning's threads go with it. A single
+      # malformed member row does NOT do this: it is passed through untouched
+      # and named in the log.
       - name: Enrich member links
         id: enrich_members
         run: node scripts/enrich-members.mjs
