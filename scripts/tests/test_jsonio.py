@@ -168,14 +168,47 @@ def test_the_temp_file_is_covered_by_gitignore(tmp_path):
 
 
 def test_the_js_half_of_the_rule_holds_too():
-    """scripts/validate-data.mjs --fix rewrites the committed data/members.json,
-    and daily-batch.yml runs it immediately before `git add data/members.json`.
-    The AST sweep below only walks *.py, so this writer can regress without any
-    Python test noticing — and its failure mode is the whole of #57."""
+    """The JS writers of committed JSON share one atomic helper (#57/#72).
+
+    daily-batch.yml runs validate-data.mjs --fix and enrich-members.mjs
+    immediately before `git add data/members.json`, so a job killed mid-write
+    commits a truncated members.json — and src/lib/data.ts is deliberately
+    fatal on that, i.e. a red Vercel build.
+
+    The AST sweep below walks only *.py and is structurally blind to these two.
+    The previous version of this test asserted on the CALL SITE string in
+    validate-data.mjs, so moving the function body out of that file left the
+    test passing while nothing checked the steps any more. Assert on the body,
+    in the file that now holds it.
+    """
+    helper_path = os.path.join(SCRIPTS_DIR, "lib", "jsonio.mjs")
+    assert os.path.exists(helper_path), (
+        "scripts/lib/jsonio.mjs is the single JS-side atomic writer (#57)")
+    helper = open(helper_path, encoding="utf-8").read()
+
+    # The steps, not the outline. Each of these is load-bearing: a temp file in
+    # the SAME directory (rename is only atomic within one filesystem), fsync
+    # the file, rename, then fsync the directory so the rename itself is
+    # durable rather than just the bytes it points at.
+    assert "export function writeJsonAtomic" in helper
+    assert "dirname(path)" in helper, "temp file must be in the target's own directory"
+    assert "openSync(tmp" in helper
+    assert "writeFileSync(fd" in helper, (
+        "writeFileSync on the descriptor, not writeSync: writeSync can short-write")
+    assert "fsyncSync(fd)" in helper
+    assert "renameSync(tmp, path)" in helper
+    assert "fsyncDir(" in helper, "the directory fsync makes the rename durable"
+    assert "unlinkSync(tmp)" in helper, "a failed write must not strand its temp file"
+
+    # The writer that exists today goes through it and does not write bare.
+    # enrich-members.mjs joins this list in the task that creates it — asserting
+    # on a file the next task writes makes THIS task's test unrunnable.
     src = open(os.path.join(SCRIPTS_DIR, "validate-data.mjs"), encoding="utf-8").read()
-    assert "writeJsonAtomic(MEMBERS_PATH" in src, (
-        "members.json must be written through the atomic helper (#57)")
+    assert "jsonio.mjs" in src, "validate-data.mjs must import the shared helper"
+    assert "writeJsonAtomic(" in src, "validate-data.mjs must write through the helper"
     assert "writeFileSync(MEMBERS_PATH" not in src
+    assert "function writeJsonAtomic" not in src, (
+        "validate-data.mjs must not carry a second copy of the helper")
 
 
 # --- The rule has to hold for writers not yet written (#57/#72) ---------------
