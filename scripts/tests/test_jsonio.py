@@ -200,15 +200,15 @@ def test_the_js_half_of_the_rule_holds_too():
     assert "fsyncDir(" in helper, "the directory fsync makes the rename durable"
     assert "unlinkSync(tmp)" in helper, "a failed write must not strand its temp file"
 
-    # The writer that exists today goes through it and does not write bare.
-    # enrich-members.mjs joins this list in the task that creates it — asserting
-    # on a file the next task writes makes THIS task's test unrunnable.
-    src = open(os.path.join(SCRIPTS_DIR, "validate-data.mjs"), encoding="utf-8").read()
-    assert "jsonio.mjs" in src, "validate-data.mjs must import the shared helper"
-    assert "writeJsonAtomic(" in src, "validate-data.mjs must write through the helper"
-    assert "writeFileSync(MEMBERS_PATH" not in src
-    assert "function writeJsonAtomic" not in src, (
-        "validate-data.mjs must not carry a second copy of the helper")
+    # Both writers of committed JSON go through it, and neither writes bare.
+    # enrich-members.mjs joined this list in the task that created it.
+    for name in ("validate-data.mjs", "enrich-members.mjs"):
+        src = open(os.path.join(SCRIPTS_DIR, name), encoding="utf-8").read()
+        assert "jsonio.mjs" in src, f"{name} must import the shared helper"
+        assert "writeJsonAtomic(" in src, f"{name} must write through the helper"
+        assert "writeFileSync(MEMBERS_PATH" not in src
+        assert "function writeJsonAtomic" not in src, (
+            f"{name} must not carry a third copy of the helper")
 
 
 # --- The rule has to hold for writers not yet written (#57/#72) ---------------
