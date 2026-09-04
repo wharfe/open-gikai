@@ -232,3 +232,14 @@ def test_an_unreadable_thread_file_does_not_stop_the_run(tmp_path):
     assert proc.returncode == 0, proc.stderr
     out = json.loads((data_dir / "members.json").read_text(encoding="utf-8"))
     assert out["m_a"]["links"][0]["url"] == "/gov/soumu"
+
+
+def test_the_mcp_server_hands_out_absolute_member_links():
+    """apps/mcp returns Member objects straight to another LLM on another host,
+    which cannot resolve /gov/{slug}. eslint ignores apps/** and no CI job
+    builds the MCP server, so nothing else would notice this coming undone."""
+    src = (REPO_ROOT / "apps" / "mcp" / "src" / "lib" / "mcp" / "tools.ts").read_text(
+        encoding="utf-8")
+    assert "function withAbsoluteLinks" in src
+    assert "return { member: withAbsoluteLinks(member) };" in src
+    assert "filtered.map(withAbsoluteLinks)" in src

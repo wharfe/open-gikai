@@ -177,6 +177,24 @@ export function getThreadDetail(rawArgs: Record<string, unknown>): unknown {
 // Members
 // ---------------------------------------------------------------------------
 
+const SITE_ORIGIN = "https://open-gikai.net";
+
+/**
+ * A member's `links` may hold site-relative URLs (/gov/{slug}) because the web
+ * UI renders those as internal pages. An MCP client is a different LLM on a
+ * different host and cannot resolve them, so they leave here absolute.
+ * Absolute URLs are returned untouched.
+ */
+function withAbsoluteLinks<T extends { links?: { label: string; url: string }[] }>(member: T): T {
+  if (!member.links?.length) return member;
+  return {
+    ...member,
+    links: member.links.map((link) =>
+      link.url.startsWith("/") ? { ...link, url: SITE_ORIGIN + link.url } : link,
+    ),
+  };
+}
+
 export function getMemberDetail(rawArgs: Record<string, unknown>): unknown {
   const id = asString(rawArgs.id);
   if (!id) {
@@ -186,7 +204,7 @@ export function getMemberDetail(rawArgs: Record<string, unknown>): unknown {
   if (!member) {
     throw { code: -32602, message: `member not found: ${id}` };
   }
-  return { member };
+  return { member: withAbsoluteLinks(member) };
 }
 
 export function listMembersTool(rawArgs: Record<string, unknown>): unknown {
@@ -205,7 +223,7 @@ export function listMembersTool(rawArgs: Record<string, unknown>): unknown {
   return {
     total: filtered.length,
     truncated: filtered.length === limit,
-    members: filtered,
+    members: filtered.map(withAbsoluteLinks),
   };
 }
 
