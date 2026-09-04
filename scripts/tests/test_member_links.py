@@ -12,6 +12,7 @@ assertion about the committed file passes against data nothing regenerated.
 
 import json
 import os
+import re
 import subprocess
 from pathlib import Path
 
@@ -351,3 +352,78 @@ console.log(JSON.stringify([...computeLiveSlugs(members, "data/threads")].sort()
     assert probe.returncode == 0, probe.stderr
     generator = set(json.loads(probe.stdout.strip().splitlines()[-1]))
     assert generator == _roster_slugs_the_site_will_build()
+
+
+# --- Group C: the oracle's own falsifiability (review findings I-2 / I-4) ----
+
+def test_key_normalisation_would_wrongly_ministry_link_an_id_less_member(tmp_path):
+    """I-2: on committed data every resolved ministry is live (37 of 37), so
+    the two tests above pass no matter whether the generator resolves the
+    ministry from the STORED member object or from a key-normalised copy —
+    both give the same 37 slugs today. This is the one shape where they
+    diverge: an m_-prefixed entry that carries a `role` but no `id` of its
+    own (the validator-stub shape, 31 of them today).
+
+    getMemberMinistry({name, role: "特許庁審査業務部長"}) resolves to null — no
+    `id`, so the m_-only-IDs guard in ministry.mjs rejects it — but
+    getMemberMinistry({...that, id: "m_notest"}) resolves to 特許庁/jpo, because
+    the map key alone satisfies the guard. So: give jpo a live page via a
+    normal member who DOES speak, then check whether the id-less member rides
+    along onto /gov/jpo. It must not — enrich-members.mjs resolves the
+    ministry from the member object exactly as data.ts does, never from a
+    key-normalised copy (see the note at enrich-members.mjs's `const ministry
+    = getMemberMinistry(member);` call inside enrichMembers).
+    """
+    members = {
+        "m_a": {"id": "m_a", "name": "寺崎秀俊", "role": "特許庁審査業務部長", "rank": "member"},
+        "m_notest": {"name": "no-id witness", "role": "特許庁審査業務部長", "rank": "member"},
+    }
+    _, _, out = _run(members, {"d.json": _thread_with_speakers("m_a", "m_notest")}, tmp_path)
+    assert out["m_a"]["links"][0]["url"] == "/gov/jpo", "control: jpo must be live"
+    notest_urls = [l["url"] for l in out["m_notest"]["links"]]
+    assert not any(u.startswith("/gov/") for u in notest_urls), (
+        f"an id-less member rode a key-normalised ministry resolution onto a "
+        f"/gov page: {notest_urls}")
+
+
+_ROSTER_SELECTION_RE = re.compile(
+    r"for\s*\(const member of Object\.values\(loadMembers\(\)\)\)\s*\{\s*"
+    r"const ministry = getMemberMinistry\(member\);\s*"
+    r"if\s*\(!ministry\)\s*continue;\s*"
+    r"const s = stats\.get\(member\.id\);\s*"
+    r"if\s*\(!s\)\s*continue;\s*"
+    r"let roster = bySlug\.get\(ministry\.slug\);"
+)
+
+DATA_TS = REPO_ROOT / "src" / "lib" / "data.ts"
+
+
+def test_the_oracle_is_fenced_against_getMinistryRosters_drifting():
+    """I-4: _roster_slugs_the_site_will_build() is a hand-copy of the
+    SELECTION half of getMinistryRosters() (data.ts:352-357) — resolve the
+    ministry from the stored member, drop it if there is none, look up speech
+    stats by member.id, drop it if there are none — with nothing else run
+    between those four steps and the point where a roster entry is kept.
+
+    What this catches: literally that stretch of source text changing —
+    dropping the liveness/stats gate, switching the speech lookup off
+    member.id (e.g. onto the map key), or inserting a new condition
+    (a minimum-speech-count filter, say) between "if (!s) continue;" and
+    "let roster = bySlug.get(...)". Any of those breaks this test before it
+    can silently break the two committed-data tests above.
+
+    What it does NOT catch: a change to getMemberStats() or loadMembers()
+    themselves (this only fences how getMinistryRosters USES them), a filter
+    applied after the loop (e.g. dropping small rosters from the final
+    array), or a semantically-identical rewrite that reformats/renames past
+    what this regex tolerates — it is a text fence, not a behavioural one.
+    Both directions of drift are worth watching for on review: this test
+    passing is not proof the oracle is right, only that it still matches the
+    one stretch of data.ts it claims to mirror.
+    """
+    src = DATA_TS.read_text(encoding="utf-8")
+    assert _ROSTER_SELECTION_RE.search(src), (
+        "getMinistryRosters()'s selection logic no longer matches the text "
+        "scripts/tests/test_member_links.py::_roster_slugs_the_site_will_build "
+        "was written to mirror. Re-read src/lib/data.ts's getMinistryRosters "
+        "and update both the Python oracle and this regex together.")
