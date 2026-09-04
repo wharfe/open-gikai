@@ -69,7 +69,8 @@ export function computeLiveSlugs(members, threadsDir) {
     // on the committed data (0 mismatches, measured) — every entry either has
     // id === key or has no id at all, and the latter never resolves a ministry
     // anyway because its role is empty. Left asymmetric rather than "fixed" so
-    // this reads the same key it iterates; the fence below catches divergence.
+    // this reads the same key it iterates; the divergence is caught by
+    // scripts/tests/test_member_links.py::test_the_generator_and_the_site_agree_on_which_gov_pages_exist.
     if (!spoken.has(memberId)) continue;
     // getMemberMinistry(member), NOT a key-normalised copy. data.ts resolves
     // from the stored object (Object.values + member.id), so normalising here

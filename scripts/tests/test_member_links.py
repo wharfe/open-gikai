@@ -17,6 +17,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "enrich-members.mjs"
+COMMITTED_MEMBERS = REPO_ROOT / "data" / "members.json"
 
 WIKIPEDIA_HOST_SUFFIX = "wikipedia.org"
 
@@ -243,3 +244,110 @@ def test_the_mcp_server_hands_out_absolute_member_links():
     assert "function withAbsoluteLinks" in src
     assert "return { member: withAbsoluteLinks(member) };" in src
     assert "filtered.map(withAbsoluteLinks)" in src
+
+
+# --- Group B: the committed data ---------------------------------------------
+
+def _roster_slugs_the_site_will_build():
+    """Re-derive src/lib/data.ts's getMinistryRosters() rule independently.
+
+    Deliberately does NOT call computeLiveSlugs: that is the function which
+    produced the links under test, so using it as the oracle would be a
+    tautology that cannot fail in the direction that matters. data.ts is
+    TypeScript and this repo has no tsx/ts-node, so the rule is re-expressed
+    here from data.ts:348-356 — resolve the ministry from the STORED member
+    object (no key normalisation, exactly as Object.values gives it) and keep
+    only ministries with a member who has at least one speech.
+    """
+    members = json.loads(COMMITTED_MEMBERS.read_text(encoding="utf-8"))
+    threads_dir = REPO_ROOT / "data" / "threads"
+    spoken = set()
+    for path in threads_dir.glob("*.json"):
+        if path.name.endswith(".progress.json"):
+            continue
+        try:
+            threads = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as e:
+            # Name the file, the way every other reader in this repo does. A
+            # bare traceback here sends the investigator after the test.
+            raise AssertionError(f"unreadable thread file {path.name}: {e}") from e
+        for thread in threads:
+            for speech in thread.get("speeches") or []:
+                if speech.get("memberId"):
+                    spoken.add(speech["memberId"])
+
+    probe = subprocess.run(
+        ["node", "--input-type=module", "-e", """
+import { getMemberMinistry } from "./src/lib/ministry.mjs";
+import { readFileSync } from "node:fs";
+const members = JSON.parse(readFileSync("data/members.json", "utf-8"));
+const out = {};
+for (const [key, m] of Object.entries(members)) {
+  const ministry = getMemberMinistry(m);      // stored object, as data.ts does
+  // data.ts looks the speech count up by member.id, NOT by the map key. They
+  // agree today (0 mismatches), but keying this on the map key would make the
+  // oracle quietly more correct than the thing it checks.
+  if (ministry) out[key] = { slug: ministry.slug, id: m.id ?? null };
+}
+console.log(JSON.stringify(out));
+"""], capture_output=True, text=True, cwd=str(REPO_ROOT))
+    assert probe.returncode == 0, probe.stderr
+    resolved = json.loads(probe.stdout.strip().splitlines()[-1])
+    return {v["slug"] for v in resolved.values() if v["id"] in spoken}
+
+
+def test_every_committed_member_has_at_least_one_link():
+    members = json.loads(COMMITTED_MEMBERS.read_text(encoding="utf-8"))
+    missing = [k for k, v in members.items()
+               if not isinstance(v.get("links"), list) or not v["links"]]
+    assert missing == [], f"{len(missing)} members carry no links, e.g. {missing[:5]}"
+
+
+def test_no_m_prefixed_member_links_to_any_wikipedia_host():
+    """Host suffix, not the exact ja.wikipedia.org string: ja.m.wikipedia.org
+    and en.wikipedia.org are the same mistake with a different spelling."""
+    members = json.loads(COMMITTED_MEMBERS.read_text(encoding="utf-8"))
+    bad = []
+    for key, v in members.items():
+        if not key.startswith("m_"):
+            continue
+        for link in v.get("links") or []:
+            if _is_wikipedia(link["url"]):
+                bad.append((key, link["url"]))
+    assert bad == [], f"wikipedia links on m_ members: {bad[:5]}"
+
+
+def test_every_committed_gov_link_points_at_a_page_that_gets_built():
+    """/gov/[slug] is dynamicParams=false, so a slug outside the built set is a
+    hard 404 for whoever clicks it — and nothing else in CI would notice.
+
+    Read this one honestly: on today's data every resolved ministry is live
+    (37 of 37), so this passes whether or not the gate that produces the links
+    works. It is a tripwire for the day that stops being true, not evidence
+    that anything is being stopped now. The test that can actually fail today
+    is the fixture one — test_a_ministry_that_resolves_but_is_not_live...
+    """
+    members = json.loads(COMMITTED_MEMBERS.read_text(encoding="utf-8"))
+    live = _roster_slugs_the_site_will_build()
+    dangling = []
+    for key, v in members.items():
+        for link in v.get("links") or []:
+            if link["url"].startswith("/gov/") and link["url"][len("/gov/"):] not in live:
+                dangling.append((key, link["url"]))
+    assert dangling == [], f"/gov links with no built page: {dangling[:5]}"
+
+
+def test_the_generator_and_the_site_agree_on_which_gov_pages_exist():
+    """The link side and the page side resolve the ministry from the same
+    object. If they ever diverge — someone re-introduces key normalisation on
+    one side — this fails before a reader finds the 404."""
+    probe = subprocess.run(
+        ["node", "--input-type=module", "-e", f"""
+import {{ computeLiveSlugs }} from "{(REPO_ROOT / 'scripts' / 'enrich-members.mjs').as_uri()}";
+import {{ readFileSync }} from "node:fs";
+const members = JSON.parse(readFileSync("data/members.json", "utf-8"));
+console.log(JSON.stringify([...computeLiveSlugs(members, "data/threads")].sort()));
+"""], capture_output=True, text=True, cwd=str(REPO_ROOT))
+    assert probe.returncode == 0, probe.stderr
+    generator = set(json.loads(probe.stdout.strip().splitlines()[-1]))
+    assert generator == _roster_slugs_the_site_will_build()
