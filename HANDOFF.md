@@ -174,13 +174,14 @@ type Member = {
   since: number | null       // 初当選年
   bio: string
   stance: string[]           // 政策スタンスキーワード（3つ程度）
-  rank: "minister" | "viceminister" | "member"  // バッジ制御用
+  rank: "pm" | "minister" | "viceminister" | "member"  // バッジ制御用
   ndlId?: string             // NDL議員IDがあれば
+  links?: { label: string; url: string }[]  // 外部・内部リンク（全メンバーが1本以上持つ）
 }
 
 type Speech = {
   memberId: string
-  tension: "追及" | "答弁" | "再追及" | "確認" | "割込み"
+  tension: "追及" | "答弁" | "再追及" | "確認" | "割込み" | "要求" | "反対討論" | "説明"
   keywords: string[]         // 最大3つ
   quote: string              // 原文からの重要な一文（adult用）
   raw: string                // 原文（議事録テキスト）
