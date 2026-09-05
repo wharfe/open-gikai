@@ -1089,13 +1089,22 @@ def test_held_and_abandoned_dates_fail_the_run_without_a_threshold():
     # be routed through the suspect threshold. The last one is not about a file
     # either — it is "nobody looked", which a green run must not swallow.
     assert ('if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED$BROKEN_JSON'
-            '$BROKEN_JSON_CHECK_FAILED"' in run)
+            '$BROKEN_JSON_CHECK_FAILED$MEMBERS_SHAPE_INVALID"' in run)
     assert "steps.commit.outputs.broken_json" in str(env.values())
     assert "steps.commit.outputs.broken_json_check_failed" in str(env.values())
     assert "$BROKEN_JSON" not in build, (
         "a file that could not be read is not one date's worth of weak evidence")
     assert "Permanently lost" in run
     assert "held for a human decision" in run
+    # Gate3, 2026-09-05: a non-object data/members.json (enrich-members.mjs
+    # exits 0 and writes nothing on that shape now, see verdict.md §3) is the
+    # fifth member of this same unconditional set, wired through its own step
+    # output rather than an exit code — it is neither a date nor weak evidence,
+    # so it must not be routed through the suspect threshold either.
+    assert "steps.enrich_members.outputs.members_shape_invalid" in str(env.values())
+    assert "$MEMBERS_SHAPE_INVALID" not in build, (
+        "a non-object members.json is not one date's worth of weak evidence")
+    assert "top level was not a JSON object" in run
 
 
 def test_the_stuck_notifier_dedups_by_date_and_not_by_muting_itself():

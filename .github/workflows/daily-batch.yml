@@ -250,16 +250,33 @@ jobs:
       # those with zero links on the same morning. No `|| true` — the enricher
       # going quiet for months, with nobody noticing, is what this replaces.
       #
-      # The one new way this step can end the morning: a non-object
-      # data/members.json (enrich-members.mjs's own regeneration bug, or a
-      # HEAD-side one validate-data.mjs didn't catch) makes it exit 1, and
-      # this runs under `bash -e` a few steps before `git add
-      # data/members.json` — so the morning's threads go with it. A single
-      # malformed member row does NOT do this: it is passed through untouched
-      # and named in the log.
+      # A single malformed member row does NOT end the morning: it is passed
+      # through untouched and named in the log (see enrich-members.mjs).
+      # Neither, since Gate3 2026-09-05, does a non-object top-level
+      # data/members.json (`[]`, a string, a number) — every other consumer in
+      # this same job already tolerates that shape, and the shape means the
+      # file was already broken in HEAD, so aborting here would only throw
+      # away the morning's threads without fixing anything. The script exits
+      # 0 and writes nothing; we grep its own annotation for that case and set
+      # members_shape_invalid so the LAST step ("Fail the run on a systemic
+      # summary failure") still reds the job over it. A file that will not
+      # PARSE at all is still fatal (exit non-zero) — that is a crash, not a
+      # shape this job can route around, so it aborts the step under `bash -e`
+      # the same as before.
       - name: Enrich member links
         id: enrich_members
-        run: node scripts/enrich-members.mjs
+        run: |
+          set +e
+          OUTPUT=$(node scripts/enrich-members.mjs 2>&1)
+          RC=$?
+          echo "$OUTPUT"
+          set -e
+          if [ "$RC" -ne 0 ]; then
+            exit "$RC"
+          fi
+          if echo "$OUTPUT" | grep -q "top level is not a JSON object"; then
+            echo "members_shape_invalid=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Generate feeds and sitemaps
         run: |
@@ -662,6 +679,12 @@ jobs:
           # for a reason that is NOT "nothing was broken". Reds the run for the
           # same reason a silent fail-open is worse than a loud one.
           BROKEN_JSON_CHECK_FAILED: ${{ steps.commit.outputs.broken_json_check_failed }}
+          # Set by the Enrich member links step when data/members.json's top
+          # level was not an object. That step already wrote nothing and
+          # continued (Gate3 2026-09-05) — this is the loud half of that
+          # decision, not a date and not weak evidence, so it gets its own
+          # line below rather than being folded into FAIL_DATES.
+          MEMBERS_SHAPE_INVALID: ${{ steps.enrich_members.outputs.members_shape_invalid }}
         run: |
           # Deduplicate: the threshold below counts DATES, and the same date
           # arriving from both paths must not cross it on its own.
@@ -690,7 +713,7 @@ jobs:
           HELD=$(echo "$COLLECT_HELD" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
           ABANDONED=$(echo "$COLLECT_ABANDONED" | tr ' ' '\n' | grep -v '^$' | sort -u | tr '\n' ' ')
 
-          if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED$BROKEN_JSON$BROKEN_JSON_CHECK_FAILED" | tr -d ' ')" ]; then
+          if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED$BROKEN_JSON$BROKEN_JSON_CHECK_FAILED$MEMBERS_SHAPE_INVALID" | tr -d ' ')" ]; then
             echo "No systemic summary failure this run."
             exit 0
           fi
@@ -722,6 +745,17 @@ jobs:
             echo "not necessarily empty (threads published by earlier runs are unaffected),"
             echo "and the dates themselves can still be re-summarized from scratch by a"
             echo "manual run with a wide enough lookback_days, at the cost of a new batch."
+          fi
+
+          if [ -n "$(echo "$MEMBERS_SHAPE_INVALID" | tr -d ' ')" ]; then
+            echo "::error::data/members.json's top level was not a JSON object (\`[]\`, a string, a number)."
+            echo "The Enrich member links step named the file and the shape it found, wrote"
+            echo "nothing, and continued — every other consumer in this job (validate-data.mjs,"
+            echo "generate-feeds.js, generate-sitemap.mjs) already tolerates this shape, so"
+            echo "aborting the step would only have thrown away today's already-assembled"
+            echo "threads for a file that was already broken. This shape comes from a hand edit"
+            echo "or a bad merge, i.e. it is already in HEAD: unstaging or re-running buys"
+            echo "nothing here. A human needs to fix data/members.json's top-level shape by hand."
           fi
 
           if [ -n "$(echo "$HELD" | tr -d ' ')" ]; then

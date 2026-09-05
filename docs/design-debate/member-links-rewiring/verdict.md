@@ -161,9 +161,28 @@ CLI がファイル I/O・liveSlugs 計算・no-op 判定・atomic write を担�
 
 | 入力 | 動作 |
 |---|---|
-| ファイルなし / JSON でない / トップレベルがオブジェクトでない | 書かない。非ゼロ終了 |
+| ファイルなし / JSON でない（パース失敗） | 書かない。非ゼロ終了 |
+| トップレベルがオブジェクトでない（`[]`・文字列・数値など） | 書かない。`::error::` annotation を出して exit 0。publish は続行 |
 | メンバー値が非オブジェクト | 素通し（`links` を触らない）。警告に該当キーを名指しして exit 0 |
 | 個別の `name` が空・非文字列 | ジョブは落とさない。検索語を `memberId` にして1本出す |
+
+> **[Gate3 で覆された — 2026-09-05]** 元の指示（Gate2 確定時点）は「トップレベルがオブジェクトで
+> ない」も「ファイルなし / JSON でない」と同じ行 = 書かない・非ゼロ終了だった。**実装では採らない
+> ことにした。** レビュアーの指摘: 同じジョブの他の消費者（`validate-data.mjs` の
+> `checkMembers`・`generate-feeds.js`・`generate-sitemap.mjs`）は全員この形（`[]` など）を
+> 生き延びる — `Object.entries([])` は単に空を返すだけでクラッシュしない。落ちるのは
+> `enrich-members.mjs` だけだった。加えて、この形は今日的な原因（hand edit・不正な merge）で
+> 生まれるので **HEAD に既に入っている** — その朝の実行が壊したものではなく、この実行が
+> exit 1 しても直らない。**なのに** このステップは `bash -e` の下、`git add
+> data/members.json` の数ステップ手前に座るので、非ゼロ終了はその朝に組み上がった無関係な
+> threads を巻き込んで消す。壊れたファイルは直らないまま、無実の threads だけ失う二重の損失。
+> **正しくは**: 何も書かず、`::error::` annotation でその旨を記録し、exit 0 で publish を
+> 続行する。ジョブ全体を赤くする責務は `.github/workflows/daily-batch.yml` の最終ステップ
+> （`Fail the run on a systemic summary failure`）へ、`members_shape_invalid` という
+> 独立した step output 経由で移した — `held`/`abandoned`/`broken_json` と同じ形。
+> 実装は `scripts/enrich-members.mjs` の `main()`（非ゼロ終了だった分岐を annotation + exit 0
+> に変更）と `.github/workflows/daily-batch.yml` の `enrich_members` ステップ・最終失敗ステップ。
+> 詳細は `.superpowers/sdd/2026-09-04-member-links-rewiring/gate3-fix-report.md`。
 
 > **[Gate2 で覆された — 2026-09-04]** 元の指示は「メンバー値が非オブジェクト」の行も
 > 「同上（ファイル全体が壊れている） = 書かない・非ゼロ終了」だった。**実装計画側では採らない。**

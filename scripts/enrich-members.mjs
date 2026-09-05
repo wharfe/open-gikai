@@ -186,16 +186,48 @@ function main() {
     process.exit(1);
   }
   if (members === null || typeof members !== "object" || Array.isArray(members)) {
-    console.error(`enrich-members: ${membersPath} is not a JSON object`);
-    process.exit(1);
+    // Non-fatal, as of Gate3 2026-09-05 (was fatal — see the git history of
+    // this line, and docs/design-debate/member-links-rewiring/verdict.md §3
+    // for the reversal). Every OTHER consumer in the same daily-batch job
+    // already survives this shape: validate-data.mjs's checkMembers,
+    // generate-feeds.js and generate-sitemap.mjs all just enumerate zero
+    // members from Object.entries/Object.keys on an array, a string or a
+    // number. This step was the only new way `[]`-or-worse could end the
+    // morning — and the shape arises from a hand edit or a bad merge, i.e.
+    // it is already sitting in HEAD, so exiting here neither fixes the file
+    // nor is required to protect it. It only spends something real: this
+    // step sits under `bash -e` a few steps before `git add
+    // data/members.json` on an ephemeral runner, so aborting here would
+    // throw away the morning's already-assembled threads along with a file
+    // that was broken before this run started. So: write nothing, name the
+    // problem loudly enough for daily-batch.yml's final step to red the job
+    // over it, and exit 0 so publish continues — the repo's existing answer
+    // to "this file is unusable but not this run's fault" (see
+    // validate-data.mjs's error() under --fix, and summarize.py's exit-3
+    // contract). A file that will not PARSE is a different case and stays
+    // fatal above: there, there is nothing at all to copy through untouched.
+    const shape = members === null ? "null" : Array.isArray(members) ? "array" : typeof members;
+    const msg = `${membersPath} top level is not a JSON object (got ${shape}) — ` +
+      "leaving the file untouched; publish continues";
+    console.error(`enrich-members: ${msg}`);
+    if (process.env.GITHUB_ACTIONS) {
+      // Same escaping as validate-data.mjs's error(): workflow commands take
+      // the message on one line, so % and newlines have to be escaped or the
+      // annotation is silently truncated at the first newline.
+      const escaped = msg.replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
+      console.log(`::error::enrich-members: ${escaped}`);
+    }
+    process.exit(0);
   }
-  // A single member of the wrong shape is NOT fatal. This step sits under
-  // `bash -e` with `git add data/members.json` a few steps later, so exiting
-  // here throws away the morning's threads — and validate-data.mjs (:84-90)
-  // and the metrics step (:262-268) both exist because that already happened
-  // twice (#52, #74). The file as a whole being unreadable IS fatal, above:
-  // that is not one bad row, it is nothing to work from. One bad row is left
-  // exactly as it is, with its links untouched, and named in the log.
+  // A single member of the wrong shape is NOT fatal, for the same reason a
+  // non-object top level is not (above, as of Gate3 2026-09-05): this step
+  // sits under `bash -e` with `git add data/members.json` a few steps later,
+  // so exiting here throws away the morning's threads — and validate-data.mjs
+  // (:84-90) and the metrics step (:262-268) both exist because that already
+  // happened twice (#52, #74). Only a file that will not PARSE at all is
+  // still fatal, above: that is not a bad shape to route around, it is
+  // nothing to work from. One bad row is left exactly as it is, with its
+  // links untouched, and named in the log.
   const skipped = [];
   for (const [key, value] of Object.entries(members)) {
     if (value === null || typeof value !== "object" || Array.isArray(value)) {

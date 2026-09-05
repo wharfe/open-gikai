@@ -506,3 +506,51 @@ def test_an_unrecognised_members_path_flag_is_rejected_not_defaulted(tmp_path):
     assert proc.returncode != 0
     assert COMMITTED_MEMBERS.read_bytes() == before, (
         "an unrecognised flag must not touch the committed data")
+
+
+# ---------------------------------------------------------------------------
+# Gate3, 2026-09-05: a non-object top-level members.json is reversed from
+# fatal to non-fatal. See docs/design-debate/member-links-rewiring/verdict.md
+# §3 for why (a hand edit / bad merge produces this shape, it is already in
+# HEAD, every other consumer in the same job already tolerates it, and
+# aborting under `bash -e` a few steps before `git add data/members.json`
+# would only throw away that morning's already-assembled threads). A file
+# that will not PARSE at all is a *different* case and stays fatal — that is
+# covered above by test_a_broken_members_file_is_refused_without_writing, and
+# is deliberately left untouched by this change.
+# ---------------------------------------------------------------------------
+
+def test_a_non_object_top_level_is_not_fatal_and_writes_nothing(tmp_path):
+    """`[]` (or a string, or a number) at the top level used to exit 1. As of
+    Gate3 it must exit 0, leave the file byte-for-byte untouched, and name the
+    problem in its output so daily-batch.yml's final step can still red the
+    job over it."""
+    data_dir = tmp_path / "data"
+    (data_dir / "threads").mkdir(parents=True)
+    path = data_dir / "members.json"
+    before = "[]"
+    path.write_text(before, encoding="utf-8")
+    proc = subprocess.run(["node", str(SCRIPT), "--members-path", str(path)],
+                          capture_output=True, text=True, cwd=str(REPO_ROOT))
+    assert proc.returncode == 0, f"stdout={proc.stdout}\nstderr={proc.stderr}"
+    assert path.read_text(encoding="utf-8") == before, "the file must be untouched"
+    combined = proc.stdout + proc.stderr
+    assert "top level is not a JSON object" in combined
+    assert str(path) in combined, "the offending path must be named"
+
+
+def test_a_non_object_top_level_still_stays_fatal_when_it_wont_parse(tmp_path):
+    """The parse-failure case (a different one from the shape case above) must
+    not have moved: there is nothing at all to copy through untouched, so it
+    stays a non-zero exit with the file left alone. This pins the boundary
+    against the fix above accidentally widening to swallow parse failures
+    too."""
+    data_dir = tmp_path / "data"
+    (data_dir / "threads").mkdir(parents=True)
+    path = data_dir / "members.json"
+    before = "[1, 2,"  # truncated array — will not parse at all
+    path.write_text(before, encoding="utf-8")
+    proc = subprocess.run(["node", str(SCRIPT), "--members-path", str(path)],
+                          capture_output=True, text=True, cwd=str(REPO_ROOT))
+    assert proc.returncode != 0
+    assert path.read_text(encoding="utf-8") == before, "the file must be untouched"
