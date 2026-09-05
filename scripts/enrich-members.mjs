@@ -57,7 +57,14 @@ export function computeLiveSlugs(members, threadsDir) {
       }
       if (!Array.isArray(threads)) continue;
       for (const thread of threads) {
-        for (const speech of thread?.speeches || []) {
+        // thread?.speeches can be truthy but not iterable (an object, a
+        // number) — a shape neither the top-level Array.isArray(threads)
+        // check nor a plain `|| []` fallback catches, since both only guard
+        // absence, not the wrong type. threads/ is not this script's to own
+        // (see the try/catch above); skip the malformed thread rather than
+        // let a TypeError from a bad for-of take the run down.
+        if (!Array.isArray(thread?.speeches)) continue;
+        for (const speech of thread.speeches) {
           if (speech?.memberId) spoken.add(speech.memberId);
         }
       }
@@ -129,17 +136,43 @@ export function enrichMembers(members, { liveSlugs }) {
 }
 
 function parseArgs(argv) {
-  const i = argv.indexOf("--members-path");
-  if (i !== -1) {
-    if (!argv[i + 1]) throw new Error("--members-path needs a value");
-    return argv[i + 1];
+  let membersPath = null;
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    if (arg === "--members-path") {
+      if (!argv[i + 1]) throw new Error("--members-path needs a value");
+      membersPath = argv[i + 1];
+      i++;
+      continue;
+    }
+    if (arg.startsWith("--members-path=")) {
+      const value = arg.slice("--members-path=".length);
+      if (!value) throw new Error("--members-path needs a value");
+      membersPath = value;
+      continue;
+    }
+    // Reject anything else that looks like a flag rather than silently
+    // falling through to the default (repo-committed) path — an
+    // unrecognised `--members-path=<path>` used to do exactly that and
+    // would have targeted data/members.json instead of the caller's fixture.
+    if (arg.startsWith("--")) {
+      throw new Error(`enrich-members: unknown argument ${arg}`);
+    }
   }
+  if (membersPath !== null) return membersPath;
   // Anchored to this file, not the CWD: ci.yml runs pytest from scripts/.
   return join(SCRIPT_DIR, "..", "data", "members.json");
 }
 
 function main() {
-  const membersPath = parseArgs(process.argv.slice(2));
+  let membersPath;
+  try {
+    membersPath = parseArgs(process.argv.slice(2));
+  } catch (e) {
+    console.error(e.message);
+    console.error("usage: enrich-members.mjs [--members-path <path>|--members-path=<path>]");
+    process.exit(1);
+  }
   if (!existsSync(membersPath)) {
     console.error(`enrich-members: ${membersPath} does not exist`);
     process.exit(1);

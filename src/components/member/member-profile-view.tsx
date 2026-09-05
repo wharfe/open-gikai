@@ -10,7 +10,6 @@ import { Avatar } from "@/components/ui/avatar";
 type MemberProfileViewProps = {
   member: Member;
   threads: Thread[];
-  members: Record<string, Member>;
   ministry?: { slug: string; name: string } | null;
 };
 

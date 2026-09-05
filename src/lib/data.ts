@@ -210,7 +210,10 @@ export function getMembers(): Record<string, Member> {
 // and mutating an entry in place would also strip links from the profile
 // page's own focused `member`, which is the same object when the two are
 // requested in the same build worker.
+let _membersForDisplayCache: Record<string, Member> | null = null;
+
 export function getMembersForDisplay(): Record<string, Member> {
+  if (_membersForDisplayCache) return _membersForDisplayCache;
   const stripped: Record<string, Member> = {};
   for (const [id, m] of Object.entries(loadMembers())) {
     if (!m.links) {
@@ -221,6 +224,7 @@ export function getMembersForDisplay(): Record<string, Member> {
     delete copy.links;
     stripped[id] = copy;
   }
+  _membersForDisplayCache = stripped;
   return stripped;
 }
 

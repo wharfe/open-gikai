@@ -434,3 +434,75 @@ def test_the_oracle_is_fenced_against_getMinistryRosters_drifting():
         "scripts/tests/test_member_links.py::_roster_slugs_the_site_will_build "
         "was written to mirror. Re-read src/lib/data.ts's getMinistryRosters "
         "and update both the Python oracle and this regex together.")
+
+
+# --- Group D: Gate3 review findings 1-3 (shape guards on the "one bad row  ---
+# --- does not stop the run" contract) ----------------------------------------
+
+def test_a_non_string_role_does_not_crash_the_run(tmp_path):
+    """Gate3 finding 1: `role` on a real committed row is not guaranteed to be
+    a string — validate-data.mjs --fix already writes `rank` as an object, and
+    a `role` shaped the same way reaches getMemberMinistry() via
+    computeLiveSlugs()/enrichMembers(). ministry.mjs's `role.startsWith(...)`
+    throws TypeError on a non-string role unless it is guarded by a
+    `typeof role !== "string"` check, which used to be missing."""
+    members = {"m_a": {"id": "m_a", "name": "X", "role": {"raw": "総務省"}, "rank": "member"}}
+    proc, _, out = _run(members, {"d.json": _thread_with_speakers("m_a")}, tmp_path)
+    assert proc.returncode == 0, f"stdout={proc.stdout}\nstderr={proc.stderr}"
+    links = out["m_a"]["links"]
+    assert len(links) >= 1
+    assert not any(l["url"].startswith("/gov/") for l in links), (
+        "a non-string role must not resolve to a ministry")
+
+
+def test_a_thread_with_non_array_speeches_does_not_crash_the_run(tmp_path):
+    """Gate3 finding 2: computeLiveSlugs() guards JSON.parse and the top-level
+    Array.isArray(threads), but a per-thread `speeches` that is truthy and
+    non-iterable (an object, here) used to reach a bare `for (const speech of
+    thread?.speeches || [])` outside any try/catch and throw. threads/ is not
+    this script's to own (see the file's own comment); the malformed thread
+    must be skipped, not fatal."""
+    members = {"m_a": {"id": "m_a", "name": "寺崎秀俊", "role": "総務省自治税務局長", "rank": "member"}}
+    threads = {"d.json": [{"id": "t_x", "date": "2026-05-14", "committee": "C",
+                            "house": "参議院", "topic": "T", "topicTag": "t",
+                            "topicColor": "#000", "summary": "s",
+                            "speeches": {"not": "an array"}}]}
+    proc, _, out = _run(members, threads, tmp_path)
+    assert proc.returncode == 0, f"stdout={proc.stdout}\nstderr={proc.stderr}"
+    # No one is recorded as having spoken (the malformed thread is skipped),
+    # so soumu is not live and m_a falls back to search-only.
+    assert not any(l["url"].startswith("/gov/") for l in out["m_a"]["links"])
+
+
+def test_members_path_accepts_the_equals_form(tmp_path):
+    """Gate3 finding 3: parseArgs used an exact `argv.indexOf("--members-path")`
+    match, so `--members-path=<path>` fell through silently to the default
+    (committed) path instead of erroring or targeting the fixture."""
+    members = {"morimotoshinji": {"id": "morimotoshinji", "name": "森本真治",
+                                   "role": "議員", "rank": "member"}}
+    data_dir = tmp_path / "data"
+    (data_dir / "threads").mkdir(parents=True)
+    path = data_dir / "members.json"
+    path.write_text(json.dumps(members, ensure_ascii=False), encoding="utf-8")
+    proc = subprocess.run(
+        ["node", str(SCRIPT), f"--members-path={path}"],
+        capture_output=True, text=True, cwd=str(REPO_ROOT))
+    assert proc.returncode == 0, f"stdout={proc.stdout}\nstderr={proc.stderr}"
+    out = json.loads(path.read_text(encoding="utf-8"))
+    assert out["morimotoshinji"]["links"], (
+        "the `=` form must target the fixture path, not fall through to the "
+        "default")
+
+
+def test_an_unrecognised_members_path_flag_is_rejected_not_defaulted(tmp_path):
+    """Gate3 finding 3, the blast-radius half: a near-miss flag
+    (`--members-path-typo=...`, e.g. a typo or a test bug) must be rejected
+    with a usage error, not silently fall through to the default path — which
+    is the repo's own committed data/members.json — and rewrite it."""
+    before = COMMITTED_MEMBERS.read_bytes()
+    proc = subprocess.run(
+        ["node", str(SCRIPT), f"--members-path-typo={tmp_path / 'x.json'}"],
+        capture_output=True, text=True, cwd=str(REPO_ROOT))
+    assert proc.returncode != 0
+    assert COMMITTED_MEMBERS.read_bytes() == before, (
+        "an unrecognised flag must not touch the committed data")

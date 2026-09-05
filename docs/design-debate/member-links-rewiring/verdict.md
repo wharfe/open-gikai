@@ -82,7 +82,7 @@ Claude および両批評から、次だけ移します。
 
 触ってよいフィールドは `links` だけ。走査は `Object.entries` で、`m_` かどうかの判定には map key を使う（この半分は覆っていない）。
 
-実測（2026-09-04）: `m_` キー 646、うち値に `id` なし 31件。31件は全員 `role=""` かつ `name === key`。id を足しても省庁解決は 395 のまま増えない。それでも呼び出し形は key 側に合わせる（`getMemberMinistry` は `member.id` が `m_` でないと即 null）。
+実測（2026-09-04）: `m_` キー 646、うち値に `id` なし 31件。31件は全員 `role=""` かつ `name === key`。id を足しても省庁解決は 395 のまま増えない。呼び出し形は保存オブジェクトそのまま（`getMemberMinistry(member)`）— 上の Gate2 注記のとおり key への正規化はしない。31件は `id` を欠くため `getMemberMinistry` の `m_` ガードを満たせず、常に null になる。
 
 ### 生成規則（決定的。人・党派で分岐しない）
 
@@ -131,7 +131,7 @@ enricher は TypeScript の `data.ts` を import しない。同じ条件をこ�
 1. `members.json` と同じディレクトリの `threads/` を読む（validate-data と同じく `.json` かつ `.progress.json` でないもの）
 2. 読めないファイルは skip（validate-data と同じ。enrich を threads 破損で落とさない）
 3. `spokenIds` = 1件以上 speeche がある `memberId`
-4. `liveSlugs` = `spokenIds` に入り、かつ `getMemberMinistry({...member, id})` が非 null のメンバーから集めた slug
+4. `liveSlugs` = `spokenIds` に入り、かつ `getMemberMinistry(member)`（保存オブジェクトのまま。正規化しない）が非 null のメンバーから集めた slug
 
 `threads/` が無い・空なら `liveSlugs` は空。その場合 `/gov` は出さず検索だけ。exit は 0 のまま。
 

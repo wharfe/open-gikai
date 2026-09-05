@@ -86,7 +86,8 @@ export function getMemberMinistry(member) {
   if (!member || typeof member.id !== "string" || !member.id.startsWith("m_")) {
     return null;
   }
-  const role = member.role || "";
+  if (typeof member.role !== "string") return null;
+  const role = member.role;
   if (!role) return null;
   if (POLITICAL_TITLE_PREFIXES.some((t) => role.startsWith(t))) return null;
   return BY_LENGTH.find((m) => role.startsWith(m.name)) ?? null;
