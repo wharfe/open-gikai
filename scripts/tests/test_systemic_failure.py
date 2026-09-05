@@ -1089,13 +1089,22 @@ def test_held_and_abandoned_dates_fail_the_run_without_a_threshold():
     # be routed through the suspect threshold. The last one is not about a file
     # either — it is "nobody looked", which a green run must not swallow.
     assert ('if [ -z "$(echo "$FAIL_DATES$HELD$ABANDONED$BROKEN_JSON'
-            '$BROKEN_JSON_CHECK_FAILED"' in run)
+            '$BROKEN_JSON_CHECK_FAILED$MEMBERS_SHAPE_INVALID"' in run)
     assert "steps.commit.outputs.broken_json" in str(env.values())
     assert "steps.commit.outputs.broken_json_check_failed" in str(env.values())
     assert "$BROKEN_JSON" not in build, (
         "a file that could not be read is not one date's worth of weak evidence")
     assert "Permanently lost" in run
     assert "held for a human decision" in run
+    # Gate3, 2026-09-05: a non-object data/members.json (enrich-members.mjs
+    # exits 0 and writes nothing on that shape now, see verdict.md §3) is the
+    # fifth member of this same unconditional set, wired through its own step
+    # output rather than an exit code — it is neither a date nor weak evidence,
+    # so it must not be routed through the suspect threshold either.
+    assert "steps.enrich_members.outputs.members_shape_invalid" in str(env.values())
+    assert "$MEMBERS_SHAPE_INVALID" not in build, (
+        "a non-object members.json is not one date's worth of weak evidence")
+    assert "top level was not a JSON object" in run
 
 
 def test_the_stuck_notifier_dedups_by_date_and_not_by_muting_itself():
@@ -2697,3 +2706,65 @@ def test_the_anthropic_pin_matches_what_the_summary_layer_imports():
             f"nothing imports bare httpx any more, but {stale} still explain "
             f"the anthropic pin by it — lift the pin, or say there what the "
             f"new reason is and re-point this branch (#80)")
+
+
+def test_the_workflow_enriches_member_links_after_the_validator_adds_members():
+    """validate-data.mjs --fix adds members that appear only in threads, with
+    no links and no `id`. Enriching before it therefore commits members with
+    zero links on the very first morning — which is the state this whole
+    change exists to end. Order, not presence, is the contract.
+
+    No `|| true` either: enrich-news.py carries one because a missing news
+    article must not stop the publish, and copying it here would restore the
+    silent drift (nobody ran the enricher for months and nothing noticed).
+    """
+    yaml = pytest.importorskip("yaml")
+    wf = yaml.safe_load(
+        (REPO_ROOT / ".github" / "workflows" / "daily-batch.yml").read_text(encoding="utf-8"))
+    steps = wf["jobs"]["fetch-and-summarize"]["steps"]
+    runs = [(s.get("name", ""), s.get("run", "") or "", s) for s in steps]
+
+    def index_of(needle):
+        for i, (_, run, _) in enumerate(runs):
+            if needle in run:
+                return i
+        raise AssertionError(f"no step runs {needle!r}")
+
+    validate_at = index_of("scripts/validate-data.mjs --fix")
+    enrich_at = index_of("scripts/enrich-members.mjs")
+    feeds_at = index_of("scripts/generate-feeds.js")
+    assert validate_at < enrich_at < feeds_at, (
+        "enrich must run after the validator adds members and before the feeds "
+        f"are generated (validate={validate_at}, enrich={enrich_at}, feeds={feeds_at})")
+
+    _, enrich_run, enrich_step = runs[enrich_at]
+    assert "|| true" not in enrich_run
+    assert enrich_step.get("continue-on-error") is not True
+    assert "if" not in enrich_step, "the enrich step must not be conditional"
+
+
+def test_the_production_build_enriches_too():
+    """package.json's `build` is the other definition of this pipeline, and it
+    is the one Vercel runs. Without enrich there, the --fix in a production
+    build can add a member and render the deploy with no link for them."""
+    pkg = json.loads((REPO_ROOT / "package.json").read_text(encoding="utf-8"))
+    build = pkg["scripts"]["build"]
+    assert "scripts/enrich-members.mjs" in build
+    assert build.index("validate-data.mjs") < build.index("enrich-members.mjs")
+
+
+def test_ci_gives_the_python_tests_a_node_to_run():
+    """test_member_links.py subprocesses the node CLI. Without setup-node the
+    job leans on whatever node the runner image happens to ship — the same
+    unpinned-dependency shape as #80."""
+    yaml = pytest.importorskip("yaml")
+    wf = yaml.safe_load(
+        (REPO_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"))
+    steps = wf["jobs"]["python-tests"]["steps"]
+    node_steps = [s for s in steps if str(s.get("uses", "")).startswith("actions/setup-node@")]
+    assert node_steps, f"python-tests has no setup-node: {[s.get('uses') for s in steps]}"
+    # The version too, not just the action. Naming the action without pinning
+    # the runtime is the #80 shape exactly: it resolves to whatever the runner
+    # ships that week, and nobody wrote that number down.
+    assert node_steps[0].get("with", {}).get("node-version") is not None, (
+        "setup-node must pin node-version")

@@ -86,12 +86,17 @@ the next run. Readers are guarded too, but that only decides how well the pipeli
 corruption — this decides whether it creates any.
 
 Read the scope of that rule literally, because two writers sit outside it and neither is an
-oversight you should "fix" by widening the sentence. **`scripts/validate-data.mjs`** rewrites the
-committed `data/members.json` under `--fix` — which `daily-batch.yml` runs immediately before
-`git add data/members.json` — so it carries its own copy of the same temp→fsync→rename→fsync-dir
-shape. It is a duplicate because the repo has no tsx/ts-node and node cannot import the Python one;
-`test_jsonio.py::test_the_js_half_of_the_rule_holds_too` pins it, since the AST fence walks only
-`scripts/**.py` and is structurally blind to it. **`apps/mcp/scripts/copy-data.mjs`** solves the same
+oversight you should "fix" by widening the sentence. **`scripts/validate-data.mjs`** (under `--fix`)
+and **`scripts/enrich-members.mjs`** both rewrite the committed `data/members.json` — the two run
+back-to-back in `daily-batch.yml`, ahead of `git add data/members.json` — so the JS side needs the
+same temp→fsync→rename→fsync-dir shape the Python side has. That shape lives in one place, not two:
+`scripts/lib/jsonio.mjs` exports `writeJsonAtomic`, and both writers import it, because the repo has
+no tsx/ts-node and node cannot import the Python one — the duplication is JS-vs-Python, not
+writer-vs-writer. `test_jsonio.py::test_the_js_half_of_the_rule_holds_too` pins it, and pins the
+helper's body (the actual steps), not a call-site string — the previous version asserted on the call
+site, so it kept passing after the steps moved out of `validate-data.mjs` and into the shared file,
+and it checks both callers now. The AST fence walks only `scripts/**.py`, so this is what makes the
+JS half checkable at all. **`apps/mcp/scripts/copy-data.mjs`** solves the same
 problem with a different mechanism, because it copies a directory rather than writing a file (#73):
 it stages into `apps/mcp/.data-staging-<pid>/`, verifies the staged copy, and only then swaps — old
 aside into `.data-retired-<pid>/`, staged in, old removed. It also writes a `.bundle-manifest.json`
@@ -179,9 +184,14 @@ its exit 3 into an exit 1. **A guard that a second reader can reach the file ahe
 guard** — when adding one, check what else opens the same path earlier in the call.
 
 The claim stops at `summarize.py` on purpose, because it is checkable there and not elsewhere:
-`scripts/validate-data.mjs` still reads `data/members.json` bare immediately before the commit step,
-and `scripts/enrich-news.py` reads bare too (harmless only because `daily-batch.yml` runs it with
-`|| true`). Both are outside this file and outside the Python AST fence.
+`scripts/validate-data.mjs` still reads `data/members.json` bare, and `scripts/enrich-news.py`
+reads bare too (harmless only because `daily-batch.yml` runs it with `|| true`).
+`scripts/enrich-members.mjs` is guarded — it catches the parse failure and the non-object shape,
+names the file in the message, and exits 1 — but its guard is outside `summarize.py` and outside
+the Python AST fence, so it is not what the claim above is checking. Neither members.json reader sits
+immediately before the commit step any more: `Generate feeds and sitemaps` and `Compute new-thread
+metrics` now run between `Enrich member links` and `Commit and push data`. All three are outside
+this file and outside the Python AST fence.
 
 "Guarded" here means shape as well as parse: `_as_list_of_dicts` runs *inside* each reader's
 `try`, and raises `TypeError` precisely because that is already in `_RAW_READ_ERRORS`, so a

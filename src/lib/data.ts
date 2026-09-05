@@ -194,6 +194,40 @@ export function getMembers(): Record<string, Member> {
   return loadMembers();
 }
 
+// The `members` map handed to page components exists so a component can
+// look up a *speaker's* display data (name, party, role, rank, avatar) by
+// id — it is never the source of the `links` chips, which render only for
+// the one focused member on /m/{memberId} via that page's separate
+// `member` prop (see getMember). This is a static-export site, so a page's
+// props are serialized into every generated HTML file; the roster is ~1,300
+// members shared across ~8,400 pages, so anything added to every member's
+// entry is multiplied that many times over. `links` alone roughly doubled
+// members.json's size and tipped a Vercel build into ENOSPC — see #98 for
+// the underlying problem (page weight scaling with roster size), which this
+// does not fix, only mitigates for this one field.
+//
+// Never mutate the cached map returned by loadMembers() — it's memoised,
+// and mutating an entry in place would also strip links from the profile
+// page's own focused `member`, which is the same object when the two are
+// requested in the same build worker.
+let _membersForDisplayCache: Record<string, Member> | null = null;
+
+export function getMembersForDisplay(): Record<string, Member> {
+  if (_membersForDisplayCache) return _membersForDisplayCache;
+  const stripped: Record<string, Member> = {};
+  for (const [id, m] of Object.entries(loadMembers())) {
+    if (!m.links) {
+      stripped[id] = m;
+      continue;
+    }
+    const copy = { ...m };
+    delete copy.links;
+    stripped[id] = copy;
+  }
+  _membersForDisplayCache = stripped;
+  return stripped;
+}
+
 export function getMember(id: string): Member | undefined {
   return loadMembers()[id];
 }

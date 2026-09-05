@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getThread, getMembers, getAllThreadIds } from "@/lib/data";
+import { getThread, getMembersForDisplay, getAllThreadIds } from "@/lib/data";
 import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const thread = getThread(threadId);
   if (!thread) return {};
 
-  const members = getMembers();
+  const members = getMembersForDisplay();
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))]
     .map((id) => members[id]?.name || "")
     .filter(Boolean);
@@ -58,7 +58,7 @@ export default async function ThreadPage({ params }: Props) {
   const thread = getThread(threadId);
   if (!thread) notFound();
 
-  const members = getMembers();
+  const members = getMembersForDisplay();
 
   const isoDate = thread.date.replace(/\./g, "-");
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))]

@@ -267,7 +267,9 @@ git push -u origin feat/member-links-rewiring
 
 **Files:**
 - Create: `scripts/enrich-members.mjs`
-- Create: `scripts/tests/test_member_links.py`
+- Create: `scripts/tests/test_member_links.py` — **Task 3.5 と Task 4 が後から追記する。**
+  関数を末尾に足す形で書くこと（後続が丸ごと書き換えずに済むように）
+- Modify: `scripts/tests/test_jsonio.py`（Task 1 が外した `enrich-members.mjs` 側の検査を戻す）
 - Delete: `scripts/enrich_members.py`
 
 **Interfaces:**
@@ -726,7 +728,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 }
 ```
 
-**入力の失敗の扱い**（この表は `verdict.md` §3 の該当節を、上のコードが実装したもの）:
+**入力の失敗の扱い**（`verdict.md` §3 の該当節から1行だけ **意図的に発展**している。§3 は
+「メンバー値が非オブジェクト」も「ファイル全体が壊れている」と同じ非ゼロ終了としていたが、
+Gate2 でその行だけ覆された — 理由と実装箇所は §3 側の同日付の注記に記録済み。下の表は §3 の
+現行版ではなく、その覆した後の姿):
 
 | 入力 | 動作 |
 |---|---|
@@ -906,6 +911,8 @@ git push
 
 **Files:**
 - Modify: `apps/mcp/src/lib/mcp/tools.ts`（`getMemberDetail` と `listMembersTool` の返り値）
+- Modify: `scripts/tests/test_member_links.py` — **末尾に1関数を追記**。既存の関数を消さないこと
+  （Task 2 が作り、Task 4 がさらに追記する）
 
 **Interfaces:**
 - Consumes: なし
@@ -1006,6 +1013,9 @@ git push
 
 **Files:**
 - Modify: `data/members.json`
+- Modify: `scripts/tests/test_member_links.py` — **末尾に Group B を追記**し、冒頭に
+  `COMMITTED_MEMBERS` 定数を足す。**既存の関数（Task 2 の Group A、Task 3.5 の MCP テスト）を
+  消さないこと**
 
 **Interfaces:**
 - Consumes: `node scripts/enrich-members.mjs`（Task 2）
@@ -1221,7 +1231,8 @@ git push
 - Modify: `.github/workflows/daily-batch.yml:245-249`
 - Modify: `.github/workflows/ci.yml`（python-tests に `setup-node`）
 - Modify: `package.json`（`build`）
-- Modify: `scripts/tests/test_systemic_failure.py`（配線の契約テストを追加）
+- Modify: `scripts/tests/test_systemic_failure.py`（配線の契約テストを**末尾に追記**）
+- Modify: `scripts/check_committable_json.py`（消えるステップ名を参照している段落を書き換え）
 
 **Interfaces:**
 - Consumes: `node scripts/enrich-members.mjs`（Task 2）
@@ -1415,6 +1426,8 @@ git push
 
 **Files:**
 - Modify: `CLAUDE.md`（`jsonio.py` の段落内、`validate-data.mjs` を名指ししている箇所）
+
+`scripts/tests/test_jsonio.py` は**読むだけ**（Task 1 と Task 2 が既に最終形にしてある）。
 
 **Interfaces:** なし
 

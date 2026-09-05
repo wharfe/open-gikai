@@ -82,7 +82,7 @@ Claude および両批評から、次だけ移します。
 
 触ってよいフィールドは `links` だけ。走査は `Object.entries` で、`m_` かどうかの判定には map key を使う（この半分は覆っていない）。
 
-実測（2026-09-04）: `m_` キー 646、うち値に `id` なし 31件。31件は全員 `role=""` かつ `name === key`。id を足しても省庁解決は 395 のまま増えない。それでも呼び出し形は key 側に合わせる（`getMemberMinistry` は `member.id` が `m_` でないと即 null）。
+実測（2026-09-04）: `m_` キー 646、うち値に `id` なし 31件。31件は全員 `role=""` かつ `name === key`。id を足しても省庁解決は 395 のまま増えない。呼び出し形は保存オブジェクトそのまま（`getMemberMinistry(member)`）— 上の Gate2 注記のとおり key への正規化はしない。31件は `id` を欠くため `getMemberMinistry` の `m_` ガードを満たせず、常に null になる。
 
 ### 生成規則（決定的。人・党派で分岐しない）
 
@@ -131,7 +131,7 @@ enricher は TypeScript の `data.ts` を import しない。同じ条件をこ�
 1. `members.json` と同じディレクトリの `threads/` を読む（validate-data と同じく `.json` かつ `.progress.json` でないもの）
 2. 読めないファイルは skip（validate-data と同じ。enrich を threads 破損で落とさない）
 3. `spokenIds` = 1件以上 speeche がある `memberId`
-4. `liveSlugs` = `spokenIds` に入り、かつ `getMemberMinistry({...member, id})` が非 null のメンバーから集めた slug
+4. `liveSlugs` = `spokenIds` に入り、かつ `getMemberMinistry(member)`（保存オブジェクトのまま。正規化しない）が非 null のメンバーから集めた slug
 
 `threads/` が無い・空なら `liveSlugs` は空。その場合 `/gov` は出さず検索だけ。exit は 0 のまま。
 
@@ -161,9 +161,38 @@ CLI がファイル I/O・liveSlugs 計算・no-op 判定・atomic write を担�
 
 | 入力 | 動作 |
 |---|---|
-| ファイルなし / JSON でない / トップレベルがオブジェクトでない | 書かない。非ゼロ終了 |
-| メンバー値が非オブジェクト | 同上（ファイル全体が壊れている） |
+| ファイルなし / JSON でない（パース失敗） | 書かない。非ゼロ終了 |
+| トップレベルがオブジェクトでない（`[]`・文字列・数値など） | 書かない。`::error::` annotation を出して exit 0。publish は続行 |
+| メンバー値が非オブジェクト | 素通し（`links` を触らない）。警告に該当キーを名指しして exit 0 |
 | 個別の `name` が空・非文字列 | ジョブは落とさない。検索語を `memberId` にして1本出す |
+
+> **[Gate3 で覆された — 2026-09-05]** 元の指示（Gate2 確定時点）は「トップレベルがオブジェクトで
+> ない」も「ファイルなし / JSON でない」と同じ行 = 書かない・非ゼロ終了だった。**実装では採らない
+> ことにした。** レビュアーの指摘: 同じジョブの他の消費者（`validate-data.mjs` の
+> `checkMembers`・`generate-feeds.js`・`generate-sitemap.mjs`）は全員この形（`[]` など）を
+> 生き延びる — `Object.entries([])` は単に空を返すだけでクラッシュしない。落ちるのは
+> `enrich-members.mjs` だけだった。加えて、この形は今日的な原因（hand edit・不正な merge）で
+> 生まれるので **HEAD に既に入っている** — その朝の実行が壊したものではなく、この実行が
+> exit 1 しても直らない。**なのに** このステップは `bash -e` の下、`git add
+> data/members.json` の数ステップ手前に座るので、非ゼロ終了はその朝に組み上がった無関係な
+> threads を巻き込んで消す。壊れたファイルは直らないまま、無実の threads だけ失う二重の損失。
+> **正しくは**: 何も書かず、`::error::` annotation でその旨を記録し、exit 0 で publish を
+> 続行する。ジョブ全体を赤くする責務は `.github/workflows/daily-batch.yml` の最終ステップ
+> （`Fail the run on a systemic summary failure`）へ、`members_shape_invalid` という
+> 独立した step output 経由で移した — `held`/`abandoned`/`broken_json` と同じ形。
+> 実装は `scripts/enrich-members.mjs` の `main()`（非ゼロ終了だった分岐を annotation + exit 0
+> に変更）と `.github/workflows/daily-batch.yml` の `enrich_members` ステップ・最終失敗ステップ。
+> 詳細は `.superpowers/sdd/2026-09-04-member-links-rewiring/gate3-fix-report.md`。
+
+> **[Gate2 で覆された — 2026-09-04]** 元の指示は「メンバー値が非オブジェクト」の行も
+> 「同上（ファイル全体が壊れている） = 書かない・非ゼロ終了」だった。**実装計画側では採らない。**
+> 理由: このステップは `bash -e` の下、`git add data/members.json` の数ステップ手前に座る。
+> ファイル全体が読めないことと、1行の値が変なことは別の失敗で、後者を理由に非ゼロ終了すると、
+> その朝に組み上がった threads ごと消える — #52 / #74 で一度ずつ実際に起きた種類の増幅を、
+> 別の入り口から持ち込むことになる。**正しくは**、不正な行はそのまま素通しし（`links` を触らず）、
+> 警告に該当キーを名指しして exit 0 のまま続行する。実装は `scripts/enrich-members.mjs` の
+> `enrichMembers()`（素通しの本体）と `main()` の `skipped` 収集（警告の名指し）。
+> 詳細は `docs/superpowers/plans/2026-09-04-member-links-rewiring.md`。
 
 スクリプト自身の例外（bug）は非ゼロのまま上げる。`|| true` / `continue-on-error` / 日付条件 / 成否を捨てる shell 分岐は付けない。
 
