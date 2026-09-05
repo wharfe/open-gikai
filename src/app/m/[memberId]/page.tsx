@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getMember, getMembers, getThreads, getAllMemberIds, getMemberStats, getMinistrySlugs } from "@/lib/data";
+import { getMember, getMembersForDisplay, getThreads, getAllMemberIds, getMemberStats, getMinistrySlugs } from "@/lib/data";
 import { getMemberMinistry } from "@/lib/ministry.mjs";
 import { MemberProfileView } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
@@ -51,7 +51,10 @@ export default async function MemberPage({ params }: Props) {
   if (!member) notFound();
 
   const allThreads = getThreads();
-  const members = getMembers();
+  // Stripped of `links` — this is the roster lookup map for speaker display
+  // data, not the focused member. `member` above (from getMember, untouched)
+  // is the one whose links render as chips.
+  const members = getMembersForDisplay();
 
   // Only pass threads where this member has speeches (avoids serializing all thread data)
   const threads = allThreads.filter((t) =>

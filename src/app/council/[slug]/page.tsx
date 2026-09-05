@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getCouncils, getCouncilSlugs, getThreads, getMembers } from "@/lib/data";
+import { getCouncils, getCouncilSlugs, getThreads, getMembersForDisplay } from "@/lib/data";
 import { MobileHeader } from "@/components/layout/header";
 import { ThreadCard } from "@/components/feed/thread-card";
 
@@ -43,7 +43,7 @@ export default async function CouncilPage({ params }: Props) {
   if (!council) notFound();
 
   const allThreads = getThreads();
-  const members = getMembers();
+  const members = getMembersForDisplay();
 
   // Get threads for this council, grouped by date
   const councilThreads = allThreads.filter(
