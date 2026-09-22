@@ -1,0 +1,66 @@
+{
+  "schema_version": 4,
+  "date": "2026-09-21",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01HwQ9qpJ2fPJNCNuicdZgFT",
+      "submitted_at": "2026-09-22T00:00:29Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-09-21",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_adabe659d59a_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "台風被害への対応",
+            "topicTag": "台風対応",
+            "topicColor": "#dc2626",
+            "summary": "台風で犠牲者が出たことに哀悼の意を示し、官房長官らに万全の対応を指示",
+            "contextDescription": "台風による被害が発生し、政府の災害対応が求められている状況。",
+            "legislationName": null,
+            "speechOrders": [
+              2
+            ]
+          },
+          "speechOrders": [
+            2
+          ],
+          "input_hash": "sha256:1b68a3b0893094e624f984a6162574001f61ff64f6bbf86cafe04b6121c33a24"
+        },
+        {
+          "custom_id": "s_adabe659d59a_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "国連総会での一般討論演説と日米首脳会談",
+            "topicTag": "国連外交",
+            "topicColor": "#06b6d4",
+            "summary": "国連加盟70周年での演説内容と、米中首脳会談を控えた日米首脳会談での方針",
+            "contextDescription": "総理が国連総会出席のため渡米し、トランプ大統領との首脳会談等を控える中での外交方針。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:b1ed7b11735d25e916bad089b9bc2066c0633706d2bdb87cbda253d8db3496dd"
+        }
+      ]
+    }
+  ]
+}
