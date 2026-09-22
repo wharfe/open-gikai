@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 22 Sep 2026 00:20:44 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 23:34:54 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W39 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W39</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W39</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。米国訪問等についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W38 国会まとめ — 8件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W38</link>
@@ -32,12 +40,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W34 国会まとめ — 3件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W34</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W34</guid>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、2委員会の議論をまとめました。バーナム英国首相との電話会談についての会見、エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>台風被害への対応 — 米国訪問等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260921_adabe6_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260921_adabe6_01</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
+      <description>台風で犠牲者が出たことに哀悼の意を示し、官房長官らに万全の対応を指示（首相記者会見・2026.09.21・1発言）</description>
+      <category>米国訪問等についての会見</category>
+    </item>
+    <item>
+      <title>国連総会での一般討論演説と日米首脳会談 — 米国訪問等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260921_adabe6_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260921_adabe6_02</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
+      <description>国連加盟70周年での演説内容と、米中首脳会談を控えた日米首脳会談での方針（首相記者会見・2026.09.21・2発言）</description>
+      <category>米国訪問等についての会見</category>
     </item>
     <item>
       <title>内閣改造の狙いと総裁選への意識 — 高市内閣総理大臣記者会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_13</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>進化したFOIPの下でインド太平洋地域の秩序構築に主体的役割を果たす方針を確認（国会会議録・2026.07.27・2発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>骨太の方針2026と成長投資戦略 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_14</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>積極財政による危機管理投資・成長投資の拡大方針と地域経済振興策を議論（国会会議録・2026.07.27・10発言）</description>
-      <category>予算委員会</category>
-    </item>
-    <item>
-      <title>高校・大学の人材育成システム改革 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_15</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>専門高校の役割強化と大学のリスキリング機能拡充による人材育成改革を議論（国会会議録・2026.07.27・4発言）</description>
       <category>予算委員会</category>
     </item>
   </channel>
