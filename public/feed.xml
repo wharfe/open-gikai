@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 Sep 2026 00:02:19 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 23:32:25 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W39 国会まとめ — 4件の議論</title>
+      <title>2026-W39 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W39</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W39</guid>
-      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-      <description>4件のスレッド、2委員会の議論をまとめました。日米首脳会談等についての会見、米国訪問等についての会見ほか。</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+      <description>5件のスレッド、3委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、日米首脳会談等についての会見、米国訪問等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,14 @@
       <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
       <description>4件のスレッド、3委員会の議論をまとめました。議院運営委員会図書館運営小委員会、議院運営委員会庶務小委員会、「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>日米首脳電話会談（米中首脳会談後）の内容 — トランプ米国大統領との電話会談についての会見</title>
+      <link>https://open-gikai.net/t/t_20260926_c34f57_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260926_c34f57_01</guid>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+      <description>トランプ大統領との電話会談で米中首脳会談の説明を受け、日米連携を確認した（首相記者会見・2026.09.26・2発言）</description>
+      <category>トランプ米国大統領との電話会談についての会見</category>
     </item>
     <item>
       <title>日米首脳会談での円安・為替をめぐるやり取り — 日米首脳会談等についての会見</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_10</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>拉致48年を前に、金正恩氏との首脳会談を含むあらゆる選択肢での解決への決意（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>外国人政策と在留外国人の量的マネジメント — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_11</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>在留外国人増加を受け、量的マネジメント導入を含む外国人受入れ政策の検討状況（首相記者会見・2026.07.27・2発言）</description>
       <category>高市内閣総理大臣記者会見</category>
     </item>
   </channel>
