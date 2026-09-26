@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Sep 2026 23:51:01 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 00:02:19 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W39 国会まとめ — 2件の議論</title>
+      <title>2026-W39 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W39</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W39</guid>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。米国訪問等についての会見ほか。</description>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、2委員会の議論をまとめました。日米首脳会談等についての会見、米国訪問等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,22 @@
       <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
       <description>4件のスレッド、3委員会の議論をまとめました。議院運営委員会図書館運営小委員会、議院運営委員会庶務小委員会、「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>日米首脳会談での円安・為替をめぐるやり取り — 日米首脳会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260925_0e9356_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260925_0e9356_01</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <description>トランプ大統領の円安懸念に対し高市総理は円の過小評価は問題と一般論で応答（首相記者会見・2026.09.25・2発言）</description>
+      <category>日米首脳会談等についての会見</category>
+    </item>
+    <item>
+      <title>ICCをめぐる日米間の意見交換と対応方針 — 日米首脳会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20260925_0e9356_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20260925_0e9356_02</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <description>米国のICC不信感に対し総理は日本の一貫した支持姿勢を伝え率直な意見交換を実施（首相記者会見・2026.09.25・2発言）</description>
+      <category>日米首脳会談等についての会見</category>
     </item>
     <item>
       <title>台風被害への対応 — 米国訪問等についての会見</title>
@@ -422,22 +438,6 @@
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>在留外国人増加を受け、量的マネジメント導入を含む外国人受入れ政策の検討状況（首相記者会見・2026.07.27・2発言）</description>
       <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>消費税減税による地方財政への影響と財源措置 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_12</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>飲食料品消費税減税に伴う地方税収減への懸念に対し、政府の財源措置対応を問う（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>FOIPとインド太平洋外交 — 予算委員会</title>
-      <link>https://open-gikai.net/t/t_20260727_581690_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_581690_13</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>進化したFOIPの下でインド太平洋地域の秩序構築に主体的役割を果たす方針を確認（国会会議録・2026.07.27・2発言）</description>
-      <category>予算委員会</category>
     </item>
   </channel>
 </rss>
