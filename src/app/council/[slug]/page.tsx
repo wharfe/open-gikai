@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getCouncils, getCouncilSlugs, getThreads, getMembersForDisplay } from "@/lib/data";
+import { getCouncils, getCouncilSlugs, getThreads, getMembersForDisplayByIds } from "@/lib/data";
 import { MobileHeader } from "@/components/layout/header";
 import { ThreadCard } from "@/components/feed/thread-card";
 
@@ -43,12 +43,12 @@ export default async function CouncilPage({ params }: Props) {
   if (!council) notFound();
 
   const allThreads = getThreads();
-  const members = getMembersForDisplay();
-
   // Get threads for this council, grouped by date
   const councilThreads = allThreads.filter(
     (t) => t.source === "council" && (t.sourceLabel === council.name || t.committee === council.name)
   );
+  // Only the speakers of the threads listed here: the map is serialized into the page (#98).
+  const members = getMembersForDisplayByIds(councilThreads.flatMap((t) => t.speeches.map((s) => s.memberId)));
 
   const byDate: Record<string, typeof councilThreads> = {};
   for (const t of councilThreads) {
