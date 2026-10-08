@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Oct 2026 00:35:01 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 00:59:16 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W41 国会まとめ — 4件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W41</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W41</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、3委員会の議論をまとめました。資源エネルギー・持続可能社会に関する調査会、情報監視審査会、災害対策特別委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W39 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W39</link>
@@ -32,12 +40,36 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W35 国会まとめ — 4件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W35</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W35</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
-      <description>4件のスレッド、3委員会の議論をまとめました。議院運営委員会図書館運営小委員会、議院運営委員会庶務小委員会、「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>会長・理事選任等の手続き — 資源エネルギー・持続可能社会に関する調査会</title>
+      <link>https://open-gikai.net/t/t_20261005_51bfaa_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_51bfaa_01</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>委員辞任に伴う会長・理事の補欠選任手続きが行われた（国会会議録・2026.10.05・5発言）</description>
+      <category>資源エネルギー・持続可能社会に関する調査会</category>
+    </item>
+    <item>
+      <title>情報監視審査会会長就任挨拶 — 情報監視審査会</title>
+      <link>https://open-gikai.net/t/t_20261005_3b0d07_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_3b0d07_02</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新会長が特定秘密保護制度等の運用監視という審査会の役割を述べ就任挨拶を行った（国会会議録・2026.10.05・1発言）</description>
+      <category>情報監視審査会</category>
+    </item>
+    <item>
+      <title>委員長互選・理事選任等の委員会構成手続き — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_149c53_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_149c53_03</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>委員長互選と理事指名により災害対策特別委員会の体制を決定（国会会議録・2026.10.05・6発言）</description>
+      <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>令和8年台風第25号・26号及び前線大雨被害への黙祷・哀悼 — 災害対策特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_149c53_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_149c53_04</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>令和8年の台風・大雨被害の犠牲者に黙祷を捧げ哀悼の意を表した（国会会議録・2026.10.05・1発言）</description>
+      <category>災害対策特別委員会</category>
     </item>
     <item>
       <title>日米首脳電話会談（米中首脳会談後）の内容 — トランプ米国大統領との電話会談についての会見</title>
@@ -405,38 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_06</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <description>健康維持と働き方の選択を前提とした労働時間規制の弾力化方針と法案提出の遅れ（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>国内景気・物価情勢とデフレ脱却宣言 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_07</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>消費者物価上昇を踏まえ、デフレ状況ではないとしつつデフレ脱却宣言には至らない現状認識（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>総理就任後の外交成果の総括 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_08</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>就任後10か国訪問など、各国首脳との信頼関係構築を通じた外交成果を総理が総括（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>今国会の総括と国会改革・出席対応 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_09</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>支持率低下も踏まえた今国会の反省点と、総理の集中審議出席を巡る国会改革論議（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>拉致問題の解決に向けた取り組み — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_10</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>拉致48年を前に、金正恩氏との首脳会談を含むあらゆる選択肢での解決への決意（首相記者会見・2026.07.27・2発言）</description>
       <category>高市内閣総理大臣記者会見</category>
     </item>
   </channel>

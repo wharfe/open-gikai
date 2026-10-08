@@ -29675,5 +29675,55 @@
         "url": "https://www.google.com/search?q=%E6%96%B0%E5%9E%A3%E6%85%B6%E5%A4%AA+%E5%9B%BD%E5%9C%9F%E4%BA%A4%E9%80%9A%E7%9C%81"
       }
     ]
+  },
+  "kawanomasami": {
+    "id": "kawanomasami",
+    "name": "河野正美",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E9%87%8E%E6%AD%A3%E7%BE%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B2%B3%E9%87%8E%E6%AD%A3%E7%BE%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B2%B3%E9%87%8E%E6%AD%A3%E7%BE%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "minorikawanobuhide": {
+    "id": "minorikawanobuhide",
+    "name": "御法川信英",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E6%B3%95%E5%B7%9D%E4%BF%A1%E8%8B%B1"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%BE%A1%E6%B3%95%E5%B7%9D%E4%BF%A1%E8%8B%B1+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%BE%A1%E6%B3%95%E5%B7%9D%E4%BF%A1%E8%8B%B1+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   }
 }
