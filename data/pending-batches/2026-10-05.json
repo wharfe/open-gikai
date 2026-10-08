@@ -1,0 +1,230 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-05",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_011Ma4NkrX3Vp1Xan5Jwvatw",
+      "submitted_at": "2026-10-08T00:55:52Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_こども・子育て・若者活躍に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_デジタル社会の形成及び人工知能の活用等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_北朝鮮による拉致問題等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_政府開発援助及び国際協力・人道支援等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_政治改革に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_沖縄・北方問題及び地方に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_消費者問題に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_災害対策及び東日本大震災復興特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_資源エネルギー・持続可能社会に関する調査会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_51bfaa05781b_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "会長・理事選任等の手続き",
+            "topicTag": "人事手続",
+            "topicColor": "#6b7280",
+            "summary": "委員辞任に伴う会長・理事の補欠選任手続きが行われた",
+            "contextDescription": "委員の異動に伴い、調査会の会長および理事を新たに選任する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              3,
+              5,
+              7,
+              10
+            ]
+          },
+          "speechOrders": [
+            1,
+            3,
+            5,
+            7,
+            10
+          ],
+          "input_hash": "sha256:6646c6aacb15740696aca81b8c9bb2d6a9d49641ba088443e4656e5d4d187872"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_北朝鮮による拉致問題等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_情報監視審査会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_3b0d075ad9d9_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "情報監視審査会会長就任挨拶",
+            "topicTag": "会長挨拶",
+            "topicColor": "#6b7280",
+            "summary": "新会長が特定秘密保護制度等の運用監視という審査会の役割を述べ就任挨拶を行った",
+            "contextDescription": "特定秘密保護制度と重要経済安保情報保護活用制度の運用を監視する衆議院情報監視審査会の会長就任に伴う挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              5
+            ]
+          },
+          "speechOrders": [
+            5
+          ],
+          "input_hash": "sha256:19ca45fabf9987f58a28839294bac4645651e9ea23bab75e74b3a97a4eba287e"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_東日本大震災復興及び原子力問題調査特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_災害対策特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_149c53dbcea1_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "委員長互選・理事選任等の委員会構成手続き",
+            "topicTag": "委員構成",
+            "topicColor": "#6b7280",
+            "summary": "委員長互選と理事指名により災害対策特別委員会の体制を決定",
+            "contextDescription": "国会の委員会が新たに構成される際に行われる委員長選出や理事選任などの手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              3,
+              4,
+              5,
+              7,
+              9
+            ]
+          },
+          "speechOrders": [
+            1,
+            3,
+            4,
+            5,
+            7,
+            9
+          ],
+          "input_hash": "sha256:be7d108379b01a964216f6fb375c7890b1deb9d4ca15dd185c62f50096c5a74f"
+        },
+        {
+          "custom_id": "s_149c53dbcea1_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "令和8年台風第25号・26号及び前線大雨被害への黙祷・哀悼",
+            "topicTag": "台風被害",
+            "topicColor": "#dc2626",
+            "summary": "令和8年の台風・大雨被害の犠牲者に黙祷を捧げ哀悼の意を表した",
+            "contextDescription": "台風第25号、26号及び前線による大雨で発生した人的被害を受け、委員会として追悼を行う場面。",
+            "legislationName": null,
+            "speechOrders": [
+              10
+            ]
+          },
+          "speechOrders": [
+            10
+          ],
+          "input_hash": "sha256:c7a206ffec9fa4b49f834cfef48c8827c7581551fe6b0fd44388c8f6e1908259"
+        }
+      ]
+    }
+  ]
+}
