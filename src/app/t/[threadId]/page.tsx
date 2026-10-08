@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getThread, getMembersForDisplay, getAllThreadIds } from "@/lib/data";
+import { getThread, getMembersForDisplay, getMembersForDisplayByIds, getAllThreadIds } from "@/lib/data";
 import { ThreadDetailView } from "@/components/thread/thread-detail-view";
 import { MobileHeader } from "@/components/layout/header";
 
@@ -58,7 +58,8 @@ export default async function ThreadPage({ params }: Props) {
   const thread = getThread(threadId);
   if (!thread) notFound();
 
-  const members = getMembersForDisplay();
+  // Only this thread's speakers: the map is serialized into the page (#98).
+  const members = getMembersForDisplayByIds(thread.speeches.map((s) => s.memberId));
 
   const isoDate = thread.date.replace(/\./g, "-");
   const actors = [...new Set(thread.speeches.map((s) => s.memberId))]

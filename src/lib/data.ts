@@ -228,6 +228,20 @@ export function getMembersForDisplay(): Record<string, Member> {
   return stripped;
 }
 
+// The display map narrowed to the given member ids. Pages that only render
+// the speakers of their own threads pass this instead of the whole roster, so
+// their serialized props stay proportional to what they show rather than to
+// the roster size (#98). Ids missing from the roster are left out, which reads
+// the same as indexing the full map: `members[id]` is undefined either way.
+export function getMembersForDisplayByIds(ids: Iterable<string>): Record<string, Member> {
+  const all = getMembersForDisplay();
+  const picked: Record<string, Member> = {};
+  for (const id of ids) {
+    if (id in all) picked[id] = all[id];
+  }
+  return picked;
+}
+
 export function getMember(id: string): Member | undefined {
   return loadMembers()[id];
 }
