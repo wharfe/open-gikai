@@ -1,0 +1,102 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-14",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_019JLUBGiaKWycghFQa7aSuQ",
+      "submitted_at": "2026-10-14T23:56:27Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-10-14",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_492aa551205c_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "簗農林水産大臣の辞任経緯と受け止め",
+            "topicTag": "大臣辞任",
+            "topicColor": "#f97316",
+            "summary": "簗農水大臣が辞表を提出し総理が受け取った経緯と当日のやり取りを説明",
+            "contextDescription": "簗和生農林水産大臣が就任から1か月足らずで辞任を表明した経緯に関する会見。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          "speechOrders": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "input_hash": "sha256:54d4da4c62b996682a97ef7c24764bf30ed449cc0c98b6af6214cbc94e7fd5ff"
+        },
+        {
+          "custom_id": "s_492aa551205c_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "簗大臣の問題発言と説明責任、任命責任",
+            "topicTag": "任命責任",
+            "topicColor": "#f97316",
+            "summary": "大臣就任前の地元発言を巡る説明不足と総理の任命責任への言及",
+            "contextDescription": "簗大臣の就任前の地元選挙区での発言が問題視され、説明責任や総理の任命責任が問われた。",
+            "legislationName": null,
+            "speechOrders": [
+              16,
+              17,
+              18,
+              19,
+              20,
+              21
+            ]
+          },
+          "speechOrders": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "input_hash": "sha256:9a9c450cba96197818939639ab7a1e3c96140b74a8179e64a26d9f33b8f18be9"
+        }
+      ]
+    }
+  ]
+}
