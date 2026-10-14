@@ -1,0 +1,420 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-05",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_016MKp3Tf2Eu6ULRZ1gAdYhE",
+      "submitted_at": "2026-10-14T23:51:48Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_こども・子育て・若者活躍に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_デジタル社会の形成及び人工知能の活用等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_北朝鮮による拉致問題等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_政府開発援助及び国際協力・人道支援等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_政治改革に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_沖縄・北方問題及び地方に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_消費者問題に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_災害対策及び東日本大震災復興特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_北朝鮮による拉致問題等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_cda42efe11d6_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "委員長互選後の拉致問題解決への決意表明",
+            "topicTag": "拉致決意",
+            "topicColor": "#ef4444",
+            "summary": "新委員長が拉致問題は未解決であり早期解決を目指す決意を表明",
+            "contextDescription": "北朝鮮による日本人拉致問題は長年未解決で、被害者家族の高齢化が進む中、政府・国会の対応が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              5
+            ]
+          },
+          "speechOrders": [
+            5
+          ],
+          "input_hash": "sha256:e8ce85a42f9eb5bc2df17c6fce7f882a0ffa0146b56a16c95bb84966c33ad833"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_地域活性化・こども政策・デジタル社会形成に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_政治改革に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_368bdcd87e5d_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "政治改革特別委員会の委員長互選",
+            "topicTag": "委員長選",
+            "topicColor": "#f97316",
+            "summary": "政治改革特別委員会の委員長に井上英孝氏を互選で選出した",
+            "contextDescription": "国会の委員会運営にあたり、委員長を委員の互選によって選任する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              3,
+              5
+            ]
+          },
+          "speechOrders": [
+            1,
+            3,
+            5
+          ],
+          "input_hash": "sha256:4d300f1902c728f4eda392d022228471cf999e3cae0ef76673032c841ee43fc7"
+        },
+        {
+          "custom_id": "s_368bdcd87e5d_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "理事の選任",
+            "topicTag": "理事選任",
+            "topicColor": "#f97316",
+            "summary": "理事を8名とし、委員長指名により8名の理事を選任した",
+            "contextDescription": "委員会運営を補佐する理事の人数と人選を決定する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              7,
+              9
+            ]
+          },
+          "speechOrders": [
+            7,
+            9
+          ],
+          "input_hash": "sha256:0a17c3adece900579e6d89066610a4badd96d3f0af94f2bb02566bca4e8ae0d3"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_東日本大震災復興及び原子力問題調査特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_消費者問題に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_議院運営委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_4dd369b3c2ed_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "綿貫民輔元議長の逝去と弔意",
+            "topicTag": "弔意",
+            "topicColor": "#6b7280",
+            "summary": "綿貫民輔元議長の逝去に際し議長の弔詞と哀悼の意を報告",
+            "contextDescription": "元衆議院議長綿貫民輔氏が逝去し、議院運営委員会で弔意表明と弔詞贈呈が報告された。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              29
+            ]
+          },
+          "speechOrders": [
+            1,
+            29
+          ],
+          "input_hash": "sha256:be963934d595a988a89b908435171e40d729320d9ee9efaa10d411553d63a116"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "理事の辞任及び補欠選任",
+            "topicTag": "理事人事",
+            "topicColor": "#f97316",
+            "summary": "複数理事の辞任に伴い後任理事を委員長が指名し了承",
+            "contextDescription": "議院運営委員会の理事が辞任し、後任理事が委員長により指名された手続き事項。",
+            "legislationName": null,
+            "speechOrders": [
+              4
+            ]
+          },
+          "speechOrders": [
+            4
+          ],
+          "input_hash": "sha256:20e1f7822a36e35f2e57c42b70943240d81162a49a183c51686c689cbac7a214"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "臨時国会の議席・会期の件",
+            "topicTag": "会期",
+            "topicColor": "#f97316",
+            "summary": "第222回臨時国会の仮議席決定と会期69日間を決定",
+            "contextDescription": "臨時国会召集に伴い、議席の仮配分と会期（開会から閉会までの期間）を協議する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              5,
+              6,
+              38
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            38
+          ],
+          "input_hash": "sha256:1b318e93460cbe8bd3f54aff614d3cb1c8e2ebeb26af686a97c8e020fdc6481a"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "常任委員長の辞任及び選挙",
+            "topicTag": "委員長人事",
+            "topicColor": "#f97316",
+            "summary": "各常任委員長が一斉辞任し、新委員長候補を議長指名で選任",
+            "contextDescription": "国会で各委員会を統括する常任委員長が交代する際の辞任手続きと後任選挙に関する事項。",
+            "legislationName": null,
+            "speechOrders": [
+              8,
+              10,
+              11,
+              15
+            ]
+          },
+          "speechOrders": [
+            8,
+            10,
+            11,
+            15
+          ],
+          "input_hash": "sha256:eb4c3b3f1c652eeda44c037eb3ab005f9b84b0bd05a734d09850e9279f1d7dfe"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "特別委員会設置の件",
+            "topicTag": "特委設置",
+            "topicColor": "#f97316",
+            "summary": "災害対策など複数の特別委員会を設置人数とともに決定",
+            "contextDescription": "常任委員会では扱わない特定課題（災害、拉致問題等）を審議するための特別委員会設置の手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              16
+            ]
+          },
+          "speechOrders": [
+            16
+          ],
+          "input_hash": "sha256:1e85c69a6381ea79dfc52e99f25dfd94a8c36a5909a5e927b4fc86caa327fbd0"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "国会改革小委員会をめぐる野党からの確認事項",
+            "topicTag": "国会改革",
+            "topicColor": "#f97316",
+            "summary": "野党が国会法改正等小委員会の進め方について合意事項を確認",
+            "contextDescription": "国会運営や国会法改正を議論する小委員会の設置・運営方針を巡る与野党間の協議事項。",
+            "legislationName": null,
+            "speechOrders": [
+              19,
+              24
+            ]
+          },
+          "speechOrders": [
+            19,
+            24
+          ],
+          "input_hash": "sha256:13ef6a76502cdf6797b54a8f45b7b4be4020a1252604278438fd8ef93bdf05f6"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "元議員松本剛明氏の逝去に伴う弔詞贈呈",
+            "topicTag": "弔詞",
+            "topicColor": "#6b7280",
+            "summary": "永年在職の元議員松本剛明氏逝去に伴う弔詞贈呈を報告",
+            "contextDescription": "永年在職議員として表彰された元衆議院議員の逝去に際し、議長が弔詞を贈呈した件の報告。",
+            "legislationName": null,
+            "speechOrders": [
+              31
+            ]
+          },
+          "speechOrders": [
+            31
+          ],
+          "input_hash": "sha256:70402c63aca05a8b3aff72534d15d62535ce1a77b29eae6261f0fcdcf9ee759d"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "立法事務費交付に関する会派認定",
+            "topicTag": "立法費",
+            "topicColor": "#f97316",
+            "summary": "志士の会からの立法事務費交付届出に伴う会派認定を審議",
+            "contextDescription": "会派が立法活動のために国から交付される立法事務費を受けるための会派認定手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              34
+            ]
+          },
+          "speechOrders": [
+            34
+          ],
+          "input_hash": "sha256:1e5fe8a5968546ddf68dac355fe020ddae352abb278f3b78a00eff89e7ae9036"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "新旧議院運営委員長の就任・退任挨拶",
+            "topicTag": "委員長挨拶",
+            "topicColor": "#f97316",
+            "summary": "山口前委員長の退任と坂本新委員長の就任に伴う挨拶が交わされた",
+            "contextDescription": "議院運営委員長が交代した際に行われる、前任者への感謝と新任者の抱負表明の儀礼的な場面。",
+            "legislationName": null,
+            "speechOrders": [
+              40,
+              42,
+              44,
+              47
+            ]
+          },
+          "speechOrders": [
+            40,
+            42,
+            44,
+            47
+          ],
+          "input_hash": "sha256:1fbee05d021ec2b06790cf328b6a122092f67115f39220b75f9e28de885848ca"
+        },
+        {
+          "custom_id": "s_4dd369b3c2ed_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "国務大臣演説に対する質疑日程",
+            "topicTag": "代表質問",
+            "topicColor": "#f97316",
+            "summary": "首相所信演説への質疑を7日・8日に実施し各会派の質疑時間を決定",
+            "contextDescription": "内閣総理大臣の所信表明演説に対し、各会派が質疑を行う日程と持ち時間を定める手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              50,
+              53
+            ]
+          },
+          "speechOrders": [
+            50,
+            53
+          ],
+          "input_hash": "sha256:b9f42d6f1d0c64d6303869e4285253142855bf5e7b2960cab62974dbd03eb0cc"
+        }
+      ]
+    }
+  ]
+}
