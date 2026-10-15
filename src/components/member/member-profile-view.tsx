@@ -1,15 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import type { Member, Thread } from "@/types";
+import type { Member, Speech, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { RANK_BADGE, getTensionStyle, PARTY_STYLE } from "@/lib/config";
 import { getStyle } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
 
+// A thread as the speech list renders it: the heading fields and only this
+// member's own speeches, each cut to what a row shows. All three summary
+// levels stay because the level is switched client-side (#104).
+export type MemberThread = Pick<Thread, "id" | "date" | "committee" | "topic" | "topicColor"> & {
+  speeches: Pick<Speech, "tension" | "summaries">[];
+};
+
 type MemberProfileViewProps = {
   member: Member;
-  threads: Thread[];
+  threads: MemberThread[];
   ministry?: { slug: string; name: string } | null;
 };
 
@@ -21,9 +28,7 @@ export function MemberProfileView({
   const { follows, toggleFollow, level } = useAppContext();
 
   const speeches = threads.flatMap((t) =>
-    t.speeches
-      .filter((s) => s.memberId === member.id)
-      .map((s) => ({ ...s, thread: t }))
+    t.speeches.map((s) => ({ ...s, thread: t }))
   );
 
   const tensionCount = speeches.reduce<Record<string, number>>((acc, s) => {
