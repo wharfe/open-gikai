@@ -1,0 +1,78 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-15",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01RsNhp2NtSHnr1AsoTmGLku",
+      "submitted_at": "2026-10-15T23:40:03Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-10-15",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_880e22c6c471_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "新農林水産大臣に武部新氏起用",
+            "topicTag": "農水人事",
+            "topicColor": "#f97316",
+            "summary": "簗農相辞任を受け後任に武部新氏を起用、食料安全保障とフードテック推進に期待",
+            "contextDescription": "予算カット発言等で辞任した農林水産大臣の後任人事と、新大臣に求められる役割について。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2,
+              3,
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            1,
+            2,
+            3,
+            8,
+            9
+          ],
+          "input_hash": "sha256:3d6fad7acfa114743324eaf09949d8b9d60c7ac145ca3f2c24e97bdf6e538ccc"
+        },
+        {
+          "custom_id": "s_880e22c6c471_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "ロシアによる日本人記者拘束問題",
+            "topicTag": "邦人拘束",
+            "topicColor": "#ef4444",
+            "summary": "ロシアに拘束された日本人記者への対応、スパイ容疑を政府は否定し邦人保護を優先",
+            "contextDescription": "ロシア当局に拘束された日本人記者をめぐり、領事面会未実現やスパイ容疑の発信への対応が問題に。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "input_hash": "sha256:2012797f1f566086049bb6ce94095b090cafbf5c1476904ca6b9153f01836ff8"
+        }
+      ]
+    }
+  ]
+}
