@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 15 Oct 2026 00:05:50 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 23:42:34 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W42 国会まとめ — 2件の議論</title>
+      <title>2026-W42 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W42</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W42</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。農林水産大臣の交代についての会見ほか。</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、2委員会の議論をまとめました。閣僚人事等についての会見、農林水産大臣の交代についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -38,6 +38,22 @@
       <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
       <description>8件のスレッド、1委員会の議論をまとめました。高市内閣総理大臣記者会見ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>新農林水産大臣に武部新氏起用 — 閣僚人事等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261015_880e22_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261015_880e22_01</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <description>簗農相辞任を受け後任に武部新氏を起用、食料安全保障とフードテック推進に期待（首相記者会見・2026.10.15・5発言）</description>
+      <category>閣僚人事等についての会見</category>
+    </item>
+    <item>
+      <title>ロシアによる日本人記者拘束問題 — 閣僚人事等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261015_880e22_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261015_880e22_02</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <description>ロシアに拘束された日本人記者への対応、スパイ容疑を政府は否定し邦人保護を優先（首相記者会見・2026.10.15・4発言）</description>
+      <category>閣僚人事等についての会見</category>
     </item>
     <item>
       <title>簗農林水産大臣の辞任経緯と受け止め — 農林水産大臣の交代についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_01</guid>
       <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
       <description>与党内の見直し論に対し、総理は非核三原則の堅持を明言（首相記者会見・2026.08.06・2発言）</description>
-      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
-    </item>
-    <item>
-      <title>核兵器禁止条約への対応と再検討会議参加 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260806_c91b34_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_02</guid>
-      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
-      <description>11月の再検討会議への対応を安全保障情勢を見極めつつ検討する姿勢（首相記者会見・2026.08.06・2発言）</description>
-      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
-    </item>
-    <item>
-      <title>広島訪問の所感とNPT体制の信頼回復 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260806_c91b34_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_03</guid>
-      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
-      <description>資料館視察で核の惨禍を再認識、NPT体制の信頼回復への取組を表明（首相記者会見・2026.08.06・2発言）</description>
       <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
     </item>
   </channel>
