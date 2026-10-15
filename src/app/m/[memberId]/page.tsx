@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getMember, getThreads, getAllMemberIds, getMemberStats, getMinistrySlugs } from "@/lib/data";
 import { getMemberMinistry } from "@/lib/ministry.mjs";
-import { MemberProfileView } from "@/components/member/member-profile-view";
+import { MemberProfileView, type MemberThread } from "@/components/member/member-profile-view";
 import { MobileHeader } from "@/components/layout/header";
 
 export const dynamicParams = false;
@@ -50,12 +50,28 @@ export default async function MemberPage({ params }: Props) {
   const member = getMember(memberId);
   if (!member) notFound();
 
-  const allThreads = getThreads();
-
-  // Only pass threads where this member has speeches (avoids serializing all thread data)
-  const threads = allThreads.filter((t) =>
-    t.speeches.some((s) => s.memberId === memberId)
-  );
+  // Only the threads this member speaks in, cut to what the list renders: the
+  // heading fields and this member's own speeches. Props are serialized into
+  // the HTML and every RSC payload file of the page, and a whole Thread carries
+  // every other speaker's speeches and transcripts (#104).
+  //
+  // Threads are picked by the route id and speeches by member.id, exactly as
+  // the page and the view did before. They differ only for the entries that
+  // validate-data --fix adds, which carry no id, so their pages list no
+  // speeches. Changing that would change what those pages show; this only
+  // cuts size.
+  const threads: MemberThread[] = getThreads()
+    .filter((t) => t.speeches.some((s) => s.memberId === memberId))
+    .map((t) => ({
+      id: t.id,
+      date: t.date,
+      committee: t.committee,
+      topic: t.topic,
+      topicColor: t.topicColor,
+      speeches: t.speeches
+        .filter((s) => s.memberId === member.id)
+        .map((s) => ({ tension: s.tension, summaries: s.summaries })),
+    }));
 
   const desc = [member.party, member.role].filter(Boolean).join("・");
   const personJsonLd = {
