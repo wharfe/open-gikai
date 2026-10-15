@@ -5,14 +5,22 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Oct 2026 00:15:31 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 00:05:50 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W41 国会まとめ — 4件の議論</title>
+      <title>2026-W42 国会まとめ — 2件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W42</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W42</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>2件のスレッド、1委員会の議論をまとめました。農林水産大臣の交代についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>2026-W41 国会まとめ — 18件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W41</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W41</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>4件のスレッド、3委員会の議論をまとめました。資源エネルギー・持続可能社会に関する調査会、情報監視審査会、災害対策特別委員会ほか。</description>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
+      <description>18件のスレッド、6委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +40,28 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W36 国会まとめ — 2件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W36</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W36</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、1委員会の議論をまとめました。シャハ・ネパール首相との電話会談等についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>簗農林水産大臣の辞任経緯と受け止め — 農林水産大臣の交代についての会見</title>
+      <link>https://open-gikai.net/t/t_20261014_492aa5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261014_492aa5_01</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>簗農水大臣が辞表を提出し総理が受け取った経緯と当日のやり取りを説明（首相記者会見・2026.10.14・8発言）</description>
+      <category>農林水産大臣の交代についての会見</category>
+    </item>
+    <item>
+      <title>簗大臣の問題発言と説明責任、任命責任 — 農林水産大臣の交代についての会見</title>
+      <link>https://open-gikai.net/t/t_20261014_492aa5_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261014_492aa5_02</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>大臣就任前の地元発言を巡る説明不足と総理の任命責任への言及（首相記者会見・2026.10.14・6発言）</description>
+      <category>農林水産大臣の交代についての会見</category>
+    </item>
+    <item>
+      <title>衆議院選挙制度に関する協議会の報告 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261007_d648cd_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261007_d648cd_01</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
+      <description>衆議院選挙制度協議会の議論取りまとめ報告が議長に提出された（国会会議録・2026.10.07・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>会長・理事選任等の手続き — 資源エネルギー・持続可能社会に関する調査会</title>
@@ -70,6 +94,110 @@
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
       <description>令和8年の台風・大雨被害の犠牲者に黙祷を捧げ哀悼の意を表した（国会会議録・2026.10.05・1発言）</description>
       <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>委員長互選後の拉致問題解決への決意表明 — 北朝鮮による拉致問題等に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_cda42e_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_cda42e_05</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新委員長が拉致問題は未解決であり早期解決を目指す決意を表明（国会会議録・2026.10.05・1発言）</description>
+      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+    </item>
+    <item>
+      <title>政治改革特別委員会の委員長互選 — 政治改革に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_368bdc_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_368bdc_06</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>政治改革特別委員会の委員長に井上英孝氏を互選で選出した（国会会議録・2026.10.05・3発言）</description>
+      <category>政治改革に関する特別委員会</category>
+    </item>
+    <item>
+      <title>理事の選任 — 政治改革に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_368bdc_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_368bdc_07</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>理事を8名とし、委員長指名により8名の理事を選任した（国会会議録・2026.10.05・2発言）</description>
+      <category>政治改革に関する特別委員会</category>
+    </item>
+    <item>
+      <title>綿貫民輔元議長の逝去と弔意 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_08</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>綿貫民輔元議長の逝去に際し議長の弔詞と哀悼の意を報告（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>理事の辞任及び補欠選任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_09</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>複数理事の辞任に伴い後任理事を委員長が指名し了承（国会会議録・2026.10.05・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>臨時国会の議席・会期の件 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_10</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>第222回臨時国会の仮議席決定と会期69日間を決定（国会会議録・2026.10.05・3発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>常任委員長の辞任及び選挙 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_11</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>各常任委員長が一斉辞任し、新委員長候補を議長指名で選任（国会会議録・2026.10.05・4発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>特別委員会設置の件 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_12</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>災害対策など複数の特別委員会を設置人数とともに決定（国会会議録・2026.10.05・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国会改革小委員会をめぐる野党からの確認事項 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_13</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>野党が国会法改正等小委員会の進め方について合意事項を確認（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>元議員松本剛明氏の逝去に伴う弔詞贈呈 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_14</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>永年在職の元議員松本剛明氏逝去に伴う弔詞贈呈を報告（国会会議録・2026.10.05・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>立法事務費交付に関する会派認定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_15</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>志士の会からの立法事務費交付届出に伴う会派認定を審議（国会会議録・2026.10.05・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>新旧議院運営委員長の就任・退任挨拶 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_16</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>山口前委員長の退任と坂本新委員長の就任に伴う挨拶が交わされた（国会会議録・2026.10.05・4発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国務大臣演説に対する質疑日程 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_4dd369_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_17</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>首相所信演説への質疑を7日・8日に実施し各会派の質疑時間を決定（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>日米首脳電話会談（米中首脳会談後）の内容 — トランプ米国大統領との電話会談についての会見</title>
@@ -310,134 +438,6 @@
       <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
       <description>資料館視察で核の惨禍を再認識、NPT体制の信頼回復への取組を表明（首相記者会見・2026.08.06・2発言）</description>
       <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
-    </item>
-    <item>
-      <title>食料品消費税減税をめぐる与党プロセス — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260806_c91b34_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_04</guid>
-      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
-      <description>党内手続きを経て閣議決定したと反論し、批判の受け止めを説明（首相記者会見・2026.08.06・2発言）</description>
-      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
-    </item>
-    <item>
-      <title>食料品消費税減税と給付付き税額控除の制度設計 — 「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見</title>
-      <link>https://open-gikai.net/t/t_20260805_3bb5e5_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260805_3bb5e5_01</guid>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
-      <description>食料品消費税減税を給付付き税額控除移行までの「つなぎ」と位置づけ制度設計を進める（首相記者会見・2026.08.05・2発言）</description>
-      <category>「給付付き税額控除」の制度導入の基本方針の閣議決定についての会見</category>
-    </item>
-    <item>
-      <title>熊本地震視察の目的と災害関連死防止対策 — 令和８年熊本地震による被災状況視察のための熊本県訪問についての会見</title>
-      <link>https://open-gikai.net/t/t_20260803_091042_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260803_091042_01</guid>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-      <description>被災1週間後の視察タイミングの理由と、熱中症など災害関連死防止への政府対応を説明（首相記者会見・2026.08.03・3発言）</description>
-      <category>令和８年熊本地震による被災状況視察のための熊本県訪問についての会見</category>
-    </item>
-    <item>
-      <title>2016年熊本地震との比較と復旧支援策 — 令和８年熊本地震による被災状況視察のための熊本県訪問についての会見</title>
-      <link>https://open-gikai.net/t/t_20260803_091042_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260803_091042_02</guid>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-      <description>10年前の熊本地震経験を踏まえ、耐震化の成果と激甚災害指定など復旧支援策を説明（首相記者会見・2026.08.03・2発言）</description>
-      <category>令和８年熊本地震による被災状況視察のための熊本県訪問についての会見</category>
-    </item>
-    <item>
-      <title>熊本地震への哀悼表明 — ｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</title>
-      <link>https://open-gikai.net/t/t_20260730_b3fc0e_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260730_b3fc0e_01</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <description>令和8年熊本地震の犠牲者への哀悼と被災者への見舞いを表明（首相記者会見・2026.07.30・1発言）</description>
-      <category>｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</category>
-    </item>
-    <item>
-      <title>飲食料品消費税率引下げと給付付き税額控除の政策説明 — ｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</title>
-      <link>https://open-gikai.net/t/t_20260730_b3fc0e_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260730_b3fc0e_02</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <description>純負担率を基準に食料品消費税率引下げと給付付き税額控除の仕組みを説明（首相記者会見・2026.07.30・1発言）</description>
-      <category>｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</category>
-    </item>
-    <item>
-      <title>消費税減税の財源確保策 — ｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</title>
-      <link>https://open-gikai.net/t/t_20260730_b3fc0e_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260730_b3fc0e_03</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <description>税外収入や歳出歳入見直しで年5兆円規模の財源を特例公債なしに確保する方針（首相記者会見・2026.07.30・2発言）</description>
-      <category>｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</category>
-    </item>
-    <item>
-      <title>給付方式との比較と党内・野党の理解獲得 — ｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</title>
-      <link>https://open-gikai.net/t/t_20260730_b3fc0e_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260730_b3fc0e_04</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <description>給付より消費税減税を選ぶ理由と、党内税調幹部辞任を踏まえた合意形成の課題（首相記者会見・2026.07.30・2発言）</description>
-      <category>｢飲食料品に係る消費税率の引下げ｣及び｢給付付き税額控除｣についての会見</category>
-    </item>
-    <item>
-      <title>令和8年熊本地震への政府対応 — 令和８年熊本地震についての会見（２）</title>
-      <link>https://open-gikai.net/t/t_20260729_2fe607_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260729_2fe607_01</guid>
-      <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
-      <description>熊本県震源の震度7地震で死者13名、政府は被害状況把握と救助対応を進める（首相記者会見・2026.07.29・2発言）</description>
-      <category>令和８年熊本地震についての会見（２）</category>
-    </item>
-    <item>
-      <title>熊本地震への政府対応 — 熊本県熊本地方を震源とする地震についての会見</title>
-      <link>https://open-gikai.net/t/t_20260728_82f0b8_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260728_82f0b8_01</guid>
-      <pubDate>Tue, 28 Jul 2026 00:00:00 GMT</pubDate>
-      <description>震度7の地震発生を受け、被害状況把握と人命第一の救助対応を関係省庁に指示（首相記者会見・2026.07.28・1発言）</description>
-      <category>熊本県熊本地方を震源とする地震についての会見</category>
-    </item>
-    <item>
-      <title>冒頭発言：政権1年間の振り返りと政策方針 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_01</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>高市総理が就任から1年を振り返り、閉塞感打破に向けた政策実行への決意を表明（首相記者会見・2026.07.27・1発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>日本維新の会との連立政権運営の評価 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_02</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>維新との連立合意に基づく皇室典範改正・副首都法成立を巡り、政権運営の妥当性を問う（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>消費税減税（飲食料品）と現金給付の検討 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_03</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>物価高対策として飲食料品の消費税率1%引下げと給付制度の導入方針を巡る議論（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>日中関係の改善と対話の再開 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_04</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>悪化した日中関係を巡り、外相間対話再開の機運を踏まえた総理の対中姿勢を問う（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>沖縄振興策と基地負担軽減の評価 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_05</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>令和8年度沖縄振興予算の確保状況と、沖縄振興特別措置法の中間見直しへの対応（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>労働時間規制緩和と労働基準法改正案 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260727_043a4a_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260727_043a4a_06</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description>健康維持と働き方の選択を前提とした労働時間規制の弾力化方針と法案提出の遅れ（首相記者会見・2026.07.27・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
     </item>
   </channel>
 </rss>
