@@ -1,0 +1,331 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-05",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01BHe37uMzWzDhxm6vq82xeS",
+      "submitted_at": "2026-10-16T23:27:34Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_こども・子育て・若者活躍に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_デジタル社会の形成及び人工知能の活用等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_北朝鮮による拉致問題等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_政府開発援助及び国際協力・人道支援等に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_政治改革に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_沖縄・北方問題及び地方に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_消費者問題に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_災害対策及び東日本大震災復興特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_議院運営委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_eaeebf50417f_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "理事の補欠選任（議運委員会）",
+            "topicTag": "理事選任",
+            "topicColor": "#f97316",
+            "summary": "議院運営委員会の欠員理事4名を会派推薦に基づき補欠選任した",
+            "contextDescription": "委員の異動により生じた委員会理事の欠員を補充する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:abe7f75bacc2a51af842ffc66fbdaa9475620b33417272d16ffdc39efb28e089"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "常任委員長の辞任・後任選任",
+            "topicTag": "委員長人事",
+            "topicColor": "#f97316",
+            "summary": "複数常任委員長の辞任申出と後任候補者の会派推薦を報告・決定した",
+            "contextDescription": "内閣委員長ほか複数の常任委員長が辞任し、財政金融・農林水産・予算・議運の各委員長が欠員となった人事案件。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              6
+            ]
+          },
+          "speechOrders": [
+            4,
+            6
+          ],
+          "input_hash": "sha256:bdb5d4e0cb401a8d72702a0eda8c24154cdd095b009834f8c4bf1b9e7ea5b73d"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "特別委員会の設置に関する件",
+            "topicTag": "特別委設置",
+            "topicColor": "#f97316",
+            "summary": "災害対策やデジタル・AI等を扱う各特別委員会の設置を決定した",
+            "contextDescription": "常任委員会では扱わない特定課題を審議するための特別委員会を国会ごとに設置する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              7,
+              8
+            ]
+          },
+          "speechOrders": [
+            7,
+            8
+          ],
+          "input_hash": "sha256:ef646787003217d8330aff01caf9ba2074f9973e3e4f07b7f26623578682fb6a"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "情報監視審査会委員の辞任・補欠選任",
+            "topicTag": "情報監視",
+            "topicColor": "#f97316",
+            "summary": "情報監視審査会委員2名の辞任と会派推薦による補欠選任を決定した",
+            "contextDescription": "特定秘密保護法に基づき国会が行政の情報指定を監視する審査会の委員人事。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          "speechOrders": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "input_hash": "sha256:fec2b2c4388fa70fd13c50473e791c0e6c261049cc68070fd2f494ccd1aed194"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "本日の本会議議事の決定",
+            "topicTag": "本会議議事",
+            "topicColor": "#f97316",
+            "summary": "議席指定や委員長選挙など本会議当日の議事進行内容を確認・決定した",
+            "contextDescription": "本会議で扱う議案や手続きの順序をあらかじめ議運委員会で確認する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              13,
+              14,
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "input_hash": "sha256:e44126e95a1d6018b2da398baec6ae176cf0e7bd70dcf09d83ebc9f744f009e7"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "新委員長就任挨拶と理事補欠選任",
+            "topicTag": "新委員長",
+            "topicColor": "#f97316",
+            "summary": "新たに就任した藤川議運委員長が挨拶し、理事2名の補欠選任を決定した",
+            "contextDescription": "議院運営委員長交代に伴う就任挨拶と、それに伴う理事人事の手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            17,
+            18
+          ],
+          "input_hash": "sha256:8d984575cb60f9e30741c2bcc499fc64d155676a9b761ca95c6b6b4163ee2f52"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "小委員会の設置と小委員長指名",
+            "topicTag": "小委員会",
+            "topicColor": "#f97316",
+            "summary": "庶務関係・図書館運営の両小委員会を設置し小委員長を指名した",
+            "contextDescription": "議運委員会内部の実務を扱う小委員会の設置と、その長の人選に関する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              20,
+              23
+            ]
+          },
+          "speechOrders": [
+            20,
+            23
+          ],
+          "input_hash": "sha256:888f7d81c753bfe9bb3d84103d8520ee0e36addb58d477b4b183d457dac19074"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "今国会の会期決定",
+            "topicTag": "会期決定",
+            "topicColor": "#f97316",
+            "summary": "衆参協議の結果、今期国会の会期を69日間（12月12日まで）とすることを確認した",
+            "contextDescription": "国会の会期は衆参両院の協議を経て決定され、本会議での採決を要する。",
+            "legislationName": null,
+            "speechOrders": [
+              26,
+              36
+            ]
+          },
+          "speechOrders": [
+            26,
+            36
+          ],
+          "input_hash": "sha256:780d5d27adab5ad0dcf550fed02a8a40414f8aaf9fcc289118a6624b36b89ac9"
+        },
+        {
+          "custom_id": "s_eaeebf50417f_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "立法事務費交付対象会派の認定",
+            "topicTag": "立法事務費",
+            "topicColor": "#f97316",
+            "summary": "新会派「新しい政治の会」への立法事務費交付認定を巡り一人会派への交付に反対意見が出た",
+            "contextDescription": "各会派への立法事務費交付の可否を議運委員会が認定する制度。一人会派への交付の是非が論点。",
+            "legislationName": "国会における各会派に対する立法事務費の交付に関する法律",
+            "speechOrders": [
+              30,
+              32
+            ]
+          },
+          "speechOrders": [
+            30,
+            32
+          ],
+          "input_hash": "sha256:a986d8a287af76820f6d403c2f70eb1db50f128aa82e01164745362ac311b115"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_地域活性化・こども政策・デジタル社会形成に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_東日本大震災復興及び原子力問題調査特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_沖縄及び北方問題に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_消費者問題に関する特別委員会_2026-10-05_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
