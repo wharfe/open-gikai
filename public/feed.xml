@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 15 Oct 2026 23:42:34 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 23:31:36 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W42 国会まとめ — 4件の議論</title>
@@ -16,11 +16,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W41 国会まとめ — 18件の議論</title>
+      <title>2026-W41 国会まとめ — 27件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W41</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W41</guid>
       <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
-      <description>18件のスレッド、6委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
+      <description>27件のスレッド、6委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -216,6 +216,78 @@
       <category>議院運営委員会</category>
     </item>
     <item>
+      <title>理事の補欠選任（議運委員会） — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_18</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>議院運営委員会の欠員理事4名を会派推薦に基づき補欠選任した（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>常任委員長の辞任・後任選任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_19</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>複数常任委員長の辞任申出と後任候補者の会派推薦を報告・決定した（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>特別委員会の設置に関する件 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_20</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_20</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>災害対策やデジタル・AI等を扱う各特別委員会の設置を決定した（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>情報監視審査会委員の辞任・補欠選任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_21</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_21</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>情報監視審査会委員2名の辞任と会派推薦による補欠選任を決定した（国会会議録・2026.10.05・4発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本日の本会議議事の決定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_22</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_22</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>議席指定や委員長選挙など本会議当日の議事進行内容を確認・決定した（国会会議録・2026.10.05・4発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>新委員長就任挨拶と理事補欠選任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_23</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_23</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新たに就任した藤川議運委員長が挨拶し、理事2名の補欠選任を決定した（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>小委員会の設置と小委員長指名 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_24</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_24</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>庶務関係・図書館運営の両小委員会を設置し小委員長を指名した（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>今国会の会期決定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_25</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_25</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>衆参協議の結果、今期国会の会期を69日間（12月12日まで）とすることを確認した（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>立法事務費交付対象会派の認定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261005_eaeebf_26</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_26</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新会派「新しい政治の会」への立法事務費交付認定を巡り一人会派への交付に反対意見が出た（国会会議録・2026.10.05・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
       <title>日米首脳電話会談（米中首脳会談後）の内容 — トランプ米国大統領との電話会談についての会見</title>
       <link>https://open-gikai.net/t/t_20260926_c34f57_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260926_c34f57_01</guid>
@@ -366,78 +438,6 @@
       <pubDate>Tue, 25 Aug 2026 00:00:00 GMT</pubDate>
       <description>米国がICC赤根所長を制裁対象としたことへの日本の抗議姿勢と今後の対応方針について問われる（首相記者会見・2026.08.25・4発言）</description>
       <category>「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</category>
-    </item>
-    <item>
-      <title>バーナム英国首相との電話会談 — バーナム英国首相との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260820_11e12a_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260820_11e12a_01</guid>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
-      <description>高市首相が就任したばかりの英国バーナム首相と初電話会談、日英関係や中東情勢を協議（首相記者会見・2026.08.20・2発言）</description>
-      <category>バーナム英国首相との電話会談についての会見</category>
-    </item>
-    <item>
-      <title>日・トルコ首脳電話会談 — エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</title>
-      <link>https://open-gikai.net/t/t_20260819_165910_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260819_165910_01</guid>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
-      <description>エルドアン大統領と電話会談、中東情勢や日土間の戦略的パートナーシップ強化を協議（首相記者会見・2026.08.19・2発言）</description>
-      <category>エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</category>
-    </item>
-    <item>
-      <title>米国によるICC所長への制裁 — エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</title>
-      <link>https://open-gikai.net/t/t_20260819_165910_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260819_165910_02</guid>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
-      <description>米国のICC赤根所長制裁指定に「残念」と表明、関係国と意思疎通を継続する方針（首相記者会見・2026.08.19・2発言）</description>
-      <category>エルドアン・トルコ共和国大統領との電話会談及び国際刑事裁判所（ＩＣＣ）に対する米国の制裁についての会見</category>
-    </item>
-    <item>
-      <title>プーチン大統領の択捉島訪問への抗議と対応 — プーチン・ロシア大統領による択捉島訪問についての会見</title>
-      <link>https://open-gikai.net/t/t_20260813_21aa8a_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260813_21aa8a_01</guid>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 GMT</pubDate>
-      <description>プーチン氏の択捉島訪問に首相が強く抗議、事実確認の経緯と今後の対露対応を説明（首相記者会見・2026.08.13・6発言）</description>
-      <category>プーチン・ロシア大統領による択捉島訪問についての会見</category>
-    </item>
-    <item>
-      <title>ペゼシュキアン・イラン大統領との電話会談 — ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260812_31e41d_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260812_31e41d_01</guid>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
-      <description>中東情勢緊迫化を受け、ホルムズ海峡の安定と米イラン覚書履行を巡り電話会談を実施（首相記者会見・2026.08.12・2発言）</description>
-      <category>ペゼシュキアン・イラン・イスラム共和国大統領との電話会談についての会見</category>
-    </item>
-    <item>
-      <title>オマーン国王との電話会談と中東情勢 — ハイサム・オマーン国王との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260810_307d71_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260810_307d71_01</guid>
-      <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
-      <description>高市首相がオマーン国王と電話会談し、米イラン間の緊張緩和と外交努力継続を確認（首相記者会見・2026.08.10・2発言）</description>
-      <category>ハイサム・オマーン国王との電話会談についての会見</category>
-    </item>
-    <item>
-      <title>非核三原則の堅持と核兵器禁止条約への対応 — 長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260809_c2fb54_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260809_c2fb54_01</guid>
-      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
-      <description>核議論への被爆者反発を受け非核三原則の堅持と核禁条約対応の姿勢を確認（首相記者会見・2026.08.09・2発言）</description>
-      <category>長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</category>
-    </item>
-    <item>
-      <title>被爆体験者救済策と組閣・党役員人事 — 長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260809_c2fb54_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260809_c2fb54_02</guid>
-      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
-      <description>被爆者未認定者への医療費助成継続方針と内閣改造・党役員人事への言及（首相記者会見・2026.08.09・2発言）</description>
-      <category>長崎原爆犠牲者慰霊平和祈念式典参列等についての会見</category>
-    </item>
-    <item>
-      <title>非核三原則の堅持と見直し論議 — 広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260806_c91b34_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260806_c91b34_01</guid>
-      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
-      <description>与党内の見直し論に対し、総理は非核三原則の堅持を明言（首相記者会見・2026.08.06・2発言）</description>
-      <category>広島市原爆死没者慰霊式並びに平和祈念式参列等についての会見</category>
     </item>
   </channel>
 </rss>
