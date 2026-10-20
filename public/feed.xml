@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Oct 2026 00:17:37 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 23:50:12 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W42 国会まとめ — 4件の議論</title>
@@ -16,11 +16,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W41 国会まとめ — 28件の議論</title>
+      <title>2026-W41 国会まとめ — 30件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W41</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W41</guid>
-      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
-      <description>28件のスレッド、6委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description>30件のスレッド、6委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -70,6 +70,22 @@
       <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
       <description>大臣就任前の地元発言を巡る説明不足と総理の任命責任への言及（首相記者会見・2026.10.14・6発言）</description>
       <category>農林水産大臣の交代についての会見</category>
+    </item>
+    <item>
+      <title>裁判官弾劾裁判所裁判員等の選任・辞任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261009_c1ac5a_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261009_c1ac5a_01</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description>裁判官弾劾裁判所の裁判員及び予備員の選任・辞任手続を会派申出に基づき処理（国会会議録・2026.10.09・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本会議の議事日程説明 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261009_c1ac5a_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261009_c1ac5a_02</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description>事務総長が本会議の議事日程と裁判官弾劾裁判所裁判員の辞任手続を説明（国会会議録・2026.10.09・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>所信表明演説に対する質疑の日程 — 議院運営委員会</title>
@@ -422,22 +438,6 @@
       <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
       <description>国立国会図書館が令和九年度予算概算要求案を説明し重点事項を報告（国会会議録・2026.08.26・1発言）</description>
       <category>議院運営委員会図書館運営小委員会</category>
-    </item>
-    <item>
-      <title>令和九年度衆議院予算概算要求案 — 議院運営委員会庶務小委員会</title>
-      <link>https://open-gikai.net/t/t_20260826_a9f59b_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260826_a9f59b_02</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
-      <description>令和九年度衆議院予算概算要求案の総額と主要経費項目の増額理由を説明した（国会会議録・2026.08.26・1発言）</description>
-      <category>議院運営委員会庶務小委員会</category>
-    </item>
-    <item>
-      <title>ガソリン価格激変緩和措置の継続と水準設定 — 「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260825_e433dc_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260825_e433dc_01</guid>
-      <pubDate>Tue, 25 Aug 2026 00:00:00 GMT</pubDate>
-      <description>中東情勢による原油高騰を受け、ガソリン価格を全国平均170円に抑える緩和措置を継続する方針を説明（首相記者会見・2026.08.25・3発言）</description>
-      <category>「中東情勢を踏まえた緊急的激変緩和措置」及び「物価高対策」等についての会見</category>
     </item>
   </channel>
 </rss>

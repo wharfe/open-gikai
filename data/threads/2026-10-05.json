@@ -1298,6 +1298,13 @@
         "topic": "閉会中審査に関する申出",
         "committee": "議院運営委員会",
         "date": "2026.07.24"
+      },
+      {
+        "threadId": "t_20261008_0e3411_01",
+        "relationship": "関連議論",
+        "topic": "所信表明演説に対する質疑の日程",
+        "committee": "議院運営委員会",
+        "date": "2026.10.08"
       }
     ]
   },
@@ -2378,7 +2385,16 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261008_0e3411_01",
+        "relationship": "関連議論",
+        "topic": "所信表明演説に対する質疑の日程",
+        "committee": "議院運営委員会",
+        "date": "2026.10.08"
+      }
+    ]
   },
   {
     "id": "t_20261005_eaeebf_26",
