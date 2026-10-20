@@ -624,6 +624,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122204575X00120261005"
         }
+      ],
+      "news": [
+        {
+          "title": "理事長辞任および新たな運営体制について",
+          "url": "https://www.jiji.com/jc/article?k=000000047.000140141&g=prt",
+          "source": "時事ドットコム",
+          "pubDate": "Fri, 25 Sep 2026 06:10:00 GMT",
+          "image": "https://prcdn.freetls.fastly.net/release_image/140141/47/140141-47-e0f4b154d59e946ec73bcbc2036c2099-767x413.jpg"
+        },
+        {
+          "title": "理事・監事・特任理事選任について",
+          "url": "https://sports.yahoo.co.jp/column/detail/2026032400062-spnaviow",
+          "source": "スポーツナビ",
+          "pubDate": "Wed, 25 Mar 2026 06:30:00 GMT",
+          "image": "https://sports-pctr.c.yimg.jp/dk/iwiz-sports/text/images/2026/0324/2026032400062-spnaviow_1774336771_view.jpeg"
+        }
       ]
     },
     "speeches": [
