@@ -1,0 +1,65 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-08",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01EDk5ySP7cVBXmncLEpagg4",
+      "submitted_at": "2026-10-20T00:14:09Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_議院運営委員会_2026-10-08_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_0e3411dd9e0a_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "所信表明演説に対する質疑の日程",
+            "topicTag": "質疑日程",
+            "topicColor": "#6b7280",
+            "summary": "高市総理の所信表明演説に対する質疑の実施方法と日程を決定",
+            "contextDescription": "内閣総理大臣の所信表明演説に対し、各会派代表が質問を行う本会議質疑の進め方を議院運営委員会で協議する。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              4
+            ]
+          },
+          "speechOrders": [
+            1,
+            4
+          ],
+          "input_hash": "sha256:f7687f0186fbd2edd01c3f9ad1f384b1490cdac72792d954da52f81dde91269f"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_議院運営委員会_2026-10-08_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_議院運営委員会国会法改正等及び国会改革に関する小委員会_2026-10-08_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
