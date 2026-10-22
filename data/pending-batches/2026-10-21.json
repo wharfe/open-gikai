@@ -1,0 +1,95 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-21",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01H9Jd6VWMDjKBnf1rTPqHab",
+      "submitted_at": "2026-10-22T00:04:30Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-10-21",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_6eaddc4f445f_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "内閣発足1年の総括と取組の成果",
+            "topicTag": "1年総括",
+            "topicColor": "#6b7280",
+            "summary": "就任1年を機に危機管理投資と成長投資による安全な国創りと経済成長を振り返る",
+            "contextDescription": "高市内閣発足から1年を迎え、この間の政策への取組姿勢と成果について総理が説明する会見。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2,
+              3
+            ]
+          },
+          "speechOrders": [
+            1,
+            2,
+            3
+          ],
+          "input_hash": "sha256:27d9d745f6766a452a75a75e32b783076d26ea704dda628fed9050b02256ed25"
+        },
+        {
+          "custom_id": "s_6eaddc4f445f_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "物価高対策の実施状況と評価",
+            "topicTag": "物価高",
+            "topicColor": "#3b82f6",
+            "summary": "ガソリン税廃止など約10.9兆円規模の物価高対策を実施も不十分との声に反論",
+            "contextDescription": "ロシアのウクライナ侵略や中東情勢悪化によるエネルギー・物価高騰への政府対応策を巡る議論。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "input_hash": "sha256:e7ba6ea772119870c8ba9802813704a6d6a8aa9de0516de7fdf34564ee990cdd"
+        },
+        {
+          "custom_id": "s_6eaddc4f445f_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "日本維新の会との連立1年の総括",
+            "topicTag": "維新連立",
+            "topicColor": "#6b7280",
+            "summary": "公明党離脱後に連立を組んだ日本維新の会への感謝と今後の連立関係への評価",
+            "contextDescription": "自民党が少数与党となる中、日本維新の会との連立合意により高市政権が発足した経緯を踏まえた質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            8,
+            9
+          ],
+          "input_hash": "sha256:752dd960cf526a4858ca16fc27af2eca7a0a26cc498b39e1997ac604fc26133b"
+        }
+      ]
+    }
+  ]
+}
