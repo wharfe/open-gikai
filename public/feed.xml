@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Oct 2026 23:50:12 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 00:07:51 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W43 国会まとめ — 3件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W43</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、1委員会の議論をまとめました。総理就任１年の節目を迎えての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W42 国会まとめ — 4件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W42</link>
@@ -16,11 +24,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W41 国会まとめ — 30件の議論</title>
+      <title>2026-W41 国会まとめ — 32件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W41</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W41</guid>
       <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-      <description>30件のスレッド、6委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
+      <description>32件のスレッド、7委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +40,28 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W38 国会まとめ — 8件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W38</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W38</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>8件のスレッド、1委員会の議論をまとめました。高市内閣総理大臣記者会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>内閣発足1年の総括と取組の成果 — 総理就任１年の節目を迎えての会見</title>
+      <link>https://open-gikai.net/t/t_20261021_6eaddc_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_6eaddc_01</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>就任1年を機に危機管理投資と成長投資による安全な国創りと経済成長を振り返る（首相記者会見・2026.10.21・3発言）</description>
+      <category>総理就任１年の節目を迎えての会見</category>
+    </item>
+    <item>
+      <title>物価高対策の実施状況と評価 — 総理就任１年の節目を迎えての会見</title>
+      <link>https://open-gikai.net/t/t_20261021_6eaddc_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_6eaddc_02</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>ガソリン税廃止など約10.9兆円規模の物価高対策を実施も不十分との声に反論（首相記者会見・2026.10.21・4発言）</description>
+      <category>総理就任１年の節目を迎えての会見</category>
+    </item>
+    <item>
+      <title>日本維新の会との連立1年の総括 — 総理就任１年の節目を迎えての会見</title>
+      <link>https://open-gikai.net/t/t_20261021_6eaddc_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_6eaddc_03</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>公明党離脱後に連立を組んだ日本維新の会への感謝と今後の連立関係への評価（首相記者会見・2026.10.21・2発言）</description>
+      <category>総理就任１年の節目を迎えての会見</category>
     </item>
     <item>
       <title>新農林水産大臣に武部新氏起用 — 閣僚人事等についての会見</title>
@@ -312,6 +336,22 @@
       <category>議院運営委員会</category>
     </item>
     <item>
+      <title>内閣総理大臣所信表明演説 — 本会議</title>
+      <link>https://open-gikai.net/t/t_20261005_6756a5_27</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_6756a5_27</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>沖縄米兵事件への抗議に言及しつつ、総理が内外政策の基本方針を演説（国会会議録・2026.10.05・1発言）</description>
+      <category>本会議</category>
+    </item>
+    <item>
+      <title>本会議散会・質疑日程の決定 — 本会議</title>
+      <link>https://open-gikai.net/t/t_20261005_6756a5_28</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_6756a5_28</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>所信表明演説に対する質疑を後日に延期し本日の本会議を散会する動議（国会会議録・2026.10.05・2発言）</description>
+      <category>本会議</category>
+    </item>
+    <item>
       <title>日米首脳電話会談（米中首脳会談後）の内容 — トランプ米国大統領との電話会談についての会見</title>
       <link>https://open-gikai.net/t/t_20260926_c34f57_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260926_c34f57_01</guid>
@@ -398,46 +438,6 @@
       <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
       <description>消費税減税の財源は特例公債に頼らず確保でき財政不安は不要と説明（首相記者会見・2026.09.17・2発言）</description>
       <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>新米価格下落と農家経営・備蓄米政策 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_07</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>米価格は市場原理に委ねつつ、食料安全保障の観点から備蓄米買戻しを検討（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>アンケートに基づく閣僚人選手法 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_08</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>派閥推薦によらずアンケートで希望や専門性を確認し人選を実施（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>ネパール首相との電話会談と土石流被害への対応 — シャハ・ネパール首相との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260901_8eda08_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260901_8eda08_01</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
-      <description>ネパール洪水被害に哀悼を伝え、行方不明の日本人への対応を協議（首相記者会見・2026.09.01・2発言）</description>
-      <category>シャハ・ネパール首相との電話会談等についての会見</category>
-    </item>
-    <item>
-      <title>長期金利上昇と財政政策への影響 — シャハ・ネパール首相との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260901_8eda08_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260901_8eda08_02</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
-      <description>長期金利の急上昇が積極財政政策や市場の信認に与える影響を問われる（首相記者会見・2026.09.01・2発言）</description>
-      <category>シャハ・ネパール首相との電話会談等についての会見</category>
-    </item>
-    <item>
-      <title>令和九年度国立国会図書館予算概算要求案 — 議院運営委員会図書館運営小委員会</title>
-      <link>https://open-gikai.net/t/t_20260826_9fc594_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260826_9fc594_01</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
-      <description>国立国会図書館が令和九年度予算概算要求案を説明し重点事項を報告（国会会議録・2026.08.26・1発言）</description>
-      <category>議院運営委員会図書館運営小委員会</category>
     </item>
   </channel>
 </rss>
