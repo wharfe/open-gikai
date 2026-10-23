@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Oct 2026 23:59:49 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 23:57:27 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W43 国会まとめ — 3件の議論</title>
+      <title>2026-W43 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、1委員会の議論をまとめました。総理就任１年の節目を迎えての会見ほか。</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>5件のスレッド、3委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、総理就任１年の節目を迎えての会見、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -40,6 +40,14 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
+      <title>燃料油価格激変緩和措置の見直しと出口戦略 — 中東情勢を踏まえた緊急的激変緩和措置等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261023_57d0a5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_57d0a5_01</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>財政負担懸念を受け燃料油補助の縮小・出口戦略の検討を経産相に指示すると表明（首相記者会見・2026.10.23・11発言）</description>
+      <category>中東情勢を踏まえた緊急的激変緩和措置等についての会見</category>
+    </item>
+    <item>
       <title>内閣発足1年の総括と取組の成果 — 総理就任１年の節目を迎えての会見</title>
       <link>https://open-gikai.net/t/t_20261021_6eaddc_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_6eaddc_01</guid>
@@ -62,6 +70,14 @@
       <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
       <description>公明党離脱後に連立を組んだ日本維新の会への感謝と今後の連立関係への評価（首相記者会見・2026.10.21・2発言）</description>
       <category>総理就任１年の節目を迎えての会見</category>
+    </item>
+    <item>
+      <title>飲食料品消費税率臨時引下げ・支援金支給法案の本会議趣旨説明 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261020_5da446_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261020_5da446_01</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>消費税率の臨時引下げと就業者負担軽減支援金法案の本会議趣旨説明・質疑の進め方を決定（国会会議録・2026.10.20・4発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>新農林水産大臣に武部新氏起用 — 閣僚人事等についての会見</title>
@@ -421,22 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_04</guid>
       <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
       <description>熊本地震の復旧・復興本部を軸に中長期的な支援体制を構築する方針（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>パワーGX戦略とエネルギー安定調達 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_05</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>化石燃料調達安定化とGX加速の二本柱でパワーGXを強力に推進する方針（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>消費税減税の財源と財政不安への対応 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_06</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>消費税減税の財源は特例公債に頼らず確保でき財政不安は不要と説明（首相記者会見・2026.09.17・2発言）</description>
       <category>高市内閣総理大臣記者会見</category>
     </item>
   </channel>
