@@ -7,6 +7,8 @@ import { MobileHeader } from "@/components/layout/header";
 
 export const dynamicParams = false;
 
+const TOPICS_MAX_CHARS = 50;
+
 export function generateStaticParams() {
   return getAllMemberIds().map((memberId) => ({ memberId }));
 }
@@ -20,11 +22,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = getMember(memberId);
   if (!member) return {};
   const desc = [member.party, member.role].filter(Boolean).join("・");
-  const title = `${member.name}の発言一覧${desc ? `（${desc}）` : ""}`;
   const stats = getMemberStats().get(memberId);
+  // Name and role first: person queries are by name, and for government
+  // witnesses the role is what tells a searcher it is the right person.
+  const title = stats
+    ? `${member.name}${desc ? `（${desc}）` : ""}— ${stats.dietOnly ? "国会での発言" : "発言"}${stats.speechCount}件`
+    : `${member.name}の発言一覧${desc ? `（${desc}）` : ""}`;
   const namePart = member.role ? `${member.name}（${member.role}）` : member.name;
+  // Topics lead the description because snippets are cut at ~120 chars, and
+  // the topic is the one thing a person query does not already say. Topics
+  // after the first are dropped once the prefix would pass TOPICS_MAX_CHARS,
+  // so the name and role that follow still fit in the snippet.
+  const topics = (stats?.topTopics ?? []).reduce<string[]>(
+    (kept, t) =>
+      kept.length === 0 || [...kept, t].join("、").length <= TOPICS_MAX_CHARS ? [...kept, t] : kept,
+    [],
+  );
+  const topicsPart = topics.length ? `主なテーマ: ${topics.join("、")}。` : "";
   const description = stats
-    ? `${namePart}の国会・審議会での発言${stats.speechCount}件をAI要約付きで掲載。直近は${stats.latestDate}の${stats.latestCommittee}。`
+    ? `${topicsPart}${namePart}の${stats.dietOnly ? "国会" : "国会・審議会など"}での発言${stats.speechCount}件をAI要約付きで掲載。直近は${stats.latestDate}の${stats.latestCommittee}。`
     : `${member.name}の国会・審議会での発言をスレッド形式で閲覧。AI要約付きで審議の文脈がわかります。`;
   return {
     title,

@@ -335,20 +335,32 @@ export type MemberStats = {
   /** Same "YYYY.MM.DD" format as Thread.date. */
   latestDate: string;
   latestCommittee: string;
+  /** True when every thread is a Diet record (source "ndl", or legacy threads with no source). */
+  dietOnly: boolean;
+  /**
+   * Up to TOP_TOPICS_PER_MEMBER thread topics, most speeches first. Ties go to
+   * the more recent topic, then to plain string order, so the pick is the same
+   * on every build.
+   */
+  topTopics: string[];
 };
+
+const TOP_TOPICS_PER_MEMBER = 3;
 
 let _memberStatsCache: Map<string, MemberStats> | null = null;
 
-/** Aggregate speech count / latest appearance per memberId over all threads. */
+/** Aggregate speech count / latest appearance / main topics per memberId over all threads. */
 export function getMemberStats(): Map<string, MemberStats> {
   if (_memberStatsCache) return _memberStatsCache;
   const stats = new Map<string, MemberStats>();
+  const topics = new Map<string, Map<string, { count: number; latestDate: string }>>();
   for (const t of loadThreads()) {
     const perThread = new Map<string, number>();
     for (const s of t.speeches) {
       if (!s.memberId) continue;
       perThread.set(s.memberId, (perThread.get(s.memberId) || 0) + 1);
     }
+    const isDiet = !t.source || t.source === "ndl";
     for (const [id, count] of perThread) {
       const prev = stats.get(id);
       if (!prev) {
@@ -356,15 +368,43 @@ export function getMemberStats(): Map<string, MemberStats> {
           speechCount: count,
           latestDate: t.date,
           latestCommittee: t.committee,
+          dietOnly: isDiet,
+          topTopics: [],
         });
       } else {
         prev.speechCount += count;
+        prev.dietOnly &&= isDiet;
         if (t.date.localeCompare(prev.latestDate) > 0) {
           prev.latestDate = t.date;
           prev.latestCommittee = t.committee;
         }
       }
+      // Procedural threads (chair elections, committee setup) say nothing
+      // about what a member works on, same as the digest's highlights.
+      if (!t.topic || t.procedural) continue;
+      let byTopic = topics.get(id);
+      if (!byTopic) topics.set(id, (byTopic = new Map()));
+      const tp = byTopic.get(t.topic);
+      if (!tp) byTopic.set(t.topic, { count, latestDate: t.date });
+      else {
+        tp.count += count;
+        if (t.date.localeCompare(tp.latestDate) > 0) tp.latestDate = t.date;
+      }
     }
+  }
+  for (const [id, byTopic] of topics) {
+    stats.get(id)!.topTopics = [...byTopic]
+      .sort(
+        ([a, x], [b, y]) =>
+          y.count - x.count ||
+          y.latestDate.localeCompare(x.latestDate) ||
+          // Code-unit order, not localeCompare: the last tie-break must not
+          // depend on the build machine's ICU data, or two builds of the same
+          // data could pick different topics.
+          (a < b ? -1 : a > b ? 1 : 0),
+      )
+      .slice(0, TOP_TOPICS_PER_MEMBER)
+      .map(([topic]) => topic);
   }
   _memberStatsCache = stats;
   return stats;
