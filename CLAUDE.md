@@ -185,7 +185,9 @@ guard** — when adding one, check what else opens the same path earlier in the 
 
 The claim stops at `summarize.py` on purpose, because it is checkable there and not elsewhere:
 `scripts/validate-data.mjs` still reads `data/members.json` bare, and `scripts/enrich-news.py`
-reads bare too (harmless only because `daily-batch.yml` runs it with `|| true`).
+reads `data/threads/{date}.json` bare — it never opens `members.json` — which is harmless only
+because `daily-batch.yml` runs it with `|| true` (which exists so that a failed news fetch cannot
+stop the publish).
 `scripts/enrich-members.mjs` is guarded — it catches the parse failure and the non-object shape,
 names the file in the message, and exits 1 — but its guard is outside `summarize.py` and outside
 the Python AST fence, so it is not what the claim above is checking. Neither members.json reader sits
