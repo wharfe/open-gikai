@@ -29800,5 +29800,55 @@
         "url": "https://www.google.com/search?q=%E7%86%8A%E7%94%B0%E8%A3%95%E9%80%9A+site%3Ax.com+OR+site%3Atwitter.com"
       }
     ]
+  },
+  "washioeiichirou": {
+    "id": "washioeiichirou",
+    "name": "鷲尾英一郎",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%B7%B2%E5%B0%BE%E8%8B%B1%E4%B8%80%E9%83%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%B7%B2%E5%B0%BE%E8%8B%B1%E4%B8%80%E9%83%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%B7%B2%E5%B0%BE%E8%8B%B1%E4%B8%80%E9%83%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "fujiihisayuki": {
+    "id": "fujiihisayuki",
+    "name": "藤井比早之",
+    "party": "自由民主党",
+    "role": "総務大臣・内閣府特命担当大臣（地方創生）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E4%BA%95%E6%AF%94%E6%97%A9%E4%B9%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%97%A4%E4%BA%95%E6%AF%94%E6%97%A9%E4%B9%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%97%A4%E4%BA%95%E6%AF%94%E6%97%A9%E4%B9%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   }
 }

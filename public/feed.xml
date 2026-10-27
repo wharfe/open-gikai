@@ -5,22 +5,30 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Oct 2026 23:11:07 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 00:30:40 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W43 国会まとめ — 5件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W43</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>5件のスレッド、3委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、総理就任１年の節目を迎えての会見、議院運営委員会ほか。</description>
+      <title>2026-W44 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W44</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。福田元内閣総理大臣の逝去についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W42 国会まとめ — 4件の議論</title>
+      <title>2026-W43 国会まとめ — 7件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W43</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>7件のスレッド、4委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、総務委員会、総理就任１年の節目を迎えての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>2026-W42 国会まとめ — 6件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W42</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W42</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
-      <description>4件のスレッド、2委員会の議論をまとめました。閣僚人事等についての会見、農林水産大臣の交代についての会見ほか。</description>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+      <description>6件のスレッド、3委員会の議論をまとめました。議院運営委員会国会法改正等及び国会改革に関する小委員会、閣僚人事等についての会見、農林水産大臣の交代についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +40,12 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W39 国会まとめ — 5件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W39</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W39</guid>
-      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
-      <description>5件のスレッド、3委員会の議論をまとめました。トランプ米国大統領との電話会談についての会見、日米首脳会談等についての会見、米国訪問等についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>福田康夫元首相の逝去に対する哀悼 — 福田元内閣総理大臣の逝去についての会見</title>
+      <link>https://open-gikai.net/t/t_20261026_ecb85f_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261026_ecb85f_01</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <description>福田康夫元首相の逝去を悼み、総理在任中の功績を振り返り哀悼の意を表明（首相記者会見・2026.10.26・3発言）</description>
+      <category>福田元内閣総理大臣の逝去についての会見</category>
     </item>
     <item>
       <title>燃料油価格激変緩和措置の見直しと出口戦略 — 中東情勢を踏まえた緊急的激変緩和措置等についての会見</title>
@@ -46,6 +54,22 @@
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
       <description>財政負担懸念を受け燃料油補助の縮小・出口戦略の検討を経産相に指示すると表明（首相記者会見・2026.10.23・11発言）</description>
       <category>中東情勢を踏まえた緊急的激変緩和措置等についての会見</category>
+    </item>
+    <item>
+      <title>総務大臣所信表明（災害対応・行政運営全般） — 総務委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_d8288d_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_d8288d_01</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新総務大臣が熊本地震等の災害対応や総務行政全般の所信を表明した（国会会議録・2026.10.22・1発言）</description>
+      <category>総務委員会</category>
+    </item>
+    <item>
+      <title>個人住民税負担増加対処法案の撤回 — 総務委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_d8288d_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_d8288d_02</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>賃金上昇を上回る個人住民税負担増加への対処を定めた法律案が撤回された（国会会議録・2026.10.22・1発言）</description>
+      <category>総務委員会</category>
     </item>
     <item>
       <title>内閣発足1年の総括と取組の成果 — 総理就任１年の節目を迎えての会見</title>
@@ -78,6 +102,22 @@
       <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
       <description>消費税率の臨時引下げと就業者負担軽減支援金法案の本会議趣旨説明・質疑の進め方を決定（国会会議録・2026.10.20・4発言）</description>
       <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>AIと民主主義に関する立法府機能強化提言への対応 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261016_39f7d5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261016_39f7d5_01</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI活用した立法府機能強化提言を受け各会派が意見表明し懇談形式で議論した（国会会議録・2026.10.16・1発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>次回小委員会に向けた準備と進め方 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261016_39f7d5_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261016_39f7d5_02</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+      <description>各会派意見を事務局で整理し筆頭間協議を経て次回小委で合意点を議論する方針確認（国会会議録・2026.10.16・3発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
     </item>
     <item>
       <title>新農林水産大臣に武部新氏起用 — 閣僚人事等についての会見</title>
@@ -398,46 +438,6 @@
       <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
       <description>台風で犠牲者が出たことに哀悼の意を示し、官房長官らに万全の対応を指示（首相記者会見・2026.09.21・1発言）</description>
       <category>米国訪問等についての会見</category>
-    </item>
-    <item>
-      <title>国連総会での一般討論演説と日米首脳会談 — 米国訪問等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260921_adabe6_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260921_adabe6_02</guid>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
-      <description>国連加盟70周年での演説内容と、米中首脳会談を控えた日米首脳会談での方針（首相記者会見・2026.09.21・2発言）</description>
-      <category>米国訪問等についての会見</category>
-    </item>
-    <item>
-      <title>内閣改造の狙いと総裁選への意識 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_01</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>改造人事は政策実行のためで来年の総裁選とは無関係と説明（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>臨時国会での消費税減税法案と定数削減法案 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_02</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>消費税率引下げ法案や定数削減法案を臨時国会で成立させる方針を表明（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>長期金利上昇と財政運営への市場の信認 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_03</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>長期金利高止まりを受け、責任ある積極財政と透明な説明で市場の信認確保を図る（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
-    </item>
-    <item>
-      <title>熊本地震の復旧・復興支援 — 高市内閣総理大臣記者会見</title>
-      <link>https://open-gikai.net/t/t_20260917_f65e0b_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260917_f65e0b_04</guid>
-      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
-      <description>熊本地震の復旧・復興本部を軸に中長期的な支援体制を構築する方針（首相記者会見・2026.09.17・2発言）</description>
-      <category>高市内閣総理大臣記者会見</category>
     </item>
   </channel>
 </rss>
