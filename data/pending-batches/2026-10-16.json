@@ -1,0 +1,68 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-16",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_019oJzTXv6xGYthmWqWLAMWN",
+      "submitted_at": "2026-10-27T00:22:28Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会国会法改正等及び国会改革に関する小委員会_2026-10-16_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_39f7d59571a9_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "AIと民主主義に関する立法府機能強化提言への対応",
+            "topicTag": "AI提言",
+            "topicColor": "#f97316",
+            "summary": "AI活用した立法府機能強化提言を受け各会派が意見表明し懇談形式で議論した",
+            "contextDescription": "超党派勉強会がAIと民主主義をテーマに立法府の機能強化に向けた提言をまとめ、各会派が意見を述べる場。",
+            "legislationName": null,
+            "speechOrders": [
+              1
+            ]
+          },
+          "speechOrders": [
+            1
+          ],
+          "input_hash": "sha256:d369cee8a9f2bbb61231a5c011330e0e477cca4b89e1f05045e01fdd4b81198c"
+        },
+        {
+          "custom_id": "s_39f7d59571a9_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "次回小委員会に向けた準備と進め方",
+            "topicTag": "次回準備",
+            "topicColor": "#f97316",
+            "summary": "各会派意見を事務局で整理し筆頭間協議を経て次回小委で合意点を議論する方針確認",
+            "contextDescription": "国会改革小委員会での議論を今後どう進めるか、次回開催に向けた手続きや準備の調整。",
+            "legislationName": null,
+            "speechOrders": [
+              3,
+              4,
+              5
+            ]
+          },
+          "speechOrders": [
+            3,
+            4,
+            5
+          ],
+          "input_hash": "sha256:928b0d9c44f56244aa0dc531056521f00ed11a3e4c4c446e0e05d6e903601526"
+        }
+      ]
+    }
+  ]
+}
