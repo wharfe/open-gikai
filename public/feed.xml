@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 28 Oct 2026 00:26:14 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 00:49:18 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W44 国会まとめ — 1件の議論</title>
@@ -16,11 +16,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W43 国会まとめ — 7件の議論</title>
+      <title>2026-W43 国会まとめ — 8件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>7件のスレッド、4委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、総務委員会、総理就任１年の節目を迎えての会見ほか。</description>
+      <description>8件のスレッド、5委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、総務委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -54,6 +54,14 @@
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
       <description>財政負担懸念を受け燃料油補助の縮小・出口戦略の検討を経産相に指示すると表明（首相記者会見・2026.10.23・11発言）</description>
       <category>中東情勢を踏まえた緊急的激変緩和措置等についての会見</category>
+    </item>
+    <item>
+      <title>電子請願の導入・ＡＩの活用に関する協議 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261023_b42573_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_b42573_02</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>電子請願制度の導入や事務局・法制局でのAI活用について各会派が意見交換し継続検討とした（国会会議録・2026.10.23・2発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
     </item>
     <item>
       <title>総務大臣所信表明（災害対応・行政運営全般） — 総務委員会</title>
@@ -430,14 +438,6 @@
       <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
       <description>米国のICC不信感に対し総理は日本の一貫した支持姿勢を伝え率直な意見交換を実施（首相記者会見・2026.09.25・2発言）</description>
       <category>日米首脳会談等についての会見</category>
-    </item>
-    <item>
-      <title>台風被害への対応 — 米国訪問等についての会見</title>
-      <link>https://open-gikai.net/t/t_20260921_adabe6_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260921_adabe6_01</guid>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
-      <description>台風で犠牲者が出たことに哀悼の意を示し、官房長官らに万全の対応を指示（首相記者会見・2026.09.21・1発言）</description>
-      <category>米国訪問等についての会見</category>
     </item>
   </channel>
 </rss>
