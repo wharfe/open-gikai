@@ -1,0 +1,47 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-23",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_013UcVc21Kxp4dqmgrjpxsvh",
+      "submitted_at": "2026-10-29T00:47:08Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会国会法改正等及び国会改革に関する小委員会_2026-10-23_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_b42573853810_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "電子請願の導入・ＡＩの活用に関する協議",
+            "topicTag": "電子請願",
+            "topicColor": "#f97316",
+            "summary": "電子請願制度の導入や事務局・法制局でのAI活用について各会派が意見交換し継続検討とした",
+            "contextDescription": "国会改革の一環として、請願手続の電子化や議会事務のAI活用の是非が議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              2,
+              3
+            ]
+          },
+          "speechOrders": [
+            2,
+            3
+          ],
+          "input_hash": "sha256:a0bd8d94f72de279ff5d579a1a1de2bb25e160ec395d8a0463a84de4c2e86923"
+        }
+      ]
+    }
+  ]
+}
