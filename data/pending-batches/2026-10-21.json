@@ -1,0 +1,62 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-21",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01Go97dEb7YtMA7vCHLheJTc",
+      "submitted_at": "2026-10-30T00:47:46Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_厚生労働委員会_2026-10-21_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_57b9d8c5ba60_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "厚生労働大臣・副大臣等の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "新任の厚労大臣・副大臣・政務官が所信と抱負を順に表明した",
+            "contextDescription": "内閣改造等に伴い新たに就任した厚生労働省幹部が委員会で行う就任の挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              8,
+              10,
+              12,
+              14,
+              16
+            ]
+          },
+          "speechOrders": [
+            8,
+            10,
+            12,
+            14,
+            16
+          ],
+          "input_hash": "sha256:52dbc4ec3cfc41a66819517d46fba03973408ba2b8764de31b9b405d96658b9f"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_経済産業委員会_2026-10-21_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
