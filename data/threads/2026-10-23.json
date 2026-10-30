@@ -349,6 +349,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122204033X00320261023"
         }
+      ],
+      "news": [
+        {
+          "title": "衆議院 請願の電子化・立法へのAI活用で与野党一致",
+          "url": "https://www.nagoyatv.com/news/seiji.html?id=000543776",
+          "source": "名古屋テレビ【メ～テレ】",
+          "pubDate": "Thu, 29 Oct 2026 09:29:00 GMT",
+          "image": "https://www.nagoyatv.com/themes/nagoyatv_pc/news/image/ann/000543776_640.jpg"
+        }
       ]
     },
     "speeches": [
