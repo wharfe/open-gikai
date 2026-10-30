@@ -1,0 +1,57 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-29",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01Ly9Na6HouNcrJg6uJhh49P",
+      "submitted_at": "2026-10-30T00:49:27Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-10-29",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_1129584dc1aa_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "燃料油「激変緩和措置」の見直しと今後の対応",
+            "topicTag": "燃料補助",
+            "topicColor": "#3b82f6",
+            "summary": "ガソリン補助の段階的縮小方針と出口戦略、財政負担や国民生活への影響を説明",
+            "contextDescription": "原油高騰を受け燃料油価格の急騰を抑える政府の補助制度。見直しと出口戦略が焦点。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "speechOrders": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "input_hash": "sha256:03ec87a579d17d503856b7e9b691f92373b0e282bc1eb7359b3290511250aa3a"
+        }
+      ]
+    }
+  ]
+}
