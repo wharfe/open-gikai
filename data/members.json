@@ -29875,5 +29875,155 @@
         "url": "https://www.google.com/search?q=%E8%97%A4%E5%8E%9F%E5%B4%87+site%3Ax.com+OR+site%3Atwitter.com"
       }
     ]
+  },
+  "sasagawahiroyoshi": {
+    "id": "sasagawahiroyoshi",
+    "name": "笹川博義",
+    "party": "自由民主党",
+    "role": "環境大臣・内閣府特命担当大臣（原子力防災）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%B9%E5%B7%9D%E5%8D%9A%E7%BE%A9"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%AC%B9%E5%B7%9D%E5%8D%9A%E7%BE%A9+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%AC%B9%E5%B7%9D%E5%8D%9A%E7%BE%A9+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "mitsubayashihiromi": {
+    "id": "mitsubayashihiromi",
+    "name": "三ッ林裕巳",
+    "party": "自由民主党",
+    "role": "環境副大臣・内閣府副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E3%83%83%E6%9E%97%E8%A3%95%E5%B7%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%89%E3%83%83%E6%9E%97%E8%A3%95%E5%B7%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%89%E3%83%83%E6%9E%97%E8%A3%95%E5%B7%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "azemotoshougo": {
+    "id": "azemotoshougo",
+    "name": "畦元将吾",
+    "party": "自由民主党",
+    "role": "環境副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%95%A6%E5%85%83%E5%B0%86%E5%90%BE"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%95%A6%E5%85%83%E5%B0%86%E5%90%BE+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%95%A6%E5%85%83%E5%B0%86%E5%90%BE+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "ishiharamasataka": {
+    "id": "ishiharamasataka",
+    "name": "石原正敬",
+    "party": "自由民主党",
+    "role": "環境大臣政務官・内閣府大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%8E%9F%E6%AD%A3%E6%95%AC"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E5%8E%9F%E6%AD%A3%E6%95%AC+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%9F%B3%E5%8E%9F%E6%AD%A3%E6%95%AC+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "nakatsukahiroshi": {
+    "id": "nakatsukahiroshi",
+    "name": "中司宏",
+    "party": "日本維新の会",
+    "role": "内閣府特命担当大臣（こども政策・少子化対策・若者活躍・規制改革・共生・共助）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%8F%B8%E5%AE%8F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%8F%B8%E5%AE%8F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%8F%B8%E5%AE%8F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "imaieriko": {
+    "id": "imaieriko",
+    "name": "今井絵理子",
+    "party": "自由民主党",
+    "role": "内閣府副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E4%BA%95%E7%B5%B5%E7%90%86%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BB%8A%E4%BA%95%E7%B5%B5%E7%90%86%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BB%8A%E4%BA%95%E7%B5%B5%E7%90%86%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   }
 }

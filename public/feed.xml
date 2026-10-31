@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 30 Oct 2026 00:51:38 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 00:45:05 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W44 国会まとめ — 2件の議論</title>
@@ -16,11 +16,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W43 国会まとめ — 9件の議論</title>
+      <title>2026-W43 国会まとめ — 15件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>9件のスレッド、6委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、総務委員会ほか。</description>
+      <description>15件のスレッド、9委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -72,6 +72,30 @@
       <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
     </item>
     <item>
+      <title>こども政策・少子化対策担当大臣の所信表明 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261023_7c8d9d_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_7c8d9d_03</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>こども家庭庁担当大臣がこどもまんなか社会実現に向けた少子化対策方針を表明（国会会議録・2026.10.23・1発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>副大臣・政務官の就任挨拶 — こども・子育て・若者活躍に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261023_7c8d9d_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_7c8d9d_04</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>内閣府副大臣と大臣政務官がこども政策担当として就任の挨拶を行った（国会会議録・2026.10.23・2発言）</description>
+      <category>こども・子育て・若者活躍に関する特別委員会</category>
+    </item>
+    <item>
+      <title>デジタル・AI政策に関する所信表明と挨拶 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261023_be9275_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_be9275_05</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>デジタル・AI担当大臣らがデジタル改革や人工知能戦略に関する所信と挨拶を述べた（国会会議録・2026.10.23・3発言）</description>
+      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
+    </item>
+    <item>
       <title>総務大臣所信表明（災害対応・行政運営全般） — 総務委員会</title>
       <link>https://open-gikai.net/t/t_20261022_d8288d_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_d8288d_01</guid>
@@ -85,6 +109,30 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_d8288d_02</guid>
       <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
       <description>賃金上昇を上回る個人住民税負担増加への対処を定めた法律案が撤回された（国会会議録・2026.10.22・1発言）</description>
+      <category>総務委員会</category>
+    </item>
+    <item>
+      <title>委員の異動及び理事補欠選任 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_557c51_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_557c51_03</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>委員の異動報告と理事の補欠選任を委員長一任で決定した（国会会議録・2026.10.22・2発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>環境大臣等の所信表明・就任挨拶 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_557c51_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_557c51_04</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新任の環境大臣・副大臣・政務官が担当分野と抱負を述べた（国会会議録・2026.10.22・6発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>総務大臣所信表明 — 総務委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_27855f_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_27855f_05</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>総務大臣が災害対応や所管行政に関する所信を表明した（国会会議録・2026.10.22・1発言）</description>
       <category>総務委員会</category>
     </item>
     <item>
@@ -390,54 +438,6 @@
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
       <description>新たに就任した藤川議運委員長が挨拶し、理事2名の補欠選任を決定した（国会会議録・2026.10.05・2発言）</description>
       <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>小委員会の設置と小委員長指名 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_24</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_24</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>庶務関係・図書館運営の両小委員会を設置し小委員長を指名した（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>今国会の会期決定 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_25</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_25</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>衆参協議の結果、今期国会の会期を69日間（12月12日まで）とすることを確認した（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>立法事務費交付対象会派の認定 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_26</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_26</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>新会派「新しい政治の会」への立法事務費交付認定を巡り一人会派への交付に反対意見が出た（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>内閣総理大臣所信表明演説 — 本会議</title>
-      <link>https://open-gikai.net/t/t_20261005_6756a5_27</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_6756a5_27</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>沖縄米兵事件への抗議に言及しつつ、総理が内外政策の基本方針を演説（国会会議録・2026.10.05・1発言）</description>
-      <category>本会議</category>
-    </item>
-    <item>
-      <title>本会議散会・質疑日程の決定 — 本会議</title>
-      <link>https://open-gikai.net/t/t_20261005_6756a5_28</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_6756a5_28</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>所信表明演説に対する質疑を後日に延期し本日の本会議を散会する動議（国会会議録・2026.10.05・2発言）</description>
-      <category>本会議</category>
-    </item>
-    <item>
-      <title>日米首脳電話会談（米中首脳会談後）の内容 — トランプ米国大統領との電話会談についての会見</title>
-      <link>https://open-gikai.net/t/t_20260926_c34f57_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20260926_c34f57_01</guid>
-      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
-      <description>トランプ大統領との電話会談で米中首脳会談の説明を受け、日米連携を確認した（首相記者会見・2026.09.26・2発言）</description>
-      <category>トランプ米国大統領との電話会談についての会見</category>
     </item>
   </channel>
 </rss>
