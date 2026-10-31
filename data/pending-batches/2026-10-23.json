@@ -1,0 +1,99 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-23",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01GgBsrUcr9PFCdK28gm5pjP",
+      "submitted_at": "2026-10-31T00:42:10Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_こども・子育て・若者活躍に関する特別委員会_2026-10-23_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_7c8d9d781296_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "こども政策・少子化対策担当大臣の所信表明",
+            "topicTag": "所信表明",
+            "topicColor": "#8b5cf6",
+            "summary": "こども家庭庁担当大臣がこどもまんなか社会実現に向けた少子化対策方針を表明",
+            "contextDescription": "内閣府特命担当大臣が所管するこども政策・少子化対策・若者活躍に関する基本方針を述べる所信表明演説。",
+            "legislationName": null,
+            "speechOrders": [
+              3
+            ]
+          },
+          "speechOrders": [
+            3
+          ],
+          "input_hash": "sha256:19e6fbf582b65c76d87066163d1b53a3ea32d7c84a7c6ddbc5dbfc4eceb5a68b"
+        },
+        {
+          "custom_id": "s_7c8d9d781296_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "副大臣・政務官の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "内閣府副大臣と大臣政務官がこども政策担当として就任の挨拶を行った",
+            "contextDescription": "こども政策等を担当する内閣府副大臣・大臣政務官による委員会での就任挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              5,
+              7
+            ]
+          },
+          "speechOrders": [
+            5,
+            7
+          ],
+          "input_hash": "sha256:633d1cf7cd3751e23d19503fa4269efaf926d3f7389fb37cace5e5a35ea748e4"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_デジタル社会の形成及び人工知能の活用等に関する特別委員会_2026-10-23_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_be927508a200_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "デジタル・AI政策に関する所信表明と挨拶",
+            "topicTag": "所信表明",
+            "topicColor": "#6b7280",
+            "summary": "デジタル・AI担当大臣らがデジタル改革や人工知能戦略に関する所信と挨拶を述べた",
+            "contextDescription": "デジタル社会形成とAI活用に関する政策を担当する大臣・副大臣・政務官が就任後初の所信表明を行う場。",
+            "legislationName": null,
+            "speechOrders": [
+              2,
+              4,
+              6
+            ]
+          },
+          "speechOrders": [
+            2,
+            4,
+            6
+          ],
+          "input_hash": "sha256:a7dcfe3991374f3ccfa60b76fce523e30c1405f4ce58cae4670ccb2d49f9e76c"
+        }
+      ]
+    }
+  ]
+}
