@@ -17,6 +17,27 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122204033X00220261016"
         }
+      ],
+      "news": [
+        {
+          "title": "【全文公開号】AIと民主主義——世論・意思決定・行政における実例",
+          "url": "https://www.msn.com/ja-jp/news/other/%E5%85%A8%E6%96%87%E5%85%AC%E9%96%8B%E5%8F%B7-ai%E3%81%A8%E6%B0%91%E4%B8%BB%E4%B8%BB%E7%BE%A9-%E4%B8%96%E8%AB%96-%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A-%E8%A1%8C%E6%94%BF%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%AE%9F%E4%BE%8B/ar-AA2e2erO",
+          "source": "MSN",
+          "pubDate": "Sun, 11 Oct 2026 21:09:00 GMT"
+        },
+        {
+          "title": "国会改革はまずAI活用を議論 野党側は首相の国会出席減少を警戒",
+          "url": "https://www.asahi.com/articles/ASVB83JZVVB8UTFK00DM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Thu, 08 Oct 2026 04:15:00 GMT"
+        },
+        {
+          "title": "インターネットの夢はなぜ崩れたのか、自由と民主主義を広げるはずだったデジタルが権力と富を集中させるメカニズム",
+          "url": "https://jbpress.ismedia.jp/articles/-/97488?page=4",
+          "source": "ジェイビープレス",
+          "pubDate": "Wed, 14 Oct 2026 14:00:00 GMT",
+          "image": "https://jbpress.ismcdn.jp/mwimgs/b/3/1200mw/img_b3e284c73dbec9832e267c0696c9a545773006.jpg"
+        }
       ]
     },
     "speeches": [

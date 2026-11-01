@@ -428,6 +428,21 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215386X00220261023"
         }
+      ],
+      "news": [
+        {
+          "title": "少子化進み、三原じゅん子こども相に大逆風 会見で「深刻に受け止め」も、記者から質問出ず",
+          "url": "https://news.livedoor.com/article/detail/28909084/",
+          "source": "livedoor ニュース",
+          "pubDate": "Sat, 06 Jun 2026 11:30:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/4/c/4c14b_80_7e4bdb28_95a771bd.jpg"
+        },
+        {
+          "title": "政府のこども政策、少子化反転へ3年間で集中取り組み 財源が焦点",
+          "url": "https://www.reuters.com/jp/markets/japan/7TUIPJBFPNNSXCYKUGFK73YWSY-2023-03-31/",
+          "source": "Reuters",
+          "pubDate": "Fri, 31 Mar 2023 02:02:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -544,6 +559,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215385X00220261023"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市首相の所信表明演説にみるAI政策―成長投資、AX、電力基盤、安全性を結ぶ国家戦略",
+          "url": "https://news.yahoo.co.jp/expert/articles/0158f9c2933d8981cbc1095a0b1569684a1121f6",
+          "source": "Yahoo!ニュース",
+          "pubDate": "Wed, 07 Oct 2026 15:01:00 GMT",
+          "image": "https://newsatcl-pctr.c.yimg.jp/t/iwiz-yn/rpr/satohitoshi/02737901/title-1791384155503.jpeg?exp=10800"
+        },
+        {
+          "title": "【所信表明演説】施政方針演説とは何が違う？池田・村山・小泉と、高市首相の3度の演説で読む「政治の転換点」",
+          "url": "https://diamond.jp/articles/-/400786",
+          "source": "ダイヤモンド・オンライン",
+          "pubDate": "Thu, 08 Oct 2026 21:20:00 GMT",
+          "image": "https://dol.ismcdn.jp/mwimgs/9/d/-/img_9d0abbb04726c7072ac03697eb27e914578132.jpg"
         }
       ]
     },
