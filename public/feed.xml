@@ -5,22 +5,22 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 02 Nov 2026 00:34:45 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 03:12:12 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W44 国会まとめ — 2件の議論</title>
+      <title>2026-W44 国会まとめ — 8件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
       <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
-      <description>2件のスレッド、2委員会の議論をまとめました。中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見、福田元内閣総理大臣の逝去についての会見ほか。</description>
+      <description>8件のスレッド、4委員会の議論をまとめました。中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W43 国会まとめ — 15件の議論</title>
+      <title>2026-W43 国会まとめ — 16件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>15件のスレッド、9委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
+      <description>16件のスレッド、10委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -46,6 +46,54 @@
       <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
       <description>ガソリン補助の段階的縮小方針と出口戦略、財政負担や国民生活への影響を説明（首相記者会見・2026.10.29・7発言）</description>
       <category>中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見</category>
+    </item>
+    <item>
+      <title>電子請願の導入・事務局及び法制局におけるAI活用 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261029_7f2734_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_7f2734_02</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <description>電子請願制度の導入と事務局・法制局でのAI活用について懇談形式で協議（国会会議録・2026.10.29・1発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>タブレット端末の使用及び質疑時間進行管理のモニター化 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261029_7f2734_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_7f2734_03</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <description>委員会でのタブレット端末利用と質疑時間管理のモニター表示化を各会派で検討へ（国会会議録・2026.10.29・2発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>渡辺孝一議員逝去に伴う追悼演説の件 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261027_8897f5_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261027_8897f5_01</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>逝去した渡辺孝一議員への弔詞贈呈と追悼演説の実施を決定（国会会議録・2026.10.27・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>各種委員等の選挙及び国家公務員任命同意 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261027_8897f5_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261027_8897f5_02</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>裁判官弾劾裁判所裁判員等の選挙と原子力委員会委員長等の任命同意を決定（国会会議録・2026.10.27・2発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本日の本会議議事運営の報告 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261027_8897f5_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261027_8897f5_03</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>弔詞贈呈、追悼演説、外国議会代表紹介等、本日の議事順序を事務総長が説明（国会会議録・2026.10.27・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>次回本会議及び委員会の開会日程 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261027_8897f5_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261027_8897f5_04</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>次回本会議を10月30日、関連理事会・委員会・小委員会の日程を決定し散会（国会会議録・2026.10.27・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>福田康夫元首相の逝去に対する哀悼 — 福田元内閣総理大臣の逝去についての会見</title>
@@ -134,6 +182,14 @@
       <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
       <description>総務大臣が災害対応や所管行政に関する所信を表明した（国会会議録・2026.10.22・1発言）</description>
       <category>総務委員会</category>
+    </item>
+    <item>
+      <title>委員会構成・役員挨拶 — 文教科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_8df0ce_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_8df0ce_06</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新委員長選任後、理事補欠選任と文科大臣・副大臣・政務官の就任挨拶が行われた（国会会議録・2026.10.22・8発言）</description>
+      <category>文教科学委員会</category>
     </item>
     <item>
       <title>内閣発足1年の総括と取組の成果 — 総理就任１年の節目を迎えての会見</title>
@@ -381,62 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_16</guid>
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
       <description>山口前委員長の退任と坂本新委員長の就任に伴う挨拶が交わされた（国会会議録・2026.10.05・4発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>国務大臣演説に対する質疑日程 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_4dd369_17</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_17</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>首相所信演説への質疑を7日・8日に実施し各会派の質疑時間を決定（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>理事の補欠選任（議運委員会） — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_18</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_18</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>議院運営委員会の欠員理事4名を会派推薦に基づき補欠選任した（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>常任委員長の辞任・後任選任 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_19</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_19</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>複数常任委員長の辞任申出と後任候補者の会派推薦を報告・決定した（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>特別委員会の設置に関する件 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_20</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_20</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>災害対策やデジタル・AI等を扱う各特別委員会の設置を決定した（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>情報監視審査会委員の辞任・補欠選任 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_21</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_21</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>情報監視審査会委員2名の辞任と会派推薦による補欠選任を決定した（国会会議録・2026.10.05・4発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>本日の本会議議事の決定 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_22</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_22</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>議席指定や委員長選挙など本会議当日の議事進行内容を確認・決定した（国会会議録・2026.10.05・4発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>新委員長就任挨拶と理事補欠選任 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_eaeebf_23</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_eaeebf_23</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>新たに就任した藤川議運委員長が挨拶し、理事2名の補欠選任を決定した（国会会議録・2026.10.05・2発言）</description>
       <category>議院運営委員会</category>
     </item>
   </channel>
