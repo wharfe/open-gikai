@@ -1,0 +1,106 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-27",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01FxuibkNsd6NdUWoQGNTAjr",
+      "submitted_at": "2026-11-03T02:58:35Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会_2026-10-27_第5号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_8897f53d87ce_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "渡辺孝一議員逝去に伴う追悼演説の件",
+            "topicTag": "追悼",
+            "topicColor": "#6b7280",
+            "summary": "逝去した渡辺孝一議員への弔詞贈呈と追悼演説の実施を決定",
+            "contextDescription": "北海道選挙区選出の渡辺孝一議員の逝去に伴い、本会議での追悼演説実施を決める手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:a70d6baba0e2268a141de414600cf41acd288fc00cc6f798d2de324955aeb44e"
+        },
+        {
+          "custom_id": "s_8897f53d87ce_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "各種委員等の選挙及び国家公務員任命同意",
+            "topicTag": "人事",
+            "topicColor": "#f97316",
+            "speechOrders": [
+              8,
+              9
+            ],
+            "summary": "裁判官弾劾裁判所裁判員等の選挙と原子力委員会委員長等の任命同意を決定",
+            "contextDescription": "欠員補充のための各種委員選挙と、内閣が求める国家公務員任命への国会同意手続き。",
+            "legislationName": null
+          },
+          "speechOrders": [
+            8,
+            9
+          ],
+          "input_hash": "sha256:eb184e418ef97ef4fbc8e08abe1821f25624d2a052e8cfd58117b3a9ce9d4e4a"
+        },
+        {
+          "custom_id": "s_8897f53d87ce_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "本日の本会議議事運営の報告",
+            "topicTag": "議事運営",
+            "topicColor": "#6b7280",
+            "summary": "弔詞贈呈、追悼演説、外国議会代表紹介等、本日の議事順序を事務総長が説明",
+            "contextDescription": "衆議院事務総長が本会議当日の議事進行順序について委員会に報告する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              13
+            ]
+          },
+          "speechOrders": [
+            13
+          ],
+          "input_hash": "sha256:f3002b11dab1848bcdc365a561e107e24eb445b4685e03a9730726c369cfa60a"
+        },
+        {
+          "custom_id": "s_8897f53d87ce_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "次回本会議及び委員会の開会日程",
+            "topicTag": "日程",
+            "topicColor": "#6b7280",
+            "summary": "次回本会議を10月30日、関連理事会・委員会・小委員会の日程を決定し散会",
+            "contextDescription": "今後の本会議及び委員会、小委員会の開会日時を定める通常の運営手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              17
+            ]
+          },
+          "speechOrders": [
+            17
+          ],
+          "input_hash": "sha256:834e967627cf5d07ac2b8101001395e143a15da7f46e949bc0dcf6644d54fbe9"
+        }
+      ]
+    }
+  ]
+}
