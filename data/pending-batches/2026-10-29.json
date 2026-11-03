@@ -1,0 +1,66 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-29",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_017mpVuPCm2i6jFTX8ECVyws",
+      "submitted_at": "2026-11-03T03:04:55Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会国会法改正等及び国会改革に関する小委員会_2026-10-29_第4号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_7f2734cb8b52_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "電子請願の導入・事務局及び法制局におけるAI活用",
+            "topicTag": "電子請願",
+            "topicColor": "#f97316",
+            "summary": "電子請願制度の導入と事務局・法制局でのAI活用について懇談形式で協議",
+            "contextDescription": "国会における請願受付の電子化や、議会事務局・法制局の業務にAIを活用する可能性についての検討課題。",
+            "legislationName": null,
+            "speechOrders": [
+              1
+            ]
+          },
+          "speechOrders": [
+            1
+          ],
+          "input_hash": "sha256:72ac5fa7f45642628627f13680daa90c6578b455026dea55261a1fa513f29a19"
+        },
+        {
+          "custom_id": "s_7f2734cb8b52_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "タブレット端末の使用及び質疑時間進行管理のモニター化",
+            "topicTag": "ICT化",
+            "topicColor": "#f97316",
+            "summary": "委員会でのタブレット端末利用と質疑時間管理のモニター表示化を各会派で検討へ",
+            "contextDescription": "国会審議のデジタル化を進める取り組みで、委員会でのタブレット使用解禁や質疑時間の見える化が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              2,
+              3
+            ]
+          },
+          "speechOrders": [
+            2,
+            3
+          ],
+          "input_hash": "sha256:41d3b46990f77bf491b02fd48e8c18bae42467b32911ab6529aa3e152fd4976c"
+        }
+      ]
+    }
+  ]
+}
