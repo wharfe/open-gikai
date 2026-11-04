@@ -408,7 +408,16 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261029_7f2734_02",
+        "relationship": "関連議論",
+        "topic": "電子請願の導入・事務局及び法制局におけるAI活用",
+        "committee": "議院運営委員会国会法改正等及び国会改革に関する小委員会",
+        "date": "2026.10.29"
+      }
+    ]
   },
   {
     "id": "t_20261023_7c8d9d_03",

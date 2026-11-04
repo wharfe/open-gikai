@@ -17,6 +17,20 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122204024X00520261027"
         }
+      ],
+      "news": [
+        {
+          "title": "渡辺孝一衆院議員死去68歳 自民、元総務副大臣",
+          "url": "https://news.livedoor.com/article/detail/32353535/",
+          "source": "livedoor ニュース",
+          "pubDate": "Thu, 17 Sep 2026 05:38:00 GMT"
+        },
+        {
+          "title": "自民の渡辺孝一衆院議員が死去",
+          "url": "https://www.msn.com/ja-jp/news/other/%E8%87%AA%E6%B0%91%E3%81%AE%E6%B8%A1%E8%BE%BA%E5%AD%9D%E4%B8%80%E8%A1%86%E9%99%A2%E8%AD%B0%E5%93%A1%E3%81%8C%E6%AD%BB%E5%8E%BB/ar-AA2cr9eM",
+          "source": "MSN",
+          "pubDate": "Thu, 17 Sep 2026 05:16:00 GMT"
+        }
       ]
     },
     "speeches": [
