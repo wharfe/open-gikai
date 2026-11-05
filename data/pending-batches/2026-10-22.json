@@ -1,0 +1,100 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-22",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_012a1CYyMQZbjU4zE8CkkQQz",
+      "submitted_at": "2026-11-05T01:27:20Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_内閣委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_1d11e40b04ed_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "国家公務員の給与・勤務時間に関する人事院勧告",
+            "topicTag": "人事院",
+            "topicColor": "#f97316",
+            "summary": "人事院が国家公務員の給与改定や勤務時間・休暇制度の見直し、災害補償法改正を勧告",
+            "contextDescription": "人事院が国会と内閣に対して毎年行う、国家公務員の給与水準や勤務条件に関する勧告・報告。",
+            "legislationName": "国家公務員災害補償法",
+            "speechOrders": [
+              55
+            ]
+          },
+          "speechOrders": [
+            55
+          ],
+          "input_hash": "sha256:025d05da1199d76d04c164e07e53a7b42afb742278cefdca63bacf04b1c4eb91"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_厚生労働委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_6521af1cb18f_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "厚生労働委員会の人事構成・就任挨拶",
+            "topicTag": "委員会人事",
+            "topicColor": "#6b7280",
+            "summary": "厚生労働大臣・副大臣・政務官等の新体制発足に伴う就任挨拶が続いた",
+            "contextDescription": "内閣改造等に伴い厚生労働省の大臣・副大臣・政務官が新たに就任し、委員会で挨拶を行う場。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              11,
+              13,
+              15,
+              17
+            ]
+          },
+          "speechOrders": [
+            9,
+            11,
+            13,
+            15,
+            17
+          ],
+          "input_hash": "sha256:42389292dc0be393407f833670e56ab4ae008578d407d04462ca5a7617c14da0"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_法務委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_財政金融委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
