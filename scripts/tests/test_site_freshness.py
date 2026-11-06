@@ -185,11 +185,41 @@ def test_a_later_attempt_can_catch_up(tmp_path, monkeypatch):
     assert _check(tmp_path, monkeypatch, served, attempts=2) == 0
 
 
-def test_validate_manifest_parses_real_json_body():
-    m = csf.parse_manifest(b'{"gitSha": "x", "threads": {"2026-11-05": 3}}')
-    assert m == {"2026-11-05": 3}
-    with pytest.raises(csf.Unanswered):
-        csf.parse_manifest(b"<html>404</html>")
+class _Resp:
+    def __init__(self, body=b"", exc=None):
+        self.body, self.exc = body, exc
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+    def read(self):
+        if self.exc:
+            raise self.exc
+        return self.body
+
+
+@pytest.mark.parametrize("resp", [
+    _Resp(b"<html>not json</html>"),
+    _Resp(exc=__import__("http.client").client.IncompleteRead(b"{\"thr", 100)),
+])
+def test_fetch_failures_on_the_real_path_are_unknown(tmp_path, monkeypatch, capsys, resp):
+    """Through fetch_manifest itself, not a stub: bad body or a cut-off body is UNKNOWN."""
+    d = _threads(tmp_path, GOOD)
+    monkeypatch.setattr(csf.urllib.request, "urlopen", lambda req, timeout=30.0: resp)
+    monkeypatch.setattr(csf.time, "sleep", lambda s: None)
+    assert csf.main(["--threads-dir", str(d), "--attempts", "2"]) == 1
+    out = capsys.readouterr().out
+    assert "UNKNOWN" in out and "STALE" not in out
+
+
+def test_fetch_success_on_the_real_path(tmp_path, monkeypatch):
+    d = _threads(tmp_path, GOOD)
+    body = json.dumps({"gitSha": "x", "threads": {"2026-11-05": 2, "2026-11-06": 1}}).encode()
+    monkeypatch.setattr(csf.urllib.request, "urlopen", lambda req, timeout=30.0: _Resp(body))
+    assert csf.main(["--threads-dir", str(d), "--attempts", "1"]) == 0
 
 
 # ---------- writer and checker agree, end to end ----------

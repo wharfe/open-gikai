@@ -21,6 +21,7 @@ disagreed (STALE), or there was nothing to compare (UNKNOWN).
 """
 
 import argparse
+import http.client
 import json
 import os
 import sys
@@ -33,15 +34,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from check_mcp_freshness import Unanswered, _differences, committed_index  # noqa: E402
 
 DEFAULT_URL = "https://open-gikai.net/__deployment.json"
-
-
-def parse_manifest(body):
-    """`{date: count}` from the manifest bytes, or Unanswered."""
-    try:
-        doc = json.loads(body)
-    except ValueError as exc:
-        raise Unanswered(f"the manifest is not JSON ({exc})") from exc
-    return _threads_of(doc)
 
 
 def _threads_of(doc):
@@ -60,7 +52,9 @@ def fetch_manifest(url, timeout=30.0):
             body = resp.read()
     except urllib.error.HTTPError as exc:
         raise Unanswered(f"HTTP {exc.code} from {url}") from exc
-    except (urllib.error.URLError, OSError) as exc:
+    # HTTPException covers a body cut short (IncompleteRead), which is not an
+    # OSError and would otherwise escape as a traceback instead of UNKNOWN.
+    except (urllib.error.URLError, OSError, http.client.HTTPException, ValueError) as exc:
         raise Unanswered(f"could not fetch {url} ({exc})") from exc
     try:
         return json.loads(body)

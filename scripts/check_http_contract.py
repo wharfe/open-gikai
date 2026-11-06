@@ -15,8 +15,10 @@ Standard library only. Read-only GET/HEAD requests; nothing is changed.
 """
 
 import argparse
+import hashlib
 import http.client
 import re
+import xml.etree.ElementTree as ET
 import sys
 import urllib.parse
 
@@ -55,7 +57,9 @@ def discover(base):
     m = re.search(r"<loc>https?://[^/<]+(/t/[^<?#]+)</loc>", sm.decode("utf-8", "replace"))
     if m:
         thread = m.group(1)
-        paths += [thread, thread + ".txt"]
+        # `<id>.txt` and the per-segment `<id>/__next._tree.txt` are what
+        # client navigation actually requests (seen in the e2e run).
+        paths += [thread, thread + ".txt", thread + "/__next._tree.txt"]
         _, _, page = get(base, thread)
         og = re.search(r'(/t/[^"]+/opengraph-image[^"]*)"', page.decode("utf-8", "replace"))
         if og:
@@ -64,6 +68,29 @@ def discover(base):
     if js:
         paths.append(js.group(1))
     return paths
+
+
+def feed_summary(body):
+    """Well-formed? and a digest of the item links (lastBuildDate differs per build)."""
+    try:
+        root = ET.fromstring(body)
+    except ET.ParseError as exc:
+        return f"feed=MALFORMED({exc})"
+    links = sorted(e.text or "" for e in root.iter("link")
+                   if e.text and "/t/" in e.text)
+    return f"feed_items={len(links)} links_sha={hashlib.sha256(chr(10).join(links).encode()).hexdigest()[:16]}"
+
+
+def sitemap_sample(base, n=30):
+    """Up to n page paths spread across the per-type sitemaps."""
+    out = []
+    for name in ("sitemap-threads.xml", "sitemap-members.xml", "sitemap-pages.xml",
+                 "sitemap-digests.xml", "sitemap-gov.xml", "sitemap-councils.xml"):
+        _, _, sm = get(base, "/" + name)
+        locs = re.findall(r"<loc>https?://[^/<]+(/[^<]*)</loc>", sm.decode("utf-8", "replace"))
+        step = max(1, len(locs) // 5)
+        out += locs[::step][:5]
+    return out[:n]
 
 
 def describe(status, hdrs, body, path):
@@ -75,6 +102,10 @@ def describe(status, hdrs, body, path):
         parts.append("png=" + ("yes" if body[:8] == b"\x89PNG\r\n\x1a\n" else "NO"))
     if path.endswith(".txt") or path == "/_headers":
         parts.append(f"bytes={len(body)}")
+    if path.startswith("/263c8aace"):  # IndexNow key: the body itself is the contract
+        parts.append("sha256=" + hashlib.sha256(body).hexdigest()[:16])
+    if path == "/feed.xml" and status == 200:
+        parts.append(feed_summary(body))
     if status == 404:
         parts.append("site404=" + ("yes" if b"<html" in body[:2000].lower() else "NO"))
     return parts
@@ -87,7 +118,11 @@ def main(argv=None):
     ap.add_argument("--compare")
     args = ap.parse_args(argv)
     bases = [args.base.rstrip("/")] + ([args.compare.rstrip("/")] if args.compare else [])
-    paths = FIXED_PATHS + discover(bases[0])
+    try:
+        paths = FIXED_PATHS + discover(bases[0])
+    except (OSError, http.client.HTTPException) as exc:
+        print(f"could not discover thread/JS paths on {bases[0]} ({exc}); fixed paths only")
+        paths = list(FIXED_PATHS)
 
     differing = 0
     for path in paths:
@@ -102,6 +137,19 @@ def main(argv=None):
         print(("  " if same else "≠ ") + path)
         for b, r in zip(bases, rows):
             print(f"    {urllib.parse.urlsplit(b).netloc}: {' | '.join(r)}")
+    sample = sitemap_sample(bases[0])
+    print(f"\nsitemap sample ({len(sample)} pages, status only):")
+    for b in bases:
+        codes = {}
+        for path in sample:
+            try:
+                st = get(b, path, method="HEAD")[0]
+            except (OSError, http.client.HTTPException):
+                st = "ERROR"
+            codes.setdefault(st, []).append(path)
+        summary = ", ".join(f"{k}×{len(v)}" for k, v in codes.items())
+        bad = [p for k, v in codes.items() if k != 200 for p in v][:5]
+        print(f"    {urllib.parse.urlsplit(b).netloc}: {summary}" + (f"  e.g. {bad}" if bad else ""))
     if args.compare:
         print(f"\n{differing} of {len(paths)} paths differ — judge each against "
               f"docs/cloudflare-cutover.md, this script does not decide.")

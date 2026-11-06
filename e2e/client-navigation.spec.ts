@@ -33,6 +33,12 @@ test("client navigation fetches its RSC payloads without errors", async ({ page,
   });
 
   await page.goto("/");
+  // A marker on window survives client navigation and dies with a full page
+  // load. Without it, a host serving HTML for the RSC payloads would make Next
+  // fall back to hard navigation and this test would still pass.
+  await page.evaluate(() => ((window as unknown as { __spa: number }).__spa = 1));
+  const stillSpa = () =>
+    page.evaluate(() => (window as unknown as { __spa?: number }).__spa === 1);
   const thread = page.locator('a[href^="/t/"]').first();
   await expect(thread).toBeVisible();
   await thread.click();
@@ -42,6 +48,7 @@ test("client navigation fetches its RSC payloads without errors", async ({ page,
   const member = page.locator('a[href^="/m/"]').first();
   await member.click();
   await page.waitForURL(/\/m\//);
+  expect(await stillSpa(), "thread → member was a full page load").toBe(true);
 
   await page.goBack();
   await page.waitForURL(/\/t\//);
@@ -51,6 +58,8 @@ test("client navigation fetches its RSC payloads without errors", async ({ page,
   await page.locator('a[href="/"]').first().click();
   await page.waitForURL((u) => u.pathname === "/");
 
+  expect(await stillSpa(), "navigation fell back to full page loads").toBe(true);
   expect(rsc.length, "client navigation should have fetched RSC payloads").toBeGreaterThan(0);
+  expect(rsc.filter((st) => st !== 200), "every RSC payload should answer 200").toEqual([]);
   expect(problems).toEqual([]);
 });
