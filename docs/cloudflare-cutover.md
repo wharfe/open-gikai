@@ -79,16 +79,16 @@ watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): per
 4. **鮮度確認**: `python3 scripts/check_site_freshness.py --url https://<workers.dev の URL>/__deployment.json --attempts 1` が 0。
 5. **DNS 切り替え**（1 つの許可で続けて行い、その場を離れない）:
    - TTL が長ければ、別の許可で先に apex と www の TTL を 120 秒に下げ、元の TTL が過ぎてから行う。
-   - apex: Worker → Settings → Domains & Routes → Custom Domain に `open-gikai.net` を追加。既存 A と衝突したら、記録済みの値を手元に置いて A を消し、すぐ追加する。
+   - apex: Worker → Settings → Domains & Routes → Custom Domain に `open-gikai.net` を追加。既存 A と衝突したら、記録済みの値を手元に置いて A を消し、すぐ追加する。**追加がエラーになったら**、記録した A（`216.198.79.1`）をプロキシ状態・TTL ごと直ちに作り直し、DNS 切り替えを中止する（www には進まない）。
    - www（この順で。同じ名前の CNAME と AAAA は共存できない）:
      1. Redirect Rule を作る: ホスト `www.open-gikai.net` → `https://open-gikai.net` + 元のパス、**307**、クエリ保持。www がまだ DNS only で Vercel を向いている間は効かないので、先に作ってよい。
      2. vercel-dns の CNAME を消す。
      3. すぐ、プロキシした `AAAA www 100::` を作る。作れなければ、記録した CNAME を戻して止まる。
-     4. `curl -sI https://www.open-gikai.net/about?x=1` が 307 で `https://open-gikai.net/about?x=1` を返すこと。
+     4. `curl -sI 'https://www.open-gikai.net/about?x=1'` が 307 で `https://open-gikai.net/about?x=1` を返すこと（URL は引用符で囲む。zsh は `?` を展開する）。
 6. **切り替え後の確認**: 手順 3 の契約を `https://open-gikai.net` と `https://www.open-gikai.net` で。`uptime.yml` と `deploy-mcp` が緑。トップの HTML に GA ID がある。
 7. **Vercel の Git 連携だけ外す**（open-gikai のみ。open-gikai-mcp には触らない）。ドメイン設定と最後の READY デプロイは残す（切り戻し用）。以後 Vercel の保存量は増えない。既存分はプロジェクト削除まで残る。
-8. **48 時間 かつ 日次の push で鮮度確認が一致**したら、許可を得て Vercel プロジェクト `open-gikai` を削除。削除前に、プロジェクト名・環境変数・最後の READY の commit をここに控える。**削除後は DNS を戻すだけでは切り戻せない**（再作成が要る）。削除後、Vercel の使用量画面で open-gikai の Deployment Storage が減ったことを見る。
-9. **PR2**: daily-batch に鮮度確認のジョブ（ビルド＋アップロードの実測に 10 分足した予算、下限 30 分、60 秒間隔。失敗は notify-on-failure へ）、uptime の sitemap を非 200 で失敗に、`vercel.json`・`scripts/vercel-ignore-build.sh`・そのテストの削除、CLAUDE.md / README の配信の記述。
+8. **PR2（Vercel 削除の前に入れる）**: daily-batch に鮮度確認のジョブ（ビルド＋アップロードの実測に 10 分足した予算、下限 30 分、60 秒間隔。失敗は notify-on-failure へ）、uptime の sitemap を非 200 で失敗に、`vercel.json`・`scripts/vercel-ignore-build.sh`・そのテストの削除、CLAUDE.md / README の配信の記述。 マージ後、翌朝の daily-batch で鮮度確認のジョブが緑になり、わざと失敗させなくても通知の経路（notify-on-failure の needs）に入っていることを確かめる。
+9. **48 時間 かつ PR2 の鮮度確認ジョブが日次の push で緑**になったら、許可を得て Vercel プロジェクト `open-gikai` を削除。削除前に、プロジェクト名・環境変数・最後の READY の commit をここに控える。**削除後は DNS を戻すだけでは切り戻せない**（再作成が要る）。削除後、Vercel の使用量画面で open-gikai の Deployment Storage が減ったことを見る。
 
 ## 4. 切り戻し（手順 8 の削除より前だけ）
 
