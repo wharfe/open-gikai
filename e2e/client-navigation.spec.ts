@@ -25,11 +25,21 @@ function watch(page: Page, origin: string) {
 test("client navigation fetches its RSC payloads without errors", async ({ page, baseURL }) => {
   const origin = new URL(baseURL!).origin;
   const problems = watch(page, origin);
-  const rsc: number[] = [];
+  const rsc: string[] = [];
   page.on("response", (res) => {
-    if (res.url().startsWith(origin) && new URL(res.url()).pathname.endsWith(".txt")) {
-      rsc.push(res.status());
+    const url = new URL(res.url());
+    if (!res.url().startsWith(origin) || !url.pathname.endsWith(".txt")) return;
+    // Cloudflare static assets answer a path containing `$` (Next 16 names
+    // segment payloads `__next.t.$d$threadId...`) with a 307 to the same path
+    // percent-encoded; the browser follows it to a 200. Only that redirect is
+    // tolerated — any other non-200 is a failure.
+    const loc = res.headers()["location"];
+    if (res.status() === 307 && loc) {
+      const target = new URL(loc, url);
+      if (decodeURIComponent(target.pathname) === decodeURIComponent(url.pathname)
+          && target.search === url.search) return;
     }
+    rsc.push(`${res.status()} ${url.pathname}`);
   });
 
   await page.goto("/");
@@ -60,6 +70,6 @@ test("client navigation fetches its RSC payloads without errors", async ({ page,
 
   expect(await stillSpa(), "navigation fell back to full page loads").toBe(true);
   expect(rsc.length, "client navigation should have fetched RSC payloads").toBeGreaterThan(0);
-  expect(rsc.filter((st) => st !== 200), "every RSC payload should answer 200").toEqual([]);
+  expect(rsc.filter((r) => !r.startsWith("200 ")), "every RSC payload should answer 200").toEqual([]);
   expect(problems).toEqual([]);
 });

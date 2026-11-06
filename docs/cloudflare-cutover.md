@@ -67,6 +67,7 @@ watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): per
 | `/feed.xml` | 整形式、item の links_sha | 同じ links_sha（同じ commit を比べたとき） |
 | sitemap のサンプル 30 ページ | 200×30 | 同じ |
 | RSC `.txt` | 200 | 同じ。遷移テストが緑 |
+| `$` を含む RSC（`__next.t.$d$threadId.__PAGE__.txt` など） | 200 | **307 → 同じパスの `%24` 版 → 200**（Cloudflare の静的アセットの挙動。遷移は壊れない。1 往復増える） |
 | OGP 画像 | 200 **application/octet-stream** | 200 **image/png**（`_headers` で直る） |
 | `/_next/static/*.js` | immutable 1 年 | 同じ（`_headers`）。JS の `text/javascript` は可 |
 | `/_headers` | PR1 以後は 200（`public/_headers` が out/ にコピーされ、Vercel はそのまま配信する。中身は秘密でない） | 404（本文を返したら止める） |

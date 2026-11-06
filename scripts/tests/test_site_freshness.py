@@ -215,6 +215,19 @@ def test_fetch_failures_on_the_real_path_are_unknown(tmp_path, monkeypatch, caps
     assert "UNKNOWN" in out and "STALE" not in out
 
 
+def test_fetch_sends_its_own_user_agent(tmp_path, monkeypatch):
+    """Cloudflare 403s the default urllib agent; the check must name itself."""
+    seen = {}
+
+    def fake(req, timeout=30.0):
+        seen["ua"] = req.get_header("User-agent")
+        return _Resp(b'{"threads": {"2026-11-05": 2, "2026-11-06": 1}}')
+    monkeypatch.setattr(csf.urllib.request, "urlopen", fake)
+    d = _threads(tmp_path, GOOD)
+    assert csf.main(["--threads-dir", str(d), "--attempts", "1"]) == 0
+    assert seen["ua"] and "Python-urllib" not in seen["ua"]
+
+
 def test_fetch_success_on_the_real_path(tmp_path, monkeypatch):
     d = _threads(tmp_path, GOOD)
     body = json.dumps({"gitSha": "x", "threads": {"2026-11-05": 2, "2026-11-06": 1}}).encode()
