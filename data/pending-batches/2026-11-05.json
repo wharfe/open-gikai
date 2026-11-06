@@ -1,0 +1,91 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-05",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_018SQtDJVb5HCHsqne3e6LoJ",
+      "submitted_at": "2026-11-06T01:34:33Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-11-05",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_702d380f42ff_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "日仏首脳電話会談の内容",
+            "topicTag": "日仏会談",
+            "topicColor": "#06b6d4",
+            "summary": "マクロン大統領と電話会談し安全保障・AI・宇宙等の協力進展やEU産業加速化法案への懸念を伝達",
+            "contextDescription": "高市首相がフランスのマクロン大統領と電話会談を行い、両国の協力分野やEUの政策について意見交換した。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:ec0d3aefa011cd53334b06e5b8ef502fb7ad54f2efb283464701a38f65ecd22c"
+        },
+        {
+          "custom_id": "s_702d380f42ff_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "G7オンライン首脳会議欠席を巡るマクロン大統領とのやり取り",
+            "topicTag": "G7欠席",
+            "topicColor": "#06b6d4",
+            "summary": "総理がG7オンライン首脳会議を欠席した件で議長国フランスとのやり取りはなかったと説明",
+            "contextDescription": "10月のG7オンライン首脳会議を高市首相が欠席したことについて、議長国フランスとの連絡有無が問われた。",
+            "legislationName": null,
+            "speechOrders": [
+              3,
+              4,
+              5
+            ]
+          },
+          "speechOrders": [
+            3,
+            4,
+            5
+          ],
+          "input_hash": "sha256:daebf51c61307baa33f95f915107f7096fd01e3ef5ba7e85aacac29a589725ca"
+        },
+        {
+          "custom_id": "s_702d380f42ff_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "米中間選挙結果への受け止め",
+            "topicTag": "米中間選挙",
+            "topicColor": "#06b6d4",
+            "summary": "米中間選挙で民主党が上下両院を制した結果について内政問題としてコメントを控える姿勢",
+            "contextDescription": "米国の中間選挙で民主党が上下両院の過半数を獲得したことに関する日本政府の受け止めが問われた。",
+            "legislationName": null,
+            "speechOrders": [
+              6,
+              7
+            ]
+          },
+          "speechOrders": [
+            6,
+            7
+          ],
+          "input_hash": "sha256:427a75cc61f9d132c37d58edd9631b9b0f375b839a674ab952ed3ac5caa48193"
+        }
+      ]
+    }
+  ]
+}
