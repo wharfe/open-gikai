@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     "scripts/**",
     // Sibling Next.js apps (e.g. apps/mcp) own their own lint and build.
     "apps/**",
+    // wrangler local state (#102)
+    ".wrangler/**",
   ]),
 ]);
 

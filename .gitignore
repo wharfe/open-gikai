@@ -96,3 +96,6 @@ apps/mcp/data/
 # pids and restores a mid-swap casualty, is what actually collects them.
 apps/mcp/.data-staging-*/
 apps/mcp/.data-retired-*/
+
+# Cloudflare wrangler local state
+.wrangler/

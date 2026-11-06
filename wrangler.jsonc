@@ -1,0 +1,19 @@
+// Cloudflare Workers static assets for the main site (#102). No Worker script:
+// the site is a pure `next build` export (next.config.ts `output: "export"`).
+// Built and deployed by Workers Builds — the dashboard settings that cannot
+// live here (build/deploy commands, watch paths, build variables) are in
+// docs/cloudflare-cutover.md.
+{
+  "name": "open-gikai",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./out",
+    // /about serves about.html; /about/ redirects to /about (307 — Vercel gave 308).
+    "html_handling": "drop-trailing-slash",
+    // out/404.html. Effective on `wrangler deploy`, NOT on Worker Previews.
+    "not_found_handling": "404-page"
+  },
+  // Required for non-production branch builds (`wrangler preview`).
+  "previews": {}
+}
