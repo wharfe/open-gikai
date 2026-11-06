@@ -17,7 +17,7 @@
 # Compared against the last successful deployment, not HEAD^: a threads commit
 # whose build failed followed by a sidecar-only commit must still build.
 #
-# Recovery: to rebuild a deployment this skipped (it shows as Canceled), use
+# Recovery: to rebuild a deployment this skipped (Ignored / Canceled), use
 # Redeploy in the dashboard and UNTICK "Use project's Ignore Build Step". A
 # redeploy of the same sha builds anyway (empty diff), but a Canceled sha whose
 # only difference from the older READY one is sidecars would be skipped again.
@@ -56,6 +56,12 @@ prev_full=$(git rev-parse --verify --quiet "${prev}^{commit}") && [ -n "$prev_fu
   || decide 1 previous_unavailable
 head_full=$(git rev-parse --verify --quiet "HEAD^{commit}") && [ -n "$head_full" ] \
   || decide 1 head_unavailable
+# The diff must be about the commit Vercel is deploying. If it says which one
+# and the checkout disagrees, do not judge a different tree.
+want=${VERCEL_GIT_COMMIT_SHA:-}
+if [ -n "$want" ] && [ "$want" != "$head_full" ]; then
+  decide 1 head_mismatch
+fi
 
 tmp=$(mktemp) || decide 1 git_diff_failed "mktemp"
 git diff --no-ext-diff --no-textconv --no-renames --name-only -z \
@@ -73,7 +79,10 @@ while IFS= read -r -d '' p || [ -n "$p" ]; do
   if [[ "$p" != "$PREFIX"?* ]]; then
     outside+=("$p")
   fi
-done < "$tmp" || decide 1 git_diff_failed "read_failed"
+done < "$tmp" || decide 1 git_diff_failed "open_failed"
+# Only a failure to OPEN the file is caught above: the loop's status is its
+# body's, so a read error midway would look like EOF. Accepted (spec): this is
+# a local file written a moment ago, and no test could make that read fail.
 
 [ "$count" -gt 0 ] || decide 1 no_changes
 if [ "${#outside[@]}" -gt 0 ]; then

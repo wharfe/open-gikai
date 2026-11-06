@@ -62,10 +62,12 @@ def repo(tmp_path):
     return r
 
 
-def _run(cwd, prev=None, env_name="production", path_prefix=None):
+def _run(cwd, prev=None, env_name="production", path_prefix=None, commit_sha=None):
     env = dict(os.environ, **GIT_ENV)
-    env.pop("VERCEL_ENV", None)
-    env.pop("VERCEL_GIT_PREVIOUS_SHA", None)
+    for k in ("VERCEL_ENV", "VERCEL_GIT_PREVIOUS_SHA", "VERCEL_GIT_COMMIT_SHA"):
+        env.pop(k, None)
+    if commit_sha is not None:
+        env["VERCEL_GIT_COMMIT_SHA"] = commit_sha
     if env_name is not None:
         env["VERCEL_ENV"] = env_name
     if prev is not None:
@@ -194,6 +196,20 @@ def test_odd_names_outside_prefix_build(repo, name):
 
 # ---------- build (exit 1): cannot decide ----------
 
+def test_commit_sha_disagreeing_with_checkout_builds(repo):
+    prev = _git(repo, "rev-parse", "HEAD")
+    _write(repo, "data/pending-batches/a.json")
+    _commit(repo)
+    _assert(_run(repo, prev, commit_sha=prev), 1, "build", "head_mismatch")
+
+
+def test_commit_sha_matching_checkout_still_skips(repo):
+    prev = _git(repo, "rev-parse", "HEAD")
+    _write(repo, "data/pending-batches/a.json")
+    head = _commit(repo)
+    _assert(_run(repo, prev, commit_sha=head), 0, "skip", "pending_batches_only")
+
+
 def test_previous_unset_builds(repo):
     _assert(_run(repo, None), 1, "build", "previous_missing")
 
@@ -308,11 +324,25 @@ def test_no_vercel_json_under_apps_mcp():
 
 BUILD_INPUTS = [
     "src", "scripts/lib", "next.config.ts", "package.json",
-    "scripts/validate-data.mjs", "scripts/enrich-members.mjs",
-    "scripts/generate-feeds.js", "scripts/generate-sitemap.mjs",
     "scripts/gen_status.py", "scripts/pipeline/jsonio.py",
     "scripts/pipeline/__init__.py",
 ]
+# Every top-level .mjs/.js under scripts/ is treated as a build input, so a new
+# one is checked without anyone remembering to list it here.
+BUILD_INPUT_GLOBS = ["scripts/*.mjs", "scripts/*.js"]
+
+# The build pipeline this premise was checked against. A new step may read
+# something new; when this changes, re-check what it reads before updating it.
+EXPECTED_BUILD_SCRIPT = (
+    "node scripts/validate-data.mjs --fix && node scripts/enrich-members.mjs"
+    " && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs"
+    " && next build"
+)
+
+
+def test_build_script_is_the_one_the_premise_was_checked_against():
+    with open(os.path.join(REPO_ROOT, "package.json")) as f:
+        assert json.load(f)["scripts"]["build"] == EXPECTED_BUILD_SCRIPT
 
 
 def test_build_inputs_do_not_read_pending_batches():
@@ -320,9 +350,18 @@ def test_build_inputs_do_not_read_pending_batches():
 
     A new build input that reads it must remove the skip in the same change.
     """
+    import glob
+    rels = list(BUILD_INPUTS)
+    for g in BUILD_INPUT_GLOBS:
+        found = sorted(os.path.relpath(p, REPO_ROOT)
+                       for p in glob.glob(os.path.join(REPO_ROOT, g)))
+        assert found, f"{g} matched nothing"
+        rels += found
     offenders = []
-    for rel in BUILD_INPUTS:
+    for rel in rels:
         root = os.path.join(REPO_ROOT, rel)
+        # A renamed input must fail here, not silently drop out of the check.
+        assert os.path.exists(root), f"build input {rel} does not exist"
         paths = [root] if os.path.isfile(root) else [
             os.path.join(d, f) for d, _, fs in os.walk(root) for f in fs]
         for p in paths:
