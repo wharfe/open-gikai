@@ -1,0 +1,20 @@
+# Cloudflare Workers static assets (#102). Copied into out/ by `next build`.
+# Vercel ignores this file while it is still serving production.
+
+# workers.dev is not the site; keep it out of search results. Covers both the
+# production `open-gikai.<account>.workers.dev` and preview hosts.
+https://:version.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex
+
+# Thread OGP images are PNGs written without an extension; Vercel served them
+# as application/octet-stream.
+/t/*/opengraph-image
+  Content-Type: image/png
+
+/__deployment.json
+  Content-Type: application/json
+  X-Robots-Tag: noindex
+
+# Same as Vercel today: content-hashed chunks, safe to cache for a year.
+/_next/static/*
+  Cache-Control: public,max-age=31536000,immutable
