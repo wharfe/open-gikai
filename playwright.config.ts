@@ -2,7 +2,8 @@ import { defineConfig } from "@playwright/test";
 
 // E2E_BASE_URL points the same specs at a deployed site (e.g. the Cloudflare
 // workers.dev deployment before the DNS cutover, #102) instead of `serve out`.
-const remote = process.env.E2E_BASE_URL;
+// `||`, not `??`: an empty E2E_BASE_URL means "not set", not a base URL of "".
+const remote = process.env.E2E_BASE_URL || undefined;
 
 export default defineConfig({
   testDir: "./e2e",

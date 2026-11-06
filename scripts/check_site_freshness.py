@@ -34,6 +34,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from check_mcp_freshness import Unanswered, _differences, committed_index  # noqa: E402
 
 DEFAULT_URL = "https://open-gikai.net/__deployment.json"
+# Cloudflare answers 403 to the default "Python-urllib/x.y" agent (measured on
+# workers.dev, 2026-11-06), which would turn every run into UNKNOWN.
+USER_AGENT = "open-gikai-freshness-check (+https://github.com/wharfe/open-gikai)"
 
 
 def _threads_of(doc):
@@ -46,7 +49,8 @@ def _threads_of(doc):
 
 def fetch_manifest(url, timeout=30.0):
     """The parsed manifest document, or Unanswered."""
-    req = urllib.request.Request(url, headers={"Cache-Control": "no-cache"})
+    req = urllib.request.Request(url, headers={"Cache-Control": "no-cache",
+                                               "User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = resp.read()
