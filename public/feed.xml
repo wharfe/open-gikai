@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Nov 2026 01:33:19 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 01:36:38 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W45 国会まとめ — 3件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W45</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W45</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、1委員会の議論をまとめました。マクロン・フランス共和国大統領との電話会談等についての会見ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W44 国会まとめ — 11件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
@@ -16,11 +24,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W43 国会まとめ — 18件の議論</title>
+      <title>2026-W43 国会まとめ — 20件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>18件のスレッド、11委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
+      <description>20件のスレッド、12委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +40,28 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W41 国会まとめ — 32件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W41</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W41</guid>
-      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-      <description>32件のスレッド、7委員会の議論をまとめました。議院運営委員会、資源エネルギー・持続可能社会に関する調査会、情報監視審査会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>日仏首脳電話会談の内容 — マクロン・フランス共和国大統領との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261105_702d38_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_702d38_01</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>マクロン大統領と電話会談し安全保障・AI・宇宙等の協力進展やEU産業加速化法案への懸念を伝達（首相記者会見・2026.11.05・2発言）</description>
+      <category>マクロン・フランス共和国大統領との電話会談等についての会見</category>
+    </item>
+    <item>
+      <title>G7オンライン首脳会議欠席を巡るマクロン大統領とのやり取り — マクロン・フランス共和国大統領との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261105_702d38_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_702d38_02</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>総理がG7オンライン首脳会議を欠席した件で議長国フランスとのやり取りはなかったと説明（首相記者会見・2026.11.05・3発言）</description>
+      <category>マクロン・フランス共和国大統領との電話会談等についての会見</category>
+    </item>
+    <item>
+      <title>米中間選挙結果への受け止め — マクロン・フランス共和国大統領との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261105_702d38_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_702d38_03</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>米中間選挙で民主党が上下両院を制した結果について内政問題としてコメントを控える姿勢（首相記者会見・2026.11.05・2発言）</description>
+      <category>マクロン・フランス共和国大統領との電話会談等についての会見</category>
     </item>
     <item>
       <title>国会職員・秘書給与の人事院勧告対応改定 — 議院運営委員会</title>
@@ -166,6 +190,22 @@
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
       <description>デジタル・AI担当大臣らがデジタル改革や人工知能戦略に関する所信と挨拶を述べた（国会会議録・2026.10.23・3発言）</description>
       <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
+    </item>
+    <item>
+      <title>文部科学大臣所信表明及び政治資金問題 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261023_b7bcab_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_b7bcab_06</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新文科相が所信に先立ち、議員会館での会合開催と政治資金収支報告を巡る経緯を説明（国会会議録・2026.10.23・1発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>副大臣・政務官の就任挨拶 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261023_b7bcab_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261023_b7bcab_07</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>新任の文部科学副大臣・大臣政務官が各々の担当分野での抱負を述べた（国会会議録・2026.10.23・4発言）</description>
+      <category>文部科学委員会</category>
     </item>
     <item>
       <title>総務大臣所信表明（災害対応・行政運営全般） — 総務委員会</title>
@@ -398,46 +438,6 @@
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
       <description>政治改革特別委員会の委員長に井上英孝氏を互選で選出した（国会会議録・2026.10.05・3発言）</description>
       <category>政治改革に関する特別委員会</category>
-    </item>
-    <item>
-      <title>理事の選任 — 政治改革に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_368bdc_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_368bdc_07</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>理事を8名とし、委員長指名により8名の理事を選任した（国会会議録・2026.10.05・2発言）</description>
-      <category>政治改革に関する特別委員会</category>
-    </item>
-    <item>
-      <title>綿貫民輔元議長の逝去と弔意 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_4dd369_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_08</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>綿貫民輔元議長の逝去に際し議長の弔詞と哀悼の意を報告（国会会議録・2026.10.05・2発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>理事の辞任及び補欠選任 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_4dd369_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_09</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>複数理事の辞任に伴い後任理事を委員長が指名し了承（国会会議録・2026.10.05・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>臨時国会の議席・会期の件 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_4dd369_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_10</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>第222回臨時国会の仮議席決定と会期69日間を決定（国会会議録・2026.10.05・3発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>常任委員長の辞任及び選挙 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261005_4dd369_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_4dd369_11</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>各常任委員長が一斉辞任し、新委員長候補を議長指名で選任（国会会議録・2026.10.05・4発言）</description>
-      <category>議院運営委員会</category>
     </item>
   </channel>
 </rss>
