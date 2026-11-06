@@ -1,0 +1,79 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-23",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01QdnpQ1PLWoTZJpjJtipGxm",
+      "submitted_at": "2026-11-06T01:31:07Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_文部科学委員会_2026-10-23_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_b7bcab31b820_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "文部科学大臣所信表明及び政治資金問題",
+            "topicTag": "所信表明",
+            "topicColor": "#6b7280",
+            "summary": "新文科相が所信に先立ち、議員会館での会合開催と政治資金収支報告を巡る経緯を説明",
+            "contextDescription": "新任の文部科学大臣が所信表明を行うにあたり、過去の政治資金に関する問題について説明した。",
+            "legislationName": null,
+            "speechOrders": [
+              7
+            ]
+          },
+          "speechOrders": [
+            7
+          ],
+          "input_hash": "sha256:c01d2f78f1fa98bf38ba6b59420c7894ed98ccd26454e6fe425b0b80ebef10f0"
+        },
+        {
+          "custom_id": "s_b7bcab31b820_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "副大臣・政務官の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "新任の文部科学副大臣・大臣政務官が各々の担当分野での抱負を述べた",
+            "contextDescription": "人事異動に伴い新たに就任した副大臣・大臣政務官が委員会で挨拶を行う慣例の場。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              11,
+              13,
+              15
+            ]
+          },
+          "speechOrders": [
+            9,
+            11,
+            13,
+            15
+          ],
+          "input_hash": "sha256:157c9788ea9bd5152ee31fa5bc93f1ea01e45f528f8b9e32f41b6841d5f23323"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_環境委員会_2026-10-23_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
