@@ -962,14 +962,15 @@ jobs:
     needs: fetch-and-summarize
     if: ${{ !cancelled() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
     runs-on: ubuntu-latest
-    # The check's own budget is 30 attempts x 60 s. Measured on 2026-11-07: the
+    # The check waits 60 s BETWEEN attempts, not after the last one, so 31
+    # attempts give 30 minutes from the first fetch to the last. Measured on 2026-11-07: the
     # data commit was pushed at 00:57:19Z and its Workers build finished at
     # 01:01:46Z (~4.5 min), so 30 min is the spec's floor (measured + 10 min,
     # minimum 30) rather than a tight fit.
     #
     # The job timeout must outlast the check's WORST case, not its sleeps: each
-    # attempt can also spend its 30 s fetch timeout, so 30 x (60 + 30) s is 45
-    # min before setup. A job killed by its timeout never prints STALE/UNKNOWN,
+    # attempt can also spend its 30 s fetch timeout, so 31 x 30 s + 30 x 60 s
+    # is ~46 min before setup. A job killed by its timeout never prints STALE/UNKNOWN,
     # and a timed-out job may read as cancelled rather than failed to
     # notify-on-failure's `failure()`. 55 covers it with setup to spare.
     timeout-minutes: 55
@@ -991,7 +992,7 @@ jobs:
       # evidence the site is behind. Unit tested in
       # scripts/tests/test_site_freshness.py.
       - name: Verify the site serves the committed data
-        run: python3 scripts/check_site_freshness.py --attempts 30 --sleep 60
+        run: python3 scripts/check_site_freshness.py --attempts 31 --sleep 60
 
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, a failed
   # MCP deploy, etc.) as a GitHub Issue so they don't sit silently until someone
@@ -1015,7 +1016,7 @@ jobs:
     # verify-site joins for the same reason (#102): a site that stopped
     # rebuilding answers 200 and looks like nothing. It runs alongside
     # deploy-mcp, so it adds latency only when it is the slower of the two (up
-    # to ~45 minutes when the site really is behind or unreachable).
+    # to ~46 minutes when the site really is behind or unreachable).
     needs: [fetch-and-summarize, deploy-mcp, verify-site]
     if: failure()
     runs-on: ubuntu-latest

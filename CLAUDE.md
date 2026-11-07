@@ -433,7 +433,7 @@ The repo deploys to **two hosts**:
   Vercel double-prefixes such absolute paths during deploy.
 
 **Only the frontend deploys itself.** Cloudflare Workers Builds is wired to git and
-rebuilds the site on every push; `apps/mcp` is not, and was deployed by hand until #85 —
+rebuilds the site on every push to main that touches more than sidecars; `apps/mcp` is not, and was deployed by hand until #85 —
 which is to say it stopped. Its last deploy was 2026-05-22 and it served data
 ending 2026-05-19 while the site was three months ahead, and nothing noticed,
 because the endpoint answers 200 and `tools/list` works. **It was never broken,
@@ -493,7 +493,8 @@ because the watch paths skip sidecar-only pushes — leaves the old site answeri
 200. `verify-site` (same `if:`, same branch-tip checkout as `deploy-mcp`) runs
 `scripts/check_site_freshness.py`, which reads `/__deployment.json` (per-date
 thread counts written at build time) and compares it with the committed
-`data/threads/` for up to 30 minutes; a red joins `notify-on-failure`. Its green
+`data/threads/` — 31 attempts, 60 s apart (30 minutes), up to ~46 minutes counting each
+fetch's own timeout; a red joins `notify-on-failure`. Its green
 has the same limit as `deploy-mcp`'s: **the site agrees with the branch tip**, not
 that today's threads exist (the publish's own red says that), and it stops at the
 first match — a stale build landing later that morning is caught only the next

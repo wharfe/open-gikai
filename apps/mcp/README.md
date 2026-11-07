@@ -66,7 +66,8 @@ curl -X POST http://localhost:3100/api/mcp \
 ## Vercel deployment
 
 The root site is served from Cloudflare Workers (#102); this package is the
-only Vercel project. It is deployed by `daily-batch.yml`'s `deploy-mcp` job,
+only thing deployed to Vercel (the old `open-gikai` project is kept, disconnected,
+for rollback until it is deleted). It is deployed by `daily-batch.yml`'s `deploy-mcp` job,
 not by a git integration. The project settings are:
 
 - **Root Directory**: `apps/mcp`

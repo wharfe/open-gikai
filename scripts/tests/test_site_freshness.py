@@ -314,9 +314,10 @@ def test_verify_site_waits_long_enough_for_a_build():
     attempts = int(re.search(r"--attempts (\d+)", run).group(1))
     sleep = float(re.search(r"--sleep (\d+)", run).group(1))
     assert sleep == 60
-    assert attempts * sleep >= 30 * 60, run
+    # No sleep follows the last attempt, so the span covered is (attempts-1) sleeps.
+    assert (attempts - 1) * sleep >= 30 * 60, run
     fetch_timeout = inspect.signature(csf.fetch_manifest).parameters["timeout"].default
-    worst = attempts * (sleep + fetch_timeout) + 300  # + setup
+    worst = attempts * fetch_timeout + (attempts - 1) * sleep + 300  # + setup
     assert job["timeout-minutes"] * 60 >= worst, (job["timeout-minutes"], worst)
     setup = [s for s in job["steps"]
              if str(s.get("uses", "")).startswith("actions/setup-python")]
