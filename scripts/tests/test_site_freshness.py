@@ -261,3 +261,145 @@ def test_site_reads_the_files_committed_index_reads():
         r'\.filter\(\(f\) => f\.endsWith\("\.json"\) && !f\.endsWith\("\.progress\.json"\)\)',
         src)
     assert 'path.join(process.cwd(), "data", "threads")' in src
+
+
+# ---------- the wiring: daily-batch.yml runs the check, uptime fails on it ----------
+
+def _workflow(name):
+    yaml = pytest.importorskip("yaml")
+    with open(os.path.join(REPO_ROOT, ".github", "workflows", name), encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def _verify_job():
+    spec = _workflow("daily-batch.yml")
+    assert "verify-site" in spec["jobs"], (
+        "the site freshness job is gone — a Cloudflare build that fails or never "
+        "starts leaves the old site answering 200, and nothing else sees it (#102)")
+    return spec, spec["jobs"]["verify-site"]
+
+
+def test_verify_site_runs_the_check_on_the_branch_tip():
+    """On a scheduled run `github.sha` predates the data commit; checking it out
+    would compare the site with yesterday's data and pass on a stale morning."""
+    _, job = _verify_job()
+    checkout = next(s for s in job["steps"]
+                    if str(s.get("uses", "")).startswith("actions/checkout"))
+    assert checkout.get("with", {}).get("ref") == "${{ github.ref_name }}"
+    runs = [str(s.get("run", "")) for s in job["steps"]]
+    assert any(r.strip().startswith("python3 scripts/check_site_freshness.py")
+               for r in runs), runs
+
+
+def test_verify_site_runs_after_a_late_failure_but_only_on_main():
+    """Like deploy-mcp: the publish can red on its last step after pushing, and a
+    dispatch from a branch would compare that branch's data with production."""
+    _, job = _verify_job()
+    assert job["needs"] == "fetch-and-summarize"
+    assert "!cancelled()" in job["if"] and "success()" not in job["if"]
+    assert "github.ref" in job["if"] and "default_branch" in job["if"]
+    assert job["permissions"] == {"contents": "read"}
+
+
+def test_verify_site_waits_long_enough_for_a_build():
+    """Spec: measured build+upload (~4.5 min on 2026-11-07) + 10 min, floor 30 min,
+    60 s apart. The job timeout must outlast the check's worst case — every
+    attempt spending its full fetch timeout too — or the job dies without saying
+    STALE or UNKNOWN."""
+    import inspect
+    import re
+    _, job = _verify_job()
+    run = next(str(s["run"]) for s in job["steps"]
+               if "check_site_freshness.py" in str(s.get("run", "")))
+    attempts = int(re.search(r"--attempts (\d+)", run).group(1))
+    sleep = float(re.search(r"--sleep (\d+)", run).group(1))
+    assert sleep == 60
+    assert attempts * sleep >= 30 * 60, run
+    fetch_timeout = inspect.signature(csf.fetch_manifest).parameters["timeout"].default
+    worst = attempts * (sleep + fetch_timeout) + 300  # + setup
+    assert job["timeout-minutes"] * 60 >= worst, (job["timeout-minutes"], worst)
+    setup = [s for s in job["steps"]
+             if str(s.get("uses", "")).startswith("actions/setup-python")]
+    assert setup and str(setup[0]["with"]["python-version"]) == "3.12"
+
+
+def test_a_stale_site_raises_the_failure_issue():
+    """A red check nobody opens is not a notification (#85, now for the site)."""
+    spec, _ = _verify_job()
+    notify = spec["jobs"]["notify-on-failure"]
+    assert "verify-site" in notify["needs"]
+    assert notify["if"] == "failure()"
+    body = next(s["run"] for s in notify["steps"] if "run" in s)
+    assert "verify-site" in body
+
+
+def test_uptime_fails_when_the_sitemap_is_not_200():
+    """Was a warning on Vercel. A missing sitemap after the move is a real outage
+    for crawlers, so it must red the check like the home page does."""
+    job = _workflow("uptime.yml")["jobs"]["check"]
+    step = next(s for s in job["steps"] if "sitemap.xml" in str(s.get("run", "")))
+    assert "::error::" in step["run"] and "exit 1" in step["run"]
+    assert "::warning::" not in step["run"]
+
+
+# ---------- the premise of the Workers Builds watch-path exclude ----------
+# Moved from the deleted test_vercel_ignore_build.py (#101): the Cloudflare
+# build skips pushes that touch only `data/pending-batches/**` (dashboard
+# setting, recorded in docs/cloudflare-cutover.md). That skip is safe only while
+# (a) the sidecars live there and (b) nothing the build reads lives there.
+# Break (a) and every sidecar push rebuilds production, re-opening the ordering
+# hazard; break (b) and a sidecar-only push leaves the site stale in a way the
+# thread-count manifest cannot see.
+
+BUILD_INPUTS = [
+    "src", "scripts/lib", "next.config.ts", "package.json",
+    "scripts/gen_status.py", "scripts/pipeline/jsonio.py",
+    "scripts/pipeline/__init__.py",
+    # The Workers Builds build command also runs the manifest writer.
+    "scripts/write_deploy_manifest.py", "scripts/check_mcp_freshness.py",
+]
+# Every top-level .mjs/.js under scripts/ is treated as a build input, so a new
+# one is checked without anyone remembering to list it here.
+BUILD_INPUT_GLOBS = ["scripts/*.mjs", "scripts/*.js"]
+
+# The build pipeline this premise was checked against. A new step may read
+# something new; when this changes, re-check what it reads before updating it.
+EXPECTED_BUILD_SCRIPT = (
+    "node scripts/validate-data.mjs --fix && node scripts/enrich-members.mjs"
+    " && node scripts/generate-feeds.js && node scripts/generate-sitemap.mjs"
+    " && next build"
+)
+
+
+def test_build_script_is_the_one_the_premise_was_checked_against():
+    with open(os.path.join(REPO_ROOT, "package.json")) as f:
+        assert json.load(f)["scripts"]["build"] == EXPECTED_BUILD_SCRIPT
+
+
+def test_build_inputs_do_not_read_pending_batches():
+    """A new build input that reads data/pending-batches/ must drop the
+    watch-path exclude (Cloudflare dashboard) in the same change."""
+    import glob
+    rels = list(BUILD_INPUTS)
+    for g in BUILD_INPUT_GLOBS:
+        found = sorted(os.path.relpath(p, REPO_ROOT)
+                       for p in glob.glob(os.path.join(REPO_ROOT, g)))
+        assert found, f"{g} matched nothing"
+        rels += found
+    offenders = []
+    for rel in rels:
+        root = os.path.join(REPO_ROOT, rel)
+        # A renamed input must fail here, not silently drop out of the check.
+        assert os.path.exists(root), f"build input {rel} does not exist"
+        paths = [root] if os.path.isfile(root) else [
+            os.path.join(d, f) for d, _, fs in os.walk(root) for f in fs]
+        for p in paths:
+            with open(p, encoding="utf-8", errors="replace") as f:
+                if "pending-batches" in f.read():
+                    offenders.append(os.path.relpath(p, REPO_ROOT))
+    assert offenders == []
+
+
+def test_sidecar_dir_is_where_the_watch_path_exclude_looks():
+    import pipeline.batch_state as bs
+    assert bs.PENDING_DIR == os.path.join("data", "pending-batches")

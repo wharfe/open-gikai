@@ -19,7 +19,7 @@ Git 連携は **PR1 をマージする直前**に作る。早く作ると、main
 | デプロイコマンド | `npx --yes wrangler@4.158.0 deploy` |
 | 非本番ブランチのデプロイコマンド | `npx --yes wrangler@4.158.0 preview`（既定の `wrangler preview` を版固定）。wrangler.jsonc の `"previews": {}` が必要 |
 | Build watch paths: include | `*` |
-| Build watch paths: exclude | `data/pending-batches/*` |
+| Build watch paths: exclude | `data/pending-batches/**` |
 | ビルド変数 | `NEXT_PUBLIC_GA_ID`（Vercel の open-gikai の環境変数と同じ値）、`NODE_VERSION` = `22`（ci.yml / daily-batch.yml と同じ） |
 
 設定したら、画面の値がこの表と一致することをもう一度読み合わせる。
@@ -28,7 +28,8 @@ wrangler は repo の依存に入れない（daily-batch / CI の `npm ci` に�
 
 watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): persist pending batch` の push では、**通常は**ビルドしない。
 公式の例外（2026-11-06 に文書で確認）: 変更 0 ファイルの push、3,000 ファイル以上か 20 commit 以上の push は、watch paths によらずビルドされる。
-判定は push ごと（前回のビルドからの差分ではない）。`data/pending-batches/*` が配下の階層まで含むかは文書に明記が無い → 最初の実際の sidecar push で「ビルドが始まらない」ことを見る。
+判定は push ごと（前回のビルドからの差分ではない）。設定は配下の階層まで含む `data/pending-batches/**`。2026-11-07 の sidecar だけの push 2 件（`9e60abd`・`87d9503`）でビルドが始まらず、続くデータの push（`1e5f724`）でビルドされたことを GitHub の check run で確認した。
+この除外の前提（ビルドが `data/pending-batches/` を読まない・sidecar がそこにある）は `scripts/tests/test_site_freshness.py` が固定している。
 理由は保存量ではなく順序（sidecar の push のビルドが、後の daily-batch の push のビルドより後に終わると、新しい本番を古い内容で上書きする）。
 既知の穴: サイトのビルドが失敗した直後に sidecar だけの push が来ても再ビルドされない。→ 鮮度確認（`scripts/check_site_freshness.py`）が検知する。
 
@@ -36,13 +37,13 @@ watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): per
 
 | 項目 | 値 |
 |---|---|
-| apex `open-gikai.net` | A `216.198.79.1`、プロキシ: ＿、TTL: ＿ |
-| `www.open-gikai.net` | CNAME `c429f94839b542c3.vercel-dns-017.com`、プロキシ: ＿、TTL: ＿ |
-| Search Console 確認用 TXT | ＿（触らない） |
-| 既存の Redirect / Cache / Transform Rules | ＿ |
-| Vercel open-gikai の最後の READY | デプロイ ID ＿、commit ＿ |
-| Workers Builds の初回ビルド | 所要 ＿ 分（ビルド ＿ / アップロード ＿）、python3 有無 ＿、メモリ/ディスクのエラー有無 ＿ |
-| workers.dev の URL | ＿ |
+| apex `open-gikai.net` | A `216.198.79.1`、プロキシ: DNS only、TTL: 自動（2026-11-06 に Worker の Custom Domain へ置き換え） |
+| `www.open-gikai.net` | CNAME `c429f94839b542c3.vercel-dns-017.com`、プロキシ: DNS only（同日、プロキシした `AAAA www 100::` と Redirect Rule に置き換え） |
+| Search Console 確認用 TXT | `google-site-verification`（残置・未変更） |
+| 既存の Redirect / Cache / Transform Rules | 切り替え前の一覧は控えていない。切り替えで追加したのは www → apex の Redirect Rule（307、パスとクエリを保持）のみ |
+| Vercel open-gikai の最後の READY | デプロイ ID `dpl_7ssqF5D5geW9SFjqG5NxBk11aCFH`、commit `24a56a4`（Git 連携は 2026-11-06 に解除） |
+| Workers Builds の初回ビルド | 所要 5 分 04 秒（内訳は未記録）、python3 あり（マニフェストが書かれた）、メモリ/ディスクのエラーなし。2026-11-07 のデータの push は約 4.5 分（push 00:57:19Z → check run 完了 01:01:46Z） |
+| workers.dev の URL | `https://open-gikai.sparrowwharfe.workers.dev` |
 
 ## 3. 手順
 
@@ -88,7 +89,7 @@ watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): per
      4. `curl -sI 'https://www.open-gikai.net/about?x=1'` が 307 で `https://open-gikai.net/about?x=1` を返すこと（URL は引用符で囲む。zsh は `?` を展開する）。
 6. **切り替え後の確認**: 手順 3 の契約を `https://open-gikai.net` と `https://www.open-gikai.net` で。`uptime.yml` と `deploy-mcp` が緑。トップの HTML に GA ID がある。
 7. **Vercel の Git 連携だけ外す**（open-gikai のみ。open-gikai-mcp には触らない）。ドメイン設定と最後の READY デプロイは残す（切り戻し用）。以後 Vercel の保存量は増えない。既存分はプロジェクト削除まで残る。
-8. **PR2（Vercel 削除の前に入れる）**: daily-batch に鮮度確認のジョブ（ビルド＋アップロードの実測に 10 分足した予算、下限 30 分、60 秒間隔。失敗は notify-on-failure へ）、uptime の sitemap を非 200 で失敗に、`vercel.json`・`scripts/vercel-ignore-build.sh`・そのテストの削除、CLAUDE.md / README の配信の記述。 マージ後、翌朝の daily-batch で鮮度確認のジョブが緑になり、わざと失敗させなくても通知の経路（notify-on-failure の needs）に入っていることを確かめる。
+8. **PR2（Vercel 削除の前に入れる。#102 の PR2 で実装、受け入れはマージ後の翌朝）**: daily-batch に鮮度確認のジョブ（ビルド＋アップロードの実測に 10 分足した予算、下限 30 分、60 秒間隔。失敗は notify-on-failure へ）、uptime の sitemap を非 200 で失敗に、`vercel.json`・`scripts/vercel-ignore-build.sh`・そのテストの削除、CLAUDE.md / README の配信の記述。 マージ後、翌朝の daily-batch で鮮度確認のジョブが緑になり、わざと失敗させなくても通知の経路（notify-on-failure の needs）に入っていることを確かめる。
 9. **48 時間 かつ PR2 の鮮度確認ジョブが日次の push で緑**になったら、許可を得て Vercel プロジェクト `open-gikai` を削除。削除前に、プロジェクト名・環境変数・最後の READY の commit をここに控える。**削除後は DNS を戻すだけでは切り戻せない**（再作成が要る）。削除後、Vercel の使用量画面で open-gikai の Deployment Storage が減ったことを見る。
 
 ## 4. 切り戻し（手順 8 の削除より前だけ）
@@ -100,3 +101,4 @@ watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): per
 
 作業 5〜10 分。利用者に見える時間は TTL とリゾルバのキャッシュ次第で、保証値ではない。
 戻った Vercel は Git 連携を外した時点の内容のまま。新しい内容が要れば、別の許可で Git 再接続か再デプロイ。
+PR2 で `vercel.json`（sidecar だけの push でビルドを飛ばす ignoreCommand）を消した。Git を再接続する前に PR #108 の `vercel.json` と `scripts/vercel-ignore-build.sh` を戻すこと。戻さないと sidecar の push ごとに Vercel がビルドし、保存量（#101）と上書きの順序の危険が戻る。

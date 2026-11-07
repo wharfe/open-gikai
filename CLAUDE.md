@@ -7,7 +7,7 @@ OpenGIKAI (議会) is a public media project that restructures Japanese parliame
 ## Tech Stack
 
 - **Frontend**: Next.js 16 (App Router), TypeScript, Tailwind CSS. `output: "export"` — fully static, no server runtime at the root.
-- **Deployment**: Two Vercel projects from one repo. Root → SSG frontend at `open-gikai.net`. `apps/mcp/` → dynamic MCP server.
+- **Deployment**: Root → SSG frontend at `open-gikai.net`, served as Cloudflare Workers static assets (Worker `open-gikai`, built by Workers Builds on every push to main; `wrangler.jsonc`). `apps/mcp/` → dynamic MCP server on Vercel (project `open-gikai-mcp`), deployed by `daily-batch.yml`'s `deploy-mcp`. Cutover record and rollback: `docs/cloudflare-cutover.md` (#102).
 - **Data Pipeline**: Python scripts + Claude API
   - Sliding 30-day lookback per run (NDL publishes transcripts with multi-day lag — see `scripts/fetch_ndl.py --lookback-days`).
   - `summarize.py --batch` uses Anthropic's Message Batches API for the summary phase (50% input/output discount).
@@ -408,17 +408,23 @@ for the same reason the exit-3 contract above does.
 │   ├── lib/          Utilities and data fetching (incl. ministry.mjs — see below)
 │   └── types/        TypeScript type definitions
 ├── apps/
-│   └── mcp/          MCP server (separate Vercel project, dynamic Node runtime)
+│   └── mcp/          MCP server (Vercel project, dynamic Node runtime)
 ├── scripts/          Python batch processing scripts
 │   └── sources/      Source adapters (NDL, kantei, council, etc.)
 ├── data/             Generated JSON data (consumed by both frontend SSG and MCP server)
 └── public/           Static assets
 ```
 
-The repo hosts **two Vercel projects** pointing at the same GitHub repo:
+The repo deploys to **two hosts**:
 
-- Root → frontend SSG (open-gikai.net). `next.config.ts` sets `output: "export"`.
-- `apps/mcp` → dynamic MCP server. A `prebuild` script
+- Root → frontend SSG (open-gikai.net). `next.config.ts` sets `output: "export"`;
+  Cloudflare Workers Builds runs `npm run build` plus
+  `scripts/write_deploy_manifest.py` (writes `out/__deployment.json`) and
+  `wrangler deploy` uploads `out/` as static assets. Pushes that touch only
+  `data/pending-batches/` are skipped by the build watch paths. Build/deploy
+  commands and variables live in the Cloudflare dashboard — the table in
+  `docs/cloudflare-cutover.md` is their record. Moved off Vercel in #102.
+- `apps/mcp` → dynamic MCP server on Vercel. A `prebuild` script
   (`apps/mcp/scripts/copy-data.mjs`) copies `data/threads/` and
   `data/members.json` from the repo root into `apps/mcp/data/` so they ship
   with the serverless function bundle. The runtime reads from
@@ -426,8 +432,8 @@ The repo hosts **two Vercel projects** pointing at the same GitHub repo:
   avoid `outputFileTracingRoot` pointing above the project root because
   Vercel double-prefixes such absolute paths during deploy.
 
-**Only the frontend deploys itself.** The root project is wired to git and
-rebuilds on every push; `apps/mcp` is not, and was deployed by hand until #85 —
+**Only the frontend deploys itself.** Cloudflare Workers Builds is wired to git and
+rebuilds the site on every push; `apps/mcp` is not, and was deployed by hand until #85 —
 which is to say it stopped. Its last deploy was 2026-05-22 and it served data
 ending 2026-05-19 while the site was three months ahead, and nothing noticed,
 because the endpoint answers 200 and `tools/list` works. **It was never broken,
@@ -480,6 +486,20 @@ The freshness comparison and the deploy wiring are fenced by
 `scripts/tests/test_mcp_freshness.py` — including the environment, because
 asserting the `if:` alone passes on the arrangement that is provably
 bypassable.
+
+**The site has the same check, `verify-site`** (#102). Cloudflare Workers Builds
+deploys the site outside this workflow, so a build that fails — or never starts,
+because the watch paths skip sidecar-only pushes — leaves the old site answering
+200. `verify-site` (same `if:`, same branch-tip checkout as `deploy-mcp`) runs
+`scripts/check_site_freshness.py`, which reads `/__deployment.json` (per-date
+thread counts written at build time) and compares it with the committed
+`data/threads/` for up to 30 minutes; a red joins `notify-on-failure`. Its green
+has the same limit as `deploy-mcp`'s: **the site agrees with the branch tip**, not
+that today's threads exist (the publish's own red says that), and it stops at the
+first match — a stale build landing later that morning is caught only the next
+morning. Fenced by `scripts/tests/test_site_freshness.py`, which also pins the
+premise of the watch-path exclude (the build reads nothing under
+`data/pending-batches/`).
 
 Because the frontend uses static export, **server-side features (Route
 Handlers, dynamic API routes, middleware) cannot be added under `src/app/`**.

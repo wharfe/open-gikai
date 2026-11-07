@@ -1,5 +1,4 @@
 # Cloudflare Workers static assets (#102). Copied into out/ by `next build`.
-# Vercel ignores this file while it is still serving production.
 
 # workers.dev is not the site; keep it out of search results. Covers both the
 # production `open-gikai.<account>.workers.dev` and preview hosts.

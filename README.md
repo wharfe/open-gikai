@@ -23,7 +23,7 @@ Parliamentary records are public but hard to read. OpenGIKAI makes them accessib
 | Layer | Technology |
 |-------|-----------|
 | Frontend | Next.js 16 (App Router), TypeScript, Tailwind CSS |
-| Deployment | Vercel — two projects from one repo: SSG frontend at the root, dynamic MCP server at `apps/mcp/` |
+| Deployment | SSG frontend: Cloudflare Workers static assets (Workers Builds). MCP server (`apps/mcp/`): Vercel |
 | Data Pipeline | Python + Claude API (Message Batches API + prompt caching) |
 | Data Sources | [NDL Diet Records API](https://kokkai.ndl.go.jp/api.html), [kantei.go.jp](https://www.kantei.go.jp/), [cao.go.jp councils](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) |
 | Public API | Read-only [MCP server](./apps/mcp/README.md) for Claude Desktop / Cline / custom agents |
@@ -61,7 +61,7 @@ See [`apps/mcp/README.md`](./apps/mcp/README.md) for MCP deployment details.
 │   ├── lib/              # Utilities and data fetching
 │   └── types/            # TypeScript type definitions
 ├── apps/
-│   └── mcp/              # MCP server (separate Vercel project, dynamic Node runtime)
+│   └── mcp/              # MCP server (Vercel project, dynamic Node runtime)
 ├── scripts/              # Python batch processing
 │   ├── sources/          # Source adapters (NDL, kantei, council, …)
 │   └── pipeline/         # AI pipeline (grouping, summarization, news ranker)
@@ -88,7 +88,7 @@ Sources (NDL, kantei, council)
    ├─► enrich with related news (Bing News + Claude relevance ranker)
    │
    └─► generate JSON
-         ├─► frontend SSG  → open-gikai.net (Vercel)
+         ├─► frontend SSG  → open-gikai.net (Cloudflare Workers)
          └─► MCP server     → /api/mcp       (Vercel, apps/mcp)
 ```
 
@@ -99,7 +99,7 @@ Sources (NDL, kantei, council)
    - **Outcome extraction** — sync call per meeting; reads procedural speeches for vote results / attached resolutions.
 3. **News enrichment**: Searches Bing News by topic, then a Claude Haiku ranker (`scripts/pipeline/news_ranker.py`) picks the most-relevant 3 articles from the candidate pool. Auxiliary information layer — see CLAUDE.md "Summary Layer Invariants" for the boundary.
 4. **Static generation**: `data/threads/*.json` and `data/members.json` are consumed by the Next.js SSG to produce static HTML pages.
-5. **Deployment**: Two Vercel projects pointing at the same repo — root (SSG frontend) and `apps/mcp` (dynamic MCP server).
+5. **Deployment**: The root SSG frontend is built by Cloudflare Workers Builds on every push and served as Workers static assets; `apps/mcp` (dynamic MCP server) is deployed to Vercel by the daily batch. Both are checked against the committed data after each daily run.
 6. **Monitoring**: Daily batch commits include `(+N threads)` in the message; the workflow emits a CI warning when 7+ consecutive runs add 0 threads (catches fetcher regressions that the green checkmark alone wouldn't). A hard job failure (e.g. NDL API 403 from a datacenter IP, Anthropic credit exhaustion) opens or updates a `pipeline-failure` GitHub Issue so it surfaces without polling `gh run list`.
    - **Batch resume**: A summary batch that exceeds the per-run poll budget is no longer cancelled. Its id + a grouping manifest (with per-thread `input_hash`) are persisted to a committed sidecar at `data/pending-batches/{date}.json` and resumed on the next run, which re-fetches raw, verifies the hash, and assembles without re-grouping. A batch stuck in-flight for >2 days opens/updates the same `pipeline-failure` Issue. When a resume cannot finish, the reason decides what happens next: a batch-side failure is resubmitted, a missing local file is simply held for a later run, and a failure that is deterministic given today's inputs (a changed hash, an exhausted retry budget) is held for a person — never resubmitted, never charged again. All of them red the run and none of them block the day's publish; only a date whose batch has aged past recovery is reported as a permanent loss.
 
@@ -140,7 +140,7 @@ OpenGIKAI exposes its dataset as a read-only [Model Context Protocol](https://mo
 | `list_members` | Paginate members, filter by name/party |
 | `list_dates` | Index of dates with available threads |
 
-The server lives in `apps/mcp/` and is deployed as a second Vercel project from the same repository. OpenGIKAI does NOT pay for LLM inference — the MCP client (Claude Desktop, etc.) calls Claude with its own API key, and the server only returns JSON. See [`apps/mcp/README.md`](./apps/mcp/README.md) for the endpoint URL and Claude Desktop configuration snippet.
+The server lives in `apps/mcp/` and is deployed as a Vercel project from the same repository. OpenGIKAI does NOT pay for LLM inference — the MCP client (Claude Desktop, etc.) calls Claude with its own API key, and the server only returns JSON. See [`apps/mcp/README.md`](./apps/mcp/README.md) for the endpoint URL and Claude Desktop configuration snippet.
 
 ## Design Principles
 

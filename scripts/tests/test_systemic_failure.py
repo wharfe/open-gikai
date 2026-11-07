@@ -2745,7 +2745,7 @@ def test_the_workflow_enriches_member_links_after_the_validator_adds_members():
 
 def test_the_production_build_enriches_too():
     """package.json's `build` is the other definition of this pipeline, and it
-    is the one Vercel runs. Without enrich there, the --fix in a production
+    is the one the production build (Cloudflare Workers Builds) runs. Without enrich there, the --fix in a production
     build can add a member and render the deploy with no link for them."""
     pkg = json.loads((REPO_ROOT / "package.json").read_text(encoding="utf-8"))
     build = pkg["scripts"]["build"]
