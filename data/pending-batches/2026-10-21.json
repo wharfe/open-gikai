@@ -1,0 +1,103 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-21",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01UbNjjoGykWKhpJcXediTyF",
+      "submitted_at": "2026-11-07T00:51:29Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_外務委員会_2026-10-21_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_781578390a50_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "外務委員長就任挨拶・委員会構成",
+            "topicTag": "委員会",
+            "topicColor": "#6b7280",
+            "summary": "外務委員長就任挨拶と理事選任に関する手続き",
+            "contextDescription": "新委員長による就任挨拶と、委員会運営に必要な理事の補欠選任手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              3
+            ]
+          },
+          "speechOrders": [
+            1,
+            3
+          ],
+          "input_hash": "sha256:c7f38a1a7985e08b2718b898ee7292a071ba7d44fa4f31bbeecd7b0c84594dcb"
+        },
+        {
+          "custom_id": "s_781578390a50_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "外務大臣所信表明と副大臣・政務官挨拶",
+            "topicTag": "外交",
+            "topicColor": "#06b6d4",
+            "summary": "外務大臣が外交政策の所信を述べ、副大臣・政務官が就任挨拶を行った",
+            "contextDescription": "外務大臣が国際情勢や外交方針について所信を表明し、外務省幹部が就任の挨拶を行う場。",
+            "legislationName": null,
+            "speechOrders": [
+              8,
+              10,
+              12,
+              14,
+              16,
+              18
+            ]
+          },
+          "speechOrders": [
+            8,
+            10,
+            12,
+            14,
+            16,
+            18
+          ],
+          "input_hash": "sha256:8092dd2bb6bc9705cacfb8ea733abb8e95142d8f598e8b86640262a8a65298f6"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_法務委員会_2026-10-21_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_経済産業委員会_2026-10-21_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_農林水産委員会_2026-10-21_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
