@@ -942,6 +942,58 @@ jobs:
       - name: Verify the MCP server serves the committed data
         run: python3 scripts/check_mcp_freshness.py
 
+  # The site's counterpart of deploy-mcp's freshness step (#102). The site is no
+  # longer deployed from here: Cloudflare Workers Builds builds open-gikai.net
+  # on every push to main, outside this workflow. A build that fails — or one
+  # that never starts (the build watch paths skip pushes that touch only
+  # data/pending-batches/) — leaves the previous deployment answering 200, so
+  # uptime.yml cannot see it. This job asks the site which threads it was built
+  # with (`/__deployment.json`, written at build time) and compares them with
+  # the committed data/threads/.
+  #
+  # Same condition as deploy-mcp and for the same reasons: the publish job can
+  # red on its LAST step after it has pushed, and a workflow_dispatch from
+  # another branch would compare that branch's data with the production site.
+  # On a morning the publish died before pushing, the checkout is yesterday's
+  # main and the site should still agree with it — green there is correct; the
+  # publish job's own red is what says today's data is missing.
+  verify-site:
+    name: Verify the site serves the committed data
+    needs: fetch-and-summarize
+    if: ${{ !cancelled() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    # The check waits 60 s BETWEEN attempts, not after the last one, so 31
+    # attempts give 30 minutes from the first fetch to the last. Measured on 2026-11-07: the
+    # data commit was pushed at 00:57:19Z and its Workers build finished at
+    # 01:01:46Z (~4.5 min), so 30 min is the spec's floor (measured + 10 min,
+    # minimum 30) rather than a tight fit.
+    #
+    # The job timeout must outlast the check's WORST case, not its sleeps: each
+    # attempt can also spend its 30 s fetch timeout, so 31 x 30 s + 30 x 60 s
+    # is ~46 min before setup. A job killed by its timeout never prints STALE/UNKNOWN,
+    # and a timed-out job may read as cancelled rather than failed to
+    # notify-on-failure's `failure()`. 55 covers it with setup to spare.
+    timeout-minutes: 55
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # The tip, not `github.sha`: on a scheduled run that SHA predates the
+          # data commit this job exists to see published.
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      # Exit 1 says which of two things happened: STALE (the site answered and
+      # disagreed) or UNKNOWN (nothing comparable came back). Only STALE is
+      # evidence the site is behind. Unit tested in
+      # scripts/tests/test_site_freshness.py.
+      - name: Verify the site serves the committed data
+        run: python3 scripts/check_site_freshness.py --attempts 31 --sleep 60
+
   # Surface hard job failures (NDL 403, Anthropic credit exhaustion, a failed
   # MCP deploy, etc.) as a GitHub Issue so they don't sit silently until someone
   # runs `gh run list`. Runs even when the fetch step itself dies, since it's a
@@ -960,7 +1012,12 @@ jobs:
     # and because the alternative — one notify job per needed job — duplicates
     # the create-or-update logic and can file the same morning twice. #90 tracks
     # decoupling the latency without losing either signal.
-    needs: [fetch-and-summarize, deploy-mcp]
+    #
+    # verify-site joins for the same reason (#102): a site that stopped
+    # rebuilding answers 200 and looks like nothing. It runs alongside
+    # deploy-mcp, so it adds latency only when it is the slower of the two (up
+    # to ~46 minutes when the site really is behind or unreachable).
+    needs: [fetch-and-summarize, deploy-mcp, verify-site]
     if: failure()
     runs-on: ubuntu-latest
     permissions:
@@ -985,7 +1042,7 @@ jobs:
           # WHICH job failed first: a Deploy MCP server failure says nothing
           # about the day's threads (they are already pushed), and a publish
           # failure says nothing about the MCP server.
-          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCheck which job went red first.\n\n**fetch-and-summarize** (the publish): NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on", "held for a human decision", or "Permanently lost". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. A held or abandoned sidecar can red the run with the Summarize step never running at all — check the Collect step annotations too.\n\n**deploy-mcp** (the MCP server, #85): what the MCP server is serving is unconfirmed — read the job to see whether the deploy failed or the freshness check did, and note the check has four outcomes and only ONE of them is staleness — "could not reach the server at all" and "could not read the committed data either" are the other two reds, and both say nothing about whether the server is old. Causes: the VERCEL_TOKEN secret missing, expired, or not scoped to the team that owns open-gikai-mcp (the CLI reports that last one as "Project not found"); or the deployed server genuinely disagreeing with the committed data. This job runs whether or not the publish above succeeded, so do not read a failure here as saying anything about the day threads either way.' "$DATE_TAG" "$RUN_URL")
+          BODY=$(printf '`Daily Batch` failed on %s.\n\nRun log: %s\n\nCheck which job went red first.\n\n**fetch-and-summarize** (the publish): NDL API 403 (datacenter IP block), Anthropic credit exhaustion, Anthropic batch timeout (summary phase), a fetcher schema change, or a date that produced nothing that reached the site — check the run summary for "Nothing reached the site on", "held for a human decision", or "Permanently lost". That covers a rejected request AND an answer that could not be assembled into a thread, so do not assume a 400; it publishes normally and only alerts. A held or abandoned sidecar can red the run with the Summarize step never running at all — check the Collect step annotations too.\n\n**deploy-mcp** (the MCP server, #85): what the MCP server is serving is unconfirmed — read the job to see whether the deploy failed or the freshness check did, and note the check has four outcomes and only ONE of them is staleness — "could not reach the server at all" and "could not read the committed data either" are the other two reds, and both say nothing about whether the server is old. Causes: the VERCEL_TOKEN secret missing, expired, or not scoped to the team that owns open-gikai-mcp (the CLI reports that last one as "Project not found"); or the deployed server genuinely disagreeing with the committed data. This job runs whether or not the publish above succeeded, so do not read a failure here as saying anything about the day threads either way.\n\n**verify-site** (the site on Cloudflare Workers, #102): the log says STALE or UNKNOWN. STALE means open-gikai.net answered with a thread index that disagrees with the committed data — its Cloudflare Workers Builds build failed or never started; check the Workers Builds history for open-gikai, and re-running the latest main build needs a human go-ahead. UNKNOWN means /__deployment.json could not be read at all; that is not evidence the site is behind.' "$DATE_TAG" "$RUN_URL")
           # Ensure the dedup label exists (no-op if already present).
           gh label create pipeline-failure \
             --color B60205 \

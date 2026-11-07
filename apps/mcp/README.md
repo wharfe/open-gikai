@@ -65,9 +65,10 @@ curl -X POST http://localhost:3100/api/mcp \
 
 ## Vercel deployment
 
-This package is intentionally NOT covered by the root project's Vercel
-configuration. Create a *second* Vercel project pointing at the same
-GitHub repository, with these settings:
+The root site is served from Cloudflare Workers (#102); this package is the
+only thing deployed to Vercel (the old `open-gikai` project is kept, disconnected,
+for rollback until it is deleted). It is deployed by `daily-batch.yml`'s `deploy-mcp` job,
+not by a git integration. The project settings are:
 
 - **Root Directory**: `apps/mcp`
 - **Build Command**: `next build` (default)

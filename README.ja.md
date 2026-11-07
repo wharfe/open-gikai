@@ -24,7 +24,7 @@
 | レイヤー | 技術 |
 |----------|------|
 | フロントエンド | Next.js 16 (App Router)、TypeScript、Tailwind CSS |
-| デプロイ | Vercel — 同一リポジトリから2つの project: ルートが SSG フロントエンド、`apps/mcp/` が動的 MCP server |
+| デプロイ | SSG フロントエンド: Cloudflare Workers の静的アセット（Workers Builds）。MCP server（`apps/mcp/`）: Vercel |
 | データパイプライン | Python + Claude API (Message Batches API + prompt caching) |
 | データソース | [NDL 国会会議録検索システムAPI](https://kokkai.ndl.go.jp/api.html)、[首相官邸](https://www.kantei.go.jp/)、[内閣府 審議会](https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/meeting.html) |
 | 公開 API | Claude Desktop / Cline / その他エージェント向けの読み取り専用 [MCP server](./apps/mcp/README.md) |
@@ -62,7 +62,7 @@ MCP server のデプロイ詳細は [`apps/mcp/README.md`](./apps/mcp/README.md)
 │   ├── lib/              # ユーティリティ・データ取得
 │   └── types/            # TypeScript 型定義
 ├── apps/
-│   └── mcp/              # MCP server（別 Vercel project、動的 Node ランタイム）
+│   └── mcp/              # MCP server（Vercel project、動的 Node ランタイム）
 ├── scripts/              # Python バッチ処理
 │   ├── sources/          # ソースアダプター（NDL・官邸・審議会など）
 │   └── pipeline/         # AI パイプライン（グルーピング・要約・ニュース ranker）
@@ -89,7 +89,7 @@ MCP server のデプロイ詳細は [`apps/mcp/README.md`](./apps/mcp/README.md)
    ├─► 関連ニュース付与（Bing News + Claude 関連度判定）
    │
    └─► JSON 生成
-         ├─► フロントエンド SSG → open-gikai.net (Vercel)
+         ├─► フロントエンド SSG → open-gikai.net (Cloudflare Workers)
          └─► MCP server         → /api/mcp        (Vercel, apps/mcp)
 ```
 
@@ -100,7 +100,7 @@ MCP server のデプロイ詳細は [`apps/mcp/README.md`](./apps/mcp/README.md)
    - **採決抽出** — 会議ごとに同期呼び出し。委員長発言から採決結果・附帯決議を抽出。
 3. **ニュース付与**: Bing News でテーマ検索 → Claude Haiku ranker（`scripts/pipeline/news_ranker.py`）が候補から最も関連の高い 3 件を選別。これは補助情報レイヤー — 要約レイヤーとの境界は CLAUDE.md「Summary Layer Invariants」を参照。
 4. **静的生成**: `data/threads/*.json` と `data/members.json` を Next.js SSG が消費して静的 HTML を生成。
-5. **デプロイ**: 同一リポジトリから 2 つの Vercel project（ルート = SSG / `apps/mcp` = 動的 MCP server）。
+5. **デプロイ**: ルートの SSG フロントエンドは push ごとに Cloudflare Workers Builds がビルドし、Workers の静的アセットとして配信。`apps/mcp`（動的 MCP server）は日次バッチが Vercel へデプロイする。どちらも日次バッチの後に、commit 済みのデータと一致するかを確かめる。
 6. **監視**: daily-batch のコミットメッセージに `(+N threads)` を付与。7 回連続で 0 が続くと CI warning を発火（緑チェックだけでは見えない fetcher リグレッションを構造的に検知）。ジョブ自体が失敗した場合（NDL API の 403、Anthropic クレジット切れなど）は `pipeline-failure` ラベルの GitHub Issue を起票/追記し、`gh run list` を見に行かずとも気づけるようにする。
 
 ## データパイプライン
@@ -140,7 +140,7 @@ OpenGIKAI は読み取り専用の [Model Context Protocol](https://modelcontext
 | `list_members` | 議員一覧（氏名・政党フィルタ） |
 | `list_dates` | データのある日付と各日のスレッド数 |
 
-MCP server は `apps/mcp/` 配下にあり、同じリポジトリから 2 つ目の Vercel project としてデプロイされます。**OpenGIKAI 側は LLM 推論コストを負担しません** — クライアント（Claude Desktop 等）が自分の API キーで Claude を呼び、サーバーは JSON を返すだけです。エンドポイント URL と Claude Desktop の設定例は [`apps/mcp/README.md`](./apps/mcp/README.md) を参照してください。
+MCP server は `apps/mcp/` 配下にあり、同じリポジトリから Vercel project としてデプロイされます。**OpenGIKAI 側は LLM 推論コストを負担しません** — クライアント（Claude Desktop 等）が自分の API キーで Claude を呼び、サーバーは JSON を返すだけです。エンドポイント URL と Claude Desktop の設定例は [`apps/mcp/README.md`](./apps/mcp/README.md) を参照してください。
 
 ## 設計原則
 
