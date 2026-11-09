@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Nov 2026 00:24:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 00:48:11 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W45 国会まとめ — 3件の議論</title>
@@ -24,11 +24,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W43 国会まとめ — 24件の議論</title>
+      <title>2026-W43 国会まとめ — 27件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>24件のスレッド、13委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
+      <description>27件のスレッド、15委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -288,6 +288,14 @@
       <category>厚生労働委員会</category>
     </item>
     <item>
+      <title>財務大臣・副大臣等の就任挨拶 — 財政金融委員会</title>
+      <link>https://open-gikai.net/t/t_20261022_22cc25_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261022_22cc25_09</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>財務大臣、副大臣、政務官らが新任の挨拶を行った（国会会議録・2026.10.22・7発言）</description>
+      <category>財政金融委員会</category>
+    </item>
+    <item>
       <title>内閣発足1年の総括と取組の成果 — 総理就任１年の節目を迎えての会見</title>
       <link>https://open-gikai.net/t/t_20261021_6eaddc_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_6eaddc_01</guid>
@@ -334,6 +342,22 @@
       <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
       <description>外務大臣が外交政策の所信を述べ、副大臣・政務官が就任挨拶を行った（国会会議録・2026.10.21・6発言）</description>
       <category>外務委員会</category>
+    </item>
+    <item>
+      <title>法務委員会の構成・運営に関する手続き — 法務委員会</title>
+      <link>https://open-gikai.net/t/t_20261021_83680d_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_83680d_07</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>委員長・理事選任や国政調査事項の承認など委員会運営の手続きを行った（国会会議録・2026.10.21・2発言）</description>
+      <category>法務委員会</category>
+    </item>
+    <item>
+      <title>法務省幹部の就任挨拶 — 法務委員会</title>
+      <link>https://open-gikai.net/t/t_20261021_83680d_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261021_83680d_08</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>法務大臣・副大臣・政務官が就任に際し法務行政への決意を述べた（国会会議録・2026.10.21・3発言）</description>
+      <category>法務委員会</category>
     </item>
     <item>
       <title>飲食料品消費税率臨時引下げ・支援金支給法案の本会議趣旨説明 — 議院運営委員会</title>
@@ -414,30 +438,6 @@
       <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
       <description>高市総理の所信表明演説に対する質疑の実施方法と日程を決定（国会会議録・2026.10.08・2発言）</description>
       <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>衆議院選挙制度に関する協議会の報告 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261007_d648cd_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261007_d648cd_01</guid>
-      <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
-      <description>衆議院選挙制度協議会の議論取りまとめ報告が議長に提出された（国会会議録・2026.10.07・1発言）</description>
-      <category>議院運営委員会</category>
-    </item>
-    <item>
-      <title>会長・理事選任等の手続き — 資源エネルギー・持続可能社会に関する調査会</title>
-      <link>https://open-gikai.net/t/t_20261005_51bfaa_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_51bfaa_01</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>委員辞任に伴う会長・理事の補欠選任手続きが行われた（国会会議録・2026.10.05・5発言）</description>
-      <category>資源エネルギー・持続可能社会に関する調査会</category>
-    </item>
-    <item>
-      <title>情報監視審査会会長就任挨拶 — 情報監視審査会</title>
-      <link>https://open-gikai.net/t/t_20261005_3b0d07_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261005_3b0d07_02</guid>
-      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description>新会長が特定秘密保護制度等の運用監視という審査会の役割を述べ就任挨拶を行った（国会会議録・2026.10.05・1発言）</description>
-      <category>情報監視審査会</category>
     </item>
   </channel>
 </rss>

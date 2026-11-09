@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/katayamasatsuki</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1802,7 +1802,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/maeharaseiji</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1934,7 +1934,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/yamashitatakashi</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3032,7 +3032,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/takemuranobuhide</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -5066,7 +5066,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/abehiroki</loc>
-    <lastmod>2025-11-26</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -5540,7 +5540,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/nemototaku</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -6842,7 +6842,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/yamaguchisusumu</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7100,7 +7100,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/wakabayashikenta</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7136,7 +7136,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/m/shindoukanehiko</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7887,6 +7887,18 @@
   <url>
     <loc>https://open-gikai.net/m/kankeichirou</loc>
     <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/m/tanigawatomu</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://open-gikai.net/m/shirasakaaki</loc>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
