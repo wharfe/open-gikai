@@ -1,0 +1,66 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-22",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_0184ohSn7RqqRGYKkvV8oxCn",
+      "submitted_at": "2026-11-09T00:45:20Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_法務委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "参議院_財政金融委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_22cc25d139a4_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "財務大臣・副大臣等の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "財務大臣、副大臣、政務官らが新任の挨拶を行った",
+            "contextDescription": "内閣改造等に伴い新たに就任した財務・金融担当の大臣、副大臣、大臣政務官による就任挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              11,
+              13,
+              15,
+              17,
+              19,
+              21
+            ]
+          },
+          "speechOrders": [
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21
+          ],
+          "input_hash": "sha256:98a05942a9f771243b1a65a5a190aa5023cd78957bbe0351af9c9376ce610885"
+        }
+      ]
+    }
+  ]
+}
