@@ -44,6 +44,7 @@ watch paths の意味: Batches の sidecar だけを触る `chore(pipeline): per
 | Vercel open-gikai の最後の READY | デプロイ ID `dpl_7ssqF5D5geW9SFjqG5NxBk11aCFH`、commit `24a56a4`（Git 連携は 2026-11-06 に解除） |
 | Workers Builds の初回ビルド | 所要 5 分 04 秒（内訳は未記録）、python3 あり（マニフェストが書かれた）、メモリ/ディスクのエラーなし。2026-11-07 のデータの push は約 4.5 分（push 00:57:19Z → check run 完了 01:01:46Z） |
 | workers.dev の URL | `https://open-gikai.sparrowwharfe.workers.dev` |
+| 削除した Vercel プロジェクト（手順 9、2026-11-10） | `open-gikai`（`prj_9weE930027jygDidYcZ4Oa8w83Tk`、team `wharfe`、framework nextjs、Node 24.x）。環境変数は `NEXT_PUBLIC_GA_ID`（Production / Development）のみで、Workers Builds のビルド変数へ移済み（本番 HTML に GA タグを確認）。ドメイン: `open-gikai.net`、`www.open-gikai.net`（→ apex 307）、`open-gikai.vercel.app`。最後の本番 READY は上の行。以後に preview の `dpl_CgG4xgk9bzMtM4MKecY9fHY7pPcV` が 1 件ある。削除前の前提: verify-site が 11/8〜11/10 の 3 日連続で緑（所要 9 秒〜4 分 10 秒）、apex は Cloudflare（`server: cloudflare`）から配信 |
 
 ## 3. 手順
 
