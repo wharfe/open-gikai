@@ -181,6 +181,10 @@ function buildSitemaps() {
       urlEntry({ loc: "/members", lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" }),
       urlEntry({ loc: "/about", lastmod: now, changefreq: "monthly", priority: "0.5" }),
       urlEntry({ loc: "/about/stats", lastmod: siteLastmod, changefreq: "daily", priority: "0.4" }),
+      // Session summary pages: one per archived session (data/sessions.json).
+      ...JSON.parse(readFileSync(join("data", "sessions.json"), "utf-8")).map((s) =>
+        urlEntry({ loc: `/session/${s.number}`, lastmod: siteLastmod, changefreq: "daily", priority: "0.8" })
+      ),
     ])
   );
 

@@ -709,9 +709,83 @@ export type SessionInfo = {
   period: string;
   startDate: string;
   endDate: string;
+  /** Set when data/sessions.json has a page for this session (/session/[number]). */
+  number?: number;
 };
 
 export function getSessionInfo(): SessionInfo {
   const sessionPath = path.join(process.cwd(), "data", "session.json");
-  return parseJsonFile(sessionPath) as SessionInfo;
+  const info = parseJsonFile(sessionPath) as SessionInfo;
+  const archived = getSessions().find((s) => s.startDate === info.startDate);
+  return archived ? { ...info, number: archived.number } : info;
+}
+
+// --- Diet session archive (/session/[number]) ---
+// data/sessions.json keeps every session that has a page, so a URL that was
+// indexed keeps resolving after data/session.json moves on to the next one.
+
+export type SessionRecord = Omit<SessionInfo, "number"> & { number: number };
+
+export function getSessions(): SessionRecord[] {
+  const p = path.join(process.cwd(), "data", "sessions.json");
+  return parseJsonFile(p) as SessionRecord[];
+}
+
+export type SessionCommitteeGroup = {
+  committee: string;
+  house: string;
+  threads: ThreadSummary[];
+};
+
+export type SessionDigest = {
+  session: SessionRecord;
+  threadCount: number;
+  speechCount: number;
+  memberCount: number;
+  committees: SessionCommitteeGroup[];
+};
+
+/**
+ * Diet threads held inside a session's period, grouped by committee.
+ * Grouping is purely mechanical (committee name + house) so every committee
+ * gets the same treatment — no editorial selection.
+ */
+export function getSessionDigest(number: number): SessionDigest | null {
+  const session = getSessions().find((s) => s.number === number);
+  if (!session) return null;
+  // Thread dates are "YYYY.MM.DD"; session dates are "YYYY-MM-DD".
+  const start = session.startDate.replace(/-/g, ".");
+  const end = session.endDate.replace(/-/g, ".");
+  const threads = getThreadsSummary().filter(
+    (t) =>
+      t.source !== "council" &&
+      t.source !== "kantei" &&
+      t.date >= start &&
+      t.date <= end,
+  );
+
+  const groups = new Map<string, SessionCommitteeGroup>();
+  for (const t of threads) {
+    const key = `${t.house}\u0000${t.committee}`;
+    let g = groups.get(key);
+    if (!g) {
+      g = { committee: t.committee, house: t.house, threads: [] };
+      groups.set(key, g);
+    }
+    g.threads.push(t);
+  }
+  const committees = [...groups.values()].sort(
+    (a, b) =>
+      b.threads.length - a.threads.length ||
+      a.house.localeCompare(b.house) ||
+      a.committee.localeCompare(b.committee),
+  );
+
+  return {
+    session,
+    threadCount: threads.length,
+    speechCount: threads.reduce((s, t) => s + t.speechCount, 0),
+    memberCount: new Set(threads.flatMap((t) => t.memberIds)).size,
+    committees,
+  };
 }
