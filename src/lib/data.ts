@@ -705,30 +705,29 @@ export function getProcessingStatus(): Record<string, unknown> | null {
 }
 
 export type SessionInfo = {
+  number: number;
   name: string;
   period: string;
   startDate: string;
   endDate: string;
-  /** Set when data/sessions.json has a page for this session (/session/[number]). */
-  number?: number;
 };
 
-export function getSessionInfo(): SessionInfo {
-  const sessionPath = path.join(process.cwd(), "data", "session.json");
-  const info = parseJsonFile(sessionPath) as SessionInfo;
-  const archived = getSessions().find((s) => s.startDate === info.startDate);
-  return archived ? { ...info, number: archived.number } : info;
+// --- Diet sessions (data/sessions.json) ---
+// The single source of session data. It keeps every session that has a
+// /session/[number] page, so an indexed URL keeps resolving after the next
+// session starts; the current session is the one that started last.
+
+export function getSessions(): SessionInfo[] {
+  const p = path.join(process.cwd(), "data", "sessions.json");
+  const sessions = parseJsonFile(p);
+  if (!Array.isArray(sessions) || sessions.length === 0) {
+    throw new Error(`${p}: expected a non-empty array of sessions`);
+  }
+  return sessions as SessionInfo[];
 }
 
-// --- Diet session archive (/session/[number]) ---
-// data/sessions.json keeps every session that has a page, so a URL that was
-// indexed keeps resolving after data/session.json moves on to the next one.
-
-export type SessionRecord = Omit<SessionInfo, "number"> & { number: number };
-
-export function getSessions(): SessionRecord[] {
-  const p = path.join(process.cwd(), "data", "sessions.json");
-  return parseJsonFile(p) as SessionRecord[];
+export function getSessionInfo(): SessionInfo {
+  return getSessions().reduce((a, b) => (b.startDate > a.startDate ? b : a));
 }
 
 export type SessionCommitteeGroup = {
@@ -738,7 +737,7 @@ export type SessionCommitteeGroup = {
 };
 
 export type SessionDigest = {
-  session: SessionRecord;
+  session: SessionInfo;
   threadCount: number;
   speechCount: number;
   memberCount: number;
@@ -750,7 +749,24 @@ export type SessionDigest = {
  * Grouping is purely mechanical (committee name + house) so every committee
  * gets the same treatment — no editorial selection.
  */
+const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
+
+/** NDL Diet records — an allow-list, so a new source adapter is not counted as the Diet by default. */
+export function isDietThread(t: { source?: string }): boolean {
+  return !t.source || t.source === "ndl";
+}
+
+const sessionDigestCache = new Map<number, SessionDigest | null>();
+
 export function getSessionDigest(number: number): SessionDigest | null {
+  // generateMetadata and the page both ask; build the digest once.
+  if (sessionDigestCache.has(number)) return sessionDigestCache.get(number)!;
+  const digest = buildSessionDigest(number);
+  sessionDigestCache.set(number, digest);
+  return digest;
+}
+
+function buildSessionDigest(number: number): SessionDigest | null {
   const session = getSessions().find((s) => s.number === number);
   if (!session) return null;
   // Thread dates are "YYYY.MM.DD"; session dates are "YYYY-MM-DD".
@@ -758,8 +774,8 @@ export function getSessionDigest(number: number): SessionDigest | null {
   const end = session.endDate.replace(/-/g, ".");
   const threads = getThreadsSummary().filter(
     (t) =>
-      t.source !== "council" &&
-      t.source !== "kantei" &&
+      isDietThread(t) &&
+      !t.procedural && // same default as the feed and theme panel
       t.date >= start &&
       t.date <= end,
   );
@@ -777,8 +793,10 @@ export function getSessionDigest(number: number): SessionDigest | null {
   const committees = [...groups.values()].sort(
     (a, b) =>
       b.threads.length - a.threads.length ||
-      a.house.localeCompare(b.house) ||
-      a.committee.localeCompare(b.committee),
+      // Code-unit order, not localeCompare: must not depend on the build
+      // machine's ICU data (same reasoning as the member topTopics sort).
+      cmp(a.house, b.house) ||
+      cmp(a.committee, b.committee),
   );
 
   return {

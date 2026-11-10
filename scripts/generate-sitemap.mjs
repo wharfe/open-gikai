@@ -51,6 +51,25 @@ function writeSitemap(filename, entries) {
   return filename;
 }
 
+// daily-batch runs this script before the data commit, so a broken
+// sessions.json must not stop the publish: warn (as a workflow annotation on
+// CI) and list no session pages. The site build itself still fails loudly on
+// the same file, which is where it belongs.
+function loadSessions() {
+  try {
+    const sessions = JSON.parse(readFileSync(join(DATA_DIR, "sessions.json"), "utf-8"));
+    if (!Array.isArray(sessions)) throw new Error("not an array");
+    return sessions.filter(
+      (s) => Number.isInteger(s?.number) && typeof s.startDate === "string" && typeof s.endDate === "string",
+    );
+  } catch (e) {
+    const msg = `data/sessions.json unreadable, session pages left out of the sitemap: ${e.message}`;
+    console.warn(msg);
+    if (process.env.GITHUB_ACTIONS) console.log(`::warning::${msg.replace(/\r?\n/g, " ")}`);
+    return [];
+  }
+}
+
 function writeSitemapIndex(sitemapFiles, now, filename = "sitemap_index.xml") {
   const entries = sitemapFiles.map(
     (f) =>
@@ -117,7 +136,7 @@ function collectAll() {
     for (const t of parsed) {
       const iso = t.date?.replace(/\./g, "-");
       if (!iso) continue;
-      threads.push({ id: t.id, lastmod: iso });
+      threads.push({ id: t.id, lastmod: iso, diet: !t.source || t.source === "ndl" });
       if (iso > globalLatest) globalLatest = iso;
 
       // Week bucket
@@ -181,10 +200,17 @@ function buildSitemaps() {
       urlEntry({ loc: "/members", lastmod: siteLastmod, changefreq: "weekly", priority: "0.7" }),
       urlEntry({ loc: "/about", lastmod: now, changefreq: "monthly", priority: "0.5" }),
       urlEntry({ loc: "/about/stats", lastmod: siteLastmod, changefreq: "daily", priority: "0.4" }),
-      // Session summary pages: one per archived session (data/sessions.json).
-      ...JSON.parse(readFileSync(join("data", "sessions.json"), "utf-8")).map((s) =>
-        urlEntry({ loc: `/session/${s.number}`, lastmod: siteLastmod, changefreq: "daily", priority: "0.8" })
-      ),
+      // Session summary pages: one per session in data/sessions.json.
+      ...loadSessions().map((s) => {
+        // lastmod = newest Diet debate inside the session, so a finished
+        // session stops being re-dated once the next one starts.
+        const inSession = threads
+          .filter((t) => t.diet && t.lastmod >= s.startDate && t.lastmod <= s.endDate)
+          .map((t) => t.lastmod)
+          .sort();
+        const lastmod = inSession.at(-1) || s.startDate;
+        return urlEntry({ loc: `/session/${s.number}`, lastmod, changefreq: "daily", priority: "0.8" });
+      }),
     ])
   );
 

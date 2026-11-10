@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ThreadSummary } from "@/lib/data";
+import { isDietThread } from "@/lib/data";
 import type { SessionInfo } from "@/lib/data";
 
 type SessionCardProps = {
@@ -9,9 +10,12 @@ type SessionCardProps = {
 
 export function SessionCard({ threads, session }: SessionCardProps) {
   // Filter to only Diet threads within the session period
+  // Same filter as /session/[number] (getSessionDigest), so the card and the
+  // page it links to report the same totals.
   const sessionStart = session.startDate.replace(/-/g, ".");
+  const sessionEnd = session.endDate.replace(/-/g, ".");
   const dietThreads = threads.filter(
-    (t) => t.source !== "council" && t.source !== "kantei" && t.date >= sessionStart,
+    (t) => isDietThread(t) && !t.procedural && t.date >= sessionStart && t.date <= sessionEnd,
   );
   const dietSpeeches = dietThreads.reduce((s, t) => s + t.speechCount, 0);
   const dietMembers = new Set(dietThreads.flatMap((t) => t.memberIds)).size;
@@ -57,16 +61,14 @@ export function SessionCard({ threads, session }: SessionCardProps) {
         </span>
       </div>
 
-      {session.number && (
-        <div className="mt-2 px-4">
-          <Link
-            href={`/session/${session.number}`}
-            className="text-[13px] text-x-brand hover:underline"
-          >
-            委員会別の審議まとめを見る
-          </Link>
-        </div>
-      )}
+      <div className="mt-2 px-4">
+        <Link
+          href={`/session/${session.number}`}
+          className="text-[13px] text-x-brand hover:underline"
+        >
+          委員会別の審議まとめを見る
+        </Link>
+      </div>
 
       {/* Other sources — linked, visually separated */}
       {(kanteiCount > 0 || councilCount > 0) && (
