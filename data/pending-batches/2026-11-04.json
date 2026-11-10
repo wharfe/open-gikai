@@ -1,0 +1,77 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-04",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01BT1wh8pGxAMHg25PRJTXUc",
+      "submitted_at": "2026-11-10T03:34:18Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_政治改革に関する特別委員会_2026-11-04_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_4bb67543e226_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "総務省幹部の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "総務大臣・副大臣・大臣政務官が就任挨拶を行った",
+            "contextDescription": "選挙制度・政治資金制度を所管する総務省幹部が委員会で就任の挨拶を述べる場面。",
+            "legislationName": null,
+            "speechOrders": [
+              3,
+              5,
+              7
+            ]
+          },
+          "speechOrders": [
+            3,
+            5,
+            7
+          ],
+          "input_hash": "sha256:0007ff6845fbfbeca8757592e23404d51c9525e19eea34c19209263bd973bffc"
+        },
+        {
+          "custom_id": "s_4bb67543e226_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "統一地方選挙の期日統一特例法案の提案理由説明",
+            "topicTag": "統一選特例",
+            "topicColor": "#6366f1",
+            "summary": "地方選挙期日を統一するための臨時特例法案の提案理由が説明された",
+            "contextDescription": "令和9年3月～5月に任期満了となる地方議会議員・首長選挙の期日を統一する特例法案。",
+            "legislationName": "地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律案",
+            "speechOrders": [
+              9
+            ]
+          },
+          "speechOrders": [
+            9
+          ],
+          "input_hash": "sha256:6c56f5cf74a99da8bb3db2cb06a6c2dc24dcd8412b7ba60f0e12d2a92ee04456"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_消費税・支援金法案に関する特別委員会_2026-11-04_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
