@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://open-gikai.net/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://open-gikai.net/sitemap-pages.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://open-gikai.net/sitemap-threads.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://open-gikai.net/sitemap-members.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://open-gikai.net/sitemap-councils.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://open-gikai.net/sitemap-digests.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://open-gikai.net/sitemap-gov.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+</sitemapindex>

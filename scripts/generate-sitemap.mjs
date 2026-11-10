@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate split sitemaps with a sitemap index.
- * Produces: sitemap_index.xml + per-category sitemaps.
+ * Produces: sitemap_index.xml (also written as sitemap.xml) + per-category sitemaps.
  *
  * Usage: node scripts/generate-sitemap.mjs
  */
@@ -51,7 +51,7 @@ function writeSitemap(filename, entries) {
   return filename;
 }
 
-function writeSitemapIndex(sitemapFiles, now) {
+function writeSitemapIndex(sitemapFiles, now, filename = "sitemap_index.xml") {
   const entries = sitemapFiles.map(
     (f) =>
       `  <sitemap>\n    <loc>${BASE_URL}/${f}</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`
@@ -63,7 +63,7 @@ function writeSitemapIndex(sitemapFiles, now) {
     "</sitemapindex>",
     "",
   ].join("\n");
-  writeFileSync(join(OUT_DIR, "sitemap_index.xml"), xml, "utf-8");
+  writeFileSync(join(OUT_DIR, filename), xml, "utf-8");
 }
 
 /* ── data collectors ─────────────────────────── */
@@ -269,15 +269,15 @@ function buildSitemaps() {
   // Sitemap index — use today (index itself was regenerated now).
   writeSitemapIndex(files, now);
 
-  // Keep sitemap.xml as a redirect target for any cached references
-  writeSitemap("sitemap.xml", [
-    urlEntry({ loc: "/", lastmod: siteLastmod, changefreq: "daily", priority: "1.0" }),
-  ]);
+  // sitemap.xml is the conventional URL crawlers try first. It used to list
+  // only "/", so anything discovering the site through it saw one page. Serve
+  // the same index there so every entry point reaches every URL.
+  writeSitemapIndex(files, now, "sitemap.xml");
 
   console.log(
     `Sitemaps generated: ${threads.length} threads, ${allMemberIds.length} members, ` +
       `${weekIds.length} digests, ${councilSlugs.length} councils, ${govSlugs.length} gov pages → ` +
-      `${files.length} files + sitemap_index.xml`
+      `${files.length} files + sitemap_index.xml (= sitemap.xml)`
   );
 }
 
