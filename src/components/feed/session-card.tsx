@@ -57,6 +57,17 @@ export function SessionCard({ threads, session }: SessionCardProps) {
         </span>
       </div>
 
+      {session.number && (
+        <div className="mt-2 px-4">
+          <Link
+            href={`/session/${session.number}`}
+            className="text-[13px] text-x-brand hover:underline"
+          >
+            委員会別の審議まとめを見る
+          </Link>
+        </div>
+      )}
+
       {/* Other sources — linked, visually separated */}
       {(kanteiCount > 0 || councilCount > 0) && (
         <div className="mt-3 border-t border-x-border px-4 pt-3">
