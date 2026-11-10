@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate split sitemaps with a sitemap index.
- * Produces: sitemap_index.xml + per-category sitemaps.
+ * Produces: sitemap_index.xml (also written as sitemap.xml) + per-category sitemaps.
  *
  * Usage: node scripts/generate-sitemap.mjs
  */
@@ -277,7 +277,7 @@ function buildSitemaps() {
   console.log(
     `Sitemaps generated: ${threads.length} threads, ${allMemberIds.length} members, ` +
       `${weekIds.length} digests, ${councilSlugs.length} councils, ${govSlugs.length} gov pages → ` +
-      `${files.length} files + sitemap_index.xml`
+      `${files.length} files + sitemap_index.xml (= sitemap.xml)`
   );
 }
 
