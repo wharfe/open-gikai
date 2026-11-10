@@ -30150,5 +30150,143 @@
         "url": "https://www.google.com/search?q=%E7%99%BD%E5%9D%82%E4%BA%9C%E7%B4%80+site%3Ax.com+OR+site%3Atwitter.com"
       }
     ]
+  },
+  "hanashiyasuhiro": {
+    "id": "hanashiyasuhiro",
+    "name": "葉梨康弘",
+    "party": "自由民主党",
+    "role": "国家公安委員会委員長・内閣府特命担当大臣（沖縄及び北方対策・消費者及び食品安全・アイヌ施策）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%91%89%E6%A2%A8%E5%BA%B7%E5%BC%98"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%91%89%E6%A2%A8%E5%BA%B7%E5%BC%98+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%91%89%E6%A2%A8%E5%BA%B7%E5%BC%98+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "shigemotomamoru": {
+    "id": "shigemotomamoru",
+    "name": "繁本護",
+    "party": "自由民主党",
+    "role": "内閣府大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%B9%81%E6%9C%AC%E8%AD%B7"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%B9%81%E6%9C%AC%E8%AD%B7+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%B9%81%E6%9C%AC%E8%AD%B7+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "yasuokahirotake": {
+    "id": "yasuokahirotake",
+    "name": "保岡宏武",
+    "party": "自由民主党",
+    "role": "農林水産大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BF%9D%E5%B2%A1%E5%AE%8F%E6%AD%A6"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BF%9D%E5%B2%A1%E5%AE%8F%E6%AD%A6+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BF%9D%E5%B2%A1%E5%AE%8F%E6%AD%A6+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_5d04ff87": {
+    "id": "m_5d04ff87",
+    "name": "大島英彦",
+    "party": null,
+    "role": "農林水産省消費・安全局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "農林水産省の発言者一覧",
+        "url": "/gov/maff"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E5%B3%B6%E8%8B%B1%E5%BD%A6+%E8%BE%B2%E6%9E%97%E6%B0%B4%E7%94%A3%E7%9C%81"
+      }
+    ]
+  },
+  "m_5c79a70e": {
+    "id": "m_5c79a70e",
+    "name": "谷村栄二",
+    "party": null,
+    "role": "農林水産省畜産局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "農林水産省の発言者一覧",
+        "url": "/gov/maff"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E8%B0%B7%E6%9D%91%E6%A0%84%E4%BA%8C+%E8%BE%B2%E6%9E%97%E6%B0%B4%E7%94%A3%E7%9C%81"
+      }
+    ]
+  },
+  "m_fc558d93": {
+    "id": "m_fc558d93",
+    "name": "小島裕章",
+    "party": null,
+    "role": "農林水産省大臣官房サイバーセキュリティ・情報化審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "農林水産省の発言者一覧",
+        "url": "/gov/maff"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B3%B6%E8%A3%95%E7%AB%A0+%E8%BE%B2%E6%9E%97%E6%B0%B4%E7%94%A3%E7%9C%81"
+      }
+    ]
   }
 }
