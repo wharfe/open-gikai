@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { session } = digest;
 
   const title = `${session.name}まとめ — 委員会別の審議スレッド`;
-  const description = `${session.name}（${session.period}）の審議を委員会別に一覧。${digest.committees.length}委員会・${digest.threadCount}スレッド・${digest.speechCount}発言をAI要約付きで、国会会議録の原文リンクとともに掲載。`;
+  const description = `${session.name}（${session.period}）の審議を委員会別に一覧。${digest.committees.length}委員会・${digest.threadCount}スレッド・${digest.speechCount}発言。各スレッドでAI要約と国会会議録の原文を確認できます。`;
   const url = `/session/${session.number}`;
 
   return {
@@ -46,6 +46,10 @@ export default async function SessionPage({ params }: Props) {
   const digest = await load(params);
   if (!digest) notFound();
   const { session } = digest;
+  // Cross-links keep past session pages reachable after the next session starts.
+  const otherSessions = getSessions()
+    .filter((s) => s.number !== session.number)
+    .sort((a, b) => b.number - a.number);
 
   // JSON-LD structured data — all values are server-generated static objects, no user input
   const breadcrumb = {
@@ -96,7 +100,7 @@ export default async function SessionPage({ params }: Props) {
           </span>
         </div>
         <p className="mt-2 text-[13px] leading-[20px] text-x-secondary">
-          会期中に開かれた委員会・本会議の審議を、スレッド数の多い委員会から順に並べています。会議録は国立国会図書館の公開から数日遅れて反映されます。
+          会期中に開かれた委員会・本会議の審議を、スレッド数の多い委員会から順に並べています。スレッド名は Claude AI による要約です。会議録は国立国会図書館の公開から数日遅れて反映されます。
         </p>
       </div>
 
@@ -127,6 +131,21 @@ export default async function SessionPage({ params }: Props) {
           </ul>
         </section>
       ))}
+
+      {otherSessions.length > 0 && (
+        <nav className="px-4 py-4" aria-label="ほかの会期">
+          <h2 className="text-[15px] font-bold text-x-text">ほかの会期</h2>
+          <ul className="mt-2 space-y-1">
+            {otherSessions.map((s) => (
+              <li key={s.number}>
+                <Link href={`/session/${s.number}`} className="text-[14px] text-x-brand hover:underline">
+                  {s.name}まとめ
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </main>
   );
 }
