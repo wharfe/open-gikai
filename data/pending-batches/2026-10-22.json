@@ -1,0 +1,158 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-22",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01YLkafPC1PCiuihURsbkEN1",
+      "submitted_at": "2026-11-10T03:26:51Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_法務委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_9d0b88a497a3_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "法務委員会の構成（委員長挨拶・委員異動・理事選任）",
+            "topicTag": "委員会構成",
+            "topicColor": "#6b7280",
+            "summary": "新委員長の就任挨拶と委員異動報告、理事補欠選任の手続きを実施",
+            "contextDescription": "国会開会時に行われる委員会運営上の形式的な手続き事項。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2,
+              4
+            ]
+          },
+          "speechOrders": [
+            1,
+            2,
+            4
+          ],
+          "input_hash": "sha256:1afbc3a8a9825884aca06da97b988b6d93307fec51a441eb1562f40227dc39c1"
+        },
+        {
+          "custom_id": "s_9d0b88a497a3_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "法務大臣等の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6366f1",
+            "summary": "法務大臣・副大臣・大臣政務官が就任挨拶を行い所信の一端を表明",
+            "contextDescription": "新たに就任した法務省の政務三役が委員会で挨拶を行う慣例的な場面。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              11,
+              13
+            ]
+          },
+          "speechOrders": [
+            9,
+            11,
+            13
+          ],
+          "input_hash": "sha256:6252b5c72087cef98251b074a27f1c3367c14813856d90ecb3a9270a1430284f"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_経済産業委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_cfbb8112f05e_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "経済産業大臣所信表明",
+            "topicTag": "所信",
+            "topicColor": "#3b82f6",
+            "summary": "経産大臣が防災・GX・AX・産業競争力等の政策方針を表明",
+            "contextDescription": "新国会における経済産業大臣の所管行政に関する基本方針の表明演説。",
+            "legislationName": null,
+            "speechOrders": [
+              8
+            ]
+          },
+          "speechOrders": [
+            8
+          ],
+          "input_hash": "sha256:1a28176039efcfb1a4a7dbee107ae98c7665f2f43ee406a6603755e5d77fbf04"
+        },
+        {
+          "custom_id": "s_cfbb8112f05e_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "公正取引委員会所管事務の方針",
+            "topicTag": "公取",
+            "topicColor": "#6366f1",
+            "summary": "独占禁止法等の運用方針と取適法の周知徹底について表明",
+            "contextDescription": "公正取引委員会を担当する国家公安委員会委員長による所管事務の基本方針表明。",
+            "legislationName": null,
+            "speechOrders": [
+              10
+            ]
+          },
+          "speechOrders": [
+            10
+          ],
+          "input_hash": "sha256:e3d4cef9df484bd8040fd3cdbd7916e40f8d918507ab59444e07f1cae7280bf8"
+        },
+        {
+          "custom_id": "s_cfbb8112f05e_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "副大臣・政務官の就任挨拶",
+            "topicTag": "就任",
+            "topicColor": "#6b7280",
+            "summary": "経産・内閣府の新任副大臣・政務官6名が就任挨拶を実施",
+            "contextDescription": "人事異動に伴い新たに就任した副大臣・大臣政務官による委員会への挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              12,
+              14,
+              16,
+              18,
+              20,
+              22
+            ]
+          },
+          "speechOrders": [
+            12,
+            14,
+            16,
+            18,
+            20,
+            22
+          ],
+          "input_hash": "sha256:ca820df80404db0132474d2d9e301682975b469456622078851aa3b7131eb4a8"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_農林水産委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
