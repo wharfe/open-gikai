@@ -1,0 +1,47 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-30",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_0191LJQKzJxE6ju5cySxpd42",
+      "submitted_at": "2026-11-11T01:33:21Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_情報監視審査会_2026-10-30_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_8eea675c0c8b_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "特定秘密・重要経済安保情報の指定等に関する年次報告",
+            "topicTag": "秘密指定",
+            "topicColor": "#ef4444",
+            "summary": "特定秘密及び重要経済安保情報の指定・解除・適性評価等の運用状況を政府が報告した",
+            "contextDescription": "特定秘密保護法と重要経済安保情報保護活用法に基づき、政府が毎年国会に指定・解除等の状況を報告する制度。",
+            "legislationName": "特定秘密の保護に関する法律／重要経済安保情報の保護及び活用に関する法律",
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:9ddb4a98ed246c9b6f0caf9fe762a5f20dcc23db4e9391617b9ff01e321d4c5d"
+        }
+      ]
+    }
+  ]
+}
