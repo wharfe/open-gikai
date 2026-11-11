@@ -1,0 +1,81 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-22",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01FQLpQaSkp2RCbPPpc8tXSf",
+      "submitted_at": "2026-11-11T01:25:10Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_国土交通委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_0f685f31440a_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "国土交通大臣所信表明",
+            "topicTag": "所信",
+            "topicColor": "#6b7280",
+            "summary": "新国土交通大臣が就任挨拶と行政課題への取り組み方針を表明した",
+            "contextDescription": "国会における国土交通大臣による所信表明。災害対応など当面の行政課題への方針を述べる。",
+            "legislationName": null,
+            "speechOrders": [
+              9
+            ]
+          },
+          "speechOrders": [
+            9
+          ],
+          "input_hash": "sha256:c0f743d78cf345e941e40b5352e2503f69739154b38591294c324823cf2a90fe"
+        },
+        {
+          "custom_id": "s_0f685f31440a_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "副大臣・政務官の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "国土交通副大臣・大臣政務官が就任に伴う挨拶を行った",
+            "contextDescription": "新たに就任した国土交通省の副大臣・大臣政務官による委員会への挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              11,
+              13,
+              15,
+              17,
+              19
+            ]
+          },
+          "speechOrders": [
+            11,
+            13,
+            15,
+            17,
+            19
+          ],
+          "input_hash": "sha256:bfef1faeedcacee66cf6b98fff552c92198c39ffb91fd40bf4b347ed4f51c302"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_農林水産委員会_2026-10-22_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    }
+  ]
+}
