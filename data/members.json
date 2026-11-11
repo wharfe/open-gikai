@@ -30288,5 +30288,403 @@
         "url": "https://www.google.com/search?q=%E5%B0%8F%E5%B3%B6%E8%A3%95%E7%AB%A0+%E8%BE%B2%E6%9E%97%E6%B0%B4%E7%94%A3%E7%9C%81"
       }
     ]
+  },
+  "tamuranorihisa": {
+    "id": "tamuranorihisa",
+    "name": "田村憲久",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%9D%91%E6%86%B2%E4%B9%85"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%94%B0%E6%9D%91%E6%86%B2%E4%B9%85+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%94%B0%E6%9D%91%E6%86%B2%E4%B9%85+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_372e2371": {
+    "id": "m_372e2371",
+    "name": "島田勝則",
+    "party": null,
+    "role": "総務省自治行政局選挙部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "総務省の発言者一覧",
+        "url": "/gov/soumu"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B3%B6%E7%94%B0%E5%8B%9D%E5%89%87+%E7%B7%8F%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "ibayashitatsunori": {
+    "id": "ibayashitatsunori",
+    "name": "井林辰憲",
+    "party": "自由民主党",
+    "role": "国土交通大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%95%E6%9E%97%E8%BE%B0%E6%86%B2"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E6%9E%97%E8%BE%B0%E6%86%B2+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E6%9E%97%E8%BE%B0%E6%86%B2+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "hosonogoushi": {
+    "id": "hosonogoushi",
+    "name": "細野豪志",
+    "party": "自由民主党",
+    "role": "復興大臣・内閣府特命担当大臣（防災）",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%B4%B0%E9%87%8E%E8%B1%AA%E5%BF%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%B4%B0%E9%87%8E%E8%B1%AA%E5%BF%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%B4%B0%E9%87%8E%E8%B1%AA%E5%BF%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_fe696819": {
+    "id": "m_fe696819",
+    "name": "坂本基",
+    "party": null,
+    "role": "財務省主計局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "財務省の発言者一覧",
+        "url": "/gov/mof"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%9D%82%E6%9C%AC%E5%9F%BA+%E8%B2%A1%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "katouayuko": {
+    "id": "katouayuko",
+    "name": "加藤鮎子",
+    "party": "自由民主党",
+    "role": "国土交通副大臣",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E9%AE%8E%E5%AD%90"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%8A%A0%E8%97%A4%E9%AE%8E%E5%AD%90+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%8A%A0%E8%97%A4%E9%AE%8E%E5%AD%90+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "takahashiyuusuke": {
+    "id": "takahashiyuusuke",
+    "name": "高橋祐介",
+    "party": "自由民主党",
+    "role": "国土交通大臣政務官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "viceminister",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A9%8B%E7%A5%90%E4%BB%8B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%A9%8B%E7%A5%90%E4%BB%8B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%A9%8B%E7%A5%90%E4%BB%8B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_6ad56bf2": {
+    "id": "m_6ad56bf2",
+    "name": "高柳大輔",
+    "party": null,
+    "role": "経済産業省大臣官房サイバーセキュリティ・情報化審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "経済産業省の発言者一覧",
+        "url": "/gov/meti"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%9F%B3%E5%A4%A7%E8%BC%94+%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E7%9C%81"
+      }
+    ]
+  },
+  "m_2309120b": {
+    "id": "m_2309120b",
+    "name": "植田昌也",
+    "party": null,
+    "role": "総務省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "総務省の発言者一覧",
+        "url": "/gov/soumu"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%A4%8D%E7%94%B0%E6%98%8C%E4%B9%9F+%E7%B7%8F%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_3871ce6c": {
+    "id": "m_3871ce6c",
+    "name": "川野真稔",
+    "party": null,
+    "role": "内閣官房内閣審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "内閣官房の発言者一覧",
+        "url": "/gov/cas"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B7%9D%E9%87%8E%E7%9C%9F%E7%A8%94+%E5%86%85%E9%96%A3%E5%AE%98%E6%88%BF"
+      }
+    ]
+  },
+  "m_8209ace8": {
+    "id": "m_8209ace8",
+    "name": "江浪武志",
+    "party": null,
+    "role": "厚生労働省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "厚生労働省の発言者一覧",
+        "url": "/gov/mhlw"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B1%9F%E6%B5%AA%E6%AD%A6%E5%BF%97+%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E7%9C%81"
+      }
+    ]
+  },
+  "m_f17a423c": {
+    "id": "m_f17a423c",
+    "name": "渡辺公徳",
+    "party": null,
+    "role": "内閣官房内閣審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "内閣官房の発言者一覧",
+        "url": "/gov/cas"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B8%A1%E8%BE%BA%E5%85%AC%E5%BE%B3+%E5%86%85%E9%96%A3%E5%AE%98%E6%88%BF"
+      }
+    ]
+  },
+  "m_07f61037": {
+    "id": "m_07f61037",
+    "name": "吉田宏平",
+    "party": null,
+    "role": "総務省総合通信基盤局電気通信事業部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "総務省の発言者一覧",
+        "url": "/gov/soumu"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E7%94%B0%E5%AE%8F%E5%B9%B3+%E7%B7%8F%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_e17dd4ba": {
+    "id": "m_e17dd4ba",
+    "name": "大村真一",
+    "party": null,
+    "role": "内閣官房内閣審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "内閣官房の発言者一覧",
+        "url": "/gov/cas"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E6%9D%91%E7%9C%9F%E4%B8%80+%E5%86%85%E9%96%A3%E5%AE%98%E6%88%BF"
+      }
+    ]
+  },
+  "m_e0c7a470": {
+    "id": "m_e0c7a470",
+    "name": "井草真言",
+    "party": null,
+    "role": "外務省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "外務省の発言者一覧",
+        "url": "/gov/mofa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%BA%95%E8%8D%89%E7%9C%9F%E8%A8%80+%E5%A4%96%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_69c21158": {
+    "id": "m_69c21158",
+    "name": "辻昭弘",
+    "party": null,
+    "role": "外務省大臣官房参事官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "外務省の発言者一覧",
+        "url": "/gov/mofa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E8%BE%BB%E6%98%AD%E5%BC%98+%E5%A4%96%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_56f2ec93": {
+    "id": "m_56f2ec93",
+    "name": "中野滋明",
+    "party": null,
+    "role": "防衛省大臣官房サイバーセキュリティ・情報化審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "防衛省の発言者一覧",
+        "url": "/gov/mod"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E9%87%8E%E6%BB%8B%E6%98%8E+%E9%98%B2%E8%A1%9B%E7%9C%81"
+      }
+    ]
+  },
+  "m_f6d9ce71": {
+    "id": "m_f6d9ce71",
+    "name": "中島寛",
+    "party": null,
+    "role": "内閣官房内閣審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "内閣官房の発言者一覧",
+        "url": "/gov/cas"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B3%B6%E5%AF%9B+%E5%86%85%E9%96%A3%E5%AE%98%E6%88%BF"
+      }
+    ]
   }
 }

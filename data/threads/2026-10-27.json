@@ -293,6 +293,13 @@
         "topic": "国会改革小委員会をめぐる野党からの確認事項",
         "committee": "議院運営委員会",
         "date": "2026.10.05"
+      },
+      {
+        "threadId": "t_20261014_14aca4_11",
+        "relationship": "関連議論",
+        "topic": "連立政権1年の総括と国会改革",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
       }
     ]
   },
@@ -560,6 +567,29 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122205007X00220261027"
         }
+      ],
+      "news": [
+        {
+          "title": "[論説]農林予算の概算要求 支援策の具体化を急げ",
+          "url": "https://www.agrinews.co.jp/opinion/index/403985",
+          "source": "日本農業新聞",
+          "pubDate": "Tue, 01 Sep 2026 17:00:00 GMT",
+          "image": "https://www.agrinews.co.jp/media/2026/09/01/20260901_rtsrbemp511mgyl8trpj.jpg"
+        },
+        {
+          "title": "国の水田政策見直し踏まえて 福田知事「需要に応じた生産を推進していきたい」",
+          "url": "https://news.livedoor.com/article/detail/31780364/",
+          "source": "livedoor ニュース",
+          "pubDate": "Wed, 08 Jul 2026 04:35:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/f/2/f22c9_1741_4e81803b05ff32c88b9ca9c91cef16c3.jpg"
+        },
+        {
+          "title": "武部新農水大臣「米の需給の安定を図りつつ、新たな水田政策の検討を進める」",
+          "url": "https://news.livedoor.com/article/detail/32604163/",
+          "source": "livedoor ニュース",
+          "pubDate": "Mon, 19 Oct 2026 01:14:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/8/1/819ab_1683_8b27e891_fbfb2a98.jpg"
+        }
       ]
     },
     "speeches": [
@@ -795,6 +825,20 @@
         "topic": "主要農作物種子確保法案の意義と対象範囲",
         "committee": "農林水産委員会",
         "date": "2026.07.16"
+      },
+      {
+        "threadId": "t_20261014_14aca4_20",
+        "relationship": "関連議論",
+        "topic": "消費税減税に伴う農業者・飲食業への影響と支援",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_22",
+        "relationship": "関連議論",
+        "topic": "米の備蓄水準と価格下落対策",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
       },
       {
         "threadId": "t_20261015_880e22_01",
@@ -2073,6 +2117,41 @@
         "topic": "企業・団体献金規制の在り方",
         "committee": "予算委員会",
         "date": "2026.07.27"
+      },
+      {
+        "threadId": "t_20261013_ba653c_02",
+        "relationship": "同一法案",
+        "topic": "簗農水大臣の予算差配発言と公選法疑惑",
+        "committee": "予算委員会",
+        "date": "2026.10.13"
+      },
+      {
+        "threadId": "t_20261013_ba653c_17",
+        "relationship": "関連議論",
+        "topic": "潜在成長率と産業政策の在り方",
+        "committee": "予算委員会",
+        "date": "2026.10.13"
+      },
+      {
+        "threadId": "t_20261014_14aca4_03",
+        "relationship": "同一法案",
+        "topic": "簗農水大臣のシャトルバス公選法疑惑",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_18",
+        "relationship": "同一法案",
+        "topic": "簗農水大臣の記者対応発言問題",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261104_4bb675_02",
+        "relationship": "同一法案",
+        "topic": "統一地方選挙の期日統一特例法案の提案理由説明",
+        "committee": "政治改革に関する特別委員会",
+        "date": "2026.11.04"
       }
     ]
   },
@@ -4015,6 +4094,34 @@
         "date": "2026.07.27"
       },
       {
+        "threadId": "t_20261014_14aca4_12",
+        "relationship": "関連議論",
+        "topic": "規制改革と外国人政策・人口戦略",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_20",
+        "relationship": "関連議論",
+        "topic": "消費税減税に伴う農業者・飲食業への影響と支援",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_22",
+        "relationship": "関連議論",
+        "topic": "米の備蓄水準と価格下落対策",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_50",
+        "relationship": "関連議論",
+        "topic": "エネルギー自給率向上とフードテック振興",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
         "threadId": "t_20261015_880e22_01",
         "relationship": "関連議論",
         "topic": "新農林水産大臣に武部新氏起用",
@@ -5473,6 +5580,13 @@
         "topic": "戸籍証明書のオンライン化による公用請求制度",
         "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
         "date": "2026.04.23"
+      },
+      {
+        "threadId": "t_20261014_14aca4_50",
+        "relationship": "関連議論",
+        "topic": "エネルギー自給率向上とフードテック振興",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
       }
     ]
   },

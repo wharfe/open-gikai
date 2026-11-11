@@ -120,6 +120,29 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261013_ba653c_05",
+        "relationship": "関連議論",
+        "topic": "就業者負担軽減支援金の制度設計",
+        "committee": "予算委員会",
+        "date": "2026.10.13"
+      },
+      {
+        "threadId": "t_20261014_14aca4_14",
+        "relationship": "関連議論",
+        "topic": "米国のICC制裁問題への対応",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_29",
+        "relationship": "関連議論",
+        "topic": "実質賃金低迷と食料品減税の実効性",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      }
+    ]
   }
 ]

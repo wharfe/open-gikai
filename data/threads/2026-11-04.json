@@ -237,6 +237,27 @@
         "date": "2026.07.16"
       },
       {
+        "threadId": "t_20261013_ba653c_02",
+        "relationship": "同一法案",
+        "topic": "簗農水大臣の予算差配発言と公選法疑惑",
+        "committee": "予算委員会",
+        "date": "2026.10.13"
+      },
+      {
+        "threadId": "t_20261014_14aca4_03",
+        "relationship": "同一法案",
+        "topic": "簗農水大臣のシャトルバス公選法疑惑",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261014_14aca4_18",
+        "relationship": "同一法案",
+        "topic": "簗農水大臣の記者対応発言問題",
+        "committee": "予算委員会",
+        "date": "2026.10.14"
+      },
+      {
         "threadId": "t_20261027_584cbb_11",
         "relationship": "同一法案",
         "topic": "武部大臣の政治資金・選挙運動問題",
