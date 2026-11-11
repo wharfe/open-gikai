@@ -1,0 +1,120 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-23",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01DUNFkP2qGDCicmahjuED3t",
+      "submitted_at": "2026-11-11T01:28:01Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_北朝鮮による拉致問題等に関する特別委員会_2026-10-23_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_bd4e53ac8346_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "外務大臣による北朝鮮情勢報告",
+            "topicTag": "外務報告",
+            "topicColor": "#06b6d4",
+            "summary": "拉致・核・ミサイル問題解決に向けた日朝国交正常化方針を外務大臣が説明",
+            "contextDescription": "日朝平壌宣言に基づく拉致・核・ミサイル問題の包括的解決と国交正常化に向けた政府方針。",
+            "legislationName": null,
+            "speechOrders": [
+              5
+            ]
+          },
+          "speechOrders": [
+            5
+          ],
+          "input_hash": "sha256:55a60d6c1facb52fe6d4576fa0945398e8c42ca2de22ae9ee22b0a54f3a17406"
+        },
+        {
+          "custom_id": "s_bd4e53ac8346_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "拉致問題担当大臣による現状報告",
+            "topicTag": "拉致報告",
+            "topicColor": "#ef4444",
+            "summary": "2002年以降帰国実現なしの拉致被害者問題について担当大臣が現状を報告",
+            "contextDescription": "北朝鮮による日本人拉致問題の解決に向けた政府の取組状況に関する報告。",
+            "legislationName": null,
+            "speechOrders": [
+              7
+            ]
+          },
+          "speechOrders": [
+            7
+          ],
+          "input_hash": "sha256:1ff65ef656b473f68d45312a94a1f0f136ae5877ac7938446f045231759e0c0a"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_政府開発援助及び国際協力・人道支援等に関する特別委員会_2026-10-23_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_739fca72ea9b_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "外務大臣所信表明",
+            "topicTag": "外交所信",
+            "topicColor": "#06b6d4",
+            "summary": "外務大臣が世界情勢の変化を踏まえたODA・国際協力の基本方針を表明",
+            "contextDescription": "外務大臣が国際情勢認識とODA・人道支援政策の方針を委員会冒頭で表明する所信演説。",
+            "legislationName": null,
+            "speechOrders": [
+              3
+            ]
+          },
+          "speechOrders": [
+            3
+          ],
+          "input_hash": "sha256:6842df86ef1c43aa7e7ae1a64369f8711b3d9cb7d9cdcb3c419fdf7174be5670"
+        },
+        {
+          "custom_id": "s_739fca72ea9b_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "副大臣・政務官の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "外務副大臣・政務官各氏が職責を全うする決意を順次表明",
+            "contextDescription": "新たに就任した外務副大臣・大臣政務官らが委員会で挨拶を行う慣例的な場面。",
+            "legislationName": null,
+            "speechOrders": [
+              5,
+              7,
+              9,
+              11,
+              13
+            ]
+          },
+          "speechOrders": [
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "input_hash": "sha256:1bf872f99d26d947854767166cc8af2405458e7c3978b05f39c400a75cf39bf1"
+        }
+      ]
+    }
+  ]
+}
