@@ -1,0 +1,1518 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-14",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_017NUR2pmFB5nbGwGzdyaQVx",
+      "submitted_at": "2026-11-11T01:18:47Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_予算委員会_2026-10-14_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_14aca4914276_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "簗農水大臣のシャトルバス公選法疑惑",
+            "topicTag": "公選法",
+            "topicColor": "#6366f1",
+            "summary": "選挙運動用シャトルバス手配の選管への事前確認の有無や内容を巡り、答弁の食い違いを追及",
+            "contextDescription": "簗農水大臣の選挙運動で借り上げたシャトルバスが公職選挙法に抵触する可能性が指摘され、事前の選管への確認実態が争点に。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14
+          ],
+          "input_hash": "sha256:dfd4dd389a4a53a899f6dc5e5fd9940aa08115b9c0cf8a4c773c2579a1817fe3"
+        },
+        {
+          "custom_id": "s_14aca4914276_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "非核三原則・核共有を巡る安全保障議論",
+            "topicTag": "核政策",
+            "topicColor": "#ef4444",
+            "summary": "非核三原則「持ち込ませず」原則の見直し論と米国拡大抑止の整合性を議論",
+            "contextDescription": "非核三原則（持たず作らず持ち込ませず）は日本の核政策の基本方針。安全保障環境の変化に伴い見直し論が浮上している。",
+            "legislationName": null,
+            "speechOrders": [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ]
+          },
+          "speechOrders": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "input_hash": "sha256:dea771868bc5dbbabb2763f6c240212a98a8cb423f7ed47287247680bc1912ce"
+        },
+        {
+          "custom_id": "s_14aca4914276_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "基礎研究力強化と科研費・運営費交付金",
+            "topicTag": "科学技術",
+            "topicColor": "#3b82f6",
+            "summary": "ノーベル賞受賞を機に科研費拡充や国立大学運営費交付金の在り方を議論",
+            "contextDescription": "科研費は研究者の自由な発想に基づく研究を支える競争的資金。国立大学法人運営費交付金は大学の基盤的経費。",
+            "legislationName": null,
+            "speechOrders": [
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ]
+          },
+          "speechOrders": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "input_hash": "sha256:4733d25b3d1533f340948b85bb024c4887b672af375888d61ffd748b7b763152"
+        },
+        {
+          "custom_id": "s_14aca4914276_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "障害福祉・介護報酬改定の在り方",
+            "topicTag": "福祉報酬",
+            "topicColor": "#8b5cf6",
+            "summary": "障害福祉サービスの質に応じためり張りある報酬体系の構築を求める",
+            "contextDescription": "障害福祉サービス等報酬は3年に一度改定される公定価格で、事業者の経営や処遇改善に直結する。",
+            "legislationName": null,
+            "speechOrders": [
+              30,
+              31,
+              32,
+              33
+            ]
+          },
+          "speechOrders": [
+            30,
+            31,
+            32,
+            33
+          ],
+          "input_hash": "sha256:fe8e12f848b8de32bce59055f2ce078beea8d725f9a7d08f6d6f2e7b28de5577"
+        },
+        {
+          "custom_id": "s_14aca4914276_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "就業者負担軽減支援金の給付事務と自治体負担",
+            "topicTag": "支援金",
+            "topicColor": "#8b5cf6",
+            "summary": "支援金給付事務での自治体負担軽減のため国が全国一律システムで支援する方針を確認",
+            "contextDescription": "消費税減税のつなぎ措置として導入予定の所得連動型給付金制度。自治体の事務負担が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:46e0829c33801151316dc8c09646a635618ea634c493e3d13b32b42108e905f9"
+        },
+        {
+          "custom_id": "s_14aca4914276_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "日本版DOGE（補助金・基金見直し）",
+            "topicTag": "行政改革",
+            "topicColor": "#f97316",
+            "summary": "補助金・租税特別措置・基金の滞留資金を見直し、国庫返納等の効率化を進める",
+            "contextDescription": "基金に滞留する資金の非効率利用を是正し、国庫返納や有効活用を図る行政改革の取組。",
+            "legislationName": null,
+            "speechOrders": [
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:68344e524d9122bff063938fc724a6c06f797a8570153c77971a9b92cb9eb1d9"
+        },
+        {
+          "custom_id": "s_14aca4914276_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "核軍拡・拡大抑止を巡る国際情勢認識",
+            "topicTag": "核軍拡",
+            "topicColor": "#ef4444",
+            "summary": "中国の核軍拡、新START失効、NATO核抑止再設計など国際的核情勢を議論",
+            "contextDescription": "新STARTは米露間の核軍縮条約。中国の急速な核軍拡やNATOの核抑止戦略見直しが安全保障環境を変化させている。",
+            "legislationName": null,
+            "speechOrders": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ]
+          },
+          "speechOrders": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53
+          ],
+          "input_hash": "sha256:350db3c7ce4e2fc9cdd10004dd7fd38bfcbab93683de1b4f4ad85917143d2319"
+        },
+        {
+          "custom_id": "s_14aca4914276_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "原子力潜水艦導入と自衛隊検死体制",
+            "topicTag": "防衛体制",
+            "topicColor": "#ef4444",
+            "summary": "太平洋防衛強化のための原潜導入と、自衛官戦死時の検死体制整備を提起",
+            "contextDescription": "中国海軍の太平洋進出に対応した潜水艦戦略の転換と、有事における自衛官の死亡確認手続の整備が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              54,
+              55,
+              56,
+              57,
+              58
+            ]
+          },
+          "speechOrders": [
+            54,
+            55,
+            56,
+            57,
+            58
+          ],
+          "input_hash": "sha256:633ba9c2e25637179464eace34cd8e54f4831687d3dd9f1648ea7c6fc742d3ee"
+        },
+        {
+          "custom_id": "s_14aca4914276_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "連立政権1年の総括と国会改革",
+            "topicTag": "国会改革",
+            "topicColor": "#f97316",
+            "summary": "自民・維新連立1年を振り返り、総理の国会対応時間や国会運営の在り方を問う",
+            "contextDescription": "2025年秋に発足した自民党・日本維新の会の連立政権。国会審議における総理の時間の使い方が論点に。",
+            "legislationName": null,
+            "speechOrders": [
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66
+            ]
+          },
+          "speechOrders": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "input_hash": "sha256:d354bbbc56666049f0c17b4455be7d72ed995f216b776726e75b23b1f50a4466"
+        },
+        {
+          "custom_id": "s_14aca4914276_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "規制改革と外国人政策・人口戦略",
+            "topicTag": "規制改革",
+            "topicColor": "#3b82f6",
+            "summary": "事後取締り重視の規制改革と、人口戦略における外国人政策のバランスを議論",
+            "contextDescription": "人口減少下での成長戦略として規制改革が重視される一方、人口戦略本部が年末に外国人政策を含む人口戦略を策定予定。",
+            "legislationName": null,
+            "speechOrders": [
+              67,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "speechOrders": [
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "input_hash": "sha256:7e7d84978adbffcefc1f733ce902a767a8392542a0b1f307e43ce41828c7911a"
+        },
+        {
+          "custom_id": "s_14aca4914276_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "ロシアの択捉島上陸問題と北方領土",
+            "topicTag": "北方領土",
+            "topicColor": "#06b6d4",
+            "summary": "中国視察団の択捉島上陸を日本の立場への挑発行為として抗議、実効支配強化への対応を問う",
+            "contextDescription": "北方領土は日本固有の領土とされるが、ロシアが実効支配し続けている。中国視察団の上陸は新たな外交問題。",
+            "legislationName": null,
+            "speechOrders": [
+              73,
+              74,
+              75,
+              76,
+              77
+            ]
+          },
+          "speechOrders": [
+            73,
+            74,
+            75,
+            76,
+            77
+          ],
+          "input_hash": "sha256:3f3aef5acb29e41c1c9785b33052f10ce7cfbbf5464c8c829cc078ae9a6c860e"
+        },
+        {
+          "custom_id": "s_14aca4914276_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "米国のICC制裁問題への対応",
+            "topicTag": "ICC制裁",
+            "topicColor": "#06b6d4",
+            "summary": "米国によるICC組織制裁に対し日本の支持姿勢と拠出金前倒しなど具体策を求める",
+            "contextDescription": "国際刑事裁判所（ICC）に対し米国が組織制裁を発動。日本は最大拠出国としてICCを支持する立場。",
+            "legislationName": null,
+            "speechOrders": [
+              78,
+              79,
+              80,
+              81,
+              82,
+              83
+            ]
+          },
+          "speechOrders": [
+            78,
+            79,
+            80,
+            81,
+            82,
+            83
+          ],
+          "input_hash": "sha256:cfc86f392916c973d4a7b3400228ce7f6022c9d086910276d3662f96cce207b5"
+        },
+        {
+          "custom_id": "s_14aca4914276_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "消費税減税・就業者負担軽減支援金の制度設計",
+            "topicTag": "消費税",
+            "topicColor": "#3b82f6",
+            "summary": "飲食料品消費税1%への時限引下げと、本格導入前の支援金の対象・財源が不透明と批判",
+            "contextDescription": "物価高対策として飲食料品消費税を2年間時限的に1%に引下げ、2029年度から所得連動型支援金を本格導入する政府方針。",
+            "legislationName": null,
+            "speechOrders": [
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101
+            ]
+          },
+          "speechOrders": [
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101
+          ],
+          "input_hash": "sha256:d30291a4a45c7bbd46dd0d902844f8f142c49ec4ceab214f2392b813a4382f72"
+        },
+        {
+          "custom_id": "s_14aca4914276_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "コンテンツ・民間投資による経済成長戦略",
+            "topicTag": "成長戦略",
+            "topicColor": "#3b82f6",
+            "summary": "官民投資370兆円を掲げる成長戦略の中でクールジャパン・コンテンツ産業振興を説明",
+            "contextDescription": "政府の日本成長戦略は17の戦略分野を設定し、官民連携でコンテンツ産業などへの投資を推進。",
+            "legislationName": null,
+            "speechOrders": [
+              102,
+              104
+            ]
+          },
+          "speechOrders": [
+            102,
+            104
+          ],
+          "input_hash": "sha256:c81b419b369ad95d9759af4b7912d15eec62e078c8d22bc4543c2fedeabbbf56"
+        },
+        {
+          "custom_id": "s_14aca4914276_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "熊本地震の復旧支援と災害ボランティア体制",
+            "topicTag": "熊本地震",
+            "topicColor": "#dc2626",
+            "summary": "住宅応急修理の上限額や井戸復旧支援、災害ボランティアの登録制度拡充を要望",
+            "contextDescription": "2026年7月発生の熊本地震（令和8年熊本地震）で甚大な被害。応急修理やボランティア体制整備が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116
+            ]
+          },
+          "speechOrders": [
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "input_hash": "sha256:4e507405e816cbdfd0a6c881627356e82d3b4804d92f58041c0a030e1543ea2e"
+        },
+        {
+          "custom_id": "s_14aca4914276_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "簗農水大臣の記者対応発言問題",
+            "topicTag": "大臣発言",
+            "topicColor": "#6b7280",
+            "summary": "熊本視察時の記者への不適切発言とシャトルバス疑惑への対応姿勢を批判",
+            "contextDescription": "簗農水大臣が熊本地震視察後の会見で記者への不適切発言をしたとの報道を受けた質疑。",
+            "legislationName": null,
+            "speechOrders": [
+              117,
+              118,
+              119,
+              120,
+              121
+            ]
+          },
+          "speechOrders": [
+            117,
+            118,
+            119,
+            120,
+            121
+          ],
+          "input_hash": "sha256:f36591390195d1d965588e306fd9473390f3727e1288f0f07847b3398d7623f5"
+        },
+        {
+          "custom_id": "s_14aca4914276_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "米国産生鮮バレイショの輸入解禁問題",
+            "topicTag": "輸入検疫",
+            "topicColor": "#3b82f6",
+            "summary": "米国産ジャガイモ輸入解禁の前倒し圧力に対し、科学的検疫を基本とする姿勢を確認",
+            "contextDescription": "米国産一般流通用生鮮バレイショの輸入解禁を巡り、病害虫侵入リスクと米国の圧力のバランスが争点。",
+            "legislationName": null,
+            "speechOrders": [
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128
+            ]
+          },
+          "speechOrders": [
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128
+          ],
+          "input_hash": "sha256:25514b5c8c58806bd1a82e4048f3274eb60a9f06b219aaf84bf2567f06aa182e"
+        },
+        {
+          "custom_id": "s_14aca4914276_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "消費税減税に伴う農業者・飲食業への影響と支援",
+            "topicTag": "減税影響",
+            "topicColor": "#3b82f6",
+            "summary": "消費税率変更に伴う農業者・飲食業の資金繰りや還付手続の支援を要望、総理が「納得」と明言",
+            "contextDescription": "飲食料品消費税率引下げにより簡易課税事業者や農林漁業者が資金繰り等で影響を受けるため支援策が検討されている。",
+            "legislationName": null,
+            "speechOrders": [
+              131,
+              132,
+              133,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145
+            ]
+          },
+          "speechOrders": [
+            131,
+            132,
+            133,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145
+          ],
+          "input_hash": "sha256:b5a4f88febec17186767a95882229e8d1ced61f1519b8934065c82b27d623896"
+        },
+        {
+          "custom_id": "s_14aca4914276_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "学校体育館の空調設置率格差",
+            "topicTag": "学校空調",
+            "topicColor": "#f59e0b",
+            "summary": "避難所指定校を含む体育館の空調設置率の地域格差是正を求める",
+            "contextDescription": "公立小中学校の体育館は避難所指定も多いが、空調設置率が普通教室に比べ低く地域差が大きい。",
+            "legislationName": null,
+            "speechOrders": [
+              134,
+              135,
+              136
+            ]
+          },
+          "speechOrders": [
+            134,
+            135,
+            136
+          ],
+          "input_hash": "sha256:55c1cf16dd8c773d3a75fe8959626004caaa4f61750414b09c07198b7a11454f"
+        },
+        {
+          "custom_id": "s_14aca4914276_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "米の備蓄水準と価格下落対策",
+            "topicTag": "米備蓄",
+            "topicColor": "#3b82f6",
+            "summary": "備蓄米放出による米価暴落を指摘し、適正備蓄水準への計画的回復を求める",
+            "contextDescription": "食料安全保障の観点から政府備蓄米は約100万トンが適正水準とされるが、放出により大幅に減少している。",
+            "legislationName": null,
+            "speechOrders": [
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153
+            ]
+          },
+          "speechOrders": [
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153
+          ],
+          "input_hash": "sha256:ee9bad925bb910da6880c0d4b6b955a727ed9e882312520fe8d79eda3f9f2372"
+        },
+        {
+          "custom_id": "s_14aca4914276_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "データセンター集積とGX戦略地域・エネルギー政策",
+            "topicTag": "GX地域",
+            "topicColor": "#22c55e",
+            "summary": "再生エネ活用のデータセンター地方分散とGX戦略地域制度の活用を推進",
+            "contextDescription": "GX戦略地域制度はコンビナートや脱炭素電源を核に新産業クラスターを創出する仕組み。地方分散が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              153,
+              154,
+              155,
+              156,
+              157,
+              158,
+              159
+            ]
+          },
+          "speechOrders": [
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159
+          ],
+          "input_hash": "sha256:cc506052f5302421fe77a7dfaeb80905b8d1d1f59749a53a8a27d8c7ae3c06dc"
+        },
+        {
+          "custom_id": "s_14aca4914276_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "クマ被害対策とスクールバス・火葬場問題",
+            "topicTag": "地域課題",
+            "topicColor": "#6b7280",
+            "summary": "熊出没対策、通学路安全確保のスクールバス要件緩和、火葬場不足への対応を要望",
+            "contextDescription": "全国的なクマ出没増加による人身被害、通学路の安全、火葬場不足など地域生活課題が議論された。",
+            "legislationName": null,
+            "speechOrders": [
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166,
+              167,
+              168
+            ]
+          },
+          "speechOrders": [
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168
+          ],
+          "input_hash": "sha256:4b67998d376e3a2562a44e347dceb09fa5c793e59ea3f7b2eaf552889d35747c"
+        },
+        {
+          "custom_id": "s_14aca4914276_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "灯油価格高騰と燃料激変緩和措置",
+            "topicTag": "燃料価格",
+            "topicColor": "#22c55e",
+            "summary": "中東情勢緊迫化による灯油高騰を受け、寒冷地支援の継続を要望",
+            "contextDescription": "中東情勢の緊迫化で原油価格が上昇し、ガソリン・灯油価格高騰への激変緩和措置が講じられている。",
+            "legislationName": null,
+            "speechOrders": [
+              169,
+              170,
+              171,
+              172,
+              173
+            ]
+          },
+          "speechOrders": [
+            169,
+            170,
+            171,
+            172,
+            173
+          ],
+          "input_hash": "sha256:720d38fb55d86a43a9e7d505e32cc83d1c1253e7411fd44fe5964725b6f9cb7e"
+        },
+        {
+          "custom_id": "s_14aca4914276_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "社会保険診療の消費税非課税問題（損税）",
+            "topicTag": "医療消費税",
+            "topicColor": "#8b5cf6",
+            "summary": "医療機関の仕入消費税が診療報酬補填で賄いきれない「損税」問題の解消を求める",
+            "contextDescription": "社会保険診療は消費税非課税だが仕入れ税額控除ができず、診療報酬での補填にばらつきがあるとされる問題。",
+            "legislationName": null,
+            "speechOrders": [
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              181,
+              182
+            ]
+          },
+          "speechOrders": [
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182
+          ],
+          "input_hash": "sha256:97ce0384fa15830e7990718bbfa27212cae72221e5f1534ca8f7437d67d9930e"
+        },
+        {
+          "custom_id": "s_14aca4914276_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "薬価制度と創薬イノベーション・費用対効果評価",
+            "topicTag": "薬価制度",
+            "topicColor": "#8b5cf6",
+            "summary": "費用対効果評価による薬価下落が創薬イノベーションを阻害しているとの懸念",
+            "contextDescription": "費用対効果評価制度は医薬品の価格を効果に応じて調整する仕組みだが、評価後の薬価引下げが多いことが課題。",
+            "legislationName": null,
+            "speechOrders": [
+              183,
+              184,
+              185,
+              186,
+              187,
+              188,
+              189,
+              190,
+              191
+            ]
+          },
+          "speechOrders": [
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191
+          ],
+          "input_hash": "sha256:e6778c4da1f007bb392e25def78eb482365e73146b8f7f33ee196c8502bc60bf"
+        },
+        {
+          "custom_id": "s_14aca4914276_25",
+          "thread_idx": 25,
+          "thread_info": {
+            "topic": "傷病手当金・高齢者救急・アナフィラキシー対応",
+            "topicTag": "医療制度",
+            "topicColor": "#8b5cf6",
+            "summary": "傷病手当金の適切運用、高齢者救急体制、救急救命士のアドレナリン投与拡大を要望",
+            "contextDescription": "傷病手当金は病気休業中の生活保障制度。高齢者救急や救急救命士の処置範囲拡大も医療現場の課題。",
+            "legislationName": null,
+            "speechOrders": [
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              198
+            ]
+          },
+          "speechOrders": [
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            198
+          ],
+          "input_hash": "sha256:33dc1917f068b5fe1010f02e54d1e71c5f484aaa61b45b78e5da319490c2ef90"
+        },
+        {
+          "custom_id": "s_14aca4914276_26",
+          "thread_idx": 26,
+          "thread_info": {
+            "topic": "実質賃金低迷と食料品減税の実効性",
+            "topicTag": "賃金物価",
+            "topicColor": "#3b82f6",
+            "summary": "実質賃金の長期低迷を指摘し、食料品減税が価格に反映されるか疑問視",
+            "contextDescription": "日本の実質賃金はOECD諸国と比較し過去30年ほぼ横ばい。食料品消費税減税の価格転嫁効果が焦点。",
+            "legislationName": null,
+            "speechOrders": [
+              200,
+              201,
+              202,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              209,
+              210
+            ]
+          },
+          "speechOrders": [
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210
+          ],
+          "input_hash": "sha256:f27333af9bad64e8a25e5979c3877443f932b821143041c4030524d78ee57ea8"
+        },
+        {
+          "custom_id": "s_14aca4914276_27",
+          "thread_idx": 27,
+          "thread_info": {
+            "topic": "相続税見直しと事業承継",
+            "topicTag": "相続税",
+            "topicColor": "#3b82f6",
+            "summary": "相続税負担による事業売却を防ぐため制度の一体的見直しを要望",
+            "contextDescription": "相続税は資産再分配機能を持つ税制。高額化する事業承継時の負担が中小企業の存続に影響しているとの指摘。",
+            "legislationName": null,
+            "speechOrders": [
+              211,
+              212
+            ]
+          },
+          "speechOrders": [
+            211,
+            212
+          ],
+          "input_hash": "sha256:8a64174a1368c2a931931f8bc782335ee1e30c355ca7ba30220145a6c137ec03"
+        },
+        {
+          "custom_id": "s_14aca4914276_28",
+          "thread_idx": 28,
+          "thread_info": {
+            "topic": "新型コロナワクチン健康被害の支援",
+            "topicTag": "ワクチン",
+            "topicColor": "#8b5cf6",
+            "summary": "コロナワクチン後遺症の救済認定待機中の医療費・生活支援の具体化を求める",
+            "contextDescription": "新型コロナワクチン接種後の長期症状について実態調査が行われているが、救済や生活支援の充実が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              213,
+              214
+            ]
+          },
+          "speechOrders": [
+            213,
+            214
+          ],
+          "input_hash": "sha256:deeb516af08b208099a39794f53119e481176806e45cebd680ac93fba6d30da2"
+        },
+        {
+          "custom_id": "s_14aca4914276_29",
+          "thread_idx": 29,
+          "thread_info": {
+            "topic": "子供の美容医療・女性専用スペースの安全確保",
+            "topicTag": "美容医療",
+            "topicColor": "#8b5cf6",
+            "summary": "未成年美容医療の安全規制と公衆浴場等での女性専用スペース保護を要望",
+            "contextDescription": "美容医療の安全確保や、性的区分に関する公衆浴場等の女性専用スペースの在り方が議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              215,
+              216,
+              217,
+              218,
+              219,
+              220
+            ]
+          },
+          "speechOrders": [
+            215,
+            216,
+            217,
+            218,
+            219,
+            220
+          ],
+          "input_hash": "sha256:30a5c0c9cb6b823725ca58ef8387b5b8d3e0227182e5dd18d0294e88294737df"
+        },
+        {
+          "custom_id": "s_14aca4914276_30",
+          "thread_idx": 30,
+          "thread_info": {
+            "topic": "衆議院議員定数削減と比例代表制の在り方",
+            "topicTag": "定数削減",
+            "topicColor": "#6366f1",
+            "summary": "比例代表削減による死票増加と民意反映の後退を批判",
+            "contextDescription": "特別国会で継続審議となっている議員定数削減法案。比例枠削減が民意反映を損なうとの懸念。",
+            "legislationName": "衆議院議員定数削減法案",
+            "speechOrders": [
+              221,
+              222,
+              223,
+              224
+            ]
+          },
+          "speechOrders": [
+            221,
+            222,
+            223,
+            224
+          ],
+          "input_hash": "sha256:e2b7d559df50546aa50340695c9d6a683bcd225dd8bb5d4af9b1ed392cff50ee"
+        },
+        {
+          "custom_id": "s_14aca4914276_31",
+          "thread_idx": 31,
+          "thread_info": {
+            "topic": "政治家の省庁への予算配分働きかけの是非",
+            "topicTag": "予算配分",
+            "topicColor": "#f97316",
+            "summary": "国会議員単独の働きかけで予算が増減することはないとの認識を確認",
+            "contextDescription": "国の予算配分は地方要望や事業進捗を総合勘案して決定されるものであり、個人の政治力による左右は否定された。",
+            "legislationName": null,
+            "speechOrders": [
+              226,
+              227,
+              228,
+              229,
+              230
+            ]
+          },
+          "speechOrders": [
+            226,
+            227,
+            228,
+            229,
+            230
+          ],
+          "input_hash": "sha256:2bbfb6d32666e4961f00b62815eb28cd3cb98972ab0883e77fff27c22c490c15"
+        },
+        {
+          "custom_id": "s_14aca4914276_32",
+          "thread_idx": 32,
+          "thread_info": {
+            "topic": "消費税食料品減税と外食産業・中小企業支援",
+            "topicTag": "外食支援",
+            "topicColor": "#3b82f6",
+            "summary": "消費税減税による外食産業の資金繰り支援と税制の抜本見直しを要望",
+            "contextDescription": "消費税率変更が外食産業に与える影響への資金繰り支援策と、消費税制度自体への懸念が示された。",
+            "legislationName": null,
+            "speechOrders": [
+              231,
+              232
+            ]
+          },
+          "speechOrders": [
+            231,
+            232
+          ],
+          "input_hash": "sha256:fdd73c8ff427786809d59407d13abf75859bec4ef38233cdc46421ee88d1ef69"
+        },
+        {
+          "custom_id": "s_14aca4914276_33",
+          "thread_idx": 33,
+          "thread_info": {
+            "topic": "イラン情勢とホルムズ海峡の安定化",
+            "topicTag": "イラン情勢",
+            "topicColor": "#06b6d4",
+            "summary": "ホルムズ海峡の安定化に向け日本が仲介外交でリーダーシップを発揮すべきと提起",
+            "contextDescription": "イラン情勢の緊迫化によりホルムズ海峡のエネルギー安全保障上のリスクが高まっている。",
+            "legislationName": null,
+            "speechOrders": [
+              233,
+              234
+            ]
+          },
+          "speechOrders": [
+            233,
+            234
+          ],
+          "input_hash": "sha256:cbd2c66d7383882a1371610f52e74dcce8678992f52017e31c22fd55121777a6"
+        },
+        {
+          "custom_id": "s_14aca4914276_34",
+          "thread_idx": 34,
+          "thread_info": {
+            "topic": "半導体産業支援と沖縄振興策",
+            "topicTag": "半導体沖縄",
+            "topicColor": "#3b82f6",
+            "summary": "半導体研究開発支援と沖縄シリコンビーチ構想・道路整備等の振興策を議論",
+            "contextDescription": "AI・半導体産業基盤強化フレームに基づく支援策と、県民所得最下位の沖縄県の独自財源拡大策が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              235,
+              236,
+              237,
+              238,
+              239,
+              240
+            ]
+          },
+          "speechOrders": [
+            235,
+            236,
+            237,
+            238,
+            239,
+            240
+          ],
+          "input_hash": "sha256:c577e85ae322c1d356ed48ef50ab76ddc2e41bb0900198a7872b4941cb481a60"
+        },
+        {
+          "custom_id": "s_14aca4914276_35",
+          "thread_idx": 35,
+          "thread_info": {
+            "topic": "子供の貧困対策と国民負担率",
+            "topicTag": "子供貧困",
+            "topicColor": "#8b5cf6",
+            "summary": "沖縄など子供の貧困解消と、国民負担率低下の体感速度向上を求める",
+            "contextDescription": "子供の貧困対策として学習・生活・食・相談支援の一体的推進が行われている。国民負担率は2年連続低下見通し。",
+            "legislationName": null,
+            "speechOrders": [
+              241,
+              242,
+              243,
+              244,
+              245
+            ]
+          },
+          "speechOrders": [
+            241,
+            242,
+            243,
+            244,
+            245
+          ],
+          "input_hash": "sha256:ed6b9fecacf446b85a1429f57a41f326b62dac3ed9dacb6bd3f88078f07d9004"
+        },
+        {
+          "custom_id": "s_14aca4914276_36",
+          "thread_idx": 36,
+          "thread_info": {
+            "topic": "不妊治療保険適用の年齢・回数制限見直し",
+            "topicTag": "不妊治療",
+            "topicColor": "#8b5cf6",
+            "summary": "不妊治療の保険適用における年齢・回数制限の緩和をエビデンスに基づき要望",
+            "contextDescription": "2022年から保険適用された不妊治療には年齢・回数要件があり、当事者から見直しを求める声がある。",
+            "legislationName": null,
+            "speechOrders": [
+              246,
+              247,
+              248
+            ]
+          },
+          "speechOrders": [
+            246,
+            247,
+            248
+          ],
+          "input_hash": "sha256:e010c93b7fc612dc7551728ef2c82cc32ee721d9670d8e2425aaee506d750026"
+        },
+        {
+          "custom_id": "s_14aca4914276_37",
+          "thread_idx": 37,
+          "thread_info": {
+            "topic": "介護・障害福祉人材の処遇改善",
+            "topicTag": "処遇改善",
+            "topicColor": "#8b5cf6",
+            "summary": "他産業との賃金格差是正に向け介護報酬改定の在り方の抜本見直しを要望",
+            "contextDescription": "介護・障害福祉職員の給与は介護報酬等に基づくが、他産業との賃金差が依然大きいことが課題。",
+            "legislationName": null,
+            "speechOrders": [
+              248,
+              249,
+              250
+            ]
+          },
+          "speechOrders": [
+            248,
+            249,
+            250
+          ],
+          "input_hash": "sha256:2f731f6db35ddaf18b86480dab3fa2e3ccab8df765c83ba7afd11f2c3c16dad0"
+        },
+        {
+          "custom_id": "s_14aca4914276_38",
+          "thread_idx": 38,
+          "thread_info": {
+            "topic": "旧氏使用の法制化",
+            "topicTag": "旧氏使用",
+            "topicColor": "#6366f1",
+            "summary": "旧氏使用法制化の検討状況と本人確認書類への旧氏単記の懸念を確認",
+            "contextDescription": "婚姻等による改姓の不便解消のため旧氏使用の法制化が政府で検討されている。",
+            "legislationName": null,
+            "speechOrders": [
+              251,
+              252
+            ]
+          },
+          "speechOrders": [
+            251,
+            252
+          ],
+          "input_hash": "sha256:d6d41d04a9e41731dc3b0ac9f0b655b180369fafd03c872308b100e2316d74bc"
+        },
+        {
+          "custom_id": "s_14aca4914276_39",
+          "thread_idx": 39,
+          "thread_info": {
+            "topic": "街頭演説の拡声機規制と特殊詐欺対策アプリ",
+            "topicTag": "治安対策",
+            "topicColor": "#6b7280",
+            "summary": "暴騒音条例の適切運用と、特殊詐欺防止の警察庁推奨アプリ普及促進を確認",
+            "contextDescription": "街頭演説時の拡声機による抗議行動への法的対応と、特殊詐欺被害防止アプリの周知が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              253,
+              254,
+              255
+            ]
+          },
+          "speechOrders": [
+            253,
+            254,
+            255
+          ],
+          "input_hash": "sha256:9f2c0bdd2842d74e6b86355d1b9627d4ec78379f5f983ab0e208048a76086c3e"
+        },
+        {
+          "custom_id": "s_14aca4914276_40",
+          "thread_idx": 40,
+          "thread_info": {
+            "topic": "外国人・外国法人による不動産購入規制",
+            "topicTag": "外資不動産",
+            "topicColor": "#3b82f6",
+            "summary": "GATS協定が土地取引規制の障害にならない可能性が外務大臣答弁で判明",
+            "contextDescription": "外国人・外国法人による土地取引規制を巡り、GATS（サービス貿易一般協定）の留保が理由とされてきた。",
+            "legislationName": null,
+            "speechOrders": [
+              256,
+              258,
+              259
+            ]
+          },
+          "speechOrders": [
+            256,
+            258,
+            259
+          ],
+          "input_hash": "sha256:4a194877cac949bcddb0ae7530f6a89a3aaf01cedddf0fb9bf95b903970ca60f"
+        },
+        {
+          "custom_id": "s_14aca4914276_41",
+          "thread_idx": 41,
+          "thread_info": {
+            "topic": "食料品消費税減税の設計と農林漁業者支援",
+            "topicTag": "減税設計",
+            "topicColor": "#3b82f6",
+            "summary": "支援金制度の恒久化回避と農林漁業者・外食事業者への給付制度を確認",
+            "contextDescription": "食料品消費税の時限減税に伴う農林漁業者・外食事業者への経営支援策の制度設計が議論された。",
+            "legislationName": null,
+            "speechOrders": [
+              262,
+              263,
+              264
+            ]
+          },
+          "speechOrders": [
+            262,
+            263,
+            264
+          ],
+          "input_hash": "sha256:3fb544c56fafb2ce2ac97d68f966dd9818d5c33a44aa730905700cc43a16543f"
+        },
+        {
+          "custom_id": "s_14aca4914276_42",
+          "thread_idx": 42,
+          "thread_info": {
+            "topic": "災害時の空撮画像活用と高額療養費制度",
+            "topicTag": "防災医療",
+            "topicColor": "#dc2626",
+            "summary": "災害時の衛星・ドローン画像一元化と、高額療養費の随時改定拡充を確認",
+            "contextDescription": "「鳥の目プロジェクト」は災害時の衛星・航空写真等を一元集約する事業。高額療養費制度は所得区分に応じ負担軽減。",
+            "legislationName": null,
+            "speechOrders": [
+              265,
+              266,
+              267,
+              268
+            ]
+          },
+          "speechOrders": [
+            265,
+            266,
+            267,
+            268
+          ],
+          "input_hash": "sha256:a5e2e33d5bdc5b54395ed56e0361f48ab8376813dd6dbaf972174f670c6898ff"
+        },
+        {
+          "custom_id": "s_14aca4914276_43",
+          "thread_idx": 43,
+          "thread_info": {
+            "topic": "障害児の18歳の壁と社会保険料負担",
+            "topicTag": "社会保険料",
+            "topicColor": "#8b5cf6",
+            "summary": "障害児支援の年齢移行課題と、現役世代社会保険料率の引下げ方針を確認",
+            "contextDescription": "障害児支援から成人支援への移行時の「18歳の壁」問題と、現役世代の社会保障負担率抑制が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              269,
+              270,
+              271,
+              272
+            ]
+          },
+          "speechOrders": [
+            269,
+            270,
+            271,
+            272
+          ],
+          "input_hash": "sha256:a3473e98df5f0600983ef9ffbd93f8da9329ef9883cd7a3cd292f35c512b6c9b"
+        },
+        {
+          "custom_id": "s_14aca4914276_44",
+          "thread_idx": 44,
+          "thread_info": {
+            "topic": "匿名流動型犯罪グループ対策と補助金透明性",
+            "topicTag": "トクリュウ",
+            "topicColor": "#6b7280",
+            "summary": "トクリュウ対策の資金追跡強化と、補助金配分の透明性向上を要望",
+            "contextDescription": "匿名・流動型犯罪グループ（トクリュウ）による特殊詐欺等への対策強化と、補助金配分の説明責任が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              273,
+              274,
+              275,
+              276
+            ]
+          },
+          "speechOrders": [
+            273,
+            274,
+            275,
+            276
+          ],
+          "input_hash": "sha256:c6ecfaeb794c2d450d2cd85740bfefb33605a8e169f5ca9f3f748fab30a03f2e"
+        },
+        {
+          "custom_id": "s_14aca4914276_45",
+          "thread_idx": 45,
+          "thread_info": {
+            "topic": "AI活用推進とAI安全性評価体制",
+            "topicTag": "AI政策",
+            "topicColor": "#3b82f6",
+            "summary": "政府AI「源内」の予算確保とAIモデル安全性評価体制（AISI）の機能強化を要望",
+            "contextDescription": "政府職員向けAI「源内」の運用拡大と、AIの安全性評価を行うAIセーフティ・インスティテュートの体制強化が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              277,
+              278,
+              279,
+              280,
+              281,
+              282,
+              283,
+              284,
+              285,
+              286
+            ]
+          },
+          "speechOrders": [
+            277,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286
+          ],
+          "input_hash": "sha256:290c9b83db7b33af4b7cfd146ad71af21ab9d005acdba35375b06ad59cf232f5"
+        },
+        {
+          "custom_id": "s_14aca4914276_46",
+          "thread_idx": 46,
+          "thread_info": {
+            "topic": "防衛分野でのAI活用と法制度総点検",
+            "topicTag": "防衛AI",
+            "topicColor": "#ef4444",
+            "summary": "AIによる意思決定高速化（バトルリズム）への対応と法制度全体の総点検を確認",
+            "contextDescription": "AIを活用した戦闘のテンポ（バトルリズム）が飛躍的に高速化する中での防衛省対応と、法制度の総点検が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              287,
+              288,
+              289,
+              290
+            ]
+          },
+          "speechOrders": [
+            287,
+            288,
+            289,
+            290
+          ],
+          "input_hash": "sha256:c8bcf4f0826947f81f341421d62443b1dda1d10a52b6a59593575673a4e2435c"
+        },
+        {
+          "custom_id": "s_14aca4914276_47",
+          "thread_idx": 47,
+          "thread_info": {
+            "topic": "エネルギー自給率向上とフードテック振興",
+            "topicTag": "食料エネルギー",
+            "topicColor": "#22c55e",
+            "summary": "中東依存軽減のエネルギー強靱化と、食料安全保障に資するフードテック振興を確認",
+            "contextDescription": "中東情勢緊迫化を受けたエネルギー安全保障強化と、植物工場等フードテックによる食料供給力強化が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              291,
+              292,
+              293,
+              295
+            ]
+          },
+          "speechOrders": [
+            291,
+            292,
+            293,
+            295
+          ],
+          "input_hash": "sha256:1d36b10c0b2a69d3621fcdb89165129518c55e83fe5e416924037a656e3d0336"
+        },
+        {
+          "custom_id": "s_14aca4914276_48",
+          "thread_idx": 48,
+          "thread_info": {
+            "topic": "食料品消費税減税の出口戦略と財源・格差問題",
+            "topicTag": "減税財源",
+            "topicColor": "#3b82f6",
+            "summary": "2年後の増税や支援金対象者の狭さ、財源の応能負担強化を追及",
+            "contextDescription": "消費税1%への時限引下げ後の2年後の税率復帰と、支援金制度の対象者・財源の不透明さが批判された。",
+            "legislationName": null,
+            "speechOrders": [
+              297,
+              298,
+              299,
+              300,
+              301,
+              302,
+              303
+            ]
+          },
+          "speechOrders": [
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303
+          ],
+          "input_hash": "sha256:532a9eb0546f6993c36386059b5743f3ac864b6bf15071cd7f6092a8ca81a568"
+        },
+        {
+          "custom_id": "s_14aca4914276_49",
+          "thread_idx": 49,
+          "thread_info": {
+            "topic": "住宅価格高騰と法人不動産売買課税",
+            "topicTag": "住宅価格",
+            "topicColor": "#3b82f6",
+            "summary": "マンション高騰・家賃上昇に対し法人短期売買への課税強化等の対策を要求",
+            "contextDescription": "首都圏のマンション価格高騰や賃貸家賃上昇が深刻化し、法人による短期売買への課税の在り方が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              303,
+              304,
+              305,
+              306,
+              307,
+              308,
+              309
+            ]
+          },
+          "speechOrders": [
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309
+          ],
+          "input_hash": "sha256:252a16f3baa40182984c33c8f0fb88d2870e7fa0d8b2b9c31721e7f8c0898301"
+        },
+        {
+          "custom_id": "s_14aca4914276_50",
+          "thread_idx": 50,
+          "thread_info": {
+            "topic": "沖縄米兵による殺人事件と米軍綱紀粛正",
+            "topicTag": "米兵事件",
+            "topicColor": "#ef4444",
+            "summary": "那覇市での米兵による殺人事件を受け綱紀粛正・再発防止、地位協定見直しを要求",
+            "contextDescription": "沖縄で米軍関係者による事件が繰り返されており、日米地位協定の見直しや基地負担軽減が長年の課題。",
+            "legislationName": null,
+            "speechOrders": [
+              309,
+              310,
+              311,
+              312,
+              313
+            ]
+          },
+          "speechOrders": [
+            309,
+            310,
+            311,
+            312,
+            313
+          ],
+          "input_hash": "sha256:c552f87abaa5110aec8a1a90ee61f6252c29c6ef21b4c2020eb7055630377e30"
+        },
+        {
+          "custom_id": "s_14aca4914276_51",
+          "thread_idx": 51,
+          "thread_info": {
+            "topic": "閣僚の不適切発言・疑惑と任命責任",
+            "topicTag": "閣僚疑惑",
+            "topicColor": "#6b7280",
+            "summary": "簗大臣の不適切発言、中司大臣の金銭授受疑惑、関大臣のパーティー問題を追及",
+            "contextDescription": "複数閣僚の不適切発言や過去の金銭授受疑惑、禁止された議員会館パーティー開催が相次いで問題視された。",
+            "legislationName": null,
+            "speechOrders": [
+              314,
+              315,
+              316,
+              318
+            ]
+          },
+          "speechOrders": [
+            314,
+            315,
+            316,
+            318
+          ],
+          "input_hash": "sha256:f911d13ea1b30d8a4ba60ad80246773895d606558791dbc9596214b98d9f279b"
+        }
+      ]
+    }
+  ]
+}
