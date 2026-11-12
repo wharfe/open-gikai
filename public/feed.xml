@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 11 Nov 2026 01:50:23 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 02:26:42 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W45 国会まとめ — 9件の議論</title>
@@ -16,19 +16,19 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W44 国会まとめ — 71件の議論</title>
+      <title>2026-W44 国会まとめ — 85件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>71件のスレッド、7委員会の議論をまとめました。議院運営委員会、情報監視審査会、中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見ほか。</description>
+      <description>85件のスレッド、9委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W43 国会まとめ — 44件の議論</title>
+      <title>2026-W43 国会まとめ — 50件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W43</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W43</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <description>44件のスレッド、21委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
+      <description>50件のスレッド、23委員会の議論をまとめました。中東情勢を踏まえた緊急的激変緩和措置等についての会見、議院運営委員会国会法改正等及び国会改革に関する小委員会、こども・子育て・若者活躍に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -142,6 +142,14 @@
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
       <description>特定秘密及び重要経済安保情報の指定・解除・適性評価等の運用状況を政府が報告した（国会会議録・2026.10.30・2発言）</description>
       <category>情報監視審査会</category>
+    </item>
+    <item>
+      <title>地方創生・デジタル・こども政策担当大臣等の所信表明及び挨拶 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_ce226f_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_ce226f_05</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>地方創生・デジタル・こども政策担当の大臣、副大臣、政務官が所信や就任挨拶を順次表明（国会会議録・2026.10.30・9発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
       <title>燃料油「激変緩和措置」の見直しと今後の対応 — 中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見</title>
@@ -430,14 +438,6 @@
       <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
       <description>特別社会基盤事業者以外の企業からのACD適用要請を巡る法的枠組みの不備を指摘（国会会議録・2026.10.28・3発言）</description>
       <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>渡辺孝一議員逝去に伴う追悼演説の件 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261027_8897f5_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261027_8897f5_01</guid>
-      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
-      <description>逝去した渡辺孝一議員への弔詞贈呈と追悼演説の実施を決定（国会会議録・2026.10.27・2発言）</description>
-      <category>議院運営委員会</category>
     </item>
   </channel>
 </rss>
