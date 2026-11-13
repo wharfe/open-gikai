@@ -344,6 +344,27 @@
         "date": "2026.10.14"
       },
       {
+        "threadId": "t_20261016_5a7609_14",
+        "relationship": "関連議論",
+        "topic": "物価高対策と給付付き税額控除の是非",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
+      },
+      {
+        "threadId": "t_20261016_5a7609_21",
+        "relationship": "関連議論",
+        "topic": "消費税減税の実施コストと給付の迅速化",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
+      },
+      {
+        "threadId": "t_20261016_5a7609_29",
+        "relationship": "関連議論",
+        "topic": "災害に強いインフラ整備（水道・体育館エアコン）",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
+      },
+      {
         "threadId": "t_20261029_112958_01",
         "relationship": "関連議論",
         "topic": "燃料油「激変緩和措置」の見直しと今後の対応",
@@ -500,7 +521,16 @@
         "本年12月25日の子供性暴力防止法の円滑な施行に向けた準備を進める"
       ],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261030_ce226f_05",
+        "relationship": "関連議論",
+        "topic": "地方創生・デジタル・こども政策担当大臣等の所信表明及び挨拶",
+        "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
+        "date": "2026.10.30"
+      }
+    ]
   },
   {
     "id": "t_20261023_7c8d9d_04",
@@ -757,6 +787,13 @@
         "topic": "委員会構成・役員挨拶",
         "committee": "文教科学委員会",
         "date": "2026.10.22"
+      },
+      {
+        "threadId": "t_20261030_ce226f_05",
+        "relationship": "関連議論",
+        "topic": "地方創生・デジタル・こども政策担当大臣等の所信表明及び挨拶",
+        "committee": "地域活性化・こども政策・デジタル社会形成に関する特別委員会",
+        "date": "2026.10.30"
       }
     ]
   },
@@ -1704,6 +1741,27 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215383X00220261023"
+        }
+      ],
+      "news": [
+        {
+          "title": "外交、「法の支配」維持強調 米のICC制裁触れず、対中国「対話」と「強気」 首相所信表明",
+          "url": "https://www.asahi.com/articles/DA3S16560993.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 05 Oct 2026 12:59:00 GMT"
+        },
+        {
+          "title": "首相、所信表明で「法の支配」維持強調 ICC、中国…山積する課題",
+          "url": "https://www.asahi.com/articles/ASVB52RB6VB5UTFK00LM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 05 Oct 2026 02:00:00 GMT"
+        },
+        {
+          "title": "高市首相、所信表明で国際秩序の堅持訴え 乱世に危機感、「現状変更許されない」",
+          "url": "https://www.sankei.com/article/20261005-3RB7I2NKKVOGZCQJO3YSKLI3BI/",
+          "source": "産経新聞",
+          "pubDate": "Mon, 05 Oct 2026 12:16:00 GMT",
+          "image": "https://www.sankei.com/resizer/v2/JBN572A4Q5J2ZA67QDYS5YH4DM.jpg?auth=031afe10d6e15bcee5ab022c6deb91f22e98a1be9b9b0ba1fbb40bb6649cbcd6&amp;quality=50&amp;focal=1577%2C946&amp;width=1200&amp;height=675"
         }
       ]
     },

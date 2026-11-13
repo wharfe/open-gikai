@@ -512,6 +512,22 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215104X00120261022"
         }
+      ],
+      "news": [
+        {
+          "title": "ニデック会計不正、役員の法的責任を調査 委員会を設置",
+          "url": "https://www.nikkei.com/article/DGXZQOUF136M60T10C26A3000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 13 Mar 2026 10:42:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO2753733013032026000000-1.jpg?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;h=630&amp;w=1200&amp;s=c4196e92cbf9de8446a8613470d7e494"
+        },
+        {
+          "title": "外部弁護士ら委員会設置 会計不正",
+          "url": "https://www.nikkei.com/article/DGKKZO95006300T10C26A3EA5000/",
+          "source": "日本経済新聞",
+          "pubDate": "Fri, 13 Mar 2026 19:00:00 GMT",
+          "image": "https://www.nikkei.com/.resources/k-components/rectangle.rev-d54ea30.png"
+        }
       ]
     },
     "speeches": [
@@ -2262,6 +2278,15 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122214080X00120261022"
         }
+      ],
+      "news": [
+        {
+          "title": "「総務副大臣事務引継式」及び「総務副大臣・総務大臣政務官交代式」（令和8年9月24日）",
+          "url": "https://www.soumu.go.jp/photo_gallery/02koho03_03005927.html",
+          "source": "soumu.go",
+          "pubDate": "Thu, 01 Oct 2026 20:47:00 GMT",
+          "image": "https://www.soumu.go.jp/main_content/000372150.jpg"
+        }
       ]
     },
     "speeches": [
@@ -2900,6 +2925,13 @@
         "date": "2026.10.14"
       },
       {
+        "threadId": "t_20261016_5a7609_28",
+        "relationship": "同一法案",
+        "topic": "国家公務員の挑戦を促す人事評価",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
+      },
+      {
         "threadId": "t_20261021_781578_06",
         "relationship": "関連議論",
         "topic": "外務大臣所信表明と副大臣・政務官挨拶",
@@ -3134,6 +3166,13 @@
         "topic": "沖縄米兵による殺人事件と米軍綱紀粛正",
         "committee": "予算委員会",
         "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261016_5a7609_28",
+        "relationship": "同一法案",
+        "topic": "国家公務員の挑戦を促す人事評価",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
       }
     ]
   },
@@ -3154,6 +3193,21 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122213950X00120261022"
+        }
+      ],
+      "news": [
+        {
+          "title": "生稲晃子政務官と朝日健太郎副大臣に公選法違反の疑い《公示日前に「観劇会」で…》",
+          "url": "https://bunshun.jp/articles/-/92458",
+          "source": "週刊文春",
+          "pubDate": "Wed, 30 Sep 2026 18:00:00 GMT",
+          "image": "https://bunshun.jp/mwimgs/9/0/1200wm/img_9018745cf0341344a3adf50c5d84564b165954.jpg"
+        },
+        {
+          "title": "朝日副大臣と生稲政務官、参院選前の「事前運動」疑い報道を釈明",
+          "url": "https://www.asahi.com/articles/ASVB52WB6VB5UTFK00MM.html",
+          "source": "朝日新聞社",
+          "pubDate": "Mon, 05 Oct 2026 02:34:00 GMT"
         }
       ]
     },
@@ -3619,6 +3673,13 @@
         "topic": "実質賃金低迷と食料品減税の実効性",
         "committee": "予算委員会",
         "date": "2026.10.14"
+      },
+      {
+        "threadId": "t_20261016_5a7609_22",
+        "relationship": "関連議論",
+        "topic": "生食ジャガイモ輸入と米価格",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
       },
       {
         "threadId": "t_20261021_4b826f_12",

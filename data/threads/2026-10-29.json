@@ -188,6 +188,13 @@
         "date": "2026.08.25"
       },
       {
+        "threadId": "t_20261016_5a7609_14",
+        "relationship": "関連議論",
+        "topic": "物価高対策と給付付き税額控除の是非",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
+      },
+      {
         "threadId": "t_20261021_6eaddc_02",
         "relationship": "関連議論",
         "topic": "物価高対策の実施状況と評価",
@@ -220,6 +227,14 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122204033X00420261029"
+        }
+      ],
+      "news": [
+        {
+          "title": "衆議院 請願の電子化・立法へのAI活用で与野党一致",
+          "url": "https://www.msn.com/ja-jp/news/other/%E8%A1%86%E8%AD%B0%E9%99%A2-%E8%AB%8B%E9%A1%98%E3%81%AE%E9%9B%BB%E5%AD%90%E5%8C%96-%E7%AB%8B%E6%B3%95%E3%81%B8%E3%81%AEai%E6%B4%BB%E7%94%A8%E3%81%A7%E4%B8%8E%E9%87%8E%E5%85%9A%E4%B8%80%E8%87%B4/ar-AA2giY4v",
+          "source": "MSN",
+          "pubDate": "Thu, 29 Oct 2026 06:34:00 GMT"
         }
       ]
     },
