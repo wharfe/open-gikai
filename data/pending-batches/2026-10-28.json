@@ -1,0 +1,99 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-28",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01AHE7YV15NwKz3TAESVopJp",
+      "submitted_at": "2026-11-13T01:53:06Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_沖縄・北方問題及び地方に関する特別委員会_2026-10-28_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_1e478b441190_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "沖縄強盗殺人事件を受けた所信表明",
+            "topicTag": "所信表明",
+            "topicColor": "#ef4444",
+            "summary": "沖縄で発生した米兵による強盗殺人事件への哀悼と、沖縄・北方・地方創生各大臣の所信表明",
+            "contextDescription": "2026年10月3日沖縄で米海兵隊員による強盗殺人事件が発生し、関係大臣が所信を述べた。",
+            "legislationName": null,
+            "speechOrders": [
+              3,
+              5,
+              7
+            ]
+          },
+          "speechOrders": [
+            3,
+            5,
+            7
+          ],
+          "input_hash": "sha256:2d1cb549c4789bf7e4fbdc23c37660e6cdb7dd5335fd5dafd466c18112ca8a37"
+        },
+        {
+          "custom_id": "s_1e478b441190_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "副大臣・政務官の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "沖縄・北方、外務、総務・内閣府の各副大臣・大臣政務官が就任の挨拶を行った",
+            "contextDescription": "内閣改造等に伴い新たに就任した副大臣・大臣政務官が委員会で挨拶を述べる場。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              11,
+              13,
+              15,
+              17,
+              19,
+              21
+            ]
+          },
+          "speechOrders": [
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21
+          ],
+          "input_hash": "sha256:e270c455400186c4504ad8318dd5b557f5ec2d329633e7c689264241446e49b6"
+        },
+        {
+          "custom_id": "s_1e478b441190_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "沖縄委員派遣調査報告",
+            "topicTag": "視察報告",
+            "topicColor": "#6b7280",
+            "summary": "沖縄の振興開発及び基地問題等の実情調査のための委員派遣結果を報告",
+            "contextDescription": "2026年7月に沖縄県へ委員派遣を行い、基地問題や振興策について現地調査した結果の報告。",
+            "legislationName": null,
+            "speechOrders": [
+              24
+            ]
+          },
+          "speechOrders": [
+            24
+          ],
+          "input_hash": "sha256:2272bec82a21f570a107e7e7aaef0eacc79d74c8e1ffd6f88dcd85bedd0c7043"
+        }
+      ]
+    }
+  ]
+}
