@@ -1,0 +1,66 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-11",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01DbVFotHw9UC8fsf8o1F1eX",
+      "submitted_at": "2026-11-14T01:32:28Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会国会法改正等及び国会改革に関する小委員会_2026-11-11_第5号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_391911acc31e_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "タブレット端末使用と質疑時間モニター化",
+            "topicTag": "国会改革",
+            "topicColor": "#f97316",
+            "summary": "委員会でのタブレット端末使用や質疑時間管理のモニター化について懇談形式で協議した",
+            "contextDescription": "国会審議の効率化・IT化を目指し、委員会でのタブレット端末利用や質疑時間表示のデジタル化を検討する議論。",
+            "legislationName": null,
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:db462757aebf73f02ae0efaac7fc821e07e41fa156dcc4530658107ebc322bfe"
+        },
+        {
+          "custom_id": "s_391911acc31e_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "委員会配付資料の公開等",
+            "topicTag": "資料公開",
+            "topicColor": "#f97316",
+            "summary": "委員会で配付される資料の公開方法について各会派で検討し次回協議することとした",
+            "contextDescription": "国会審議の透明性向上のため、委員会で配付される資料を広く公開する仕組みについての検討。",
+            "legislationName": null,
+            "speechOrders": [
+              3
+            ]
+          },
+          "speechOrders": [
+            3
+          ],
+          "input_hash": "sha256:0dbdae6e0325ba1d34cca3b2fd03c2f750bfe60956bdbfaad0faf2cc913b1c1e"
+        }
+      ]
+    }
+  ]
+}
