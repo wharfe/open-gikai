@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://open-gikai.net/gov</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/chusho</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -56,25 +56,25 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/enecho</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/env</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/fdma</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/fsa</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -98,13 +98,13 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/jfa</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://open-gikai.net/gov/jftc</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/mext</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/mof</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -200,7 +200,7 @@
   </url>
   <url>
     <loc>https://open-gikai.net/gov/nta</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

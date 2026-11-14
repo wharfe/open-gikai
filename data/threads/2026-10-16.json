@@ -1955,6 +1955,28 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215261X00120261016"
         }
+      ],
+      "news": [
+        {
+          "title": "【やさしく解説】9条に緊急事態条項、憲法改正の主要な論点とは？与野党の立場は？（後編）",
+          "url": "https://www.jiji.com/jc/v8?id=202611constitutional-amendment-team02",
+          "source": "時事ドットコム",
+          "pubDate": "Sun, 01 Nov 2026 16:01:00 GMT",
+          "image": "https://www.jiji.com/news/handmade/special/feature/v8/photos/2026/202611constitutional-amendment-team02/202611constitutional-amendment-team02-202611con-amend11-1200.jpg"
+        },
+        {
+          "title": "「緊急事態条項」は80年前に議論が終わっていた？ 憲法学者・長谷部恭男が明かす、1946年の意外な国会答弁【憲法公布80周年】",
+          "url": "https://dot.asahi.com/books/articles/-/295815",
+          "source": "AERA dot. (アエラドット)",
+          "pubDate": "Mon, 09 Nov 2026 16:00:00 GMT",
+          "image": "https://aeradot.ismcdn.jp/mwimgs/9/2/1200xm/img_92c296b3379027d9bc6704e9338ce7d8165705.jpg"
+        },
+        {
+          "title": "与党、改憲へ議論推進＝立民は高市首相批判―参院憲法審",
+          "url": "https://www.msn.com/ja-jp/news/other/%E4%B8%8E%E5%85%9A-%E6%94%B9%E6%86%B2%E3%81%B8%E8%AD%B0%E8%AB%96%E6%8E%A8%E9%80%B2-%E7%AB%8B%E6%B0%91%E3%81%AF%E9%AB%98%E5%B8%82%E9%A6%96%E7%9B%B8%E6%89%B9%E5%88%A4-%E5%8F%82%E9%99%A2%E6%86%B2%E6%B3%95%E5%AF%A9/ar-AA2gJ0vt",
+          "source": "時事ドットコム on MSN",
+          "pubDate": "Wed, 04 Nov 2026 00:15:35 GMT"
+        }
       ]
     },
     "speeches": [
@@ -13854,6 +13876,22 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215261X00120261016"
+        }
+      ],
+      "news": [
+        {
+          "title": "ついに定額制導入か、高速道路が1000円で走り放題に",
+          "url": "https://news.livedoor.com/article/detail/3878611/",
+          "source": "livedoor ニュース",
+          "pubDate": "Wed, 29 Oct 2025 08:21:00 GMT",
+          "image": "https://news.livedoor.com/img/fb/news.png?v=20261109_11"
+        },
+        {
+          "title": "なぜ高速道路料金は高額なのか？ 元トヨタ副社長、「定額化」こそ経済活性のカギ！",
+          "url": "https://news.livedoor.com/article/detail/21538918/",
+          "source": "livedoor ニュース",
+          "pubDate": "Tue, 20 Jan 2026 03:45:00 GMT",
+          "image": "https://image.news.livedoor.com/newsimage/stf/d/0/d00dc_1061_0b4b5e55_5305b191.jpg"
         }
       ]
     },

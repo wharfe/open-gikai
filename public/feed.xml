@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 13 Nov 2026 02:01:41 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 01:40:47 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W46 国会まとめ — 4件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W46</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W46</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>4件のスレッド、2委員会の議論をまとめました。議院運営委員会国会法改正等及び国会改革に関する小委員会、議院運営委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W45 国会まとめ — 9件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W45</link>
@@ -16,11 +24,11 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W44 国会まとめ — 88件の議論</title>
+      <title>2026-W44 国会まとめ — 143件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>88件のスレッド、10委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
+      <description>143件のスレッド、12委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -32,12 +40,36 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W42 国会まとめ — 121件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W42</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W42</guid>
-      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
-      <description>121件のスレッド、4委員会の議論をまとめました。議院運営委員会国会法改正等及び国会改革に関する小委員会、予算委員会、閣僚人事等についての会見ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>タブレット端末使用と質疑時間モニター化 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_391911_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_391911_01</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>委員会でのタブレット端末使用や質疑時間管理のモニター化について懇談形式で協議した（国会会議録・2026.11.11・2発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>委員会配付資料の公開等 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_391911_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_391911_02</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>委員会で配付される資料の公開方法について各会派で検討し次回協議することとした（国会会議録・2026.11.11・1発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>本会議討論・趣旨説明に関する運営協議 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_ed4978_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_ed4978_01</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>本会議での討論者・討論時間や趣旨説明の担当大臣を委員長が確認し決定した（国会会議録・2026.11.10・3発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本会議の議事日程と採決結果の報告 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_ed4978_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_ed4978_02</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>事務総長が本会議の議事日程、委員長報告内容、各案件の採決結果を報告した（国会会議録・2026.11.10・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>就業者租税・消費税負担軽減法案の緊急上程 — 議院運営委員会</title>
@@ -405,38 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_29</guid>
       <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
       <description>国家安全保障戦略に基づくサイバー対処能力強化法制定後の体制整備の実効性を問う（国会会議録・2026.10.28・2発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>AI悪用への対抗策と政府統一基準の見直し — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_30</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_30</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>AI悪用による高速化する攻撃に対応するため政府統一基準の脆弱性対策強化を確認（国会会議録・2026.10.28・5発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>サイバー人材の報酬水準引き上げ — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_31</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_31</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>高度人材採用のための特定任期付職員制度があるが高報酬採用実績ゼロの実態を追及（国会会議録・2026.10.28・7発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>軍事AIと自律型致死兵器システム(LAWS) — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_32</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_32</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>完全自律型致死兵器は開発しない立場だが、人間関与のある軍事AI導入の是非を問う（国会会議録・2026.10.28・12発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>GMOサイバー攻撃と能動的サイバー防御(ACD)適用 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_33</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_33</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>特別社会基盤事業者以外の企業からのACD適用要請を巡る法的枠組みの不備を指摘（国会会議録・2026.10.28・3発言）</description>
       <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
     </item>
   </channel>

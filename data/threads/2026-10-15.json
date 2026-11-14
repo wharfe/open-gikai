@@ -355,6 +355,15 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261016_5a7609_19",
+        "relationship": "関連議論",
+        "topic": "ロシアによる邦人拘束事案",
+        "committee": "予算委員会",
+        "date": "2026.10.16"
+      }
+    ]
   }
 ]

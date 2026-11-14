@@ -1,6 +1,6 @@
 {
   "2023-03-31": {
-    "updatedAt": "2026-11-13T02:01:40.506524Z",
+    "updatedAt": "2026-11-14T01:40:46.021958Z",
     "phase": "completed",
     "committees": [
       {
@@ -17,7 +17,7 @@
     }
   },
   "2023-06-02": {
-    "updatedAt": "2026-11-13T02:01:40.507086Z",
+    "updatedAt": "2026-11-14T01:40:46.022448Z",
     "phase": "completed",
     "committees": [
       {
@@ -34,7 +34,7 @@
     }
   },
   "2023-07-03": {
-    "updatedAt": "2026-11-13T02:01:40.507601Z",
+    "updatedAt": "2026-11-14T01:40:46.022880Z",
     "phase": "completed",
     "committees": [
       {
@@ -51,7 +51,7 @@
     }
   },
   "2023-08-01": {
-    "updatedAt": "2026-11-13T02:01:40.508553Z",
+    "updatedAt": "2026-11-14T01:40:46.023680Z",
     "phase": "completed",
     "committees": [
       {
@@ -68,7 +68,7 @@
     }
   },
   "2023-08-03": {
-    "updatedAt": "2026-11-13T02:01:40.509122Z",
+    "updatedAt": "2026-11-14T01:40:46.024137Z",
     "phase": "completed",
     "committees": [
       {
@@ -85,7 +85,7 @@
     }
   },
   "2023-08-28": {
-    "updatedAt": "2026-11-13T02:01:40.510088Z",
+    "updatedAt": "2026-11-14T01:40:46.024940Z",
     "phase": "completed",
     "committees": [
       {
@@ -102,7 +102,7 @@
     }
   },
   "2023-09-21": {
-    "updatedAt": "2026-11-13T02:01:40.511219Z",
+    "updatedAt": "2026-11-14T01:40:46.025876Z",
     "phase": "completed",
     "committees": [
       {
@@ -119,7 +119,7 @@
     }
   },
   "2023-10-06": {
-    "updatedAt": "2026-11-13T02:01:40.511844Z",
+    "updatedAt": "2026-11-14T01:40:46.026381Z",
     "phase": "completed",
     "committees": [
       {
@@ -136,7 +136,7 @@
     }
   },
   "2023-10-19": {
-    "updatedAt": "2026-11-13T02:01:40.512372Z",
+    "updatedAt": "2026-11-14T01:40:46.026809Z",
     "phase": "completed",
     "committees": [
       {
@@ -153,7 +153,7 @@
     }
   },
   "2023-11-22": {
-    "updatedAt": "2026-11-13T02:01:40.512477Z",
+    "updatedAt": "2026-11-14T01:40:46.026890Z",
     "phase": "completed",
     "committees": [
       {
@@ -170,7 +170,7 @@
     }
   },
   "2023-12-05": {
-    "updatedAt": "2026-11-13T02:01:40.513882Z",
+    "updatedAt": "2026-11-14T01:40:46.028017Z",
     "phase": "completed",
     "committees": [
       {
@@ -187,7 +187,7 @@
     }
   },
   "2023-12-12": {
-    "updatedAt": "2026-11-13T02:01:40.514074Z",
+    "updatedAt": "2026-11-14T01:40:46.028178Z",
     "phase": "completed",
     "committees": [
       {
@@ -204,7 +204,7 @@
     }
   },
   "2023-12-14": {
-    "updatedAt": "2026-11-13T02:01:40.514483Z",
+    "updatedAt": "2026-11-14T01:40:46.028550Z",
     "phase": "completed",
     "committees": [
       {
@@ -221,7 +221,7 @@
     }
   },
   "2024-01-19": {
-    "updatedAt": "2026-11-13T02:01:40.514876Z",
+    "updatedAt": "2026-11-14T01:40:46.028862Z",
     "phase": "completed",
     "committees": [
       {
@@ -238,7 +238,7 @@
     }
   },
   "2024-06-10": {
-    "updatedAt": "2026-11-13T02:01:40.515253Z",
+    "updatedAt": "2026-11-14T01:40:46.029183Z",
     "phase": "completed",
     "committees": [
       {
@@ -255,7 +255,7 @@
     }
   },
   "2024-09-03": {
-    "updatedAt": "2026-11-13T02:01:40.516034Z",
+    "updatedAt": "2026-11-14T01:40:46.029833Z",
     "phase": "completed",
     "committees": [
       {
@@ -272,7 +272,7 @@
     }
   },
   "2024-11-29": {
-    "updatedAt": "2026-11-13T02:01:40.516694Z",
+    "updatedAt": "2026-11-14T01:40:46.030350Z",
     "phase": "completed",
     "committees": [
       {
@@ -289,7 +289,7 @@
     }
   },
   "2024-12-11": {
-    "updatedAt": "2026-11-13T02:01:40.516910Z",
+    "updatedAt": "2026-11-14T01:40:46.030533Z",
     "phase": "completed",
     "committees": [
       {
@@ -306,7 +306,7 @@
     }
   },
   "2025-01-22": {
-    "updatedAt": "2026-11-13T02:01:40.517092Z",
+    "updatedAt": "2026-11-14T01:40:46.030675Z",
     "phase": "completed",
     "committees": [
       {
@@ -335,7 +335,7 @@
     }
   },
   "2025-01-23": {
-    "updatedAt": "2026-11-13T02:01:40.519672Z",
+    "updatedAt": "2026-11-14T01:40:46.032840Z",
     "phase": "completed",
     "committees": [
       {
@@ -358,7 +358,7 @@
     }
   },
   "2025-01-24": {
-    "updatedAt": "2026-11-13T02:01:40.521170Z",
+    "updatedAt": "2026-11-14T01:40:46.034084Z",
     "phase": "completed",
     "committees": [
       {
@@ -411,7 +411,7 @@
     }
   },
   "2025-01-25": {
-    "updatedAt": "2026-11-13T02:01:40.522025Z",
+    "updatedAt": "2026-11-14T01:40:46.034774Z",
     "phase": "completed",
     "committees": [
       {
@@ -428,7 +428,7 @@
     }
   },
   "2025-01-27": {
-    "updatedAt": "2026-11-13T02:01:40.522939Z",
+    "updatedAt": "2026-11-14T01:40:46.035506Z",
     "phase": "completed",
     "committees": [
       {
@@ -451,7 +451,7 @@
     }
   },
   "2025-01-28": {
-    "updatedAt": "2026-11-13T02:01:40.524178Z",
+    "updatedAt": "2026-11-14T01:40:46.036538Z",
     "phase": "completed",
     "committees": [
       {
@@ -486,7 +486,7 @@
     }
   },
   "2025-01-29": {
-    "updatedAt": "2026-11-13T02:01:40.525301Z",
+    "updatedAt": "2026-11-14T01:40:46.037463Z",
     "phase": "completed",
     "committees": [
       {
@@ -509,7 +509,7 @@
     }
   },
   "2025-01-30": {
-    "updatedAt": "2026-11-13T02:01:40.525504Z",
+    "updatedAt": "2026-11-14T01:40:46.037632Z",
     "phase": "completed",
     "committees": [
       {
@@ -526,7 +526,7 @@
     }
   },
   "2025-02-05": {
-    "updatedAt": "2026-11-13T02:01:40.526255Z",
+    "updatedAt": "2026-11-14T01:40:46.038238Z",
     "phase": "completed",
     "committees": [
       {
@@ -543,7 +543,7 @@
     }
   },
   "2025-02-22": {
-    "updatedAt": "2026-11-13T02:01:40.527368Z",
+    "updatedAt": "2026-11-14T01:40:46.039127Z",
     "phase": "completed",
     "committees": [
       {
@@ -560,7 +560,7 @@
     }
   },
   "2025-03-15": {
-    "updatedAt": "2026-11-13T02:01:40.528278Z",
+    "updatedAt": "2026-11-14T01:40:46.039876Z",
     "phase": "completed",
     "committees": [
       {
@@ -577,7 +577,7 @@
     }
   },
   "2025-03-19": {
-    "updatedAt": "2026-11-13T02:01:40.528927Z",
+    "updatedAt": "2026-11-14T01:40:46.040411Z",
     "phase": "completed",
     "committees": [
       {
@@ -594,7 +594,7 @@
     }
   },
   "2025-04-12": {
-    "updatedAt": "2026-11-13T02:01:40.529572Z",
+    "updatedAt": "2026-11-14T01:40:46.040935Z",
     "phase": "completed",
     "committees": [
       {
@@ -611,7 +611,7 @@
     }
   },
   "2025-04-18": {
-    "updatedAt": "2026-11-13T02:01:40.530226Z",
+    "updatedAt": "2026-11-14T01:40:46.041454Z",
     "phase": "completed",
     "committees": [
       {
@@ -628,7 +628,7 @@
     }
   },
   "2025-05-13": {
-    "updatedAt": "2026-11-13T02:01:40.531110Z",
+    "updatedAt": "2026-11-14T01:40:46.042149Z",
     "phase": "completed",
     "committees": [
       {
@@ -645,7 +645,7 @@
     }
   },
   "2025-05-22": {
-    "updatedAt": "2026-11-13T02:01:40.532152Z",
+    "updatedAt": "2026-11-14T01:40:46.042958Z",
     "phase": "completed",
     "committees": [
       {
@@ -662,7 +662,7 @@
     }
   },
   "2025-05-28": {
-    "updatedAt": "2026-11-13T02:01:40.532852Z",
+    "updatedAt": "2026-11-14T01:40:46.043522Z",
     "phase": "completed",
     "committees": [
       {
@@ -679,7 +679,7 @@
     }
   },
   "2025-06-03": {
-    "updatedAt": "2026-11-13T02:01:40.533479Z",
+    "updatedAt": "2026-11-14T01:40:46.044025Z",
     "phase": "completed",
     "committees": [
       {
@@ -696,7 +696,7 @@
     }
   },
   "2025-06-13": {
-    "updatedAt": "2026-11-13T02:01:40.534130Z",
+    "updatedAt": "2026-11-14T01:40:46.044556Z",
     "phase": "completed",
     "committees": [
       {
@@ -713,7 +713,7 @@
     }
   },
   "2025-08-01": {
-    "updatedAt": "2026-11-13T02:01:40.534745Z",
+    "updatedAt": "2026-11-14T01:40:46.045028Z",
     "phase": "completed",
     "committees": [
       {
@@ -760,7 +760,7 @@
     }
   },
   "2025-08-04": {
-    "updatedAt": "2026-11-13T02:01:40.536183Z",
+    "updatedAt": "2026-11-14T01:40:46.046200Z",
     "phase": "completed",
     "committees": [
       {
@@ -777,7 +777,7 @@
     }
   },
   "2025-08-05": {
-    "updatedAt": "2026-11-13T02:01:40.538087Z",
+    "updatedAt": "2026-11-14T01:40:46.047766Z",
     "phase": "completed",
     "committees": [
       {
@@ -902,7 +902,7 @@
     }
   },
   "2025-09-12": {
-    "updatedAt": "2026-11-13T02:01:40.539819Z",
+    "updatedAt": "2026-11-14T01:40:46.049153Z",
     "phase": "completed",
     "committees": [
       {
@@ -919,7 +919,7 @@
     }
   },
   "2025-09-19": {
-    "updatedAt": "2026-11-13T02:01:40.540497Z",
+    "updatedAt": "2026-11-14T01:40:46.049704Z",
     "phase": "completed",
     "committees": [
       {
@@ -936,7 +936,7 @@
     }
   },
   "2025-10-03": {
-    "updatedAt": "2026-11-13T02:01:40.540819Z",
+    "updatedAt": "2026-11-14T01:40:46.049951Z",
     "phase": "completed",
     "committees": [
       {
@@ -953,7 +953,7 @@
     }
   },
   "2025-10-21": {
-    "updatedAt": "2026-11-13T02:01:40.541785Z",
+    "updatedAt": "2026-11-14T01:40:46.050750Z",
     "phase": "completed",
     "committees": [
       {
@@ -1018,7 +1018,7 @@
     }
   },
   "2025-10-24": {
-    "updatedAt": "2026-11-13T02:01:40.542266Z",
+    "updatedAt": "2026-11-14T01:40:46.051141Z",
     "phase": "completed",
     "committees": [
       {
@@ -1065,7 +1065,7 @@
     }
   },
   "2025-11-04": {
-    "updatedAt": "2026-11-13T02:01:40.542855Z",
+    "updatedAt": "2026-11-14T01:40:46.051641Z",
     "phase": "completed",
     "committees": [
       {
@@ -1088,7 +1088,7 @@
     }
   },
   "2025-11-05": {
-    "updatedAt": "2026-11-13T02:01:40.543901Z",
+    "updatedAt": "2026-11-14T01:40:46.052502Z",
     "phase": "completed",
     "committees": [
       {
@@ -1123,7 +1123,7 @@
     }
   },
   "2025-11-06": {
-    "updatedAt": "2026-11-13T02:01:40.544507Z",
+    "updatedAt": "2026-11-14T01:40:46.052995Z",
     "phase": "completed",
     "committees": [
       {
@@ -1140,7 +1140,7 @@
     }
   },
   "2025-11-11": {
-    "updatedAt": "2026-11-13T02:01:40.547473Z",
+    "updatedAt": "2026-11-14T01:40:46.055441Z",
     "phase": "completed",
     "committees": [
       {
@@ -1157,7 +1157,7 @@
     }
   },
   "2025-11-13": {
-    "updatedAt": "2026-11-13T02:01:40.550508Z",
+    "updatedAt": "2026-11-14T01:40:46.057921Z",
     "phase": "completed",
     "committees": [
       {
@@ -1174,7 +1174,7 @@
     }
   },
   "2025-11-14": {
-    "updatedAt": "2026-11-13T02:01:40.554289Z",
+    "updatedAt": "2026-11-14T01:40:46.061064Z",
     "phase": "completed",
     "committees": [
       {
@@ -1215,7 +1215,7 @@
     }
   },
   "2025-11-18": {
-    "updatedAt": "2026-11-13T02:01:40.558400Z",
+    "updatedAt": "2026-11-14T01:40:46.064399Z",
     "phase": "completed",
     "committees": [
       {
@@ -1298,7 +1298,7 @@
     }
   },
   "2025-11-19": {
-    "updatedAt": "2026-11-13T02:01:40.568967Z",
+    "updatedAt": "2026-11-14T01:40:46.072914Z",
     "phase": "completed",
     "committees": [
       {
@@ -1375,7 +1375,7 @@
     }
   },
   "2025-11-20": {
-    "updatedAt": "2026-11-13T02:01:40.596165Z",
+    "updatedAt": "2026-11-14T01:40:46.095077Z",
     "phase": "completed",
     "committees": [
       {
@@ -1458,7 +1458,7 @@
     }
   },
   "2025-11-21": {
-    "updatedAt": "2026-11-13T02:01:40.613712Z",
+    "updatedAt": "2026-11-14T01:40:46.109056Z",
     "phase": "completed",
     "committees": [
       {
@@ -1535,7 +1535,7 @@
     }
   },
   "2025-11-25": {
-    "updatedAt": "2026-11-13T02:01:40.621142Z",
+    "updatedAt": "2026-11-14T01:40:46.115004Z",
     "phase": "completed",
     "committees": [
       {
@@ -1582,7 +1582,7 @@
     }
   },
   "2025-11-26": {
-    "updatedAt": "2026-11-13T02:01:40.629411Z",
+    "updatedAt": "2026-11-14T01:40:46.121619Z",
     "phase": "completed",
     "committees": [
       {
@@ -1641,7 +1641,7 @@
     }
   },
   "2025-11-27": {
-    "updatedAt": "2026-11-13T02:01:40.636269Z",
+    "updatedAt": "2026-11-14T01:40:46.127149Z",
     "phase": "completed",
     "committees": [
       {
@@ -1718,7 +1718,7 @@
     }
   },
   "2025-11-28": {
-    "updatedAt": "2026-11-13T02:01:40.646077Z",
+    "updatedAt": "2026-11-14T01:40:46.134594Z",
     "phase": "completed",
     "committees": [
       {
@@ -1777,7 +1777,7 @@
     }
   },
   "2025-12-01": {
-    "updatedAt": "2026-11-13T02:01:40.647032Z",
+    "updatedAt": "2026-11-14T01:40:46.135361Z",
     "phase": "completed",
     "committees": [
       {
@@ -1800,7 +1800,7 @@
     }
   },
   "2025-12-02": {
-    "updatedAt": "2026-11-13T02:01:40.654618Z",
+    "updatedAt": "2026-11-14T01:40:46.141461Z",
     "phase": "completed",
     "committees": [
       {
@@ -1865,7 +1865,7 @@
     }
   },
   "2025-12-03": {
-    "updatedAt": "2026-11-13T02:01:40.658737Z",
+    "updatedAt": "2026-11-14T01:40:46.144914Z",
     "phase": "completed",
     "committees": [
       {
@@ -1912,7 +1912,7 @@
     }
   },
   "2025-12-04": {
-    "updatedAt": "2026-11-13T02:01:40.671492Z",
+    "updatedAt": "2026-11-14T01:40:46.155317Z",
     "phase": "completed",
     "committees": [
       {
@@ -1983,7 +1983,7 @@
     }
   },
   "2025-12-05": {
-    "updatedAt": "2026-11-13T02:01:40.680372Z",
+    "updatedAt": "2026-11-14T01:40:46.162389Z",
     "phase": "completed",
     "committees": [
       {
@@ -2048,7 +2048,7 @@
     }
   },
   "2025-12-08": {
-    "updatedAt": "2026-11-13T02:01:40.683969Z",
+    "updatedAt": "2026-11-14T01:40:46.165279Z",
     "phase": "completed",
     "committees": [
       {
@@ -2101,7 +2101,7 @@
     }
   },
   "2025-12-09": {
-    "updatedAt": "2026-11-13T02:01:40.687937Z",
+    "updatedAt": "2026-11-14T01:40:46.168502Z",
     "phase": "completed",
     "committees": [
       {
@@ -2130,7 +2130,7 @@
     }
   },
   "2025-12-10": {
-    "updatedAt": "2026-11-13T02:01:40.691986Z",
+    "updatedAt": "2026-11-14T01:40:46.171832Z",
     "phase": "completed",
     "committees": [
       {
@@ -2165,7 +2165,7 @@
     }
   },
   "2025-12-11": {
-    "updatedAt": "2026-11-13T02:01:40.698935Z",
+    "updatedAt": "2026-11-14T01:40:46.177487Z",
     "phase": "completed",
     "committees": [
       {
@@ -2218,7 +2218,7 @@
     }
   },
   "2025-12-15": {
-    "updatedAt": "2026-11-13T02:01:40.700079Z",
+    "updatedAt": "2026-11-14T01:40:46.178447Z",
     "phase": "completed",
     "committees": [
       {
@@ -2235,7 +2235,7 @@
     }
   },
   "2025-12-16": {
-    "updatedAt": "2026-11-13T02:01:40.704945Z",
+    "updatedAt": "2026-11-14T01:40:46.182323Z",
     "phase": "completed",
     "committees": [
       {
@@ -2288,7 +2288,7 @@
     }
   },
   "2025-12-17": {
-    "updatedAt": "2026-11-13T02:01:40.706362Z",
+    "updatedAt": "2026-11-14T01:40:46.183504Z",
     "phase": "completed",
     "committees": [
       {
@@ -2437,7 +2437,7 @@
     }
   },
   "2025-12-18": {
-    "updatedAt": "2026-11-13T02:01:40.710525Z",
+    "updatedAt": "2026-11-14T01:40:46.186921Z",
     "phase": "completed",
     "committees": [
       {
@@ -2466,7 +2466,7 @@
     }
   },
   "2025-12-24": {
-    "updatedAt": "2026-11-13T02:01:40.711013Z",
+    "updatedAt": "2026-11-14T01:40:46.187319Z",
     "phase": "completed",
     "committees": [
       {
@@ -2483,7 +2483,7 @@
     }
   },
   "2026-01-09": {
-    "updatedAt": "2026-11-13T02:01:40.711312Z",
+    "updatedAt": "2026-11-14T01:40:46.187573Z",
     "phase": "completed",
     "committees": [
       {
@@ -2500,7 +2500,7 @@
     }
   },
   "2026-01-23": {
-    "updatedAt": "2026-11-13T02:01:40.711758Z",
+    "updatedAt": "2026-11-14T01:40:46.187920Z",
     "phase": "completed",
     "committees": [
       {
@@ -2541,7 +2541,7 @@
     }
   },
   "2026-02-03": {
-    "updatedAt": "2026-11-13T02:01:40.712411Z",
+    "updatedAt": "2026-11-14T01:40:46.188477Z",
     "phase": "completed",
     "committees": [
       {
@@ -2558,7 +2558,7 @@
     }
   },
   "2026-02-18": {
-    "updatedAt": "2026-11-13T02:01:40.713547Z",
+    "updatedAt": "2026-11-14T01:40:46.189388Z",
     "phase": "completed",
     "committees": [
       {
@@ -2599,7 +2599,7 @@
     }
   },
   "2026-02-19": {
-    "updatedAt": "2026-11-13T02:01:40.713898Z",
+    "updatedAt": "2026-11-14T01:40:46.189658Z",
     "phase": "completed",
     "committees": [
       {
@@ -2634,7 +2634,7 @@
     }
   },
   "2026-02-20": {
-    "updatedAt": "2026-11-13T02:01:40.714312Z",
+    "updatedAt": "2026-11-14T01:40:46.189983Z",
     "phase": "completed",
     "committees": [
       {
@@ -2693,7 +2693,7 @@
     }
   },
   "2026-02-24": {
-    "updatedAt": "2026-11-13T02:01:40.714391Z",
+    "updatedAt": "2026-11-14T01:40:46.190041Z",
     "phase": "completed",
     "committees": [
       {
@@ -2710,7 +2710,7 @@
     }
   },
   "2026-02-25": {
-    "updatedAt": "2026-11-13T02:01:40.714468Z",
+    "updatedAt": "2026-11-14T01:40:46.190096Z",
     "phase": "completed",
     "committees": [
       {
@@ -2733,7 +2733,7 @@
     }
   },
   "2026-02-26": {
-    "updatedAt": "2026-11-13T02:01:40.714609Z",
+    "updatedAt": "2026-11-14T01:40:46.190208Z",
     "phase": "completed",
     "committees": [
       {
@@ -2756,7 +2756,7 @@
     }
   },
   "2026-02-28": {
-    "updatedAt": "2026-11-13T02:01:40.714692Z",
+    "updatedAt": "2026-11-14T01:40:46.190247Z",
     "phase": "completed",
     "committees": [
       {
@@ -2773,7 +2773,7 @@
     }
   },
   "2026-03-03": {
-    "updatedAt": "2026-11-13T02:01:40.715440Z",
+    "updatedAt": "2026-11-14T01:40:46.190853Z",
     "phase": "completed",
     "committees": [
       {
@@ -2802,7 +2802,7 @@
     }
   },
   "2026-03-04": {
-    "updatedAt": "2026-11-13T02:01:40.717437Z",
+    "updatedAt": "2026-11-14T01:40:46.192933Z",
     "phase": "completed",
     "committees": [
       {
@@ -2831,7 +2831,7 @@
     }
   },
   "2026-03-05": {
-    "updatedAt": "2026-11-13T02:01:40.717604Z",
+    "updatedAt": "2026-11-14T01:40:46.193145Z",
     "phase": "completed",
     "committees": [
       {
@@ -2848,7 +2848,7 @@
     }
   },
   "2026-03-10": {
-    "updatedAt": "2026-11-13T02:01:40.717736Z",
+    "updatedAt": "2026-11-14T01:40:46.193295Z",
     "phase": "completed",
     "committees": [
       {
@@ -2865,7 +2865,7 @@
     }
   },
   "2026-03-11": {
-    "updatedAt": "2026-11-13T02:01:40.717817Z",
+    "updatedAt": "2026-11-14T01:40:46.193398Z",
     "phase": "completed",
     "committees": [
       {
@@ -2882,7 +2882,7 @@
     }
   },
   "2026-03-12": {
-    "updatedAt": "2026-11-13T02:01:40.718931Z",
+    "updatedAt": "2026-11-14T01:40:46.194905Z",
     "phase": "completed",
     "committees": [
       {
@@ -2899,7 +2899,7 @@
     }
   },
   "2026-03-13": {
-    "updatedAt": "2026-11-13T02:01:40.719175Z",
+    "updatedAt": "2026-11-14T01:40:46.195189Z",
     "phase": "completed",
     "committees": [
       {
@@ -2916,7 +2916,7 @@
     }
   },
   "2026-03-19": {
-    "updatedAt": "2026-11-13T02:01:40.719311Z",
+    "updatedAt": "2026-11-14T01:40:46.195354Z",
     "phase": "completed",
     "committees": [
       {
@@ -2933,7 +2933,7 @@
     }
   },
   "2026-03-26": {
-    "updatedAt": "2026-11-13T02:01:40.719395Z",
+    "updatedAt": "2026-11-14T01:40:46.195465Z",
     "phase": "completed",
     "committees": [
       {
@@ -2950,7 +2950,7 @@
     }
   },
   "2026-03-30": {
-    "updatedAt": "2026-11-13T02:01:40.719443Z",
+    "updatedAt": "2026-11-14T01:40:46.195510Z",
     "phase": "completed",
     "committees": [
       {
@@ -2967,7 +2967,7 @@
     }
   },
   "2026-04-02": {
-    "updatedAt": "2026-11-13T02:01:40.719514Z",
+    "updatedAt": "2026-11-14T01:40:46.195589Z",
     "phase": "completed",
     "committees": [
       {
@@ -2984,7 +2984,7 @@
     }
   },
   "2026-04-07": {
-    "updatedAt": "2026-11-13T02:01:40.719638Z",
+    "updatedAt": "2026-11-14T01:40:46.195746Z",
     "phase": "completed",
     "committees": [
       {
@@ -3001,7 +3001,7 @@
     }
   },
   "2026-04-08": {
-    "updatedAt": "2026-11-13T02:01:40.719722Z",
+    "updatedAt": "2026-11-14T01:40:46.195816Z",
     "phase": "completed",
     "committees": [
       {
@@ -3018,7 +3018,7 @@
     }
   },
   "2026-04-13": {
-    "updatedAt": "2026-11-13T02:01:40.719807Z",
+    "updatedAt": "2026-11-14T01:40:46.195911Z",
     "phase": "completed",
     "committees": [
       {
@@ -3035,7 +3035,7 @@
     }
   },
   "2026-04-14": {
-    "updatedAt": "2026-11-13T02:01:40.719903Z",
+    "updatedAt": "2026-11-14T01:40:46.195988Z",
     "phase": "completed",
     "committees": [
       {
@@ -3052,7 +3052,7 @@
     }
   },
   "2026-04-15": {
-    "updatedAt": "2026-11-13T02:01:40.719976Z",
+    "updatedAt": "2026-11-14T01:40:46.196043Z",
     "phase": "completed",
     "committees": [
       {
@@ -3069,7 +3069,7 @@
     }
   },
   "2026-04-20": {
-    "updatedAt": "2026-11-13T02:01:40.720028Z",
+    "updatedAt": "2026-11-14T01:40:46.196078Z",
     "phase": "completed",
     "committees": [
       {
@@ -3086,7 +3086,7 @@
     }
   },
   "2026-04-21": {
-    "updatedAt": "2026-11-13T02:01:40.720193Z",
+    "updatedAt": "2026-11-14T01:40:46.196211Z",
     "phase": "completed",
     "committees": [
       {
@@ -3109,7 +3109,7 @@
     }
   },
   "2026-04-22": {
-    "updatedAt": "2026-11-13T02:01:40.722604Z",
+    "updatedAt": "2026-11-14T01:40:46.198172Z",
     "phase": "completed",
     "committees": [
       {
@@ -3132,7 +3132,7 @@
     }
   },
   "2026-04-23": {
-    "updatedAt": "2026-11-13T02:01:40.726102Z",
+    "updatedAt": "2026-11-14T01:40:46.201042Z",
     "phase": "completed",
     "committees": [
       {
@@ -3167,7 +3167,7 @@
     }
   },
   "2026-04-24": {
-    "updatedAt": "2026-11-13T02:01:40.726330Z",
+    "updatedAt": "2026-11-14T01:40:46.201238Z",
     "phase": "completed",
     "committees": [
       {
@@ -3184,7 +3184,7 @@
     }
   },
   "2026-04-28": {
-    "updatedAt": "2026-11-13T02:01:40.729240Z",
+    "updatedAt": "2026-11-14T01:40:46.203598Z",
     "phase": "completed",
     "committees": [
       {
@@ -3213,7 +3213,7 @@
     }
   },
   "2026-04-30": {
-    "updatedAt": "2026-11-13T02:01:40.729446Z",
+    "updatedAt": "2026-11-14T01:40:46.203762Z",
     "phase": "completed",
     "committees": [
       {
@@ -3230,7 +3230,7 @@
     }
   },
   "2026-05-01": {
-    "updatedAt": "2026-11-13T02:01:40.729579Z",
+    "updatedAt": "2026-11-14T01:40:46.203864Z",
     "phase": "completed",
     "committees": [
       {
@@ -3247,7 +3247,7 @@
     }
   },
   "2026-05-04": {
-    "updatedAt": "2026-11-13T02:01:40.729758Z",
+    "updatedAt": "2026-11-14T01:40:46.203984Z",
     "phase": "completed",
     "committees": [
       {
@@ -3264,7 +3264,7 @@
     }
   },
   "2026-05-08": {
-    "updatedAt": "2026-11-13T02:01:40.732059Z",
+    "updatedAt": "2026-11-14T01:40:46.205822Z",
     "phase": "completed",
     "committees": [
       {
@@ -3293,7 +3293,7 @@
     }
   },
   "2026-05-12": {
-    "updatedAt": "2026-11-13T02:01:40.744383Z",
+    "updatedAt": "2026-11-14T01:40:46.215510Z",
     "phase": "completed",
     "committees": [
       {
@@ -3352,7 +3352,7 @@
     }
   },
   "2026-05-13": {
-    "updatedAt": "2026-11-13T02:01:40.746919Z",
+    "updatedAt": "2026-11-14T01:40:46.217566Z",
     "phase": "completed",
     "committees": [
       {
@@ -3381,7 +3381,7 @@
     }
   },
   "2026-05-14": {
-    "updatedAt": "2026-11-13T02:01:40.748604Z",
+    "updatedAt": "2026-11-14T01:40:46.218914Z",
     "phase": "completed",
     "committees": [
       {
@@ -3416,7 +3416,7 @@
     }
   },
   "2026-05-15": {
-    "updatedAt": "2026-11-13T02:01:40.748790Z",
+    "updatedAt": "2026-11-14T01:40:46.219051Z",
     "phase": "completed",
     "committees": [
       {
@@ -3433,7 +3433,7 @@
     }
   },
   "2026-05-19": {
-    "updatedAt": "2026-11-13T02:01:40.748945Z",
+    "updatedAt": "2026-11-14T01:40:46.219168Z",
     "phase": "completed",
     "committees": [
       {
@@ -3456,7 +3456,7 @@
     }
   },
   "2026-05-20": {
-    "updatedAt": "2026-11-13T02:01:40.749677Z",
+    "updatedAt": "2026-11-14T01:40:46.219746Z",
     "phase": "completed",
     "committees": [
       {
@@ -3479,7 +3479,7 @@
     }
   },
   "2026-05-21": {
-    "updatedAt": "2026-11-13T02:01:40.750169Z",
+    "updatedAt": "2026-11-14T01:40:46.220144Z",
     "phase": "completed",
     "committees": [
       {
@@ -3496,7 +3496,7 @@
     }
   },
   "2026-05-22": {
-    "updatedAt": "2026-11-13T02:01:40.750281Z",
+    "updatedAt": "2026-11-14T01:40:46.220232Z",
     "phase": "completed",
     "committees": [
       {
@@ -3513,7 +3513,7 @@
     }
   },
   "2026-05-25": {
-    "updatedAt": "2026-11-13T02:01:40.750410Z",
+    "updatedAt": "2026-11-14T01:40:46.220332Z",
     "phase": "completed",
     "committees": [
       {
@@ -3530,7 +3530,7 @@
     }
   },
   "2026-05-26": {
-    "updatedAt": "2026-11-13T02:01:40.750548Z",
+    "updatedAt": "2026-11-14T01:40:46.220452Z",
     "phase": "completed",
     "committees": [
       {
@@ -3547,7 +3547,7 @@
     }
   },
   "2026-05-27": {
-    "updatedAt": "2026-11-13T02:01:40.750711Z",
+    "updatedAt": "2026-11-14T01:40:46.220571Z",
     "phase": "completed",
     "committees": [
       {
@@ -3570,7 +3570,7 @@
     }
   },
   "2026-05-28": {
-    "updatedAt": "2026-11-13T02:01:40.751328Z",
+    "updatedAt": "2026-11-14T01:40:46.221063Z",
     "phase": "completed",
     "committees": [
       {
@@ -3593,7 +3593,7 @@
     }
   },
   "2026-06-01": {
-    "updatedAt": "2026-11-13T02:01:40.751431Z",
+    "updatedAt": "2026-11-14T01:40:46.221142Z",
     "phase": "completed",
     "committees": [
       {
@@ -3610,7 +3610,7 @@
     }
   },
   "2026-06-02": {
-    "updatedAt": "2026-11-13T02:01:40.751526Z",
+    "updatedAt": "2026-11-14T01:40:46.221211Z",
     "phase": "completed",
     "committees": [
       {
@@ -3633,7 +3633,7 @@
     }
   },
   "2026-06-03": {
-    "updatedAt": "2026-11-13T02:01:40.751639Z",
+    "updatedAt": "2026-11-14T01:40:46.221295Z",
     "phase": "completed",
     "committees": [
       {
@@ -3656,7 +3656,7 @@
     }
   },
   "2026-06-04": {
-    "updatedAt": "2026-11-13T02:01:40.751742Z",
+    "updatedAt": "2026-11-14T01:40:46.221356Z",
     "phase": "completed",
     "committees": [
       {
@@ -3673,7 +3673,7 @@
     }
   },
   "2026-06-16": {
-    "updatedAt": "2026-11-13T02:01:40.758578Z",
+    "updatedAt": "2026-11-14T01:40:46.226907Z",
     "phase": "completed",
     "committees": [
       {
@@ -3726,7 +3726,7 @@
     }
   },
   "2026-07-07": {
-    "updatedAt": "2026-11-13T02:01:40.761390Z",
+    "updatedAt": "2026-11-14T01:40:46.229248Z",
     "phase": "completed",
     "committees": [
       {
@@ -3749,7 +3749,7 @@
     }
   },
   "2026-07-08": {
-    "updatedAt": "2026-11-13T02:01:40.761622Z",
+    "updatedAt": "2026-11-14T01:40:46.229450Z",
     "phase": "completed",
     "committees": [
       {
@@ -3766,7 +3766,7 @@
     }
   },
   "2026-07-09": {
-    "updatedAt": "2026-11-13T02:01:40.765786Z",
+    "updatedAt": "2026-11-14T01:40:46.232784Z",
     "phase": "completed",
     "committees": [
       {
@@ -3801,7 +3801,7 @@
     }
   },
   "2026-07-10": {
-    "updatedAt": "2026-11-13T02:01:40.769057Z",
+    "updatedAt": "2026-11-14T01:40:46.235455Z",
     "phase": "completed",
     "committees": [
       {
@@ -3836,7 +3836,7 @@
     }
   },
   "2026-07-13": {
-    "updatedAt": "2026-11-13T02:01:40.770399Z",
+    "updatedAt": "2026-11-14T01:40:46.236559Z",
     "phase": "completed",
     "committees": [
       {
@@ -3853,7 +3853,7 @@
     }
   },
   "2026-07-14": {
-    "updatedAt": "2026-11-13T02:01:40.793861Z",
+    "updatedAt": "2026-11-14T01:40:46.254634Z",
     "phase": "completed",
     "committees": [
       {
@@ -3942,7 +3942,7 @@
     }
   },
   "2026-07-15": {
-    "updatedAt": "2026-11-13T02:01:40.806681Z",
+    "updatedAt": "2026-11-14T01:40:46.264299Z",
     "phase": "completed",
     "committees": [
       {
@@ -4001,7 +4001,7 @@
     }
   },
   "2026-07-16": {
-    "updatedAt": "2026-11-13T02:01:40.824544Z",
+    "updatedAt": "2026-11-14T01:40:46.277656Z",
     "phase": "completed",
     "committees": [
       {
@@ -4060,7 +4060,7 @@
     }
   },
   "2026-07-17": {
-    "updatedAt": "2026-11-13T02:01:40.825713Z",
+    "updatedAt": "2026-11-14T01:40:46.278447Z",
     "phase": "completed",
     "committees": [
       {
@@ -4083,7 +4083,7 @@
     }
   },
   "2026-07-22": {
-    "updatedAt": "2026-11-13T02:01:40.827828Z",
+    "updatedAt": "2026-11-14T01:40:46.280010Z",
     "phase": "completed",
     "committees": [
       {
@@ -4118,7 +4118,7 @@
     }
   },
   "2026-07-23": {
-    "updatedAt": "2026-11-13T02:01:40.827994Z",
+    "updatedAt": "2026-11-14T01:40:46.280135Z",
     "phase": "completed",
     "committees": [
       {
@@ -4135,7 +4135,7 @@
     }
   },
   "2026-07-24": {
-    "updatedAt": "2026-11-13T02:01:40.828409Z",
+    "updatedAt": "2026-11-14T01:40:46.280468Z",
     "phase": "completed",
     "committees": [
       {
@@ -4182,7 +4182,7 @@
     }
   },
   "2026-07-27": {
-    "updatedAt": "2026-11-13T02:01:40.831390Z",
+    "updatedAt": "2026-11-14T01:40:46.282826Z",
     "phase": "completed",
     "committees": [
       {
@@ -4205,7 +4205,7 @@
     }
   },
   "2026-07-28": {
-    "updatedAt": "2026-11-13T02:01:40.831598Z",
+    "updatedAt": "2026-11-14T01:40:46.282993Z",
     "phase": "completed",
     "committees": [
       {
@@ -4222,7 +4222,7 @@
     }
   },
   "2026-07-29": {
-    "updatedAt": "2026-11-13T02:01:40.831699Z",
+    "updatedAt": "2026-11-14T01:40:46.283056Z",
     "phase": "completed",
     "committees": [
       {
@@ -4239,7 +4239,7 @@
     }
   },
   "2026-07-30": {
-    "updatedAt": "2026-11-13T02:01:40.831982Z",
+    "updatedAt": "2026-11-14T01:40:46.283284Z",
     "phase": "completed",
     "committees": [
       {
@@ -4256,7 +4256,7 @@
     }
   },
   "2026-08-03": {
-    "updatedAt": "2026-11-13T02:01:40.832134Z",
+    "updatedAt": "2026-11-14T01:40:46.283413Z",
     "phase": "completed",
     "committees": [
       {
@@ -4273,7 +4273,7 @@
     }
   },
   "2026-08-05": {
-    "updatedAt": "2026-11-13T02:01:40.832218Z",
+    "updatedAt": "2026-11-14T01:40:46.283476Z",
     "phase": "completed",
     "committees": [
       {
@@ -4290,7 +4290,7 @@
     }
   },
   "2026-08-06": {
-    "updatedAt": "2026-11-13T02:01:40.832430Z",
+    "updatedAt": "2026-11-14T01:40:46.283639Z",
     "phase": "completed",
     "committees": [
       {
@@ -4307,7 +4307,7 @@
     }
   },
   "2026-08-09": {
-    "updatedAt": "2026-11-13T02:01:40.832552Z",
+    "updatedAt": "2026-11-14T01:40:46.283733Z",
     "phase": "completed",
     "committees": [
       {
@@ -4324,7 +4324,7 @@
     }
   },
   "2026-08-10": {
-    "updatedAt": "2026-11-13T02:01:40.832634Z",
+    "updatedAt": "2026-11-14T01:40:46.283794Z",
     "phase": "completed",
     "committees": [
       {
@@ -4341,7 +4341,7 @@
     }
   },
   "2026-08-12": {
-    "updatedAt": "2026-11-13T02:01:40.832736Z",
+    "updatedAt": "2026-11-14T01:40:46.283854Z",
     "phase": "completed",
     "committees": [
       {
@@ -4358,7 +4358,7 @@
     }
   },
   "2026-08-13": {
-    "updatedAt": "2026-11-13T02:01:40.832830Z",
+    "updatedAt": "2026-11-14T01:40:46.283921Z",
     "phase": "completed",
     "committees": [
       {
@@ -4375,7 +4375,7 @@
     }
   },
   "2026-08-19": {
-    "updatedAt": "2026-11-13T02:01:40.832942Z",
+    "updatedAt": "2026-11-14T01:40:46.284006Z",
     "phase": "completed",
     "committees": [
       {
@@ -4392,7 +4392,7 @@
     }
   },
   "2026-08-20": {
-    "updatedAt": "2026-11-13T02:01:40.833015Z",
+    "updatedAt": "2026-11-14T01:40:46.284057Z",
     "phase": "completed",
     "committees": [
       {
@@ -4409,7 +4409,7 @@
     }
   },
   "2026-08-25": {
-    "updatedAt": "2026-11-13T02:01:40.833179Z",
+    "updatedAt": "2026-11-14T01:40:46.284183Z",
     "phase": "completed",
     "committees": [
       {
@@ -4426,7 +4426,7 @@
     }
   },
   "2026-08-26": {
-    "updatedAt": "2026-11-13T02:01:40.833281Z",
+    "updatedAt": "2026-11-14T01:40:46.284262Z",
     "phase": "completed",
     "committees": [
       {
@@ -4449,7 +4449,7 @@
     }
   },
   "2026-09-01": {
-    "updatedAt": "2026-11-13T02:01:40.833396Z",
+    "updatedAt": "2026-11-14T01:40:46.284348Z",
     "phase": "completed",
     "committees": [
       {
@@ -4466,7 +4466,7 @@
     }
   },
   "2026-09-17": {
-    "updatedAt": "2026-11-13T02:01:40.833736Z",
+    "updatedAt": "2026-11-14T01:40:46.284615Z",
     "phase": "completed",
     "committees": [
       {
@@ -4483,7 +4483,7 @@
     }
   },
   "2026-09-21": {
-    "updatedAt": "2026-11-13T02:01:40.833862Z",
+    "updatedAt": "2026-11-14T01:40:46.284709Z",
     "phase": "completed",
     "committees": [
       {
@@ -4500,7 +4500,7 @@
     }
   },
   "2026-09-25": {
-    "updatedAt": "2026-11-13T02:01:40.833973Z",
+    "updatedAt": "2026-11-14T01:40:46.284793Z",
     "phase": "completed",
     "committees": [
       {
@@ -4517,7 +4517,7 @@
     }
   },
   "2026-09-26": {
-    "updatedAt": "2026-11-13T02:01:40.834047Z",
+    "updatedAt": "2026-11-14T01:40:46.284846Z",
     "phase": "completed",
     "committees": [
       {
@@ -4534,7 +4534,7 @@
     }
   },
   "2026-10-05": {
-    "updatedAt": "2026-11-13T02:01:40.834994Z",
+    "updatedAt": "2026-11-14T01:40:46.285605Z",
     "phase": "completed",
     "committees": [
       {
@@ -4593,7 +4593,7 @@
     }
   },
   "2026-10-07": {
-    "updatedAt": "2026-11-13T02:01:40.835113Z",
+    "updatedAt": "2026-11-14T01:40:46.285695Z",
     "phase": "completed",
     "committees": [
       {
@@ -4610,7 +4610,7 @@
     }
   },
   "2026-10-08": {
-    "updatedAt": "2026-11-13T02:01:40.835188Z",
+    "updatedAt": "2026-11-14T01:40:46.285745Z",
     "phase": "completed",
     "committees": [
       {
@@ -4627,7 +4627,7 @@
     }
   },
   "2026-10-09": {
-    "updatedAt": "2026-11-13T02:01:40.835269Z",
+    "updatedAt": "2026-11-14T01:40:46.285802Z",
     "phase": "completed",
     "committees": [
       {
@@ -4644,7 +4644,7 @@
     }
   },
   "2026-10-13": {
-    "updatedAt": "2026-11-13T02:01:40.838771Z",
+    "updatedAt": "2026-11-14T01:40:46.288627Z",
     "phase": "completed",
     "committees": [
       {
@@ -4661,7 +4661,7 @@
     }
   },
   "2026-10-14": {
-    "updatedAt": "2026-11-13T02:01:40.843968Z",
+    "updatedAt": "2026-11-14T01:40:46.292702Z",
     "phase": "completed",
     "committees": [
       {
@@ -4684,7 +4684,7 @@
     }
   },
   "2026-10-15": {
-    "updatedAt": "2026-11-13T02:01:40.844340Z",
+    "updatedAt": "2026-11-14T01:40:46.293006Z",
     "phase": "completed",
     "committees": [
       {
@@ -4701,7 +4701,7 @@
     }
   },
   "2026-10-16": {
-    "updatedAt": "2026-11-13T02:01:40.849519Z",
+    "updatedAt": "2026-11-14T01:40:46.297199Z",
     "phase": "completed",
     "committees": [
       {
@@ -4724,7 +4724,7 @@
     }
   },
   "2026-10-20": {
-    "updatedAt": "2026-11-13T02:01:40.850007Z",
+    "updatedAt": "2026-11-14T01:40:46.297604Z",
     "phase": "completed",
     "committees": [
       {
@@ -4747,7 +4747,7 @@
     }
   },
   "2026-10-21": {
-    "updatedAt": "2026-11-13T02:01:40.851010Z",
+    "updatedAt": "2026-11-14T01:40:46.298422Z",
     "phase": "completed",
     "committees": [
       {
@@ -4794,7 +4794,7 @@
     }
   },
   "2026-10-22": {
-    "updatedAt": "2026-11-13T02:01:40.852932Z",
+    "updatedAt": "2026-11-14T01:40:46.299990Z",
     "phase": "completed",
     "committees": [
       {
@@ -4877,7 +4877,7 @@
     }
   },
   "2026-10-23": {
-    "updatedAt": "2026-11-13T02:01:40.853792Z",
+    "updatedAt": "2026-11-14T01:40:46.300682Z",
     "phase": "completed",
     "committees": [
       {
@@ -4942,7 +4942,7 @@
     }
   },
   "2026-10-26": {
-    "updatedAt": "2026-11-13T02:01:40.853998Z",
+    "updatedAt": "2026-11-14T01:40:46.300774Z",
     "phase": "completed",
     "committees": [
       {
@@ -4959,7 +4959,7 @@
     }
   },
   "2026-10-27": {
-    "updatedAt": "2026-11-13T02:01:40.858136Z",
+    "updatedAt": "2026-11-14T01:40:46.309691Z",
     "phase": "completed",
     "committees": [
       {
@@ -4979,16 +4979,28 @@
         "house": "参議院",
         "status": "completed",
         "threads": 13
+      },
+      {
+        "name": "経済産業委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 23
+      },
+      {
+        "name": "財政金融委員会",
+        "house": "参議院",
+        "status": "completed",
+        "threads": 32
       }
     ],
     "stats": {
-      "threads": 43,
-      "speeches": 362,
-      "committees": 3
+      "threads": 98,
+      "speeches": 737,
+      "committees": 5
     }
   },
   "2026-10-28": {
-    "updatedAt": "2026-11-13T02:01:40.860491Z",
+    "updatedAt": "2026-11-14T01:40:46.311923Z",
     "phase": "completed",
     "committees": [
       {
@@ -5011,7 +5023,7 @@
     }
   },
   "2026-10-29": {
-    "updatedAt": "2026-11-13T02:01:40.860783Z",
+    "updatedAt": "2026-11-14T01:40:46.312153Z",
     "phase": "completed",
     "committees": [
       {
@@ -5034,7 +5046,7 @@
     }
   },
   "2026-10-30": {
-    "updatedAt": "2026-11-13T02:01:40.861102Z",
+    "updatedAt": "2026-11-14T01:40:46.312438Z",
     "phase": "completed",
     "committees": [
       {
@@ -5063,7 +5075,7 @@
     }
   },
   "2026-11-04": {
-    "updatedAt": "2026-11-13T02:01:40.861237Z",
+    "updatedAt": "2026-11-14T01:40:46.312545Z",
     "phase": "completed",
     "committees": [
       {
@@ -5080,7 +5092,7 @@
     }
   },
   "2026-11-05": {
-    "updatedAt": "2026-11-13T02:01:40.861372Z",
+    "updatedAt": "2026-11-14T01:40:46.312646Z",
     "phase": "completed",
     "committees": [
       {
@@ -5097,7 +5109,7 @@
     }
   },
   "2026-11-06": {
-    "updatedAt": "2026-11-13T02:01:40.861519Z",
+    "updatedAt": "2026-11-14T01:40:46.312762Z",
     "phase": "completed",
     "committees": [
       {
@@ -5113,12 +5125,46 @@
       "committees": 1
     }
   },
+  "2026-11-10": {
+    "updatedAt": "2026-11-14T01:40:46.312847Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "議院運営委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 2
+      }
+    ],
+    "stats": {
+      "threads": 2,
+      "speeches": 4,
+      "committees": 1
+    }
+  },
+  "2026-11-11": {
+    "updatedAt": "2026-11-14T01:40:46.312909Z",
+    "phase": "completed",
+    "committees": [
+      {
+        "name": "議院運営委員会国会法改正等及び国会改革に関する小委員会",
+        "house": "衆議院",
+        "status": "completed",
+        "threads": 2
+      }
+    ],
+    "stats": {
+      "threads": 2,
+      "speeches": 3,
+      "committees": 1
+    }
+  },
   "_summary": {
-    "totalDates": 178,
-    "totalThreads": 3784,
-    "totalSpeeches": 24089,
+    "totalDates": 180,
+    "totalThreads": 3843,
+    "totalSpeeches": 24471,
     "totalCommittees": 112,
-    "totalMembers": 1355,
-    "generatedAt": "2026-11-13T02:01:40.869424Z"
+    "totalMembers": 1367,
+    "generatedAt": "2026-11-14T01:40:46.318995Z"
   }
 }

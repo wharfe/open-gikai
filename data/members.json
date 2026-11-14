@@ -30988,5 +30988,253 @@
         "url": "https://www.google.com/search?q=%E9%B6%B4%E4%BF%9D%E5%BA%B8%E4%BB%8B+site%3Ax.com+OR+site%3Atwitter.com"
       }
     ]
+  },
+  "matsumurayoshifumi": {
+    "id": "matsumurayoshifumi",
+    "name": "松村祥史",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%9D%91%E7%A5%A5%E5%8F%B2"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%9D%BE%E6%9D%91%E7%A5%A5%E5%8F%B2+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%9D%BE%E6%9D%91%E7%A5%A5%E5%8F%B2+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_f022d5d5": {
+    "id": "m_f022d5d5",
+    "name": "黄地吉隆",
+    "party": null,
+    "role": "文部科学省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "文部科学省の発言者一覧",
+        "url": "/gov/mext"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E9%BB%84%E5%9C%B0%E5%90%89%E9%9A%86+%E6%96%87%E9%83%A8%E7%A7%91%E5%AD%A6%E7%9C%81"
+      }
+    ]
+  },
+  "m_915ac820": {
+    "id": "m_915ac820",
+    "name": "大元慎二",
+    "party": null,
+    "role": "公正取引委員会事務総局経済取引局取引部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "公正取引委員会の発言者一覧",
+        "url": "/gov/jftc"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E5%85%83%E6%85%8E%E4%BA%8C+%E5%85%AC%E6%AD%A3%E5%8F%96%E5%BC%95%E5%A7%94%E5%93%A1%E4%BC%9A"
+      }
+    ]
+  },
+  "m_5ccb69d6": {
+    "id": "m_5ccb69d6",
+    "name": "金城慎司",
+    "party": null,
+    "role": "原子力規制委員会原子力規制庁原子力規制部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E9%87%91%E5%9F%8E%E6%85%8E%E5%8F%B8+%E5%8E%9F%E5%AD%90%E5%8A%9B%E8%A6%8F%E5%88%B6%E5%A7%94%E5%93%A1%E4%BC%9A%E5%8E%9F%E5%AD%90%E5%8A%9B%E8%A6%8F%E5%88%B6%E5%BA%81%E5%8E%9F%E5%AD%90%E5%8A%9B%E8%A6%8F%E5%88%B6%E9%83%A8%E9%95%B7"
+      }
+    ]
+  },
+  "m_a5532ef6": {
+    "id": "m_a5532ef6",
+    "name": "河野太志",
+    "party": null,
+    "role": "経済産業省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "経済産業省の発言者一覧",
+        "url": "/gov/meti"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B2%B3%E9%87%8E%E5%A4%AA%E5%BF%97+%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E7%9C%81"
+      }
+    ]
+  },
+  "m_4095896f": {
+    "id": "m_4095896f",
+    "name": "西村学",
+    "party": null,
+    "role": "環境省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "環境省の発言者一覧",
+        "url": "/gov/env"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E8%A5%BF%E6%9D%91%E5%AD%A6+%E7%92%B0%E5%A2%83%E7%9C%81"
+      }
+    ]
+  },
+  "m_609cd969": {
+    "id": "m_609cd969",
+    "name": "岩渕秀樹",
+    "party": null,
+    "role": "文部科学省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "文部科学省の発言者一覧",
+        "url": "/gov/mext"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A9%E6%B8%95%E7%A7%80%E6%A8%B9+%E6%96%87%E9%83%A8%E7%A7%91%E5%AD%A6%E7%9C%81"
+      }
+    ]
+  },
+  "m_42456266": {
+    "id": "m_42456266",
+    "name": "渡辺剛英",
+    "party": null,
+    "role": "消防庁審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "消防庁の発言者一覧",
+        "url": "/gov/fdma"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B8%A1%E8%BE%BA%E5%89%9B%E8%8B%B1+%E6%B6%88%E9%98%B2%E5%BA%81"
+      }
+    ]
+  },
+  "m_9d0b66f9": {
+    "id": "m_9d0b66f9",
+    "name": "中島健至",
+    "party": null,
+    "role": "日本銀行理事",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B3%B6%E5%81%A5%E8%87%B3+%E6%97%A5%E6%9C%AC%E9%8A%80%E8%A1%8C%E7%90%86%E4%BA%8B"
+      }
+    ]
+  },
+  "m_805ea904": {
+    "id": "m_805ea904",
+    "name": "前田努",
+    "party": null,
+    "role": "財務省大臣官房長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "財務省の発言者一覧",
+        "url": "/gov/mof"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%89%8D%E7%94%B0%E5%8A%AA+%E8%B2%A1%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_d1288f99": {
+    "id": "m_d1288f99",
+    "name": "吉田一生",
+    "party": null,
+    "role": "厚生労働省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "厚生労働省の発言者一覧",
+        "url": "/gov/mhlw"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E7%94%B0%E4%B8%80%E7%94%9F+%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E7%9C%81"
+      }
+    ]
+  },
+  "m_52487c42": {
+    "id": "m_52487c42",
+    "name": "渡邉繁樹",
+    "party": null,
+    "role": "総務省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "総務省の発言者一覧",
+        "url": "/gov/soumu"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B8%A1%E9%82%89%E7%B9%81%E6%A8%B9+%E7%B7%8F%E5%8B%99%E7%9C%81"
+      }
+    ]
   }
 }
