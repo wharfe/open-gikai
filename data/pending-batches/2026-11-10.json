@@ -1,0 +1,68 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-10",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_017iBRtvARS8vz4ioCJngiDT",
+      "submitted_at": "2026-11-14T01:31:13Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_議院運営委員会_2026-11-10_第8号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_ed4978009212_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "本会議討論・趣旨説明に関する運営協議",
+            "topicTag": "議事運営",
+            "topicColor": "#f97316",
+            "summary": "本会議での討論者・討論時間や趣旨説明の担当大臣を委員長が確認し決定した",
+            "contextDescription": "衆議院議院運営委員会で本会議の進行手順（討論者・持ち時間・趣旨説明担当）を事前に決める協議。",
+            "legislationName": null,
+            "speechOrders": [
+              2,
+              4,
+              5
+            ]
+          },
+          "speechOrders": [
+            2,
+            4,
+            5
+          ],
+          "input_hash": "sha256:0158aaceb6b6616e0aa0b0d64df9dbc25d4f1acc5c03064dba18c6cebe5ea38f"
+        },
+        {
+          "custom_id": "s_ed4978009212_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "本会議の議事日程と採決結果の報告",
+            "topicTag": "本会議報告",
+            "topicColor": "#f97316",
+            "summary": "事務総長が本会議の議事日程、委員長報告内容、各案件の採決結果を報告した",
+            "contextDescription": "衆議院事務総長が議院運営委員会で、当日の本会議における審議・採決の段取りと結果を説明する手続き。",
+            "legislationName": "重要施設周辺及び国境離島等における土地等の利用状況の調査及び利用の規制等に関する法律の一部を改正する法律案等",
+            "speechOrders": [
+              7
+            ]
+          },
+          "speechOrders": [
+            7
+          ],
+          "input_hash": "sha256:c94c90f63730d03b05f5e3886045af8d6700b0791317a2186a1a7b8f1fb4f6f3"
+        }
+      ]
+    }
+  ]
+}
