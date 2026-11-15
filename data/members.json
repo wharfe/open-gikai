@@ -31236,5 +31236,30 @@
         "url": "https://www.google.com/search?q=%E6%B8%A1%E9%82%89%E7%B9%81%E6%A8%B9+%E7%B7%8F%E5%8B%99%E7%9C%81"
       }
     ]
+  },
+  "takeishunsuke": {
+    "id": "takeishunsuke",
+    "name": "武井俊輔",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E4%BA%95%E4%BF%8A%E8%BC%94"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E4%BA%95%E4%BF%8A%E8%BC%94+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E4%BA%95%E4%BF%8A%E8%BC%94+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   }
 }

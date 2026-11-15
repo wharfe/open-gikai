@@ -288,6 +288,15 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261110_ed4978_01",
+        "relationship": "続き",
+        "topic": "本会議討論・趣旨説明に関する運営協議",
+        "committee": "議院運営委員会",
+        "date": "2026.11.10"
+      }
+    ]
   }
 ]
