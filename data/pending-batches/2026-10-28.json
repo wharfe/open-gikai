@@ -1,0 +1,47 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-28",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01PADMY1k4A34kmBFdBEgj8K",
+      "submitted_at": "2026-11-17T03:55:56Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_厚生労働委員会_2026-10-28_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_4d4e4f106585_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "特定B型肝炎ウイルス感染者給付金等支給特別措置法改正案の趣旨説明",
+            "topicTag": "肝炎給付",
+            "topicColor": "#8b5cf6",
+            "summary": "集団予防接種によるB型肝炎感染被害者への給付金支給特措法改正案の提案理由を説明",
+            "contextDescription": "集団予防接種時の注射器連続使用によるB型肝炎感染被害者に給付金を支給する特別措置法の改正案。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              1,
+              2
+            ]
+          },
+          "speechOrders": [
+            1,
+            2
+          ],
+          "input_hash": "sha256:2dc5b9cc548abf1c4bd2cc4473e56f5f232e4d282b7dcd41170e9cabf24c0dd3"
+        }
+      ]
+    }
+  ]
+}
