@@ -1,0 +1,1132 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-23",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01JeQufaWrjpHk2kr4V6N6k7",
+      "submitted_at": "2026-11-17T03:45:59Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_厚生労働委員会_2026-10-23_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_efefc1661106_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "介護事業者の経営状況と介護報酬改定",
+            "topicTag": "介護報酬",
+            "topicColor": "#8b5cf6",
+            "summary": "人手不足と物価高で厳しい介護事業者の経営を介護報酬改定でどう支えるか議論",
+            "contextDescription": "令和九年度介護報酬改定に向け、訪問介護の基本報酬水準や事業者経営支援の在り方が議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "input_hash": "sha256:c7519592555c8134eddb25d0b036dd5cd4717511f1e147164f4fea32f504e8c0"
+        },
+        {
+          "custom_id": "s_efefc1661106_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "創薬・先端医療の成長戦略と薬価制度",
+            "topicTag": "薬価制度",
+            "topicColor": "#3b82f6",
+            "summary": "創薬分野の投資呼び込みへ薬価の予見性確保と持続可能な介護財源の両立を問う",
+            "contextDescription": "高市政権の成長戦略における創薬・先端医療分野の推進と、薬価制度の予見性確保が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "input_hash": "sha256:6d9794e2163b696be5359aea3fa8d778faefa6d50eb67739406464883c30828d"
+        },
+        {
+          "custom_id": "s_efefc1661106_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "介護保険制度の持続可能性と地域包括ケア",
+            "topicTag": "地域包括",
+            "topicColor": "#8b5cf6",
+            "summary": "高齢化進展下での介護保険の持続性確保と地域包括ケアシステムの多様化を議論",
+            "contextDescription": "介護保険制度開始25年を踏まえ、負担の在り方や地域包括ケアシステムの機能強化が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              20,
+              21,
+              22,
+              23
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            22,
+            23
+          ],
+          "input_hash": "sha256:43fc5a6e2d4bd1ab95443e3310ea1a288ccb8d88ab04a18532e87b6df28c4b09"
+        },
+        {
+          "custom_id": "s_efefc1661106_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "介護人材の職業紹介手数料問題",
+            "topicTag": "人材紹介",
+            "topicColor": "#8b5cf6",
+            "summary": "介護事業者が職業紹介業者に支払う手数料負担とトラブル防止策を議論",
+            "contextDescription": "介護・福祉分野の人材紹介手数料の高さが経営を圧迫しており、適正化策が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              24,
+              25,
+              26,
+              27
+            ]
+          },
+          "speechOrders": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "input_hash": "sha256:8b8d8b87d4a26765136be569eb26371cb92380ca1d998956f07a72d225fad6ac"
+        },
+        {
+          "custom_id": "s_efefc1661106_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "介護職員の処遇改善とストレスケア",
+            "topicTag": "処遇改善",
+            "topicColor": "#8b5cf6",
+            "summary": "介護職員の職場環境改善とストレス対策の報酬評価の在り方を質疑",
+            "contextDescription": "介護現場の離職防止のため、職員の心身の健康管理を評価する報酬加算の検討状況が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              28,
+              29
+            ]
+          },
+          "speechOrders": [
+            28,
+            29
+          ],
+          "input_hash": "sha256:24bfa13ae70670e6828af528733d8739285fb2445ba30d84f292723c6d11da98"
+        },
+        {
+          "custom_id": "s_efefc1661106_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "女性の健康政策と性差医療",
+            "topicTag": "女性健康",
+            "topicColor": "#8b5cf6",
+            "summary": "性差科学に基づく女性の健康増進策と月経随伴症状への学校での対応を議論",
+            "contextDescription": "攻めの予防医療の一環として、性差を考慮した女性の健康政策推進が方針として示された。",
+            "legislationName": null,
+            "speechOrders": [
+              30,
+              31,
+              32
+            ]
+          },
+          "speechOrders": [
+            30,
+            31,
+            32
+          ],
+          "input_hash": "sha256:fc41cb211f00e772765e69c83cb6d4457e55981a64d9c9536f69668ed8195529"
+        },
+        {
+          "custom_id": "s_efefc1661106_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "出産育児一時金の給付体系見直し",
+            "topicTag": "出産給付",
+            "topicColor": "#8b5cf6",
+            "summary": "健保法改正に基づく出産給付体系見直しと過疎地分娩体制確保の進捗を確認",
+            "contextDescription": "本年6月成立の健保法改正に盛り込まれた出産の給付体系見直しの施行準備状況が論点。",
+            "legislationName": "健康保険法等の一部を改正する法律",
+            "speechOrders": [
+              33,
+              34
+            ]
+          },
+          "speechOrders": [
+            33,
+            34
+          ],
+          "input_hash": "sha256:ce0f8a53124948e8826a13881b1a547e2dcfbc36087f41c8c6095a51401d61d4"
+        },
+        {
+          "custom_id": "s_efefc1661106_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "臓器移植の普及啓発",
+            "topicTag": "臓器移植",
+            "topicColor": "#8b5cf6",
+            "summary": "脳死下臓器提供の件数推移と移植医療体制整備の現況を確認",
+            "contextDescription": "臓器移植法改正以降、意思表示の普及啓発や移植医療体制の整備が進められている。",
+            "legislationName": "臓器の移植に関する法律",
+            "speechOrders": [
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            35,
+            36
+          ],
+          "input_hash": "sha256:98642f03fdc73599b240ddcd7a52ea56ba32dd8cbd07207e7ba1bb2f646a263c"
+        },
+        {
+          "custom_id": "s_efefc1661106_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "性同一性障害特例法と性別変更後のがん検診",
+            "topicTag": "性別変更",
+            "topicColor": "#8b5cf6",
+            "summary": "性別変更後も生殖器温存者にがん検診通知が届かない制度の課題を指摘",
+            "contextDescription": "最高裁違憲判断から3年、性同一性障害特例法に基づく性別変更者への医療支援体制が論点。",
+            "legislationName": "性同一性障害者の性別の取扱いの特例に関する法律",
+            "speechOrders": [
+              37,
+              38,
+              39
+            ]
+          },
+          "speechOrders": [
+            37,
+            38,
+            39
+          ],
+          "input_hash": "sha256:9184bc4ebd8823c5b20fa3bd69dce07f5b095bcafd728d1a3e4e47becebe5e85"
+        },
+        {
+          "custom_id": "s_efefc1661106_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "費用対効果評価制度とMFN外国平均価格調整",
+            "topicTag": "薬価MFN",
+            "topicColor": "#3b82f6",
+            "summary": "薬価の費用対効果評価見直しと国際価格比較に基づくMFN対応の整合性を追及",
+            "contextDescription": "革新的医薬品の薬価引上げに向け、費用対効果評価制度の見直しと外国平均価格調整の在り方が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48
+            ]
+          },
+          "speechOrders": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "input_hash": "sha256:fd948071099f302314e5e7ba79021aab70cf188f078c5e7e4605aa56a195ad3b"
+        },
+        {
+          "custom_id": "s_efefc1661106_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "がん遺伝子パネル検査の保険適用拡大",
+            "topicTag": "がん検査",
+            "topicColor": "#8b5cf6",
+            "summary": "標準治療終了前でもがん遺伝子パネル検査を保険適用できるよう求める",
+            "contextDescription": "現在は原則標準治療終了後のみ保険適用となるがん遺伝子パネル検査の適用拡大が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              49,
+              50,
+              51,
+              52
+            ]
+          },
+          "speechOrders": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "input_hash": "sha256:b578fbeba8ce948036d2c288a5a8428d20c38b5f83e60ce18debe5ed72bcd148"
+        },
+        {
+          "custom_id": "s_efefc1661106_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "有料老人ホーム入居者紹介事業の認定制度",
+            "topicTag": "老人ホーム",
+            "topicColor": "#8b5cf6",
+            "summary": "入居者紹介事業者の優良認定制度における公平性確保の在り方を議論",
+            "contextDescription": "有料老人ホームの入居者紹介事業者に対する認定制度の制度設計が協議会で検討されている。",
+            "legislationName": null,
+            "speechOrders": [
+              53,
+              54,
+              55
+            ]
+          },
+          "speechOrders": [
+            53,
+            54,
+            55
+          ],
+          "input_hash": "sha256:24f46e5ce8500df2a7fd6f3e898e34cc83eea22fbd3ac5496137f68ec2352194"
+        },
+        {
+          "custom_id": "s_efefc1661106_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "熊本地震等の災害対応と福祉支援",
+            "topicTag": "災害対応",
+            "topicColor": "#dc2626",
+            "summary": "熊本地震の教訓を踏まえ治療用装具費用立替や福祉用具支援、被災者見守り事業を議論",
+            "contextDescription": "熊本地震や豪雨災害を踏まえ、療養費の償還払い負担や福祉用具支援の在り方が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70
+            ]
+          },
+          "speechOrders": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70
+          ],
+          "input_hash": "sha256:59bd28482a91966e3cccafe41847e0b9bea3d0d917c4ea4145609a8875f48f7a"
+        },
+        {
+          "custom_id": "s_efefc1661106_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "高齢女性の乳がん罹患率と検診受診率",
+            "topicTag": "乳がん",
+            "topicColor": "#8b5cf6",
+            "summary": "60代70代の乳がん罹患率上昇に対し検診受診率の低さと周知不足を指摘",
+            "contextDescription": "高齢期の乳がんリスクが十分知られておらず、検診受診率低下への対策が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              71,
+              72,
+              73,
+              75,
+              76
+            ]
+          },
+          "speechOrders": [
+            71,
+            72,
+            73,
+            75,
+            76
+          ],
+          "input_hash": "sha256:cf3ee04180b32df1176ff430ac8d795afb94a83519d2d5d93a20b426182dc16f"
+        },
+        {
+          "custom_id": "s_efefc1661106_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "医療等情報利活用法制の見直し",
+            "topicTag": "医療情報",
+            "topicColor": "#06b6d4",
+            "summary": "次世代医療基盤法の見直しでオプトアウト方式転換など医療情報利活用の円滑化を検討",
+            "contextDescription": "令和9年通常国会提出予定の医療等情報利活用法案に向け、本人同意手続の在り方が検討されている。",
+            "legislationName": "次世代医療基盤法",
+            "speechOrders": [
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84
+            ]
+          },
+          "speechOrders": [
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84
+          ],
+          "input_hash": "sha256:fdca61076565e397b9794ef4dac37166484c363e24857b7fde94817c8a7e1f4a"
+        },
+        {
+          "custom_id": "s_efefc1661106_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "訪問介護基本報酬と加算の事務負担",
+            "topicTag": "訪問介護",
+            "topicColor": "#8b5cf6",
+            "summary": "訪問介護の経営難を踏まえ基本報酬引上げと加算事務負担の簡素化を要望",
+            "contextDescription": "訪問介護事業所の経営難・人材不足を背景に、基本報酬の引上げと加算手続簡素化が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93
+            ]
+          },
+          "speechOrders": [
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93
+          ],
+          "input_hash": "sha256:3a608e678324f17c880b66d433ea8b27cba184902e20a01a749ccf17850414be"
+        },
+        {
+          "custom_id": "s_efefc1661106_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "障害福祉サービス費用急伸と処遇改善",
+            "topicTag": "障害福祉",
+            "topicColor": "#8b5cf6",
+            "summary": "障害福祉従事者の処遇改善と費用急伸を理由とした給付抑制への懸念を議論",
+            "contextDescription": "骨太方針で障害福祉サービス費用の急伸への対応が言及され、給付削減懸念が広がっている。",
+            "legislationName": null,
+            "speechOrders": [
+              94,
+              95
+            ]
+          },
+          "speechOrders": [
+            94,
+            95
+          ],
+          "input_hash": "sha256:38dff761bbddee1728ba1f5dd5146cd82263e860a164065a0625f475f7c86654"
+        },
+        {
+          "custom_id": "s_efefc1661106_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "片頭痛を含む女性の健康課題への対応",
+            "topicTag": "片頭痛",
+            "topicColor": "#8b5cf6",
+            "summary": "働く女性に多い片頭痛の情報発信・受診勧奨・学校健診での対応強化を求める",
+            "contextDescription": "片頭痛は女性に多い疾患だが受診行動につながりにくく、情報発信や学校健診対応が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107
+            ]
+          },
+          "speechOrders": [
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+          ],
+          "input_hash": "sha256:03688510c35ec3ea777d3998c4a6b8f86e64ab986561259ddb7f3c9e05dd70f7"
+        },
+        {
+          "custom_id": "s_efefc1661106_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "GLP-1薬の適応外使用と肥満症対策",
+            "topicTag": "GLP-1",
+            "topicColor": "#8b5cf6",
+            "summary": "糖尿病治療薬の美容目的使用による健康被害と肥満症治療への正しい理解を議論",
+            "contextDescription": "マンジャロ等の糖尿病治療薬が減量目的で適応外使用され健康被害が懸念されている。",
+            "legislationName": null,
+            "speechOrders": [
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114
+            ]
+          },
+          "speechOrders": [
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
+          ],
+          "input_hash": "sha256:28efb45eff7a9269570a6c0bf3a94c652f945a03c375a9a48d91c658c3b321ce"
+        },
+        {
+          "custom_id": "s_efefc1661106_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "社会保障改革協議体の骨子と応能負担",
+            "topicTag": "社保改革",
+            "topicColor": "#8b5cf6",
+            "summary": "自民・維新協議体の社会保障改革骨子に基づく応能負担や皆保険制度維持を議論",
+            "contextDescription": "自民党・日本維新の会の社会保障制度改革協議体がまとめた改革骨子の実行方針が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128
+            ]
+          },
+          "speechOrders": [
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128
+          ],
+          "input_hash": "sha256:15efc476f403db6fd76cc8fb84901c3cdbe52faaaca6f21a5c2c39f250dac988"
+        },
+        {
+          "custom_id": "s_efefc1661106_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "技能五輪国際大会と国内大会の開催",
+            "topicTag": "技能五輪",
+            "topicColor": "#f59e0b",
+            "summary": "2028年愛知技能五輪国際大会に向けた国内大会開催と選手育成支援を議論",
+            "contextDescription": "2028年愛知県での技能五輪国際大会開催を控え、国内大会の実施や選手強化支援が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              131,
+              132,
+              133,
+              134,
+              135
+            ]
+          },
+          "speechOrders": [
+            131,
+            132,
+            133,
+            134,
+            135
+          ],
+          "input_hash": "sha256:0aa2ceb4c36a34aff49f6ace098b23b17eaa9f8b242f571e5b804327d06d9f11"
+        },
+        {
+          "custom_id": "s_efefc1661106_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "裁量労働制の生産性評価と企業立病院規制",
+            "topicTag": "裁量労働",
+            "topicColor": "#6b7280",
+            "summary": "裁量労働制が生産性向上につながっているか検証不足を指摘し、企業立病院規制にも言及",
+            "contextDescription": "裁量労働制の拡大議論において、労働時間データだけでなく生産性・創造性の検証が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145
+            ]
+          },
+          "speechOrders": [
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145
+          ],
+          "input_hash": "sha256:8a03da82d55ea2f625dd3348c9fc95c5bad47f3cbf0e57b54a1f96e6e99d33e1"
+        },
+        {
+          "custom_id": "s_efefc1661106_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "消費税引下げと社会保障財源の確保",
+            "topicTag": "社保財源",
+            "topicColor": "#8b5cf6",
+            "summary": "飲食料品消費税1％引下げに伴う社会保障財源への影響と制度維持を懸念",
+            "contextDescription": "消費税・支援金法案による消費税率引下げが社会保障財源を圧迫しないか議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153
+            ]
+          },
+          "speechOrders": [
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153
+          ],
+          "input_hash": "sha256:86b182efcda00dc6913a05595417ecdf5392df449c4de25a319d1d64c57356e1"
+        },
+        {
+          "custom_id": "s_efefc1661106_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "傷病手当金の給付適正化とビジネス広告",
+            "topicTag": "傷病手当",
+            "topicColor": "#8b5cf6",
+            "summary": "傷病手当金受給を誤認させる広告業者への対応と給付適正化を追及",
+            "contextDescription": "誰でも傷病手当金を受給できるかのように誤認させる業者広告が問題視されている。",
+            "legislationName": null,
+            "speechOrders": [
+              154,
+              155,
+              156,
+              157,
+              158
+            ]
+          },
+          "speechOrders": [
+            154,
+            155,
+            156,
+            157,
+            158
+          ],
+          "input_hash": "sha256:6903b3ca12420e49a841d344b2dc2498229ae778614c611cd829362de29f6ee0"
+        },
+        {
+          "custom_id": "s_efefc1661106_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "福祉避難所の整備状況",
+            "topicTag": "福祉避難",
+            "topicColor": "#dc2626",
+            "summary": "要配慮者向け福祉避難所の全国設置状況と周知徹底の必要性を指摘",
+            "contextDescription": "災害時の要配慮者保護のため、福祉避難所の設置促進とガイドライン周知が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              159,
+              160,
+              161
+            ]
+          },
+          "speechOrders": [
+            159,
+            160,
+            161
+          ],
+          "input_hash": "sha256:d188803ee7d6c6e6950a1b2ec062d1379a1c9d5aca0541c9472224e803bb5807"
+        },
+        {
+          "custom_id": "s_efefc1661106_25",
+          "thread_idx": 25,
+          "thread_info": {
+            "topic": "発達障害の早期受診と障害年金の初診日認定",
+            "topicTag": "障害年金",
+            "topicColor": "#8b5cf6",
+            "summary": "早期受診が将来の障害年金受給に不利に働く懸念と初診日認定の見直しを議論",
+            "contextDescription": "発達障害の早期受診控えを招く障害年金の初診日・同一疾病の取扱いが論点となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              162,
+              163,
+              164
+            ]
+          },
+          "speechOrders": [
+            162,
+            163,
+            164
+          ],
+          "input_hash": "sha256:acabbeb18440bcfae97bb385379810d9f59562636899d444bdba59a4ab8a7b29"
+        },
+        {
+          "custom_id": "s_efefc1661106_26",
+          "thread_idx": 26,
+          "thread_info": {
+            "topic": "介護・障害福祉の基本報酬底上げと処遇改善の実効性",
+            "topicTag": "基本報酬",
+            "topicColor": "#8b5cf6",
+            "summary": "加算組込みでなく実質的な基本報酬引上げによる他職種並み処遇改善を要求",
+            "contextDescription": "介護・障害福祉職員の賃金を他職種並みに引き上げるため、報酬体系の実効性が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171,
+              173,
+              174
+            ]
+          },
+          "speechOrders": [
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            173,
+            174
+          ],
+          "input_hash": "sha256:8c71b458503e2d8625e9ebe4ca5959f4045d270a7813b11fc75e02cf21f2541c"
+        },
+        {
+          "custom_id": "s_efefc1661106_27",
+          "thread_idx": 27,
+          "thread_info": {
+            "topic": "医療用医薬品の安定供給と薬機法改正効果",
+            "topicTag": "薬供給",
+            "topicColor": "#3b82f6",
+            "summary": "モビコール供給停止を例に薬機法改正の効果とサプライチェーン強靱化を検証",
+            "contextDescription": "後発品を中心とした医薬品供給不足を受け、薬機法改正の効果と国産化・多元化策が論点。",
+            "legislationName": "薬機法（医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律）",
+            "speechOrders": [
+              176,
+              177,
+              178,
+              179,
+              180,
+              181,
+              182
+            ]
+          },
+          "speechOrders": [
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182
+          ],
+          "input_hash": "sha256:72bdc0ae9a87cd59d1c67baf77af0fd04b411a4139c8dad3e82e38fdadd734a5"
+        },
+        {
+          "custom_id": "s_efefc1661106_28",
+          "thread_idx": 28,
+          "thread_info": {
+            "topic": "精神障害者の医療機関受診拒否問題",
+            "topicTag": "受診拒否",
+            "topicColor": "#8b5cf6",
+            "summary": "精神障害を理由とした診療拒否の実態と身体合併症対応体制の構築を求める",
+            "contextDescription": "障害者差別解消法に基づき、精神障害者への不当な診療拒否防止と身体合併症医療体制が論点。",
+            "legislationName": "障害を理由とする差別の解消の推進に関する法律",
+            "speechOrders": [
+              183,
+              184,
+              185,
+              186
+            ]
+          },
+          "speechOrders": [
+            183,
+            184,
+            185,
+            186
+          ],
+          "input_hash": "sha256:c911ab601b8881d8fa5306c7c099d16ab2dbda33ab665ed9f1bf9a6474961ca3"
+        },
+        {
+          "custom_id": "s_efefc1661106_29",
+          "thread_idx": 29,
+          "thread_info": {
+            "topic": "災害時の保健医療福祉支援体制",
+            "topicTag": "災害医療",
+            "topicColor": "#dc2626",
+            "summary": "熊本地震での保健医療福祉調整本部の機能と自衛官等公務員の医療処遇を議論",
+            "contextDescription": "災害現場で活動する保健医療福祉チームの体制と、自衛官等の医療費負担の公平性が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              188,
+              189,
+              190,
+              191,
+              192,
+              193,
+              194,
+              195,
+              196
+            ]
+          },
+          "speechOrders": [
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196
+          ],
+          "input_hash": "sha256:6bfb12a2c01cad90ec6531a1817bd45d4187614479a028931ff2094ea2e4dab5"
+        },
+        {
+          "custom_id": "s_efefc1661106_30",
+          "thread_idx": 30,
+          "thread_info": {
+            "topic": "医療機関・介護福祉施設の老朽化と経営難",
+            "topicTag": "施設老朽化",
+            "topicColor": "#8b5cf6",
+            "summary": "高度経済成長期に整備された医療介護施設の老朽化による建替え需要増加に対応を求める",
+            "contextDescription": "病院・介護施設の老朽化が進み、建替え・大規模修繕需要の本格化への長期的対応が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              197,
+              198,
+              199,
+              200
+            ]
+          },
+          "speechOrders": [
+            197,
+            198,
+            199,
+            200
+          ],
+          "input_hash": "sha256:ec92a97349250ef8ee1c4aaa8a26de4b417de46f485061fcc4fbef2e757cf3ae"
+        },
+        {
+          "custom_id": "s_efefc1661106_31",
+          "thread_idx": 31,
+          "thread_info": {
+            "topic": "粒子線治療装置の更新問題",
+            "topicTag": "粒子線",
+            "topicColor": "#8b5cf6",
+            "summary": "高額な粒子線治療装置の更新ができない医療機関への支援策を議論",
+            "contextDescription": "がん粒子線治療装置の老朽化更新が困難な医療機関が全国に存在し、診療報酬等での対応が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              202,
+              203
+            ]
+          },
+          "speechOrders": [
+            202,
+            203
+          ],
+          "input_hash": "sha256:011dc9a0312690e9419e31db5e59631994f3c6ce0b8e890523b18a914acf4ef9"
+        },
+        {
+          "custom_id": "s_efefc1661106_32",
+          "thread_idx": 32,
+          "thread_info": {
+            "topic": "デジタル教科書導入と子供のネット・ゲーム依存",
+            "topicTag": "ネット依存",
+            "topicColor": "#f59e0b",
+            "summary": "デジタル教科書の読解力影響と子供のネット・ゲーム依存への健康対策を議論",
+            "contextDescription": "学校教育法改正に伴うデジタル教科書導入指針と、子供のネット・ゲーム依存の深刻化が論点。",
+            "legislationName": "学校教育法",
+            "speechOrders": [
+              204,
+              205,
+              206,
+              207,
+              208,
+              209,
+              210
+            ]
+          },
+          "speechOrders": [
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210
+          ],
+          "input_hash": "sha256:237ea4dafa705c564771eb7802d25d87486a27279f1692d14fd248913e7e4c12"
+        },
+        {
+          "custom_id": "s_efefc1661106_33",
+          "thread_idx": 33,
+          "thread_info": {
+            "topic": "消費税・支援金法案の対象外者支援と給付手続",
+            "topicTag": "支援金法",
+            "topicColor": "#8b5cf6",
+            "summary": "消費税支援金法案で対象外となる高齢者等への支援と給付のプッシュ型化を議論",
+            "contextDescription": "消費税・支援金法案の支援対象から外れる就業していない高齢者等への対応が課題となっている。",
+            "legislationName": "消費税・支援金法案",
+            "speechOrders": [
+              212,
+              213,
+              214,
+              215,
+              216,
+              217
+            ]
+          },
+          "speechOrders": [
+            212,
+            213,
+            214,
+            215,
+            216,
+            217
+          ],
+          "input_hash": "sha256:ee628b2d47c5cc39dae593a7dfdfa819042d1d4771b7b5e6003abe3969b19aac"
+        },
+        {
+          "custom_id": "s_efefc1661106_34",
+          "thread_idx": 34,
+          "thread_info": {
+            "topic": "医療・介護分野のサイバーセキュリティー対策",
+            "topicTag": "サイバー",
+            "topicColor": "#6b7280",
+            "summary": "相次ぐ不正アクセス被害を受け医療機関のサイバーセキュリティー対策強化を議論",
+            "contextDescription": "医療関係団体等での不正アクセスによる情報漏えい事案増加を受け、対策強化が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              218,
+              219,
+              220,
+              221,
+              222
+            ]
+          },
+          "speechOrders": [
+            218,
+            219,
+            220,
+            221,
+            222
+          ],
+          "input_hash": "sha256:696fa041918a8c5ed87871ad70d2e8dd4674d4268c91f7f414dc09f5c1bd4ab2"
+        },
+        {
+          "custom_id": "s_efefc1661106_35",
+          "thread_idx": 35,
+          "thread_info": {
+            "topic": "AI活用と労働法制・医療介護現場への導入",
+            "topicTag": "AI活用",
+            "topicColor": "#3b82f6",
+            "summary": "AI採用選考や業務指示への労働法適用、医療介護現場でのAI活用促進策を議論",
+            "contextDescription": "AI技術の労働現場・医療介護現場への導入が進む中、法的位置づけと個人情報保護の両立が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              223,
+              224,
+              225,
+              226,
+              227,
+              228,
+              229,
+              230
+            ]
+          },
+          "speechOrders": [
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230
+          ],
+          "input_hash": "sha256:e612cc0c4294014a2f63af5e967d85a272c06bbbd423f0121f939fdb40f4fbbf"
+        },
+        {
+          "custom_id": "s_efefc1661106_36",
+          "thread_idx": 36,
+          "thread_info": {
+            "topic": "厚生労働行政の情報公開",
+            "topicTag": "情報公開",
+            "topicColor": "#f97316",
+            "summary": "審議会の動画配信・議事録公開など意思決定過程の透明化を求める",
+            "contextDescription": "政府の政策検討過程を外部から検証可能にするための情報公開の在り方が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              231,
+              232
+            ]
+          },
+          "speechOrders": [
+            231,
+            232
+          ],
+          "input_hash": "sha256:44998f3007e52374c6e0b9bf01a6f6055f52db573feb61f4026c58bfffbb45fe"
+        },
+        {
+          "custom_id": "s_efefc1661106_37",
+          "thread_idx": 37,
+          "thread_info": {
+            "topic": "民泊規制の緩和と地域生活環境への悪影響",
+            "topicTag": "民泊問題",
+            "topicColor": "#6b7280",
+            "summary": "旅館業法規制緩和による民泊増加が騒音等の地域トラブルを招いている実態を追及",
+            "contextDescription": "住宅宿泊事業法施行後の民泊急増により、騒音・ごみ等の近隣トラブルが深刻化している。",
+            "legislationName": "住宅宿泊事業法",
+            "speechOrders": [
+              234,
+              235,
+              236,
+              237,
+              238,
+              239,
+              240,
+              241,
+              242,
+              243,
+              244,
+              245,
+              246,
+              247,
+              248,
+              250,
+              251
+            ]
+          },
+          "speechOrders": [
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            250,
+            251
+          ],
+          "input_hash": "sha256:91c8907711c09f654c0e3649b95156150e466aa82e44cbddf221d14d19f7ccf7"
+        }
+      ]
+    }
+  ]
+}
