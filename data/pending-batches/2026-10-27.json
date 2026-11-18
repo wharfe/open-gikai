@@ -1,0 +1,664 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-27",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01BB1m3j4nMh2YmkhxhUjtYd",
+      "submitted_at": "2026-11-18T02:52:36Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_環境委員会_2026-10-27_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_b65850c967c2_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "レジ袋有料化とバイオプラスチックの課題",
+            "topicTag": "プラ規制",
+            "topicColor": "#22c55e",
+            "summary": "レジ袋一律有料化の見直し要望と生分解性プラの海洋影響に関する議論",
+            "contextDescription": "環境省が推進してきたレジ袋有料化政策と、代替素材である生分解性プラスチックの環境影響評価の在り方。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "input_hash": "sha256:ddec5635ff1d7e0444619cfb59a1791a612820cd51f922f8124112c5fbd4bd05"
+        },
+        {
+          "custom_id": "s_b65850c967c2_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "クマ被害対策と緊急銃猟制度",
+            "topicTag": "クマ対策",
+            "topicColor": "#dc2626",
+            "summary": "過去最多のクマ被害を受け、緊急銃猟制度の運用改善や誘引物管理の強化を議論",
+            "contextDescription": "近年深刻化するクマによる人身被害を受け、緊急銃猟制度の運用や生息環境管理など対策強化が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              8,
+              9,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63
+            ]
+          },
+          "speechOrders": [
+            8,
+            9,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "input_hash": "sha256:dfc562424721438ed2e399bcdd4d37eb3f201b3cb35c64b29fb1bb2f042b03f5"
+        },
+        {
+          "custom_id": "s_b65850c967c2_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "世界の環境政策の分断と海水温上昇",
+            "topicTag": "気候分断",
+            "topicColor": "#06b6d4",
+            "summary": "国際環境会議での大国間対立と、海水温上昇が漁業・生態系に及ぼす影響",
+            "contextDescription": "気候変動対策を巡る国際社会の意見対立と、海水温上昇による魚種変化などの国内影響。",
+            "legislationName": null,
+            "speechOrders": [
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "input_hash": "sha256:0c97d64deadac0e7c894de3dcc34f5784658057c48997b3cd15139dc26963ba1"
+        },
+        {
+          "custom_id": "s_b65850c967c2_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "バイオプラスチックの資源循環政策",
+            "topicTag": "資源循環",
+            "topicColor": "#22c55e",
+            "summary": "農業・繊維分野でのバイオプラスチック活用と資源循環の取組を確認",
+            "contextDescription": "プラスチック資源循環の観点から、農業や繊維分野でのバイオプラスチック導入の推進策。",
+            "legislationName": null,
+            "speechOrders": [
+              14,
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            14,
+            15,
+            16
+          ],
+          "input_hash": "sha256:c747dd5862f1428ad616f76ecac6291c1c7f7cf0ec21241ef5543c957af50bd3"
+        },
+        {
+          "custom_id": "s_b65850c967c2_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "気候変動による自然災害と途上国支援・COP31",
+            "topicTag": "気候災害",
+            "topicColor": "#22c55e",
+            "summary": "ネパール洪水や国内豪雨を受け、温室効果ガス排出削減と適応策強化を求める",
+            "contextDescription": "気候変動に起因する国内外の大規模災害を踏まえ、排出削減策と途上国支援の在り方が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              18,
+              19,
+              20,
+              21
+            ]
+          },
+          "speechOrders": [
+            18,
+            19,
+            20,
+            21
+          ],
+          "input_hash": "sha256:865e461bdf3332e4a2cf02750935a25febea4ecca67b47a5540cdb02a833a85f"
+        },
+        {
+          "custom_id": "s_b65850c967c2_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "メガソーラーと地域共生・種の保存法",
+            "topicTag": "メガソーラー",
+            "topicColor": "#22c55e",
+            "summary": "再エネ拡大に伴う景観・生態系破壊への懸念と種の保存法改正、自治体条例との連携",
+            "contextDescription": "カーボンニュートラル推進に伴うメガソーラー建設と、希少種保護・地域条例との調整が課題。",
+            "legislationName": "絶滅のおそれのある野生動植物の種の保存に関する法律",
+            "speechOrders": [
+              28,
+              29,
+              30,
+              31
+            ]
+          },
+          "speechOrders": [
+            28,
+            29,
+            30,
+            31
+          ],
+          "input_hash": "sha256:19c0125f9588f525573791ea0b0bce8c89c2313349212ce95f012e1187f0ca89"
+        },
+        {
+          "custom_id": "s_b65850c967c2_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "ペロブスカイト太陽電池の導入促進",
+            "topicTag": "ペロブス",
+            "topicColor": "#3b82f6",
+            "summary": "軽量で設置場所を選ばないペロブスカイト太陽電池の導入目標と需要創出策",
+            "contextDescription": "次世代型太陽電池として期待されるペロブスカイト太陽電池の国内導入拡大に向けた政府目標と施策。",
+            "legislationName": null,
+            "speechOrders": [
+              32,
+              33
+            ]
+          },
+          "speechOrders": [
+            32,
+            33
+          ],
+          "input_hash": "sha256:ad3b700644b0fa070d08f900bc3e69db11303b56356fae7c8a791d52e944b52b"
+        },
+        {
+          "custom_id": "s_b65850c967c2_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "浄化槽整備と汚水処理人口普及率",
+            "topicTag": "浄化槽",
+            "topicColor": "#22c55e",
+            "summary": "汚水処理施設未普及地域の解消に向けた浄化槽整備と単独から合併への転換課題",
+            "contextDescription": "汚水処理人口普及率の地域格差を踏まえ、浄化槽法に基づく整備促進策の在り方。",
+            "legislationName": "浄化槽法",
+            "speechOrders": [
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:9595632505743a587c7d2da77895e798abaec01372e02a15aae81e199d6c4993"
+        },
+        {
+          "custom_id": "s_b65850c967c2_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "福島除去土壌の県外最終処分と再生利用",
+            "topicTag": "福島除染",
+            "topicColor": "#8b5cf6",
+            "summary": "2045年県外最終処分の方針堅持と、除去土壌再生利用の合意形成の在り方",
+            "contextDescription": "東京電力福島第一原発事故由来の除去土壌について、2045年までの県外最終処分方針と再生利用の進め方。",
+            "legislationName": null,
+            "speechOrders": [
+              38,
+              39,
+              40,
+              41,
+              42
+            ]
+          },
+          "speechOrders": [
+            38,
+            39,
+            40,
+            41,
+            42
+          ],
+          "input_hash": "sha256:e998e88157d8bf3f2d61eeb07a08d751c0fe58e7e09c1661589ef1fe74fec5b3"
+        },
+        {
+          "custom_id": "s_b65850c967c2_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "JESCOの組織形態と災害廃棄物対応",
+            "topicTag": "JESCO",
+            "topicColor": "#f97316",
+            "summary": "中間貯蔵・環境安全事業会社の特殊会社形態の妥当性と災害廃棄物対応の人材確保",
+            "contextDescription": "中間貯蔵事業を担うJESCOが特殊会社とされた経緯と、災害廃棄物処理専門支援機関としての役割の是非。",
+            "legislationName": null,
+            "speechOrders": [
+              43,
+              44,
+              45,
+              46,
+              47,
+              48
+            ]
+          },
+          "speechOrders": [
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "input_hash": "sha256:118672a604d881432dddb921520e828e89d21ed9276e690b54bfbdde91f9e353"
+        },
+        {
+          "custom_id": "s_b65850c967c2_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "環境表示ガイドラインと消費者庁の連携",
+            "topicTag": "環境表示",
+            "topicColor": "#6366f1",
+            "summary": "環境ラベル表示の不備が判明し、消費者庁との連携強化と法改正の必要性を問う",
+            "contextDescription": "環境配慮を謳う商品表示（環境ラベル）の実態調査結果を踏まえ、表示適正化に向けた制度整備の是非。",
+            "legislationName": null,
+            "speechOrders": [
+              49,
+              50,
+              51,
+              52,
+              54,
+              55
+            ]
+          },
+          "speechOrders": [
+            49,
+            50,
+            51,
+            52,
+            54,
+            55
+          ],
+          "input_hash": "sha256:d476a2884046db71dbcc80e9666b577bdb204758a0cf76bf339003c52648c46f"
+        },
+        {
+          "custom_id": "s_b65850c967c2_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "鳥獣捕獲事業の予算執行透明性",
+            "topicTag": "捕獲予算",
+            "topicColor": "#f97316",
+            "summary": "指定管理鳥獣捕獲事業の入札・契約の透明性確保と実績報告の充実を求める",
+            "contextDescription": "都道府県が実施する鳥獣捕獲事業への国費交付金について、執行の透明性確保が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              64,
+              65,
+              66,
+              67
+            ]
+          },
+          "speechOrders": [
+            64,
+            65,
+            66,
+            67
+          ],
+          "input_hash": "sha256:b670167d31e5de2bb985f128d36796f00867b5306c557b8f4de6a5f56fa30c00"
+        },
+        {
+          "custom_id": "s_b65850c967c2_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "カーボンプライシングと脱炭素投資",
+            "topicTag": "脱炭素投資",
+            "topicColor": "#22c55e",
+            "summary": "成長志向型カーボンプライシングとGX経済移行債による脱炭素投資促進策",
+            "contextDescription": "2050年ネットゼロに向け、企業の脱炭素投資を促す制度的措置とカーボンプライシング構想の議論。",
+            "legislationName": null,
+            "speechOrders": [
+              68,
+              69
+            ]
+          },
+          "speechOrders": [
+            68,
+            69
+          ],
+          "input_hash": "sha256:eb252592fec3d6f9f2aa2f13a983d28cfa9b79d0c80933a9fd080eb24d19f3ce"
+        },
+        {
+          "custom_id": "s_b65850c967c2_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "補助金財産の事業承継時の扱いと太陽光パネルリサイクル法",
+            "topicTag": "補助金承継",
+            "topicColor": "#3b82f6",
+            "summary": "中小企業の事業承継時の補助対象財産の扱い明確化と太陽光パネルリサイクル制度の詳細",
+            "contextDescription": "補助金適正化法に基づく財産処分ルールの明確化と、太陽光パネルリサイクル法に基づく制度整備状況。",
+            "legislationName": "太陽光発電設備のリサイクル等の推進に関する法律",
+            "speechOrders": [
+              70,
+              71,
+              72,
+              73
+            ]
+          },
+          "speechOrders": [
+            70,
+            71,
+            72,
+            73
+          ],
+          "input_hash": "sha256:749d148770f2541add11209c5d5127eda2ca319d68ad4c5a593875a9c37b3fbe"
+        },
+        {
+          "custom_id": "s_b65850c967c2_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "環境省予算執行の透明性と信頼回復",
+            "topicTag": "予算透明性",
+            "topicColor": "#f97316",
+            "summary": "農水大臣辞任を受け、補助金交付の透明性と政治家関与の記録管理を問う",
+            "contextDescription": "他省庁の不祥事を契機に、環境省の補助金交付プロセスの公正性・透明性確保が焦点に。",
+            "legislationName": null,
+            "speechOrders": [
+              75,
+              76,
+              77,
+              78,
+              79
+            ]
+          },
+          "speechOrders": [
+            75,
+            76,
+            77,
+            78,
+            79
+          ],
+          "input_hash": "sha256:b88994020accf3f9ae0479e992583bd73b0d02ec321396de9bfea47d8f162a4d"
+        },
+        {
+          "custom_id": "s_b65850c967c2_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "浄化槽システム脱炭素化推進事業の費用対効果",
+            "topicTag": "浄化槽補助",
+            "topicColor": "#f97316",
+            "summary": "浄化槽脱炭素化事業の低執行率と委託団体への高額な事務費支出を問題視",
+            "contextDescription": "浄化槽のCO2削減を目的とした補助事業について、執行率の低迷と費用対効果、委託費の妥当性が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87
+            ]
+          },
+          "speechOrders": [
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "input_hash": "sha256:e8ac63a452481fa8e5da049ee91fe76936246d2d78189131b05110239b0f0cae"
+        },
+        {
+          "custom_id": "s_b65850c967c2_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "気候変動適応策と適応先進地域・海洋環境",
+            "topicTag": "気候適応",
+            "topicColor": "#22c55e",
+            "summary": "適応ビジネス促進と適応先進地域創出、海洋プラスチックごみ対策の推進",
+            "contextDescription": "気候変動の緩和・適応両面での政策推進と、地域の適応力強化、海洋漂着ごみ対策の状況。",
+            "legislationName": null,
+            "speechOrders": [
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101
+            ]
+          },
+          "speechOrders": [
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101
+          ],
+          "input_hash": "sha256:a572fcb86579e9ae6b0f72b6eefa129915ae373516de7722430a19bd40fa0fab"
+        },
+        {
+          "custom_id": "s_b65850c967c2_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "脱炭素目標の国民負担と産業競争力",
+            "topicTag": "脱炭素負担",
+            "topicColor": "#3b82f6",
+            "summary": "2035・2040年排出削減目標による国民・産業界への費用負担試算の有無を追及",
+            "contextDescription": "地球温暖化対策計画の削減目標達成に伴う国民生活・産業活動への経済的影響の試算と情報開示。",
+            "legislationName": "地球温暖化対策計画",
+            "speechOrders": [
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114
+            ]
+          },
+          "speechOrders": [
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
+          ],
+          "input_hash": "sha256:aead630c345d582b073c3d57ae9bf5da047e5a4593a3868e543a5554360e7fc7"
+        },
+        {
+          "custom_id": "s_b65850c967c2_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "カーボンリーケージと排出量取引制度の配慮措置",
+            "topicTag": "ﾘｰｹｰｼﾞ",
+            "topicColor": "#3b82f6",
+            "summary": "工場の海外移転による排出量算定の課題と排出量取引制度の国際競争力配慮措置",
+            "contextDescription": "脱炭素規制による国内産業の海外移転（カーボンリーケージ）リスクと、排出量取引制度での対応策。",
+            "legislationName": null,
+            "speechOrders": [
+              115,
+              116,
+              117,
+              118,
+              119,
+              120
+            ]
+          },
+          "speechOrders": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120
+          ],
+          "input_hash": "sha256:0e0f7d5be2f20248a6bb7fef205386a4e83988efc315857120aa9f74f22f4806"
+        },
+        {
+          "custom_id": "s_b65850c967c2_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "太陽光パネル廃棄・リサイクル制度の整備",
+            "topicTag": "ﾊﾟﾈﾙ廃棄",
+            "topicColor": "#22c55e",
+            "summary": "太陽電池廃棄物再資源化法の施行準備と廃棄費用積立制度、リサイクル体制の整備状況",
+            "contextDescription": "増加が見込まれる太陽光パネル廃棄に備え、新法に基づく施行令整備やリサイクル体制構築が課題。",
+            "legislationName": "太陽電池モジュールの廃棄等及び再資源化の促進に関する法律",
+            "speechOrders": [
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "speechOrders": [
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "input_hash": "sha256:8cc73707f5efc588e2fa965909e27322eb9091d3782dab26cb271e74fa900cda"
+        },
+        {
+          "custom_id": "s_b65850c967c2_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "産業廃棄物最終処分場の集中立地と住民同意",
+            "topicTag": "処分場立地",
+            "topicColor": "#6b7280",
+            "summary": "那須塩原市の処分場集中立地問題を受け、住民同意要件化や河川近接地規制を議論",
+            "contextDescription": "栃木県那須塩原市に最終処分場が集中する問題を受け、設置許可要件や住民同意、立地規制の見直しが焦点。",
+            "legislationName": "廃棄物の処理及び清掃に関する法律",
+            "speechOrders": [
+              129,
+              130,
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143
+            ]
+          },
+          "speechOrders": [
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143
+          ],
+          "input_hash": "sha256:d9f7f9285c1235db440b7b84687251b77d7ae4e348ee1cc4e40c53640a9898b4"
+        },
+        {
+          "custom_id": "s_b65850c967c2_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "公害健康被害補償法改正案の趣旨説明",
+            "topicTag": "公害補償",
+            "topicColor": "#6366f1",
+            "summary": "遺族補償費の支給要件見直しを含む公害健康被害補償法改正案の提案理由説明",
+            "contextDescription": "公害健康被害の補償等に関する法律に基づく遺族補償費制度を見直す改正法案の提案趣旨説明。",
+            "legislationName": "公害健康被害の補償等に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              145
+            ]
+          },
+          "speechOrders": [
+            145
+          ],
+          "input_hash": "sha256:4aae61c6ae9108b8510cb9fc5f3b5ca84bb50a39c134d36644afe3e2816346b5"
+        }
+      ]
+    }
+  ]
+}
