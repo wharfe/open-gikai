@@ -1,0 +1,121 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-11",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01E9xTFMgyoR58vmeFv6er6R",
+      "submitted_at": "2026-11-19T02:50:24Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_議院運営委員会_2026-11-11_第5号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_b04a8abb4aa1_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "各種委員の選任",
+            "topicTag": "委員選任",
+            "topicColor": "#f97316",
+            "summary": "裁判官訴追委員等の各種委員について会派申出どおり選任を行うことを決定",
+            "contextDescription": "裁判官訴追委員や検察官適格審査会委員など、国会が選任する各種委員会の委員を割当て会派の申出通り決定する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              1
+            ]
+          },
+          "speechOrders": [
+            1
+          ],
+          "input_hash": "sha256:e29465e2c311522e0d072d69722c9b8c239a7e1875995a10aa1fc8c832b98bc0"
+        },
+        {
+          "custom_id": "s_b04a8abb4aa1_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "議員秘書給与の改定",
+            "topicTag": "秘書給与",
+            "topicColor": "#f97316",
+            "summary": "政府職員の給与改定に伴い議員秘書の給料月額・勤勉手当を改定する議案",
+            "contextDescription": "国家公務員の給与改定に合わせて、国会議員の秘書の給料月額や手当の支給割合を見直す議案。",
+            "legislationName": null,
+            "speechOrders": [
+              6
+            ]
+          },
+          "speechOrders": [
+            6
+          ],
+          "input_hash": "sha256:88f650964247e72e52fe8e2d8e90d366d9d17b9a5a2da1de4165645823c55be7"
+        },
+        {
+          "custom_id": "s_b04a8abb4aa1_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "国会職員の給与・勤務時間等の改定",
+            "topicTag": "職員給与",
+            "topicColor": "#f97316",
+            "summary": "政府職員の給与・勤務時間改定に準じ国会職員にも同様の措置を講じる件",
+            "contextDescription": "国家公務員の給与改定や勤務時間・休暇制度の変更に合わせ、国会職員についても同様の改定を行う議案。",
+            "legislationName": null,
+            "speechOrders": [
+              11
+            ]
+          },
+          "speechOrders": [
+            11
+          ],
+          "input_hash": "sha256:6f2cfe9e30198c81862d589e69d5c243477c494fecb43253a667f72fb1611ce8"
+        },
+        {
+          "custom_id": "s_b04a8abb4aa1_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "消費税率引下げ法案の本会議審議手続",
+            "topicTag": "消費税法",
+            "topicColor": "#3b82f6",
+            "summary": "飲食料品の消費税臨時引下げ法案の本会議趣旨説明・質疑の会派配分を決定",
+            "contextDescription": "飲食料品に係る消費税率を臨時的に引き下げ、就業者負担軽減支援金を支給する法律案の国会審議手続。",
+            "legislationName": "租税及び社会保険料による負担の軽減のための飲食料品に係る消費税率の臨時的な引下げ及び就業者負担軽減支援金の支給に関する法律案",
+            "speechOrders": [
+              14
+            ]
+          },
+          "speechOrders": [
+            14
+          ],
+          "input_hash": "sha256:e3fe6dac6dd642828fb44e3b704bde3b19885d4a5a01971e6e192cb0536b8eb2"
+        },
+        {
+          "custom_id": "s_b04a8abb4aa1_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "本会議議事運営（辞任・委員選挙等）",
+            "topicTag": "議事運営",
+            "topicColor": "#f97316",
+            "summary": "裁判官訴追委員等の辞任許可と後任選挙の手続を本会議で進めることを確認",
+            "contextDescription": "裁判官訴追委員等の辞任許可とそれに伴う後任委員の選挙手続について、本会議での議事進行を事前に確認する内容。",
+            "legislationName": null,
+            "speechOrders": [
+              17
+            ]
+          },
+          "speechOrders": [
+            17
+          ],
+          "input_hash": "sha256:5db1ed5c3a414dc35360a266e6f6dcf4da62dbdf65a898ed311bc2bb7ed2281f"
+        }
+      ]
+    }
+  ]
+}
