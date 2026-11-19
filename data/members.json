@@ -31555,5 +31555,562 @@
         "url": "https://www.google.com/search?q=%E5%B2%A1%E8%8B%B1%E7%AF%84+%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E7%9C%81"
       }
     ]
+  },
+  "m_9abaf510": {
+    "id": "m_9abaf510",
+    "name": "則久雅司",
+    "party": null,
+    "role": "環境省自然環境局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "環境省の発言者一覧",
+        "url": "/gov/env"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%89%87%E4%B9%85%E9%9B%85%E5%8F%B8+%E7%92%B0%E5%A2%83%E7%9C%81"
+      }
+    ]
+  },
+  "m_757de21d": {
+    "id": "m_757de21d",
+    "name": "深町正徳",
+    "party": null,
+    "role": "消費者庁審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "消費者庁の発言者一覧",
+        "url": "/gov/caa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B7%B1%E7%94%BA%E6%AD%A3%E5%BE%B3+%E6%B6%88%E8%B2%BB%E8%80%85%E5%BA%81"
+      }
+    ]
+  },
+  "m_a013e2cc": {
+    "id": "m_a013e2cc",
+    "name": "熊倉基之",
+    "party": null,
+    "role": "環境省環境再生・資源循環局資源循環グループ長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "環境省の発言者一覧",
+        "url": "/gov/env"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E7%86%8A%E5%80%89%E5%9F%BA%E4%B9%8B+%E7%92%B0%E5%A2%83%E7%9C%81"
+      }
+    ]
+  },
+  "m_e81dddaf": {
+    "id": "m_e81dddaf",
+    "name": "山口仁",
+    "party": null,
+    "role": "資源エネルギー庁省エネルギー・新エネルギー部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "資源エネルギー庁の発言者一覧",
+        "url": "/gov/enecho"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E5%8F%A3%E4%BB%81+%E8%B3%87%E6%BA%90%E3%82%A8%E3%83%8D%E3%83%AB%E3%82%AE%E3%83%BC%E5%BA%81"
+      }
+    ]
+  },
+  "m_fe427d1c": {
+    "id": "m_fe427d1c",
+    "name": "上野麻子",
+    "party": null,
+    "role": "経済産業省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "経済産業省の発言者一覧",
+        "url": "/gov/meti"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%B8%8A%E9%87%8E%E9%BA%BB%E5%AD%90+%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E7%9C%81"
+      }
+    ]
+  },
+  "makinoshunichi": {
+    "id": "makinoshunichi",
+    "name": "牧野俊一",
+    "party": "参政党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E7%89%A7%E9%87%8E%E4%BF%8A%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E7%89%A7%E9%87%8E%E4%BF%8A%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E7%89%A7%E9%87%8E%E4%BF%8A%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "nakagawatakamoto": {
+    "id": "nakagawatakamoto",
+    "name": "中川貴元",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B7%9D%E8%B2%B4%E5%85%83"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E8%B2%B4%E5%85%83+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E4%B8%AD%E5%B7%9D%E8%B2%B4%E5%85%83+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_bc1582d3": {
+    "id": "m_bc1582d3",
+    "name": "鈴木清",
+    "party": null,
+    "role": "総務省大臣官房地域力創造審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "総務省の発言者一覧",
+        "url": "/gov/soumu"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E9%88%B4%E6%9C%A8%E6%B8%85+%E7%B7%8F%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "kondoumasahiko": {
+    "id": "kondoumasahiko",
+    "name": "近藤雅彦",
+    "party": "国民民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E8%97%A4%E9%9B%85%E5%BD%A6"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%BF%91%E8%97%A4%E9%9B%85%E5%BD%A6+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%BF%91%E8%97%A4%E9%9B%85%E5%BD%A6+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_a312b5e2": {
+    "id": "m_a312b5e2",
+    "name": "阿久澤孝",
+    "party": null,
+    "role": "財務省理財局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "財務省の発言者一覧",
+        "url": "/gov/mof"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E9%98%BF%E4%B9%85%E6%BE%A4%E5%AD%9D+%E8%B2%A1%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_6f7787b9": {
+    "id": "m_6f7787b9",
+    "name": "吉村直泰",
+    "party": null,
+    "role": "経済産業省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "経済産業省の発言者一覧",
+        "url": "/gov/meti"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%90%89%E6%9D%91%E7%9B%B4%E6%B3%B0+%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E7%9C%81"
+      }
+    ]
+  },
+  "kawamuratakashi": {
+    "id": "kawamuratakashi",
+    "name": "河村たかし",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E6%9D%91%E3%81%9F%E3%81%8B%E3%81%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E6%B2%B3%E6%9D%91%E3%81%9F%E3%81%8B%E3%81%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E6%B2%B3%E6%9D%91%E3%81%9F%E3%81%8B%E3%81%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_a369d4e0": {
+    "id": "m_a369d4e0",
+    "name": "上仮屋尚",
+    "party": null,
+    "role": "デジタル庁審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "デジタル庁の発言者一覧",
+        "url": "/gov/digital"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%B8%8A%E4%BB%AE%E5%B1%8B%E5%B0%9A+%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%BA%81"
+      }
+    ]
+  },
+  "m_139e6949": {
+    "id": "m_139e6949",
+    "name": "淵上孝",
+    "party": null,
+    "role": "文部科学省総合教育政策局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "文部科学省の発言者一覧",
+        "url": "/gov/mext"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B7%B5%E4%B8%8A%E5%AD%9D+%E6%96%87%E9%83%A8%E7%A7%91%E5%AD%A6%E7%9C%81"
+      }
+    ]
+  },
+  "m_a3f809e2": {
+    "id": "m_a3f809e2",
+    "name": "岩佐理",
+    "party": null,
+    "role": "財務省主計局次長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "財務省の発言者一覧",
+        "url": "/gov/mof"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B2%A9%E4%BD%90%E7%90%86+%E8%B2%A1%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_3bb60b7c": {
+    "id": "m_3bb60b7c",
+    "name": "金井正彰",
+    "party": null,
+    "role": "外務省アジア大洋州局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "外務省の発言者一覧",
+        "url": "/gov/mofa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E9%87%91%E4%BA%95%E6%AD%A3%E5%BD%B0+%E5%A4%96%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_1aabd11b": {
+    "id": "m_1aabd11b",
+    "name": "武田裕紀",
+    "party": null,
+    "role": "農林水産省農産局農産政策部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "農林水産省の発言者一覧",
+        "url": "/gov/maff"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%AD%A6%E7%94%B0%E8%A3%95%E7%B4%80+%E8%BE%B2%E6%9E%97%E6%B0%B4%E7%94%A3%E7%9C%81"
+      }
+    ]
+  },
+  "dobashiakihiro": {
+    "id": "dobashiakihiro",
+    "name": "土橋章宏",
+    "party": "チームみらい",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E6%A9%8B%E7%AB%A0%E5%AE%8F"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%9C%9F%E6%A9%8B%E7%AB%A0%E5%AE%8F+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%9C%9F%E6%A9%8B%E7%AB%A0%E5%AE%8F+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_62420f24": {
+    "id": "m_62420f24",
+    "name": "川上敏寛",
+    "party": null,
+    "role": "内閣府知的財産戦略推進事務局次長／文部科学省大臣官房文部科学戦略官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "minister",
+    "links": [
+      {
+        "label": "内閣府の発言者一覧",
+        "url": "/gov/cao"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B7%9D%E4%B8%8A%E6%95%8F%E5%AF%9B+%E5%86%85%E9%96%A3%E5%BA%9C"
+      }
+    ]
+  },
+  "kurosakiyuuichi": {
+    "id": "kurosakiyuuichi",
+    "name": "黒崎祐一",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E5%B4%8E%E7%A5%90%E4%B8%80"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%BB%92%E5%B4%8E%E7%A5%90%E4%B8%80+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%BB%92%E5%B4%8E%E7%A5%90%E4%B8%80+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "yamashitashizuo": {
+    "id": "yamashitashizuo",
+    "name": "山下史守朗",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%8B%E5%8F%B2%E5%AE%88%E6%9C%97"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E4%B8%8B%E5%8F%B2%E5%AE%88%E6%9C%97+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B1%B1%E4%B8%8B%E5%8F%B2%E5%AE%88%E6%9C%97+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_61db1379": {
+    "id": "m_61db1379",
+    "name": "常盤木祐一",
+    "party": null,
+    "role": "文部科学省大臣官房学習基盤審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "文部科学省の発言者一覧",
+        "url": "/gov/mext"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B8%B8%E7%9B%A4%E6%9C%A8%E7%A5%90%E4%B8%80+%E6%96%87%E9%83%A8%E7%A7%91%E5%AD%A6%E7%9C%81"
+      }
+    ]
+  },
+  "etouhiroaki": {
+    "id": "etouhiroaki",
+    "name": "衛藤博昭",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%A1%9B%E8%97%A4%E5%8D%9A%E6%98%AD"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%A1%9B%E8%97%A4%E5%8D%9A%E6%98%AD+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%A1%9B%E8%97%A4%E5%8D%9A%E6%98%AD+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_7c96198f": {
+    "id": "m_7c96198f",
+    "name": "牛島聡",
+    "party": null,
+    "role": "厚生労働省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "厚生労働省の発言者一覧",
+        "url": "/gov/mhlw"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E7%89%9B%E5%B3%B6%E8%81%A1+%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E7%9C%81"
+      }
+    ]
+  },
+  "m_756740e0": {
+    "id": "m_756740e0",
+    "name": "佐藤守孝",
+    "party": null,
+    "role": "国土交通省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "国土交通省の発言者一覧",
+        "url": "/gov/mlit"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E4%BD%90%E8%97%A4%E5%AE%88%E5%AD%9D+%E5%9B%BD%E5%9C%9F%E4%BA%A4%E9%80%9A%E7%9C%81"
+      }
+    ]
   }
 }

@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 18 Nov 2026 03:13:48 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 03:08:28 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W47 国会まとめ — 1件の議論</title>
@@ -16,27 +16,27 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W46 国会まとめ — 4件の議論</title>
+      <title>2026-W46 国会まとめ — 9件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W46</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W46</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
-      <description>4件のスレッド、2委員会の議論をまとめました。議院運営委員会国会法改正等及び国会改革に関する小委員会、議院運営委員会ほか。</description>
+      <description>9件のスレッド、2委員会の議論をまとめました。議院運営委員会国会法改正等及び国会改革に関する小委員会、議院運営委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W45 国会まとめ — 14件の議論</title>
+      <title>2026-W45 国会まとめ — 15件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W45</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W45</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>14件のスレッド、4委員会の議論をまとめました。議院運営委員会、マクロン・フランス共和国大統領との電話会談等についての会見、災害対策特別委員会ほか。</description>
+      <description>15件のスレッド、5委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、マクロン・フランス共和国大統領との電話会談等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W44 国会まとめ — 164件の議論</title>
+      <title>2026-W44 国会まとめ — 289件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>164件のスレッド、15委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
+      <description>289件のスレッド、19委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -62,6 +62,46 @@
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>委員会で配付される資料の公開方法について各会派で検討し次回協議することとした（国会会議録・2026.11.11・1発言）</description>
       <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>各種委員の選任 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_b04a8a_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_b04a8a_03</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>裁判官訴追委員等の各種委員について会派申出どおり選任を行うことを決定（国会会議録・2026.11.11・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>議員秘書給与の改定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_b04a8a_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_b04a8a_04</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>政府職員の給与改定に伴い議員秘書の給料月額・勤勉手当を改定する議案（国会会議録・2026.11.11・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>国会職員の給与・勤務時間等の改定 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_b04a8a_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_b04a8a_05</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>政府職員の給与・勤務時間改定に準じ国会職員にも同様の措置を講じる件（国会会議録・2026.11.11・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>消費税率引下げ法案の本会議審議手続 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_b04a8a_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_b04a8a_06</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>飲食料品の消費税臨時引下げ法案の本会議趣旨説明・質疑の会派配分を決定（国会会議録・2026.11.11・1発言）</description>
+      <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>本会議議事運営（辞任・委員選挙等） — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_b04a8a_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_b04a8a_07</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>裁判官訴追委員等の辞任許可と後任選挙の手続を本会議で進めることを確認（国会会議録・2026.11.11・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>本会議討論・趣旨説明に関する運営協議 — 議院運営委員会</title>
@@ -110,6 +150,14 @@
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
       <description>重要施設周辺の土地利用規制法改正案等を次回本会議で趣旨説明することを決定した（国会会議録・2026.11.06・1発言）</description>
       <category>議院運営委員会</category>
+    </item>
+    <item>
+      <title>防災・復興担当大臣等の所信表明及び挨拶 — 災害対策及び東日本大震災復興特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_e9671a_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_e9671a_05</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>防災・復興担当の大臣・副大臣・政務官が就任挨拶と災害対応・復興への所信を述べた（国会会議録・2026.11.06・7発言）</description>
+      <category>災害対策及び東日本大震災復興特別委員会</category>
     </item>
     <item>
       <title>日仏首脳電話会談の内容 — マクロン・フランス共和国大統領との電話会談等についての会見</title>
@@ -232,6 +280,126 @@
       <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
+      <title>公健法改正案における遺族補償費の男女格差と年齢要件撤廃 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_06</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>夫の年齢要件撤廃は評価しつつ、補償額に残る男女間格差の是正を求める質疑が続く（国会会議録・2026.10.30・13発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>公健法の補償額男女差と同性パートナーの扱い — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_07</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>賃金統計に基づく補償額の男女差の是正と、同性パートナーへの補償適用拡大を議論（国会会議録・2026.10.30・13発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>遺族補償費の支給期間と消滅時効の妥当性 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_08</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>十年間の遺族補償支給期間や石綿等の長期潜伏疾病への対応の妥当性を検証（国会会議録・2026.10.30・8発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>公害健康被害補償制度の財源と予防事業 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_09</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>汚染負荷量賦課金による財源確保と環境再生保全機構の予防事業の充実を求める（国会会議録・2026.10.30・4発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>地球温暖化対策とCOP31への対応 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_10</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>ゼロエミッション車普及目標やCOP31出席方針など温暖化対策の姿勢を質す（国会会議録・2026.10.30・2発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>公健法の抜本的見直しと制度点検の必要性 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_11</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>半世紀以上続く公健法の運用実態に即した総点検と見直しの必要性を労災法と比較し追及（国会会議録・2026.10.30・11発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>広島県の産業廃棄物最終処分場の水質汚染問題 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_12</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>広島県本郷の最終処分場で水質基準超過が繰り返され、再開の経緯と再発防止策を追及（国会会議録・2026.10.30・13発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>マイクロプラスチックの健康影響と予防的環境政策 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_13</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>マイクロプラスチックの健康影響は科学的知見不足だが先手の対策を求める（国会会議録・2026.10.30・3発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>モンゴル草原火災への日本の対応 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_14</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>モンゴル東部の大規模草原火災に対する日本の支援体制の薄さと外交的対応を懸念（国会会議録・2026.10.30・6発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>水俣病認定審査の迅速化と医療費支援 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_15</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>高齢・遠方居住の申請者への認定審査の長期化と医療費支援の周知を求める（国会会議録・2026.10.30・4発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>PFAS汚染対策と熊本半導体工場排水問題 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_16</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>PFASの健康リスクと水質基準、熊本の半導体工場排水の処理技術実証を確認（国会会議録・2026.10.30・9発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>環境行政の原点としての公害問題への向き合い方 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_17</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>公害問題は過去のものではなく継続課題であるとの大臣の認識を確認（国会会議録・2026.10.30・2発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>公健法・交通事故補償における男女格差の不条理 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_18</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>賃金センサスに基づく補償額の男女格差を「命の値段の差」と批判し是正を迫る（国会会議録・2026.10.30・9発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>データセンターの建築基準法上の位置づけと環境影響 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_19</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>データセンターが建築基準法上「事務所」扱いである問題と環境影響への懸念を追及（国会会議録・2026.10.30・8発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
+      <title>公健法改正案に対する附帯決議 — 環境委員会</title>
+      <link>https://open-gikai.net/t/t_20261030_99929d_20</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261030_99929d_20</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>男女間格差是正など法施行上の留意事項を定めた附帯決議案を提示し大臣が尊重を表明（国会会議録・2026.10.30・2発言）</description>
+      <category>環境委員会</category>
+    </item>
+    <item>
       <title>燃料油「激変緩和措置」の見直しと今後の対応 — 中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見</title>
       <link>https://open-gikai.net/t/t_20261029_112958_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_112958_01</guid>
@@ -269,174 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_01</guid>
       <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
       <description>大規模情報漏えいが相次ぐ中、政府・中小企業のサイバー防御体制強化が急務との認識を共有（国会会議録・2026.10.28・5発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>デジタル・AI担当大臣一元化への期待 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_02</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>デジタルとAIの所管一元化を歓迎し、新大臣の取組姿勢に期待を示す（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>基礎研究支援と若手研究者の国際頭脳循環 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_03</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>若手研究者の雇用不安定さと海外流出への対応、頭脳循環ハブ化を目指す施策を議論（国会会議録・2026.10.28・5発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>デジタル庁GSSへの不正アクセス事案 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_04</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>デジタル庁運用システムGSSへの不正アクセス経緯と今後の公表対応の迅速化を質疑（国会会議録・2026.10.28・4発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>PHP脆弱性への政府・自治体の対応 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_05</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>広く使われるPHPの重大脆弱性に対する政府・自治体システムの点検・パッチ対応状況を確認（国会会議録・2026.10.28・6発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>改正個人情報保護法と漏えい防止措置 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_06</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>課徴金制度導入など改正個人情報保護法の運用と、差止め請求制度導入の是非を議論（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>中小企業向けサイバーセキュリティ相談体制 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_07</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>人員の限られる中小企業向けに無料相談窓口を設置し実効性ある支援を求める（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>次期マイナンバーカードの導入計画 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_08</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>入札不調による随意契約を経て、令和11年度中導入を目指す次期マイナンバーカード計画（国会会議録・2026.10.28・1発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>AX推進とバーティカル・フィジカルAIの産業戦略 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_09</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>AI基本計画に基づくバーティカル・フィジカルAIを日本の勝ち筋とする投資戦略を議論（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>宇宙産業の打ち上げ能力強化 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_10</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>ロケット年間打ち上げ件数の目標達成に向けた中小企業支援と人材環境の改善を要望（国会会議録・2026.10.28・2発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>官邸デジタル対応の不備と政府全体のDX推進 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_11</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>官邸でのオンライン会議参加不備を指摘し、デジタル庁の政府全体DX支援の役割を確認（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>自治体窓口BPRアドバイザーによるDX支援 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_12</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>自治体間で窓口業務ノウハウを共有するBPRアドバイザー制度の意義と派遣元の人手不足への配慮（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>外国人住民増加と自治体窓口の多言語対応 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_13</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>在留外国人増加に伴う自治体窓口の多言語対応好事例の横展開を求める（国会会議録・2026.10.28・2発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>AIの呼称（AI/SI）をめぐる議論 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_14</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>AIという呼称を今後も使い続けるかについて大臣の見解を質す（国会会議録・2026.10.28・2発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>在留手続手数料の大幅値上げと使途 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_15</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>パブコメ無視の在留手数料値上げによる増収分の使途と入管DXへの貢献を追及（国会会議録・2026.10.28・5発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>マイナンバー情報連携の拡充 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_16</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_16</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>マイナンバー情報照会の低調事案を踏まえ、制度所管省庁との連携強化を議論（国会会議録・2026.10.28・3発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>転居手続と国民健康保険のデジタル連携 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_17</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_17</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>転出入時の国保資格手続の煩雑さとマイナ保険証を活用した連携可能性を議論（国会会議録・2026.10.28・2発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>所得証明書等の電子交付システムの自治体差 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_18</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_18</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>マイナンバーカードでの所得証明書発行可否が自治体ごとに異なる実態と実態調査の必要性（国会会議録・2026.10.28・2発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>デジタル関連予算の一括計上と拡充 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_19</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_19</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>デジタル庁への情報システム予算一括計上と来年度のAX・DX推進予算確保の方針（国会会議録・2026.10.28・4発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>サイバー攻撃関係閣僚会議と重要インフラ対策 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_20</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_20</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>相次ぐサイバー攻撃を受けた関係閣僚会議の設置と重要インフラ事業者への支援策を議論（国会会議録・2026.10.28・4発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>マイナンバーカード顔写真の特例と重度障害者への配慮 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_21</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_21</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>やむを得ない事情での顔写真特例の簡便化と、事故・病気後の写真変更への配慮を要望（国会会議録・2026.10.28・4発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>ISMAP評価サービスのインシデント発生と信頼性 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_22</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_22</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>政府評価済みクラウドサービスでインシデントが発生した事実を受け評価制度の検証を求める（国会会議録・2026.10.28・11発言）</description>
       <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
     </item>
   </channel>
