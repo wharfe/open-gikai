@@ -1,0 +1,725 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-30",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01C2jJA2oCUZgn95GHfiojXj",
+      "submitted_at": "2026-11-20T02:25:40Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_厚生労働委員会_2026-10-30_第4号",
+      "outcome": {
+        "result": "可決",
+        "resolution": null,
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_8d7737787778_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "B型肝炎給付金の弁護士費用・周知体制",
+            "topicTag": "肝炎周知",
+            "topicColor": "#8b5cf6",
+            "summary": "B型肝炎給付金の高額弁護士費用問題と無症候性キャリアへの周知強化策を議論",
+            "contextDescription": "集団予防接種での注射器使い回しでB型肝炎に感染した被害者への給付金制度。未提訴者が多く周知が課題。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "input_hash": "sha256:adadf60be2f3e88f8d8cc439669af25da2fb4e208c0d3369be7171cf37ce4d92"
+        },
+        {
+          "custom_id": "s_8d7737787778_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "母乳バンクの制度整備",
+            "topicTag": "母乳バンク",
+            "topicColor": "#8b5cf6",
+            "summary": "ドナーミルクの法的位置づけ未確立と供給体制の地域偏在が課題",
+            "contextDescription": "低出生体重児の重篤な合併症を減らす母乳バンク事業の法的位置づけや安定供給体制が未整備な現状。",
+            "legislationName": null,
+            "speechOrders": [
+              20,
+              21,
+              22,
+              23,
+              24
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "input_hash": "sha256:dc979a517899b07193de7c01a9bfda9bc44db9ccbe1db41d58b51c2c4960c437"
+        },
+        {
+          "custom_id": "s_8d7737787778_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "B型肝炎給付金請求期限延長と未提訴者対策",
+            "topicTag": "肝炎延長",
+            "topicColor": "#8b5cf6",
+            "summary": "無症候性キャリアの掘り起こしと医療現場・コーディネーター活用による提訴促進策",
+            "contextDescription": "集団予防接種での注射器使い回しでB型肝炎に感染した被害者への給付金請求期限を5年延長する法案の審議。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ]
+          },
+          "speechOrders": [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "input_hash": "sha256:7846719060bda387ff62ccb35fb2bb65a342e1bf7587b728a9b86f5d637c8bb3"
+        },
+        {
+          "custom_id": "s_8d7737787778_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "非ウイルス性肝疾患（脂肪肝等）対策",
+            "topicTag": "脂肪肝",
+            "topicColor": "#8b5cf6",
+            "summary": "生活習慣病由来の非ウイルス性肝疾患増加への対策と肝炎対策基本法の対象拡大",
+            "contextDescription": "ウイルス性肝炎は減少する一方、肥満等生活習慣由来の非ウイルス性肝疾患・肝がんが増加している問題。",
+            "legislationName": "肝炎対策基本法",
+            "speechOrders": [
+              34,
+              35,
+              36,
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "input_hash": "sha256:37fb05c6376f9770db420fabc65581165c72692ef798b17542eea320039a158d"
+        },
+        {
+          "custom_id": "s_8d7737787778_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "B型肝炎治療薬開発と非ウイルス性肝疾患の診療体制",
+            "topicTag": "肝炎治療薬",
+            "topicColor": "#8b5cf6",
+            "summary": "B型肝炎根治薬の研究支援と若年層・学校健診での脂肪肝早期発見の検討",
+            "contextDescription": "B型肝炎の根治薬が未開発な現状での創薬支援と、非ウイルス性肝疾患の早期発見体制の構築が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ]
+          },
+          "speechOrders": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+          ],
+          "input_hash": "sha256:9f307248fbcfd927ef3b372ce070fc114580488d621a885737e742c106b66626"
+        },
+        {
+          "custom_id": "s_8d7737787778_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "B型肝炎給付金の未提訴者見通しと請求期限の妥当性",
+            "topicTag": "肝炎未提訴",
+            "topicColor": "#8b5cf6",
+            "summary": "残り約27万人の未提訴者に対し5年延長で十分か、更なる延長の必要性を問う",
+            "contextDescription": "B型肝炎給付金の対象者約45万人のうち多数が未提訴のまま残る中、請求期限再延長の是非が論点。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              52,
+              53,
+              54,
+              55,
+              56
+            ]
+          },
+          "speechOrders": [
+            52,
+            53,
+            54,
+            55,
+            56
+          ],
+          "input_hash": "sha256:96411c81a5c004559dade294ae7578e9f1f1bb47af97be317d4f955549cbc54c"
+        },
+        {
+          "custom_id": "s_8d7737787778_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "沖縄戦没者遺骨収集の予算確保",
+            "topicTag": "遺骨収集",
+            "topicColor": "#dc2626",
+            "summary": "沖縄の戦没者遺骨収集を担うNPOへの予算不足を指摘し増額を要望",
+            "contextDescription": "沖縄・硫黄島で国と自治体が進める戦没者遺骨収集事業。現場団体の活動予算の不足が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              57,
+              58
+            ]
+          },
+          "speechOrders": [
+            57,
+            58
+          ],
+          "input_hash": "sha256:e4ffc97e3f1871356ef541b99e8edf76022838138360f40027ad3ef1cdabe1e7"
+        },
+        {
+          "custom_id": "s_8d7737787778_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "障害福祉サービス事業者の不正受給問題",
+            "topicTag": "不正受給",
+            "topicColor": "#8b5cf6",
+            "summary": "絆ホールディングスによる166億円の不正受給と返還不能・制度の抜け穴を追及",
+            "contextDescription": "就労移行支援体制加算を悪用した事業者が巨額の給付金を不正受給し破産、返還が困難になっている事件。",
+            "legislationName": null,
+            "speechOrders": [
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66
+            ]
+          },
+          "speechOrders": [
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "input_hash": "sha256:7a4a6c522842119e3f69b97c4ac3777d11d1c06c9f59cbbb2df4cd1545c1b3b2"
+        },
+        {
+          "custom_id": "s_8d7737787778_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "B型肝炎無症候性キャリアへの周知強化策",
+            "topicTag": "無症候周知",
+            "topicColor": "#8b5cf6",
+            "summary": "無症候性キャリア本人の体験を踏まえ、より強いインパクトのある広報や受検後の説明徹底を要望",
+            "contextDescription": "症状が出にくい無症候性キャリアは提訴率が低く、本制度の周知が届いていない実態が課題。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80
+            ]
+          },
+          "speechOrders": [
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80
+          ],
+          "input_hash": "sha256:edc8e900a9fc4058d015935e7ca139fb8bc2d2204635d121f691c1c65a76fafd"
+        },
+        {
+          "custom_id": "s_8d7737787778_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "新薬ヒブサーゴの医療費助成開始時期",
+            "topicTag": "新薬助成",
+            "topicColor": "#8b5cf6",
+            "summary": "B型肝炎新薬ヒブサーゴの医療費助成の早期開始を患者の声を背景に要望",
+            "contextDescription": "B型肝炎の機能的治癒を目指す新薬ヒブサーゴが承認され、医療費助成の対象化手続きが進められている。",
+            "legislationName": null,
+            "speechOrders": [
+              82,
+              84,
+              85
+            ]
+          },
+          "speechOrders": [
+            82,
+            84,
+            85
+          ],
+          "input_hash": "sha256:ee186e8bc05559d12c104ee0441902c2fa2abaccef62db8830add2544c8211d8"
+        },
+        {
+          "custom_id": "s_8d7737787778_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "B型肝炎給付金請求の手続負担軽減と不正防止",
+            "topicTag": "手続負担",
+            "topicColor": "#8b5cf6",
+            "summary": "本人提訴の支援拡充と、公金である給付金の不正受給防止の両立を議論",
+            "contextDescription": "B型肝炎給付金請求の手続きは弁護士依頼が主流だが本人提訴も可能であり、負担軽減と不正防止の両立が論点。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              87,
+              88,
+              89,
+              90
+            ]
+          },
+          "speechOrders": [
+            87,
+            88,
+            89,
+            90
+          ],
+          "input_hash": "sha256:38175f1509fd150f1179bb6495bcea3278c839f113e8d0f1b0660b791bf9bedc"
+        },
+        {
+          "custom_id": "s_8d7737787778_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "創薬・再生医療の国家戦略と年金積立金活用",
+            "topicTag": "創薬戦略",
+            "topicColor": "#3b82f6",
+            "summary": "日本の創薬力強化のための資金循環とGPIF運用の在り方、予防医療の推進を議論",
+            "contextDescription": "日本の基礎研究力は高いが実用化・資金調達力に課題があり、創薬国家戦略の強化が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97
+            ]
+          },
+          "speechOrders": [
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97
+          ],
+          "input_hash": "sha256:4682a1063c542b559cb11863a722fb54f6decd7f4d9ecb61c47c50a5b404363a"
+        },
+        {
+          "custom_id": "s_8d7737787778_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "B型肝炎給付金制度のデジタル化・手続簡素化",
+            "topicTag": "肝炎DX化",
+            "topicColor": "#8b5cf6",
+            "summary": "接種記録デジタル化の推進状況と、給付金関連請求における書類電子化の検討",
+            "contextDescription": "当時の予防接種記録が残っておらず対象者特定が困難。デジタル化による事務効率化と受給者負担軽減が課題。",
+            "legislationName": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107
+            ]
+          },
+          "speechOrders": [
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+          ],
+          "input_hash": "sha256:9bd12478392b8150fb80886cd8dac784c99f7bdf9c72abdc56e5e2cabdb6615d"
+        },
+        {
+          "custom_id": "s_8d7737787778_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "ウイルス性肝がん・重度肝硬変治療研究促進事業の要件緩和",
+            "topicTag": "肝硬変助成",
+            "topicColor": "#8b5cf6",
+            "summary": "利用件数が見込みを下回る治療研究促進事業について、月数要件の緩和を要望",
+            "contextDescription": "ウイルス性肝がん・重度肝硬変患者の医療費助成事業だが、手続の煩雑さ等から利用が低迷している。",
+            "legislationName": null,
+            "speechOrders": [
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115
+            ]
+          },
+          "speechOrders": [
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115
+          ],
+          "input_hash": "sha256:7054a00e24dd7cae9612cb548ee54655d6004aa2df6c4d08938aeeff0657ed7f"
+        }
+      ]
+    },
+    {
+      "meeting_id": "衆議院_文部科学委員会_2026-10-30_第3号",
+      "outcome": {
+        "result": "可決",
+        "resolution": null,
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_ff040acaf798_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "学校医等公務災害補償法改正の概要と消滅時効延長",
+            "topicTag": "時効延長",
+            "topicColor": "#6366f1",
+            "summary": "学校医等の療養補償等の消滅時効を2年から5年に延長する改正内容と周知方法を議論",
+            "contextDescription": "学校医・学校歯科医・学校薬剤師の公務災害補償を定める法律の改正案。国家・地方公務員災害補償制度の見直しに合わせ、公務起因性の判断が難しい疾病の消滅時効を延長する。",
+            "legislationName": "公立学校の学校医、学校歯科医及び学校薬剤師の公務災害補償に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "input_hash": "sha256:046f1c96e97a478ade0fb0a80acb9e7b0710b2aa70146c39747eac82358b7d99"
+        },
+        {
+          "custom_id": "s_ff040acaf798_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "学校医等の確保・配置状況と地域格差",
+            "topicTag": "確保配置",
+            "topicColor": "#8b5cf6",
+            "summary": "学校医等の人数・配置率や地域による確保困難の実態と対応策を確認",
+            "contextDescription": "学校医・学校歯科医・学校薬剤師は法律上配置が求められるが、地域や学校種により確保状況に差がある。",
+            "legislationName": null,
+            "speechOrders": [
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "input_hash": "sha256:b89558141600a69a07f7959c6a919ea7e018df05597d3e54f3ef3a18633236e3"
+        },
+        {
+          "custom_id": "s_ff040acaf798_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "学校健診の負担軽減と業務環境整備",
+            "topicTag": "健診負担",
+            "topicColor": "#8b5cf6",
+            "summary": "学校医等の負担軽減に向けた健診項目・実施時期見直しの有識者会議中間まとめを議論",
+            "contextDescription": "児童生徒の健康課題多様化と学校医等の確保難を背景に、健診の在り方見直しが検討されている。",
+            "legislationName": null,
+            "speechOrders": [
+              16,
+              17,
+              18,
+              19,
+              20
+            ]
+          },
+          "speechOrders": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "input_hash": "sha256:d51a42038ad793d7e64c116a9448207a0d98f0c73cd86fc1fc5485047b8fa297"
+        },
+        {
+          "custom_id": "s_ff040acaf798_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "学校健診時のプライバシー配慮",
+            "topicTag": "健診配慮",
+            "topicColor": "#8b5cf6",
+            "summary": "健康診断時の児童生徒のプライバシー保護と正確な検査の両立を文科省が周知する方針",
+            "contextDescription": "健診時の服装や個別スペース確保など、児童生徒の心情に配慮した実施方法に関する通知の運用状況。",
+            "legislationName": null,
+            "speechOrders": [
+              21,
+              22
+            ]
+          },
+          "speechOrders": [
+            21,
+            22
+          ],
+          "input_hash": "sha256:254fa17e14b210b1c307e42a17cca7e1595d9d120823272aceb30fbd0343433e"
+        },
+        {
+          "custom_id": "s_ff040acaf798_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "子供性暴力防止法に基づく犯罪事実確認の対象範囲",
+            "topicTag": "犯罪確認",
+            "topicColor": "#6b7280",
+            "summary": "学校医等が犯罪事実確認の対象となるかは支配性・継続性・閉鎖性の三要件で判断",
+            "contextDescription": "2024年成立の子供性暴力防止法に基づき、子供に接する職業の犯罪歴確認制度が2026年4月開始予定。",
+            "legislationName": "学校設置者等による児童生徒性暴力等の防止等に関する法律",
+            "speechOrders": [
+              23,
+              24,
+              25,
+              26
+            ]
+          },
+          "speechOrders": [
+            23,
+            24,
+            25,
+            26
+          ],
+          "input_hash": "sha256:368fbfb64b055d5713923283c57ae1a8a183ae6ef6869766d02d74603448bac7"
+        },
+        {
+          "custom_id": "s_ff040acaf798_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "都道府県・公私間の配置格差と不登校児童の健康診断",
+            "topicTag": "格差対応",
+            "topicColor": "#8b5cf6",
+            "summary": "学校医等の配置格差の背景と不登校児童の健康診断受診機会確保策を議論",
+            "contextDescription": "公立私立間や地域間で学校医等の配置状況に差があり、不登校児童の健診未受診も課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              28,
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          "speechOrders": [
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "input_hash": "sha256:d4687f7c753220fec15464087d6a81dede5a236bb8674c1e5f9dbc448752375a"
+        },
+        {
+          "custom_id": "s_ff040acaf798_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "脳・心臓疾患等の公務災害補償事例と担い手不足対策",
+            "topicTag": "補償事例",
+            "topicColor": "#6366f1",
+            "summary": "過去の脳出血公務災害認定事例の紹介と、担い手不足解消に向けた叙勲等の表彰制度を確認",
+            "contextDescription": "公務起因性の判断が難しい疾病の補償実例と、学校医等の確保難に対する顕彰制度の現状。",
+            "legislationName": null,
+            "speechOrders": [
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40
+            ]
+          },
+          "speechOrders": [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "input_hash": "sha256:c887b8e5c0b5c1eba1fa79ce9d46e426debed029d1aca85ed814ec6c0aa23ce3"
+        },
+        {
+          "custom_id": "s_ff040acaf798_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "学校医等災害補償法の法的位置づけと制度の簡素化",
+            "topicTag": "法制度論",
+            "topicColor": "#6366f1",
+            "summary": "学校医等災害補償法が特別法として存続する理由と、消防団員等との制度差・簡素化の余地を議論",
+            "contextDescription": "学校医等災害補償法は国家公務員並みの補償水準を独自に定める特別法で、他の非常勤公務員制度との整合性が論点。",
+            "legislationName": "公立学校の学校医、学校歯科医及び学校薬剤師の公務災害補償に関する法律",
+            "speechOrders": [
+              42,
+              43,
+              44,
+              45,
+              46
+            ]
+          },
+          "speechOrders": [
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "input_hash": "sha256:37774ad9082dff06a79a7d7088239e24b4c0b3822f05a0ec838acc4939b730b8"
+        },
+        {
+          "custom_id": "s_ff040acaf798_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "学校歯科医の功績と虫歯予防の成果",
+            "topicTag": "虫歯減少",
+            "topicColor": "#8b5cf6",
+            "summary": "学校歯科医等への感謝表明と、虫歯罹患率が劇的に低下した要因・受診率向上策を議論",
+            "contextDescription": "学校保健統計で虫歯罹患率が過去数十年で大幅に減少しており、その要因と今後の健診後受診の課題を検討。",
+            "legislationName": null,
+            "speechOrders": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:8cf1a2cdde6962234e42067a4170c1bdb0da03d8770dc6c6beaa4ddcb714fcd4"
+        }
+      ]
+    }
+  ]
+}
