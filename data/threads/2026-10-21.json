@@ -478,6 +478,13 @@
         "date": "2026.10.16"
       },
       {
+        "threadId": "t_20261028_3809b8_54",
+        "relationship": "関連議論",
+        "topic": "ホルムズ海峡情勢とエネルギー・資源安全保障",
+        "committee": "外務委員会",
+        "date": "2026.10.28"
+      },
+      {
         "threadId": "t_20261029_112958_01",
         "relationship": "関連議論",
         "topic": "燃料油「激変緩和措置」の見直しと今後の対応",
@@ -9993,6 +10000,14 @@
         {
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122204376X00220261021"
+        }
+      ],
+      "news": [
+        {
+          "title": "【三里河中国経済観察】中国の産業競争力を「補助金」のせいにするのは誤り",
+          "url": "https://www.msn.com/ja-jp/money/economy/%E4%B8%89%E9%87%8C%E6%B2%B3%E4%B8%AD%E5%9B%BD%E7%B5%8C%E6%B8%88%E8%A6%B3%E5%AF%9F-%E4%B8%AD%E5%9B%BD%E3%81%AE%E7%94%A3%E6%A5%AD%E7%AB%B6%E4%BA%89%E5%8A%9B%E3%82%92-%E8%A3%9C%E5%8A%A9%E9%87%91-%E3%81%AE%E3%81%9B%E3%81%84%E3%81%AB%E3%81%99%E3%82%8B%E3%81%AE%E3%81%AF%E8%AA%A4%E3%82%8A/ar-AA28gzTX",
+          "source": "MSN",
+          "pubDate": "Mon, 20 Jul 2026 00:21:00 GMT"
         }
       ]
     },

@@ -1,0 +1,171 @@
+[
+  {
+    "id": "t_20261119_80bfb1_01",
+    "date": "2026.11.19",
+    "committee": "トランプ米国大統領との電話会談等についての会見",
+    "house": "内閣",
+    "topic": "米中露首脳会談の平和宣言とICC管轄権条項",
+    "topicTag": "平和宣言",
+    "topicColor": "#06b6d4",
+    "summary": "中国での米中露首脳会談の平和宣言やICC管轄権濫用規定への受け止めを問う",
+    "source": "kantei",
+    "sourceLabel": "首相記者会見",
+    "context": {
+      "description": "中国で開催された米中露首脳会談で発表された平和宣言には、ICC等の国際機関が管轄権を濫用してはならないとの内容が含まれた。",
+      "links": [
+        {
+          "label": "記者会見全文（首相官邸）",
+          "url": "https://www.kantei.go.jp/jp/105/statement/2026/1119kaiken.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "米中ロ首脳の共同声明「核リスク低減と核拡散防止に向けて対話する」",
+          "url": "https://news.infoseek.co.jp/article/joongangilbo_357910/",
+          "source": "Infoseekニュース",
+          "pubDate": "Thu, 19 Nov 2026 16:00:00 GMT",
+          "image": "https://media.image.infoseek.co.jp/isnews/photos/joongangilbo/joongangilbo_357910_0-enlarge.jpg"
+        },
+        {
+          "title": "米中ロの「平和宣言」に日本はどう対峙するのか――ICC批判とオールドメディアの論調、そして日本の勝ち筋",
+          "url": "https://note.com/famous_hosta125/n/n999428efdac1",
+          "source": "note",
+          "pubDate": "Wed, 18 Nov 2026 16:01:00 GMT",
+          "image": "https://assets.st-note.com/production/uploads/images/338148304/rectangle_large_type_2_83ca5426061203fa6345a03c3050ab38.png?fit=bounds&amp;quality=85&amp;width=1280"
+        },
+        {
+          "title": "米中露首脳会談、実現か 中国外務省「関係国と意思疎通」",
+          "url": "https://www.msn.com/ja-jp/news/other/%E7%B1%B3%E4%B8%AD%E9%9C%B2%E9%A6%96%E8%84%B3%E4%BC%9A%E8%AB%87-%E5%AE%9F%E7%8F%BE%E3%81%8B-%E4%B8%AD%E5%9B%BD%E5%A4%96%E5%8B%99%E7%9C%81-%E9%96%A2%E4%BF%82%E5%9B%BD%E3%81%A8%E6%84%8F%E6%80%9D%E7%96%8E%E9%80%9A/ar-AA2gJsJq",
+          "source": "MSN",
+          "pubDate": "Wed, 04 Nov 2026 01:50:00 GMT"
+        }
+      ]
+    },
+    "speeches": [
+      {
+        "memberId": "m_5474c5dc",
+        "tension": "確認",
+        "keywords": [
+          "国際刑事裁判所",
+          "米中露首脳会談",
+          "日米首脳電話会談"
+        ],
+        "quote": "平和宣言では、国際刑事裁判所、ＩＣＣや、類似する機関は管轄権を濫用してはならない、との内容が盛り込まれました。",
+        "raw": "共同通信の伊藤と申します。よろしくお願いします。総理は先ほど、アメリカのトランプ大統領と電話会談を行いました。また、これに先立って、中国で米中露首脳会談が行われ、平和宣言が発表されました。平和宣言では、国際刑事裁判所、ＩＣＣや、類似する機関は管轄権を濫用してはならない、との内容が盛り込まれました。まず、この平和宣言の内容についての受け止めを伺います。また、米中露首脳会談を踏まえた、先ほどの高市総理とトランプ大統領との電話会談で、どのようなやり取りがあったのか教えてください。また今後、米国とともに中国、ロシアにどのように対応していくのかについて、総理の考えを教えてください。",
+        "sourceUrl": "https://www.kantei.go.jp/jp/105/statement/2026/1119kaiken.html",
+        "summaries": {
+          "easy": "米中露の首脳会談で、国際刑事裁判所は権限を使いすぎてはいけないという宣言が出た。総理の考えやトランプ大統領との電話の内容を聞きたい。",
+          "teen": "米中露首脳会談で、国際刑事裁判所(ICC)が管轄権を濫用してはならないとする平和宣言が出た。総理の受け止めとトランプ大統領との電話会談内容、今後の米中露対応を質問。",
+          "adult": "米中露首脳会談の平和宣言にICC管轄権濫用禁止条項。総理の受け止め、トランプ大統領との電話会談内容、今後の対中露方針を問う。"
+        }
+      }
+    ],
+    "outcome": {
+      "result": null,
+      "resolution": null,
+      "commitments": [],
+      "status": "ongoing"
+    }
+  },
+  {
+    "id": "t_20261119_80bfb1_02",
+    "date": "2026.11.19",
+    "committee": "トランプ米国大統領との電話会談等についての会見",
+    "house": "内閣",
+    "topic": "トランプ大統領との電話会談",
+    "topicTag": "日米電話会談",
+    "topicColor": "#06b6d4",
+    "summary": "高市首相がトランプ氏と電話会談し米中露首脳会談等について意見交換",
+    "source": "kantei",
+    "sourceLabel": "首相記者会見",
+    "context": {
+      "description": "トランプ大統領が米中首脳会談・米中露首脳会談後に帰国する機中から高市首相と電話会談を行った。",
+      "links": [
+        {
+          "label": "記者会見全文（首相官邸）",
+          "url": "https://www.kantei.go.jp/jp/105/statement/2026/1119kaiken.html"
+        }
+      ],
+      "news": [
+        {
+          "title": "高市首相、トランプ氏と電話協議 米中露首脳会談の説明受ける",
+          "url": "https://www.msn.com/ja-jp/news/other/%E9%AB%98%E5%B8%82%E9%A6%96%E7%9B%B8-%E3%83%88%E3%83%A9%E3%83%B3%E3%83%97%E6%B0%8F%E3%81%A8%E9%9B%BB%E8%A9%B1%E5%8D%94%E8%AD%B0-%E7%B1%B3%E4%B8%AD%E9%9C%B2%E9%A6%96%E8%84%B3%E4%BC%9A%E8%AB%87%E3%81%AE%E8%AA%AC%E6%98%8E%E5%8F%97%E3%81%91%E3%82%8B/ar-AA2hOViE",
+          "source": "毎日新聞デジタル on MSN",
+          "pubDate": "Thu, 19 Nov 2026 16:18:15 GMT"
+        },
+        {
+          "title": "高市首相とトランプ大統領が電話 「米中ロ会談の詳細な説明受けた」",
+          "url": "https://www.nikkei.com/article/DGXZQOUA199VK0Z11C26A1000000/",
+          "source": "日本経済新聞",
+          "pubDate": "Thu, 19 Nov 2026 14:39:00 GMT",
+          "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO3908168019112026000000-1.jpg?auto=compress&amp;bg=FFFF&amp;crop=focalpoint&amp;fit=crop&amp;fm=jpg&amp;fp-x=0.29&amp;fp-y=0.36&amp;h=630&amp;w=1200&amp;s=7269dddcb0307cdb51b1fe7bd70d6f2a"
+        },
+        {
+          "title": "日米首脳電話会談「米中ロ首脳会談の詳細な説明あった」",
+          "url": "https://times.abema.tv/articles/-/10290802",
+          "source": "ABEMA TIMES",
+          "pubDate": "Thu, 19 Nov 2026 10:34:00 GMT",
+          "image": "https://times-abema.ismcdn.jp/mwimgs/6/c/1200w/img_6cb0fbf50ae47be6477923b3721241cb62254.jpg"
+        }
+      ]
+    },
+    "speeches": [
+      {
+        "memberId": "takaichisanae",
+        "tension": "確認",
+        "keywords": [
+          "日米同盟",
+          "国際刑事裁判所",
+          "インド太平洋"
+        ],
+        "quote": "今や最も信頼し合える同盟国である日米の関係を更なる高みに引き上げてまいります。",
+        "raw": "まず先に、日米の首脳会談についてお話をいたします。\n　先ほど、午後１０時半から約２０分間、エアフォース・ワンで帰国中のトランプ大統領と電話会談を行いました。\n　トランプ大統領からは、今般の米中首脳会談や、米中露首脳会談について詳細に説明がありました。インド太平洋情勢やウクライナ情勢を含む国際社会の諸課題について率直に意見交換を行いました。\n　これまで米国との間では、日米同盟の強化やインド太平洋情勢を含む諸課題について緊密に意思疎通を行ってきております。\n　私自身も今週マニラにおいてトランプ大統領に対して、クアッド首脳会合の場においても、また別途、二人の間で懇談した機会においても、我が国の考え方を改めてお伝えしてきております。\n　今や最も信頼し合える同盟国である日米の関係を更なる高みに引き上げてまいります。\n　また、今般、民主主義国家であるクアッドの首脳が、揺るぎない結束を示したように、同盟国・同志国とも緊密に連携して、自由で開かれた国際秩序の維持・強化に向けて取り組んでいきたいと考えています。\n　なお、ＩＣＣにつきましては、我が国としては一貫して支持をしてきております。これは日米で考え方が異なっていることではありますけれども、茂木大臣とルビオ国務長官との間で、意思疎通は継続をいたしております。\n　引き続き、関係国と協力しながら、法の支配を強化していく、というのが日本の立場であります。その日本の立場については、私からトランプ大統領にもお伝えしておりますので、トランプ大統領もそれはお分かりだと思います。\n　以上です。どうもお疲れさまでした。夜遅くにすみません。\n\n 関連リンク    日米首脳電話会談（官邸ＨＰ）   \n  日米首脳電話会談（外務省ＨＰ）   \n  \n新着記事\n\n総理の演説・記者会見など一覧に戻る\n\n \n    閉じる",
+        "sourceUrl": "https://www.kantei.go.jp/jp/105/statement/2026/1119kaiken.html",
+        "summaries": {
+          "easy": "トランプ大統領と電話で話した。米中首脳会談などの説明を受け、日米の絆をもっと強くすると約束した。",
+          "teen": "帰国中のトランプ大統領と約20分間電話会談。米中首脳会談や米露中首脳会談の説明を受け、日米同盟を更に強化する方針を示した。",
+          "adult": "トランプ大統領と電話会談を実施。米中・米中露首脳会談の説明を受け、日米同盟の深化とインド太平洋情勢での連携を確認。"
+        }
+      }
+    ],
+    "outcome": {
+      "result": null,
+      "resolution": null,
+      "commitments": [
+        "ICCについて日本の立場（法の支配強化を一貫して支持）をトランプ大統領に伝達済み",
+        "茂木大臣とルビオ国務長官の間で意思疎通を継続する"
+      ],
+      "status": "ongoing"
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20250124_67ca3b_16",
+        "relationship": "関連議論",
+        "topic": "外務大臣外交政策所信表明",
+        "committee": "本会議",
+        "date": "2025.01.24"
+      },
+      {
+        "threadId": "t_20251208_413256_25",
+        "relationship": "関連議論",
+        "topic": "外交政策と地域安定への取組",
+        "committee": "沖縄及び北方問題に関する特別委員会",
+        "date": "2025.12.08"
+      },
+      {
+        "threadId": "t_20261027_6ce772_108",
+        "relationship": "関連議論",
+        "topic": "日中関係と経済安全保障（レアアース・邦人拘束）",
+        "committee": "外交防衛委員会",
+        "date": "2026.10.27"
+      },
+      {
+        "threadId": "t_20261028_3809b8_39",
+        "relationship": "関連議論",
+        "topic": "米国のICC制裁と日本の対応",
+        "committee": "外務委員会",
+        "date": "2026.10.28"
+      }
+    ]
+  }
+]

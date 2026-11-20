@@ -32112,5 +32112,223 @@
         "url": "https://www.google.com/search?q=%E4%BD%90%E8%97%A4%E5%AE%88%E5%AD%9D+%E5%9B%BD%E5%9C%9F%E4%BA%A4%E9%80%9A%E7%9C%81"
       }
     ]
+  },
+  "m_1f55c01b": {
+    "id": "m_1f55c01b",
+    "name": "篠原英樹",
+    "party": null,
+    "role": "警察庁長官官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "警察庁の発言者一覧",
+        "url": "/gov/npa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E7%AF%A0%E5%8E%9F%E8%8B%B1%E6%A8%B9+%E8%AD%A6%E5%AF%9F%E5%BA%81"
+      }
+    ]
+  },
+  "m_ba0842bf": {
+    "id": "m_ba0842bf",
+    "name": "大濱健志",
+    "party": null,
+    "role": "警察庁刑事局組織犯罪対策部長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "警察庁の発言者一覧",
+        "url": "/gov/npa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%A4%A7%E6%BF%B1%E5%81%A5%E5%BF%97+%E8%AD%A6%E5%AF%9F%E5%BA%81"
+      }
+    ]
+  },
+  "m_ccd21392": {
+    "id": "m_ccd21392",
+    "name": "土屋暁胤",
+    "party": null,
+    "role": "警察庁長官官房総括審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "警察庁の発言者一覧",
+        "url": "/gov/npa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%9C%9F%E5%B1%8B%E6%9A%81%E8%83%A4+%E8%AD%A6%E5%AF%9F%E5%BA%81"
+      }
+    ]
+  },
+  "m_64d0f369": {
+    "id": "m_64d0f369",
+    "name": "南元英夫",
+    "party": null,
+    "role": "法務省大臣官房サイバーセキュリティ・情報化審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "法務省の発言者一覧",
+        "url": "/gov/moj"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%8D%97%E5%85%83%E8%8B%B1%E5%A4%AB+%E6%B3%95%E5%8B%99%E7%9C%81"
+      }
+    ]
+  },
+  "m_8ed5e201": {
+    "id": "m_8ed5e201",
+    "name": "小野寺健一",
+    "party": null,
+    "role": "警察庁長官官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "警察庁の発言者一覧",
+        "url": "/gov/npa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E9%87%8E%E5%AF%BA%E5%81%A5%E4%B8%80+%E8%AD%A6%E5%AF%9F%E5%BA%81"
+      }
+    ]
+  },
+  "m_9c516ab6": {
+    "id": "m_9c516ab6",
+    "name": "笠置隆範",
+    "party": null,
+    "role": "衆議院調査局第二特別調査室長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E7%AC%A0%E7%BD%AE%E9%9A%86%E7%AF%84+%E8%A1%86%E8%AD%B0%E9%99%A2%E8%AA%BF%E6%9F%BB%E5%B1%80%E7%AC%AC%E4%BA%8C%E7%89%B9%E5%88%A5%E8%AA%BF%E6%9F%BB%E5%AE%A4%E9%95%B7"
+      }
+    ]
+  },
+  "takagihirohisa": {
+    "id": "takagihirohisa",
+    "name": "高木宏壽",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%9C%A8%E5%AE%8F%E5%A3%BD"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%9C%A8%E5%AE%8F%E5%A3%BD+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E9%AB%98%E6%9C%A8%E5%AE%8F%E5%A3%BD+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_ebe3151e": {
+    "id": "m_ebe3151e",
+    "name": "巽慎一",
+    "party": null,
+    "role": "厚生労働省年金局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "厚生労働省の発言者一覧",
+        "url": "/gov/mhlw"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B7%BD%E6%85%8E%E4%B8%80+%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E7%9C%81"
+      }
+    ]
+  },
+  "fujisawatadamori": {
+    "id": "fujisawatadamori",
+    "name": "藤沢忠盛",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E6%B2%A2%E5%BF%A0%E7%9B%9B"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E8%97%A4%E6%B2%A2%E5%BF%A0%E7%9B%9B+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E8%97%A4%E6%B2%A2%E5%BF%A0%E7%9B%9B+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "wadayoshiaki": {
+    "id": "wadayoshiaki",
+    "name": "和田義明",
+    "party": "自由民主党",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E7%94%B0%E7%BE%A9%E6%98%8E"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%92%8C%E7%94%B0%E7%BE%A9%E6%98%8E+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%92%8C%E7%94%B0%E7%BE%A9%E6%98%8E+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
   }
 }

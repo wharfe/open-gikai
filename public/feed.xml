@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 19 Nov 2026 03:08:28 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 02:39:57 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W47 国会まとめ — 1件の議論</title>
+      <title>2026-W47 国会まとめ — 3件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W47</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W47</guid>
-      <pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate>
-      <description>1件のスレッド、1委員会の議論をまとめました。ＡＳＥＡＮ関連首脳会議出席等についての会見ほか。</description>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>3件のスレッド、2委員会の議論をまとめました。トランプ米国大統領との電話会談等についての会見、ＡＳＥＡＮ関連首脳会議出席等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -24,20 +24,36 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W45 国会まとめ — 15件の議論</title>
+      <title>2026-W45 国会まとめ — 18件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W45</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W45</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>15件のスレッド、5委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、マクロン・フランス共和国大統領との電話会談等についての会見ほか。</description>
+      <description>18件のスレッド、6委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、マクロン・フランス共和国大統領との電話会談等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W44 国会まとめ — 289件の議論</title>
+      <title>2026-W44 国会まとめ — 327件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>289件のスレッド、19委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
+      <description>327件のスレッド、20委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>米中露首脳会談の平和宣言とICC管轄権条項 — トランプ米国大統領との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261119_80bfb1_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261119_80bfb1_01</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>中国での米中露首脳会談の平和宣言やICC管轄権濫用規定への受け止めを問う（首相記者会見・2026.11.19・1発言）</description>
+      <category>トランプ米国大統領との電話会談等についての会見</category>
+    </item>
+    <item>
+      <title>トランプ大統領との電話会談 — トランプ米国大統領との電話会談等についての会見</title>
+      <link>https://open-gikai.net/t/t_20261119_80bfb1_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261119_80bfb1_02</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>高市首相がトランプ氏と電話会談し米中露首脳会談等について意見交換（首相記者会見・2026.11.19・1発言）</description>
+      <category>トランプ米国大統領との電話会談等についての会見</category>
     </item>
     <item>
       <title>ASEAN関連首脳会議・APEC出席の意義と外交方針 — ＡＳＥＡＮ関連首脳会議出席等についての会見</title>
@@ -198,6 +214,30 @@
       <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
       <description>首都直下地震緊急対策推進基本計画の策定年の言い間違いを訂正（国会会議録・2026.11.05・1発言）</description>
       <category>災害対策特別委員会</category>
+    </item>
+    <item>
+      <title>憲法改正議論の基本姿勢・テーマ設定 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20261105_a87a3d_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_a87a3d_06</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>各会派が憲法改正論議への基本姿勢と優先的に取り組むべきテーマを表明（国会会議録・2026.11.05・7発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>憲法9条と自衛隊の位置づけ — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20261105_a87a3d_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_a87a3d_07</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>9条2項削除論や自衛隊の憲法上の位置づけ、必要最小限度論などを各会派が議論（国会会議録・2026.11.05・4発言）</description>
+      <category>憲法審査会</category>
+    </item>
+    <item>
+      <title>国民投票法の課題と緊急時の国会機能維持 — 憲法審査会</title>
+      <link>https://open-gikai.net/t/t_20261105_a87a3d_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_a87a3d_08</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>改正国民投票法の附帯決議対応と、緊急時における国会機能維持の方策を議論（国会会議録・2026.11.05・2発言）</description>
+      <category>憲法審査会</category>
     </item>
     <item>
       <title>総務省幹部の就任挨拶 — 政治改革に関する特別委員会</title>
@@ -398,46 +438,6 @@
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
       <description>男女間格差是正など法施行上の留意事項を定めた附帯決議案を提示し大臣が尊重を表明（国会会議録・2026.10.30・2発言）</description>
       <category>環境委員会</category>
-    </item>
-    <item>
-      <title>燃料油「激変緩和措置」の見直しと今後の対応 — 中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見</title>
-      <link>https://open-gikai.net/t/t_20261029_112958_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_112958_01</guid>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
-      <description>ガソリン補助の段階的縮小方針と出口戦略、財政負担や国民生活への影響を説明（首相記者会見・2026.10.29・7発言）</description>
-      <category>中東情勢を踏まえた「緊急的激変緩和措置」の今後の対応についての会見</category>
-    </item>
-    <item>
-      <title>電子請願の導入・事務局及び法制局におけるAI活用 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
-      <link>https://open-gikai.net/t/t_20261029_7f2734_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_7f2734_02</guid>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
-      <description>電子請願制度の導入と事務局・法制局でのAI活用について懇談形式で協議（国会会議録・2026.10.29・1発言）</description>
-      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
-    </item>
-    <item>
-      <title>タブレット端末の使用及び質疑時間進行管理のモニター化 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
-      <link>https://open-gikai.net/t/t_20261029_7f2734_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_7f2734_03</guid>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
-      <description>委員会でのタブレット端末利用と質疑時間管理のモニター表示化を各会派で検討へ（国会会議録・2026.10.29・2発言）</description>
-      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
-    </item>
-    <item>
-      <title>国民投票広報協議会の関係諸規程に関する討議 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20261029_9d8d43_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261029_9d8d43_04</guid>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
-      <description>憲法改正発議後に設置される国民投票広報協議会の組織・事務規程整備の在り方を各会派が議論（国会会議録・2026.10.29・9発言）</description>
-      <category>憲法審査会</category>
-    </item>
-    <item>
-      <title>相次ぐサイバー攻撃と政府・中小企業の対処能力強化 — デジタル社会の形成及び人工知能の活用等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261028_84f4a0_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261028_84f4a0_01</guid>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
-      <description>大規模情報漏えいが相次ぐ中、政府・中小企業のサイバー防御体制強化が急務との認識を共有（国会会議録・2026.10.28・5発言）</description>
-      <category>デジタル社会の形成及び人工知能の活用等に関する特別委員会</category>
     </item>
   </channel>
 </rss>
