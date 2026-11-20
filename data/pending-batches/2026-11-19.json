@@ -1,0 +1,64 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-19",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01JyXvqoFBELp5CuuAPu1K3b",
+      "submitted_at": "2026-11-20T02:31:38Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "kantei_2026-11-19",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_80bfb132844b_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "米中露首脳会談の平和宣言とICC管轄権条項",
+            "topicTag": "平和宣言",
+            "topicColor": "#06b6d4",
+            "summary": "中国での米中露首脳会談の平和宣言やICC管轄権濫用規定への受け止めを問う",
+            "contextDescription": "中国で開催された米中露首脳会談で発表された平和宣言には、ICC等の国際機関が管轄権を濫用してはならないとの内容が含まれた。",
+            "legislationName": null,
+            "speechOrders": [
+              1
+            ]
+          },
+          "speechOrders": [
+            1
+          ],
+          "input_hash": "sha256:294a8b07d95b194b62e9c2bf36f85eb3cecf060cdcf39a6543406af89d6801a7"
+        },
+        {
+          "custom_id": "s_80bfb132844b_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "トランプ大統領との電話会談",
+            "topicTag": "日米電話会談",
+            "topicColor": "#06b6d4",
+            "summary": "高市首相がトランプ氏と電話会談し米中露首脳会談等について意見交換",
+            "contextDescription": "トランプ大統領が米中首脳会談・米中露首脳会談後に帰国する機中から高市首相と電話会談を行った。",
+            "legislationName": null,
+            "speechOrders": [
+              2
+            ]
+          },
+          "speechOrders": [
+            2
+          ],
+          "input_hash": "sha256:a6a649718f5c6a0d69fc889174c7f54b7432546a62238bb86690a18d16553433"
+        }
+      ]
+    }
+  ]
+}
