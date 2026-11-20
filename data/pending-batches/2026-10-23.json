@@ -1,0 +1,737 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-23",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01EMwSxQF76jBfaJ7EdPZbkS",
+      "submitted_at": "2026-11-20T02:14:43Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_法務委員会_2026-10-23_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_57f5e8f8d014_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "共同親権制度の運用状況と子の連れ去り問題",
+            "topicTag": "共同親権",
+            "topicColor": "#8b5cf6",
+            "summary": "改正民法施行後の共同親権選択率は約2割にとどまり、子の連れ去り問題への対応も課題",
+            "contextDescription": "2024年民法等改正で離婚後も父母双方を親権者にできる共同親権制度が導入された。",
+            "legislationName": "民法等の一部を改正する法律",
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "input_hash": "sha256:d593887711f76c4351cb87bb26ae2ff458c90443b9d2de6a619406863fd36a14"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "AIリーガルテックと声の権利保護",
+            "topicTag": "AI法務",
+            "topicColor": "#3b82f6",
+            "summary": "AIを用いた法律サービスの弁護士法上の扱いと、声の無断利用に対するパブリシティー権保護を議論",
+            "contextDescription": "AI技術の進展に伴い、法律相談AIの適法性や、AIによる声の模倣・悪用への権利保護が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "input_hash": "sha256:1a23dbcc6700c4ed078c0a503b15aad12d8692eb253a8f0a46a4723585866f7e"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "法令外国語訳プロジェクトの推進",
+            "topicTag": "法令翻訳",
+            "topicColor": "#06b6d4",
+            "summary": "対日投資促進のため法令の外国語訳を正確かつ迅速に進める取組の現状を確認",
+            "contextDescription": "法務省は海外発信・対日投資促進のため日本の法令を外国語に翻訳する事業を進めている。",
+            "legislationName": null,
+            "speechOrders": [
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            15,
+            16
+          ],
+          "input_hash": "sha256:f1c513a8cbad0bc53a5d71d6ca1ade7dfd7baa596f3d68080f452ebe0cf8b936"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "司法外交と保護司制度の国際展開",
+            "topicTag": "司法外交",
+            "topicColor": "#06b6d4",
+            "summary": "京都コングレス等を通じた日本の司法外交の成果と、保護司制度の国際的評価を確認",
+            "contextDescription": "日本は国連犯罪防止刑事司法会議（京都コングレス）等を通じ、法の支配や更生保護分野で国際貢献を行っている。",
+            "legislationName": null,
+            "speechOrders": [
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            17,
+            18
+          ],
+          "input_hash": "sha256:235b5aaf3213ef1b1e4bb9b2d617ca2192110bfd0436069f69e31a2ea0d77b7b"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "刑務官の処遇改善と離職防止",
+            "topicTag": "刑務官",
+            "topicColor": "#8b5cf6",
+            "summary": "精神的負担の大きい刑務官の職務環境改善と人材定着に向けた取組を確認",
+            "contextDescription": "拘禁刑導入後、受刑者処遇が複雑化する中、刑務官の負担増加と離職が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              19,
+              20
+            ]
+          },
+          "speechOrders": [
+            19,
+            20
+          ],
+          "input_hash": "sha256:7884a356dc06b3312f775fd7bd87da0125e51422eb3acd293b2e7c7bfd52a902"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "犯罪被害者支援制度の拡充状況",
+            "topicTag": "被害者支援",
+            "topicColor": "#8b5cf6",
+            "summary": "犯罪被害者等支援弁護士制度や給付金増額の実績、刑事手続関与の法整備検討状況を確認",
+            "contextDescription": "犯罪被害者等基本計画に基づき、被害者への経済的支援や刑事手続への関与拡大が進められている。",
+            "legislationName": null,
+            "speechOrders": [
+              21,
+              22,
+              23,
+              24,
+              25
+            ]
+          },
+          "speechOrders": [
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "input_hash": "sha256:d3f96788928a1d802adc975b618c35da22094d3742a1f14c427cd7e828aaca93"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "不法滞在外国人対策と警察連携",
+            "topicTag": "不法滞在",
+            "topicColor": "#ef4444",
+            "summary": "不法残留者数は減少傾向も、入管と警察の情報共有強化による更なる対策推進を要請",
+            "contextDescription": "政府は不法滞在外国人ゼロプランを策定し、入管と警察が連携して摘発・情報共有を進めている。",
+            "legislationName": null,
+            "speechOrders": [
+              26,
+              27,
+              28
+            ]
+          },
+          "speechOrders": [
+            26,
+            27,
+            28
+          ],
+          "input_hash": "sha256:b2ce5c73e7108e4fa76a604dde7ff18c2807bc6eaec55998c239f3dfb419098c"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "法制度検証・改革担当大臣としての取組と検察不祥事",
+            "topicTag": "法制度改革",
+            "topicColor": "#f97316",
+            "summary": "法制度全体の総点検方針と、検察の不祥事事案に対する国民の厳しい視線への言及",
+            "contextDescription": "高市内閣で新設された法制度検証・改革担当大臣が、時代に適応した法制度への改革を推進する方針。",
+            "legislationName": null,
+            "speechOrders": [
+              29,
+              30,
+              31
+            ]
+          },
+          "speechOrders": [
+            29,
+            30,
+            31
+          ],
+          "input_hash": "sha256:1d330584e7afe1833f355cdd46c9f10ff2126c2dde2ede6a4e10302fa07eeb31"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "足利事件・飯塚事件のMCT118型DNA鑑定の信頼性検証",
+            "topicTag": "DNA鑑定",
+            "topicColor": "#6366f1",
+            "summary": "足利事件で誤判定だったMCT118型鑑定を用いた他の8件の有罪判決の再検証・証拠開示を要求",
+            "contextDescription": "足利事件では誤ったDNA型鑑定（MCT118型）で菅家氏が誤認逮捕・有罪とされ、後にSTR法再鑑定で再審無罪となった。同手法は飯塚事件など他の事件でも証拠採用されていた。",
+            "legislationName": null,
+            "speechOrders": [
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116
+            ]
+          },
+          "speechOrders": [
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "input_hash": "sha256:f30f92aeb9b14c95c3f08bdee1b8fa00315f6fdf4dde3e7f07777db049bcc8cf"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "AI暴走リスクとサイバー攻撃対策",
+            "topicTag": "AIリスク",
+            "topicColor": "#ef4444",
+            "summary": "AI法施行後のリスク監視体制と、AI悪用によるサイバー攻撃・情報漏えいへの対応を議論",
+            "contextDescription": "AI法は高性能AIの予期しない挙動等のリスクに対し国が調査・指導助言を行う枠組みを定めている。",
+            "legislationName": "AI法",
+            "speechOrders": [
+              118,
+              119,
+              120,
+              121,
+              122
+            ]
+          },
+          "speechOrders": [
+            118,
+            119,
+            120,
+            121,
+            122
+          ],
+          "input_hash": "sha256:1d63a147243003ef15b20be7e133a263b132e455a428ecb91f80d8a1057db638"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "声の無断利用に関するAI規制の法制化",
+            "topicTag": "声の権利",
+            "topicColor": "#6366f1",
+            "summary": "AIによる声の無断利用に対するパブリシティー権保護の法制化を求める",
+            "contextDescription": "法務省の検討会は声の無断利用について民事責任の解釈指針を公表したが、更なる法制化が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              123,
+              124
+            ]
+          },
+          "speechOrders": [
+            123,
+            124
+          ],
+          "input_hash": "sha256:6c01be121934d99665004bebcea26a035704c2b0fd9ed59bdd6c0732ef3dc018"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "トクリュウ対策とマネーロンダリング国際連携",
+            "topicTag": "トクリュウ",
+            "topicColor": "#ef4444",
+            "summary": "匿名・流動型犯罪グループによる強盗殺人事件を踏まえたマネロン対策の国際連携の実効性を問う",
+            "contextDescription": "トクリュウ（匿名・流動型犯罪グループ）による凶悪事件が相次ぎ、国際的なマネロン対策（FATF等）の強化が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              124,
+              125,
+              126,
+              127,
+              128
+            ]
+          },
+          "speechOrders": [
+            124,
+            125,
+            126,
+            127,
+            128
+          ],
+          "input_hash": "sha256:348580899e80eb6244a59d1a4c4658e63c538a5eaca33ef1dff9e8b7fb3d20d9"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "警察官職務執行法改正による秘匿通信アプリ解析",
+            "topicTag": "警職法",
+            "topicColor": "#ef4444",
+            "summary": "裁判官の許可を得て電子機器の情報取得を可能にする警職法改正案の内容と効果を確認",
+            "contextDescription": "重大犯罪の捜査のため、警察官が裁判官の許可を得てスマートフォン等の電磁的記録を取得できるようにする改正法案。",
+            "legislationName": "警察官職務執行法の一部を改正する法律案",
+            "speechOrders": [
+              129,
+              130
+            ]
+          },
+          "speechOrders": [
+            129,
+            130
+          ],
+          "input_hash": "sha256:7b61420674775a0800dfd79a2b07682ca2f519322f17abe689a3ccaca9f59a70"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "矯正医官の充足率改善と死刑執行時の医師対応",
+            "topicTag": "矯正医療",
+            "topicColor": "#8b5cf6",
+            "summary": "矯正医官特例法により充足率は改善したが、死刑執行時の死亡確認等の重責への対応も議論",
+            "contextDescription": "矯正施設の医師（矯正医官）不足が深刻化し、2015年に矯正医官特例法が制定され処遇改善が進められている。",
+            "legislationName": "矯正医官の兼業及び勤務時間の特例等に関する法律",
+            "speechOrders": [
+              130,
+              131,
+              132,
+              133,
+              134
+            ]
+          },
+          "speechOrders": [
+            130,
+            131,
+            132,
+            133,
+            134
+          ],
+          "input_hash": "sha256:224e0a0d24981364bb42553968a7f46132e5ec2df15f122a998dbd9c1ad9ee3a"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "拘禁刑導入後の再犯防止と保護司制度の活性化",
+            "topicTag": "再犯防止",
+            "topicColor": "#8b5cf6",
+            "summary": "拘禁刑下の処遇充実や保護司の担い手確保、出所者の就労支援による再犯防止策を議論",
+            "contextDescription": "2022年刑法改正で懲役・禁錮を廃止し拘禁刑を創設。保護司は減少傾向にあり、改正保護司法で支援強化が図られている。",
+            "legislationName": "改正保護司法",
+            "speechOrders": [
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152
+            ]
+          },
+          "speechOrders": [
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152
+          ],
+          "input_hash": "sha256:3c5980635b7c974a57050d4219b7b54e963144a40d6cd83f2148b43a725cf127"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "売買春規制の在り方と売春防止法の名称見直し",
+            "topicTag": "売買春規制",
+            "topicColor": "#6366f1",
+            "summary": "買う側への焦点付けや法律名称見直しを含む売買春規制の法整備の方向性を議論",
+            "contextDescription": "売買春に係る規制の在り方検討会の取りまとめを踏まえ、売春防止法の改正や買春側への対応強化が検討されている。",
+            "legislationName": "売春防止法",
+            "speechOrders": [
+              155,
+              156,
+              157,
+              158,
+              159
+            ]
+          },
+          "speechOrders": [
+            155,
+            156,
+            157,
+            158,
+            159
+          ],
+          "input_hash": "sha256:92e54dc0c9351ed9237259442372bcb10b62679e6892f91e5573a88eb5157ed0"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "戸籍制度のデジタル化と本籍・無戸籍問題",
+            "topicTag": "戸籍制度",
+            "topicColor": "#6366f1",
+            "summary": "マイナンバー時代における本籍の必要性や無戸籍者問題を踏まえた戸籍制度の在り方を議論",
+            "contextDescription": "戸籍は本籍地を基準に編製される日本独自の身分登録制度。デジタル化の中でその意義や無戸籍者対応が議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171,
+              172,
+              173,
+              175
+            ]
+          },
+          "speechOrders": [
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            175
+          ],
+          "input_hash": "sha256:e5b9e451284592c9ca4d16df6195d552ec465f3201d344112de461e4a4f5deb1"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "サイバー攻撃対策と国家関与型攻撃・国際犯罪集団への対応",
+            "topicTag": "サイバー対策",
+            "topicColor": "#ef4444",
+            "summary": "国家関与のサイバー攻撃の脅威や国際犯罪集団Qilinの摘発事例を通じた対策強化を議論",
+            "contextDescription": "中国・ロシア・北朝鮮等が関与するとされるサイバー攻撃や、ランサムウェア集団Qilinなどへの国際連携対応が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              177,
+              178,
+              179,
+              180,
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188,
+              189,
+              190,
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              197,
+              198,
+              199,
+              200,
+              201
+            ]
+          },
+          "speechOrders": [
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201
+          ],
+          "input_hash": "sha256:d7be73036e100aa20c954bcdb434e835e47cc3e92f22c4344b7edbfbbb713116"
+        },
+        {
+          "custom_id": "s_57f5e8f8d014_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "裁判官・検察官の給与改定法案の趣旨説明",
+            "topicTag": "給与改定",
+            "topicColor": "#6366f1",
+            "summary": "人事院勧告に基づく裁判官報酬・検察官俸給の改定法案の趣旨説明",
+            "contextDescription": "一般職国家公務員の給与改定に合わせて裁判官の報酬及び検察官の俸給を改定する法案。",
+            "legislationName": "裁判官の報酬等に関する法律の一部を改正する法律案及び検察官の俸給等に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              202,
+              203
+            ]
+          },
+          "speechOrders": [
+            202,
+            203
+          ],
+          "input_hash": "sha256:634b49f5175676a1d80a9b9ecd866f273b00c3e05b342b285f620f132ebda23a"
+        }
+      ]
+    }
+  ]
+}
