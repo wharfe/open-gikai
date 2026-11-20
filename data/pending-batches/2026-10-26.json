@@ -1,0 +1,487 @@
+{
+  "schema_version": 4,
+  "date": "2026-10-26",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01HAPH9siBcfxfHsKs2Lwcyu",
+      "submitted_at": "2026-11-20T02:22:04Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_政治改革に関する特別委員会_2026-10-26_第2号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_6362d9f76873_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "大臣・副大臣・政務官の就任挨拶",
+            "topicTag": "就任挨拶",
+            "topicColor": "#6b7280",
+            "summary": "総務大臣・副大臣・政務官が新任の挨拶を行った",
+            "contextDescription": "新たに就任した総務大臣、副大臣、大臣政務官による委員会での就任挨拶。",
+            "legislationName": null,
+            "speechOrders": [
+              2,
+              4,
+              6
+            ]
+          },
+          "speechOrders": [
+            2,
+            4,
+            6
+          ],
+          "input_hash": "sha256:4a672fddd33a130ac0258ea842c93d84c3db924036ebaddaab363759aaf65942"
+        },
+        {
+          "custom_id": "s_6362d9f76873_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "改正情プラ法・生成AIによる選挙妨害への対応",
+            "topicTag": "情プラ法",
+            "topicColor": "#6366f1",
+            "summary": "改正情プラ法の指針策定状況と生成AI悪用・偽誤情報対策の実効性を議論",
+            "contextDescription": "SNS事業者に選挙の公正への悪影響軽減措置を義務づける改正情報流通プラットフォーム対処法の運用指針づくりに関する議論。",
+            "legislationName": "改正情報流通プラットフォーム対処法",
+            "speechOrders": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              28,
+              38,
+              39,
+              40,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            28,
+            38,
+            39,
+            40,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ],
+          "input_hash": "sha256:8019a4795171e06e3512f82b4b4752b5f6b0106d9fdec66c2687d72f4497336a"
+        },
+        {
+          "custom_id": "s_6362d9f76873_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "電子投票制度の普及・国政選挙への拡大",
+            "topicTag": "電子投票",
+            "topicColor": "#3b82f6",
+            "summary": "地方選挙での電子投票普及状況と国政選挙への適用拡大の可否を議論",
+            "contextDescription": "疑問票・無効票削減や開票迅速化を目的とした電子投票制度の現状と、国政選挙への導入可能性を巡る議論。",
+            "legislationName": null,
+            "speechOrders": [
+              15,
+              16,
+              37,
+              65,
+              66,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            15,
+            16,
+            37,
+            65,
+            66,
+            67,
+            68
+          ],
+          "input_hash": "sha256:427355d636ffb13184f6f4129cd5ff66bb2c132cbc12c3ab41ea8c10c4f3a28c"
+        },
+        {
+          "custom_id": "s_6362d9f76873_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "在外投票のネット投票導入と被選挙権年齢引下げ",
+            "topicTag": "在外投票",
+            "topicColor": "#6366f1",
+            "summary": "在外邦人のネット投票導入と被選挙権年齢引下げについて大臣見解を質す",
+            "contextDescription": "在外邦人の投票機会確保のためのインターネット投票導入や、立候補可能年齢（被選挙権年齢）引下げを巡る議論。",
+            "legislationName": null,
+            "speechOrders": [
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ]
+          },
+          "speechOrders": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "input_hash": "sha256:66c0454c27059ed0f7502a724403333af28b2d43a127dca0eee8e39da18f0460"
+        },
+        {
+          "custom_id": "s_6362d9f76873_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "政治資金の透明性確保",
+            "topicTag": "政治資金",
+            "topicColor": "#6366f1",
+            "summary": "政治資金規正法に基づく透明性確保と再発防止策について質疑",
+            "contextDescription": "政治資金の収支公開等を定める政治資金規正法の目的と、信頼回復に向けた透明性確保の取組。",
+            "legislationName": "政治資金規正法",
+            "speechOrders": [
+              26,
+              27
+            ]
+          },
+          "speechOrders": [
+            26,
+            27
+          ],
+          "input_hash": "sha256:9a330a1526f922123b7808cff0163d4b5bd0cf9536473f0b245be9bd1ad19d53"
+        },
+        {
+          "custom_id": "s_6362d9f76873_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "地方議員・首長・国会議員の居住要件と選挙制度の在り方",
+            "topicTag": "居住要件",
+            "topicColor": "#6366f1",
+            "summary": "地方議員・首長・国会議員で異なる居住要件の根拠と選挙制度の本質的バランスを議論",
+            "contextDescription": "地方議会議員には住所要件があるが首長・国会議員にはない制度の違いと、その背景にある代表制の考え方。",
+            "legislationName": null,
+            "speechOrders": [
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:827ae8ec2c7ab7b06b02398e55976ece7ede5d02bff5533e7c47f5e5f05ab3c9"
+        },
+        {
+          "custom_id": "s_6362d9f76873_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "選挙妨害行為への対応と取締りの課題",
+            "topicTag": "選挙妨害",
+            "topicColor": "#ef4444",
+            "summary": "街頭演説妨害の実態と現行法・警察対応の限界、改善策を議論",
+            "contextDescription": "選挙演説への妨害行為（怒号・動画撮影・クラクション等）が頻発する中、公選法の選挙の自由妨害罪や警察の対応の在り方が問われている。",
+            "legislationName": "公職選挙法",
+            "speechOrders": [
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79
+            ]
+          },
+          "speechOrders": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79
+          ],
+          "input_hash": "sha256:8a1b552cbef4d6588b9e0d2fb74201883bbebc94e08c1cd3559c88e42e6f9286"
+        },
+        {
+          "custom_id": "s_6362d9f76873_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "未成年者の選挙運動禁止規定の見直し",
+            "topicTag": "未成年運動",
+            "topicColor": "#6366f1",
+            "summary": "東京地裁判決を受け未成年者の選挙運動禁止規定の合憲性・見直しを議論",
+            "contextDescription": "公選法が禁じる未成年者本人の選挙運動及び未成年者の使用について、表現の自由との関係が裁判で争われている。",
+            "legislationName": "公職選挙法",
+            "speechOrders": [
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60
+            ]
+          },
+          "speechOrders": [
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "input_hash": "sha256:8a08d6f2ea2b136f2df2787f1c528b048646820bf4a44ce1e63ad8186a544a6f"
+        },
+        {
+          "custom_id": "s_6362d9f76873_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "副首都法に基づく住民投票と地方選挙の同日実施",
+            "topicTag": "副首都法",
+            "topicColor": "#6366f1",
+            "summary": "副首都実現に伴う特別区設置住民投票と地方選挙の日程調整を質す",
+            "contextDescription": "副首都法に基づく特別区設置の住民投票と地方選挙が同日実施された場合の有権者の混乱を懸念する附帯決議の履行状況。",
+            "legislationName": "副首都法",
+            "speechOrders": [
+              61,
+              62
+            ]
+          },
+          "speechOrders": [
+            61,
+            62
+          ],
+          "input_hash": "sha256:40dd13b4520ad410f47f7a95b3975ee42c3ffc42e9e7206b74d3793c428d35ca"
+        },
+        {
+          "custom_id": "s_6362d9f76873_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "インターネット選挙運動ガイドラインの見直し",
+            "topicTag": "ネット選挙",
+            "topicColor": "#6366f1",
+            "summary": "インターネット選挙運動ガイドラインの改定時期・手続を確認",
+            "contextDescription": "平成25年のネット選挙解禁時に作成されたガイドラインの見直しに向けた各党協議の進め方。",
+            "legislationName": "公職選挙法",
+            "speechOrders": [
+              63,
+              64
+            ]
+          },
+          "speechOrders": [
+            63,
+            64
+          ],
+          "input_hash": "sha256:f5146aabc9a20e9542840d79ae6c668de32c974939a1fdd4fa1a1ccde88e2fb1"
+        },
+        {
+          "custom_id": "s_6362d9f76873_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "外国勢力による選挙介入・偽情報対策",
+            "topicTag": "外国介入",
+            "topicColor": "#ef4444",
+            "summary": "外国発の不審アカウントによる選挙介入の実態把握と政府の対応体制を質す",
+            "contextDescription": "選挙を巡り外国勢力によるSNS上の偽・誤情報拡散が疑われる中、政府の情報収集・対策連携体制が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              69,
+              70,
+              71,
+              72
+            ]
+          },
+          "speechOrders": [
+            69,
+            70,
+            71,
+            72
+          ],
+          "input_hash": "sha256:bc3e26f1d393d88a151ddf8d8aa44f8b0241cdf3612f3008825ea4998ef6669a"
+        },
+        {
+          "custom_id": "s_6362d9f76873_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "供託金制度の額の妥当性",
+            "topicTag": "供託金",
+            "topicColor": "#6366f1",
+            "summary": "泡沫候補防止目的の供託金が物価上昇を上回って高額化した経緯と妥当性を議論",
+            "contextDescription": "立候補時に必要な供託金制度の歴史的経緯と、物価上昇率を超えて増額されてきたことへの疑問。",
+            "legislationName": "公職選挙法",
+            "speechOrders": [
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96
+            ]
+          },
+          "speechOrders": [
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96
+          ],
+          "input_hash": "sha256:66063e2c877f0ce1503bd4b26bae0e9d0b1a9ea9155011d22c28c36b816bdbcd"
+        },
+        {
+          "custom_id": "s_6362d9f76873_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "比例代表削減による多様性への影響",
+            "topicTag": "定数削減",
+            "topicColor": "#6366f1",
+            "summary": "比例代表削減が女性・新人議員の多様性に与える悪影響を懸念",
+            "contextDescription": "衆議院定数削減案で比例代表議席の削減が検討される中、女性・新人の当選割合が高い比例枠縮小への懸念。",
+            "legislationName": null,
+            "speechOrders": [
+              97,
+              98
+            ]
+          },
+          "speechOrders": [
+            97,
+            98
+          ],
+          "input_hash": "sha256:c6dd24938e4de524a1cd5bf96a9c5c7fabe801d75dca31b1182e7c994c14bdd4"
+        },
+        {
+          "custom_id": "s_6362d9f76873_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "衆議院議員定数削減の歴史的・国際的妥当性",
+            "topicTag": "議員定数",
+            "topicColor": "#6366f1",
+            "summary": "歴史的・国際的に見て現行の衆院定数は少なく、更なる削減に根拠はないと指摘",
+            "contextDescription": "自民党等から提案される衆院議員定数31削減案を巡り、過去の経緯や諸外国との比較から妥当性が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114
+            ]
+          },
+          "speechOrders": [
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
+          ],
+          "input_hash": "sha256:cf2c63c235b85f3f4f4fe80333a766d753f47523a2152f9fdcc93071f89faa8b"
+        },
+        {
+          "custom_id": "s_6362d9f76873_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "地方選挙期日統一の臨時特例法案",
+            "topicTag": "統一地方選",
+            "topicColor": "#6366f1",
+            "summary": "令和9年に任期満了が集中する地方選挙の期日統一を図る特例法案を提案",
+            "contextDescription": "全国の地方議会議員・長の任期満了が令和9年3月～5月に集中することを受け、選挙期日を統一するための特例法案。",
+            "legislationName": "地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律案",
+            "speechOrders": [
+              115,
+              116
+            ]
+          },
+          "speechOrders": [
+            115,
+            116
+          ],
+          "input_hash": "sha256:b7df9fb99699ab25986453dff2c9c86d35afcaeb8c84e1df3c0590b4b0eff946"
+        }
+      ]
+    }
+  ]
+}
