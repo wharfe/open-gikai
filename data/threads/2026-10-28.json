@@ -6239,6 +6239,13 @@
         "topic": "外交力強化とODA・OSA戦略的活用",
         "committee": "外交防衛委員会",
         "date": "2026.10.27"
+      },
+      {
+        "threadId": "t_20261119_80bfb1_02",
+        "relationship": "関連議論",
+        "topic": "トランプ大統領との電話会談",
+        "committee": "トランプ米国大統領との電話会談等についての会見",
+        "date": "2026.11.19"
       }
     ]
   },
@@ -15038,6 +15045,20 @@
         "topic": "60歳以上管理職の処遇と責任",
         "committee": "文教科学委員会",
         "date": "2026.10.27"
+      },
+      {
+        "threadId": "t_20261030_ff040a_38",
+        "relationship": "続き",
+        "topic": "学校健診時のプライバシー配慮",
+        "committee": "文部科学委員会",
+        "date": "2026.10.30"
+      },
+      {
+        "threadId": "t_20261030_ff040a_39",
+        "relationship": "続き",
+        "topic": "子供性暴力防止法に基づく犯罪事実確認の対象範囲",
+        "committee": "文部科学委員会",
+        "date": "2026.10.30"
       }
     ]
   },
@@ -16670,6 +16691,22 @@
       "resolution": null,
       "commitments": [],
       "status": "ongoing"
-    }
+    },
+    "relatedThreads": [
+      {
+        "threadId": "t_20261030_ff040a_35",
+        "relationship": "続き",
+        "topic": "学校医等公務災害補償法改正の概要と消滅時効延長",
+        "committee": "文部科学委員会",
+        "date": "2026.10.30"
+      },
+      {
+        "threadId": "t_20261030_ff040a_41",
+        "relationship": "関連議論",
+        "topic": "脳・心臓疾患等の公務災害補償事例と担い手不足対策",
+        "committee": "文部科学委員会",
+        "date": "2026.10.30"
+      }
+    ]
   }
 ]

@@ -32330,5 +32330,26 @@
         "url": "https://www.google.com/search?q=%E5%92%8C%E7%94%B0%E7%BE%A9%E6%98%8E+site%3Ax.com+OR+site%3Atwitter.com"
       }
     ]
+  },
+  "m_4462c836": {
+    "id": "m_4462c836",
+    "name": "江口幹太",
+    "party": null,
+    "role": "法務省人権擁護局長",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "法務省の発言者一覧",
+        "url": "/gov/moj"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E6%B1%9F%E5%8F%A3%E5%B9%B9%E5%A4%AA+%E6%B3%95%E5%8B%99%E7%9C%81"
+      }
+    ]
   }
 }
