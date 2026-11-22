@@ -807,3 +807,163 @@ function buildSessionDigest(number: number): SessionDigest | null {
     committees,
   };
 }
+
+// --- Enacted laws (data/enacted-laws.json) ---
+// The list of laws is transcribed from the House of Representatives bill
+// information pages; the threads are NOT. Each law is linked to every thread
+// of the session digest whose topic, summary or raw transcript names the bill
+// (formal name + 案, see mentionsBill), so no thread is hand-picked and every
+// law gets the same rule. A malformed enacted-laws.json fails the build with
+// the file's name — the same stance as the thread files: skipping would drop
+// the section under a green build. PRs run the build in CI, so a bad hand edit
+// is caught there.
+
+export type EnactedLaw = {
+  session: number;
+  name: string;
+  billKind: string;
+  billSession: number;
+  billNumber: number;
+  enactedDate: string;
+  promulgatedDate?: string;
+  lawNumber?: string;
+  sourceUrl: string;
+};
+
+export type LexDiffLink = { label: string; url: string };
+
+export type EnactedLawEntry = EnactedLaw & {
+  threads: ThreadSummary[];
+  lexdiff: LexDiffLink[];
+};
+
+const ENACTED_LAWS_PATH = path.join(process.cwd(), "data", "enacted-laws.json");
+const LEXDIFF_PATH = path.join(process.cwd(), "data", "lexdiff-mapping.json");
+
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+function loadEnactedLaws(): EnactedLaw[] {
+  const doc = parseJsonFile(ENACTED_LAWS_PATH) as { laws?: unknown } | null;
+  const laws = doc?.laws;
+  if (!Array.isArray(laws)) {
+    throw new Error(`${ENACTED_LAWS_PATH}: expected an object with a "laws" array`);
+  }
+  const seen = new Set<string>();
+  for (const l of laws as EnactedLaw[]) {
+    const bad = (why: string) =>
+      new Error(`${ENACTED_LAWS_PATH}: ${why} in law entry ${JSON.stringify(l)}`);
+    if (typeof l !== "object" || l === null) throw bad("not an object");
+    for (const k of ["session", "billSession", "billNumber"] as const) {
+      if (!Number.isInteger(l[k])) throw bad(`"${k}" must be an integer`);
+    }
+    for (const k of ["name", "billKind", "sourceUrl"] as const) {
+      if (typeof l[k] !== "string" || l[k] === "") throw bad(`"${k}" must be a non-empty string`);
+    }
+    if (typeof l.enactedDate !== "string" || !ISO_DATE_RE.test(l.enactedDate)) {
+      throw bad('"enactedDate" must be YYYY-MM-DD');
+    }
+    if (
+      l.promulgatedDate !== undefined &&
+      (typeof l.promulgatedDate !== "string" || !ISO_DATE_RE.test(l.promulgatedDate))
+    ) {
+      throw bad('"promulgatedDate" must be YYYY-MM-DD');
+    }
+    if (l.lawNumber !== undefined && (typeof l.lawNumber !== "string" || l.lawNumber === "")) {
+      throw bad('"lawNumber" must be a non-empty string');
+    }
+    // A bill is identified by kind + submitting session + number; a duplicate
+    // row would list one law twice (and collide as a React key).
+    const id = `${l.billKind}-${l.billSession}-${l.billNumber}`;
+    if (seen.has(id)) throw bad(`duplicate bill ${id}`);
+    seen.add(id);
+  }
+  return laws as EnactedLaw[];
+}
+
+/**
+ * The single law a law amends, read off its formal name:
+ * "A法の一部を改正する法律" → "A法"; "A法等の一部を…" → "A法".
+ * Deliberately no splitting on 及び: it also occurs inside a single law's
+ * name (「…の処罰及び犯罪収益の規制等に関する法律」), and a fragment could
+ * exactly match a DIFFERENT law's key. A multi-law amendment therefore gets no
+ * lex-diff link — a missing link, never a wrong one.
+ */
+function amendedLawName(name: string): string | null {
+  const m = name.match(/^(.+)の一部を改正する法律$/);
+  return m ? m[1].replace(/等$/, "") : null;
+}
+
+// lexdiff-mapping.json is an auxiliary layer (CLAUDE.md): like summarize.py's
+// _get_lexdiff_map, an unreadable or missing mapping means "no lex-diff links",
+// never a failed site build.
+function loadLexdiffMapping(): Record<string, unknown> {
+  try {
+    const m = parseJsonFile(LEXDIFF_PATH);
+    if (m && typeof m === "object" && !Array.isArray(m)) return m as Record<string, unknown>;
+    console.warn(`${LEXDIFF_PATH}: not a JSON object — rendering without lex-diff links`);
+  } catch (e) {
+    console.warn(`${LEXDIFF_PATH}: ${e instanceof Error ? e.message : String(e)} — rendering without lex-diff links`);
+  }
+  return {};
+}
+
+/**
+ * Whether `text` names the bill `<name>案` as a bill in its own right. An
+ * occurrence directly after 「…法及び」/「…法律並びに」 is the tail of a longer
+ * bill title (「自衛隊法及び防衛省の職員の給与等に関する法律の一部を改正する法律案」)
+ * and does not count; 「…法律案及び」 is an enumeration of separate bills and does.
+ */
+function mentionsBill(text: string, name: string): boolean {
+  const bill = `${name}案`;
+  for (let i = text.indexOf(bill); i !== -1; i = text.indexOf(bill, i + 1)) {
+    if (!/(法|法律)(及び|並びに)$/.test(text.slice(Math.max(0, i - 6), i))) return true;
+  }
+  return false;
+}
+
+function lexdiffLinksFor(name: string, mapping: Record<string, unknown>): LexDiffLink[] {
+  const law = amendedLawName(name);
+  if (law === null || law === "_comment") return [];
+  const entry = mapping[law] as { url?: unknown } | undefined;
+  return typeof entry?.url === "string" ? [{ label: law, url: entry.url }] : [];
+}
+
+/**
+ * Enacted laws of a session, each with the session's threads that name it.
+ * Uses the same thread set as the session digest (Diet, non-procedural,
+ * inside the session period). Ordered by enactment date, then bill kind and
+ * number — mechanical, no editorial ranking.
+ */
+export function getEnactedLaws(number: number): EnactedLawEntry[] {
+  const digest = getSessionDigest(number);
+  if (!digest) return [];
+  // Reuse the digest's thread set (and its summaries) so the two sections of
+  // the page can never disagree about which threads belong to the session.
+  const summaries = new Map(
+    digest.committees.flatMap((g) => g.threads).map((t) => [t.id, t]),
+  );
+  const inSession = loadThreads().filter((t) => summaries.has(t.id));
+  const mapping = loadLexdiffMapping();
+
+  return loadEnactedLaws()
+    .filter((l) => l.session === number)
+    .sort(
+      (a, b) =>
+        cmp(a.enactedDate, b.enactedDate) ||
+        cmp(a.billKind, b.billKind) ||
+        a.billSession - b.billSession ||
+        a.billNumber - b.billNumber,
+    )
+    .map((law) => {
+      const threads = inSession
+        .filter(
+          (t) =>
+            mentionsBill(t.topic, law.name) ||
+            mentionsBill(t.summary, law.name) ||
+            t.speeches.some((s) => mentionsBill(s.raw, law.name)),
+        )
+        .map((t) => summaries.get(t.id)!)
+        .sort((a, b) => cmp(a.date, b.date) || cmp(a.id, b.id));
+      return { ...law, threads, lexdiff: lexdiffLinksFor(law.name, mapping) };
+    });
+}
