@@ -1,0 +1,126 @@
+{
+  "_comment": "Laws enacted (passed by both Houses) in each Diet session, transcribed from the House of Representatives bill information pages (衆議院 議案情報, https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/kaiji222.htm and each bill's 経過 page in sourceUrl). Facts only: name is the bill name without the trailing 案, enactedDate is the later House's plenary passage date, promulgatedDate and lawNumber come from the 公布 row. Threads are NOT listed here — the session page links them mechanically by exact name match (src/lib/data.ts getEnactedLaws), so no thread is hand-picked. Maintained by hand until the session closes; add a row when a bill's 審議状況 becomes 成立.",
+  "laws": [
+    {
+      "session": 222,
+      "name": "国会議員の秘書の給与等に関する法律の一部を改正する法律",
+      "billKind": "衆法",
+      "billSession": 222,
+      "billNumber": 2,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第81号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE374A.htm"
+    },
+    {
+      "session": 222,
+      "name": "一般職の職員の給与に関する法律等の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 2,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第79号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE3442.htm"
+    },
+    {
+      "session": 222,
+      "name": "特別職の職員の給与に関する法律及び二千二十七年国際園芸博覧会政府委員の設置に関する臨時措置法の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 3,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第80号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE3456.htm"
+    },
+    {
+      "session": 222,
+      "name": "国家公務員災害補償法及び国家公務員共済組合法の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 4,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第82号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE346A.htm"
+    },
+    {
+      "session": 222,
+      "name": "地方公務員災害補償法及び地方公務員等共済組合法の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 5,
+      "enactedDate": "2026-11-13",
+      "promulgatedDate": "2026-11-20",
+      "lawNumber": "令和8年法律第86号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE347E.htm"
+    },
+    {
+      "session": 222,
+      "name": "裁判官の報酬等に関する法律の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 6,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第84号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE3492.htm"
+    },
+    {
+      "session": 222,
+      "name": "検察官の俸給等に関する法律の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 7,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第85号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE34A6.htm"
+    },
+    {
+      "session": 222,
+      "name": "特定Ｂ型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 9,
+      "enactedDate": "2026-11-13",
+      "promulgatedDate": "2026-11-20",
+      "lawNumber": "令和8年法律第88号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE34CE.htm"
+    },
+    {
+      "session": 222,
+      "name": "防衛省の職員の給与等に関する法律の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 10,
+      "enactedDate": "2026-11-13",
+      "promulgatedDate": "2026-11-20",
+      "lawNumber": "令和8年法律第89号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE34E2.htm"
+    },
+    {
+      "session": 222,
+      "name": "公害健康被害の補償等に関する法律の一部を改正する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 14,
+      "enactedDate": "2026-11-13",
+      "promulgatedDate": "2026-11-20",
+      "lawNumber": "令和8年法律第87号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE3532.htm"
+    },
+    {
+      "session": 222,
+      "name": "地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律",
+      "billKind": "閣法",
+      "billSession": 222,
+      "billNumber": 16,
+      "enactedDate": "2026-11-11",
+      "promulgatedDate": "2026-11-18",
+      "lawNumber": "令和8年法律第83号",
+      "sourceUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE363A.htm"
+    }
+  ]
+}

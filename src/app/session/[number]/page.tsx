@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getSessionDigest, getSessions } from "@/lib/data";
+import { getEnactedLaws, getSessionDigest, getSessions } from "@/lib/data";
 import { MobileHeader } from "@/components/layout/header";
+import { EnactedLaws } from "@/components/session/enacted-laws";
 
 export const dynamicParams = false;
 
@@ -103,6 +104,8 @@ export default async function SessionPage({ params }: Props) {
           会期中に開かれた委員会・本会議の審議を、スレッド数の多い委員会から順に並べています。スレッド名は Claude AI による要約です。会議録は国立国会図書館の公開から数日遅れて反映されます。
         </p>
       </div>
+
+      <EnactedLaws laws={getEnactedLaws(session.number)} />
 
       {digest.committees.map((g) => (
         <section key={`${g.house}-${g.committee}`} className="border-b border-x-border">
