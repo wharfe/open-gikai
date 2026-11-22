@@ -862,8 +862,14 @@ function loadEnactedLaws(): EnactedLaw[] {
     if (typeof l.enactedDate !== "string" || !ISO_DATE_RE.test(l.enactedDate)) {
       throw bad('"enactedDate" must be YYYY-MM-DD');
     }
-    if (l.promulgatedDate !== undefined && !ISO_DATE_RE.test(String(l.promulgatedDate))) {
+    if (
+      l.promulgatedDate !== undefined &&
+      (typeof l.promulgatedDate !== "string" || !ISO_DATE_RE.test(l.promulgatedDate))
+    ) {
       throw bad('"promulgatedDate" must be YYYY-MM-DD');
+    }
+    if (l.lawNumber !== undefined && (typeof l.lawNumber !== "string" || l.lawNumber === "")) {
+      throw bad('"lawNumber" must be a non-empty string');
     }
     // A bill is identified by kind + submitting session + number; a duplicate
     // row would list one law twice (and collide as a React key).
@@ -945,6 +951,7 @@ export function getEnactedLaws(number: number): EnactedLawEntry[] {
       (a, b) =>
         cmp(a.enactedDate, b.enactedDate) ||
         cmp(a.billKind, b.billKind) ||
+        a.billSession - b.billSession ||
         a.billNumber - b.billNumber,
     )
     .map((law) => {
