@@ -12,7 +12,7 @@ export function EnactedLaws({ laws }: { laws: EnactedLawEntry[] }) {
         <span className="shrink-0 text-[13px] font-normal text-x-secondary">{laws.length}件</span>
       </h2>
       <p className="px-4 pb-2 text-[12px] leading-[18px] text-x-secondary">
-        成立した法律は衆議院の議案情報から転記しています。審議スレッドは、題名・要約・会議録の原文に法律名がそのまま出てくるものを機械的に並べています。
+        成立日の順に並べています。成立した法律は衆議院の議案情報から転記し、審議スレッドは題名・要約・会議録の原文に法案名がそのまま出てくるものを機械的に並べています。
       </p>
       <ul className="pb-2">
         {laws.map((law) => (
@@ -37,7 +37,7 @@ export function EnactedLaws({ laws }: { laws: EnactedLawEntry[] }) {
                   rel="noopener noreferrer"
                   className="text-x-brand hover:underline"
                 >
-                  {l.label}（lex-diff 改正差分）
+                  {l.label}（lex-diff）
                 </a>
               ))}
             </div>
