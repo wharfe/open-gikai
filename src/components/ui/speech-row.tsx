@@ -5,6 +5,7 @@ import type { Level, Member, Speech, Thread } from "@/types";
 import { useAppContext } from "@/components/providers/app-provider";
 import { RANK_BADGE, getTensionStyle, PARTY_STYLE } from "@/lib/config";
 import { getStyle, buildSpeechShare } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 import { Avatar } from "@/components/ui/avatar";
 import { ShareButton } from "@/components/ui/share-button";
 
@@ -125,7 +126,15 @@ export function SpeechRow({
         {/* Action row */}
         <div className="-ml-2 mt-3 flex items-center gap-4 text-x-secondary">
           <button
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => {
+              if (!expanded) {
+                trackEvent({
+                  name: "view_raw_transcript",
+                  params: { thread_id: thread.id, level },
+                });
+              }
+              setExpanded(!expanded);
+            }}
             className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-2 py-1.5 text-[13px] text-x-secondary transition-colors hover:bg-x-accent/10 hover:text-x-accent"
           >
             <span className="material-symbols-rounded align-middle" style={{ fontSize: 16 }}>description</span> {expanded ? "閉じる" : "原文"}
