@@ -1,0 +1,549 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-05",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01U8u8nXci99ETHkhGitkAx4",
+      "submitted_at": "2026-11-25T04:11:52Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_外交防衛委員会_2026-11-05_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_626c12c6e063_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "米中間選挙の結果と日米関係への影響",
+            "topicTag": "米中間選挙",
+            "topicColor": "#06b6d4",
+            "summary": "米中間選挙での民主党大勝の要因や日米同盟への影響について各党が見解を質した",
+            "contextDescription": "2026年11月の米中間選挙で民主党が上下両院で勝利。その要因や対日関係への影響が議論の対象。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5,
+              51,
+              52,
+              53,
+              72,
+              105,
+              106,
+              136,
+              137
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            51,
+            52,
+            53,
+            72,
+            105,
+            106,
+            136,
+            137
+          ],
+          "input_hash": "sha256:9e22e19023643b8487d70195538a0c893689a3c24656a81ae4afc88b9a975712"
+        },
+        {
+          "custom_id": "s_626c12c6e063_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "G7オンライン首脳会合欠席と茂木大臣答弁の整合性",
+            "topicTag": "G7欠席答弁",
+            "topicColor": "#06b6d4",
+            "summary": "総理欠席時の代理出席基準をめぐる茂木外相の答弁の矛盾と変遷を追及",
+            "contextDescription": "高市総理がG7オンライン首脳会合を欠席した際、茂木外相が代理出席しなかった理由の説明が二転三転した問題。",
+            "legislationName": null,
+            "speechOrders": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              19,
+              20,
+              21,
+              22,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          "speechOrders": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            19,
+            20,
+            21,
+            22,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "input_hash": "sha256:0c800689c092c456121fb79fa8d0328ae9db41aa14bf24a3966c61dd7de43263"
+        },
+        {
+          "custom_id": "s_626c12c6e063_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "アンドゥリル構想への対応と防衛費増額方針",
+            "topicTag": "防衛費増額",
+            "topicColor": "#ef4444",
+            "summary": "防衛費5年80兆円規模への増額観測の真偽と安保三文書改定の進捗を質疑",
+            "contextDescription": "年末に向け安全保障関連3文書の改定作業が進行中で、防衛費の大幅増額が政府・与党内で取り沙汰されている。",
+            "legislationName": null,
+            "speechOrders": [
+              29,
+              30,
+              31,
+              32,
+              33,
+              34
+            ]
+          },
+          "speechOrders": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "input_hash": "sha256:e2b9c4ed5d721fc641ea83b6c72a38cd123554eb9cd82c6568c516b9d30f43f2"
+        },
+        {
+          "custom_id": "s_626c12c6e063_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "安全保障広報における夫婦漫才企画の妥当性",
+            "topicTag": "安保広報",
+            "topicColor": "#8b5cf6",
+            "summary": "1.5億円規模の安保理解醸成広報（夫婦漫才）の内容とジェンダー表現を問題視",
+            "contextDescription": "防衛増税を控え、内閣府が安全保障への理解醸成のため実施する広報事業の内容が議論された。",
+            "legislationName": null,
+            "speechOrders": [
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44
+            ]
+          },
+          "speechOrders": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "input_hash": "sha256:68fe652c1bf4cb9c2d21d5de9ef6d05d064e64bff89c2d765f30403a22eefe5e"
+        },
+        {
+          "custom_id": "s_626c12c6e063_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "拒否する防衛力と抑止・安心供与の概念",
+            "topicTag": "抑止概念",
+            "topicColor": "#ef4444",
+            "summary": "抑止力・対処力・拒否する力の定義と、安心供与という概念の位置付けを議論",
+            "contextDescription": "安保三文書改定を控え、防衛力整備の基本概念である抑止力・対処力・拒否力の定義が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ]
+          },
+          "speechOrders": [
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+          ],
+          "input_hash": "sha256:b78177b081c29ef700f4681bb405987d0d82b6a7efb5b699810f6f8935c2d968"
+        },
+        {
+          "custom_id": "s_626c12c6e063_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "駐留軍等労働者の労働条件改善",
+            "topicTag": "駐留軍労働",
+            "topicColor": "#8b5cf6",
+            "summary": "介護休暇の有給化、定年延長、祝日追加など在日米軍で働く日本人従業員の待遇改善を要求",
+            "contextDescription": "在日米軍基地で働く駐留軍等労働者（約2.6万人）の労働条件は日米間の労務協約で規定され、改善協議が続く。",
+            "legislationName": null,
+            "speechOrders": [
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "speechOrders": [
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "input_hash": "sha256:c4f2bd887c50dbf11906a229b9ec59f75377d5139eaf7ed2adef51f8bb6e0ac5"
+        },
+        {
+          "custom_id": "s_626c12c6e063_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "EU産業加速化法案と日独経済・防衛協力",
+            "topicTag": "日独協力",
+            "topicColor": "#3b82f6",
+            "summary": "EUのEV域内調達要件への懸念と日独首脳会談での防衛装備協力の進展を確認",
+            "contextDescription": "EUが検討する産業加速化法案は域内生産EVを優遇する内容で、日本製品への影響が懸念されている。",
+            "legislationName": "産業加速化法案（EU）",
+            "speechOrders": [
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86
+            ]
+          },
+          "speechOrders": [
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ],
+          "input_hash": "sha256:c97254d64c80976bfd9ec851dda6f1029c5897a1a536c01db8f9c7136d3cb505"
+        },
+        {
+          "custom_id": "s_626c12c6e063_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "非核三原則「撃ち込ませず」原則化の是非",
+            "topicTag": "非核三原則",
+            "topicColor": "#ef4444",
+            "summary": "核の「持ち込ませず」を「撃ち込ませず」に改めるべきとの提案を巡る応答",
+            "contextDescription": "非核三原則（持たず・作らず・持ち込ませず）の見直し議論の中、核攻撃阻止を明確化すべきとの主張がある。",
+            "legislationName": null,
+            "speechOrders": [
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95
+            ]
+          },
+          "speechOrders": [
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95
+          ],
+          "input_hash": "sha256:212152a9dd3e8345dd03b26b8feb0e65b14044a76d57aa6f6f13b98579290091"
+        },
+        {
+          "custom_id": "s_626c12c6e063_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "外国人ビザ審査と情報漏えいリスク",
+            "topicTag": "ビザ審査",
+            "topicColor": "#6366f1",
+            "summary": "外国人妊婦の出産増加を契機にビザ審査の厳格性と自衛隊員情報の流出リスクを質疑",
+            "contextDescription": "在留資格やビザ発給の審査基準、及び自衛隊員個人情報の集積によるリスク管理が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104
+            ]
+          },
+          "speechOrders": [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104
+          ],
+          "input_hash": "sha256:3ca730e26fa51e5681e8d74fbff00970a579dfcd8852bda61cbb7204a1782ccf"
+        },
+        {
+          "custom_id": "s_626c12c6e063_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "在日米軍の綱紀粛正と米兵事件再発防止協議",
+            "topicTag": "米兵事件",
+            "topicColor": "#ef4444",
+            "summary": "沖縄での米兵事件後の外出禁止措置の実効性と日米再発防止協議の進捗を追及",
+            "contextDescription": "沖縄で発生した米兵による事件を受け、在沖米軍が自主的な外出禁止等の措置を実施、日米で再発防止協議中。",
+            "legislationName": null,
+            "speechOrders": [
+              107,
+              108,
+              109,
+              110,
+              111,
+              113,
+              114,
+              115,
+              117,
+              118,
+              119
+            ]
+          },
+          "speechOrders": [
+            107,
+            108,
+            109,
+            110,
+            111,
+            113,
+            114,
+            115,
+            117,
+            118,
+            119
+          ],
+          "input_hash": "sha256:5a9750cfdc8323ab2df13be46f54c3fa41df248e64ce05dfcc5601e513a65e25"
+        },
+        {
+          "custom_id": "s_626c12c6e063_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "ミャンマー情勢と日本政府の対応",
+            "topicTag": "ミャンマー",
+            "topicColor": "#06b6d4",
+            "summary": "軍政を承認しない立場と裏腹に、FATFブラックリスト除外工作疑惑や米緬接近への関与を追及",
+            "contextDescription": "2021年のクーデター以降、ミャンマーは軍政が続き、日本は軍政を承認していないが関係のあり方が問われる。",
+            "legislationName": null,
+            "speechOrders": [
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131,
+              132,
+              133,
+              134,
+              135
+            ]
+          },
+          "speechOrders": [
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135
+          ],
+          "input_hash": "sha256:6f2b2bcdfac9397546546a25ba4856f6f54d3d88bf19e889f263b16d14025f0b"
+        },
+        {
+          "custom_id": "s_626c12c6e063_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "核兵器禁止条約へのオブザーバー参加問題",
+            "topicTag": "核禁条約",
+            "topicColor": "#ef4444",
+            "summary": "再検討会議へのオブザーバー参加を求める地方議会・被爆者の声に日本政府が応じない姿勢を批判",
+            "contextDescription": "核兵器禁止条約は核兵器の非合法化を目指す条約。日本は未署名で、オブザーバー参加も見送ってきた。",
+            "legislationName": "核兵器禁止条約",
+            "speechOrders": [
+              138,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              155,
+              157,
+              159,
+              160,
+              161,
+              163
+            ]
+          },
+          "speechOrders": [
+            138,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            155,
+            157,
+            159,
+            160,
+            161,
+            163
+          ],
+          "input_hash": "sha256:ef701249f2af8fb3f2a4c084c6f58d7281c6a5b372fceaff19294ccf0651d9b0"
+        },
+        {
+          "custom_id": "s_626c12c6e063_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "防衛省職員給与法改正案の提案理由説明",
+            "topicTag": "防衛省給与",
+            "topicColor": "#6366f1",
+            "summary": "人事院勧告に基づく防衛省職員給与改定のための法案提案理由を説明",
+            "contextDescription": "防衛省職員の給与を人事院勧告に基づく官民較差分改定するための法律案。",
+            "legislationName": "防衛省の職員の給与等に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              166
+            ]
+          },
+          "speechOrders": [
+            166
+          ],
+          "input_hash": "sha256:b3f02e3147a178746bd9c905de06c8b1b582e2c0ae3ec3eb3f72490c78a3d70e"
+        }
+      ]
+    }
+  ]
+}
