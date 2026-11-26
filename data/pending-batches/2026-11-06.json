@@ -1,0 +1,732 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-06",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_015TSXABDLoaCQvZrhzAcDaX",
+      "submitted_at": "2026-11-26T03:39:42Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_地域活性化・こども政策・デジタル社会形成に関する特別委員会_2026-11-06_第3号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_83a1801707a5_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "放課後児童クラブの待機児童対策",
+            "topicTag": "放課後",
+            "topicColor": "#8b5cf6",
+            "summary": "高学年の待機児童が全体の6割を占める実態を踏まえ受皿整備の加速を求めた",
+            "contextDescription": "共働き家庭の増加等を背景に放課後児童クラブの需要が拡大し、特に高学年の待機児童が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              4,
+              5
+            ]
+          },
+          "speechOrders": [
+            4,
+            5
+          ],
+          "input_hash": "sha256:ec2f55233125a506940a389b42294d298b400d6a8ad159354d8c62aeb49fb370"
+        },
+        {
+          "custom_id": "s_83a1801707a5_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "地場産業成長プランの市町村支援",
+            "topicTag": "地域経済",
+            "topicColor": "#3b82f6",
+            "summary": "地場産業成長プラン策定の手順が不明瞭との声に伴走支援の充実を求めた",
+            "contextDescription": "地域経済強化のため市町村が策定する地場産業成長プランについて、国の支援体制が議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              6,
+              7,
+              8
+            ]
+          },
+          "speechOrders": [
+            6,
+            7,
+            8
+          ],
+          "input_hash": "sha256:7e677c7fbc7880875f743c0748574e40cc13cbba8e8131c05f69040ecc9932c0"
+        },
+        {
+          "custom_id": "s_83a1801707a5_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "医療・介護DXとサイバーセキュリティー",
+            "topicTag": "医療DX",
+            "topicColor": "#3b82f6",
+            "summary": "医療現場の負担軽減とサイバー攻撃対策の両立をどう図るか問うた",
+            "contextDescription": "医療・介護分野のデジタル化推進と、それに伴う個人情報保護・サイバーセキュリティー対策が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              9,
+              10
+            ]
+          },
+          "speechOrders": [
+            9,
+            10
+          ],
+          "input_hash": "sha256:65eb80ea637a0ebfea387dad545e9af1bae82b40d94246715f9bb317df3ab7c0"
+        },
+        {
+          "custom_id": "s_83a1801707a5_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "自治体基幹業務システムの標準化",
+            "topicTag": "自治体標準化",
+            "topicColor": "#3b82f6",
+            "summary": "標準化移行は7割進むも運用経費増加など当初効果が未発現と指摘された",
+            "contextDescription": "自治体システム標準化法に基づき全国の自治体システムを統一仕様に移行する取組の進捗と課題。",
+            "legislationName": "地方公共団体情報システムの標準化に関する法律",
+            "speechOrders": [
+              12,
+              13,
+              14,
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "input_hash": "sha256:8521dffae08e676699fb0c83531ff75b10f54f0cce74b22b11df91bc337d2a5d"
+        },
+        {
+          "custom_id": "s_83a1801707a5_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "保育DXの推進",
+            "topicTag": "保育DX",
+            "topicColor": "#8b5cf6",
+            "summary": "保育士が子供と向き合う時間を増やすためICT環境整備の目標と公表を求めた",
+            "contextDescription": "保育現場のアナログ業務を削減し保育士の負担軽減を図るデジタル化施策。",
+            "legislationName": null,
+            "speechOrders": [
+              17,
+              18,
+              19
+            ]
+          },
+          "speechOrders": [
+            17,
+            18,
+            19
+          ],
+          "input_hash": "sha256:161181ffe3b2ac744e48d337c45338027cbce109383d69d0c862d76e933d7992"
+        },
+        {
+          "custom_id": "s_83a1801707a5_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "就業者負担軽減支援金の給付執行基盤",
+            "topicTag": "給付DX",
+            "topicColor": "#3b82f6",
+            "summary": "国の情報システムで自治体の給付事務を支え、将来的な所得変化捕捉への拡張を求めた",
+            "contextDescription": "新たな給付つき税額控除の一環である就業者負担軽減支援金の支給に向けたデジタル基盤整備。",
+            "legislationName": null,
+            "speechOrders": [
+              20,
+              21,
+              22
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            22
+          ],
+          "input_hash": "sha256:0c1cde9ef80bfe3fed47da884fc1e2392b2565a08d24ed6bed47c26e8427811b"
+        },
+        {
+          "custom_id": "s_83a1801707a5_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "児童虐待防止の啓発と相談対応体制",
+            "topicTag": "虐待防止",
+            "topicColor": "#8b5cf6",
+            "summary": "相談対応件数が高止まりする中、啓発にとどまらぬ実効的な予防・早期発見策を求めた",
+            "contextDescription": "こどもまんなか月間の啓発活動と、依然高水準にある児童虐待相談対応件数への対策。",
+            "legislationName": null,
+            "speechOrders": [
+              24,
+              25,
+              26,
+              27
+            ]
+          },
+          "speechOrders": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "input_hash": "sha256:633b08e691f26a4ad164c3619521efa97bd486e17444f87eb13454d96140f5b6"
+        },
+        {
+          "custom_id": "s_83a1801707a5_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "児童への性的虐待の実態把握",
+            "topicTag": "性的虐待",
+            "topicColor": "#8b5cf6",
+            "summary": "潜在化しやすい性的虐待の実態把握と被害児童への心理的ケア充実を求めた",
+            "contextDescription": "家庭内等の閉鎖的環境で起こりやすく表面化しにくい子供への性的虐待への対応策。",
+            "legislationName": null,
+            "speechOrders": [
+              28,
+              29,
+              30,
+              31,
+              32
+            ]
+          },
+          "speechOrders": [
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "input_hash": "sha256:5f7d9d3d97c058f56272364c8254fb05e074852b5881798a176fb24e396ae45a"
+        },
+        {
+          "custom_id": "s_83a1801707a5_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "児童相談所の体制強化と職員不祥事対応",
+            "topicTag": "児相体制",
+            "topicColor": "#8b5cf6",
+            "summary": "専門職員の量的質的確保の遅れと、北海道の職員不祥事を踏まえた採用審査強化を求めた",
+            "contextDescription": "児童相談所の専門職員不足問題と、職員による性加害事件・通報放置問題への対応。",
+            "legislationName": null,
+            "speechOrders": [
+              33,
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:e7a0a5e8b7d9bce9b29b47f8c3729be11a28407667338fff5de75f76b222beca"
+        },
+        {
+          "custom_id": "s_83a1801707a5_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "子供性暴力防止法（日本版DBS）の運用",
+            "topicTag": "日本版DBS",
+            "topicColor": "#6366f1",
+            "summary": "前科確認の対象範囲や不審情報の扱い、施行後の機動的な検証・見直しを求めた",
+            "contextDescription": "教育・保育等従事者の性犯罪歴を確認し子供を性暴力から守る子供性暴力防止法（日本版DBS）の制度設計。",
+            "legislationName": "こどもをわいせつ行為等から守るための学校設置者等及び民間教育保育等事業者による児童等対象性暴力等の防止等に関する法律（子供性暴力防止法）",
+            "speechOrders": [
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ]
+          },
+          "speechOrders": [
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "input_hash": "sha256:69b858c850da421e37fedead77ec9eff339d77a596da12939951f8a5de8ebc57"
+        },
+        {
+          "custom_id": "s_83a1801707a5_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "子供ショートステイ事業の拡充",
+            "topicTag": "ショート",
+            "topicColor": "#8b5cf6",
+            "summary": "受入れ断りが5割に上る実態を踏まえ補助単価見直しと居場所連携での拡充を求めた",
+            "contextDescription": "保護者の育児負担軽減と虐待未然防止を目的とする子育て短期支援事業（子供ショートステイ）の供給不足。",
+            "legislationName": null,
+            "speechOrders": [
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51
+            ]
+          },
+          "speechOrders": [
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51
+          ],
+          "input_hash": "sha256:c77bd64dfedec963cc18df66974907290369802fe43e8500b75aecd6bfd9f54c"
+        },
+        {
+          "custom_id": "s_83a1801707a5_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "日本版DBS施行後の見直し時期",
+            "topicTag": "DBS見直し",
+            "topicColor": "#6366f1",
+            "summary": "施行後3年を待たず現場の声を反映した機動的な法検証を行うべきと求めた",
+            "contextDescription": "子供性暴力防止法の施行後における制度見直しのタイミングと手続きに関する議論。",
+            "legislationName": "こどもをわいせつ行為等から守るための学校設置者等及び民間教育保育等事業者による児童等対象性暴力等の防止等に関する法律（子供性暴力防止法）",
+            "speechOrders": [
+              52,
+              53
+            ]
+          },
+          "speechOrders": [
+            52,
+            53
+          ],
+          "input_hash": "sha256:0d1887d3cbdd635d327b074beee84ef05a4103fa4372505aff09d1ce9b887ab2"
+        },
+        {
+          "custom_id": "s_83a1801707a5_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "インバウンド向けベビーシッターサービスの質確保",
+            "topicTag": "インバシッター",
+            "topicColor": "#8b5cf6",
+            "summary": "急増する訪日客向け保育サービスの質のばらつきに早急な実態調査を求めた",
+            "contextDescription": "訪日外国人急増に伴い需要が高まるベビーシッターサービスの質保証とガイドライン整備の課題。",
+            "legislationName": null,
+            "speechOrders": [
+              56,
+              57,
+              58,
+              59,
+              60
+            ]
+          },
+          "speechOrders": [
+            56,
+            57,
+            58,
+            59,
+            60
+          ],
+          "input_hash": "sha256:a20c5b7bf6df5a6a27497b9191cae2295c2e88b407e71e36a4b6e986243d9013"
+        },
+        {
+          "custom_id": "s_83a1801707a5_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "里親委託における親族同意の運用",
+            "topicTag": "里親同意",
+            "topicColor": "#8b5cf6",
+            "summary": "血縁親族同意が里親希望者の障壁となっている実態の把握と見直しを求めた",
+            "contextDescription": "家庭養育優先の理念に基づく里親委託制度において、自治体が求める親族同意の運用実態。",
+            "legislationName": null,
+            "speechOrders": [
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "input_hash": "sha256:2390e6e59b67cfb76280b4ff4a2e722a05cf9d7f8a8a814bf77f1f8d20efe4b7"
+        },
+        {
+          "custom_id": "s_83a1801707a5_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "民間の子供性暴力防止の自主的取組",
+            "topicTag": "民間DBS",
+            "topicColor": "#6366f1",
+            "summary": "学習塾等民間事業者の自主認証制度や性暴力防止検定への支援強化を求めた",
+            "contextDescription": "子供性暴力防止法の対象外となる業種を含め、民間事業者が独自に進める子供の安全確保の取組。",
+            "legislationName": "こどもをわいせつ行為等から守るための学校設置者等及び民間教育保育等事業者による児童等対象性暴力等の防止等に関する法律（子供性暴力防止法）",
+            "speechOrders": [
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78
+            ]
+          },
+          "speechOrders": [
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78
+          ],
+          "input_hash": "sha256:53ba37206d556cb6a84b32fde2c1d351715c5db2ff861e1424cdcb4261b026d3"
+        },
+        {
+          "custom_id": "s_83a1801707a5_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "マイナンバーカードの利活用拡大",
+            "topicTag": "マイナ",
+            "topicColor": "#3b82f6",
+            "summary": "保有率8割超の中、利便性拡大と個人情報保護の両立による信頼確保を求めた",
+            "contextDescription": "行政手続や民間サービスでの利用が広がるマイナンバーカードの活用拡大と安全性確保。",
+            "legislationName": null,
+            "speechOrders": [
+              80,
+              81
+            ]
+          },
+          "speechOrders": [
+            80,
+            81
+          ],
+          "input_hash": "sha256:f34242cfb8c5f07b0bf01175cf329c34291d5606deb69e11d49137443591338f"
+        },
+        {
+          "custom_id": "s_83a1801707a5_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "孤立出産・赤ちゃんポストの制度整備",
+            "topicTag": "孤立出産",
+            "topicColor": "#8b5cf6",
+            "summary": "孤立出産による母子の命を守るため全国共通ルールづくりの検討を求めた",
+            "contextDescription": "医療機関につながらない孤立出産や内密出産、赤ちゃんポストを巡る支援制度の在り方。",
+            "legislationName": null,
+            "speechOrders": [
+              82,
+              83,
+              84
+            ]
+          },
+          "speechOrders": [
+            82,
+            83,
+            84
+          ],
+          "input_hash": "sha256:51c449f0a6a461710222325313e7dc60c231470e7a6b7cb63bd622cc6b4597b5"
+        },
+        {
+          "custom_id": "s_83a1801707a5_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "こども家庭庁の存在意義と重点政策",
+            "topicTag": "こども庁",
+            "topicColor": "#8b5cf6",
+            "summary": "少子化・虐待・貧困等山積する課題に対し大臣が重視する政策の方向性を問うた",
+            "contextDescription": "こども家庭庁が担う幅広い子供政策分野における優先課題と成果の示し方。",
+            "legislationName": null,
+            "speechOrders": [
+              85,
+              86
+            ]
+          },
+          "speechOrders": [
+            85,
+            86
+          ],
+          "input_hash": "sha256:b7b3750a5db281cc6d3fe3a32d9a0c944e45f05d1d664e50853638d13df62d15"
+        },
+        {
+          "custom_id": "s_83a1801707a5_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "こども誰でも通園制度と一時預かり事業の財政支援",
+            "topicTag": "誰でも通園",
+            "topicColor": "#8b5cf6",
+            "summary": "初回面談のみで終わる場合の事業者負担など公定価格の見直しを求めた",
+            "contextDescription": "全ての子供が利用できる新制度「こども誰でも通園制度」と既存の一時預かり事業の財政支援の在り方。",
+            "legislationName": null,
+            "speechOrders": [
+              88,
+              89,
+              90,
+              91
+            ]
+          },
+          "speechOrders": [
+            88,
+            89,
+            90,
+            91
+          ],
+          "input_hash": "sha256:d12b947688d376d708d9814fe4675fd165ffc6e456523d99711716829423abe2"
+        },
+        {
+          "custom_id": "s_83a1801707a5_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "小規模保育事業の財政支援格差",
+            "topicTag": "小規模保育",
+            "topicColor": "#8b5cf6",
+            "summary": "児童福祉法24条1項・2項の規定差による財政支援の違いを問いただした",
+            "contextDescription": "保育所と小規模保育・家庭的保育事業とで市町村の責任や財政支援に差があるかを巡る議論。",
+            "legislationName": "児童福祉法",
+            "speechOrders": [
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98
+            ]
+          },
+          "speechOrders": [
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98
+          ],
+          "input_hash": "sha256:8921cac2449eca13f80c58e37ce7d0ec7536ca4d3b8d7100756f079216c7969e"
+        },
+        {
+          "custom_id": "s_83a1801707a5_20",
+          "thread_idx": 20,
+          "thread_info": {
+            "topic": "障害児福祉手当・通所支援の所得制限と負担",
+            "topicTag": "障害児負担",
+            "topicColor": "#8b5cf6",
+            "summary": "所得制限による急激な負担増や手当支給停止の問題について丁寧な検討を求めた",
+            "contextDescription": "特別児童扶養手当・障害児福祉手当の所得制限、障害児通所支援の応能負担における急激な負担増の問題。",
+            "legislationName": null,
+            "speechOrders": [
+              98,
+              99,
+              100,
+              101,
+              102,
+              103
+            ]
+          },
+          "speechOrders": [
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          "input_hash": "sha256:d02a85147b01479f2cdfd83491831845c7bdf81f2b893e433a7dee6464e00e81"
+        },
+        {
+          "custom_id": "s_83a1801707a5_21",
+          "thread_idx": 21,
+          "thread_info": {
+            "topic": "障害児通所支援の送迎費用負担",
+            "topicTag": "送迎費用",
+            "topicColor": "#8b5cf6",
+            "summary": "送迎加算で実費回収できず事業地域外の子供が送迎を断られる実態を問うた",
+            "contextDescription": "児童発達支援・放課後等デイサービスにおける送迎費用の実費徴収禁止と加算の不足問題。",
+            "legislationName": null,
+            "speechOrders": [
+              104,
+              105,
+              106
+            ]
+          },
+          "speechOrders": [
+            104,
+            105,
+            106
+          ],
+          "input_hash": "sha256:51e348e57754410274d3500ab3986d6a1ebb50427db9734cca988eb461e20766"
+        },
+        {
+          "custom_id": "s_83a1801707a5_22",
+          "thread_idx": 22,
+          "thread_info": {
+            "topic": "中等度知的障害児の紙おむつ支援",
+            "topicTag": "おむつ支援",
+            "topicColor": "#8b5cf6",
+            "summary": "歩行可能でも排せつ困難な子供への紙おむつ支給の自治体格差是正を求めた",
+            "contextDescription": "日常生活用具給付等事業における紙おむつ支給の対象基準が市町村ごとに異なる問題。",
+            "legislationName": null,
+            "speechOrders": [
+              107,
+              108,
+              109,
+              110
+            ]
+          },
+          "speechOrders": [
+            107,
+            108,
+            109,
+            110
+          ],
+          "input_hash": "sha256:5bb2211d9a3f8a487449e3227e695bc5ecd6ed1abc29df07b4ed505af9d2b778"
+        },
+        {
+          "custom_id": "s_83a1801707a5_23",
+          "thread_idx": 23,
+          "thread_info": {
+            "topic": "子供性暴力の客観的事実確認の基準",
+            "topicTag": "被害確認",
+            "topicColor": "#6366f1",
+            "summary": "言葉で伝えられない子供の被害確認の具体的基準と加害者接触回避の判断を問うた",
+            "contextDescription": "乳幼児や障害児など被害を言葉で伝えにくい子供への性暴力疑いに対する調査・保護の在り方。",
+            "legislationName": "こどもをわいせつ行為等から守るための学校設置者等及び民間教育保育等事業者による児童等対象性暴力等の防止等に関する法律（子供性暴力防止法）",
+            "speechOrders": [
+              111,
+              112,
+              113,
+              114,
+              115,
+              116
+            ]
+          },
+          "speechOrders": [
+            111,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "input_hash": "sha256:cf7f6478fc9509711e081d807ef81a2ce8ac203c44ce25c5140c47a199a20f0d"
+        },
+        {
+          "custom_id": "s_83a1801707a5_24",
+          "thread_idx": 24,
+          "thread_info": {
+            "topic": "新生児マススクリーニングの対象疾患拡充",
+            "topicTag": "マススクリ",
+            "topicColor": "#8b5cf6",
+            "summary": "実証事業データを踏まえた対象疾患拡充と地域間の検査機会・負担格差是正を求めた",
+            "contextDescription": "生後まもない赤ちゃんの先天性代謝異常等を調べる新生児マススクリーニング検査の対象疾患拡大の検討。",
+            "legislationName": null,
+            "speechOrders": [
+              117,
+              118,
+              119,
+              120,
+              121,
+              122
+            ]
+          },
+          "speechOrders": [
+            117,
+            118,
+            119,
+            120,
+            121,
+            122
+          ],
+          "input_hash": "sha256:00245f157208cf737071df8549edd741592d716e43dd1efc149c71c3d43b14ff"
+        },
+        {
+          "custom_id": "s_83a1801707a5_25",
+          "thread_idx": 25,
+          "thread_info": {
+            "topic": "政府機関の情報漏えいとサイバーセキュリティー対策",
+            "topicTag": "情報漏えい",
+            "topicColor": "#ef4444",
+            "summary": "GSS不正アクセス事案を踏まえ閣僚情報の漏えい有無や監督体制強化を追及した",
+            "contextDescription": "政府共通システム（GSS）への不正アクセスによる個人情報漏えい事案と政府のサイバーセキュリティー対策。",
+            "legislationName": null,
+            "speechOrders": [
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139,
+              140,
+              141
+            ]
+          },
+          "speechOrders": [
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141
+          ],
+          "input_hash": "sha256:188e98518d7ad4ab3fd3159cfe8599f33f869a43ad809ddb101b25d464fbf55b"
+        }
+      ]
+    }
+  ]
+}
