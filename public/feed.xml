@@ -5,14 +5,14 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 25 Nov 2026 04:29:57 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 03:53:48 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>2026-W47 国会まとめ — 3件の議論</title>
+      <title>2026-W47 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W47</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W47</guid>
-      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
-      <description>3件のスレッド、2委員会の議論をまとめました。トランプ米国大統領との電話会談等についての会見、ＡＳＥＡＮ関連首脳会議出席等についての会見ほか。</description>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <description>5件のスレッド、3委員会の議論をまとめました。議院運営委員会国会法改正等及び国会改革に関する小委員会、トランプ米国大統領との電話会談等についての会見、ＡＳＥＡＮ関連首脳会議出席等についての会見ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -24,20 +24,36 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W45 国会まとめ — 62件の議論</title>
+      <title>2026-W45 国会まとめ — 108件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W45</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W45</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>62件のスレッド、9委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、北朝鮮による拉致問題等に関する特別委員会ほか。</description>
+      <description>108件のスレッド、11委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、北朝鮮による拉致問題等に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W44 国会まとめ — 386件の議論</title>
+      <title>2026-W44 国会まとめ — 440件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W44</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>386件のスレッド、21委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
+      <description>440件のスレッド、24委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
+    </item>
+    <item>
+      <title>委員会における配付資料の公開等について — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261120_f1f1ea_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261120_f1f1ea_01</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <description>委員会配付資料の公開ルールについて非公開懇談で協議した（国会会議録・2026.11.20・2発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
+    </item>
+    <item>
+      <title>今後の議題設定に関する協議 — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
+      <link>https://open-gikai.net/t/t_20261120_f1f1ea_02</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261120_f1f1ea_02</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <description>小委員会の今後の議題設定方針を懇談で協議し筆頭間調整に委ねた（国会会議録・2026.11.20・2発言）</description>
+      <category>議院運営委員会国会法改正等及び国会改革に関する小委員会</category>
     </item>
     <item>
       <title>米中露首脳会談の平和宣言とICC管轄権条項 — トランプ米国大統領との電話会談等についての会見</title>
@@ -336,108 +352,92 @@
       <category>北朝鮮による拉致問題等に関する特別委員会</category>
     </item>
     <item>
-      <title>日仏首脳電話会談の内容 — マクロン・フランス共和国大統領との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20261105_702d38_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_702d38_01</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>マクロン大統領と電話会談し安全保障・AI・宇宙等の協力進展やEU産業加速化法案への懸念を伝達（首相記者会見・2026.11.05・2発言）</description>
-      <category>マクロン・フランス共和国大統領との電話会談等についての会見</category>
+      <title>放課後児童クラブの待機児童対策 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_24</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_24</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>高学年の待機児童が全体の6割を占める実態を踏まえ受皿整備の加速を求めた（国会会議録・2026.11.06・2発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>G7オンライン首脳会議欠席を巡るマクロン大統領とのやり取り — マクロン・フランス共和国大統領との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20261105_702d38_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_702d38_02</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>総理がG7オンライン首脳会議を欠席した件で議長国フランスとのやり取りはなかったと説明（首相記者会見・2026.11.05・3発言）</description>
-      <category>マクロン・フランス共和国大統領との電話会談等についての会見</category>
+      <title>地場産業成長プランの市町村支援 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_25</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_25</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>地場産業成長プラン策定の手順が不明瞭との声に伴走支援の充実を求めた（国会会議録・2026.11.06・3発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>米中間選挙結果への受け止め — マクロン・フランス共和国大統領との電話会談等についての会見</title>
-      <link>https://open-gikai.net/t/t_20261105_702d38_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_702d38_03</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>米中間選挙で民主党が上下両院を制した結果について内政問題としてコメントを控える姿勢（首相記者会見・2026.11.05・2発言）</description>
-      <category>マクロン・フランス共和国大統領との電話会談等についての会見</category>
+      <title>医療・介護DXとサイバーセキュリティー — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_26</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_26</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>医療現場の負担軽減とサイバー攻撃対策の両立をどう図るか問うた（国会会議録・2026.11.06・2発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>防災担当大臣等の就任挨拶 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_6e5f67_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_6e5f67_04</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>防災大臣・副大臣・政務官が就任に際し災害犠牲者への哀悼と協力を表明（国会会議録・2026.11.05・3発言）</description>
-      <category>災害対策特別委員会</category>
+      <title>自治体基幹業務システムの標準化 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_27</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_27</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>標準化移行は7割進むも運用経費増加など当初効果が未発現と指摘された（国会会議録・2026.11.06・5発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>大臣発言の訂正 — 災害対策特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_6e5f67_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_6e5f67_05</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>首都直下地震緊急対策推進基本計画の策定年の言い間違いを訂正（国会会議録・2026.11.05・1発言）</description>
-      <category>災害対策特別委員会</category>
+      <title>保育DXの推進 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_28</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_28</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>保育士が子供と向き合う時間を増やすためICT環境整備の目標と公表を求めた（国会会議録・2026.11.06・3発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>憲法改正議論の基本姿勢・テーマ設定 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20261105_a87a3d_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_a87a3d_06</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>各会派が憲法改正論議への基本姿勢と優先的に取り組むべきテーマを表明（国会会議録・2026.11.05・7発言）</description>
-      <category>憲法審査会</category>
+      <title>就業者負担軽減支援金の給付執行基盤 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_29</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_29</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>国の情報システムで自治体の給付事務を支え、将来的な所得変化捕捉への拡張を求めた（国会会議録・2026.11.06・3発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>憲法9条と自衛隊の位置づけ — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20261105_a87a3d_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_a87a3d_07</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>9条2項削除論や自衛隊の憲法上の位置づけ、必要最小限度論などを各会派が議論（国会会議録・2026.11.05・4発言）</description>
-      <category>憲法審査会</category>
+      <title>児童虐待防止の啓発と相談対応体制 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_30</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_30</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>相談対応件数が高止まりする中、啓発にとどまらぬ実効的な予防・早期発見策を求めた（国会会議録・2026.11.06・4発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>国民投票法の課題と緊急時の国会機能維持 — 憲法審査会</title>
-      <link>https://open-gikai.net/t/t_20261105_a87a3d_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_a87a3d_08</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>改正国民投票法の附帯決議対応と、緊急時における国会機能維持の方策を議論（国会会議録・2026.11.05・2発言）</description>
-      <category>憲法審査会</category>
+      <title>児童への性的虐待の実態把握 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_31</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_31</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>潜在化しやすい性的虐待の実態把握と被害児童への心理的ケア充実を求めた（国会会議録・2026.11.06・5発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>家庭裁判所調査官の配置・増員と審理の迅速化 — 法務委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_d77ead_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_d77ead_09</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>家裁調査官の配置率が5割程度にとどまり、審理長期化が子供の心理負担を招く懸念を議論（国会会議録・2026.11.05・10発言）</description>
-      <category>法務委員会</category>
+      <title>児童相談所の体制強化と職員不祥事対応 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_32</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_32</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>専門職員の量的質的確保の遅れと、北海道の職員不祥事を踏まえた採用審査強化を求めた（国会会議録・2026.11.06・4発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>児童虐待事案における家裁・警察・児相・検察の連携 — 法務委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_d77ead_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_d77ead_10</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>児童虐待事案で家裁審理中の子供の安全確保や関係機関の情報共有の在り方を質疑（国会会議録・2026.11.05・8発言）</description>
-      <category>法務委員会</category>
+      <title>子供性暴力防止法（日本版DBS）の運用 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_33</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_33</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>前科確認の対象範囲や不審情報の扱い、施行後の機動的な検証・見直しを求めた（国会会議録・2026.11.06・7発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
     <item>
-      <title>家事事件における子供の意見表明権 — 法務委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_d77ead_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_d77ead_11</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>児童福祉法の理念を踏まえ、家事事件で子供の意思をどう把握・尊重するか議論（国会会議録・2026.11.05・4発言）</description>
-      <category>法務委員会</category>
-    </item>
-    <item>
-      <title>名誉毀損の損害賠償額引上げと算定基準 — 法務委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_d77ead_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_d77ead_12</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>名誉毀損の慰謝料が諸外国より低額との指摘を受け、算定基準明確化の検討状況を質疑（国会会議録・2026.11.05・5発言）</description>
-      <category>法務委員会</category>
-    </item>
-    <item>
-      <title>子供の自殺防止と法務省の相談窓口対応 — 法務委員会</title>
-      <link>https://open-gikai.net/t/t_20261105_d77ead_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261105_d77ead_13</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>子供のSOSを早期に受け止め支援につなげる法務省相談窓口の実効性を確認（国会会議録・2026.11.05・7発言）</description>
-      <category>法務委員会</category>
+      <title>子供ショートステイ事業の拡充 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
+      <link>https://open-gikai.net/t/t_20261106_83a180_34</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_34</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>受入れ断りが5割に上る実態を踏まえ補助単価見直しと居場所連携での拡充を求めた（国会会議録・2026.11.06・8発言）</description>
+      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
   </channel>
 </rss>
