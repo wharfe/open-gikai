@@ -2,6 +2,7 @@
 
 import { useAppContext } from "@/components/providers/app-provider";
 import { LEVELS } from "@/lib/config";
+import { trackEvent } from "@/lib/analytics";
 
 export function LevelBar() {
   const { level, setLevel } = useAppContext();
@@ -13,7 +14,15 @@ export function LevelBar() {
         return (
           <button
             key={l.id}
-            onClick={() => setLevel(l.id)}
+            onClick={() => {
+              if (l.id !== level) {
+                trackEvent({
+                  name: "change_reading_level",
+                  params: { level: l.id, previous_level: level },
+                });
+              }
+              setLevel(l.id);
+            }}
             className="cursor-pointer whitespace-nowrap rounded-full px-2 py-1 text-[13px] transition-colors"
             style={{
               background: isActive ? l.bg : "transparent",
