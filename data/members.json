@@ -32964,5 +32964,114 @@
         "url": "https://www.google.com/search?q=%E6%B4%A5%E6%9D%91%E6%99%83+%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E4%BF%9D%E8%AD%B7%E5%A7%94%E5%93%A1%E4%BC%9A%E4%BA%8B%E5%8B%99%E5%B1%80%E5%AF%A9%E8%AD%B0%E5%AE%98"
       }
     ]
+  },
+  "m_29ec0f4c": {
+    "id": "m_29ec0f4c",
+    "name": "西山英将",
+    "party": null,
+    "role": "経済産業省経済産業政策局首席地域経済産業政策統括調整官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "経済産業省の発言者一覧",
+        "url": "/gov/meti"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E8%A5%BF%E5%B1%B1%E8%8B%B1%E5%B0%86+%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E7%9C%81"
+      }
+    ]
+  },
+  "kobayashishuuhei": {
+    "id": "kobayashishuuhei",
+    "name": "小林修平",
+    "party": "チームみらい",
+    "role": "議員",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "Wikipedia",
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E4%BF%AE%E5%B9%B3"
+      },
+      {
+        "label": "公式サイト検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E4%BF%AE%E5%B9%B3+%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"
+      },
+      {
+        "label": "X (Twitter) 検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%97%E4%BF%AE%E5%B9%B3+site%3Ax.com+OR+site%3Atwitter.com"
+      }
+    ]
+  },
+  "m_e15a329f": {
+    "id": "m_e15a329f",
+    "name": "端本秀夫",
+    "party": null,
+    "role": "金融庁審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "金融庁の発言者一覧",
+        "url": "/gov/fsa"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E7%AB%AF%E6%9C%AC%E7%A7%80%E5%A4%AB+%E9%87%91%E8%9E%8D%E5%BA%81"
+      }
+    ]
+  },
+  "m_aa8528f8": {
+    "id": "m_aa8528f8",
+    "name": "小笠原靖",
+    "party": null,
+    "role": "環境省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "環境省の発言者一覧",
+        "url": "/gov/env"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E5%B0%8F%E7%AC%A0%E5%8E%9F%E9%9D%96+%E7%92%B0%E5%A2%83%E7%9C%81"
+      }
+    ]
+  },
+  "m_079cbab0": {
+    "id": "m_079cbab0",
+    "name": "谷輪浩二",
+    "party": null,
+    "role": "総務省大臣官房審議官",
+    "district": null,
+    "since": null,
+    "bio": "",
+    "stance": [],
+    "rank": "member",
+    "links": [
+      {
+        "label": "総務省の発言者一覧",
+        "url": "/gov/soumu"
+      },
+      {
+        "label": "所属・経歴を検索",
+        "url": "https://www.google.com/search?q=%E8%B0%B7%E8%BC%AA%E6%B5%A9%E4%BA%8C+%E7%B7%8F%E5%8B%99%E7%9C%81"
+      }
+    ]
   }
 }

@@ -3942,6 +3942,14 @@
           "label": "会議録全文（NDL）",
           "url": "https://kokkai.ndl.go.jp/txt/122215253X00320261106"
         }
+      ],
+      "news": [
+        {
+          "title": "アングル：韓国新政権、米通商交渉で日中の出方注視 政権移行で「時間稼ぎ」",
+          "url": "https://www.reuters.com/jp/markets/japan/funds/XU2M35IC2VMJ7E3ULBSJWPZU6Q-2025-06-04/",
+          "source": "Reuters",
+          "pubDate": "Tue, 03 Jun 2025 20:41:00 GMT"
+        }
       ]
     },
     "speeches": [
@@ -8883,6 +8891,13 @@
         "topic": "教育現場での医療的ケア児受入れ体制",
         "committee": "こども・子育て・若者活躍に関する特別委員会",
         "date": "2026.07.22"
+      },
+      {
+        "threadId": "t_20261105_f3706d_60",
+        "relationship": "同一法案",
+        "topic": "医療的ケア児支援法改正後の成人期支援",
+        "committee": "厚生労働委員会",
+        "date": "2026.11.05"
       }
     ]
   },

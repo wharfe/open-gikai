@@ -5,8 +5,16 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Nov 2026 03:53:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 03:51:18 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026-W48 国会まとめ — 1件の議論</title>
+      <link>https://open-gikai.net/digest/weekly/2026-W48</link>
+      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W48</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <description>1件のスレッド、1委員会の議論をまとめました。議院運営委員会ほか。</description>
+      <category>週次ダイジェスト</category>
+    </item>
     <item>
       <title>2026-W47 国会まとめ — 5件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W47</link>
@@ -24,20 +32,20 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W45 国会まとめ — 108件の議論</title>
+      <title>2026-W45 国会まとめ — 140件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W45</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W45</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>108件のスレッド、11委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、北朝鮮による拉致問題等に関する特別委員会ほか。</description>
+      <description>140件のスレッド、13委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、北朝鮮による拉致問題等に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W44 国会まとめ — 440件の議論</title>
-      <link>https://open-gikai.net/digest/weekly/2026-W44</link>
-      <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W44</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>440件のスレッド、24委員会の議論をまとめました。議院運営委員会、情報監視審査会、地域活性化・こども政策・デジタル社会形成に関する特別委員会ほか。</description>
-      <category>週次ダイジェスト</category>
+      <title>本日の本会議の議事運営 — 議院運営委員会</title>
+      <link>https://open-gikai.net/t/t_20261124_42e7ef_01</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261124_42e7ef_01</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <description>本会議の議事日程・採決手続きについて事務総長が説明した（国会会議録・2026.11.24・1発言）</description>
+      <category>議院運営委員会</category>
     </item>
     <item>
       <title>委員会における配付資料の公開等について — 議院運営委員会国会法改正等及び国会改革に関する小委員会</title>
@@ -429,14 +437,6 @@
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_33</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
       <description>前科確認の対象範囲や不審情報の扱い、施行後の機動的な検証・見直しを求めた（国会会議録・2026.11.06・7発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>子供ショートステイ事業の拡充 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_34</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_34</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>受入れ断りが5割に上る実態を踏まえ補助単価見直しと居場所連携での拡充を求めた（国会会議録・2026.11.06・8発言）</description>
       <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
     </item>
   </channel>
