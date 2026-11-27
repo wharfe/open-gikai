@@ -1,0 +1,54 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-24",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01WpPvX7ssfbHQVYbx9bo7Pb",
+      "submitted_at": "2026-11-27T03:44:54Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_懲罰委員会_2026-11-24_第1号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": []
+    },
+    {
+      "meeting_id": "衆議院_議院運営委員会_2026-11-24_第9号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_42e7ef0fede5_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "本日の本会議の議事運営",
+            "topicTag": "議事運営",
+            "topicColor": "#f97316",
+            "summary": "本会議の議事日程・採決手続きについて事務総長が説明した",
+            "contextDescription": "衆議院本会議での議案審議順序や採決方法など、当日の議事運営の進行について確認する手続き。",
+            "legislationName": null,
+            "speechOrders": [
+              5
+            ]
+          },
+          "speechOrders": [
+            5
+          ],
+          "input_hash": "sha256:5ae5b4813b08a1c023073897e5e671fec8b8c7879c2dce51d0c0d58206ba5c9d"
+        }
+      ]
+    }
+  ]
+}
