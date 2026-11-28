@@ -1,0 +1,931 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-10",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_015A4fuyNHKtzaeo7YzEGaii",
+      "submitted_at": "2026-11-28T03:20:01Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_内閣委員会_2026-11-10_第4号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_1bcf1c2b1553_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "優秀な人材の定義と幹部職員人事制度の見直し",
+            "topicTag": "幹部人事",
+            "topicColor": "#8b5cf6",
+            "summary": "国家公務員の「優秀な人材」の定義が曖昧で、幹部職員の登用・評価基準の明確化が課題に",
+            "contextDescription": "国家公務員の幹部登用や人事評価の在り方を巡る議論。採用試験の種類にとらわれない登用が原則とされる。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "speechOrders": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "input_hash": "sha256:968ae473d61de4bf25f87d6df4f697df3383d3e07c99ad62e4725a9ff6b272b3"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "幹部職員給与の官民比較と水準引上げ",
+            "topicTag": "幹部給与",
+            "topicColor": "#8b5cf6",
+            "summary": "民間役員報酬との比較を根拠に幹部職員給与を引き上げる方針に、行政職との均衡の観点から懸念",
+            "contextDescription": "人事院は本府省幹部職員の給与水準が民間企業の役員と比べ低いとして、新たな算定方法を検討している。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ]
+          },
+          "speechOrders": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "input_hash": "sha256:36c55a13f425c9b9b4339a865d4cf76720b0bbdede374abe262eb2e39be74769"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "特別職給与と国会議員歳費との均衡",
+            "topicTag": "特別職給与",
+            "topicColor": "#8b5cf6",
+            "summary": "事務次官の給与が国会議員歳費を上回る実態が判明し、特別職給与制度の整合性に疑問",
+            "contextDescription": "国会法は議員歳費が一般職公務員の最高給与額を下回らないと規定しており、特別職給与改正案との整合性が論点。",
+            "legislationName": "特別職の職員の給与に関する法律及び二千二十七年国際園芸博覧会政府委員の設置に関する臨時措置法の一部を改正する法律案",
+            "speechOrders": [
+              15,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          "speechOrders": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "input_hash": "sha256:58fa7089ffdf1ebb13d70066ee6bb26e7c8d647309d7d0bb33663b59e682850d"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "幹部職員の勤務時間にとらわれない働き方制度",
+            "topicTag": "幹部勤務制度",
+            "topicColor": "#8b5cf6",
+            "summary": "幹部職員向けに勤務時間にとらわれない働き方を導入する検討に、長時間労働助長への懸念",
+            "contextDescription": "人事院が本府省幹部職員等を対象に勤務時間制度の適用除外を含む人事制度見直しを検討している。",
+            "legislationName": null,
+            "speechOrders": [
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34
+            ]
+          },
+          "speechOrders": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "input_hash": "sha256:26f082778c8e0c6f426769cb4432bba096318a00ffdedc83a7b00719f55c9c0e"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "公務員の魅力向上と人材確保・離職防止",
+            "topicTag": "人材確保",
+            "topicColor": "#8b5cf6",
+            "summary": "国家公務員の志願者減少・若手離職の実態と、その原因分析・対策が問われた",
+            "contextDescription": "国家公務員採用試験の申込者数減少や若年層職員の早期離職が、行政の持続可能性に関わる課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ]
+          },
+          "speechOrders": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "input_hash": "sha256:b3c5d081f071c97203329a963849d8337c94ffb4e124a635e41276ccd64f7449"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "超過勤務と国会答弁作成業務の負担",
+            "topicTag": "業務負担",
+            "topicColor": "#8b5cf6",
+            "summary": "長時間の超過勤務が依然続く中、国会答弁作成業務の負担軽減にAI活用が進められている",
+            "contextDescription": "霞が関の長時間労働問題と、その一因とされる国会答弁作成業務の効率化が議論の対象。",
+            "legislationName": null,
+            "speechOrders": [
+              44,
+              45,
+              46
+            ]
+          },
+          "speechOrders": [
+            44,
+            45,
+            46
+          ],
+          "input_hash": "sha256:c617524f0af259e9eb63ac73a9fc90ca3c8528baa894fe73ffd901056f9432af"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "無給休暇制度の新設と日数設定の根拠",
+            "topicTag": "無給休暇",
+            "topicColor": "#8b5cf6",
+            "summary": "事由を問わない無給休暇を7日間新設する制度設計の根拠と十分性が問われた",
+            "contextDescription": "人事院の最終提言を受け、育児・介護等の多様な事情に対応するため年7日の無給休暇制度を新設する改正。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              47,
+              48,
+              49,
+              50
+            ]
+          },
+          "speechOrders": [
+            47,
+            48,
+            49,
+            50
+          ],
+          "input_hash": "sha256:841e3cc3628d19db718b4dd84e2678d2716e377f965f56bdb78e35181c4fe389"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "広域異動手当と地域手当の併給調整",
+            "topicTag": "異動手当",
+            "topicColor": "#8b5cf6",
+            "summary": "広域異動手当と地域手当の併給調整により恩恵が及ばない職員への対応が課題",
+            "contextDescription": "広域的な転勤のある職員向けの広域異動手当は、地域手当と重複する場合に併給調整される仕組みになっている。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              51,
+              52,
+              53
+            ]
+          },
+          "speechOrders": [
+            51,
+            52,
+            53
+          ],
+          "input_hash": "sha256:ad80b58a548d6fbf608aa6fb58fd0ce14aaea8027c1f31c72cc4d87e6a0b34e0"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "大臣の所属政党（維新）の公務員給与引下げ方針との整合性",
+            "topicTag": "維新方針",
+            "topicColor": "#8b5cf6",
+            "summary": "維新の公務員給与引下げ方針と、人事院勧告尊重という大臣の立場との整合性が追及された",
+            "contextDescription": "日本維新の会はかねて公務員給与の適正化（引下げ）を主張しており、同党出身大臣の政府方針との整合性が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65
+            ]
+          },
+          "speechOrders": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "input_hash": "sha256:4272c6af9a49cac8dba2ab5f62881f67cb84424dd19afc0b59f17179dce45c75"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "中途採用・官民人材交流の推進",
+            "topicTag": "中途採用",
+            "topicColor": "#8b5cf6",
+            "summary": "民間経験者の中途採用拡大と官民人材交流の更なる推進の必要性",
+            "contextDescription": "行政課題の複雑化に対応するため、民間で培った知識・経験を持つ人材の中途採用が近年拡大している。",
+            "legislationName": null,
+            "speechOrders": [
+              66,
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            66,
+            67,
+            68
+          ],
+          "input_hash": "sha256:8188707c7cfc62f8adeaa78e557151a8e75d1b15fe7032d102203e39f04a6705"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "転居手当の創設と転勤負担の軽減",
+            "topicTag": "転居手当",
+            "topicColor": "#8b5cf6",
+            "summary": "転居を伴う転勤の経済的負担軽減策として転居手当を新設するが、地方支分部局の人事偏在は未解決",
+            "contextDescription": "転居を伴う異動の経済的負担を軽減するため転居手当を新設する改正案。地方勤務者の処遇も論点に。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76
+            ]
+          },
+          "speechOrders": [
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76
+          ],
+          "input_hash": "sha256:f8a98f68a2f615fde50ec9a125ea7ef9d98b4734588cbc34fdd0c6ecfe64190a"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "人事評価制度の運用改善と技術系人材確保",
+            "topicTag": "技術系採用",
+            "topicColor": "#8b5cf6",
+            "summary": "人事評価の面談・運用の課題、及び技術系職員の採用難・昇進格差の是正が求められた",
+            "contextDescription": "技術系の国家公務員試験は合格者数が採用予定数を下回る区分があり、人材確保が危機的状況にある。",
+            "legislationName": null,
+            "speechOrders": [
+              77,
+              78,
+              79,
+              80,
+              81,
+              82
+            ]
+          },
+          "speechOrders": [
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "input_hash": "sha256:c7752161c0b0b92951accc7f595afe3f8e7e5caa5991ffe0e8dc90a08a0dca3e"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "業績評価における非定量的貢献の評価と離職防止",
+            "topicTag": "評価と離職",
+            "topicColor": "#8b5cf6",
+            "summary": "数値化しにくい貢献の適正評価や職場の人間関係改善など若手離職防止策を議論",
+            "contextDescription": "若手職員の離職増加の背景にハラスメント等の職場環境問題があり、評価制度やマネジメント改善が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89
+            ]
+          },
+          "speechOrders": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89
+          ],
+          "input_hash": "sha256:284e0d92af885880ec2b01dbb227e44edc081b96bf6501e9c80d44a984cb9203"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "常勤・非常勤職員間の一時金格差",
+            "topicTag": "一時金格差",
+            "topicColor": "#8b5cf6",
+            "summary": "定年後再任用の非常勤職員は常勤職員より特別給（一時金）が低く格差が残る",
+            "contextDescription": "60歳以降の勤務形態選択により、常勤継続か非常勤再任用かで賞与水準に差が生じている。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案",
+            "speechOrders": [
+              90,
+              91
+            ]
+          },
+          "speechOrders": [
+            90,
+            91
+          ],
+          "input_hash": "sha256:9bdf0f9effec3b2cd355b99b5eb37f4f4f8f84c0bade4aea8b6ee0701b8ba0f9"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "国家公務員の定員合理化と業務量増大のギャップ",
+            "topicTag": "定員合理化",
+            "topicColor": "#f97316",
+            "summary": "定員削減が続く一方で業務量は増大し、現場負担が増している実態と維新の人員削減路線への懸念",
+            "contextDescription": "2004年以降、国家公務員の定員は継続的に削減されてきたが、労災対応等の業務量は増加している。",
+            "legislationName": null,
+            "speechOrders": [
+              92,
+              93,
+              94,
+              95,
+              96
+            ]
+          },
+          "speechOrders": [
+            92,
+            93,
+            94,
+            95,
+            96
+          ],
+          "input_hash": "sha256:d756aa0a6e29d68f5eff964e7807a0b2c1d72f716066b61a90933082908776ac"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "官民給与比較の対象企業規模とILO基準",
+            "topicTag": "官民比較",
+            "topicColor": "#8b5cf6",
+            "summary": "官民給与比較の対象企業規模基準の変遷と、労働基本権制約の代償としての妥当性をILO視点から追及",
+            "contextDescription": "人事院勧告の基礎となる官民給与比較は対象企業規模の基準が時代により変遷し、国際労働基準との整合性も論点。",
+            "legislationName": null,
+            "speechOrders": [
+              97,
+              98,
+              99,
+              100,
+              101
+            ]
+          },
+          "speechOrders": [
+            97,
+            98,
+            99,
+            100,
+            101
+          ],
+          "input_hash": "sha256:a2b717630d0641f20964285e92484721153ae32d956e2f1b4bf5f2a69b92bc58"
+        },
+        {
+          "custom_id": "s_1bcf1c2b1553_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "給与関連三法案への賛否討論",
+            "topicTag": "討論採決",
+            "topicColor": "#8b5cf6",
+            "summary": "一般職給与法・災害補償法改正に賛成、特別職給与法改正には反対する討論が行われた",
+            "contextDescription": "一般職給与法等改正案、特別職給与法等改正案、国家公務員災害補償法等改正案の採決に向けた討論。",
+            "legislationName": "一般職の職員の給与に関する法律等の一部を改正する法律案外二案",
+            "speechOrders": [
+              103
+            ]
+          },
+          "speechOrders": [
+            103
+          ],
+          "input_hash": "sha256:c3b9ad95a31857faa96220f7752fdab36597501c56eeb8e954b96fb542bd00d6"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_厚生労働委員会_2026-11-10_第4号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_6c1a04954c26_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "特定B型肝炎ウイルス感染者給付金等支給特別措置法改正案の提案理由",
+            "topicTag": "B肝給付",
+            "topicColor": "#8b5cf6",
+            "summary": "集団予防接種によるB型肝炎感染被害者への給付金支給に関する特措法改正案の趣旨説明",
+            "contextDescription": "集団予防接種時の注射器使い回しでB型肝炎に感染した被害者への給付金制度を定めた特別措置法の改正案。",
+            "legislationName": "特定B型肝炎ウイルス感染者給付金等の支給に関する特別措置法の一部を改正する法律案",
+            "speechOrders": [
+              2
+            ]
+          },
+          "speechOrders": [
+            2
+          ],
+          "input_hash": "sha256:9417d2c273b6d8b8bfea8f53c97ecf697988bb57422fa1c7e75b825fb6287879"
+        }
+      ]
+    },
+    {
+      "meeting_id": "参議院_法務委員会_2026-11-10_第4号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_663c5f9d5b29_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "裁判官・検察官の給与水準と人事院勧告",
+            "topicTag": "給与水準",
+            "topicColor": "#6366f1",
+            "summary": "人材獲得競争の中での裁判官・検察官給与の引上げと給与体系の分かりやすさを巡る議論",
+            "contextDescription": "裁判官の報酬・検察官の俸給を改定する法案。人事院勧告に準じた改定方式や民間との格差が論点。",
+            "legislationName": "裁判官の報酬等に関する法律の一部を改正する法律案及び検察官の俸給等に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "input_hash": "sha256:b4e3acd592acf5ad6da9f1ca0ed07a363549623be7236ce38465b122538443b1"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "裁判官・検察官の地域手当格差",
+            "topicTag": "地域手当",
+            "topicColor": "#6366f1",
+            "summary": "勤務地による地域手当の格差が裁判官・検察官の職責の重さと見合わないとの指摘",
+            "contextDescription": "裁判官・検察官の報酬は全国一律だが、勤務地に応じた地域手当により実質的な給与差が生じている。",
+            "legislationName": "裁判官の報酬等に関する法律の一部を改正する法律案及び検察官の俸給等に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ]
+          },
+          "speechOrders": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "input_hash": "sha256:001a3346535c5302a38a1859516c85b05d8b58941175fb0215f3a23311d20723"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "家裁人材の増強と死者の名誉毀損",
+            "topicTag": "家裁他",
+            "topicColor": "#8b5cf6",
+            "summary": "家庭裁判所調査官の増員要望と死者の人格権・名誉毀損に関する法整備の検討状況",
+            "contextDescription": "家事事件増加に伴う家裁人材不足と、死者の名誉毀損に対する法的保護の有無が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              27,
+              28,
+              29,
+              30,
+              31
+            ]
+          },
+          "speechOrders": [
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "input_hash": "sha256:308118a199818a492b846848d954e4d5fcfae029073ecfccbcd0ee804c5e0c8c"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "国際機関派遣と裁判官・検察官の人材確保",
+            "topicTag": "人材確保",
+            "topicColor": "#6366f1",
+            "summary": "国際機関への人材派遣の意義と、裁判官・検察官の採用・離職・育児休業の実態",
+            "contextDescription": "法の支配を担う人材の国際派遣の活用と、裁判官・検察官の人材確保・働き方の課題。",
+            "legislationName": "裁判官の報酬等に関する法律の一部を改正する法律案及び検察官の俸給等に関する法律の一部を改正する法律案",
+            "speechOrders": [
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46
+            ]
+          },
+          "speechOrders": [
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "input_hash": "sha256:7701d4738f9120b4e98fdd187b26645b802aa8a9d090f05e00f91fdcd15f169b"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "児童相談所の一時保護司法審査制度",
+            "topicTag": "一時保護",
+            "topicColor": "#8b5cf6",
+            "summary": "一時保護における司法審査導入後の運用実態、却下率の低さや事前審査原則の課題",
+            "contextDescription": "令和4年改正児童福祉法で導入された、児相の一時保護開始判断を裁判所が審査する新制度。",
+            "legislationName": null,
+            "speechOrders": [
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81
+            ]
+          },
+          "speechOrders": [
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81
+          ],
+          "input_hash": "sha256:2a073418eeb9fa879ebfbc16e0b7796524e598c7b5a8a8c0446748f187e793e0"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "裁判所職員の出張旅費と弁護士偏在対策",
+            "topicTag": "司法人材",
+            "topicColor": "#6366f1",
+            "summary": "家裁調査官の移動手段問題、弁護士過疎地対策、司法試験合格前の青田刈り内定",
+            "contextDescription": "地方の弁護士不足問題と法律扶助報酬、司法修習生の早期就職内定慣行が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91
+            ]
+          },
+          "speechOrders": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91
+          ],
+          "input_hash": "sha256:ff4f03bcfae4a7c8ab536ab0ef9ff00c490f78609c0d4fe55c86940037803114"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "法務局登記職場の人手不足",
+            "topicTag": "登記人員",
+            "topicColor": "#f97316",
+            "summary": "所有者不明土地対策で急増する登記業務に対し、定員合理化で人員が追いつかない実態",
+            "contextDescription": "相続登記や所有者不明土地解消のための新業務が法務局に次々導入され、業務負担が増大している問題。",
+            "legislationName": null,
+            "speechOrders": [
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              110
+            ]
+          },
+          "speechOrders": [
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            110
+          ],
+          "input_hash": "sha256:f7ac2fc14d9253ba9de4e4d16c2b8b6fe22c1bbab8a0903f87f2bf0c05fd1c0c"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "検察の信頼回復と外国人被疑事件の起訴率",
+            "topicTag": "検察信頼",
+            "topicColor": "#ef4444",
+            "summary": "検察不祥事を受けた信頼回復の必要性と、来日外国人被疑事件の起訴率・情報公開の在り方",
+            "contextDescription": "検察不祥事を背景にした信頼回復策と、外国人犯罪に関する国民の不安・不公平感への対応が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              112,
+              113,
+              114,
+              115,
+              116,
+              117
+            ]
+          },
+          "speechOrders": [
+            112,
+            113,
+            114,
+            115,
+            116,
+            117
+          ],
+          "input_hash": "sha256:ece27a6d7435c84ab44cd57de49a6ca9140c01bcd97b71059eb0ef4b41ff5c63"
+        },
+        {
+          "custom_id": "s_663c5f9d5b29_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "共同親権制度と家裁の対応",
+            "topicTag": "共同親権",
+            "topicColor": "#8b5cf6",
+            "summary": "離婚後共同親権導入を受け、裁判官・調停委員の意識変革の必要性を指摘",
+            "contextDescription": "改正民法による離婚後共同親権制度の導入を受けた家庭裁判所の審理運用の課題。",
+            "legislationName": null,
+            "speechOrders": [
+              118,
+              119,
+              120
+            ]
+          },
+          "speechOrders": [
+            118,
+            119,
+            120
+          ],
+          "input_hash": "sha256:68cea310dbab9097234ee00738bd4d843043bd2355cc94198df4eecaa691f9e6"
+        }
+      ]
+    }
+  ]
+}
