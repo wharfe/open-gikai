@@ -1,0 +1,502 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-06",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01R6nAgV5fzGkiNYNygSZwpA",
+      "submitted_at": "2026-11-28T03:17:15Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "参議院_政治改革に関する特別委員会_2026-11-06_第3号",
+      "outcome": {
+        "result": "可決",
+        "resolution": "統一率向上策の検討、選管の管理執行体制確保と災害時対応支援、投票率向上策、高齢者・障害者の投票環境整備、改正公選法等の施行準備、大都市特別区設置の住民投票期間と選挙期間の重複回避の最大限調整を求める",
+        "status": "resolved"
+      },
+      "threads": [
+        {
+          "custom_id": "s_64c859232ea9_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "公選法・情報プラットフォーム法改正の運用解釈（虚偽事項公表罪等）",
+            "topicTag": "ネット選挙",
+            "topicColor": "#6366f1",
+            "summary": "ネット上の虚偽情報・誹謗中傷規制の訓示規定が法的責務を伴うか、現職候補への適用範囲を確認",
+            "contextDescription": "2025年成立の改正公選法・情報流通プラットフォーム対処法は、選挙関連の偽情報やネット誹謗中傷への対応を定める。",
+            "legislationName": "公職選挙法及び情報流通プラットフォーム対処法の一部を改正する法律",
+            "speechOrders": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ]
+          },
+          "speechOrders": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "input_hash": "sha256:c94bd9dfc7d0a4c981d6400e5d81a50df5eaa5469a58a4a43e15cea5ab86721c"
+        },
+        {
+          "custom_id": "s_64c859232ea9_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "票ハラスメント対策と多様な人材の議会参画",
+            "topicTag": "票ハラ",
+            "topicColor": "#8b5cf6",
+            "summary": "地方議員の約4割が経験する票ハラへの対策や、子育て世代・女性の立候補支援策を議論",
+            "contextDescription": "選挙活動や議員活動に伴う嫌がらせ「票ハラスメント」が女性や若者の立候補を阻む要因として問題視されている。",
+            "legislationName": null,
+            "speechOrders": [
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          "speechOrders": [
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "input_hash": "sha256:210c0062a2d303469fea52816256b703c3fa785f83f7f09c0ce1565ed79a42b2"
+        },
+        {
+          "custom_id": "s_64c859232ea9_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "高齢者・障害者の投票環境整備",
+            "topicTag": "投票環境",
+            "topicColor": "#8b5cf6",
+            "summary": "代理投票時のプライバシー配慮など、誰もが円滑に投票できる環境整備の取組を確認",
+            "contextDescription": "高齢者や障害者が安心して投票できるよう、投票所でのパーテーション設置など環境整備が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              29,
+              30
+            ]
+          },
+          "speechOrders": [
+            29,
+            30
+          ],
+          "input_hash": "sha256:4fe1f86cb9e83fa8abf157bcff42090865f9bb60fea3b25294453a36d2612cc8"
+        },
+        {
+          "custom_id": "s_64c859232ea9_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "選挙関連偽・誤情報とプラットフォーム事業者の対応状況公表",
+            "topicTag": "偽誤情報",
+            "topicColor": "#06b6d4",
+            "summary": "大規模プラットフォーム事業者の偽情報対策実施状況の公表義務と総務省の監視体制を確認",
+            "contextDescription": "改正情報流通プラットフォーム対処法により、SNS等大規模事業者に選挙関連偽情報対策の実施・公表が義務付けられた。",
+            "legislationName": "情報流通プラットフォーム対処法",
+            "speechOrders": [
+              31,
+              32,
+              33,
+              34,
+              35
+            ]
+          },
+          "speechOrders": [
+            31,
+            32,
+            33,
+            34,
+            35
+          ],
+          "input_hash": "sha256:6d6315ad56e933fb5df7e8167f3c01198f4c96f077373f516c7e8574d927c3ae"
+        },
+        {
+          "custom_id": "s_64c859232ea9_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "学校における主権者教育の在り方",
+            "topicTag": "主権者教育",
+            "topicColor": "#f59e0b",
+            "summary": "政治的中立性配慮と具体的政治事象の取扱いの両立、発達段階に応じた教育の実施状況を確認",
+            "contextDescription": "若者の政治参加を促す主権者教育について、学校現場での中立性と実効性のバランスが議論課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44
+            ]
+          },
+          "speechOrders": [
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "input_hash": "sha256:46b92af4f5f5adde6cbd1c1571e7b9cfa025b2e033ca16065058b0c095047b0c"
+        },
+        {
+          "custom_id": "s_64c859232ea9_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "投票立会人の担い手確保",
+            "topicTag": "立会人",
+            "topicColor": "#6b7280",
+            "summary": "投票立会人の人材確保が困難化する中、選任要件緩和や若年層公募などの対応策を確認",
+            "contextDescription": "投票所運営を支える投票立会人の担い手不足が全国の選挙管理委員会で課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              46,
+              47
+            ]
+          },
+          "speechOrders": [
+            46,
+            47
+          ],
+          "input_hash": "sha256:4d290a82bfd2c0443510ba9ab6d90dd2b083a64e12c6f56c81a104c635faf9fb"
+        },
+        {
+          "custom_id": "s_64c859232ea9_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "統一地方選挙の統一率低下と再統一の是非",
+            "topicTag": "統一率",
+            "topicColor": "#6366f1",
+            "summary": "統一率が当初100%から27.4%に低下する中、任期調整特例など再統一の仕組みの検討を要求",
+            "contextDescription": "統一地方選挙特例法は昭和22年以来4年ごとに制定され、地方選挙の日程統一による関心向上を目的とするが統一率は低下傾向。",
+            "legislationName": "地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律案",
+            "speechOrders": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54
+            ]
+          },
+          "speechOrders": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "input_hash": "sha256:9f1d1eafd2946b21c39b0630eb6a2e616afd0195d382ff479d9e632e450725d2"
+        },
+        {
+          "custom_id": "s_64c859232ea9_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "無投票当選の実態把握と地方議員のなり手不足対策",
+            "topicTag": "なり手不足",
+            "topicColor": "#6366f1",
+            "summary": "無投票選挙の有権者数非公表の問題や、会社員・公務員の立候補環境整備を議論",
+            "contextDescription": "地方議員のなり手不足が深刻化しており、兼業や休職・復職制度など立候補しやすい環境整備が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66
+            ]
+          },
+          "speechOrders": [
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "input_hash": "sha256:2a7739ae53ac8208f1a518cc29689ac33386981bb9e0751a1efcb1acf388d19e"
+        },
+        {
+          "custom_id": "s_64c859232ea9_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "選挙予測市場の活用可能性",
+            "topicTag": "予測市場",
+            "topicColor": "#6b7280",
+            "summary": "選挙結果を予想する予測市場導入による投票率向上効果と、公正性確保の懸念を議論",
+            "contextDescription": "海外で注目される選挙予測市場（賭けの一種）を、選挙への関心喚起策として活用できるか議論されている。",
+            "legislationName": null,
+            "speechOrders": [
+              67,
+              68
+            ]
+          },
+          "speechOrders": [
+            67,
+            68
+          ],
+          "input_hash": "sha256:33aeac486e0fa39913bbfd2cd700cad23de2bc28c3017974b024b36c0e9db511"
+        },
+        {
+          "custom_id": "s_64c859232ea9_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "大都市法住民投票と統一地方選の同日実施問題",
+            "topicTag": "同日選",
+            "topicColor": "#6366f1",
+            "summary": "大阪副首都法住民投票と統一地方選の同日実施を巡る附帯決議の遵守と知事発言の責任を追及",
+            "contextDescription": "大都市地域特別区設置法（副首都法）に基づく住民投票と統一地方選が同日になることの弊害と、重複回避の附帯決議の扱いが争点。",
+            "legislationName": "大都市地域特別区設置法",
+            "speechOrders": [
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107
+            ]
+          },
+          "speechOrders": [
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+          ],
+          "input_hash": "sha256:0bdf9ba9ea8b398d89d451f552d203ef5aa41751d59ba8562a209ec8353aa230"
+        },
+        {
+          "custom_id": "s_64c859232ea9_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "選挙日程の負担と投票所の本人確認・街頭演説妨害対策",
+            "topicTag": "選挙運営",
+            "topicColor": "#6366f1",
+            "summary": "統一地方選の時期や統一率向上策に加え、投票所の本人確認厳格化と街頭演説妨害への対応を議論",
+            "contextDescription": "4月実施の統一地方選の時期的負担、投票時の成り済まし防止、選挙妨害行為への警察対応が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116
+            ]
+          },
+          "speechOrders": [
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "input_hash": "sha256:2d014116c85e95de7cc400291a4c62f93d543bf954f7ed5a9c0c912d1935a46e"
+        },
+        {
+          "custom_id": "s_64c859232ea9_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "福岡県議会の腐敗問題と地方議会の信頼回復",
+            "topicTag": "福岡県議会",
+            "topicColor": "#f97316",
+            "summary": "福岡県議会の金銭授受疑惑や随意契約の不透明さを追及し、説明責任と信頼回復を求める",
+            "contextDescription": "福岡県議会では正副議長ポストを巡る金銭授受疑惑や不透明な業務委託契約が問題化し調査が進行中。",
+            "legislationName": null,
+            "speechOrders": [
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123
+            ]
+          },
+          "speechOrders": [
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123
+          ],
+          "input_hash": "sha256:dcbbaf02ea032c5e21358d0a04c65a7e21cbd39ff4f90007c1ab13aaaa49718d"
+        },
+        {
+          "custom_id": "s_64c859232ea9_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "障害のある人の投票権保障",
+            "topicTag": "障害者投票",
+            "topicColor": "#8b5cf6",
+            "summary": "障害者権利条約に基づく合理的配慮・対話を通じた投票環境整備の必要性を訴える",
+            "contextDescription": "障害者権利条約は投票における合理的配慮と当事者との対話を求めており、代理投票等の制度運用が論点。",
+            "legislationName": null,
+            "speechOrders": [
+              124,
+              125,
+              126
+            ]
+          },
+          "speechOrders": [
+            124,
+            125,
+            126
+          ],
+          "input_hash": "sha256:bdf9702d11c24ddf9de3f39fb44e3eba4ee3400c4029b9893e21a3766486abae"
+        },
+        {
+          "custom_id": "s_64c859232ea9_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "附帯決議の提出と採択",
+            "topicTag": "附帯決議",
+            "topicColor": "#6b7280",
+            "summary": "統一地方選特例法可決を受け、各会派共同提案の附帯決議が提出・採択された",
+            "contextDescription": "法案可決後、審議で指摘された課題への対応を政府に求める附帯決議が各党共同で提出される。",
+            "legislationName": "地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律案",
+            "speechOrders": [
+              129,
+              132
+            ]
+          },
+          "speechOrders": [
+            129,
+            132
+          ],
+          "input_hash": "sha256:d2fc90ad68b90ad3186051b42166263c7926676432e1ba66e94a1cb473cedb14"
+        }
+      ]
+    }
+  ]
+}
