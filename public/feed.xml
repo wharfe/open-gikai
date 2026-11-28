@@ -5,7 +5,7 @@
     <link>https://open-gikai.net</link>
     <description>議会の審議内容をAIで要約・構造化するオープンソースの公共メディア</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 27 Nov 2026 03:51:18 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 03:33:53 GMT</lastBuildDate>
     <atom:link href="https://open-gikai.net/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>2026-W48 国会まとめ — 1件の議論</title>
@@ -24,19 +24,19 @@
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W46 国会まとめ — 11件の議論</title>
+      <title>2026-W46 国会まとめ — 58件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W46</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W46</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
-      <description>11件のスレッド、2委員会の議論をまとめました。議院運営委員会、議院運営委員会国会法改正等及び国会改革に関する小委員会ほか。</description>
+      <description>58件のスレッド、6委員会の議論をまとめました。議院運営委員会、議院運営委員会国会法改正等及び国会改革に関する小委員会、文部科学委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
-      <title>2026-W45 国会まとめ — 140件の議論</title>
+      <title>2026-W45 国会まとめ — 181件の議論</title>
       <link>https://open-gikai.net/digest/weekly/2026-W45</link>
       <guid isPermaLink="true">https://open-gikai.net/digest/weekly/2026-W45</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>140件のスレッド、13委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、北朝鮮による拉致問題等に関する特別委員会ほか。</description>
+      <description>181件のスレッド、14委員会の議論をまとめました。議院運営委員会、災害対策及び東日本大震災復興特別委員会、北朝鮮による拉致問題等に関する特別委員会ほか。</description>
       <category>週次ダイジェスト</category>
     </item>
     <item>
@@ -160,6 +160,166 @@
       <category>議院運営委員会</category>
     </item>
     <item>
+      <title>理系人材育成と経済的・学修時間的負担 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_08</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>理系人材不足の背景にある経済的負担や学修時間の文理格差、処遇改善の必要性を議論（国会会議録・2026.11.11・9発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>国立大学施設の老朽化対策 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_09</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>老朽化が進む国立大学施設の更新・整備予算の拡充を求める議論（国会会議録・2026.11.11・2発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>理系人材の処遇改善 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_10</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>理系出身者や博士課程修了者の所得水準の国際比較と処遇向上の必要性（国会会議録・2026.11.11・2発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>不登校児童への学校健診の機会確保 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_11</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>不登校の子供が学校健診を受けられない現状と福祉部局・教育委員会の連携強化を求める（国会会議録・2026.11.11・7発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>校外活動事故を受けた私立学校への指導体制 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_12</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>校外活動中の死亡事故を受け、私立学校への国の指導権限強化や再発防止策を議論（国会会議録・2026.11.11・4発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>冬期・降雪時の通学路安全確保 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_13</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>積雪地域での除雪体制整備とオンライン授業・休校判断など通学路安全対策（国会会議録・2026.11.11・6発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>セーフティープロモーションスクールの推進 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_14</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>学校安全のPDCAを継続実践するセーフティープロモーションスクールの普及状況（国会会議録・2026.11.11・2発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>部活動の地域展開と参加費・財源 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_15</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>部活動の地域クラブ移行に伴う参加費負担、認定制度、財源措置の在り方（国会会議録・2026.11.11・19発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>学校給食と食育・価格形成教育 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_16</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_16</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>食育基本法改正を踏まえた学校給食での合理的価格形成の教育的意義（国会会議録・2026.11.11・4発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>教員研修制度と免許更新制廃止後の対応 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_17</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_17</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>免許更新制廃止後の研修履歴活用と教員の資質向上の取組（国会会議録・2026.11.11・2発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>次期学習指導要領と家庭科・ライフプラン教育 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_18</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_18</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>インターネット依存や将来設計力育成のための家庭科教育・ライフプラン作成の取組（国会会議録・2026.11.11・5発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>教員のメンタルヘルス対策 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_19</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_19</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>教員の精神疾患増加を受けた予防的取組と復職支援策の強化（国会会議録・2026.11.11・2発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>国宝・重要文化財制度の歴史と再評価 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_20</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_20</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>旧国宝と現行国宝制度の違い、再調査による国宝格上げの可能性を議論（国会会議録・2026.11.11・8発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>養護教諭の複数配置基準と業務負担 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_21</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_21</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>児童生徒の健康課題多様化に対応する養護教諭の複数配置基準引下げと勤務環境改善（国会会議録・2026.11.11・6発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>教員定数（基礎定数）の改善 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_22</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_22</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>給特法改正議論を踏まえた教員の基礎定数引き上げと学級編制の改善（国会会議録・2026.11.11・3発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>若手研究者の処遇と研究費配分 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_23</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_23</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>博士課程進学者支援、若手研究者の処遇改善、競争的資金偏重の是正を議論（国会会議録・2026.11.11・9発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>子供の自殺防止と命の教育 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_24</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_24</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>児童生徒の自殺者数増加を受け、動物飼育やスクールドッグを通じた命の教育の充実を議論（国会会議録・2026.11.11・13発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>学校給食費の公会計化 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_25</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_25</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>給食費等の私費補填問題を受け、学校徴収金の公会計化による透明性向上を議論（国会会議録・2026.11.11・3発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>全国学力・学習状況調査のCBT化 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_26</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_26</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>端末上でのCBT方式移行に伴う調査目的や問題公開の在り方を議論（国会会議録・2026.11.11・5発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
+      <title>国立大学のガバナンス改革 — 文部科学委員会</title>
+      <link>https://open-gikai.net/t/t_20261111_bb04a2_27</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261111_bb04a2_27</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>東京大学総長選考問題を契機とした国立大学法人のガバナンス体制見直し（国会会議録・2026.11.11・3発言）</description>
+      <category>文部科学委員会</category>
+    </item>
+    <item>
       <title>本会議討論・趣旨説明に関する運営協議 — 議院運営委員会</title>
       <link>https://open-gikai.net/t/t_20261110_ed4978_01</link>
       <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_ed4978_01</guid>
@@ -176,268 +336,108 @@
       <category>議院運営委員会</category>
     </item>
     <item>
-      <title>就業者租税・消費税負担軽減法案の緊急上程 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_35217b_01</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_35217b_01</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>飲食料品消費税の臨時引下げ等を定める法案を本会議に緊急上程することを決定した（国会会議録・2026.11.06・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>優秀な人材の定義と幹部職員人事制度の見直し — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_03</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_03</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>国家公務員の「優秀な人材」の定義が曖昧で、幹部職員の登用・評価基準の明確化が課題に（国会会議録・2026.11.10・6発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>緊急上程法案に対する討論者・討論時間の決定 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_35217b_02</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_35217b_02</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>緊急上程された法案に対し各会派の討論者と持ち時間を決定した（国会会議録・2026.11.06・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>幹部職員給与の官民比較と水準引上げ — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_04</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_04</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>民間役員報酬との比較を根拠に幹部職員給与を引き上げる方針に、行政職との均衡の観点から懸念（国会会議録・2026.11.10・12発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>本会議における委員長報告と各会派の賛否 — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_35217b_03</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_35217b_03</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>各委員長報告の内容と法案ごとの会派別賛否状況を事務総長が説明した（国会会議録・2026.11.06・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>特別職給与と国会議員歳費との均衡 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_05</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_05</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>事務次官の給与が国会議員歳費を上回る実態が判明し、特別職給与制度の整合性に疑問（国会会議録・2026.11.10・5発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>土地利用規制法改正案等の趣旨説明の取扱い — 議院運営委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_35217b_04</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_35217b_04</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>重要施設周辺の土地利用規制法改正案等を次回本会議で趣旨説明することを決定した（国会会議録・2026.11.06・1発言）</description>
-      <category>議院運営委員会</category>
+      <title>幹部職員の勤務時間にとらわれない働き方制度 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_06</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_06</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>幹部職員向けに勤務時間にとらわれない働き方を導入する検討に、長時間労働助長への懸念（国会会議録・2026.11.10・8発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>防災・復興担当大臣等の所信表明及び挨拶 — 災害対策及び東日本大震災復興特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_e9671a_05</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_e9671a_05</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>防災・復興担当の大臣・副大臣・政務官が就任挨拶と災害対応・復興への所信を述べた（国会会議録・2026.11.06・7発言）</description>
-      <category>災害対策及び東日本大震災復興特別委員会</category>
+      <title>公務員の魅力向上と人材確保・離職防止 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_07</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_07</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>国家公務員の志願者減少・若手離職の実態と、その原因分析・対策が問われた（国会会議録・2026.11.10・9発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>拉致問題解決に向けた政府の取組と加速化 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_06</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_06</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>拉致被害者の高齢化を踏まえ、帰国実現に向けた政府対応の加速と広報啓発の強化を求めた（国会会議録・2026.11.06・4発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>超過勤務と国会答弁作成業務の負担 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_08</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_08</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>長時間の超過勤務が依然続く中、国会答弁作成業務の負担軽減にAI活用が進められている（国会会議録・2026.11.10・3発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>米朝対話と拉致問題の取扱い — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_07</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_07</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>トランプ政権の米朝対話機運の中、拉致問題を議題化させる日米連携の重要性を議論（国会会議録・2026.11.06・3発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>無給休暇制度の新設と日数設定の根拠 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_09</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_09</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>事由を問わない無給休暇を7日間新設する制度設計の根拠と十分性が問われた（国会会議録・2026.11.10・4発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>大臣所信に対する質疑（拉致問題解決への基本姿勢） — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_08</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_08</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>高市内閣発足1年を経て、両大臣の拉致問題解決への決意と具体的進展を問う（国会会議録・2026.11.06・9発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>広域異動手当と地域手当の併給調整 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_10</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_10</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>広域異動手当と地域手当の併給調整により恩恵が及ばない職員への対応が課題（国会会議録・2026.11.10・3発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>北朝鮮側との接触・働きかけの実態 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_09</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_09</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>アジア大会を契機とした北朝鮮当局者との接触など、政府の秘密裏の働きかけ状況を追及（国会会議録・2026.11.06・3発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>大臣の所属政党（維新）の公務員給与引下げ方針との整合性 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_11</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_11</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>維新の公務員給与引下げ方針と、人事院勧告尊重という大臣の立場との整合性が追及された（国会会議録・2026.11.10・12発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>ロシア・北朝鮮関係の深化と拉致問題への影響 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_10</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_10</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>ロシアと北朝鮮の軍事協力深化が拉致問題解決に与える影響を懸念し情報収集を求めた（国会会議録・2026.11.06・4発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>中途採用・官民人材交流の推進 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_12</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_12</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>民間経験者の中途採用拡大と官民人材交流の更なる推進の必要性（国会会議録・2026.11.10・3発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>米朝首脳会談における拉致問題の位置付け — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_11</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_11</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>日米首脳会談を通じ拉致問題を米朝対話の最重要アジェンダに据える外交努力を確認（国会会議録・2026.11.06・2発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>転居手当の創設と転勤負担の軽減 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_13</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_13</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>転居を伴う転勤の経済的負担軽減策として転居手当を新設するが、地方支分部局の人事偏在は未解決（国会会議録・2026.11.10・7発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>北朝鮮の核・弾道ミサイル問題と安保理決議履行 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_12</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_12</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>国連安保理決議の履行状況の把握と核兵器禁止条約再検討会議への参加を求めた（国会会議録・2026.11.06・3発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
+      <title>人事評価制度の運用改善と技術系人材確保 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_14</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_14</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>人事評価の面談・運用の課題、及び技術系職員の採用難・昇進格差の是正が求められた（国会会議録・2026.11.10・6発言）</description>
+      <category>内閣委員会</category>
     </item>
     <item>
-      <title>「しおかぜ」など北朝鮮向け短波放送への支援 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_13</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_13</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>民間の対北朝鮮短波放送「しおかぜ」の運営費高騰への政府支援状況を質した（国会会議録・2026.11.06・3発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>特定失踪者を含む拉致被害者認定の在り方 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_14</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_14</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>政府認定17名以外の特定失踪者約869名の情報集約体制と認定プロセスの責任所在を追及（国会会議録・2026.11.06・6発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>国連強制的失踪作業部会との連携 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_15</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_15</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>国連の強制的失踪作業部会との情報共有・連携状況と認定への活用を確認（国会会議録・2026.11.06・5発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>国民大集会・国際世論喚起を通じた解決促進 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_16</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_16</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>2000万筆署名など国民運動の後押しと米国など国際社会への働きかけの強化を要請（国会会議録・2026.11.06・5発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>若年層への拉致問題啓発活動の効果検証 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_17</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_17</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>拉致問題を知らない若い世代への啓発動画等の効果を世論調査結果を基に検証（国会会議録・2026.11.06・7発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>個別事案（田中実さん等）の消息と拉致認定基準 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_18</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_18</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>田中実さん・金田龍光さん等の消息情報と、間接証拠による拉致認定の在り方を追及（国会会議録・2026.11.06・5発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>ストックホルム合意の評価と外国人拉致被害者（ドンチョル・キム氏） — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_19</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_19</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>2014年ストックホルム合意の意義と、米国人拉致被害者ケースを通じた日米協力の可能性を議論（国会会議録・2026.11.06・5発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>北朝鮮への追加制裁と制裁内容の公表 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_20</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_20</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>北朝鮮への更なる制裁措置の検討状況と、制裁内容を公表して圧力を高めるべきとの主張を議論（国会会議録・2026.11.06・6発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>日朝交渉記録の欠落問題 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_21</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_21</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>安倍総理・岸田外相時代の日朝交渉記録が存在しない問題の原因究明の有無を追及（国会会議録・2026.11.06・7発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>日朝直接交渉と関係国（中国・韓国）の役割 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_22</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_22</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>アジア大会での接触の経緯や米中・米朝首脳会談の見通し、中国の仲介役割を問うた（国会会議録・2026.11.06・7発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>朝鮮半島・北東アジアの非核化構想 — 北朝鮮による拉致問題等に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_68a7ff_23</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_68a7ff_23</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>日米韓連携による北朝鮮の完全非核化方針と、六か国協議に代わる枠組みの可能性を議論（国会会議録・2026.11.06・8発言）</description>
-      <category>北朝鮮による拉致問題等に関する特別委員会</category>
-    </item>
-    <item>
-      <title>放課後児童クラブの待機児童対策 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_24</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_24</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>高学年の待機児童が全体の6割を占める実態を踏まえ受皿整備の加速を求めた（国会会議録・2026.11.06・2発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>地場産業成長プランの市町村支援 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_25</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_25</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>地場産業成長プラン策定の手順が不明瞭との声に伴走支援の充実を求めた（国会会議録・2026.11.06・3発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>医療・介護DXとサイバーセキュリティー — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_26</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_26</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>医療現場の負担軽減とサイバー攻撃対策の両立をどう図るか問うた（国会会議録・2026.11.06・2発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>自治体基幹業務システムの標準化 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_27</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_27</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>標準化移行は7割進むも運用経費増加など当初効果が未発現と指摘された（国会会議録・2026.11.06・5発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>保育DXの推進 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_28</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_28</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>保育士が子供と向き合う時間を増やすためICT環境整備の目標と公表を求めた（国会会議録・2026.11.06・3発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>就業者負担軽減支援金の給付執行基盤 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_29</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_29</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>国の情報システムで自治体の給付事務を支え、将来的な所得変化捕捉への拡張を求めた（国会会議録・2026.11.06・3発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>児童虐待防止の啓発と相談対応体制 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_30</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_30</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>相談対応件数が高止まりする中、啓発にとどまらぬ実効的な予防・早期発見策を求めた（国会会議録・2026.11.06・4発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>児童への性的虐待の実態把握 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_31</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_31</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>潜在化しやすい性的虐待の実態把握と被害児童への心理的ケア充実を求めた（国会会議録・2026.11.06・5発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>児童相談所の体制強化と職員不祥事対応 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_32</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_32</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>専門職員の量的質的確保の遅れと、北海道の職員不祥事を踏まえた採用審査強化を求めた（国会会議録・2026.11.06・4発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
-    </item>
-    <item>
-      <title>子供性暴力防止法（日本版DBS）の運用 — 地域活性化・こども政策・デジタル社会形成に関する特別委員会</title>
-      <link>https://open-gikai.net/t/t_20261106_83a180_33</link>
-      <guid isPermaLink="true">https://open-gikai.net/t/t_20261106_83a180_33</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
-      <description>前科確認の対象範囲や不審情報の扱い、施行後の機動的な検証・見直しを求めた（国会会議録・2026.11.06・7発言）</description>
-      <category>地域活性化・こども政策・デジタル社会形成に関する特別委員会</category>
+      <title>業績評価における非定量的貢献の評価と離職防止 — 内閣委員会</title>
+      <link>https://open-gikai.net/t/t_20261110_1bcf1c_15</link>
+      <guid isPermaLink="true">https://open-gikai.net/t/t_20261110_1bcf1c_15</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>数値化しにくい貢献の適正評価や職場の人間関係改善など若手離職防止策を議論（国会会議録・2026.11.10・7発言）</description>
+      <category>内閣委員会</category>
     </item>
   </channel>
 </rss>
