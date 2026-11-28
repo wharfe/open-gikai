@@ -1,0 +1,594 @@
+{
+  "schema_version": 4,
+  "date": "2026-11-11",
+  "model": "claude-sonnet-5",
+  "retry_count": 0,
+  "attempts": [
+    {
+      "batch_id": "msgbatch_01CY4i37zmj8N6yPtugmmHxJ",
+      "submitted_at": "2026-11-28T03:22:23Z",
+      "terminal_status": null,
+      "terminal_at": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "衆議院_文部科学委員会_2026-11-11_第4号",
+      "outcome": {
+        "result": null,
+        "resolution": null,
+        "status": "ongoing"
+      },
+      "threads": [
+        {
+          "custom_id": "s_bb04a2783be4_00",
+          "thread_idx": 0,
+          "thread_info": {
+            "topic": "理系人材育成と経済的・学修時間的負担",
+            "topicTag": "理系育成",
+            "topicColor": "#f59e0b",
+            "summary": "理系人材不足の背景にある経済的負担や学修時間の文理格差、処遇改善の必要性を議論",
+            "contextDescription": "日本の理工・デジタル分野の人材不足を受け、入学定員や奨学金、入試科目、処遇面での文理格差が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          },
+          "speechOrders": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "input_hash": "sha256:a0cb0bb7a561524f50e271f0e5f9a29ba29815bdf846af43e75e7c0100be0c97"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_01",
+          "thread_idx": 1,
+          "thread_info": {
+            "topic": "国立大学施設の老朽化対策",
+            "topicTag": "大学施設",
+            "topicColor": "#3b82f6",
+            "summary": "老朽化が進む国立大学施設の更新・整備予算の拡充を求める議論",
+            "contextDescription": "昭和期に整備された国立大学施設の多くが老朽化し、更新期を迎えていることへの対応が課題。",
+            "legislationName": null,
+            "speechOrders": [
+              15,
+              16
+            ]
+          },
+          "speechOrders": [
+            15,
+            16
+          ],
+          "input_hash": "sha256:eab5c0805d147111c8653dbf6124725d85d316744c8acd20c4c7c4125668b7b0"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_02",
+          "thread_idx": 2,
+          "thread_info": {
+            "topic": "理系人材の処遇改善",
+            "topicTag": "処遇改善",
+            "topicColor": "#f59e0b",
+            "summary": "理系出身者や博士課程修了者の所得水準の国際比較と処遇向上の必要性",
+            "contextDescription": "日本では理系人材の専門性に見合った処遇が十分でないとの指摘があり、国際的な所得比較が議論の背景。",
+            "legislationName": null,
+            "speechOrders": [
+              17,
+              18
+            ]
+          },
+          "speechOrders": [
+            17,
+            18
+          ],
+          "input_hash": "sha256:27f9742316e2c50c71702170c8140aac9c31d545ed6cefdd91addcbcb7259684"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_03",
+          "thread_idx": 3,
+          "thread_info": {
+            "topic": "不登校児童への学校健診の機会確保",
+            "topicTag": "不登校健診",
+            "topicColor": "#8b5cf6",
+            "summary": "不登校の子供が学校健診を受けられない現状と福祉部局・教育委員会の連携強化を求める",
+            "contextDescription": "学校保健安全法で義務付けられる健康診断を不登校児童が受診できないケースが多く、医療・福祉連携が課題。",
+            "legislationName": "学校保健安全法",
+            "speechOrders": [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ]
+          },
+          "speechOrders": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "input_hash": "sha256:99338335d81bfd491f62e1cf9b7f9948daf32a0249b3b5f858def76ce4d82124"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_04",
+          "thread_idx": 4,
+          "thread_info": {
+            "topic": "校外活動事故を受けた私立学校への指導体制",
+            "topicTag": "私学安全",
+            "topicColor": "#dc2626",
+            "summary": "校外活動中の死亡事故を受け、私立学校への国の指導権限強化や再発防止策を議論",
+            "contextDescription": "私立高校での校外活動中の死亡事故を契機に、国が私立学校に直接関与できる体制整備の是非が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              27,
+              28,
+              29,
+              30
+            ]
+          },
+          "speechOrders": [
+            27,
+            28,
+            29,
+            30
+          ],
+          "input_hash": "sha256:51c1a8ef4850548ffc9294161db0304a1a38ed0423891a3c47c6f5b865c85501"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_05",
+          "thread_idx": 5,
+          "thread_info": {
+            "topic": "冬期・降雪時の通学路安全確保",
+            "topicTag": "通学安全",
+            "topicColor": "#dc2626",
+            "summary": "積雪地域での除雪体制整備とオンライン授業・休校判断など通学路安全対策",
+            "contextDescription": "積雪地域では除雪の遅れによる通学路の危険が課題となっており、ハード・ソフト両面の対策が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              31,
+              32,
+              33,
+              34,
+              35,
+              36
+            ]
+          },
+          "speechOrders": [
+            31,
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "input_hash": "sha256:ae6293d9e622c6ae30337391000fb39f05a03a31e897634843cf67102605e958"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_06",
+          "thread_idx": 6,
+          "thread_info": {
+            "topic": "セーフティープロモーションスクールの推進",
+            "topicTag": "学校安全",
+            "topicColor": "#dc2626",
+            "summary": "学校安全のPDCAを継続実践するセーフティープロモーションスクールの普及状況",
+            "contextDescription": "地域と連携し学校安全計画を組織的・継続的に実践する仕組み「セーフティープロモーションスクール」の普及が議題。",
+            "legislationName": null,
+            "speechOrders": [
+              37,
+              38
+            ]
+          },
+          "speechOrders": [
+            37,
+            38
+          ],
+          "input_hash": "sha256:5897f8c136b23e7aa8621c3252c0929c057986111d42f5aeac948264787358d7"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_07",
+          "thread_idx": 7,
+          "thread_info": {
+            "topic": "部活動の地域展開と参加費・財源",
+            "topicTag": "部活動移行",
+            "topicColor": "#f59e0b",
+            "summary": "部活動の地域クラブ移行に伴う参加費負担、認定制度、財源措置の在り方",
+            "contextDescription": "学校部活動を地域クラブ活動へ移行する改革が進む中、保護者の費用負担や自治体財源の確保が課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58
+            ]
+          },
+          "speechOrders": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58
+          ],
+          "input_hash": "sha256:c48c340a897df19cd218ac8d44460d6dc9f292269546dfb34b80b6c8c065fd0c"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_08",
+          "thread_idx": 8,
+          "thread_info": {
+            "topic": "学校給食と食育・価格形成教育",
+            "topicTag": "食育給食",
+            "topicColor": "#f59e0b",
+            "summary": "食育基本法改正を踏まえた学校給食での合理的価格形成の教育的意義",
+            "contextDescription": "食料システム法による合理的な価格形成の動きを受け、児童生徒に生産コストや価格の仕組みを学ばせる食育が議題。",
+            "legislationName": "食育基本法、食料システム法",
+            "speechOrders": [
+              59,
+              60,
+              61,
+              62
+            ]
+          },
+          "speechOrders": [
+            59,
+            60,
+            61,
+            62
+          ],
+          "input_hash": "sha256:894898cf88faf78bda6b4e47c57d9b7bfe913bde8b1f974f27cbd5497c1b18eb"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_09",
+          "thread_idx": 9,
+          "thread_info": {
+            "topic": "教員研修制度と免許更新制廃止後の対応",
+            "topicTag": "教員研修",
+            "topicColor": "#f59e0b",
+            "summary": "免許更新制廃止後の研修履歴活用と教員の資質向上の取組",
+            "contextDescription": "2022年に教員免許更新制が廃止され、代わりに研修履歴を活用した対話型の資質向上の仕組みが導入された。",
+            "legislationName": null,
+            "speechOrders": [
+              64,
+              65
+            ]
+          },
+          "speechOrders": [
+            64,
+            65
+          ],
+          "input_hash": "sha256:46c8920946092a8adcabdf3757da0593d37bd6ed2a21cc9a63afe401d3337eec"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_10",
+          "thread_idx": 10,
+          "thread_info": {
+            "topic": "次期学習指導要領と家庭科・ライフプラン教育",
+            "topicTag": "家庭教育",
+            "topicColor": "#f59e0b",
+            "summary": "インターネット依存や将来設計力育成のための家庭科教育・ライフプラン作成の取組",
+            "contextDescription": "子供のネット・ゲーム依存への懸念から、家庭科教育を通じた人生設計力の育成が議題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              66,
+              67,
+              68,
+              69,
+              70
+            ]
+          },
+          "speechOrders": [
+            66,
+            67,
+            68,
+            69,
+            70
+          ],
+          "input_hash": "sha256:5976e96db8ddff13763b0b11793443549cee959cde001edb9b9ff7121ddbc35e"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_11",
+          "thread_idx": 11,
+          "thread_info": {
+            "topic": "教員のメンタルヘルス対策",
+            "topicTag": "教員メンタル",
+            "topicColor": "#8b5cf6",
+            "summary": "教員の精神疾患増加を受けた予防的取組と復職支援策の強化",
+            "contextDescription": "教員の精神疾患による休職が増加しており、職場環境改善やメンタルヘルス対策の充実が求められている。",
+            "legislationName": null,
+            "speechOrders": [
+              71,
+              72
+            ]
+          },
+          "speechOrders": [
+            71,
+            72
+          ],
+          "input_hash": "sha256:daa698722199a62b101ff010e2159465e99170951e6bc87b544659cf953053bf"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_12",
+          "thread_idx": 12,
+          "thread_info": {
+            "topic": "国宝・重要文化財制度の歴史と再評価",
+            "topicTag": "国宝制度",
+            "topicColor": "#6b7280",
+            "summary": "旧国宝と現行国宝制度の違い、再調査による国宝格上げの可能性を議論",
+            "contextDescription": "文化財保護法制定前の「旧国宝」は現在の重要文化財に相当し、再調査で新たに国宝指定される余地があるかが論点。",
+            "legislationName": "文化財保護法",
+            "speechOrders": [
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81
+            ]
+          },
+          "speechOrders": [
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81
+          ],
+          "input_hash": "sha256:1473695e36df9a9bd18c60e456daa74cc749557cb08ebd19eb87b27a10c8c082"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_13",
+          "thread_idx": 13,
+          "thread_info": {
+            "topic": "養護教諭の複数配置基準と業務負担",
+            "topicTag": "養護教諭",
+            "topicColor": "#8b5cf6",
+            "summary": "児童生徒の健康課題多様化に対応する養護教諭の複数配置基準引下げと勤務環境改善",
+            "contextDescription": "義務標準法改正に伴い養護教諭の複数配置基準が引き下げられ、業務多様化への対応が課題となっている。",
+            "legislationName": "義務標準法",
+            "speechOrders": [
+              82,
+              83,
+              84,
+              85,
+              86,
+              87
+            ]
+          },
+          "speechOrders": [
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "input_hash": "sha256:a3d70633fdecb89663ae84a5daea37d623523df8a386f9821d741fe785a594f7"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_14",
+          "thread_idx": 14,
+          "thread_info": {
+            "topic": "教員定数（基礎定数）の改善",
+            "topicTag": "教員定数",
+            "topicColor": "#8b5cf6",
+            "summary": "給特法改正議論を踏まえた教員の基礎定数引き上げと学級編制の改善",
+            "contextDescription": "教員の長時間労働是正に向け、学級編制標準の見直しによる基礎定数改善が検討されている。",
+            "legislationName": "義務標準法",
+            "speechOrders": [
+              88,
+              89,
+              90
+            ]
+          },
+          "speechOrders": [
+            88,
+            89,
+            90
+          ],
+          "input_hash": "sha256:e9de1d0216f404432bb596df185a16ba8adcf8a27ebcb7efad384cf926517bb1"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_15",
+          "thread_idx": 15,
+          "thread_info": {
+            "topic": "若手研究者の処遇と研究費配分",
+            "topicTag": "研究力強化",
+            "topicColor": "#3b82f6",
+            "summary": "博士課程進学者支援、若手研究者の処遇改善、競争的資金偏重の是正を議論",
+            "contextDescription": "日本の研究力低下が指摘される中、博士人材の処遇や運営費交付金と競争的資金のバランスが課題となっている。",
+            "legislationName": null,
+            "speechOrders": [
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98
+            ]
+          },
+          "speechOrders": [
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98
+          ],
+          "input_hash": "sha256:b5ffd88e5ffa79e3d2bc5805f63e6ecdd723f759edfd32751546539ae7ee1a47"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_16",
+          "thread_idx": 16,
+          "thread_info": {
+            "topic": "子供の自殺防止と命の教育",
+            "topicTag": "命の教育",
+            "topicColor": "#8b5cf6",
+            "summary": "児童生徒の自殺者数増加を受け、動物飼育やスクールドッグを通じた命の教育の充実を議論",
+            "contextDescription": "児童生徒の自殺者数が過去最多となる中、心の教育や命の大切さを伝える新たな教育手法が模索されている。",
+            "legislationName": null,
+            "speechOrders": [
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112
+            ]
+          },
+          "speechOrders": [
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112
+          ],
+          "input_hash": "sha256:89174da64bb72ee0ef9a6274ab77c0f7c56eddc935dd9c02bd64c7db83709971"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_17",
+          "thread_idx": 17,
+          "thread_info": {
+            "topic": "学校給食費の公会計化",
+            "topicTag": "給食公会計",
+            "topicColor": "#3b82f6",
+            "summary": "給食費等の私費補填問題を受け、学校徴収金の公会計化による透明性向上を議論",
+            "contextDescription": "学校単位で管理される給食費等の不正・補填問題を踏まえ、自治体による公会計化が推進されている。",
+            "legislationName": null,
+            "speechOrders": [
+              114,
+              115,
+              116
+            ]
+          },
+          "speechOrders": [
+            114,
+            115,
+            116
+          ],
+          "input_hash": "sha256:a42e87d14fd2b7d9d20951bef1df7fab695d93eb63cea2ab0485430004fc6354"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_18",
+          "thread_idx": 18,
+          "thread_info": {
+            "topic": "全国学力・学習状況調査のCBT化",
+            "topicTag": "学力調査",
+            "topicColor": "#f59e0b",
+            "summary": "端末上でのCBT方式移行に伴う調査目的や問題公開の在り方を議論",
+            "contextDescription": "来年度から全国学力・学習状況調査が端末上での出題・解答方式（CBT）に移行する予定。",
+            "legislationName": null,
+            "speechOrders": [
+              116,
+              117,
+              118,
+              119,
+              120
+            ]
+          },
+          "speechOrders": [
+            116,
+            117,
+            118,
+            119,
+            120
+          ],
+          "input_hash": "sha256:75eb6782cab744ccac5da63b54abfe2f535912159e7d8587e3a4e64cad59f5af"
+        },
+        {
+          "custom_id": "s_bb04a2783be4_19",
+          "thread_idx": 19,
+          "thread_info": {
+            "topic": "国立大学のガバナンス改革",
+            "topicTag": "大学ガバナンス",
+            "topicColor": "#3b82f6",
+            "summary": "東京大学総長選考問題を契機とした国立大学法人のガバナンス体制見直し",
+            "contextDescription": "東京大学総長選考を巡る問題を受け、国立大学法人の学長選考プロセスや経営体制の在り方が問われている。",
+            "legislationName": null,
+            "speechOrders": [
+              120,
+              121,
+              122
+            ]
+          },
+          "speechOrders": [
+            120,
+            121,
+            122
+          ],
+          "input_hash": "sha256:ebf539d410e9cfb52330a01bc279b212cb978878851b058b12fcbe8078409152"
+        }
+      ]
+    }
+  ]
+}
